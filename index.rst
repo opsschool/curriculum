@@ -17,7 +17,12 @@ Contents:
    unix_201
    text_editing_101
    text_editing_201
+   sysadmin_tools
 
+
+TODO List
+=========
+.. todolist::
 
 Indices and tables
 ==================
