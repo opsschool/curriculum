@@ -12,3 +12,6 @@ Looking at system metrics
 
 ``dstat``
 =========
+
+``sar``
+=======
