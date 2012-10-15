@@ -69,26 +69,30 @@ If you contribute to this document and would like your name in lights (or, at
 least, written down somewhere :) please add it here along with an email address
 and any affiliation:
 
-    Avleen Vig <avleen@etsy.com>                        Etsy, Inc
-    Magnus Hedemark <magnus@yonderway.com>              Wireless Generation
-    Ariel Jolo <ajolo@sysarmy.com.ar>                   sysARmy
-    Ryan Frantz <ryanleefrantz@gmail.com>               Crabby Admins (www.crabbyadmins.org)
-    Mike Fiedler <miketheman@gmail.com>                 Magnetic, Inc.
-    Nathan Milford <nathan@milford.io>                  Outbrain, Inc.
-    Patrick Cable <pc@pcable.net>                       MIT Lincoln Laboratory
-    Benjamin Krueger <benjamin@seattlefenix.net>        Sourcefire, Inc
-    Mårten Gustafson <marten.gustafson@gmail.com>
-    Phil Hollenback <philiph@pobox.com>
-    Adam Jacob <adam@opscode.com>                       Opscode, Inc.
-    Mark Imbriaco <mark@github.com>                     GitHub
-    James Turnbull <james@lovedthanlost.net>            Puppet Labs
-    Scott Nyce <snyce@codetwit.com>                     TiVo, Inc.
-    Christian Paredes <cp@redbluemagenta.com>           Amazon
-    Jan Schaumann <jschauma@netmeister.org>
-    Stephen Balukoff <sbalukoff@bluebox.net>            Blue Box Group
-    Evan Pettrey <jepettrey@gmail.com>                  LOPSA
-    Khalid Maqsudi <khalid7621@hotmail.com>             Ashford.com
-    Paul Graydon <paul@paulgraydon.co.uk>
-    Harold “Waldo” Grunenwald
-    Martin Gehrke <martin@teamgehrke.com>               LOPSA
-    John Boris <jborissr@gmail.com>                     LOPSA
+==================================================  ====================================
+Name                                                Comapny
+==================================================  ====================================
+Avleen Vig <avleen@etsy.com>                        Etsy, Inc
+Magnus Hedemark <magnus@yonderway.com>              Wireless Generation
+Ariel Jolo <ajolo@sysarmy.com.ar>                   sysARmy
+Ryan Frantz <ryanleefrantz@gmail.com>               Crabby Admins (www.crabbyadmins.org)
+Mike Fiedler <miketheman@gmail.com>                 Magnetic, Inc.
+Nathan Milford <nathan@milford.io>                  Outbrain, Inc.
+Patrick Cable <pc@pcable.net>                       MIT Lincoln Laboratory
+Benjamin Krueger <benjamin@seattlefenix.net>        Sourcefire, Inc
+Mårten Gustafson <marten.gustafson@gmail.com>
+Phil Hollenback <philiph@pobox.com>
+Adam Jacob <adam@opscode.com>                       Opscode, Inc.
+Mark Imbriaco <mark@github.com>                     GitHub
+James Turnbull <james@lovedthanlost.net>            Puppet Labs
+Scott Nyce <snyce@codetwit.com>                     TiVo, Inc.
+Christian Paredes <cp@redbluemagenta.com>           Amazon
+Jan Schaumann <jschauma@netmeister.org>
+Stephen Balukoff <sbalukoff@bluebox.net>            Blue Box Group
+Evan Pettrey <jepettrey@gmail.com>                  LOPSA
+Khalid Maqsudi <khalid7621@hotmail.com>             Ashford.com
+Paul Graydon <paul@paulgraydon.co.uk>
+Harold “Waldo” Grunenwald
+Martin Gehrke <martin@teamgehrke.com>               LOPSA
+John Boris <jborissr@gmail.com>                     LOPSA
+==================================================  ====================================
