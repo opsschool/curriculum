@@ -1,5 +1,5 @@
 Tools for productivity
-*******************************
+**********************
 
 The work of operations is often helped by using the combinations of tools.
 The tools you choose to use will depend heavily on your work style. Over time
@@ -95,3 +95,56 @@ get comfortable with ``screen`` first before attempting to use ``tmux``.
 
 .. todo::
    Explain how to use ``tmux``
+
+
+
+Shell customisations
+====================
+
+As you read in :doc:`shells_101`, your shell is your primary tool during the
+work day. It's also incredibly customisable to suit your needs. Let's look at
+some changes you can make.
+
+How to customise your shell
+---------------------------
+
+Your shell's configuration is stored in its ``rc`` file. For bash, this file is
+``~/.bashrc``. Each time you edit this, you can reload the configuration by
+typing:
+
+.. epigraph::
+   ``source ~/.bashrc``
+
+Changing your prompt
+--------------------
+
+Your default prompt probably looks something like this:
+
+.. epigraph::
+   ``bash-3.2$``
+
+That's pretty plain and doesn't tell you much. In fact, all it does tell you is
+that you're using Bash version 3.2, and that you are not the root user (the
+``$`` at the end signifies a regular user, whereas if you were root, you would
+see a ``#`` instead).
+
+Let's change this up a little. Edit your ``~/.bashrc`` file, and add this line
+to the end:
+
+.. epigraph::
+   ``PS1="\u@\h \w> "``
+
+Save, quit, and then reload your ``.bashrc`` file. Your prompt should change to
+something like this:
+
+.. epigraph::
+   ``avleen@laptop ~>``
+
+Much better! Now your know your username, the name of the machine you're on (in
+this case "``laptop``"), and the directory you're in ("``~``" is your home
+directory).
+
+The ``PS1`` variable has a lot of different options you can use to customise it
+further.
+
+
