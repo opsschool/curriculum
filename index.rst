@@ -18,6 +18,9 @@ Contents:
    text_editing_101
    text_editing_201
    sysadmin_tools
+   security_101
+   security_201
+   troubleshooting_101
 
 
 TODO List
