@@ -15,6 +15,8 @@ Contents:
    sysadmin_101
    unix_101
    unix_201
+   text_editing_101
+   text_editing_201
 
 
 Indices and tables
