@@ -21,6 +21,8 @@ Contents:
    security_101
    security_201
    troubleshooting_101
+   networking_101
+   networking_201
 
 
 TODO List
