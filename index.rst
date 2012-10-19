@@ -40,10 +40,13 @@ Contents:
    databases_101
    databases_201
    application_components_201
+   loadbalancing_101
    monitoring_101
    monitoring_201
    backups
-   configuration_management
+   architecture_101
+   architecture_201
+   config_management
    capacity_planning
    statistics
    deployment_101

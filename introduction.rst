@@ -62,6 +62,41 @@ As you write, remember that “101” material is aimed at people who are workin
 to being junior sysadmins. They’re mostly blank slates.
 
 
+How to contribute
+=================
+
+Ops School is a community driven effort, and we always need people to
+contribute.
+Currently we need people who are able to fill in areas in our documentation -
+whether it's a little or a lot, everything helps.
+You can grab the documentation here and send pull requests:
+
+  https://github.com/opsschool/curriculum
+
+If you're like to join the mailing list, email avleen@gmail.com.
+
+
+How to write sections
+---------------------
+
+In order to help students learn as much as possible, we are taking the following
+approach to the curriculum (this isn't a hard-and-fast rule, but an encouraged
+guideline whereever possible):
+
+* Approach your writing in three steps:
+
+  #. Tell students what they're going to learn
+  #. Teach them what they need to know
+  #. Tell them what they have learnt
+
+* As much as possible, treat this as an interactive exercise. For example if you
+  are writing about virtual machines, don't just write about virtual machines.
+  Have the student create a virtual machine, and then explain what just
+  happened.
+  Don't tell students that package managers install packages, have them install
+  a few packages and then explain how the package manager did its thing.
+
+
 Credits
 =======
 
