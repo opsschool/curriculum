@@ -73,7 +73,11 @@ You can grab the documentation here and send pull requests:
 
   https://github.com/opsschool/curriculum
 
-If you're like to join the mailing list, email avleen@gmail.com.
+Please fork the repo to your own account, create a branch, make your changes there,
+and issue a pull request from your fork/branch to ``opsschool:master``.
+Be descriptive in your commit message for anything non-obvious.
+
+If you'd like to join the mailing list, email avleen@gmail.com.
 
 
 How to write sections
