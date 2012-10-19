@@ -105,7 +105,7 @@ least, written down somewhere :) please add it here along with an email address
 and any affiliation:
 
 ==================================================  ====================================
-Name                                                Comapny
+Name                                                Company
 ==================================================  ====================================
 Avleen Vig <avleen@etsy.com>                        Etsy, Inc
 Magnus Hedemark <magnus@yonderway.com>              Wireless Generation
