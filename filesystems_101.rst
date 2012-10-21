@@ -66,9 +66,25 @@ Inodes
 ======
 What the contain, how they work
 
+The POSIX standard dictates files must have the following attributes:
+
+* File size in bytes.
+* A device id.
+* User ID of file's owner.
+* Group ID of file.
+* The file's mode (permissions).
+* Additional system and user flags (e.g. append only, or ACLs).
+* Timestamps when the inode was last modified (ctime), file content last modified/accessed (mtime/atime).
+* Link count of how many hard links point to the inode.
+* Pointers to the file's contents.
+
+http://en.wikipedia.org/wiki/Inode
+
 File system layout
 ==================
-File system heirarchy standard
+File system heirarchy standard is a reference on managing a Unix filesystem or directory structure.
+
+http://www.pathname.com/fhs/
 
 Filesystem options
 ==================
