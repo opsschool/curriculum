@@ -1,9 +1,9 @@
 Text Editing 201
 ****************
 
-ViM
+Vim
 ===
-[What is ViM, compared to Vi?]
+[What is Vim, compared to Vi?]
 
 Window Splitting
 ----------------

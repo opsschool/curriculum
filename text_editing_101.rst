@@ -1,7 +1,7 @@
 Text Editing 101
 ****************
 
-Typign 50 WPM
+Typing 50 WPM
 =============
 
 ``vi``
