@@ -37,7 +37,25 @@ Recovery basics
 Secure data destruction
 =======================
 
-Information Lifecycle Management in relation to Back ups
+Information Lifecycle Management in relation to backups
 ========================================================
 
+Main goal of backups is restore system state including data in case of issues and ILM, have data available for functional
+reasons other than uptime.
 
+Main items to cover in this chapter are:
+
+Archiving
+---------
+
+Legal requirements on retention
+-------------------------------
+
+Backup and restore of data and application
+------------------------------------------
+
+Data replication
+----------------
+
+Recovery test and procedures
+----------------------------
