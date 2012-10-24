@@ -41,7 +41,7 @@ master_doc = 'index'
 
 # General information about the project.
 project = u'Ops School Curriculum'
-copyright = u'2012, Avleen Vig'
+copyright = u'2012, Avleen Vig (under Creative Commons license: https://github.com/opsschool/curriculum/blob/master/LICENSE)'
 
 # The version info for the project you're documenting, acts as replacement for
 # |version| and |release|, also used in various other places throughout the

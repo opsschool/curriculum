@@ -238,7 +238,7 @@ Problem Solving
 ===============
 
 Learning Styles - Ways to improve skill set
-------------------------------------------
+-------------------------------------------
 
 Methodologies for finding solutions
 -----------------------------------
