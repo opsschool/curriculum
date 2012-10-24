@@ -7,7 +7,7 @@ services. We choose to refer to it as a "blanket title" because the
 responsiblities are broad and can differ from organization to organization.
 
 System Administration is often refered to as "operations" or "ops" too - you
-might have guessed that though, being enrolled in ops school, and all. 
+might have guessed that though, being enrolled in ops school.
 
 Like almost everything in this world, system administration does not exist in
 in a vaccum. Indeed, there are two other groups of people that exist to make
@@ -17,7 +17,9 @@ they're the folks you're implementing a system or service for.
 
 This section will get into what system administrators (ops) professionals do,
 what developers do, where they compare and contrast, what role that ops plays
-in the larger business context, a mindset and approach
+in the larger business context, a mindset and approach to systems administration,
+demonstrate the importance of problem solving and ethics in the every day
+life of a system administrator. 
 
 .. _whats-sysadmin:
 
@@ -99,7 +101,7 @@ Comparing Stories
 -----------------
 Did you notice any themes throughout the stories? How do they contrast?
 
-Things that we tried to highlight include:
+Themes that we tried to highlight include:
 
 * **System Administrators rarely work on their own.** Some of the stories
   feature System Administrators who are the only "Information Technology" staff
@@ -109,11 +111,11 @@ Things that we tried to highlight include:
 * **System Administration can be difficult if you don't automate!** Imagine if
   Matt had to install a software package on 200 machines by walking to each
   machine and installing it? How could he get any of his other requests done?
-* Similarly - yes, **the system administrator is writing code sometimes.**
+* **The system administrator is writing code sometimes.**
   Maybe that means a script that can take a list of users and add them to a
   system, maybe that means a script that can check to make sure a service is
   responding appropriately for a monitoring system.
-* System Administration means a lot of things to a lot of people. The other
+* **System Administration means a lot of *different* things to a lot of people.** The other
   non-IT employees are looking for something that "just works" - the ops
   person is concerned with proper implementation of a service so it continues 
   to be scalable and reliable for the future.
@@ -124,12 +126,24 @@ What is Development?
 ====================
 As mentioned in the section introduction, system administration doesn't exist
 in a vaccum. Computers don't just compute for the sake of it - not yet,
-anyways. *Developers* write applications in a variety of programming languages to 
-make a computer do *something*.
+anyways. 
 
-Historically, developers made a product and operations implemented it. Many
+*Developers* write applications in a variety of programming languages to 
+make a computer do *something*. Developers created the backend that allows you
+to order a book on a site like Amazon.com, post a status on Facebook, or 
+research a topic in a literary journal database.
+
+These backends can be big, and have a many considerations behind their design.
+
+* Section needs more developer perspective. 
+
+.. _constrasting-devandops:
+
+Contrasting Developemnt and Operations
+======================================
+Historically, developers made a product and operations implemented it. Some
 companies still use this model today. Unfortunately, some of the effects of
-this style of work are dangerous:
+this style of work can be dangerous:
 
 * **Developers and Operations personel may have different goals.** Something 
   important to the operations folk may not be important to the Development
@@ -137,8 +151,9 @@ this style of work are dangerous:
 * **Siloing these two organizations means that the most important goal of 
   service availability is compromised.** The person who is using your program
   or service doesn't care who made a mistake, the service is down.
-* Speaking of mistakes: when companies don't encourage their development and 
-  operations teams to work together, it's possible that 
+* **Speaking of mistakes:** when companies don't encourage their development and 
+  operations teams to work together, it's possible that groups get too invested
+  in assigning blame, instead of working together to fix an issue
   
 Fortunately, recent companies there has been more effort on ensuring that both
 teams are familiar with the concepts of the other - this is often referred to
@@ -148,22 +163,27 @@ person who worked with the developers to share the context.
 
 If you're working in an environment without developers, that's ok. There are 
 other people who you share a common, larger goal with. Businesses may have 
-analysts that interpret needs and look to you for assistance. In the example 
-featuring Karen above, she supports hardware engineers who have requirements
+analysts that interpret needs and look to you for assistance. In  
+":ref:`Karen's story <whats-sysadmin-karen>`," she supports hardware engineers who have requirements
 to deliver a particular sensor. Their ability to work hinges on Karen's ability
-to deliver a service for simulation that is available for them to work.
+to deliver a service for simulation that is available for them to work, which
+requires an understanding of their requirements and needs as well.
 
 .. _whats-not-sysadmin:
 
 What is System Administration Not?
 ==================================
-* Nick Burns: Your Companys Computer Guy!!! 
-* professional roadblock, etc.
+
+* Professional Roadblock (“No-Men”)
+* Pop culture reference: The Saturday Night Live "Nick Burns: Your Company's 
+  Computer Guy" skit summarized may be a good "what we should strive to avoid"
+  thing.
 
 The role of the SysAdmin in the organization
 ============================================
+
 * “Who is that guy? Why is he always muttering about ‘latency’?”
-* understanding the greater role of delivering a service for a business
+* Understanding the greater role of delivering a service for a business
 
 
 Mindset and approach
@@ -183,7 +203,7 @@ Methodologies for finding solutions
 
 Ethics
 ======
-LOPSA ethics statement/SAGE ethics statement?
+* LOPSA ethics statement/SAGE ethics statement?
 
 Where to draw the line
 ----------------------
