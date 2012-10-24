@@ -152,7 +152,7 @@ TODO: Section needs more developer perspective.
 
 Contrasting Development and Operations
 ======================================
-At the end of the day, both groups have an important shared: to ensure that a
+At the end of the day, both groups have an important shared goal: to ensure that a
 system or service remains as *available* (think: accessible, usable, works how people expect it to)
 as a customer expects it to be. You'll see references to the idea of how "available" a system or service
 is later when Service Level Agreements (SLAs) are discussed.
@@ -160,15 +160,23 @@ is later when Service Level Agreements (SLAs) are discussed.
 That being said, Development and Operations have different day-to-day thoughts.
 
 Operations thoughts include:
+
 * How are we going to install (or, deploy) the servers that run this application?
+
 * How will we monitor the system/service to make sure it's working as we expect?
+
 * Can we deploy this system or service in a way that is easy to maintain?
+
 * What are the pros/cons of implementing this application in this way?
 
 Development thoughts include:
+
 * How will I implement message passing between two parts of this application?
+
 * What's the best algorithm to use for searching through this amount of data?
+
 * Should I be thinking of a key-value store for this data vs. using a relational database?
+
 * What language will I implement this in?
 
 Again, this is by no means an exhaustive list - entire books could be written
