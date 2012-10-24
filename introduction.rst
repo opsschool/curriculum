@@ -118,7 +118,7 @@ Ariel Jolo <ajolo@sysarmy.com.ar>                   sysARmy
 Ryan Frantz <ryanleefrantz@gmail.com>               Crabby Admins (www.crabbyadmins.org)
 Mike Fiedler <miketheman@gmail.com>                 Magnetic, Inc.
 Nathan Milford <nathan@milford.io>                  Outbrain, Inc.
-Patrick Cable <pc@pcable.net>                       MIT Lincoln Laboratory
+Patrick Cable <pc@pcable.net>                       
 Benjamin Krueger <benjamin@seattlefenix.net>        Sourcefire, Inc
 Mårten Gustafson <marten.gustafson@gmail.com>
 Phil Hollenback <philiph@pobox.com>
