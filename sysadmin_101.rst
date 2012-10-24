@@ -2,24 +2,30 @@ Sysadmin 101
 ************
 
 *System Administration* is the blanket title for a myriad of job
-responsibilites involving the management of information systems and/or
+responsibilities involving the management of information systems and/or
 services. We choose to refer to it as a "blanket title" because the
-responsiblities are broad and can differ from organization to organization.
+responsibilities are broad and can differ from organization to organization.
+In some organizations, it even differs from group to group!
 
-System Administration is often refered to as "operations" or "ops" too - you
-might have guessed that though, being enrolled in ops school.
+System Administration is often referred to as "operations" or "ops" too - you
+might have guessed that though, having decided to enroll in Ops School.
 
 Like almost everything in this world, system administration does not exist in
-in a vaccum. Indeed, there are two other groups of people that exist to make
-an information system or service come together: developers and customers. 
-Customers are often referred to end-users or people or humans - basically, 
+a vacuum. There are two other groups of people that exist to make
+an information system or service come together: developers and customers.
+Customers are often referred to end-users or people or humans - basically,
 they're the folks you're implementing a system or service for.
+
+A system administrator experiences life in all three of these roles: sometimes
+you will be tasked with maintaining a system or service, and sometimes you
+may be developing parts of a system. Many times, you'll be someone else's
+customer.
 
 This section will get into what system administrators (ops) professionals do,
 what developers do, where they compare and contrast, what role that ops plays
 in the larger business context, a mindset and approach to systems administration,
 demonstrate the importance of problem solving and ethics in the every day
-life of a system administrator. 
+life of a system administrator.
 
 .. _whats-sysadmin:
 
@@ -28,21 +34,24 @@ What is Systems Administration?
 
 Like we mentioned above, the role of the System Administrator is diverse.
 
-To illustrate some of the lattitude present in the role, consider how the 
+To illustrate some of the latitude present in the role, consider how the
 following descriptions compare and contrast:
 
 .. _whats-sysadmin-matt:
 
 * **Matt works for an elementary school.** He's referred to by other employees at
-  the school as the system administrator. To the other employees, John ensures
+  the school as the system administrator. To the other employees, Matt ensures
   that the computers "just work." Realistically, Matt spends time making sure
-  that the systems that everyone uses are patched. Other employees talk to him
+  that the systems that everyone uses are patched - to avoid security issues.
+  Other employees talk to him
   about software they may need installed -- on their computer, or maybe all of
   them! Matt also has the responsibility of making sure that the school's
   website is available for parents to get information on, and that the classroom
   management software is up and running and accepting requests. Matt also needs
   to be able to look into the future and figure out how much space the employees
-  may need on the server, and be able to justify that to his boss.
+  may need on the server, and be able to justify that to his boss. When report
+  card time runs around, Matt has to make sure that the teachers are able to
+  give their report cards out on time.
 
 .. _whats-sysadmin-sarah:
 
@@ -61,15 +70,15 @@ following descriptions compare and contrast:
   every day, and they need access to email and other collaboration tools. With
   so many services and options for e-mail, which one makes the most amount of
   sense for the town? Daniel collects input from the employees about what
-  capabilities are important, input from legal council about what laws towns
-  need to follow regarding electronic communication, and evaluates a few
-  services or products with his user's needs in mind along with the towns. If he
-  ends up using a third- party service, he'll have to figure out how to roll it
-  out to the users. If he chooses to host himself, he'll have to coordinate
+  capabilities are important, input from legal council about what laws a town
+  must follow regarding electronic communication, and evaluates a few
+  services or products with his user's needs in mind along with the town's. If he
+  ends up using a third-party service, he'll have to figure out how to roll it
+  out to the users. If Will chooses to host himself, he'll have to coordinate
   getting the appropriate infrastructure set up to make sure that it can meet
   the capacity of the users. He'll also need to set it all up.
 
-.. _whats-sysadmin-karen: 
+.. _whats-sysadmin-karen:
 
 * **Karen works for a large business.** The business has many groups, but she
   works with one set of users - hardware engineers. She maintains a network that
@@ -82,7 +91,7 @@ following descriptions compare and contrast:
   at the business.
 
 .. _whats-sysadmin-darren:
-  
+
 * **Darren works for a large financial company.** The company has many teams that
   do different things, but there's collaboration between the different system
   administrators - the operations team (staffed with administrators) implements
@@ -94,14 +103,14 @@ following descriptions compare and contrast:
   where and how their application will run, and to make sure that Darren's team
   knows what they need as well. Darren's team may have ideas about what
   statistics are important to monitor.
-  
+
 .. _whats-sysadmin-comparing-stories:
 
-Comparing Stories 
+Comparing Stories
 -----------------
 Did you notice any themes throughout the stories? How do they contrast?
 
-Themes that we tried to highlight include:
+Highlighted themes include:
 
 * **System Administrators rarely work on their own.** Some of the stories
   feature System Administrators who are the only "Information Technology" staff
@@ -111,13 +120,13 @@ Themes that we tried to highlight include:
 * **System Administration can be difficult if you don't automate!** Imagine if
   Matt had to install a software package on 200 machines by walking to each
   machine and installing it? How could he get any of his other requests done?
-* **The system administrator is writing code sometimes.**
+* **At times, the system administrator may need to write code.**
   Maybe that means a script that can take a list of users and add them to a
   system, maybe that means a script that can check to make sure a service is
   responding appropriately for a monitoring system.
 * **System Administration means a lot of *different* things to a lot of people.** The other
   non-IT employees are looking for something that "just works" - the ops
-  person is concerned with proper implementation of a service so it continues 
+  person is concerned with proper implementation of a service so it continues
   to be scalable and reliable for the future.
 
 .. _whats-dev:
@@ -125,45 +134,74 @@ Themes that we tried to highlight include:
 What is Development?
 ====================
 As mentioned in the section introduction, system administration doesn't exist
-in a vaccum. Computers don't just compute for the sake of it - not yet,
-anyways. 
+in a vacuum. Computers don't just compute for the sake of it - not yet,
+anyways.
 
-*Developers* write applications in a variety of programming languages to 
+*Developers* write applications in a variety of programming languages to
 make a computer do *something*. Developers created the backend that allows you
-to order a book on a site like Amazon.com, post a status on Facebook, or 
+to order a book on a site like Amazon.com, post a status on Facebook, or
 research a topic in a literary journal database.
 
 These backends can be big, and have a many considerations behind their design.
 
-* Section needs more developer perspective. 
+.. todo:
+
+TODO: Section needs more developer perspective.
 
 .. _constrasting-devandops:
 
-Contrasting Developemnt and Operations
+Contrasting Development and Operations
 ======================================
-Historically, developers made a product and operations implemented it. Some
-companies still use this model today. Unfortunately, some of the effects of
+At the end of the day, both groups have an important shared: to ensure that a
+system or service remains as *available* (think: accessible, usable, works how people expect it to)
+as a customer expects it to be. You'll see references to the idea of how "available" a system or service
+is later when Service Level Agreements (SLAs) are discussed.
+
+That being said, Development and Operations have different day-to-day thoughts.
+
+Operations thoughts include:
+* How are we going to install (or, deploy) the servers that run this application?
+* How will we monitor the system/service to make sure it's working as we expect?
+* Can we deploy this system or service in a way that is easy to maintain?
+* What are the pros/cons of implementing this application in this way?
+
+Development thoughts include:
+* How will I implement message passing between two parts of this application?
+* What's the best algorithm to use for searching through this amount of data?
+* Should I be thinking of a key-value store for this data vs. using a relational database?
+* What language will I implement this in?
+
+Again, this is by no means an exhaustive list - entire books could be written
+about the subject. It's just to give a feel for the different considerations.
+
+History of Development and Operations
+=====================================
+Historically, Developers made a product or application and Operations implemented it. Some
+companies still use this model today. Unfortunately, the effects of
 this style of work can be dangerous:
 
-* **Developers and Operations personel may have different goals.** Something 
+* **Developers and Operations personnel may have different goals.** Something
   important to the operations folk may not be important to the Development
-  folk. 
-* **Siloing these two organizations means that the most important goal of 
+  folk.
+* **Siloing these two organizations means that the most important goal of
   service availability is compromised.** The person who is using your program
   or service doesn't care who made a mistake, the service is down.
-* **Speaking of mistakes:** when companies don't encourage their development and 
+* **Speaking of mistakes:** when companies don't encourage their development and
   operations teams to work together, it's possible that groups get too invested
   in assigning blame, instead of working together to fix an issue
-  
+
 Fortunately, recent companies there has been more effort on ensuring that both
 teams are familiar with the concepts of the other - this is often referred to
-as "devops" - the combination of Development and Operations. Remember
-":ref:`Darren's story <whats-sysadmin-darren>`" - he was an operations
-person who worked with the developers to share the context.
+as "DevOps" - the combination of Development and Operations. Recall
+":ref:`Darren's story <whats-sysadmin-darren>`" - he's an operations
+person who worked with the developers to ensure that the developers understand
+the environment that their application will run on. The street went both ways, though:
+the developers need to share how they plan to implement various product features
+so that the operations team can figure out how to best support the developers needs.
 
-If you're working in an environment without developers, that's ok. There are 
-other people who you share a common, larger goal with. Businesses may have 
-analysts that interpret needs and look to you for assistance. In  
+If you're working in an environment without developers, that's OK. There are
+other people who you share a common, larger goal with. Businesses may have
+analysts that interpret needs and look to you for assistance. In
 ":ref:`Karen's story <whats-sysadmin-karen>`," she supports hardware engineers who have requirements
 to deliver a particular sensor. Their ability to work hinges on Karen's ability
 to deliver a service for simulation that is available for them to work, which
@@ -175,16 +213,12 @@ What is System Administration Not?
 ==================================
 
 * Professional Roadblock (“No-Men”)
-* Pop culture reference: The Saturday Night Live "Nick Burns: Your Company's 
-  Computer Guy" skit summarized may be a good "what we should strive to avoid"
-  thing.
 
 The role of the SysAdmin in the organization
 ============================================
 
 * “Who is that guy? Why is he always muttering about ‘latency’?”
 * Understanding the greater role of delivering a service for a business
-
 
 Mindset and approach
 ====================
@@ -195,7 +229,7 @@ Generalists vs Specialists
 Problem Solving
 ===============
 
-Learning Styles - Ways to improve skillset
+Learning Styles - Ways to improve skill set
 ------------------------------------------
 
 Methodologies for finding solutions
@@ -203,7 +237,7 @@ Methodologies for finding solutions
 
 Ethics
 ======
-* LOPSA ethics statement/SAGE ethics statement?
+* LOPSA ethics statement/SAGE(now LISA) ethics statement?
 
 Where to draw the line
 ----------------------
