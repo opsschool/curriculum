@@ -51,3 +51,30 @@ Prerequisites:
 * basic understanding of command line instructions
 * basic understanding of YAML file format
 
+Installation
+------------
+
+Salt has a `dedicated page <https://salt.readthedocs.org/en/latest/topics/installation/index.html>`_ 
+on how to get it installed and ready to use, please refer to it after deciding
+what OS you will be using.
+
+To set-up the environment you can use virtual machines or real boxes, in the 
+examples we will be using hostnames **master** and **slave** to refer to each
+one.
+
+We will continue considering you already have the latest version installed
+and available from command line on your machines.
+You can check what version are you using on master with:
+
+::
+
+  ~# salt --version
+  salt 0.10.3
+
+and on slave with:
+
+::
+
+  ~# salt-minion --version
+  salt-minion 0.10.3
+
