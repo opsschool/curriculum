@@ -78,3 +78,53 @@ and on slave with:
   ~# salt-minion --version
   salt-minion 0.10.3
 
+Configuration
+-------------
+
+Minimum configuration has to be done in order to get the slave server to
+communicate with master. You will need to tell it what IP address and port
+master uses.
+The configuration file usually can be found at ``/etc/salt/minion``.
+
+You will need to edit the file where it says ``master: salt`` replacing
+``salt`` with master IP address.
+
+Once done, you will need to restart the service: **salt-minion**. On most
+Linux OSes you can use ``service salt-minion restart`` for that.
+
+Authentication keys for master/slave are generated during installation so
+you don't need to manage those manually, except in case when you want to
+`preseed minions <https://salt.readthedocs.org/en/latest/topics/tutorials/preseed_key.html>`_.
+
+To add the slave to minions list, you will have to use the command ``salt-key``
+on master. Run ``salt-key -L`` to list available minions:
+
+::
+
+  root@master:~# salt-key -L
+  Unaccepted Keys:
+  slave
+  Accepted Keys:
+  Rejected:
+
+To accept a minion, run ``salt-key -a``:
+
+::
+
+  root@master:~# salt-key -a slave
+  Key for slave accepted.
+
+  root@master:~# salt-key -L
+  Unaccepted Keys:
+  Accepted Keys:
+  slave
+  Rejected:
+
+Once the minion was added, you can start managing it by using command ``salt``.
+For example to check the communication with slave, you can ping it:
+
+::
+
+  root@master:~# salt 'slave*' test.ping
+  slave: True
+
