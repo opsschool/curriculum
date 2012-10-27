@@ -128,3 +128,39 @@ For example to check the communication with slave, you can ping it:
   root@master:~# salt 'slave*' test.ping
   slave: True
 
+Remote execution
+----------------
+
+In order to understand how Salt manages minions and configuration files syntax,
+lets have a look at ``salt`` command line tool. Lets take our previous command
+and inspect it:
+
+::
+  
+  root@master:~# salt 'slave*' test.ping
+                             ^ ^
+                       ______| |__________________
+                       target  function to execute
+
+**target** is the minion(s) name. It can represent the exact name or just
+a part of it followed by a wildcard.
+
+  In order to run target matching by OS, architecture or other identifiers
+  take a look at `Salt Grains <https://salt.readthedocs.org/en/latest/topics/targeting/grains.html>`_.
+
+Functions that can be executed represent `Salt Modules <https://salt.readthedocs.org/en/latest/ref/modules/index.html>`_.
+These modules are Python or Cython code written to abstract access to CLI or
+other minion resources. For the full list of modules please take a look
+`this page <https://salt.readthedocs.org/en/latest/ref/modules/all/index.html>`_.
+
+One of the modules Salt can use is called **cmd**, it has the method **run**
+which accepts as arguments a string which will be executed as a command on
+minions and the resulted data will be outputted prefixed with minion name.
+
+For example, to run command ``uptime`` on our slave we will fire:
+
+::
+  
+  root@master:~# salt 'slave*' cmd.run 'uptime'
+  slave: 22:45:52 up 96 days, 10:42,  0 users,  load average: 0.00, 0.00, 0.00
+
