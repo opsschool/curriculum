@@ -28,4 +28,26 @@ Puppet
 Cfengine 3
 ==========
 
+SaltStack
+=========
+
+SaltStack or just **Salt**, is a configuration management and remote
+execution tool written in Python. Salt uses ZeroMQ to manage communication 
+between master and minions, and RSA keys to handle authentication. 
+This chapter will explain the basics on how to get started with it.
+
+Salt is a centralized system, which means there is a main server (also referred
+here as *master*) which manages other machines connected to it or itself (also
+referred here as *minions*). This topology can be further split using
+`Salt Syndic <http://docs.saltstack.org/en/latest/ref/syndic.html>`_, 
+please refer to Salt documentation for more details on this topic.
+
+In examples below we will be using the master + 1 minion setup. The approximate 
+time you will need to walk through all the content is about 10 minutes.
+
+Prerequisites:
+
+* access to 2 Linux/Solaris/FreeBSD/Windows machines in the same network
+* basic understanding of command line instructions
+* basic understanding of YAML file format
 
