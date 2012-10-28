@@ -90,21 +90,20 @@ Netmasks typically appear in the dotted decimal notation, with values between 0-
 octet. These are applied as bitmasks, and numbers at 255 mean that this host is not reachable.
 An example ip with and example netmask is below:
 
-   +------------|--------------+
-   | IP Address | Subnet Mask  | 
-   +============+==============+
-   | 192.168.1.1| 255.255.255.0| 
-   +------------|--------------|
-
+============= ===============
+IP Address    Subnet Mask   
+============= ===============
+192.168.1.1   255.255.255.0 
+============= ===============
 CIDR notation is a two digit representation of this routing prefix. It value can range
 between 0 and 32. This representation is typically used for networking equipment. Below
 is the same example as above with CIDR notation:
 
-   +------------|--------------+
-   | IP Address | CIDR  | 
-   +============+==============+
-   | 192.168.1.1| /24| 
-   +------------|--------------|
+============= ===============
+IP Address    CIDR   
+============= ===============
+192.168.1.1   /24 
+============= ===============
 
 Static routing
 ==============
