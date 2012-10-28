@@ -42,16 +42,36 @@ IP Addressing
 IPv4
 ----
 
+Internet Protocol Version 4 (IPv4) is the forth version of the internet protocol, the first
+version to be widely deployed. This is the version of the protocol you're most likely to
+encounter, and the default version of protocol in linux.
+
+IPv4 uses a 32-bit address space most typically represented in 4 dotted decimal notation,
+each octect contains a value between 0-255, and is seperated by a dot. An example 
+address is below:
+
+    10.199.0.5 
+
+There are several other representations, like dotted hexidecimal, dotted octal, hexidecimal, 
+decimal, and octal. These are infrequently used, and you shouldn't need to worry about them. 
+
+
+
 IPv6
 ----
 
 
-Static routing
-==============
-
 
 Private address space (RFC1918)
 ===============================
+
+Certian ranges of addresses were reserved for private networks. Using this address space
+you cannot communicate with public machines without a NAT gateway or proxy. There are 
+three reserved blocks:
+
+10.0.0.0–10.255.255.255 
+172.16.0.0–172.31.255.255
+192.168.0.0–192.168.255.255 
 
 
 TCP vs UDP
@@ -61,6 +81,33 @@ TCP vs UDP
 
 Subnetting, netmasks and CIDR
 =============================
+A subnet is a logical devision of an IP network, and lets the host system identify which 
+other hosts can be reached without the need of a routing. The way the host system determines
+this is by the application of a routing prefix. There are two typical representations of this
+prefix, a netmask, and CIDR. 
+
+Netmasks typically appear in the dotted decimal notation, with values between 0-255 in each 
+octet. These are applied as bitmasks, and numbers at 255 mean that this host is not reachable.
+An example ip with and example netmask is below:
+
+   +------------|--------------+
+   | IP Address | Subnet Mask  | 
+   +============+==============+
+   | 192.168.1.1| 255.255.255.0| 
+   +------------|--------------|
+
+CIDR notation is a two digit representation of this routing prefix. It value can range
+between 0 and 32. This representation is typically used for networking equipment. Below
+is the same example as above with CIDR notation:
+
+   +------------|--------------+
+   | IP Address | CIDR  | 
+   +============+==============+
+   | 192.168.1.1| /24| 
+   +------------|--------------|
+
+Static routing
+==============
 
 
 NAT
