@@ -12,6 +12,7 @@ Contents:
    :maxdepth: 2
 
    introduction
+   careers
    sysadmin_101
    unix_101
    unix_201
