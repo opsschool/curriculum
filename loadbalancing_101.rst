@@ -56,7 +56,7 @@ DNS GSLB
 * Most often used to load balance between geographical dispersed data centers.
 * Generally has health check mechanisms similar to load balancers which are used
   to return an IP address (as part of the DNS lookup) of a host that is currently
-  able to service the request.
+  available to service the request.
 * Conceptually provides coarse-grained round robin and affinity balancing
   algorithms by setting the time to live (TTL) of the DNS lookup for an 
   appropriate duration.
