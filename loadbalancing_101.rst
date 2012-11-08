@@ -14,8 +14,9 @@ Why do we use load balancers?
   These health checks can be simplistic ICMP pings to ensure host availabilty
   to advanced HTTP (layer 7) health checks that use HTTP response codes or 
   content matching.
-* Can provide a layer abstraction such that end user endpoints remain consistent
-  (i.e URLs) as backend application infrastructure expands (or contracts) 
+* Can provide a layer of abstraction such that end user endpoints remain 
+  consistent (i.e URLs) as backend application infrastructure expands 
+  (or contracts) 
 * Can be either software based (aka reverse proxies) or hardware based (physical
   devices optimized for network throughput and ISO layer 2,3 and 4 routing).
 * Can be tuned by itself for max conns?
