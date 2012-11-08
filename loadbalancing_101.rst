@@ -52,14 +52,14 @@ Anycast
 DNS GSLB
 --------
 * A GSLB (Global Site Load Balancer) at the most simplistic level is a health 
-checking DNS server.
+  checking DNS server.
 * Most often used to load balance between geographical disperse data centers.
 * Generally has health check mechanisms similar to load balancers which are used
-to return an IP address (as part of the DNS lookup) of a host that is currently
-able to service the request.
-* Concenptually provides coarse grained round robin and affinity balancing
-algorithms by setting the time to live (TTL) of the DNS lookup for an 
-appropriate duration.
+  to return an IP address (as part of the DNS lookup) of a host that is currently
+  able to service the request.
+* Conceptually provides coarse grained round robin and affinity balancing
+  algorithms by setting the time to live (TTL) of the DNS lookup for an 
+  appropriate duration.
 
 CDN’s
 -----
