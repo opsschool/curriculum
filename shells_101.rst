@@ -30,7 +30,12 @@ Environment variables
 ---------------------
 Environment variables are used to define values for often-used attributes of a user's shell.  In total, these variables define the user's environment.  Some environment variables provide a simple value describing some basic attribute, such the user's current directory (``$PWD``).  Others define the behavior of a command, such as whether or not the ``history`` command should log repeated commands individually or log the repeated command once (``$HISTCONTROL``).
 
-The most common, or most recognized, environment variable is the ``$PATH`` variable.  It defines the set of directories that the shell can search to find a command.  Without an explicit path provided when calling a command (i.e. ``/bin/ps``), the shell will search the directories listed in the ``$PATH`` variable until it finds the command.  If the command is not found in anyof the defined directories in ``$PATH``, the shell will produce an error explaining as much.
+$PATH
+~~~~~
+The most common, or most recognized, environment variable is the ``$PATH`` variable.  It defines the set of directories that the shell can search to find a command.  Without an explicit path provided when calling a command (i.e. ``/bin/ps``), the shell will search the directories listed in the ``$PATH`` variable until it finds the command.  If the command is not found in anyof the defined directories in ``$PATH``, the shell will produce an error explaining as much. ::
+  $ foobar -V
+  -bash: foobar: command not found
+
 
 To view the contents of the ``$PATH`` variable, use ``echo`` to print the variable's value: ::
   $ echo $PATH
