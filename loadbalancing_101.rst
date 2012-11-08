@@ -10,9 +10,9 @@ Why do we use load balancers?
   slow clients (or keepalives). We want app servers to do real work, not waste
   time waiting on the network.
 * Load balancers provide a mechanism to verify the health of backend servers to 
-  ensure traffic is only routed to backends able to service the request.
+  ensure traffic is only routed to backends available to service the request.
   These health checks can be simplistic ICMP pings to ensure host availabilty
-  to advanced HTTP (layer 7) healtch checks that use HTTP response codes or 
+  to advanced HTTP (layer 7) health checks that use HTTP response codes or 
   content matching.
 * Can provide a layer abstraction such that end user endpoints remain consistent
   (i.e URLs) as backend application infrastructure expands (or contracts) 
