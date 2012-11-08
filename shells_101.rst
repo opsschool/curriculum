@@ -3,9 +3,14 @@ Shells
 
 What is a shell?
 ================
+A [Li|U]nix shell is the command-line interface between the user and the system.  It is used to perform some action, specifically, typing commands and displaying output, requested by the user.
 
 Introduction to Bash
 ====================
+Bash is known as the Bourne-again shell and is a play on the name of the previously named Bourne shell (/bin/sh) written by Steve Bourne.
+
+.. todo::
+   Cite source for the above statement.
 
 Shell fundamentals
 ==================
@@ -23,7 +28,34 @@ See `Text Editing 101`_ for details on appropriate edit commands to use on the c
 
 Environment variables
 ---------------------
-``$PATH``, ``$HOME``, ``$USER``, etc
+Environment variables are used to define values for often-used attributes of a user's shell.  In total, these variables define the user's environment.  Some environment variables provide a simple value describing some basic attribute, such the user's current directory (``$PWD``).  Others define the behavior of a command, such as whether or not the ``history`` command should log repeated commands individually or log the repeated command once (``$HISTCONTROL``).
+
+The most common, or most recognized, environment variable is the ``$PATH`` variable.  It defines the set of directories that the shell can search to find a command.  Without an explicit path provided when calling a command (i.e. ``/bin/ps``), the shell will search the directories listed in the ``$PATH`` variable until it finds the command.  If the command is not found in anyof the defined directories in ``$PATH``, the shell will produce an error explaining as much.
+
+To view the contents of the ``$PATH`` variable, use ``echo`` to print the variable's value: ::
+  $ echo $PATH
+  /usr/local/sbin:/sbin:/bin:/usr/sbin:/usr/bin:/usr/local/bin
+
+The order of the directories in the ``$PATH`` variable, from left to right, is important; when searching directories for a command, the shell will stop looking after if finds its first match.  In other words, using our example ``$PATH`` variable above, if there is a version of ``ps`` that exists in ``/usr/local/bin`` that is preferred (by the sysadmin) over the version that exists in ``/bin``, the shell will still execute ``/bin/ps`` due to the precedence of the directories defined in the ``$PATH`` variable.
+
+To list all of the shell's environment variables, use the ``env`` command: ::
+  $ env
+  HOSTNAME=foobar
+  SHELL=/bin/bash
+  TERM=xterm
+  HISTSIZE=1000
+  USER=root
+  PATH=/usr/local/sbin:/sbin:/bin:/usr/sbin:/usr/bin:/root/bin:/usr/local/bin
+  MAIL=/var/spool/mail/root
+  PWD=/root/curriculum
+  PS1=[\[\e[33;1m\]\t \[\e[31;1m\]\u\[\e[0m\]@\[\e[31;1m\]\h\[\e[0m\] \W\[\e[0m\]]# 
+  AWS_IAM_HOME=/opt/aws/apitools/iam
+  HISTCONTROL=ignoredups
+  SHLVL=1
+  SUDO_COMMAND=/bin/bash
+  HOME=/root
+  HISTTIMEFORMAT=[%Y-%m-%d %H:%M:%S] 
+  OLDPWD=/tmp
 
 Global vs. User Profiles
 ------------------------
@@ -47,8 +79,8 @@ For information on ensuring running jobs continue, even when terminal connectivi
 .. _`GNU screen`: /sysadmin_tools.html#gnu-screen
 .. _tmux: /sysadmin_tools.html#tmux
 
-Customizing the Prompt (Or Fun with the PS variables)
------------------------------------------------------
+Customizing the Prompt for Fun or Profit
+----------------------------------------
 ``$PS1``, ``$PS2``, ``$PS3``, ``$PS4``
 
 Example (needs explanation)::
