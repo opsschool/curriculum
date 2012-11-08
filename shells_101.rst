@@ -13,7 +13,13 @@ Shell fundamentals
 Command-line Editing Modes
 --------------------------
 - vi
+ + set -o vi
 - emacs
+ + set -o emacs
+
+See `Text Editing 101`_ for details on appropriate edit commands to use on the command line.
+
+.. _`Text Editing 101`: /text_editing_101.html
 
 Environment variables
 ---------------------
@@ -44,3 +50,19 @@ For information on ensuring running jobs continue, even when terminal connectivi
 Customizing the Prompt (Or Fun with the PS variables)
 -----------------------------------------------------
 ``$PS1``, ``$PS2``, ``$PS3``, ``$PS4``
+
+Example (needs explanation)::
+  # if I'm root, set my terminal colors to alert me!
+  if [ "$EUID" = "0" ]
+  then
+    PS1="[\[\e[33;1m\]\t \[\e[31;1m\]\u\[\e[0m\]@\[\e[31;1m\]\h\[\e[0m\] \W\[\e[0m\]]\$ "
+    export PS1
+  else
+    PS1="[\t \[\e[34;1m\]\u\[\e[0m\]@\[\e[34;1m\]\h\[\e[0m\] \[\e[33;1m\]\W\[\e[0m\]]\$ "
+    export PS1
+  fi
+
+.. todo::
+   - Link to any content describing profiles (global, user-level) as the above example should be placed in a profile
+   - Link to content describing terminal color codes/ANSI escape codes
+   - Determine if it's important to discuss such an esoteric topic as terminal color/escape codes or if I'm really just showing off...
