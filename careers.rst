@@ -86,13 +86,13 @@ Systems Administrator
 
 The Systems Administrator is the classic and probably most recognised
 Operations role. Key responsibilities usually include managing desktops,
-servers, operating systems, databases, middle ware and applications.
+servers, operating systems, databases, middleware and applications.
 
 Systems Administrators can range from "jack of all trades" with knowledge of
 multiple systems and platforms to specialists who focus on one system or
 platform, for example Microsoft Windows or Linux. 
 
-Whilst perhaps more "general" that some of the other specialist roles, Systems
+Whilst perhaps more "general" than some of the other specialist roles, Systems
 Administrators tend to focus on managing individual hosts, usually desktops or
 servers, rather than looking more broadly at infrastructure like Operations
 generalists.
@@ -103,8 +103,8 @@ Database Administrator
 Database Administrators, or DBAs, are specialists in managing the performance,
 security and stability of database systems. Once a common role, they are less
 frequently seen today and much of the work involved in this role has been
-replaced by more advanced database systems, automation and the up skilling of
-related roles.
+replaced by more advanced database systems, automation and the growth of these
+skills in related roles.
 
 DBAs usually have specialised skills in managing the performance of database
 systems, are often experts in understanding database features like stored
@@ -118,6 +118,19 @@ Network Engineers are Operations people who focus on network devices and
 network management. Network Engineers manage the provisioning, configuration,
 security and availability of networking infrastructure.
 
+Network Engineers are able to architect and design networks both internal to
+organisations and between organisations and their customers, for example
+Internet-facing infrastructure. As a result their skills often overlap with
+Security Engineers in technologies such as firewalls, proxies and gateway
+services like Virtual Private Networks (VPN).
+
+They are expected to have a deep understanding of the OSI model and its
+compontents especially physical networking technologies like Ethernet and
+transport and session components like TCP/IP, UDP, and SSL. They are often
+called to identify and fix problems with applications and their connectivity
+and hence have strong skills in diagnosis, log and data analysis and
+troubleshooting.
+
 Security Engineer
 -----------------
 
@@ -125,9 +138,9 @@ Whilst seen by many as a separate discipline, Security Engineers are Operations
 people with a focus on security and security technology. Security Engineering
 roles can include:
 
-* Traditional Systems Administrators who maintain security equipment like firewalls and proxies,
-* Specialists who design and manage complex cryptographic systems,
-* Penetration testers who attempt to identify security vulnerabilities in infrastructure and applications,
+* Traditional Systems Administrators who maintain security equipment like firewalls and proxies
+* Specialists who design and manage complex cryptographic systems
+* Penetration testers who attempt to identify security vulnerabilities in infrastructure and applications
 * Engineers with a focus on Identity Management who manage complex authorisation, access control and authentication systems, and
 * Analysts and incident response personnel who respond to security events and incidents
 
@@ -145,6 +158,10 @@ Seen largely in enterprise-scale organisations, Storage Engineers focus on
 managing storage technologies such as disk arrays, Network Attached Storage
 (NAS) devices, Storage Area Networks (SANs), Tape and Media management systems
 and related backup technologies.
+
+Storage Engineers provision, configure and manage this infrastructure which
+then provides storage for web and file servers, database systems, applications
+and backups.
 
 They usually have strong skill overlaps with Network Engineers (with so much
 modern storage being network-attached in some manner) and usually have strong
