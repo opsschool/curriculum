@@ -28,6 +28,8 @@ If you are looking to add content, fix formatting, syntax, typos or other wonder
 * Commit with a descriptive message, and submit a pull request from your branch to `master`
 * One of the editors will review the change, and either merge it or provide some feedback. Community review is also encouraged.
 
+If you submit a pull request and would like to have your name associated with the project, add it to the `credits.rst` file!
+
 Some cool things:
 
 * `vim-common` contains a reStructuredText syntax highlighter
