@@ -1,4 +1,4 @@
-Careers in operations
+Careers in Operations
 *********************
 
 Introduction
