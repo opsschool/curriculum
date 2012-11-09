@@ -18,8 +18,11 @@ Shell fundamentals
 Command-line Editing Modes
 --------------------------
 - vi
+
  + set -o vi
+
 - emacs
+
  + set -o emacs
 
 See `Text Editing 101`_ for details on appropriate edit commands to use on the command line.
@@ -89,6 +92,7 @@ Customizing the Prompt for Fun or Profit
 ``$PS1``, ``$PS2``, ``$PS3``, ``$PS4``
 
 Example (needs explanation)::
+
   # if I'm root, set my terminal colors to alert me!
   if [ "$EUID" = "0" ]
   then
