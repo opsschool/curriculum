@@ -17,13 +17,13 @@ Shell fundamentals
 
 Command-line Editing Modes
 --------------------------
-- vi
+- vi ::
 
- + set -o vi
+  set -o vi
 
-- emacs
+- emacs ::
 
- + set -o emacs
+  set -o emacs
 
 See `Text Editing 101`_ for details on appropriate edit commands to use on the command line.
 
