@@ -165,3 +165,204 @@ For example, to run command ``uptime`` on our slave we will fire:
   root@master:~# salt 'slave*' cmd.run 'uptime'
   slave: 22:45:52 up 96 days, 10:42,  0 users,  load average: 0.00, 0.00, 0.00
 
+Writing configuration files
+---------------------------
+
+One of the Salt modules is called ``state``. It's purpose is to manage minions
+state.
+
+  Salt configuration management is fully managed by states, which purpose is
+  to describe a machine behaviour: from what services are running to what
+  software is installed and how it is configured. Salt configuration management
+  files (``.sls`` extension) contain collections of such states written in YAML
+  format.
+
+Salt states make use of modules and represent different module calls organised
+to achieve a specific purpose/result.
+
+Below you can find an example of such a **SLS** file, which purpose is to get
+Apache Web server installed and running:
+
+::
+  
+  apache2:
+    pkg:
+      - installed
+    service.running:
+      - require:
+        - pkg: apache2
+
+To understand the snippet above, you will need to refer to documentation on
+states: pkg and service. Basically our state calls methods ``pkg.installed``
+and ``service.running`` with argument ``apache``. ``require`` directive is
+available for most of the states and describe dependencies if any.
+
+Back to ``state`` module, it has a couple of methods to manage these states. In
+a nutshell the state file form above can be executed using ``state.sls`` 
+function. Before we do that, let's take a look where state file reside on
+master server.
+
+Salt master server configuration file has a directive called ``file_roots``,
+it accepts an YAML hash/dictionary as a value, where keys will represent the
+environment (the default value is ``base``) and values represent a set/array
+of paths on the file system (the default value is ``/srv/salt``).
+
+Now, lets save our state file and try to deploy it.
+
+Ideally you would like to split state files in directories (so that if there
+are also other files, say certificates or assets, we keep those organised). A
+possible directory layout we will use will look like this:
+
+::
+  
+  /srv/salt/
+  |-- apache
+  |   `-- init.sls
+  `-- top.sls
+
+``init.sls`` is the default filename to avoid directory filename in ``top.sls``,
+reminds of modules in Python or default web page name ``index.html``. This file
+will also contain our snippet from above.
+
+Now to deploy it, we will use the function ``state.sls`` and indicate the state
+name:
+
+::
+  
+  root@master:~# salt \slave* state.sls apache
+  slave:
+  ----------
+      State: - pkg
+      Name:      apache2
+      Function:  installed
+          Result:    True
+          Comment:   Package apache2 installed
+          Changes:   apache2.2-bin: {'new': '2.2.14-5ubuntu8.10', 'old': ''}
+                     libapr1: {'new': '1.3.8-1ubuntu0.3', 'old': ''}
+                     perl-modules: {'new': '5.10.1-8ubuntu2.1', 'old': ''}
+                     ssl-cert: {'new': '1.0.23ubuntu2', 'old': ''}
+                     apache2-utils: {'new': '2.2.14-5ubuntu8.10', 'old': ''}
+                     libaprutil1-ldap: {'new': '1.3.9+dfsg-3ubuntu0.10.04.1', 'old': ''}
+                     apache2-mpm-worker: {'new': '2.2.14-5ubuntu8.10', 'old': ''}
+                     make: {'new': '3.81-7ubuntu1', 'old': ''}
+                     libaprutil1: {'new': '1.3.9+dfsg-3ubuntu0.10.04.1', 'old': ''}
+                     apache2: {'new': '2.2.14-5ubuntu8.10', 'old': ''}
+                     libcap2: {'new': '1:2.17-2ubuntu1', 'old': ''}
+                     libaprutil1-dbd-sqlite3: {'new': '1.3.9+dfsg-3ubuntu0.10.04.1', 'old': ''}
+                     libgdbm3: {'new': '1.8.3-9', 'old': ''}
+                     perl: {'new': '5.10.1-8ubuntu2.1', 'old': ''}
+                     apache2.2-common: {'new': '2.2.14-5ubuntu8.10', 'old': ''}
+                     libexpat1: {'new': '2.0.1-7ubuntu1.1', 'old': ''}
+  
+  ----------
+      State: - service
+      Name:      apache2
+      Function:  running
+          Result:    True
+          Comment:   The service apache2 is already running
+          Changes:   
+
+You can see from the above that Salt deployed our state and reported changes.
+
+In our state file we indicated that our service requires that the package must
+be installed. Following the same approach, we can add other requirements like
+files, other packages or services.
+
+Let's add a new virtual host to our server now using the ``file`` state. We 
+can do this by creating a separate state file or re-using the existing one 
+which is less cleaner, so I will just stick to the first option.
+
+::
+  
+  include:
+    - apache
+
+  extend:
+    apache2:
+      service:
+        - require:
+          - file: www_opsschool_org
+        - watch:
+          - file: www_opsschool_org
+
+  www_opsschool_org:
+    file.managed:
+    - name: /etc/apache2/sites-enabled/www.opsschool.org
+    - source: salt://vhosts/conf/www.opsschool.org
+
+Above, we include already described state of the Apache service and extend it
+to include our configuration file. Notice we use a new directive ``watch``
+to describe our state as being dependent on what changes the configuration
+file triggers. This way, if a newer version of the same file is deployed, it
+should restart the Apache service.
+
+Below is the directory listing of the changes we did:
+
+::
+  
+  /srv/salt/
+  |-- apache
+  |   `-- init.sls
+  |-- top.sls
+  `-- vhosts
+      |-- conf
+      |   `-- www.opsschool.org
+      `-- www_opsschool_org.sls
+
+Using the newly created state file, we can try and deploy our brand new
+virtual host:
+
+::
+  
+  root@master:~# salt \slave* state.sls vhosts.www_opsschool_org
+  slave:
+  ----------
+      State: - file
+      Name:      /etc/apache2/sites-enabled/www.opsschool.org
+      Function:  managed
+          Result:    True
+          Comment:   File /etc/apache2/sites-enabled/www.opsschool.org updated
+          Changes:   diff: New file
+  
+  ----------
+      State: - pkg
+      Name:      apache2
+      Function:  installed
+          Result:    True
+          Comment:   Package apache2 is already installed
+          Changes:   
+  ----------
+      State: - service
+      Name:      apache2
+      Function:  running
+          Result:    True
+          Comment:   Started Service apache2
+          Changes:   apache2: True
+
+Salt reports another successful deploy and lists the changes as in the example
+above.
+
+All this time, you were probably wondering why there is a file ``top.sls`` and
+it was never used?! Salt master will search for this file as indicated in the
+configuration of your install. This file is used to describe the state of all
+the servers that are being managed and is deployed across all the machines
+using the function ``state.highstate``.
+
+Let's add our state files to it to describe the high state of the ``slave``.
+
+::
+  
+  base:
+    'slave*':
+      - vhosts.www_opsschool_org
+
+Where ``base`` is the default environment containing minion matchers followed
+by a list of states to be deployed on the matched host.
+
+Now you can just run:
+
+::
+  
+  root@master:~# salt \slave* state.highstate
+
+Salt should output the same results, as nothing changed meanwhile.
