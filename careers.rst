@@ -61,9 +61,40 @@ and groups well.
 Operations Engineer
 -------------------
 
+Operations engineers are expected to be able to wear any of the following hats
+(and sometimes all of them, at the same time):
+
+* Database administrator
+* Systems administrator
+* Network engineer
+* Security engineer
+* Architect
+* Performance engineer
+* Part-time software engineer
+* Storage engineer
+* High Performance Computing engineer
+
+The role can be summed up appropriately as this: When somebody wants to know
+about any production system, no matter what it is, they will ask the Operations
+engineer. Your job as the Operations engineer, is to know the system well enough
+to be able to answer any question, or know how to find the answer quickly.
+
+In the medical field, you would be a Doctor of Internal Medicine.
+In culinary, you would be an Iron Chef.
+
 
 Operations Manager
 ------------------
+
+Operations managers are similar in many ways to operations engineers. If you
+have read the `21 Irrefutable Laws of Leadership
+<http://www.amazon.com/The-21-Irrefutable-Laws-Leadership/dp/0785274316>`, then
+this is a leadership role, not a management role.
+An Operations manager works to bring their team and other teams closer together.
+A good reference on managing an operations team, is Michael Rembetsty's `PICC
+2012 talk <http://www.slideshare.net/mrembetsy/devops-picc12-management-talk>`
+on DevOps Management. It covers moving from traditional Operations to DevOps,
+and then developing and growing an Operations team.
 
 
 Specialised career paths
