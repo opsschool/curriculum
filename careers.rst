@@ -88,11 +88,11 @@ Operations Manager
 
 Operations managers are similar in many ways to operations engineers. If you
 have read the `21 Irrefutable Laws of Leadership
-<http://www.amazon.com/The-21-Irrefutable-Laws-Leadership/dp/0785274316>`, then
+<http://www.amazon.com/The-21-Irrefutable-Laws-Leadership/dp/0785274316>`_, then
 this is a leadership role, not a management role.
 An Operations manager works to bring their team and other teams closer together.
 A good reference on managing an operations team, is Michael Rembetsty's `PICC
-2012 talk <http://www.slideshare.net/mrembetsy/devops-picc12-management-talk>`
+2012 talk <http://www.slideshare.net/mrembetsy/devops-picc12-management-talk>`_
 on DevOps Management. It covers moving from traditional Operations to DevOps,
 and then developing and growing an Operations team.
 
