@@ -82,7 +82,7 @@ and on slave with:
 Configuration
 -------------
 
-Minimum configuration has to be done in order to get the slave server to
+A minimum configuration is required to get the slave server to
 communicate with master. You will need to tell it what IP address and port
 master uses.
 The configuration file usually can be found at ``/etc/salt/minion``.
