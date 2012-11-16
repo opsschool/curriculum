@@ -162,7 +162,7 @@ For example, to run command ``uptime`` on our slave we will fire:
 
 ::
   
-  root@master:~# salt 'slave*' cmd.run 'uptime'
+  root@master:~# salt slave cmd.run 'uptime'
   slave: 22:45:52 up 96 days, 10:42,  0 users,  load average: 0.00, 0.00, 0.00
 
 Writing configuration files
@@ -229,7 +229,7 @@ name:
 
 ::
   
-  root@master:~# salt \slave* state.sls apache
+  root@master:~# salt slave state.sls apache
   slave:
   ----------
       State: - pkg
@@ -314,7 +314,7 @@ virtual host:
 
 ::
   
-  root@master:~# salt \slave* state.sls vhosts.www_opsschool_org
+  root@master:~# salt slave state.sls vhosts.www_opsschool_org
   slave:
   ----------
       State: - file
@@ -363,6 +363,6 @@ Now you can just run:
 
 ::
   
-  root@master:~# salt \slave* state.highstate
+  root@master:~# salt slave state.highstate
 
 Salt should output the same results, as nothing changed meanwhile.
