@@ -69,14 +69,14 @@ You can check what version are you using on master with:
 
 ::
 
-  ~# salt --version
+  root@master:~# salt --version
   salt 0.10.3
 
 and on slave with:
 
 ::
 
-  ~# salt-minion --version
+  root@slave:~# salt-minion --version
   salt-minion 0.10.3
 
 Configuration
