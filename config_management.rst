@@ -88,7 +88,7 @@ master uses.
 The configuration file usually can be found at ``/etc/salt/minion``.
 
 You will need to edit the file where it says ``master: salt`` replacing
-``salt`` with master IP address.
+``salt`` with master IP address or its hostname/FQDN.
 
 Once done, you will need to restart the service: **salt-minion**. On most
 Linux OSes you can use ``service salt-minion restart`` for that.
