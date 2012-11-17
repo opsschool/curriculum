@@ -61,7 +61,7 @@ can load.
 Let's examine each of these in more detail:
 
 * *Firmware* is the software that is programmed into Electrically Erasable
-  Programmable Read-Only Memory (EEPROM). In this case, the firmware faciliates
+  Programmable Read-Only Memory (EEPROM). In this case, the firmware facilitates
   booting an operating system and configuring basic hardware settings.
 
 * An *integrated circuit* (IC) is what you would likely think of as a
@@ -79,12 +79,12 @@ hardware exists:
 * Memory
 * Video card
 
-Once the existance of the hardware has been confirmed, it must be configured.
+Once the existence of the hardware has been confirmed, it must be configured.
 
 The BIOS has its own memory storage known as the CMOS (Complimentary Metal Oxide
 Semiconductor). The CMOS contains all of the settings the BIOS needs to save
 about a system. Amongst others, these include the memory speed and the CPU
-frequency multipler and the location and configuration of the hard drives and
+frequency multiplier and the location and configuration of the hard drives and
 other devices.
 
 The BIOS first takes the memory frequency and attempts to set that on the memory
@@ -92,7 +92,7 @@ controller.
 
 Next the BIOS multiplies the memory frequency by the CPU frequency multiplier.
 This is the speed at which the CPU is set to run. Sometimes it is possible to
-"overclock" a CPU, but telling it to run at a higher multiplier than it was
+"overclock" a CPU, by telling it to run at a higher multiplier than it was
 designed to, effectively making it run faster. There can be benefits and risks
 to doing this, including the potential for damaging your CPU.
 
@@ -108,13 +108,13 @@ including:
 * Check that hard drives and other devices are all responding
 * Check that the keyboard and mouse are connected (this check usually be
   disabled)
-* Initialise any additional BIOSes which may be installed (eg, RAID cards)
+* Initialise any additional BIOSes which may be installed (e.g. RAID cards)
 
 Possible failures:
 
 In the event that a POST test fails, the BIOS will normally indicate failure
 through a series of beeps on the internal computer speaker. The pattern of the
-beeps incidates which specific test failed. A few beep codes are common across
+beeps indicates which specific test failed. A few beep codes are common across
 systems:
 
 * One beep: All tests passed successfully (Have you noticed that your computer
@@ -159,11 +159,11 @@ logically laid out.
 The MBR has been heavily limited in its design, as it can only occupy the first
 512 bytes of space on the drive (which is the size of one physical sector).
 This limits the tasks the boot loader program is able to do. As the complexity
-of systems grew, it became necssary to add "chain boot loading". This allows the
+of systems grew, it became necessary to add "chain boot loading". This allows the
 MBR to load an another program from elsewhere on the drive into memory. The new
 program is then executed and continues the boot process.
 
-If you're familliar with Windows, you may have seen drives labelled as "C:" and
+If you're familiar with Windows, you may have seen drives labelled as "C:" and
 "D:" - these represent different logical "partitions" on the drive.  These
 represent partitions defined in that 64-byte partition table.
 
@@ -234,7 +234,7 @@ OS Kernel and Init
 
 The traditional init system in Linux is called "System V init".
 Some replacements for this have started to emerge in recent years, however the
-tradition init system remains the most common one in use.
+traditional init system remains the most common one in use.
 
 After the initial ramdisk sets the stage for the kernel to access the hard
 drive, we now need to execute the first process that will essentially 
