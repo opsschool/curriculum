@@ -238,9 +238,9 @@ traditional init system remains the most common one in use.
 
 After the initial ramdisk sets the stage for the kernel to access the hard
 drive, we now need to execute the first process that will essentially 
-"rule them all" - /bin/init.
+"rule them all" - ``/bin/init``.
 
-The init process reads /etc/inittab to figure out what script should be run to
+The init process reads ``/etc/inittab`` to figure out what script should be run to
 initialize the system. This is a collection of scripts that vary based on the
 desired "runlevel" of the system.
 
