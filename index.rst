@@ -55,6 +55,7 @@ Contents:
    soft_skills
    labs
    seealso
+   glossary
 
 
 TODO List

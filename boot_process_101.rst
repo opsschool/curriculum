@@ -53,7 +53,7 @@ Possible failures:
 BIOS and CMOS
 =============
 
-At its core, the Basic Input/Output System (BIOS) is a integrated circuit
+At its core, the Basic Input/Output System (:term:`BIOS`) is a integrated circuit
 located on the computer's motherboard that can be programmed with firmware.
 This firmware is what facilitates the boot process so that an operating system
 can load.
