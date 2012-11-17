@@ -1,52 +1,140 @@
-The boot process
+The Boot Process
 ****************
 
-A computer exists, in our case, to load an operating system for us to make
-use of. In this section, you'll learn the basics of how a standard "PC" 
-boots. 
+The boot process of a modern system involves multiple phases.
+Here we will discuss each step, how it contributes to the boot process, what can
+go wrong and things you can do to diagnose problems during booting.
 
-This section may seem old school: after all, modern operating systems have
-dealt with making the PC boot in the first place. We encourage you to still
-know the basics of this section, though, for a few reasons:
+Learning the details of the boot process will give you a strong understanding of
+how to handle the following situations:
 
-1. Should you find yourself needing to troubleshoot a botched install, 
-   knowing where to look will save you time, and make you look like you 
-   know what you're doing. (This is likely: hardware fails!)
+1. Should you find yourself needing to troubleshoot a botched install, knowing
+   where to look will save you time, and make you look like you know what you're
+   doing. (This is likely: hardware fails!)
 
-2. If you ever want to move into more advanced Linux-based development,
-   this knowledge will serve you well.
+2. If you ever want to move into more advanced Linux-based development, this
+   knowledge will serve you well.
 
-The BIOS
-========
+You should read this document first, and then power on a computer.
+Note each of the phases described in this section. Some of them will last many
+seconds, other will be by very quickly!
+
+The following components are involved in the boot process. They are each
+executed in this order:
+
+.. contents::
+   :depth: 2
+   :local:
+
+
+Power Supply Unit
+=================
+
+When the power button is pressed, an electric circuit is closed which causes the
+power supply unit to perform a self test. In order for the boot process to
+continue, this self test has to complete successfully. If the power supply
+cannot confirm the self test, there will usually be no output at all.
+
+Most modern x86 computers, especially those using the `ATX
+<http://en.wikipedia.org/wiki/ATX>`_ standard will have two main connectors to
+the motherboard: a 4-pin connector to power the CPU, and a 24-pin connector to
+power other motherboard components. If the self test passes successfully, the
+PSU will send a signal to the CPU on the 4-pin connector to indicate that it
+should power on.
+
+Possible failures:
+
+* If the PSU is unable to perform a good self test, the PSU may be damaged. This
+  could be caused by a blown fuse, or other damage caused by over-/under-current
+  on the power line. Using a UPS or a good surge protector is always
+  recommended.
+
+
+BIOS and CMOS
+=============
 
 At its core, the Basic Input/Output System (BIOS) is a integrated circuit
 located on the computer's motherboard that can be programmed with firmware.
-This firmware is what facilitates the boot process so that an operating
-system can load.
+This firmware is what facilitates the boot process so that an operating system
+can load.
 
-That's a high-level definition, though. Let's go through it in a bit more 
-depth.
+Let's examine each of these in more detail:
 
-* Generally, *Firmware* is software that is programmed into Electrically
-  Erasable Programmable Read-Only Memory (EEPROM). In this case, the
-  firmware faciliates booting an operating system and configuring basic
-  hardware settings.
+* *Firmware* is the software that is programmed into Electrically Erasable
+  Programmable Read-Only Memory (EEPROM). In this case, the firmware faciliates
+  booting an operating system and configuring basic hardware settings.
 
 * An *integrated circuit* (IC) is what you would likely think of as a
-  stereotypical "computer chip" - a thin wafer that is packaged and has 
-  metal traces sticking out from it that can be mounted onto a printed
-  circuit board.
+  stereotypical "computer chip" - a thin wafer that is packaged and has metal
+  traces sticking out from it that can be mounted onto a printed circuit board.
 
-Basically, your BIOS is the lowest level interface you'll get to the 
-hardware in your computer. The BIOS also performs the Power-On Self Test, 
-or POST.
+Your BIOS is the lowest level interface you'll get to the hardware in your
+computer. The BIOS also performs the Power-On Self Test, or POST.
 
-How an operating system is started
-==================================
+Once the CPU has powered up, the first call made is to the BIOS.
+The first step then taken by the BIOS is to ensure that the minimum required
+hardware exists:
 
-A BIOS can read boot information from a variety of sources: 
+* CPU
+* Memory
+* Video card
 
-* Floppy Disks (even still!)
+Once the existance of the hardware has been confirmed, it must be configured.
+
+The BIOS has its own memory storage known as the CMOS (Complimentary Metal Oxide
+Semiconductor). The CMOS contains all of the settings the BIOS needs to save
+about a system. Amongst others, these include the memory speed and the CPU
+frequency multipler and the location and configuration of the hard drives and
+other devices.
+
+The BIOS first takes the memory frequency and attempts to set that on the memory
+controller.
+
+Next the BIOS multiplies the memory frequency by the CPU frequency multiplier.
+This is the speed at which the CPU is set to run. Sometimes it is possible to
+"overclock" a CPU, but telling it to run at a higher multiplier than it was
+designed to, effectively making it run faster. There can be benefits and risks
+to doing this, including the potential for damaging your CPU.
+
+
+POST tests
+==========
+
+Once the memory and CPU frequencies have been set, the BIOS begins the Power On
+Self Test (POST). The POST will perform basic checks on many system components,
+including:
+
+* Check that the memory is working
+* Check that hard drives and other devices are all responding
+* Check that the keyboard and mouse are connected (this check usually be
+  disabled)
+* Initialise any additional BIOSes which may be installed (eg, RAID cards)
+
+Possible failures:
+
+In the event that a POST test fails, the BIOS will normally indicate failure
+through a series of beeps on the internal computer speaker. The pattern of the
+beeps incidates which specific test failed. A few beep codes are common across
+systems:
+
+* One beep: All tests passed successfully (Have you noticed that your computer
+  beeps once when you press the power button? This is why!)
+* Three beeps: Often a memory error
+* One long, two short beeps: Video card or display problem
+
+Your BIOS manual should document what its specific beep codes mean.
+
+
+Master Boot Record (the old way)
+================================
+
+The next major function of the BIOS is to determine which device to use, to
+start an operating system.
+A typical BIOS can read boot information from the following devices, and will
+boot from the first device that gives a successful response. The order of
+devices to scan can be set in the BIOS:
+
+* Floppy Disks
 * CD-ROMs
 * USB Flash Drives
 * Hard Drives
@@ -55,88 +143,111 @@ A BIOS can read boot information from a variety of sources:
 We'll be discussing the first four options. There's another section that
 deals with booting over the network.
 
-Once your BIOS has been told (either though setup or through manual 
-intervention) which device you'd like to attempt to boot from, the BIOS
-attempts to read the master boot record of the device you've selected. This
-master boot record (MBR) exists on the very first 512 bytes of the drive.
+Once the BIOS has identified which drive it should attempt to boot from, it
+looks at the first sector on that drive. These sectors should contain the Master
+Boot Record.
 
-The MBR has two component parts: the boot loader information block (448 
-bytes) and the partition table (64 bytes). The boot loader information 
-block is where the first program the computer can run is stored. The 
-partition table stores information about how the drive is logically laid
-out. 
+The MBR has two component parts:
 
-If you're familliar with windows, perhaps you've seen computers with
-"C:" drives and "D:" drives, etc. - these represent different logical 
-"partitions" on the drive. These represent partitions defined in that 64-
-byte partition table.
+* The boot loader information block (448 bytes)
+* The partition table (64 bytes)
+  
+The boot loader information block is where the first program the computer can
+run is stored. The partition table stores information about how the drive is
+logically laid out. 
+
+The MBR has been heavily limited in its design, as it can only occupy the first
+512 bytes of space on the drive (which is the size of one physical sector).
+This limits the tasks the boot loader program is able to do. As the complexity
+of systems grew, it became necssary to add "chain boot loading". This allows the
+MBR to load an another program from elsewhere on the drive into memory. The new
+program is then executed and continues the boot process.
+
+If you're familliar with Windows, you may have seen drives labelled as "C:" and
+"D:" - these represent different logical "partitions" on the drive.  These
+represent partitions defined in that 64-byte partition table.
+
+
+GUID Partition Table (the new way)
+==================================
+
 
 The Bootloader
 ==============
-Realistically, any application that can fit in the first 448-bytes of the
-Master Boot Record can be a bootloader. The purpose of a bootloader is to
-load the initial kernel and supporting modules into memory.
 
-There are a few bootloaders that exist. We'll discuss the GRand Unified
-Bootloader (GRUB), a bootloader used by many Linux distributions
-today. 
+Realistically, any application that can fit in the first 448-bytes of the Master
+Boot Record can be a bootloader. The purpose of a bootloader is to load the
+initial kernel and supporting modules into memory.
 
-GRUB initializes itself in "stages." These stages are:
+There are a few bootloaders which exist. We'll discuss the GRand Unified
+Bootloader (GRUB), a bootloader used by many Linux distributions today. 
 
-* *Stage 1* - This is the very tiny application that can exist in that
-  first part of the drive. It exists to load the next, larger part of 
-  GRUB. This is the first 208 bytes of the drive.
+GRUB is a "chain bootloader" initializes itself in stages. These stages are:
 
-* *Stage 1.5* - This exists in the next 240 bytes of the MBR. It contains
-  the drivers necessary to access the filesystem that stage 2 resides on
+* *Stage 1* - This is the very tiny application that can exist in that first
+  part of the drive. It exists to load the next, larger part of GRUB. This is
+  the first 208 bytes of the drive.
 
-* *Stage 2* - This actually loads the menu and configuration options for
-  GRUB.
+* *Stage 1.5* - This exists in the next 240 bytes of the MBR. It contains the
+  drivers necessary to access the filesystem that stage 2 resides on
 
-The bootloader loads the kernel and the initram image into memory. We'll
-talk about that next.
+* *Stage 2* - This actually loads the menu and configuration options for GRUB.
+
+The bootloader loads the kernel and the initram image into memory. We'll talk
+about that next.
+
 
 The Kernel and the Ramdisk
 ==========================
-The kernel is the main component of any operating system. The kernel acts
-as the lowest-level intermediary between the hardware on your computer and
-the applications running on your computer. The kernel is responsible for 
-many other things - memory management, how the processor's time will be used
-among some of them.
 
-A kernel, therefore, is what various device drivers interact with to allow
-an operating system to effectively "talk" to hardware installed on the 
-computer.
+The kernel is the main component of any operating system. The kernel acts as the
+lowest-level intermediary between the hardware on your computer and the
+applications running on your computer. The kernel is responsible for many other
+things - memory management and how the processor's time will be used among some
+of them.
 
-So, then, what's an Initial RAM Filesystem, or Ramdisk?
+The kernel sits between the hardware of the computer, and the software of the
+operating system. It allows software to talk to the hardware through "device
+drivers".
 
-You can imagine that there are tens of thousands of different
-devices in the world. Would it be practical for Linux to include drivers
-for every storage device under the sun, so that once loaded into memory
-it could access a particular hard disk?
+So what, then, is this Initial RAM Filesystem, or Ramdisk?
 
-It'd be big -- for a boot process file.
+You can imagine there are tens of thousands of different devices in the world.
+Hard drives made with different connectors, video cards made by different
+manufacturers, network cards with special interfaces. Each of these needs its
+own device driver to bridge the hardware and software.
 
-So the concept of an Initial RAM disk was created. The Iniital
-RAM disk was created to provide a little bit of module support to the kernel
-for the boot process. With the kernel and ramdisk loaded into memory, we can
-attempt to access the disk drive and continue booting our Linux system.
+For our small and efficient little boot process, trying to keep every possible
+device driver in the kernel wouldn't work very well.
 
-/bin/init
-=========
-While there are replacements for the standard "System V init" that has 
-existed for years, we'll start with one of the more common ones.
+This lead to the creation of the Initial RAM disk as a way to provide module
+support to the kernel for the boot process. It allows the kernel to load just
+enough drivers to read from the filesystem, where it can find other specific
+device drivers as needed.
+
+With the kernel and ramdisk loaded into memory, we can attempt to access the
+disk drive and continue booting our Linux system.
+
+
+OS Kernel and Init
+==================
+
+The traditional init system in Linux is called "System V init".
+Some replacements for this have started to emerge in recent years, however the
+tradition init system remains the most common one in use.
 
 After the initial ramdisk sets the stage for the kernel to access the hard
 drive, we now need to execute the first process that will essentially 
-"rule them all" - init.
+"rule them all" - /bin/init.
 
-"init" references /etc/inittab to figure out what script should be run to
-initialize the system. This is a collection of scripts that vary based on
-the desired "runlevel" of the system.
+The init process reads /etc/inittab to figure out what script should be run to
+initialize the system. This is a collection of scripts that vary based on the
+desired "runlevel" of the system.
 
-Run levels 
-==========
+
+Run levels and Single User Mode
+===============================
+
 Various run levels have been defined to bring the system up in different
 states. In general, the following run levels are consistent in the majority 
 of Linux distributions:
