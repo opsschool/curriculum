@@ -131,7 +131,7 @@ Master Boot Record (the old way)
 The next major function of the BIOS is to determine which device to use, to
 start an operating system.
 A typical BIOS can read boot information from the following devices, and will
-boot from the first device that gives a successful response. The order of
+boot from the first device that provides a successful response. The order of
 devices to scan can be set in the BIOS:
 
 * Floppy Disks
@@ -140,7 +140,7 @@ devices to scan can be set in the BIOS:
 * Hard Drives
 * A Network
 
-We'll be discussing the first four options. There's another section that
+We'll cover the first four options here. There's another section that
 deals with booting over the network.
 
 Once the BIOS has identified which drive it should attempt to boot from, it
@@ -249,8 +249,8 @@ Run levels and Single User Mode
 ===============================
 
 Various run levels have been defined to bring the system up in different
-states. In general, the following run levels are consistent in the majority 
-of Linux distributions:
+states. In general, the following run levels are consistent in most Linux
+distributions:
 
 * 0: Halt the system
 * 1: Single User Mode
