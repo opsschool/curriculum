@@ -106,7 +106,7 @@ including:
 
 * Check that the memory is working
 * Check that hard drives and other devices are all responding
-* Check that the keyboard and mouse are connected (this check usually be
+* Check that the keyboard and mouse are connected (this check can usually be
   disabled)
 * Initialise any additional BIOSes which may be installed (e.g. RAID cards)
 
