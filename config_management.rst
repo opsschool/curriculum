@@ -66,16 +66,12 @@ one.
 
 We will continue considering you already have the latest version installed
 and available from command line on your machines.
-You can check what version are you using on master with:
-
-::
+You can check what version are you using on master with: ::
 
   root@master:~# salt --version
   salt 0.10.3
 
-and on slave with:
-
-::
+and on slave with: ::
 
   root@slave:~# salt-minion --version
   salt-minion 0.10.3
@@ -99,9 +95,7 @@ you don't need to manage those manually, except in case when you want to
 `preseed minions <https://salt.readthedocs.org/en/latest/topics/tutorials/preseed_key.html>`_.
 
 To add the slave to minions list, you will have to use the command ``salt-key``
-on master. Run ``salt-key -L`` to list available minions:
-
-::
+on master. Run ``salt-key -L`` to list available minions: ::
 
   root@master:~# salt-key -L
   Unaccepted Keys:
@@ -109,9 +103,7 @@ on master. Run ``salt-key -L`` to list available minions:
   Accepted Keys:
   Rejected:
 
-To accept a minion, run ``salt-key -a``:
-
-::
+To accept a minion, run ``salt-key -a``: ::
 
   root@master:~# salt-key -a slave
   Key for slave accepted.
@@ -123,9 +115,7 @@ To accept a minion, run ``salt-key -a``:
   Rejected:
 
 Once the minion was added, you can start managing it by using command ``salt``.
-For example to check the communication with slave, you can ping it:
-
-::
+For example to check the communication with slave, you can ping it: ::
 
   root@master:~# salt 'slave*' test.ping
   slave: True
@@ -181,10 +171,8 @@ Salt states make use of modules and represent different module calls organised
 to achieve a specific purpose/result.
 
 Below you can find an example of such a **SLS** file, which purpose is to get
-Apache Web server installed and running:
+Apache Web server installed and running: ::
 
-::
-  
   apache2:
     pkg:
       - installed
@@ -211,10 +199,8 @@ Now, lets save our state file and try to deploy it.
 
 Ideally you would like to split state files in directories (so that if there
 are also other files, say certificates or assets, we keep those organised). A
-possible directory layout we will use will look like this:
+possible directory layout we will use will look like this: ::
 
-::
-  
   /srv/salt/
   |-- apache
   |   `-- init.sls
@@ -225,10 +211,8 @@ reminds of modules in Python or default web page name ``index.html``. This file
 will also contain our snippet from above.
 
 Now to deploy it, we will use the function ``state.sls`` and indicate the state
-name:
+name: ::
 
-::
-  
   root@master:~# salt slave state.sls apache
   slave:
   ----------
@@ -270,10 +254,8 @@ files, other packages or services.
 
 Let's add a new virtual host to our server now using the ``file`` state. We 
 can do this by creating a separate state file or re-using the existing one 
-which is less cleaner, so I will just stick to the first option.
+which is less cleaner, so I will just stick to the first option.  ::
 
-::
-  
   include:
     - apache
 
@@ -296,10 +278,8 @@ to describe our state as being dependent on what changes the configuration
 file triggers. This way, if a newer version of the same file is deployed, it
 should restart the Apache service.
 
-Below is the directory listing of the changes we did:
+Below is the directory listing of the changes we did: ::
 
-::
-  
   /srv/salt/
   |-- apache
   |   `-- init.sls
@@ -310,10 +290,8 @@ Below is the directory listing of the changes we did:
       `-- www_opsschool_org.sls
 
 Using the newly created state file, we can try and deploy our brand new
-virtual host:
+virtual host: ::
 
-::
-  
   root@master:~# salt slave state.sls vhosts.www_opsschool_org
   slave:
   ----------
@@ -323,14 +301,14 @@ virtual host:
           Result:    True
           Comment:   File /etc/apache2/sites-enabled/www.opsschool.org updated
           Changes:   diff: New file
-  
+
   ----------
       State: - pkg
       Name:      apache2
       Function:  installed
           Result:    True
           Comment:   Package apache2 is already installed
-          Changes:   
+          Changes:
   ----------
       State: - service
       Name:      apache2
@@ -348,10 +326,8 @@ configuration of your install. This file is used to describe the state of all
 the servers that are being managed and is deployed across all the machines
 using the function ``state.highstate``.
 
-Let's add our state files to it to describe the high state of the ``slave``.
+Let's add our state files to it to describe the high state of the ``slave``. ::
 
-::
-  
   base:
     'slave*':
       - vhosts.www_opsschool_org
@@ -359,10 +335,8 @@ Let's add our state files to it to describe the high state of the ``slave``.
 Where ``base`` is the default environment containing minion matchers followed
 by a list of states to be deployed on the matched host.
 
-Now you can just run:
+Now you can just run: ::
 
-::
-  
   root@master:~# salt slave state.highstate
 
 Salt should output the same results, as nothing changed meanwhile. In order to
