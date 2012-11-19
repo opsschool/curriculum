@@ -310,4 +310,17 @@ get you to a command prompt.
 Getty
 =====
 
-.. todo: talk about Getting TTYs.
+.. todo: Check this section. I think i've got it down, but I'm not super
+         familliar with this part.
+
+After all the system initialization scripts have run, we're ready to present the 
+user with a prompt to login. The method of doing this is to provide a login prompt
+on a "TTY" which is short for teletype. This is a holdover from the days that a 
+user running a Unix-based operating system sat at a serially-connected teletype
+mcahine. A TTY can be a physical serial console, or a virutal one, such as the
+various terminals you'd be presented with if you used ALT+F# on the console of a
+Linux machine.
+
+Getty is often used to continiously spawn /bin/login, which reads the username and
+password of the user and, if correct, spawn the user's preferred shell. At this
+point, the boot and login process has completed.
