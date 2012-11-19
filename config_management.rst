@@ -162,12 +162,10 @@ command line which will be executed on the minions and contains both
 the command name and command's arguments. The result of the command execution
 will be listed on master with the minion name as prefix.
 
-For example, to run command ``uptime`` on our slave we will fire:
+For example, to run command ``uname -a`` on our slave we will fire: ::
 
-::
-  
-  root@master:~# salt slave cmd.run 'uptime'
-  slave: 22:45:52 up 96 days, 10:42,  0 users,  load average: 0.00, 0.00, 0.00
+  root@master:~# salt slave cmd.run 'uname -a'
+  slave: Linux slave 2.6.24-27-openvz #1 SMP Fri Mar 12 04:18:54 UTC 2010 i686 GNU/Linux
 
 Writing configuration files
 ---------------------------
