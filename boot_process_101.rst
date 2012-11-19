@@ -6,24 +6,18 @@ Here we will discuss each step, how it contributes to the boot process, what can
 go wrong and things you can do to diagnose problems during booting.
 
 Learning the details of the boot process will give you a strong understanding of
-how to handle the following situations:
-
-1. Should you find yourself needing to troubleshoot a botched install, knowing
-   where to look will save you time, and make you look like you know what you're
-   doing. (This is likely: hardware fails!)
-
-2. If you ever want to move into more advanced Linux-based development, this
-   knowledge will serve you well.
+how to troubleshoot issues that occur during boot - either at the hardware level
+or at the operating system level. 
 
 You should read this document first, and then power on a computer.
 Note each of the phases described in this section. Some of them will last many
-seconds, other will be by very quickly!
+seconds, others will fly by very quickly!
 
 The following components are involved in the boot process. They are each
 executed in this order:
 
 .. contents::
-   :depth: 2
+   :depth: 1
    :local:
 
 
@@ -124,12 +118,12 @@ systems:
 
 Your BIOS manual should document what its specific beep codes mean.
 
-
-Master Boot Record (the old way)
-================================
+Reading the Partition Table
+===========================
 
 The next major function of the BIOS is to determine which device to use, to
 start an operating system.
+
 A typical BIOS can read boot information from the following devices, and will
 boot from the first device that provides a successful response. The order of
 devices to scan can be set in the BIOS:
@@ -142,6 +136,13 @@ devices to scan can be set in the BIOS:
 
 We'll cover the first four options here. There's another section that
 deals with booting over the network.
+
+There are two seperate partition table formats: Master Boot Record (MBR) and
+the GUID Partition Table (GPT). We'll illustrate how both store data about 
+what's on the drive, and how they're used to boot the operating system.
+
+Master Boot Record (the old way)
+--------------------------------
 
 Once the BIOS has identified which drive it should attempt to boot from, it
 looks at the first sector on that drive. These sectors should contain the Master
@@ -169,7 +170,7 @@ represent partitions defined in that 64-byte partition table.
 
 
 GPT - The GUID Partition Table (the new way)
-============================================
+--------------------------------------------
 
 The design of the IBM-Compatable BIOS is an old design and has limitations in 
 today's world of hardware. To address this, the United Extensible Firmware
