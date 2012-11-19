@@ -151,7 +151,7 @@ please take a look at `Salt Globbin <http://docs.saltstack.org/en/latest/topics/
   In order to run target matching by OS, architecture or other identifiers
   take a look at `Salt Grains <https://salt.readthedocs.org/en/latest/topics/targeting/grains.html>`_.
 
-Functions that can be executed represent `Salt Modules <https://salt.readthedocs.org/en/latest/ref/modules/index.html>`_.
+Functions that can be executed represent Salt Modules.
 These modules are Python or Cython code written to abstract access to CLI or
 other minion resources. For the full list of modules please take a look
 `this page <https://salt.readthedocs.org/en/latest/ref/modules/all/index.html>`_.
