@@ -35,7 +35,7 @@ Environment variables are used to define values for often-used attributes of a u
 
 $PATH
 ~~~~~
-The most common, or most recognized, environment variable is the ``$PATH`` variable.  It defines the set of directories that the shell can search to find a command.  Without an explicit path provided when calling a command (i.e. ``/bin/ps``), the shell will search the directories listed in the ``$PATH`` variable until it finds the command.  If the command is not found in anyof the defined directories in ``$PATH``, the shell will produce an error explaining as much. ::
+The most common, or most recognized, environment variable is the ``$PATH`` variable.  It defines the set of directories that the shell can search to find a command.  Without an explicit path provided when calling a command (i.e. ``/bin/ps``), the shell will search the directories listed in the ``$PATH`` variable until it finds the command.  If the command is not found in any of the defined directories in ``$PATH``, the shell will produce an error explaining as much. ::
 
   $ foobar -V
   -bash: foobar: command not found
@@ -46,7 +46,7 @@ To view the contents of the ``$PATH`` variable, use ``echo`` to print the variab
   $ echo $PATH
   /usr/local/sbin:/sbin:/bin:/usr/sbin:/usr/bin:/usr/local/bin
 
-The order of the directories in the ``$PATH`` variable, from left to right, is important; when searching directories for a command, the shell will stop looking after if finds its first match.  In other words, using our example ``$PATH`` variable above, if there is a version of ``ps`` that exists in ``/usr/local/bin`` that is preferred (by the sysadmin) over the version that exists in ``/bin``, the shell will still execute ``/bin/ps`` due to the precedence of the directories defined in the ``$PATH`` variable.
+The order of the directories in the ``$PATH`` variable, from left to right, is important; when searching directories for a command, the shell will stop looking after it finds its first match.  In other words, using our example ``$PATH`` variable above, if there is a version of ``ps`` that exists in ``/usr/local/bin`` that is preferred (by the sysadmin) over the version that exists in ``/bin``, the shell will still execute ``/bin/ps`` due to the precedence of the directories defined in the ``$PATH`` variable.
 
 To list all of the shell's environment variables, use the ``env`` command: ::
 
@@ -60,7 +60,6 @@ To list all of the shell's environment variables, use the ``env`` command: ::
   MAIL=/var/spool/mail/root
   PWD=/root/curriculum
   PS1=[\[\e[33;1m\]\t \[\e[31;1m\]\u\[\e[0m\]@\[\e[31;1m\]\h\[\e[0m\] \W\[\e[0m\]]# 
-  AWS_IAM_HOME=/opt/aws/apitools/iam
   HISTCONTROL=ignoredups
   SHLVL=1
   SUDO_COMMAND=/bin/bash
@@ -70,8 +69,21 @@ To list all of the shell's environment variables, use the ``env`` command: ::
 
 Global vs. User Profiles
 ------------------------
-- ``/etc/profile``, ``~/.bash_profile``
-- Profile precedence
+Profiles are used to define a user's environment.  In cases where an environment variable needs to be set or a script needs to be run at login, a profile can be used to ensure this happens consistently and automatically.  Anything that can be run in a standalone shell script can be placed in a profile.
+
+There are two types of profiles:
+
+- Global profile (``/etc/profile``)
+- User profile (``~/.bash_profile``)
+
+``/etc/profile``
+~~~~~~~~~~~~~~~~
+
+``~/.bash_profile``
+~~~~~~~~~~~~~~~~~~~
+
+.. todo::
+ - Remember to discuss profile precedence
 
 Special environment variables
 -----------------------------
