@@ -57,7 +57,8 @@ Installation
 Salt has a `dedicated page <https://salt.readthedocs.org/en/latest/topics/installation/index.html>`_ 
 on how to get it installed and ready to use, please refer to it after deciding
 what OS you will be using. In our examples I am using an Ubuntu installation
-with Salt installed from `project personal package archive <https://salt.readthedocs.org/en/latest/topics/installation/ubuntu.html>`.
+with Salt installed from `project personal package archive
+<https://salt.readthedocs.org/en/latest/topics/installation/ubuntu.html>`_.
 
 To set-up the environment you can use virtual machines or real boxes, in the 
 examples we will be using hostnames **master** and **slave** to refer to each
