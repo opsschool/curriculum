@@ -6,24 +6,18 @@ Here we will discuss each step, how it contributes to the boot process, what can
 go wrong and things you can do to diagnose problems during booting.
 
 Learning the details of the boot process will give you a strong understanding of
-how to handle the following situations:
-
-1. Should you find yourself needing to troubleshoot a botched install, knowing
-   where to look will save you time, and make you look like you know what you're
-   doing. (This is likely: hardware fails!)
-
-2. If you ever want to move into more advanced Linux-based development, this
-   knowledge will serve you well.
+how to troubleshoot issues that occur during boot - either at the hardware level
+or at the operating system level. 
 
 You should read this document first, and then power on a computer.
 Note each of the phases described in this section. Some of them will last many
-seconds, other will be by very quickly!
+seconds, others will fly by very quickly!
 
 The following components are involved in the boot process. They are each
 executed in this order:
 
 .. contents::
-   :depth: 2
+   :depth: 1
    :local:
 
 
@@ -124,12 +118,12 @@ systems:
 
 Your BIOS manual should document what its specific beep codes mean.
 
-
-Master Boot Record (the old way)
-================================
+Reading the Partition Table
+===========================
 
 The next major function of the BIOS is to determine which device to use, to
 start an operating system.
+
 A typical BIOS can read boot information from the following devices, and will
 boot from the first device that provides a successful response. The order of
 devices to scan can be set in the BIOS:
@@ -142,6 +136,13 @@ devices to scan can be set in the BIOS:
 
 We'll cover the first four options here. There's another section that
 deals with booting over the network.
+
+There are two seperate partition table formats: Master Boot Record (MBR) and
+the GUID Partition Table (GPT). We'll illustrate how both store data about 
+what's on the drive, and how they're used to boot the operating system.
+
+Master Boot Record (the old way)
+--------------------------------
 
 Once the BIOS has identified which drive it should attempt to boot from, it
 looks at the first sector on that drive. These sectors should contain the Master
@@ -168,16 +169,35 @@ If you're familiar with Windows, you may have seen drives labelled as "C:" and
 represent partitions defined in that 64-byte partition table.
 
 
-GUID Partition Table (the new way)
-==================================
+GPT - The GUID Partition Table (the new way)
+--------------------------------------------
 
+The design of the IBM-Compatable BIOS is an old design and has limitations in 
+today's world of hardware. To address this, the United Extensible Firmware
+Interface (UEFI) was created. Along with the creation of the UEFI, a new 
+partition format was created.
+
+There are a few advantages to the GPT format, specifically:
+
+* A Globally-Unique ID that references a partition, rather than a partition
+  number. The MBR only has 64 bytes to store partition information - and each
+  partition definition is 16 bytes. This design allows for unlimited partitions.
+
+* The ability to boot from storage devices that are greater than 2 TBs, due to 
+  a larger address space to identify sectors on the disk. The MBR simply had no 
+  way to address disks greater than 2 TB.
+
+* A backup copy of the table that can be used in the event that the primary
+  copy is corrupted. This copy is stored at the 'end' of the disk.
+
+There is some compatibility maintained to allow standard PCs that are using 
+old BIOS to boot from a drive that has a GPT on it. 
 
 The Bootloader
 ==============
 
-Realistically, any application that can fit in the first 448-bytes of the Master
-Boot Record can be a bootloader. The purpose of a bootloader is to load the
-initial kernel and supporting modules into memory.
+The purpose of a bootloader is to load the initial kernel and supporting modules 
+into memory.
 
 There are a few bootloaders which exist. We'll discuss the GRand Unified
 Bootloader (GRUB), a bootloader used by many Linux distributions today. 
@@ -185,17 +205,28 @@ Bootloader (GRUB), a bootloader used by many Linux distributions today.
 GRUB is a "chain bootloader" initializes itself in stages. These stages are:
 
 * *Stage 1* - This is the very tiny application that can exist in that first
-  part of the drive. It exists to load the next, larger part of GRUB. This is
-  the first 208 bytes of the drive.
+  part of the drive. It exists to load the next, larger part of GRUB. 
 
-* *Stage 1.5* - This exists in the next 240 bytes of the MBR. It contains the
-  drivers necessary to access the filesystem that stage 2 resides on
+* *Stage 1.5* - Contains the drivers necessary to access the filesystem that 
+  stage 2 resides on
 
-* *Stage 2* - This actually loads the menu and configuration options for GRUB.
+* *Stage 2* - This stage loads the menu and configuration options for GRUB.
 
-The bootloader loads the kernel and the initram image into memory. We'll talk
-about that next.
+On an MBR-formatted drive and standard BIOS
+-------------------------------------------
 
+These stages must fit in that first 448 bytes of the partition table. Generally,
+stage 1 and stage 1.5 are small enough to exist in that first 448 bytes. They 
+contain the appropriate logic that allow the loader to read the filesystem that
+stage two is located on. 
+
+On a GPT-formatted drive and UEFI
+---------------------------------
+
+UEFI motherboards actually are able to read FAT32 filesystems and execute code. So
+the system firmware goes and looks for an image file that contains the boot code
+for stages 1 and 1.5 so that stage 2 can be managed inside of the operating 
+system.
 
 The Kernel and the Ramdisk
 ==========================
@@ -245,8 +276,8 @@ initialize the system. This is a collection of scripts that vary based on the
 desired "runlevel" of the system.
 
 
-Run levels and Single User Mode
-===============================
+Run levels
+==========
 
 Various run levels have been defined to bring the system up in different
 states. In general, the following run levels are consistent in most Linux
@@ -257,7 +288,40 @@ distributions:
 * 6: Reboot the machine
 
 Between distributions there can be various meanings for runlevels 2-5.
-RedHat-based distributions use runlevel 3 for a multi-user console
+RedHat-based distributions use runlevel 3 for a multiuser console
 environment and 5 for a graphical-based environment. 
 
-.. todo: Finish section. Getty -> Login
+Multiuser vs. Singleuser run levels
+-----------------------------------
+
+As the name implies, in one run level multiple users can use the machine, versus
+one user in single user mode. So why does single user mode exist, anyways?
+
+In multiuser run levels, the system boots as normal. All associated services -
+such as SSH, or HTTPd, or whatnot load in a particular order. The network 
+interfaces, if configured, are enabled. It's business as usual if you're booting
+in a multiuser run level. 
+
+You will find yourself in single user mode when something breaks: something
+you configured interferes with the boot process and you need to turn it off,  or
+perhaps the drive running the server has failed and you need to run a disk check.
+In single user mode, generally the bare minimum amount of services are started to
+get you to a command prompt. 
+
+Getty
+=====
+
+.. todo: Check this section. I think i've got it down, but I'm not super
+         familliar with this part.
+
+After all the system initialization scripts have run, we're ready to present the 
+user with a prompt to login. The method of doing this is to provide a login prompt
+on a "TTY" which is short for teletype. This is a holdover from the days that a 
+user running a Unix-based operating system sat at a serially-connected teletype
+mcahine. A TTY can be a physical serial console, or a virutal one, such as the
+various terminals you'd be presented with if you used ALT+F# on the console of a
+Linux machine.
+
+Getty is often used to continiously spawn /bin/login, which reads the username and
+password of the user and, if correct, spawn the user's preferred shell. At this
+point, the boot and login process has completed.
