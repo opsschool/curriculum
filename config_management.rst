@@ -133,12 +133,10 @@ For example to check the communication with slave, you can ping it:
 Remote execution
 ----------------
 
-In order to understand how Salt manages minions and configuration files syntax,
-lets have a look at ``salt`` command line tool. Lets take our previous command
-and inspect it:
+In order to understand how Salt does it's configuration management on minions,
+we'll take look at the ``salt`` command line tool. Lets take our
+previous command and inspect it: ::
 
-::
-  
   root@master:~# salt 'slave*' test.ping
                              ^ ^
                        ______| |__________________
