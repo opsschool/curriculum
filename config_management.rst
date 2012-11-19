@@ -367,4 +367,14 @@ Now you can just run:
   
   root@master:~# salt slave state.highstate
 
-Salt should output the same results, as nothing changed meanwhile.
+Salt should output the same results, as nothing changed meanwhile. In order to
+add more services to your slave, feel free to create new states or extend the
+existing one. A good collection of states that can be used as examples can be
+found on Github:
+
+* https://github.com/saltstack/salt-states -- Community contributed states
+* https://github.com/AppThemes/salt-config-example -- WordPress stack 
+  with deployments using Git
+
+For the full documentation on available states, please take a look at `Salt 
+States documentation <http://salt.readthedocs.org/en/latest/ref/states/all/index.html>`_.
