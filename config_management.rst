@@ -145,7 +145,8 @@ and inspect it:
                        target  function to execute
 
 **target** is the minion(s) name. It can represent the exact name or just
-a part of it followed by a wildcard.
+a part of it followed by a wildcard. For more details on how to match minions
+please take a look at `Salt Globbin <http://docs.saltstack.org/en/latest/topics/targeting/globbing.html>`_.
 
   In order to run target matching by OS, architecture or other identifiers
   take a look at `Salt Grains <https://salt.readthedocs.org/en/latest/topics/targeting/grains.html>`_.
