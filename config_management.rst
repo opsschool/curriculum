@@ -156,9 +156,11 @@ These modules are Python or Cython code written to abstract access to CLI or
 other minion resources. For the full list of modules please take a look
 `this page <https://salt.readthedocs.org/en/latest/ref/modules/all/index.html>`_.
 
-One of the modules Salt can use is called **cmd**, it has the method **run**
-which accepts as arguments a string which will be executed as a command on
-minions and the resulted data will be outputted prefixed with minion name.
+One of the modules provided by Salt, is the **cmd** module. It has the **run**
+method, which accepts a string as arguments. The string is the exact
+command line which will be executed on the minions and contains both
+the command name and command's arguments. The result of the command execution
+will be listed on master with the minion name as prefix.
 
 For example, to run command ``uptime`` on our slave we will fire:
 
