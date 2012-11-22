@@ -32,17 +32,17 @@ SaltStack
 =========
 
 SaltStack or just **Salt**, is a configuration management and remote
-execution tool written in Python. Salt uses ZeroMQ to manage communication 
-between master and minions, and RSA keys to handle authentication. 
+execution tool written in Python. Salt uses ZeroMQ to manage communication
+between master and minions, and RSA keys to handle authentication.
 This chapter will explain the basics on how to get started with it.
 
 Salt is a centralized system, which means there is a main server (also referred
 here as *master*) which manages other machines connected to it or itself (also
 referred here as *minions*). This topology can be further split using
-`Salt Syndic <http://docs.saltstack.org/en/latest/ref/syndic.html>`_, 
+`Salt Syndic <http://docs.saltstack.org/en/latest/ref/syndic.html>`_,
 please refer to Salt documentation for more details on this topic.
 
-In examples below we will be using the master + 1 minion setup. The approximate 
+In examples below we will be using the master + 1 minion setup. The approximate
 time you will need to walk through all the content is about 10 minutes.
 
 Prerequisites:
@@ -54,13 +54,13 @@ Prerequisites:
 Installation
 ------------
 
-Salt has a `dedicated page <https://salt.readthedocs.org/en/latest/topics/installation/index.html>`_ 
+Salt has a `dedicated page <https://salt.readthedocs.org/en/latest/topics/installation/index.html>`_
 on how to get it installed and ready to use, please refer to it after deciding
 what OS you will be using. In our examples I am using an Ubuntu installation
 with Salt installed from `project personal package archive
 <https://salt.readthedocs.org/en/latest/topics/installation/ubuntu.html>`_.
 
-To set-up the environment you can use virtual machines or real boxes, in the 
+To set-up the environment you can use virtual machines or real boxes, in the
 examples we will be using hostnames **master** and **slave** to refer to each
 one.
 
@@ -202,7 +202,7 @@ and ``service.running`` with argument ``apache``. ``require`` directive is
 available for most of the states and describe dependencies if any.
 
 Back to ``state`` module, it has a couple of methods to manage these states. In
-a nutshell the state file form above can be executed using ``state.sls`` 
+a nutshell the state file form above can be executed using ``state.sls``
 function. Before we do that, let's take a look where state file reside on
 master server.
 
@@ -255,14 +255,14 @@ name:
                      perl: {'new': '5.10.1-8ubuntu2.1', 'old': ''}
                      apache2.2-common: {'new': '2.2.14-5ubuntu8.10', 'old': ''}
                      libexpat1: {'new': '2.0.1-7ubuntu1.1', 'old': ''}
-  
+
   ----------
       State: - service
       Name:      apache2
       Function:  running
           Result:    True
           Comment:   The service apache2 is already running
-          Changes:   
+          Changes:
 
 You can see from the above that Salt deployed our state and reported changes.
 
@@ -270,8 +270,8 @@ In our state file we indicated that our service requires that the package must
 be installed. Following the same approach, we can add other requirements like
 files, other packages or services.
 
-Let's add a new virtual host to our server now using the ``file`` state. We 
-can do this by creating a separate state file or re-using the existing one 
+Let's add a new virtual host to our server now using the ``file`` state. We
+can do this by creating a separate state file or re-using the existing one
 which is less cleaner, so I will just stick to the first option.
 
 .. code-block:: yaml
@@ -371,8 +371,8 @@ existing one. A good collection of states that can be used as examples can be
 found on Github:
 
 * https://github.com/saltstack/salt-states -- Community contributed states
-* https://github.com/AppThemes/salt-config-example -- WordPress stack 
+* https://github.com/AppThemes/salt-config-example -- WordPress stack
   with deployments using Git
 
-For the full documentation on available states, please take a look at `Salt 
+For the full documentation on available states, please take a look at `Salt
 States documentation <http://salt.readthedocs.org/en/latest/ref/states/all/index.html>`_.
