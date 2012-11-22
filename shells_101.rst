@@ -25,9 +25,7 @@ Command-line Editing Modes
 
   ``set -o emacs``
 
-See `Text Editing 101`_ for details on appropriate edit commands to use on the command line.
-
-.. _`Text Editing 101`: /text_editing_101.html
+See :doc:`text_editing_101` for details on appropriate edit commands to use on the command line.
 
 Environment variables
 ---------------------
@@ -85,10 +83,7 @@ Job control
 -----------
 - ``^Z``, ``bg``, ``fg``, ``%1/2/3..``, ``jobs``
 
-For information on ensuring running jobs continue, even when terminal connectivity is lost, see the sections on `GNU screen`_ and tmux_.
-
-.. _`GNU screen`: /sysadmin_tools.html#gnu-screen
-.. _tmux: /sysadmin_tools.html#tmux
+For information on ensuring running jobs continue, even when terminal connectivity is lost, see the sections on :ref:`gnu-screen` and :ref:`tmux`.
 
 Customizing the Prompt for Fun or Profit
 ----------------------------------------
