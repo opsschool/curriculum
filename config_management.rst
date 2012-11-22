@@ -43,7 +43,7 @@ referred here as *minions*). This topology can be further split using
 please refer to Salt documentation for more details on this topic.
 
 In examples below we will be using the master + 1 minion setup. The approximate
-time you will need to walk through all the content is about 10 minutes.
+time you will need to work through all the content is about 10 minutes.
 
 Prerequisites:
 
@@ -56,16 +56,17 @@ Installation
 
 Salt has a `dedicated page <https://salt.readthedocs.org/en/latest/topics/installation/index.html>`_
 on how to get it installed and ready to use, please refer to it after deciding
-what OS you will be using. In our examples I am using an Ubuntu installation
-with Salt installed from `project personal package archive
+what OS you will be using. These examples are shown on an Ubuntu installation
+with Salt installed from a `project personal package archive
 <https://salt.readthedocs.org/en/latest/topics/installation/ubuntu.html>`_.
 
 To set-up the environment you can use virtual machines or real boxes, in the
 examples we will be using hostnames **master** and **slave** to refer to each
 one.
 
-We will continue considering you already have the latest version installed
-and available from command line on your machines.
+At this point, you should install the latest version on both machines with the
+directions provided above, and have a command line session open on both your
+**master** and **slave** machines.
 You can check what version are you using on master with:
 
 .. code-block:: bash
@@ -86,20 +87,21 @@ Configuration
 A minimum configuration is required to get the slave server to
 communicate with master. You will need to tell it what IP address and port
 master uses.
-The configuration file usually can be found at ``/etc/salt/minion``.
+The configuration file can typically be found at :file:`/etc/salt/minion`.
 
-You will need to edit the file where it says ``master: salt`` replacing
+You will need to edit the configuration file directive ``master: salt`` replacing
 ``salt`` with master IP address or its hostname/FQDN.
 
 Once done, you will need to restart the service: **salt-minion**. On most
-Linux OSes you can use ``service salt-minion restart`` for that.
+Linux distributions you can execute ``service salt-minion restart`` to restart
+the service.
 
 Authentication keys for master/slave are generated during installation so
 you don't need to manage those manually, except in case when you want to
 `preseed minions <https://salt.readthedocs.org/en/latest/topics/tutorials/preseed_key.html>`_.
 
 To add the slave to minions list, you will have to use the command ``salt-key``
-on master. Run ``salt-key -L`` to list available minions:
+on master. Execute ``salt-key -L`` to list available minions:
 
 .. code-block:: bash
 
@@ -109,7 +111,7 @@ on master. Run ``salt-key -L`` to list available minions:
   Accepted Keys:
   Rejected:
 
-To accept a minion, run ``salt-key -a``:
+To accept a minion, execute ``salt-key -a <minion-name>``:
 
 .. code-block:: bash
 
@@ -122,8 +124,8 @@ To accept a minion, run ``salt-key -a``:
   slave
   Rejected:
 
-Once the minion was added, you can start managing it by using command ``salt``.
-For example to check the communication with slave, you can ping the slave from the master:
+Once the minion is added, you can start managing it by using command ``salt``.
+For example, to check the communication with slave, you can ping the slave from the master:
 
 .. code-block:: bash
 
@@ -144,25 +146,25 @@ previous command and inspect the parts of the command:
                        ______| |__________________
                        target  function to execute
 
-**target** is the minion(s) name. It can represent the exact name or just
+**target** is the minion(s) name. It can represent the exact name or only
 a part of it followed by a wildcard. For more details on how to match minions
 please take a look at `Salt Globbing <http://docs.saltstack.org/en/latest/topics/targeting/globbing.html>`_.
 
   In order to run target matching by OS, architecture or other identifiers
   take a look at `Salt Grains <https://salt.readthedocs.org/en/latest/topics/targeting/grains.html>`_.
 
-Functions that can be executed represent Salt Modules.
+Functions that can be executed are called Salt Modules.
 These modules are Python or Cython code written to abstract access to CLI or
 other minion resources. For the full list of modules please take a look
 `this page <https://salt.readthedocs.org/en/latest/ref/modules/all/index.html>`_.
 
 One of the modules provided by Salt, is the **cmd** module. It has the **run**
-method, which accepts a string as arguments. The string is the exact
+method, which accepts a string as an argument. The string is the exact
 command line which will be executed on the minions and contains both
 the command name and command's arguments. The result of the command execution
 will be listed on master with the minion name as prefix.
 
-For example, to run command ``uname -a`` on our slave we will fire:
+For example, to run command ``uname -a`` on our slave we will execute:
 
 .. code-block:: bash
 
@@ -172,7 +174,7 @@ For example, to run command ``uname -a`` on our slave we will fire:
 Writing configuration files
 ---------------------------
 
-One of the Salt modules is called ``state``. It's purpose is to manage minions
+One of the Salt modules is called ``state``. Its purpose is to manage minions
 state.
 
   Salt configuration management is fully managed by states, which purpose is
@@ -184,7 +186,7 @@ state.
 Salt states make use of modules and represent different module calls organised
 to achieve a specific purpose/result.
 
-Below you can find an example of such a **SLS** file, which purpose is to get
+Below you can find an example of such a **SLS** file, whose purpose is to get
 Apache Web server installed and running:
 
 .. code-block:: yaml
@@ -198,29 +200,31 @@ Apache Web server installed and running:
 
 To understand the snippet above, you will need to refer to documentation on
 states: pkg and service. Basically our state calls methods ``pkg.installed``
-and ``service.running`` with argument ``apache``. ``require`` directive is
+and ``service.running`` with argument ``apache2``. ``require`` directive is
 available for most of the states and describe dependencies if any.
 
 Back to ``state`` module, it has a couple of methods to manage these states. In
 a nutshell the state file form above can be executed using ``state.sls``
-function. Before we do that, let's take a look where state file reside on
-master server.
+function. Before we do that, let's take a look where state files reside on
+the master server.
 
-Salt master server configuration file has a directive called ``file_roots``,
+Salt master server configuration file has a directive named ``file_roots``,
 it accepts an YAML hash/dictionary as a value, where keys will represent the
 environment (the default value is ``base``) and values represent a set/array
-of paths on the file system (the default value is ``/srv/salt``).
+of paths on the file system (the default value is :file:`/srv/salt`).
 
 Now, lets save our state file and try to deploy it.
 
-Ideally you would like to split state files in directories (so that if there
-are also other files, say certificates or assets, we keep those organised). A
-possible directory layout we will use will look like this: ::
+Ideally you would split state files in directories (so that if there
+are also other files, say certificates or assets, we keep those organised). The
+directory layout we will use in our example will look like this: ::
 
   /srv/salt/
   |-- apache
   |   `-- init.sls
   `-- top.sls
+
+.. todo:: The following paragraph needs some further explanation.
 
 ``init.sls`` is the default filename to avoid directory filename in ``top.sls``,
 reminds of modules in Python or default web page name ``index.html``. This file
@@ -264,15 +268,17 @@ name:
           Comment:   The service apache2 is already running
           Changes:
 
-You can see from the above that Salt deployed our state and reported changes.
+You can see from the above that Salt deployed our state to **slave** and reported changes.
 
 In our state file we indicated that our service requires that the package must
 be installed. Following the same approach, we can add other requirements like
 files, other packages or services.
 
 Let's add a new virtual host to our server now using the ``file`` state. We
-can do this by creating a separate state file or re-using the existing one
-which is less cleaner, so I will just stick to the first option.
+can do this by creating a separate state file or re-using the existing one.
+Since creating a new file will keep code better organised, we will take that approach.
+
+.. todo:: explain which file this content will be in
 
 .. code-block:: yaml
 
@@ -359,13 +365,13 @@ Let's add our state files to it to describe the high state of the ``slave``.
 Where ``base`` is the default environment containing minion matchers followed
 by a list of states to be deployed on the matched host.
 
-Now you can run:
+Now you can execute:
 
 .. code-block:: bash
 
   root@master:~# salt slave state.highstate
 
-Salt should output the same results, as nothing changed meanwhile. In order to
+Salt should output the same results, as nothing changed since the last run. In order to
 add more services to your slave, feel free to create new states or extend the
 existing one. A good collection of states that can be used as examples can be
 found on Github:
@@ -374,5 +380,4 @@ found on Github:
 * https://github.com/AppThemes/salt-config-example -- WordPress stack
   with deployments using Git
 
-For the full documentation on available states, please take a look at `Salt
-States documentation <http://salt.readthedocs.org/en/latest/ref/states/all/index.html>`_.
+.. seealso:: For the full documentation on available states, please see `Salt States documentation <http://salt.readthedocs.org/en/latest/ref/states/all/index.html>`_.
