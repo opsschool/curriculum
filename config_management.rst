@@ -66,12 +66,16 @@ one.
 
 We will continue considering you already have the latest version installed
 and available from command line on your machines.
-You can check what version are you using on master with: ::
+You can check what version are you using on master with:
+
+.. code-block:: bash
 
   root@master:~# salt --version
   salt 0.10.3
 
-and on slave with: ::
+and on slave with:
+
+.. code-block:: bash
 
   root@slave:~# salt-minion --version
   salt-minion 0.10.3
@@ -95,7 +99,9 @@ you don't need to manage those manually, except in case when you want to
 `preseed minions <https://salt.readthedocs.org/en/latest/topics/tutorials/preseed_key.html>`_.
 
 To add the slave to minions list, you will have to use the command ``salt-key``
-on master. Run ``salt-key -L`` to list available minions: ::
+on master. Run ``salt-key -L`` to list available minions:
+
+.. code-block:: bash
 
   root@master:~# salt-key -L
   Unaccepted Keys:
@@ -103,7 +109,9 @@ on master. Run ``salt-key -L`` to list available minions: ::
   Accepted Keys:
   Rejected:
 
-To accept a minion, run ``salt-key -a``: ::
+To accept a minion, run ``salt-key -a``:
+
+.. code-block:: bash
 
   root@master:~# salt-key -a slave
   Key for slave accepted.
@@ -115,7 +123,9 @@ To accept a minion, run ``salt-key -a``: ::
   Rejected:
 
 Once the minion was added, you can start managing it by using command ``salt``.
-For example to check the communication with slave, you can ping it: ::
+For example to check the communication with slave, you can ping the slave from the master:
+
+.. code-block:: bash
 
   root@master:~# salt 'slave*' test.ping
   slave: True
@@ -123,9 +133,11 @@ For example to check the communication with slave, you can ping it: ::
 Remote execution
 ----------------
 
-In order to understand how Salt does it's configuration management on minions,
-we'll take look at the ``salt`` command line tool. Lets take our
-previous command and inspect it: ::
+In order to understand how Salt does its configuration management on minions,
+we'll take look at the ``salt`` command line tool. Let's take our
+previous command and inspect the parts of the command:
+
+.. code-block:: bash
 
   root@master:~# salt 'slave*' test.ping
                              ^ ^
@@ -150,7 +162,9 @@ command line which will be executed on the minions and contains both
 the command name and command's arguments. The result of the command execution
 will be listed on master with the minion name as prefix.
 
-For example, to run command ``uname -a`` on our slave we will fire: ::
+For example, to run command ``uname -a`` on our slave we will fire:
+
+.. code-block:: bash
 
   root@master:~# salt slave cmd.run 'uname -a'
   slave: Linux slave 2.6.24-27-openvz #1 SMP Fri Mar 12 04:18:54 UTC 2010 i686 GNU/Linux
@@ -171,7 +185,9 @@ Salt states make use of modules and represent different module calls organised
 to achieve a specific purpose/result.
 
 Below you can find an example of such a **SLS** file, which purpose is to get
-Apache Web server installed and running: ::
+Apache Web server installed and running:
+
+.. code-block:: yaml
 
   apache2:
     pkg:
@@ -211,7 +227,9 @@ reminds of modules in Python or default web page name ``index.html``. This file
 will also contain our snippet from above.
 
 Now to deploy it, we will use the function ``state.sls`` and indicate the state
-name: ::
+name:
+
+.. code-block:: bash
 
   root@master:~# salt slave state.sls apache
   slave:
@@ -254,7 +272,9 @@ files, other packages or services.
 
 Let's add a new virtual host to our server now using the ``file`` state. We 
 can do this by creating a separate state file or re-using the existing one 
-which is less cleaner, so I will just stick to the first option.  ::
+which is less cleaner, so I will just stick to the first option.
+
+.. code-block:: yaml
 
   include:
     - apache
@@ -290,7 +310,9 @@ Below is the directory listing of the changes we did: ::
       `-- www_opsschool_org.sls
 
 Using the newly created state file, we can try and deploy our brand new
-virtual host: ::
+virtual host:
+
+.. code-block:: bash
 
   root@master:~# salt slave state.sls vhosts.www_opsschool_org
   slave:
@@ -326,7 +348,9 @@ configuration of your install. This file is used to describe the state of all
 the servers that are being managed and is deployed across all the machines
 using the function ``state.highstate``.
 
-Let's add our state files to it to describe the high state of the ``slave``. ::
+Let's add our state files to it to describe the high state of the ``slave``.
+
+.. code-block:: yaml
 
   base:
     'slave*':
@@ -335,7 +359,9 @@ Let's add our state files to it to describe the high state of the ``slave``. ::
 Where ``base`` is the default environment containing minion matchers followed
 by a list of states to be deployed on the matched host.
 
-Now you can just run: ::
+Now you can run:
+
+.. code-block:: bash
 
   root@master:~# salt slave state.highstate
 
