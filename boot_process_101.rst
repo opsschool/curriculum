@@ -7,7 +7,7 @@ go wrong and things you can do to diagnose problems during booting.
 
 Learning the details of the boot process will give you a strong understanding of
 how to troubleshoot issues that occur during boot - either at the hardware level
-or at the operating system level. 
+or at the operating system level.
 
 You should read this document first, and then power on a computer.
 Note each of the phases described in this section. Some of them will last many
@@ -138,7 +138,7 @@ We'll cover the first four options here. There's another section that
 deals with booting over the network.
 
 There are two separate partition table formats: Master Boot Record (MBR) and
-the GUID Partition Table (GPT). We'll illustrate how both store data about 
+the GUID Partition Table (GPT). We'll illustrate how both store data about
 what's on the drive, and how they're used to boot the operating system.
 
 Master Boot Record (the old way)
@@ -152,10 +152,10 @@ The MBR has two component parts:
 
 * The boot loader information block (448 bytes)
 * The partition table (64 bytes)
-  
+
 The boot loader information block is where the first program the computer can
 run is stored. The partition table stores information about how the drive is
-logically laid out. 
+logically laid out.
 
 The MBR has been heavily limited in its design, as it can only occupy the first
 512 bytes of space on the drive (which is the size of one physical sector).
@@ -172,9 +172,9 @@ represent partitions defined in that 64-byte partition table.
 GPT - The GUID Partition Table (the new way)
 --------------------------------------------
 
-The design of the IBM-Compatable BIOS is an old design and has limitations in 
+The design of the IBM-Compatable BIOS is an old design and has limitations in
 today's world of hardware. To address this, the United Extensible Firmware
-Interface (UEFI) was created. Along with the creation of the UEFI, a new 
+Interface (UEFI) was created. Along with the creation of the UEFI, a new
 partition format was created.
 
 There are a few advantages to the GPT format, specifically:
@@ -183,31 +183,31 @@ There are a few advantages to the GPT format, specifically:
   number. The MBR only has 64 bytes to store partition information - and each
   partition definition is 16 bytes. This design allows for unlimited partitions.
 
-* The ability to boot from storage devices that are greater than 2 TBs, due to 
-  a larger address space to identify sectors on the disk. The MBR simply had no 
+* The ability to boot from storage devices that are greater than 2 TBs, due to
+  a larger address space to identify sectors on the disk. The MBR simply had no
   way to address disks greater than 2 TB.
 
 * A backup copy of the table that can be used in the event that the primary
   copy is corrupted. This copy is stored at the 'end' of the disk.
 
-There is some compatibility maintained to allow standard PCs that are using 
-old BIOS to boot from a drive that has a GPT on it. 
+There is some compatibility maintained to allow standard PCs that are using
+old BIOS to boot from a drive that has a GPT on it.
 
 The Bootloader
 ==============
 
-The purpose of a bootloader is to load the initial kernel and supporting modules 
+The purpose of a bootloader is to load the initial kernel and supporting modules
 into memory.
 
 There are a few bootloaders which exist. We'll discuss the GRand Unified
-Bootloader (GRUB), a bootloader used by many Linux distributions today. 
+Bootloader (GRUB), a bootloader used by many Linux distributions today.
 
 GRUB is a "chain bootloader" initializes itself in stages. These stages are:
 
 * *Stage 1* - This is the very tiny application that can exist in that first
-  part of the drive. It exists to load the next, larger part of GRUB. 
+  part of the drive. It exists to load the next, larger part of GRUB.
 
-* *Stage 1.5* - Contains the drivers necessary to access the filesystem that 
+* *Stage 1.5* - Contains the drivers necessary to access the filesystem that
   stage 2 resides on
 
 * *Stage 2* - This stage loads the menu and configuration options for GRUB.
@@ -216,16 +216,16 @@ On an MBR-formatted drive and standard BIOS
 -------------------------------------------
 
 These stages must fit in that first 448 bytes of the partition table. Generally,
-stage 1 and stage 1.5 are small enough to exist in that first 448 bytes. They 
+stage 1 and stage 1.5 are small enough to exist in that first 448 bytes. They
 contain the appropriate logic that allow the loader to read the filesystem that
-stage two is located on. 
+stage two is located on.
 
 On a GPT-formatted drive and UEFI
 ---------------------------------
 
 UEFI motherboards actually are able to read FAT32 filesystems and execute code. So
 the system firmware goes and looks for an image file that contains the boot code
-for stages 1 and 1.5 so that stage 2 can be managed inside of the operating 
+for stages 1 and 1.5 so that stage 2 can be managed inside of the operating
 system.
 
 The Kernel and the Ramdisk
@@ -268,7 +268,7 @@ Some replacements for this have started to emerge in recent years, however the
 traditional init system remains the most common one in use.
 
 After the initial ramdisk sets the stage for the kernel to access the hard
-drive, we now need to execute the first process that will essentially 
+drive, we now need to execute the first process that will essentially
 "rule them all" - ``/bin/init``.
 
 The init process reads ``/etc/inittab`` to figure out what script should be run to
@@ -289,7 +289,7 @@ distributions:
 
 Between distributions there can be various meanings for runlevels 2-5.
 RedHat-based distributions use runlevel 3 for a multiuser console
-environment and 5 for a graphical-based environment. 
+environment and 5 for a graphical-based environment.
 
 Multiuser vs. Singleuser run levels
 -----------------------------------
@@ -298,15 +298,15 @@ As the name implies, in one run level multiple users can use the machine, versus
 one user in single user mode. So why does single user mode exist, anyways?
 
 In multiuser run levels, the system boots as normal. All associated services -
-such as SSH, or HTTPd, or whatnot load in a particular order. The network 
+such as SSH, or HTTPd, or whatnot load in a particular order. The network
 interfaces, if configured, are enabled. It's business as usual if you're booting
-in a multiuser run level. 
+in a multiuser run level.
 
 You will find yourself in single user mode when something breaks: something
 you configured interferes with the boot process and you need to turn it off,  or
 perhaps the drive running the server has failed and you need to run a disk check.
 In single user mode, generally the bare minimum amount of services are started to
-get you to a command prompt. 
+get you to a command prompt.
 
 Getty
 =====
@@ -314,9 +314,9 @@ Getty
 .. todo: Check this section. I think i've got it down, but I'm not super
          familiar with this part.
 
-After all the system initialization scripts have run, we're ready to present the 
+After all the system initialization scripts have run, we're ready to present the
 user with a prompt to login. The method of doing this is to provide a login prompt
-on a "TTY" which is short for teletype. This is a holdover from the days that a 
+on a "TTY" which is short for teletype. This is a holdover from the days that a
 user running a Unix-based operating system sat at a serially-connected teletype
 machine. A TTY can be a physical serial console, or a virtual one, such as the
 various terminals you'd be presented with if you used ALT+F# on the console of a
