@@ -226,11 +226,11 @@ directory layout we will use in our example will look like this: ::
 
 When creating new states, there is a file naming convention.
 Look at ``init.sls``, it is the default filename to be searched when loading
-a state. This reminds of modules in Python or default web page name
-``index.html``.
+a state. This is similar to Python or default web page name ``index.html``.
 
-So when you create a new directory for a state with ``init.sls`` you do not write
-``pkg: new_state.init``, use just ``pkg: new_state.init``.
+So when you create a new directory for a state with an ``init.sls`` file in it
+it translates as the Salt state name and you can refer to it as that. For example,
+you do not write ``pkg: new_state.init``, write just ``pkg: new_state``.
 
 Now to deploy it, we will use the function ``state.sls`` and indicate the state
 name:
@@ -281,7 +281,7 @@ can do this by creating a separate state file or re-using the existing one.
 Since creating a new file will keep code better organised, we will take that approach.
 
 We will create a new ``sls`` file with a relevant name, say ``www_opsschool_org.sls``
-with the content from below:
+with the content below:
 
 .. code-block:: yaml
 
