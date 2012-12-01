@@ -7,10 +7,9 @@ A [Li|U]nix shell is the command-line interface between the user and the system.
 
 Introduction to Bash
 ====================
-Bash is known as the Bourne-again shell and is a play on the name of the previously named Bourne shell (/bin/sh) written by Steve Bourne.
-
-.. todo::
-   Cite source for the above statement.
+**Bash** is known as the Bourne-again shell, written by Brian Fox, and is a play
+on the name of the previously named Bourne shell (/bin/sh) written by Steve
+Bourne. [#f1]_
 
 Shell fundamentals
 ==================
@@ -105,3 +104,7 @@ Example (needs explanation)::
    - Link to any content describing profiles (global, user-level) as the above example should be placed in a profile
    - Link to content describing terminal color codes/ANSI escape codes
    - Determine if it's important to discuss such an esoteric topic as terminal color/escape codes or if I'm really just showing off...
+
+.. rubric:: Footnotes
+
+.. [#f1] `C Programming by Al Stevens <http://www.drdobbs.com/i-almost-get-a-linux-editor-and-compiler/184404693>`_, Dr. Dobb's Journal, July 1, 2001
