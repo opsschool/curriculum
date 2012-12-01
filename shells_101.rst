@@ -3,7 +3,9 @@ Shells
 
 What is a shell?
 ================
-A [Li|U]nix shell is the command-line interface between the user and the system.  It is used to perform some action, specifically, typing commands and displaying output, requested by the user.
+A [Li|U]nix shell is the command-line interface between the user and the system.
+It is used to perform some action, specifically, typing commands and displaying
+output, requested by the user.
 
 Introduction to Bash
 ====================
@@ -24,15 +26,28 @@ Command-line Editing Modes
 
   ``set -o emacs``
 
-See :doc:`text_editing_101` for details on appropriate edit commands to use on the command line.
+See :doc:`text_editing_101` for details on appropriate edit commands to use on
+the command line.
+
+.. todo: Explain setting the command line editing mode - what does it do, who does it affect?
 
 Environment variables
 ---------------------
-Environment variables are used to define values for often-used attributes of a user's shell.  In total, these variables define the user's environment.  Some environment variables provide a simple value describing some basic attribute, such the user's current directory (``$PWD``).  Others define the behavior of a command, such as whether or not the ``history`` command should log repeated commands individually or log the repeated command once (``$HISTCONTROL``).
+Environment variables are used to define values for often-used attributes of a
+user's shell.  In total, these variables define the user's environment.  Some
+environment variables provide a simple value describing some basic attribute,
+such the user's current directory (``$PWD``).  Others define the behavior of a
+command, such as whether or not the ``history`` command should log repeated
+commands individually or log the repeated command once (``$HISTCONTROL``).
 
 $PATH
 ~~~~~
-The most common, or most recognized, environment variable is the ``$PATH`` variable.  It defines the set of directories that the shell can search to find a command.  Without an explicit path provided when calling a command (i.e. ``/bin/ps``), the shell will search the directories listed in the ``$PATH`` variable until it finds the command.  If the command is not found in anyof the defined directories in ``$PATH``, the shell will produce an error explaining as much. ::
+The most common, or most recognized, environment variable is the ``$PATH``
+variable. It defines the set of directories that the shell can search to find a
+command. Without an explicit path provided when calling a command (i.e. ``/bin/ps``),
+the shell will search the directories listed in the ``$PATH`` variable until it
+finds the command. If the command is not found in any of the defined directories
+in ``$PATH``, the shell will produce an error explaining as much. ::
 
   $ foobar -V
   -bash: foobar: command not found
@@ -43,7 +58,13 @@ To view the contents of the ``$PATH`` variable, use ``echo`` to print the variab
   $ echo $PATH
   /usr/local/sbin:/sbin:/bin:/usr/sbin:/usr/bin:/usr/local/bin
 
-The order of the directories in the ``$PATH`` variable, from left to right, is important; when searching directories for a command, the shell will stop looking after if finds its first match.  In other words, using our example ``$PATH`` variable above, if there is a version of ``ps`` that exists in ``/usr/local/bin`` that is preferred (by the sysadmin) over the version that exists in ``/bin``, the shell will still execute ``/bin/ps`` due to the precedence of the directories defined in the ``$PATH`` variable.
+The order of the directories in the ``$PATH`` variable, from left to right, is
+important; when searching directories for a command, the shell will stop looking
+after it finds its first match.
+In other words, using our example ``$PATH`` variable above, if there is a
+version of ``ps`` that exists in ``/usr/local/bin`` that is preferred (by the sysadmin)
+over the version that exists in ``/bin``, the shell will still execute ``/bin/ps``
+due to the precedence of the directories defined in the ``$PATH`` variable.
 
 To list all of the shell's environment variables, use the ``env`` command: ::
 
@@ -82,7 +103,8 @@ Job control
 -----------
 - ``^Z``, ``bg``, ``fg``, ``%1/2/3..``, ``jobs``
 
-For information on ensuring running jobs continue, even when terminal connectivity is lost, see the sections on :ref:`gnu-screen` and :ref:`tmux`.
+For information on ensuring running jobs continue, even when terminal
+connectivity is lost, see the sections on :ref:`gnu-screen` and :ref:`tmux`.
 
 Customizing the Prompt for Fun or Profit
 ----------------------------------------
