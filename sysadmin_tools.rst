@@ -96,8 +96,7 @@ used a multiplexer has used screen, and you can't go far wrong with it.
 feature set and has added a few more advanced features. It is recommended you
 get comfortable with ``screen`` first before attempting to use ``tmux``. 
 
-.. todo::
-   Explain how to use ``tmux``
+``tmux`` is usually started with the command ``tmux``. Depending of your version of tmux you will see either a line at the bottom of the screen or nothing at all. 
 
 
 
