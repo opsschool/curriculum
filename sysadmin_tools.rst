@@ -88,10 +88,9 @@ used a multiplexer has used screen, and you can't go far wrong with it.
    Explain how to use ``screen``
 
 
-.. _tmux:
 
-tmux 
---------- 
+tmux
+---- 
 
 `tmux <http://tmux.sourceforge.net/>`_ is relatively
 new compared to ``screen``. It covers the same basic feature set and
