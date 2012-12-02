@@ -96,8 +96,52 @@ used a multiplexer has used screen, and you can't go far wrong with it.
 feature set and has added a few more advanced features. It is recommended you
 get comfortable with ``screen`` first before attempting to use ``tmux``. 
 
-``tmux`` is usually started with the command ``tmux``. Depending of your version of tmux you will see either a line at the bottom of the screen or nothing at all. 
+In this chapter we will learn to start a tmux session, get to know a
+few first keyboard shortcuts and detach from and re-attach to the
+session.
 
+``tmux`` is usually started with the command ``tmux`` in a
+terminal window. Depending of your version of tmux you will see either
+a line at the bottom of the screen or nothing at all. ``tmux`` is
+controlled with keyboard shortcuts, the default shortcut usually is
+``Ctrl-a``. If you press ``ctrl-a`` and then a ``t``in the newly
+started tmux window you should see the local time displayed as a large
+digital clock. If you hit ``ctrl-a`` and ``c`` you should see a new
+empty window with an empty input prompt.
+
+If you want to  detach from the session you have to hit ``ctrl-a`` and ``d``. The ``tmux`` window will disappear ynd you will see a message ``[detached]`` in your terminal window. All the shells and processes you started onside the ``tmux``session continue to run, you can see this with a simple 
+
+.. epigraph::
+   ``ps -ef | grep tmux``
+
+You should see something like the following:
+
+.. epigraph::
+   ``cdrexler 13751     1  0 Nov30 ?        00:00:41 tmux``
+
+You will notice that the ``tmux process has a parent process id of 1
+which means that it is not a child process of the shell you started it
+in anymore. Accordingly you can leave your working shell, start a new
+one and attach to the running tmux process again.
+
+If you want to get an overview of the running tmux processes on your system you can use the command
+
+.. epigraph::
+   ``tmux ls``
+
+It will list all available ``tmux`` sessions on your system. If there is only one you can attach to it with the command
+
+.. epigraph::
+   ``tmux att``
+
+You should see the original session with the two shells again after running this command.
+
+.. _meta_multiplexers:
+
+byobu
+-----
+.. todo::
+   describe advantages of meta-multiplexers like ``byobu`` that can use different backends.
 
 
 Shell customisations
