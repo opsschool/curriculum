@@ -101,6 +101,22 @@ In this chapter you will learn to start a tmux session, get to know a
 few first keyboard shortcuts and detach from and re-attach to the
 session.
 
+Installation
+~~~~~~~~~~~~
+
+tmux is available on Debian and its descendants like Ubuntu or Mint
+with the command
+
+.. epigraph:: 
+   ``aptitude install tmux`` 
+
+On the Redhat side of the family you will have to use the EPEL repo to
+get a pre-built package.
+
+On MacOS you can use Homebrew to install via
+.. epigraph::
+   ``brew install tmux``
+
 tmux basics
 ~~~~~~~~~~~
 ``tmux`` is usually started with the command ``tmux`` in a
