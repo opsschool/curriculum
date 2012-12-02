@@ -100,6 +100,8 @@ In this chapter we will learn to start a tmux session, get to know a
 few first keyboard shortcuts and detach from and re-attach to the
 session.
 
+tmux basics
+~~~~~~~~~~~
 ``tmux`` is usually started with the command ``tmux`` in a
 terminal window. Depending of your version of tmux you will see either
 a line at the bottom of the screen or nothing at all. ``tmux`` is
@@ -109,7 +111,11 @@ started tmux window you should see the local time displayed as a large
 digital clock. If you hit ``ctrl-a`` and ``c`` you should see a new
 empty window with an empty input prompt.
 
-If you want to  detach from the session you have to hit ``ctrl-a`` and ``d``. The ``tmux`` window will disappear ynd you will see a message ``[detached]`` in your terminal window. All the shells and processes you started onside the ``tmux``session continue to run, you can see this with a simple 
+If you want to detach from the session you have to hit ``ctrl-a`` and
+``d``. The ``tmux`` window will disappear and you will see a message
+``[detached]`` in your terminal window. All the shells and processes
+you started onside the ``tmux`` session continue to run, you can see
+this with a simple
 
 .. epigraph::
    ``ps -ef | grep tmux``
@@ -119,22 +125,57 @@ You should see something like the following:
 .. epigraph::
    ``cdrexler 13751     1  0 Nov30 ?        00:00:41 tmux``
 
-You will notice that the ``tmux process has a parent process id of 1
+You will notice that the ``tmux`` process has a parent process id of 1
 which means that it is not a child process of the shell you started it
 in anymore. Accordingly you can leave your working shell, start a new
 one and attach to the running tmux process again.
 
-If you want to get an overview of the running tmux processes on your system you can use the command
+If you want to get an overview of the running tmux processes on your
+system you can use the command
 
 .. epigraph::
    ``tmux ls``
 
-It will list all available ``tmux`` sessions on your system. If there is only one you can attach to it with the command
+It will list all available ``tmux`` sessions on your system. If there
+is only one you can attach to it with the command
 
 .. epigraph::
    ``tmux att``
 
-You should see the original session with the two shells again after running this command.
+You should see the original session with the two shells again after
+running this command.
+
+tmux configuration 
+~~~~~~~~~~~~~~~~~~~
+ 
+``tmux`` is configured via a
+config file which is usually called ``.tmux.conf`` that should live in
+your ``$HOME`` directory.
+
+A typical ``.tmux.conf`` looks like this:
+
+.. code::
+
+   #set keyboard shortcut to ctrl-g
+   unbind C-b
+   set -g prefix C-g
+   bind C-g send-prefix
+   bind g send-prefix
+   #end of keybord shortcut setting
+   # Highlight active window
+   set-window-option -g window-status-current-bg red
+   # Set window notifications
+   setw -g monitor-activity on
+   set -g visual-activity on
+   #automatically rename windows according to the running program
+   setw -g automatic-rename
+   #set scroll back buffer
+   set -g history-limit 10000
+   set -g default-terminal "xterm-256color"
+   set -g base-index 1
+   set -g status-left ‘#[fg=green]#H
+        
+
 
 .. _meta_multiplexers:
 
