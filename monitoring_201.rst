@@ -219,7 +219,77 @@ bit before going into the rest of the Graphite eco-system.
 
 The carbon daemons
 ~~~~~~~~~~~~~~~~~~
+In order to make whisper files accessible to be written to from other network
+services, the Graphite project includes the *carbon* daemon suite. The suite
+consists of a *carbon-cache*, *carbon-relay* and *carbon-aggregator* daemon,
+which are all based on the Twisted framework for event-driven IO in Python.
 
+The *carbon-cache* daemon is the most crucial of them as it provides the basic
+interface to the whisper backend and a scalable and efficient way for a large
+number of clients to store metrics. In order to minimize write delay for a big
+number of metrics depending on the disk seek time (each metric has its own
+file) the daemon employs queuing. Every metric has its own queue and an
+incoming value for a metric gets appended to it. A background thread then
+checks the queues for data points and writes them consecutively to the
+storage file. This way cost of an expensive disk seek gets amortized over
+several metric values that are written with one seek.
+
+The daemon relies on two config files, ``carbon.conf`` for general
+configuration and ``storage-schemas.conf`` for whisper storage configuration.
+The general configuration file contains settings like network configuration
+(*carbon-cache* can listen on different sockets like plain TCP and UDP or even
+AMQP), cache sizes and maximum updates per second in its ``[cache]`` section.
+These settings are very useful when tuning the carbon daemon for the hardware
+it's running on, but to get started the default settings from the example
+config files will suffice.  The storage schemas configuration file contains
+information about which metrics paths are using which retention archives and
+aggregation methods. A basic entry looks like this::
+
+  [default_1min_for_1day]
+  pattern = .*
+  retentions = 60s:1d
+
+Each section has a name and a regex pattern which will be matched on the
+metrics path sent. The pattern shown above will match any pattern and can be
+used as a catch-all rule at the end of the configuration to match uncaught
+metrics. The ``rententions`` section is a comma separated list of retention
+archives to use for the metrics path in the same format that
+``whisper-create.py`` expects them.
+
+In order to get a basic carbon cache instance running (default listener is TCP
+on port 2003), install it from PyPi and copy the example config files::
+
+  % cd /opt/graphite/conf
+  % cp carbon.conf.example carbon.conf
+  % cp storage-schemas.conf.example storage-schemas.conf
+  % /opt/graphite/bin/carbon-cache.py start
+  Starting carbon-cache (instance a)
+
+  % netstat -an | grep 2003
+  tcp4       0      0  *.2003                 *.*                    LISTEN
+
+The default installation creates its directories in ``/opt/graphite`` but this
+can also be changed within the configuration. After the carbon daemon has been
+started, metrics can just be recorded by sending one or more values in the
+format ``metric_path value timestamp\n``::
+
+  % echo "test 10 1354519378" | nc -w1 localhost 2003
+  % whisper-fetch.py /opt/graphite/storage/whisper/test.wsp |
+  tail -n 3
+  1354519260      None
+  1354519320      10.000000
+  1354519380      None
+
+All metrics paths that are sent are relative to the
+``/opt/graphite/storage/whisper`` directory and will be stored there. The
+interface also supports subfolders, which can be created by separate the
+metrics path with dots::
+
+  % echo "this.is.a.test 10 1354519680" | nc -w1 localhost 2003
+  % whisper-fetch.py /opt/graphite/storage/whisper/this/is/a/test.wsp| tail -n 3
+  1354519560      None
+  1354519620      None
+  1354519680      10.000000
 
 
 StatsD
