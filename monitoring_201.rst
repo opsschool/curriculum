@@ -267,7 +267,7 @@ aggregation methods. A basic entry looks like this:
 Each section has a name and a regex pattern which will be matched on the
 metrics path sent. The pattern shown above will match any pattern and can be
 used as a catch-all rule at the end of the configuration to match uncaught
-metrics. The ``rententions`` section is a comma separated list of retention
+metrics. The ``retentions`` section is a comma separated list of retention
 archives to use for the metrics path in the same format that
 :file:`whisper-create.py` expects them.
 
@@ -311,6 +311,40 @@ metrics path with dots:
   1354519560      None
   1354519620      None
   1354519680      10.000000
+
+This is all that's needed to collect metrics over the network. As mentioned
+before, the carbon suite contains two more daemons ``carbon-relay`` and
+``carbon-aggregator``. These can be used to improve the performance of the
+system under higher load.
+
+``carbon-relay`` acts as a router between different ``carbon-cache`` or
+``carbon-aggregator`` instances. The daemon reads the ``[relay]`` section of
+the :file:`carbon.conf` configuration file where the most important sections
+are the interface and TCP port to listen to via the ``LINE_RECEIVER_*``
+settings, the ``DESTINATIONS`` property, a comma separated list of
+``ipaddress:port`` pairs of available carbon daemons and the type of relaying
+to use. The ``carbon-relay`` can be operated in rule based or consistent
+hashing based relaying mode. In the second case, consistent hashing is
+employed to balance the metrics between available destinations. When using the
+relay based approach, the relay daemon needs a :file:`relay-rules.conf`
+configuration file of the form:
+
+.. code-block:: ini
+
+  [name]
+  pattern = <regex>
+  destinations = <list of destination addresses>
+
+This follows the storage schema configuration file format and will route any
+metric matching the pattern to the given destinations. There also has to be
+exactly one section which additionally has the property ``default = true``
+which is used as the catch all rule if no other rule has matched a metric
+path.
+
+
+The Graphite web application
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 
 
 StatsD
