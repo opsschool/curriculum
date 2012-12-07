@@ -77,8 +77,6 @@ For example:
    between them as he needs to. Bob can now connect to many servers and see them
    all in one window.
 
-.. _gnu-screen:
-
 GNU Screen
 ----------
 ``screen`` is one of the longest lived multiplexers. Almost everyone who has
@@ -88,14 +86,13 @@ used a multiplexer has used screen, and you can't go far wrong with it.
    Explain how to use ``screen``
 
 
-.. _tmux:
 
-tmux Intro
-----------
-`tmux <http://tmux.sourceforge.net/>`_ is relatively
-new compared to ``screen``. It covers the same basic feature set and
-has added a few more advanced features. It is recommended you get
-comfortable with ``screen`` first before attempting to use ``tmux``.
+Tmux
+----
+``tmux``  is relatively new compared to
+``screen``. It covers the same basic feature set and has added a few
+more advanced features. It is recommended you get comfortable with
+``screen`` first before attempting to use ``tmux``.
 
 In this chapter you will learn to start a tmux session, get to know a
 few first keyboard shortcuts and detach from and re-attach to the
@@ -240,13 +237,12 @@ There is a nifty `cheat sheet
 ``screen`` and ``tmux`` keybindings.
 
 
-.. _byobu:
 
 byobu
 -----
 .. todo::
 
-   - describe advantages of meta-multiplexers like `byobu <https://launchpad.net/byobu>`_ that can use different backends.
+   - describe advantages of meta-multiplexers like ``byobu`` that can use different backends.
    - describe scrollback and copy and paste
 
 
