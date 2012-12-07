@@ -30,9 +30,9 @@ Note that order matters.  Knowing this, we can see that the output of ``crontab 
 
 At 12:05 every Monday, every month, regardless of the day of the month, run the command in the /home/jdoe/jobs directory called copy-to-partition.
 
-Let's take another example and create a cron job that checks disk space available every minute, every hour, every day of the month, every month, for every day of the week.
+Let's take another example and create a cron job that checks disk space available every minute, every hour, every day of the month, every month, for every day of the week, and outputs it to a file called disk_space.txt.
 
-  ``* * * * * df -h``
+  ``* * * * * df -h > disk_space.txt``
 
 would get us what we wanted (df -h is the unix command for checking free disk space).
 
@@ -42,7 +42,7 @@ Field values can also be ranges.  Let's say you want to edit this job to run the
 
 will open up your default shell editor, where you will see a list of your cron jobs.  Editing the one we just wrote to:
 
-  ``0-5 * * * * df -h``
+  ``0-5 * * * * df -h > disk_space.txt``
 
 will get you what you want.
 
