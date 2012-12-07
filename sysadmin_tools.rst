@@ -89,7 +89,7 @@ used a multiplexer has used screen, and you can't go far wrong with it.
 
 Tmux
 ----
-``tmux``  is relatively new compared to
+``tmux`` [#]_  is relatively new compared to
 ``screen``. It covers the same basic feature set and has added a few
 more advanced features. It is recommended you get comfortable with
 ``screen`` first before attempting to use ``tmux``.
@@ -166,10 +166,10 @@ system you can use the command
 .. epigraph::
    ``tmux ls``
 
-It will list all available ``tmux`` sessions on your system [1]_. If there
+It will list all available ``tmux`` sessions on your system [#]_. If there
 is only one you can attach to it with the command
 
-.. [1] Please note that ``tmux ls`` will *only* list tmux sessions that belong to your userid!
+
 
 .. epigraph::
    ``tmux att``
@@ -232,9 +232,8 @@ the ``-f`` command line switch like so:
 .. epigraph::
    ``tmux -f mytmuxconf.conf``
 
-There is a nifty `cheat sheet
-<http://www.dayid.org/os/notes/tm.html>`_ for the most important
-``screen`` and ``tmux`` keybindings.
+There is a nifty cheat sheet [#]_ for the most important
+``screen`` and ``tmux`` keybindings or even a whole book about tmux [#]_.
 
 
 
@@ -242,8 +241,16 @@ byobu
 -----
 .. todo::
 
-   - describe advantages of meta-multiplexers like ``byobu`` that can use different backends.
+   - describe advantages of meta-multiplexers like ``byobu`` [#]_ that can use different backends.
    - describe scrollback and copy and paste
+
+References
+----------
+.. [#] http://tmux.sourceforge.net/
+.. [#] Please note that ``tmux ls`` will *only* list tmux sessions that belong to your userid!
+.. [#] http://www.dayid.org/os/notes/tm.html
+.. [#] http://pragprog.com/book/bhtmux/tmux
+.. [#] https://launchpad.net/byobu
 
 
 Shell customisations
