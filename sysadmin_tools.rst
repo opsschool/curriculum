@@ -88,10 +88,10 @@ used a multiplexer has used screen, and you can't go far wrong with it.
    Explain how to use ``screen``
 
 
+.. _tmux:
 
-tmux
----- 
-
+tmux Intro
+----------
 `tmux <http://tmux.sourceforge.net/>`_ is relatively
 new compared to ``screen``. It covers the same basic feature set and
 has added a few more advanced features. It is recommended you get
@@ -114,8 +114,10 @@ On the Redhat side of the family you will have to use the EPEL repo to
 get a pre-built package.
 
 On MacOS you can use Homebrew to install via
+
 .. epigraph::
    ``brew install tmux``
+
 
 tmux basics
 ~~~~~~~~~~~
@@ -157,6 +159,7 @@ you will find that is the parent process of the two shells you created
 in the beginning of the chapter:
 
 .. code::
+
    cdrexler  4525 13751  0 17:54 pts/2    00:00:00 -zsh
    cdrexler  4533 13751  0 17:54 pts/5    00:00:00 -zsh
 
@@ -177,12 +180,14 @@ is only one you can attach to it with the command
 If there is more than one session the output of ``tmux ls`` will look like this:
 
 .. code::
+
    0: 3 windows (created Fri Nov 30 18:32:37 2012) [80x38]
    4: 1 windows (created Sun Dec  2 17:44:15 2012) [150x39] (attached) 
 
 You will then have to select the right session with the ``-t`` command line switch:
 
 ..  code::
+
     tmux att -t 4
 
 ``tmux`` runs as a server process that can handle several sessions so
@@ -231,7 +236,7 @@ the ``-f`` command line switch like so:
    ``tmux -f mytmuxconf.conf``
 
 There is a nifty `cheat sheet
-<http://www.dayid.org/os/notes/tm.html/>`_ for the most important
+<http://www.dayid.org/os/notes/tm.html>`_ for the most important
 ``screen`` and ``tmux`` keybindings.
 
 
@@ -241,7 +246,7 @@ byobu
 -----
 .. todo::
 
-   - describe advantages of meta-multiplexers like `byobu <https://launchpad.net/byobu/>`_ that can use different backends.
+   - describe advantages of meta-multiplexers like `byobu <https://launchpad.net/byobu>`_ that can use different backends.
    - describe scrollback and copy and paste
 
 
