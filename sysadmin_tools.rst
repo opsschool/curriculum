@@ -206,10 +206,10 @@ tmux configuration
 ~~~~~~~~~~~~~~~~~~~
  
 ``tmux`` is configured via a
-config file which is usually called ``.tmux.conf`` that should live in
+config file which is usually called :file:`.tmux.conf` that should live in
 your ``$HOME`` directory.
 
-A typical ``.tmux.conf`` looks like this:
+A typical :file:`.tmux.conf` looks like this:
 
 .. code-block:: ini
 
