@@ -88,7 +88,7 @@ Operations Manager
 
 Operations managers are similar in many ways to operations engineers. If you
 have read the `21 Irrefutable Laws of Leadership
-<http://www.amazon.com/The-21-Irrefutable-Laws-Leadership/dp/0785274316>`_, then
+<http://amzn.com/0785274316>`_, then
 this is a leadership role, not a management role.
 An Operations manager works to bring their team and other teams closer together.
 A good reference on managing an operations team, is Michael Rembetsty's `PICC
