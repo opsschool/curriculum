@@ -104,7 +104,7 @@ Job control
 - ``^Z``, ``bg``, ``fg``, ``%1/2/3..``, ``jobs``
 
 For information on ensuring running jobs continue, even when terminal
-connectivity is lost, see the sections on gnu-screen and Tmux.
+connectivity is lost, see the sections on :ref:`gnu-screen` and :ref:`tmux`.
 
 Customizing the Prompt for Fun or Profit
 ----------------------------------------

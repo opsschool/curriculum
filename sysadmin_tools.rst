@@ -77,6 +77,8 @@ For example:
    between them as he needs to. Bob can now connect to many servers and see them
    all in one window.
 
+.. _gnu-screen:
+
 GNU Screen
 ----------
 ``screen`` is one of the longest lived multiplexers. Almost everyone who has
@@ -85,7 +87,7 @@ used a multiplexer has used screen, and you can't go far wrong with it.
 .. todo::
    Explain how to use ``screen``
 
-
+.. _tmux:
 
 Tmux
 ----
