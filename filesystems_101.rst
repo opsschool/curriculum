@@ -55,6 +55,10 @@ Formatting partitions with new file systems
 ===========================================
 man mkfs
 
+Mounting a filesystem
+=====================
+.. todo:: explain different kinds of mounts, autofs, /etc/fstab
+
 How filesystems work
 ====================
 Files, directories, inodes
