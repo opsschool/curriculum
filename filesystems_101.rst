@@ -25,11 +25,10 @@ use them.
 
 Working with disks in Linux
 ===========================
-
-Disks in Linux are normally named /dev/sda, /dev/sdb, etc.
-If you are in a VM, they may be called /dev/xvda, /dev/xvdb, etc.
-The last letter (“a”, “b”, “c”..) relates to the physical hard drive in your
-computer. “a” is the first drive, “b” is the second.
+Disks in Linux are normally named ``/dev/sda``, ``/dev/sdb``, etc.
+If you are in a VM, they may be named ``/dev/xvda``, ``/dev/xvdb``, etc.
+The last letter ("a", "b", "c"..) relates to the physical hard drive in your
+computer. "a" is the first drive, "b" is the second.
 
 If you have an already configured system, you will likely see entries like
 this::
