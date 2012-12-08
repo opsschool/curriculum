@@ -31,7 +31,9 @@ The last letter ("a", "b", "c"..) relates to the physical hard drive in your
 computer. "a" is the first drive, "b" is the second.
 
 If you have an already configured system, you will likely see entries like
-this::
+this:
+
+.. code-block:: bash
 
     -bash-4.1$ ls -la /dev/sd*
     brw-rw---- 1 root disk 8, 0 Jul  6 16:51 /dev/sda
