@@ -62,18 +62,6 @@ IPv6
 
 
 
-Private address space (RFC1918)
-===============================
-
-Certian ranges of addresses were reserved for private networks. Using this address space
-you cannot communicate with public machines without a NAT gateway or proxy. There are 
-three reserved blocks:
-
-10.0.0.0–10.255.255.255 
-172.16.0.0–172.31.255.255
-192.168.0.0–192.168.255.255 
-
-
 TCP vs UDP
 ==========
 <discuss 3 way handshake here>
@@ -95,6 +83,7 @@ IP Address    Subnet Mask
 ============= ===============
 192.168.1.1   255.255.255.0 
 ============= ===============
+
 CIDR notation is a two digit representation of this routing prefix. It value can range
 between 0 and 32. This representation is typically used for networking equipment. Below
 is the same example as above with CIDR notation:
@@ -104,6 +93,22 @@ IP Address    CIDR
 ============= ===============
 192.168.1.1   /24 
 ============= ===============
+
+Private address space (RFC1918)
+===============================
+
+Certian ranges of addresses were reserved for private networks. Using this address space
+you cannot communicate with public machines without a NAT gateway or proxy. There are 
+three reserved blocks:
+
+============== ===================== =============== ==============
+First Address  Last Address          Netmask         CIDR
+============== ===================== =============== ==============
+10.0.0.0       10.255.255.255        255.0.0.0       /8
+172.16.0.0     172.31.255.255        255.240.0.0     /12
+192.168.0.0    192.168.255.255       255.255.0.0     /16
+============== ===================== =============== ==============
+
 
 Static routing
 ==============
@@ -119,11 +124,25 @@ Practical networking
 Cat5e, Cat6, Cat6a
 ------------------
 
+Cat5e, Cat6, and Cat6a are all coper transport mediums. They use unshielded twisted pair 
+wiring, relying on the twist with differential signaling to prevent noise. This is the most
+common form of cabling for connecting computers in a network. 
+
 Fiber
 -----
+Fiber is a generic term that refers to optical transport mediums. It comes in several types,
+all of which look identical but are generally incompatible.
+
+Multimode vs Single Mode vs OM{3,4}
+-----------------------------------
+Multimode fiber is a less expensive fiber optic cable, that is typically useable with lower
+cost optical components. Depending on the application and bandwidth required, multimode fiber
+can have a range up to 2000 meters, but as low as 33 meters. It is very common to see it
+used for building backbones, and system to switch applications. 
 
 LC vs SC
 ^^^^^^^^
+
 
 SFP, SFP+, X2, QSFP
 ^^^^^^^^^^^^^^^^^^^
@@ -131,6 +150,4 @@ SFP, SFP+, X2, QSFP
 Twinax
 ------
 
-Multimode vs Single Mode vs OM{3,4}
------------------------------------
 
