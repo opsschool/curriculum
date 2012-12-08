@@ -143,6 +143,16 @@ used for building backbones, and system to switch applications.
 LC vs SC
 ^^^^^^^^
 
+LC and SC connectors are the two most common type of fiber connectors. 
+
+LC is also known as a Lucent Connector. They are typically used for high-density applications, and are
+the type of connector used on SFPs or XFPs. Typcially the connector is packaged in a duplex configuration
+with each cable side by side. 
+
+SC connectors are also know as Subscriber Connector, Square Connector, or Standard Connector. This is the type
+of connector typically used in the telcom industry. They have a larger form factor than the LC connectors, and 
+are often found in single and duplex configurations.
+
 
 SFP, SFP+, X2, QSFP
 ^^^^^^^^^^^^^^^^^^^
