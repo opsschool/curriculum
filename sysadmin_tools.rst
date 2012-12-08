@@ -49,12 +49,12 @@ laptops!).
 
 There are however two limitations to working this way:
 
-# You'll often need to be connected to more than one remote system at a time.
-Opening a whole new terminal each time can result in a lot of windows cluttering
-up previous screen space.
-# When happens if your internet connection stops working? All of your
-connections are reset. Any work you might have been doing on the remote servers
-can be lost.
+#. You'll often need to be connected to more than one remote system at a time.
+   Opening a whole new terminal each time can result in a lot of windows cluttering
+   up previous screen space.
+#. When happens if your internet connection stops working? All of your
+   connections are reset. Any work you might have been doing on the remote servers
+   can be lost.
 
 Multiplexers are a good solution to this.
 They allow you to run multiple "virtual" windows inside a single windows.
@@ -204,7 +204,6 @@ running this command.
 
 tmux configuration 
 ~~~~~~~~~~~~~~~~~~~
- 
 ``tmux`` is configured via a
 config file which is usually called :file:`.tmux.conf` that should live in
 your ``$HOME`` directory.
