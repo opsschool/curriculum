@@ -88,7 +88,7 @@ Database 301
 Galera cluster
 --------------
 
-* Introduction to variables and their meaning.  Tuning MySQL configuration (use
+* Introduction to variables and their meaning. Tuning MySQL configuration (use
   mysqltuner.pl as a launch point?), pros and cons of various options.
 * Introducing EXPLAIN and how to analyse and improve queries and schema.
 * Backup options, mysqldump, LVM Snapshotting, Xtrabackup.

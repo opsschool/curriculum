@@ -34,9 +34,9 @@ the command line.
 Environment variables
 ---------------------
 Environment variables are used to define values for often-used attributes of a
-user's shell.  In total, these variables define the user's environment.  Some
+user's shell. In total, these variables define the user's environment. Some
 environment variables provide a simple value describing some basic attribute,
-such the user's current directory (``$PWD``).  Others define the behavior of a
+such the user's current directory (``$PWD``). Others define the behavior of a
 command, such as whether or not the ``history`` command should log repeated
 commands individually or log the repeated command once (``$HISTCONTROL``).
 

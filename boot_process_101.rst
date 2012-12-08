@@ -165,7 +165,7 @@ MBR to load an another program from elsewhere on the drive into memory. The new
 program is then executed and continues the boot process.
 
 If you're familiar with Windows, you may have seen drives labelled as "C:" and
-"D:" - these represent different logical "partitions" on the drive.  These
+"D:" - these represent different logical "partitions" on the drive. These
 represent partitions defined in that 64-byte partition table.
 
 
