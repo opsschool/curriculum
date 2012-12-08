@@ -13,7 +13,7 @@ handling many small files (ReiserFS), some are much better at large files and
 deleting files quickly (XFS, EXT4).
 
 The version of Unix you use will have picked a filesystem which is used by
-default, on Linux, this is often EXT3.
+default, on Linux this is often EXT3.
 
 Understanding the way filesystems work is important when you have to fix issues
 related to disk space, performance issues with reading and writing to disk, and
@@ -82,7 +82,7 @@ http://en.wikipedia.org/wiki/Inode
 
 File system layout
 ==================
-File system heirarchy standard is a reference on managing a Unix filesystem or directory structure.
+File system hierarchy standard is a reference on managing a Unix filesystem or directory structure.
 
 http://www.pathname.com/fhs/
 
