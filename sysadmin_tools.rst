@@ -102,21 +102,25 @@ session.
 
 Installation
 ~~~~~~~~~~~~
-
 tmux is available on Debian and its descendants like Ubuntu or Mint
-with the command
+with the command:
 
-.. epigraph:: 
-   ``aptitude install tmux`` 
+.. code-block:: bash
 
-On the Redhat side of the family you will have to use the EPEL repo to
-get a pre-built package.
+  aptitude install tmux
 
-On MacOS you can use Homebrew to install via
+On RedHat-style distributions you will have to use the :term:`EPEL` repo to
+get a pre-built package, and install with the command:
 
-.. epigraph::
-   ``brew install tmux``
+.. code-block:: bash
 
+  yum install tmux
+
+On MacOS you can use Homebrew to install via:
+
+.. code-block:: bash
+
+  brew install tmux
 
 tmux basics
 ~~~~~~~~~~~
@@ -135,13 +139,15 @@ If you want to detach from the session you have to hit ``ctrl-b`` and
 you started onside the ``tmux`` session continue to run, you can see
 this with a simple
 
-.. epigraph::
-   ``ps -ef | grep tmux``
+.. code-block:: bash
+
+  ps -ef | grep tmux
 
 You should see something like the following:
 
-.. epigraph::
-   ``cdrexler 13751     1  0 Nov30 ?        00:00:41 tmux``
+.. code-block:: bash
+
+  cdrexler 13751     1  0 Nov30 ?        00:00:41 tmux
 
 You will notice that the ``tmux`` process has a parent process id of 1
 which means that it is not a child process of the shell you started it
@@ -151,13 +157,14 @@ if your connectivity is flaky or you have to work from different
 locations. If you check the process table for the process id of the
 tmux process
 
-.. epigraph::
-   ``ps -ef|grep 13751``
+.. code-block:: bash
+
+  ps -ef | grep 13751
 
 you will find that is the parent process of the two shells you created
 in the beginning of the chapter:
 
-.. code::
+.. code-block:: bash
 
    cdrexler  4525 13751  0 17:54 pts/2    00:00:00 -zsh
    cdrexler  4533 13751  0 17:54 pts/5    00:00:00 -zsh
@@ -165,29 +172,29 @@ in the beginning of the chapter:
 If you want to get an overview of the running tmux processes on your
 system you can use the command
 
-.. epigraph::
-   ``tmux ls``
+.. code-block:: bash
+
+  tmux ls
 
 It will list all available ``tmux`` sessions on your system [#]_. If there
-is only one you can attach to it with the command
+is only one you can attach to it with the command:
 
+.. code-block:: bash
 
-
-.. epigraph::
-   ``tmux att``
+  tmux att
 
 If there is more than one session the output of ``tmux ls`` will look like this:
 
-.. code::
+.. code-block:: bash
 
    0: 3 windows (created Fri Nov 30 18:32:37 2012) [80x38]
    4: 1 windows (created Sun Dec  2 17:44:15 2012) [150x39] (attached) 
 
 You will then have to select the right session with the ``-t`` command line switch:
 
-..  code::
+.. code-block:: bash
 
-    tmux att -t 4
+  tmux att -t 4
 
 ``tmux`` runs as a server process that can handle several sessions so
 you should only see one tmux process per user per system.
@@ -204,7 +211,7 @@ your ``$HOME`` directory.
 
 A typical ``.tmux.conf`` looks like this:
 
-.. code::
+.. code-block:: ini
 
    #set keyboard shortcut to ctrl-g
    unbind C-b
@@ -224,15 +231,16 @@ A typical ``.tmux.conf`` looks like this:
    set -g default-terminal "xterm-256color"
    set -g base-index 1
    set -g status-left ‘#[fg=green]#H
-        
+
 This illustrates a method to change the default keybinding and some
 useful settings.
 
 Please note that you can force ``tmux`` to use another configfile with
 the ``-f`` command line switch like so:
 
-.. epigraph::
-   ``tmux -f mytmuxconf.conf``
+.. code-block:: bash
+
+  tmux -f mytmuxconf.conf
 
 There is a nifty cheat sheet [#]_ for the most important
 ``screen`` and ``tmux`` keybindings or even a whole book about tmux [#]_.
