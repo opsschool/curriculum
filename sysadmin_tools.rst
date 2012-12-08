@@ -77,8 +77,6 @@ For example:
    between them as he needs to. Bob can now connect to many servers and see them
    all in one window.
 
-.. _gnu-screen:
-
 GNU Screen
 ----------
 ``screen`` is one of the longest lived multiplexers. Almost everyone who has
@@ -88,17 +86,171 @@ used a multiplexer has used screen, and you can't go far wrong with it.
    Explain how to use ``screen``
 
 
-.. _tmux:
 
-``tmux``
---------
-``tmux`` is relatively new compared to ``screen``. It covers the same basic
-feature set and has added a few more advanced features. It is recommended you
-get comfortable with ``screen`` first before attempting to use ``tmux``. 
+Tmux
+----
+``tmux`` [#]_  is relatively new compared to
+``screen``. It covers the same basic feature set and has added a few
+more advanced features. It is recommended you get comfortable with
+``screen`` first before attempting to use ``tmux``.
 
+In this chapter you will learn to start a tmux session, get to know a
+few first keyboard shortcuts and detach from and re-attach to the
+session.
+
+Installation
+~~~~~~~~~~~~
+
+tmux is available on Debian and its descendants like Ubuntu or Mint
+with the command
+
+.. epigraph:: 
+   ``aptitude install tmux`` 
+
+On the Redhat side of the family you will have to use the EPEL repo to
+get a pre-built package.
+
+On MacOS you can use Homebrew to install via
+
+.. epigraph::
+   ``brew install tmux``
+
+
+tmux basics
+~~~~~~~~~~~
+``tmux`` is usually started with the command ``tmux`` in a
+terminal window. Depending of your version of tmux you will see either
+a line at the bottom of the screen or nothing at all. ``tmux`` is
+controlled with keyboard shortcuts, the default shortcut usually is
+``ctrl-b``. If you press ``ctrl-b`` and then a ``t`` in the newly
+started tmux window you should see the local time displayed as a large
+digital clock. If you hit ``ctrl-b`` and ``c`` you should see a new
+empty window with an empty input prompt.
+
+If you want to detach from the session you have to hit ``ctrl-b`` and
+``d``. The ``tmux`` window will disappear and you will see a message
+``[detached]`` in your terminal window. All the shells and processes
+you started onside the ``tmux`` session continue to run, you can see
+this with a simple
+
+.. epigraph::
+   ``ps -ef | grep tmux``
+
+You should see something like the following:
+
+.. epigraph::
+   ``cdrexler 13751     1  0 Nov30 ?        00:00:41 tmux``
+
+You will notice that the ``tmux`` process has a parent process id of 1
+which means that it is not a child process of the shell you started it
+in anymore. Accordingly you can leave your working shell, start a new
+one and attach to the running tmux process again which is very handy
+if your connectivity is flaky or you have to work from different
+locations. If you check the process table for the process id of the
+tmux process
+
+.. epigraph::
+   ``ps -ef|grep 13751``
+
+you will find that is the parent process of the two shells you created
+in the beginning of the chapter:
+
+.. code::
+
+   cdrexler  4525 13751  0 17:54 pts/2    00:00:00 -zsh
+   cdrexler  4533 13751  0 17:54 pts/5    00:00:00 -zsh
+
+If you want to get an overview of the running tmux processes on your
+system you can use the command
+
+.. epigraph::
+   ``tmux ls``
+
+It will list all available ``tmux`` sessions on your system [#]_. If there
+is only one you can attach to it with the command
+
+
+
+.. epigraph::
+   ``tmux att``
+
+If there is more than one session the output of ``tmux ls`` will look like this:
+
+.. code::
+
+   0: 3 windows (created Fri Nov 30 18:32:37 2012) [80x38]
+   4: 1 windows (created Sun Dec  2 17:44:15 2012) [150x39] (attached) 
+
+You will then have to select the right session with the ``-t`` command line switch:
+
+..  code::
+
+    tmux att -t 4
+
+``tmux`` runs as a server process that can handle several sessions so
+you should only see one tmux process per user per system.
+
+You should see the original session with the two shells again after
+running this command.
+
+tmux configuration 
+~~~~~~~~~~~~~~~~~~~
+ 
+``tmux`` is configured via a
+config file which is usually called ``.tmux.conf`` that should live in
+your ``$HOME`` directory.
+
+A typical ``.tmux.conf`` looks like this:
+
+.. code::
+
+   #set keyboard shortcut to ctrl-g
+   unbind C-b
+   set -g prefix C-g
+   bind C-g send-prefix
+   bind g send-prefix
+   #end of keybord shortcut setting
+   # Highlight active window
+   set-window-option -g window-status-current-bg red
+   # Set window notifications
+   setw -g monitor-activity on
+   set -g visual-activity on
+   #automatically rename windows according to the running program
+   setw -g automatic-rename
+   #set scroll back buffer
+   set -g history-limit 10000
+   set -g default-terminal "xterm-256color"
+   set -g base-index 1
+   set -g status-left ‘#[fg=green]#H
+        
+This illustrates a method to change the default keybinding and some
+useful settings.
+
+Please note that you can force ``tmux`` to use another configfile with
+the ``-f`` command line switch like so:
+
+.. epigraph::
+   ``tmux -f mytmuxconf.conf``
+
+There is a nifty cheat sheet [#]_ for the most important
+``screen`` and ``tmux`` keybindings or even a whole book about tmux [#]_.
+
+
+
+byobu
+-----
 .. todo::
-   Explain how to use ``tmux``
 
+   - describe advantages of meta-multiplexers like ``byobu`` [#]_ that can use different backends.
+   - describe scrollback and copy and paste
+
+References
+----------
+.. [#] http://tmux.sourceforge.net/
+.. [#] Please note that ``tmux ls`` will *only* list tmux sessions that belong to your userid!
+.. [#] http://www.dayid.org/os/notes/tm.html
+.. [#] http://pragprog.com/book/bhtmux/tmux
+.. [#] https://launchpad.net/byobu
 
 
 Shell customisations
