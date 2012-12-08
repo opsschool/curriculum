@@ -37,7 +37,7 @@ strace
 ulimit
 ------
 
-Estracting and manipulating data
+Extracting and manipulating data
 ================================
 
 A very common pattern in unix is to take some data (a text file, a directory
