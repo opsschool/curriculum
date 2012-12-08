@@ -31,9 +31,9 @@ Contents:
    programming_101
    programming_201
    hardware_101
-   datacenters_101
-   datacenters_201
-   datacenters_301
+   datacenters/datacenters_101
+   datacenters/datacenters_201
+   datacenters/datacenters_301
    virtualization_101
    virtualization_201
    logs_101
