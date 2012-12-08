@@ -59,6 +59,11 @@ Mounting a filesystem
 =====================
 .. todo:: explain different kinds of mounts, autofs, /etc/fstab
 
+Filesystem options
+==================
+noatime
+nobarriers
+
 How filesystems work
 ====================
 Files, directories, inodes
@@ -90,11 +95,6 @@ File system layout
 File system hierarchy standard is a reference on managing a Unix filesystem or directory structure.
 
 http://www.pathname.com/fhs/
-
-Filesystem options
-==================
-noatime
-nobarriers
 
 Fragmentation in unix filesystems
 =================================
