@@ -60,7 +60,7 @@ The disk format to store all this data is rather simple. Every file has a
 short header with the basic information about the aggregation function used,
 the maximum retention period available, the *x-files-factor* and the number of
 archives it contains. These are stored as 2 *longs*, a *float* and another
-*long* thus requiring 16 bytes of storage.  After that the archives are
+*long* thus requiring 16 bytes of storage. After that the archives are
 appended to the file with their *(timestamp, value)* pairs stored as a *long*
 and a *double* value consuming 12 bytes per pair.
 
@@ -254,7 +254,7 @@ The general configuration file contains settings like network configuration
 AMQP), cache sizes and maximum updates per second in its ``[cache]`` section.
 These settings are very useful when tuning the carbon daemon for the hardware
 it's running on, but to get started the default settings from the example
-config files will suffice.  The storage schemas configuration file contains
+config files will suffice. The storage schemas configuration file contains
 information about which metrics paths are using which retention archives and
 aggregation methods. A basic entry looks like this:
 
