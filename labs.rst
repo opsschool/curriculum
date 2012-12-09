@@ -216,8 +216,8 @@ Create a branch, make a change, commit, and push
 Create a pull request and merge the branch into the master branch
 -----------------------------------------------------------------
 
-Read Chapters 1-3 of the Pro Git online book - http://git-scm.com/book
-
+* Read Chapters 1-3 of the `Pro Git <http://git-scm.com/book>`_ book online
+* Work through Code School's `Try Git <http://try.github.com/>`_ online
 
 DNS 101
 =======
