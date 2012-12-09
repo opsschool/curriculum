@@ -42,9 +42,9 @@ IP Addressing
 IPv4
 ----
 
-Internet Protocol Version 4 (IPv4) is the forth version of the internet protocol, the first
+Internet Protocol Version 4 (IPv4) is the fourth version of the Internet protocol, the first
 version to be widely deployed. This is the version of the protocol you're most likely to
-encounter, and the default version of protocol in linux.
+encounter, and the default version of the IP protocol in Linux.
 
 IPv4 uses a 32-bit address space most typically represented in 4 dotted decimal notation,
 each octect contains a value between 0-255, and is seperated by a dot. An example 
@@ -53,7 +53,7 @@ address is below:
     10.199.0.5 
 
 There are several other representations, like dotted hexidecimal, dotted octal, hexidecimal, 
-decimal, and octal. These are infrequently used, and you shouldn't need to worry about them. 
+decimal, and octal. These are infrequently used, and will be covered in later sections. 
 
 
 
@@ -69,22 +69,23 @@ TCP vs UDP
 
 Subnetting, netmasks and CIDR
 =============================
-A subnet is a logical devision of an IP network, and lets the host system identify which 
-other hosts can be reached without the need of a routing. The way the host system determines
+A subnet is a logical devision of an IP network, and allows the host system to identify which 
+other hosts can be reached on the local network. The host system determines
 this is by the application of a routing prefix. There are two typical representations of this
-prefix, a netmask, and CIDR. 
+prefix: a netmask and CIDR. 
 
 Netmasks typically appear in the dotted decimal notation, with values between 0-255 in each 
 octet. These are applied as bitmasks, and numbers at 255 mean that this host is not reachable.
-An example ip with and example netmask is below:
+Netmask can also be refered to as a Subnet Mask and these terms are often used interchangeably. An 
+example IP Address with a typical netmask is below:
 
 ============= ===============
-IP Address    Subnet Mask   
+IP Address    Netmask   
 ============= ===============
 192.168.1.1   255.255.255.0 
 ============= ===============
 
-CIDR notation is a two digit representation of this routing prefix. It value can range
+CIDR notation is a two-digit representation of this routing prefix. Its value can range
 between 0 and 32. This representation is typically used for networking equipment. Below
 is the same example as above with CIDR notation:
 
@@ -94,7 +95,7 @@ IP Address    CIDR
 192.168.1.1   /24 
 ============= ===============
 
-Private address space (RFC1918)
+Private address space (:rfc: 1918)
 ===============================
 
 Certian ranges of addresses were reserved for private networks. Using this address space
@@ -124,7 +125,7 @@ Practical networking
 Cat5e, Cat6, Cat6a
 ------------------
 
-Cat5e, Cat6, and Cat6a are all coper transport mediums. They use unshielded twisted pair 
+Cat5e, Cat6, and Cat6a are all coper transport mediums. They use twisted pair 
 wiring, relying on the twist with differential signaling to prevent noise. This is the most
 common form of cabling for connecting computers in a network. 
 
