@@ -1,6 +1,16 @@
 Package management
 ******************
 
+Workflow
+========
+
+.. graphviz::
+
+   digraph foo {
+       "Unix Fundamentals" -> "Package mamangement";
+   }
+
+
 What is a package manager?
 ==========================
 High level overview.

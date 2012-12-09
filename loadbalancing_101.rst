@@ -9,6 +9,16 @@ Why do we use load balancers?
 * They keep application servers busy by buffering responses and serving them to
   slow clients (or keepalives). We want app servers to do real work, not waste
   time waiting on the network.
+* Load balancers provide a mechanism to verify the health of backend servers to 
+  ensure traffic is only routed to backends available to service the request.
+  These health checks can be simplistic ICMP pings to ensure host availabilty
+  to advanced HTTP (layer 7) health checks that use HTTP response codes or 
+  content matching.
+* Can provide a layer of abstraction such that end user endpoints remain 
+  consistent (i.e URLs) as backend application infrastructure expands 
+  (or contracts) 
+* Can be either software based (aka reverse proxies) or hardware based (physical
+  devices optimized for network throughput and ISO layer 2,3 and 4 routing).
 * Can be tuned by itself for max conns?
 * HTTP path based routing, 1 domain to multiple heterogeneous server pools.
 
@@ -41,6 +51,15 @@ Anycast
 
 DNS GSLB
 --------
+* A GSLB (Global Site Load Balancer) at the most simplistic level is a health 
+  checking DNS server.
+* Most often used to load balance between geographically dispersed data centers.
+* Generally has health check mechanisms similar to load balancers which are used
+  to return an IP address (as part of the DNS lookup) of a host that is currently
+  available to service the request.
+* Conceptually provides coarse-grained round robin and affinity balancing
+  algorithms by setting the time to live (TTL) of the DNS lookup for an 
+  appropriate duration.
 
 CDN’s
 -----
