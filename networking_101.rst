@@ -71,7 +71,7 @@ Subnetting, netmasks and CIDR
 =============================
 A subnet is a logical devision of an IP network, and allows the host system to identify which 
 other hosts can be reached on the local network. The host system determines
-this is by the application of a routing prefix. There are two typical representations of this
+this by the application of a routing prefix. There are two typical representations of this
 prefix: a netmask and CIDR. 
 
 Netmasks typically appear in the dotted decimal notation, with values between 0-255 in each 
