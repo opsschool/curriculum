@@ -95,8 +95,8 @@ IP Address    CIDR
 192.168.1.1   /24 
 ============= ===============
 
-Private address space (:rfc: 1918)
-==================================
+Private address space (:rfc:`1918`)
+===================================
 
 Certian ranges of addresses were reserved for private networks. Using this address space
 you cannot communicate with public machines without a NAT gateway or proxy. There are 
