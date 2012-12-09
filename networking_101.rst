@@ -96,7 +96,7 @@ IP Address    CIDR
 ============= ===============
 
 Private address space (:rfc: 1918)
-===============================
+==================================
 
 Certian ranges of addresses were reserved for private networks. Using this address space
 you cannot communicate with public machines without a NAT gateway or proxy. There are 
