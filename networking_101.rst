@@ -2,20 +2,20 @@ Networking 101
 **************
 
 This chapter should provide enough knowledge on networking to enable a systems
-administrator to connect a linux server to a network and troubleshoot basic
+administrator to connect a Linux server to a network and troubleshoot basic
 network-related problems. First, we will go over the basics of the 7-layer Open
-Systems Interconnection (OSI) model, which is a standard framework with which to
+Systems Interconnection (:term:`OSI`) model, which is a standard framework with which to
 implement communication systems. Next, we will delve into each layer of the OSI
 model in more detail as it applies to the role of systems administration.
 
 OSI model
 =========
 
-The OSI model describes 7 layers of abstraction that enable software programs to
-communicate with each other on separate systems. The 7 layers are designed to
-allow communication to occur between systems at a given level of abstraction
-without concern for how the lower levels are implemented. In this way, more
-complex protocols can be built on top of simpler ones that can be used
+The OSI model describes seven layers of abstraction that enable software
+programs to communicate with each other on separate systems. The seven layers
+are designed to allow communication to occur between systems at a given level of
+abstraction without concern for how the lower levels are implemented. In this
+way, more complex protocols can be built on top of simpler ones that can be used
 interchangeably without modifying the higher-level code. The job of each layer
 is to provide some service to the layer above by using the services provided by
 the layer below.
@@ -32,8 +32,8 @@ the layer below.
    points on a network that may consist of many intermediate devices and cables,
    possibly spanning a large geographic area. Ethernet defines the data link
    layer in addition to the physical layer, including (Media Access Control
-   (MAC) addresses that allow hosts to address their data as being relevant to
-   one or more other hosts in particular.
+   (:term:`MAC`) addresses that allow hosts to address their data as being
+   relevant to one or more other hosts in particular.
 
 *  Layer 3 - Network layer
 
@@ -42,7 +42,9 @@ the layer below.
    the OSI model that enables the Internet to exist, using Internet Protocol
    (IP) addressing. IP addressing allows for a logical taxonomy of systems and
    networks built on top of the MAC addresses provided by Ethernet, which are
-   more closely tied to the physical hardware.
+   more closely tied to the physical hardware. Version 4 of the Internet
+   Protocol, most commonly found in production networks, is described in
+   :rfc:`791`.
 
 *  Layer 4 - Transport layer
 
