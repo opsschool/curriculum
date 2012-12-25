@@ -84,7 +84,15 @@ of implementing the solution.
 Advising within Current Limitations
 -----------------------------------
 
-
+The Ops professional who advises an organization must also consider
+limitations that impact the potential solution. Cost, timing, expertise
+within the organization, available time of the people who would
+implement the solution,or IT security issues may be considerations.
+For example, decision makers within the organization will need to
+know what is possible and for what cost so they can make the decision
+how to spend the organization's money.  Good, fast, or cheap (pick two):
+it may be the Ops professional's responsibility to explain this concept
+from an IT perspective. 
 
 Business Savvy
 ==============
