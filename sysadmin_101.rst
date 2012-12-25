@@ -220,7 +220,16 @@ requires an understanding of their requirements and needs as well.
 What is System Administration Not?
 ==================================
 
-* Professional Roadblock (“No-Men”)
+While there's something of a grain of truth to the `BOFH
+<http://www.theregister.co.uk/data_centre/bofh/>`_ meme, most system
+administrators who adopt such an attitude quickly find themselves out of work.
+Beyond the social implications, this sort of obstructionist, adversarial
+behavior is the least effective way of solving problems. The best path to
+success and satisfaction is collaboration, not obstinance. This requires
+cooperation from all involved, whether their role is technical or not. An
+administrator's job is to create order from chaos, to control the
+technology--not the people.
+
 
 The role of the SysAdmin in the organization
 ============================================
