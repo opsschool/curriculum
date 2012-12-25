@@ -32,3 +32,9 @@ Glossary
         describing layers of abstraction into which the various networking
         protocols are categorized.
 
+    RFC
+        The RFC documents (Request for Comments) are a series of Internet
+        standards, best common practices, and related documents describing how
+        networked computers communicate. This document series provides the
+        standards for how the Internet and many other related technologies
+        interrelate and interoperate.
