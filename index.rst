@@ -56,6 +56,7 @@ Table of Contents
    soft_skills
    labs
    seealso
+   meta/contributions
    glossary
 
 
