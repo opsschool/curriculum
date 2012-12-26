@@ -106,7 +106,7 @@ Business Savvy
 
 Supporting business needs.
 --------------------------
-We exist professionally to support the needs of the organization. 
+We exist professionally to support the needs of the organization.
 
 Developing the Trusted Advisor Relationship
 -------------------------------------------

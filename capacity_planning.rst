@@ -7,7 +7,7 @@ this course)
 Fundamentals of capacity planning
 =================================
 
-Resource usage investigation and exploration 
+Resource usage investigation and exploration
 ---------------------------------------------
 
 * Examples: CPU:req/sec ratio, memory footprint:req/sec ratio, disk consumption
@@ -19,7 +19,7 @@ Resource usage investigation and exploration
 Finding ceilings
 ----------------
 
-* Discovering resource limits 
+* Discovering resource limits
 * Comparing different hardware/instance profiles - production load versus
   synthetic
 
@@ -30,7 +30,7 @@ Finding ceilings
   uploads, caching storage+processing, etc.
 * Architecture analysis (anticipating the next bottleneck)
 
-Forecasting 
+Forecasting
 ============
 
 Linear and nonlinear trending and forecasting ("steering by your wake")
@@ -44,8 +44,8 @@ Seasonality and future events
 
 * Organic growth approaches (bottom-up infra driven, top-down app driven)
 * inorganic growth events (new feature launch, holiday effects, "going viral",
-  major public announcement) 
-* Provisioning effects on timelines, financial tradeoffs 
+  major public announcement)
+* Provisioning effects on timelines, financial tradeoffs
 
 Diagonal scaling
 ================

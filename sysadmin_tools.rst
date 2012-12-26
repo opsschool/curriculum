@@ -67,7 +67,7 @@ For example:
    It is a reliable server which is close to the other servers Bob works on.
    On ``server1``, but starts a multiplexer. The multiplexer gives Bob a regular
    looking command prompt, and Bob continues his work.
-   
+
    If Bob's internet connection drops, he can reconnect to ``server1``, and then
    re-attach to the multiplexer he started previously. His session is in the
    same state he left it before being disconnected, and he can continue his
@@ -188,7 +188,7 @@ If there is more than one session the output of ``tmux ls`` will look like this:
 .. code-block:: bash
 
    0: 3 windows (created Fri Nov 30 18:32:37 2012) [80x38]
-   4: 1 windows (created Sun Dec  2 17:44:15 2012) [150x39] (attached) 
+   4: 1 windows (created Sun Dec  2 17:44:15 2012) [150x39] (attached)
 
 You will then have to select the right session with the ``-t`` command line switch:
 
@@ -202,7 +202,7 @@ you should only see one tmux process per user per system.
 You should see the original session with the two shells again after
 running this command.
 
-tmux configuration 
+tmux configuration
 ~~~~~~~~~~~~~~~~~~~
 ``tmux`` is configured via a
 config file which is usually called :file:`.tmux.conf` that should live in

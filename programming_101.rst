@@ -37,7 +37,7 @@ I/O
 Pipes
 -----
 
-stderr vs. stdout 
+stderr vs. stdout
 ------------------
 
 /dev/null and /dev/zero

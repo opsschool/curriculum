@@ -98,7 +98,7 @@ IPv4 uses a 32-bit address space most typically represented in 4 dotted decimal 
 each octet contains a value between 0-255, and is separated by a dot. An example
 address is below:
 
-    10.199.0.5 
+    10.199.0.5
 
 There are several other representations, like dotted hexadecimal, dotted octal, hexadecimal,
 decimal, and octal. These are infrequently used, and will be covered in later sections.
@@ -120,7 +120,7 @@ Subnetting, netmasks and CIDR
 A subnet is a logical division of an IP network, and allows the host system to identify which
 other hosts can be reached on the local network. The host system determines
 this by the application of a routing prefix. There are two typical representations of this
-prefix: a netmask and CIDR. 
+prefix: a netmask and CIDR.
 
 Netmasks typically appear in the dotted decimal notation, with values between 0-255 in each
 octet. These are applied as bitmasks, and numbers at 255 mean that this host is not reachable.
@@ -128,9 +128,9 @@ Netmask can also be referred to as a Subnet Mask and these terms are often used 
 example IP Address with a typical netmask is below:
 
 ============= ===============
-IP Address    Netmask   
+IP Address    Netmask
 ============= ===============
-192.168.1.1   255.255.255.0 
+192.168.1.1   255.255.255.0
 ============= ===============
 
 CIDR notation is a two-digit representation of this routing prefix. Its value can range
@@ -138,9 +138,9 @@ between 0 and 32. This representation is typically used for networking equipment
 is the same example as above with CIDR notation:
 
 ============= ===============
-IP Address    CIDR   
+IP Address    CIDR
 ============= ===============
-192.168.1.1   /24 
+192.168.1.1   /24
 ============= ===============
 
 Private address space (:rfc:`1918`)
@@ -173,9 +173,9 @@ Practical networking
 Cat5e, Cat6, Cat6a
 ------------------
 
-Cat5e, Cat6, and Cat6a are all coper transport mediums. They use twisted pair 
+Cat5e, Cat6, and Cat6a are all coper transport mediums. They use twisted pair
 wiring, relying on the twist with differential signaling to prevent noise. This is the most
-common form of cabling for connecting computers in a network. 
+common form of cabling for connecting computers in a network.
 
 Fiber
 -----
@@ -187,16 +187,16 @@ Multimode vs Single Mode vs OM{3,4}
 Multimode fiber is a less expensive fiber optic cable, that is typically useable with lower
 cost optical components. Depending on the application and bandwidth required, multimode fiber
 can have a range up to 2000 meters, but as low as 33 meters. It is very common to see it
-used for building backbones, and system to switch applications. 
+used for building backbones, and system to switch applications.
 
 LC vs SC
 ^^^^^^^^
 
-LC and SC connectors are the two most common type of fiber connectors. 
+LC and SC connectors are the two most common type of fiber connectors.
 
 LC is also known as a Lucent Connector. They are typically used for high-density applications, and are
 the type of connector used on SFPs or XFPs. Typically the connector is packaged in a duplex configuration
-with each cable side by side. 
+with each cable side by side.
 
 SC connectors are also know as Subscriber Connector, Square Connector, or Standard Connector. This is the type
 of connector typically used in the telecom industry. They have a larger form factor than the LC connectors, and

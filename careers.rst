@@ -121,7 +121,7 @@ servers, operating systems, databases, middleware and applications.
 
 Systems Administrators can range from "jack of all trades" with knowledge of
 multiple systems and platforms to specialists who focus on one system or
-platform, for example Microsoft Windows or Linux. 
+platform, for example Microsoft Windows or Linux.
 
 Whilst perhaps more "general" than some of the other specialist roles, Systems
 Administrators tend to focus on managing individual hosts, usually desktops or

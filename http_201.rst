@@ -31,7 +31,7 @@ Rails
 Sinatra
 -------
 
-Python 
+Python
 ======
 
 Django

@@ -240,5 +240,5 @@ Install Apache
 Configure a virtual host
 ------------------------
 
-Display a simple web page 
+Display a simple web page
 --------------------------

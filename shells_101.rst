@@ -77,13 +77,13 @@ To list all of the shell's environment variables, use the ``env`` command: ::
   PATH=/usr/local/sbin:/sbin:/bin:/usr/sbin:/usr/bin:/root/bin:/usr/local/bin
   MAIL=/var/spool/mail/root
   PWD=/root/curriculum
-  PS1=[\[\e[33;1m\]\t \[\e[31;1m\]\u\[\e[0m\]@\[\e[31;1m\]\h\[\e[0m\] \W\[\e[0m\]]# 
+  PS1=[\[\e[33;1m\]\t \[\e[31;1m\]\u\[\e[0m\]@\[\e[31;1m\]\h\[\e[0m\] \W\[\e[0m\]]#
   AWS_IAM_HOME=/opt/aws/apitools/iam
   HISTCONTROL=ignoredups
   SHLVL=1
   SUDO_COMMAND=/bin/bash
   HOME=/root
-  HISTTIMEFORMAT=[%Y-%m-%d %H:%M:%S] 
+  HISTTIMEFORMAT=[%Y-%m-%d %H:%M:%S]
   OLDPWD=/tmp
 
 Global vs. User Profiles
