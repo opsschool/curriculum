@@ -17,7 +17,7 @@ Maintaining Existing IT Infrastructures
 The most visible role of Operations is to maintain the status quo.
 For the system administrator this means maintaining servers and
 processes such as logging, monitoring, backups, authentication, or
-naming services.  For the network administrator it means maintaining
+naming services. For the network administrator it means maintaining
 routers, switches, the edge network, gateways, or the relationship
 with the corporate Internet Service Provider (ISP). A security
 engineer might be responsible for maintaining a vulnerability
@@ -40,8 +40,7 @@ from the customer perspective:
 * What is the core mission of this organization?
 * How does Operations support the mission?
 * What does the organization need from the Operations professionals?
-* Why should this organization come to these Operations people for this service
-* or solution? (What is the value proposition for Operations within this organization?)
+* Why should this organization come to these Operations people for this service or solution? (What is the value proposition for Operations within this organization?)
 * How could Operations provide more value: higher level of competitiveness, faster service delivery, stronger security, or other benefit that aligns with the mission?
 
 Translating customer requirements is key to focusing the efforts
@@ -58,17 +57,19 @@ Protection of Information and Services
 Often the Operations professionals in an organization are the people
 who most completely understand the technical risk to organizational
 assets from an IT perspective. Senior management within an organization
-will usually understand financial risks, risks from competition,
-manufacturing risks, etc. but they often do not understand IT risks
-because of the deep-dive technical expertise required to comprehend
-threats to the organization.
+will usually understand risks related to financials, competition,
+manufacturing, etc. but they often do not understand IT enough to make
+an informed decision. Operations professionals are the ones with the
+deep-dive technical expertise required to comprehend risks, threats,
+vulnerabilities, and countermeasures then translate them into
+language senior management can understand.
 
 This is another area where the Operations professional is communicating
 with the organization's leaders to advise on appropriate actions
-to reduce risk where it makes sense for the organization.
+to address IT security where it makes sense for the organization.
 
-Examples of areas where organizations need the Operations professional
-to plan around risks could include threats to data from internal
+Areas where organizations need the Operations professional
+to advice on IT security could include threats to data from internal
 and external sources, hardware failure, site availability or
 reslience, data preservation, and information integrity. Again,
 these areas are dependent on the organization's mission.
@@ -80,7 +81,7 @@ and availability including use of Content Delivery Networks (CDNs),
 strong encryption not only for the ecommerce session but also data
 at rest, role-based access for internal employees accessing customer
 information to reduce access to only those people who need access
-to that information.  Organizational leaders often do not understand
+to that information. Organizational leaders often do not understand
 how these solutions are implemented so it is up to the Operations
 professional to communicate the threat, solution, cost, impact to
 the organization of implementing the solution.
@@ -91,19 +92,21 @@ Advising within Current Limitations
 The Operations professional who advises an organization must also
 consider limitations that impact the potential solution. Cost,
 timing, expertise within the organization, available time of the
-people who would implement the solution,or IT security issues may
-be considerations.  For example, decision makers within the
+people who would implement the solution, or IT security issues may
+be considerations. For example, decision makers within the
 organization will need to know what is possible and for what cost
 so they can make the decision how to spend the organization's money.
 Good, fast, or cheap (pick two): it may be the Operations professional's
 responsibility to explain this concept from an IT perspective.
+
+ * http://en.wikipedia.org/wiki/Project_management_triangle
 
 Business Savvy
 ==============
 
 Supporting business needs.
 --------------------------
-We exist professionally to support the needs of the organization.  
+We exist professionally to support the needs of the organization. 
 
 Developing the Trusted Advisor Relationship
 -------------------------------------------
@@ -146,6 +149,20 @@ Documentation through Diagrams
 Project Management (Does time management go here too?)
 ======================================================
 
+The project management triangle (good, cheap, fast: pick two)
+
+ * http://en.wikipedia.org/wiki/Project_management_triangle
+
+Agile
+=====
+
+Kanban
+------
+
+Scrum
+-----
+
+
 Working with other teams
 ========================
 
@@ -184,15 +201,6 @@ Books (and concepts worth “Googling”)
 * Human Error, James Reason
 * To Engineer is Human, Henry Petroski
 * To Forgive Design, Henry Petroski
-
-Agile
-=====
-
-Kanban
-------
-
-Scrum
------
 
 The Tao of DevOps
 =================
