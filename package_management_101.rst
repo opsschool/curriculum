@@ -7,7 +7,7 @@ Workflow
 .. graphviz::
 
    digraph foo {
-       "Unix Fundamentals" -> "Package mamangement";
+       "Unix Fundamentals" -> "Package management";
    }
 
 
