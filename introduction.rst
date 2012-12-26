@@ -20,6 +20,8 @@ Usenix defines this role as:
    jobs in a print queue, figure out why a network file system isn't
    available).
 
+   -- Usenix, *Job Descriptions for System Administrators, 3d Edition Revised*
+
 Our goal is to teach these topics, but also to provide a good understanding of
 how the components work, which enables them to continue to grow their skills
 and contributions.
