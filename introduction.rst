@@ -1,8 +1,13 @@
+############
 Introduction
-************
+############
 
+.. todo: Explain "What is Ops School?"
+
+
+***************
 Goals and Focus
-===============
+***************
 
 To have a complete syllabus for training smart persons with high potential who
 already have a basic understanding of Linux or other UNIX variant, to become
