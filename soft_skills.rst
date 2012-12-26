@@ -136,7 +136,7 @@ What to document
 ----------------
 
 * Runbooks? SOP? (cparedes: might be worthwhile even though we want to automate
-  SOP’s away as much as possible - what should we check at 2 AM? What do folks
+  SOP's away as much as possible - what should we check at 2 AM? What do folks
   typically do in this situation if automation fails?)
 
 * Architecture and design (cparedes: also maybe talk about *why* we choose that
@@ -189,9 +189,9 @@ ServerFault
 
 Sign up and participate. As your own questions, but also answer questions that
 look interesting to you. This will not only help the community, but can keep you
-sharp, even on technologies you don’t work with on a daily basis.
+sharp, even on technologies you don't work with on a daily basis.
 
-Books (and concepts worth “Googling”)
+Books (and concepts worth "Googling")
 -------------------------------------
 
 * Web Operations, John Allspaw and Jesse Robbins
@@ -208,7 +208,7 @@ The Tao of DevOps
 What is DevOps
 --------------
 
-What isn’t DevOps
+What isn't DevOps
 -----------------
 
 Why devops is important

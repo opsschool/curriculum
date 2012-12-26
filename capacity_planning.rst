@@ -33,7 +33,7 @@ Finding ceilings
 Forecasting 
 ============
 
-Linear and nonlinear trending and forecasting (“steering by your wake”)
+Linear and nonlinear trending and forecasting ("steering by your wake")
 -----------------------------------------------------------------------
 
 Details of automatic forecasting and scaling
@@ -43,7 +43,7 @@ Seasonality and future events
 -----------------------------
 
 * Organic growth approaches (bottom-up infra driven, top-down app driven)
-* inorganic growth events (new feature launch, holiday effects, “going viral”,
+* inorganic growth events (new feature launch, holiday effects, "going viral",
   major public announcement) 
 * Provisioning effects on timelines, financial tradeoffs 
 

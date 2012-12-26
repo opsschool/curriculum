@@ -4,7 +4,7 @@ Programming 101
 Shell scripting basics
 ======================
 
-“#!/usr/bin/env bash” vs. “#!/bin/bash”  vs “#!/bin/sh”(portability
+"#!/usr/bin/env bash" vs. "#!/bin/bash"  vs "#!/bin/sh"(portability
 considerations)
 
 Variables

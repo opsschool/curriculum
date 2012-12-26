@@ -229,7 +229,7 @@ A typical :file:`.tmux.conf` looks like this:
    set -g history-limit 10000
    set -g default-terminal "xterm-256color"
    set -g base-index 1
-   set -g status-left ‘#[fg=green]#H
+   set -g status-left '#[fg=green]#H
 
 This illustrates a method to change the default keybinding and some
 useful settings.

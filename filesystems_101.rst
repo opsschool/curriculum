@@ -4,7 +4,7 @@ File systems
 Background
 ==========
 
-A filesystem is the street grid of your hard drive. It’s a map of addresses to
+A filesystem is the street grid of your hard drive. It's a map of addresses to
 where data is located on your drive. Your operating system uses the filesystem
 to store data on the drive.
 
@@ -44,7 +44,7 @@ this:
 The number at the end of each drive maps to the partition on the drive.
 A partition refers to a fixed amount of space on the physical drive. Drives must
 have at least one partition. Depending on your specific needs, you might want
-more than one partition, but to start with, we’ll assume you just need one big
+more than one partition, but to start with, we'll assume you just need one big
 partition.
 
 Configuring your drive with partitions

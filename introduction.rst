@@ -12,12 +12,12 @@ Usenix defines this role as:
 
 .. epigraph::
    Familiarity with an operating system and its commands/utilities at a user
-   level; ability to edit files, use basic utilities and commands, find users’
+   level; ability to edit files, use basic utilities and commands, find users'
    home directories, navigate through the file system, install software on
    workstations, and use I/O redirection; some understanding of how user
    authentication happens in a directory service context. Ability to
    identify/locate shared resources and perform simple tasks (e.g., manipulate
-   jobs in a print queue, figure out why a network file system isn’t
+   jobs in a print queue, figure out why a network file system isn't
    available).
 
 Our goal is to teach these topics, but also to provide a good understanding of

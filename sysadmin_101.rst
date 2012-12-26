@@ -235,12 +235,12 @@ requires an understanding of their requirements and needs as well.
 What is System Administration Not?
 ==================================
 
-* Professional Roadblock (“No-Men”)
+* Professional Roadblock ("No-Men")
 
 The role of the SysAdmin in the organization
 ============================================
 
-* “Who is that guy? Why is he always muttering about ‘latency’?”
+* "Who is that guy? Why is he always muttering about 'latency'?"
 * Understanding the greater role of delivering a service for a business
 
 Mindset and approach

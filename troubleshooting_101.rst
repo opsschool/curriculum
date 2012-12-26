@@ -52,7 +52,7 @@ Walk through of a diagnosis
 * Common culprits (is it plugged in?)
 * Look through your logs
 * Communicating during an outage
-* ‘Talking Out-Loud’ (IRC/GroupChat)
+* 'Talking Out-Loud' (IRC/GroupChat)
 * Communicating after an outage (postmortems)
 
 
