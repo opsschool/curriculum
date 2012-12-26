@@ -15,8 +15,8 @@ inetd
 Shared containers vs self-contained binaries
 --------------------------------------------
 
-Package mangement
-=================
+Package management
+==================
 
 Configuration files
 -------------------

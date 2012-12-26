@@ -1,12 +1,13 @@
-.. Ops School Curriculum documentation master file, created by
-   sphinx-quickstart on Thu Oct 11 16:31:56 2012.
-   You can adapt this file completely to your liking, but it should at least
-   contain the root `toctree` directive.
+#####################
+Ops School Curriculum
+#####################
 
-Welcome to Ops School Curriculum's documentation!
-=================================================
+Welcome to the Ops School curriculum documentation site.
 
-Contents:
+
+*****************
+Table of Contents
+*****************
 
 .. toctree::
    :maxdepth: 2
@@ -58,14 +59,17 @@ Contents:
    glossary
 
 
+*********
 TODO List
-=========
+*********
+
 .. todolist::
 
+
+******************
 Indices and tables
-==================
+******************
 
 * :ref:`genindex`
 * :ref:`modindex`
 * :ref:`search`
-

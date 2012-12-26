@@ -60,7 +60,7 @@ Recent changes
 --------------
 
 Often problems can be traced back to recent changes.
-Problems that start around the time of a change aren't usually coincedence.
+Problems that start around the time of a change aren't usually coincidence.
 
 Learning common errors
 ----------------------

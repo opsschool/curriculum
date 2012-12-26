@@ -71,12 +71,12 @@ to address IT security where it makes sense for the organization.
 Areas where organizations need the Operations professional
 to advice on IT security could include threats to data from internal
 and external sources, hardware failure, site availability or
-reslience, data preservation, and information integrity. Again,
+resilience, data preservation, and information integrity. Again,
 these areas are dependent on the organization's mission.
 
 For example: an ecommerce organization will most likely want strong
 site availability and protection of customer personal information.
-The Operations professionals might build a site with high reslience
+The Operations professionals might build a site with high resilience
 and availability including use of Content Delivery Networks (CDNs),
 strong encryption not only for the ecommerce session but also data
 at rest, role-based access for internal employees accessing customer

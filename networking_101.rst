@@ -56,7 +56,7 @@ the layer below.
    just as easy to send text across the globe as it is to write to a file on a
    local disk - a technological miracle that is often taken for granted. The
    ICMP protocol, used by the ubiquitous ``ping`` utility, allows small test
-   packets to be sent to a destination for troublshooting purposes.
+   packets to be sent to a destination for troubleshooting purposes.
 
 *  Layer 5 - Session layer
 
@@ -70,7 +70,7 @@ the layer below.
    The job of the presentation layer is to handle data encoding and decoding as
    required by the application. An example of this function is the Multipurpose
    Internet Mail Extensions (MIME) protocol, used to encode things other than
-   unformated ASCII text into email messages. Both the session layer and the
+   unformatted ASCII text into email messages. Both the session layer and the
    presentation layer are often neglected when discussing TCP/IP because many
    application-layer protocols implement the functionality of these layers
    internally.
@@ -95,13 +95,13 @@ version to be widely deployed. This is the version of the protocol you're most l
 encounter, and the default version of the IP protocol in Linux.
 
 IPv4 uses a 32-bit address space most typically represented in 4 dotted decimal notation,
-each octect contains a value between 0-255, and is seperated by a dot. An example 
+each octet contains a value between 0-255, and is separated by a dot. An example
 address is below:
 
     10.199.0.5 
 
-There are several other representations, like dotted hexidecimal, dotted octal, hexidecimal, 
-decimal, and octal. These are infrequently used, and will be covered in later sections. 
+There are several other representations, like dotted hexadecimal, dotted octal, hexadecimal,
+decimal, and octal. These are infrequently used, and will be covered in later sections.
 
 
 
@@ -117,14 +117,14 @@ TCP vs UDP
 
 Subnetting, netmasks and CIDR
 =============================
-A subnet is a logical devision of an IP network, and allows the host system to identify which 
+A subnet is a logical division of an IP network, and allows the host system to identify which
 other hosts can be reached on the local network. The host system determines
 this by the application of a routing prefix. There are two typical representations of this
 prefix: a netmask and CIDR. 
 
 Netmasks typically appear in the dotted decimal notation, with values between 0-255 in each 
 octet. These are applied as bitmasks, and numbers at 255 mean that this host is not reachable.
-Netmask can also be refered to as a Subnet Mask and these terms are often used interchangeably. An 
+Netmask can also be referred to as a Subnet Mask and these terms are often used interchangeably. An
 example IP Address with a typical netmask is below:
 
 ============= ===============
