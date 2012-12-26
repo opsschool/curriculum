@@ -199,7 +199,7 @@ the type of connector used on SFPs or XFPs. Typcially the connector is packaged 
 with each cable side by side. 
 
 SC connectors are also know as Subscriber Connector, Square Connector, or Standard Connector. This is the type
-of connector typically used in the telcom industry. They have a larger form factor than the LC connectors, and 
+of connector typically used in the telecom industry. They have a larger form factor than the LC connectors, and
 are often found in single and duplex configurations.
 
 
