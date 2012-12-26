@@ -104,6 +104,21 @@ following descriptions compare and contrast:
   knows what they need as well. Darren's team may have ideas about what
   statistics are important to monitor.
 
+.. _whats-sysadmin-chris:
+
+* **Chris works for a consultancy.** The company has many clients for which it
+  provides software development and operations support. Every client has their
+  own infrastructure, their own requirements - some of them very similar
+  to the previous examples, some very different. Therefore, Chris needs to be
+  familiar with a wide range of technologies, in addition to being able to
+  learn new things quickly. There's a lot of variety in the day-to-day job.
+  While it's not his primary responsibility to write code, sometimes the job
+  calls for it - where context has already determined the implementation
+  language. Chris works closely not only with the clients but also with his
+  developer coworkers and the rest of the operations team to meet client goals.
+  In addition, Chris also works with the rest of the operations team to support
+  the consultancy's own infrastructure.
+
 .. _whats-sysadmin-comparing-stories:
 
 Comparing Stories
