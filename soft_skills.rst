@@ -2,7 +2,7 @@ Soft Skills
 ***********
 
 What is the role of Operations?
-========================
+===============================
 Under any of the Operations professions, the most fundamental role
 of the Operations person is to deliver services to a set of customers.
 To build upon this the Operations person maintains existing IT
