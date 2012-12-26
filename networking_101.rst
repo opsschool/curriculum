@@ -122,7 +122,7 @@ other hosts can be reached on the local network. The host system determines
 this by the application of a routing prefix. There are two typical representations of this
 prefix: a netmask and CIDR. 
 
-Netmasks typically appear in the dotted decimal notation, with values between 0-255 in each 
+Netmasks typically appear in the dotted decimal notation, with values between 0-255 in each
 octet. These are applied as bitmasks, and numbers at 255 mean that this host is not reachable.
 Netmask can also be referred to as a Subnet Mask and these terms are often used interchangeably. An
 example IP Address with a typical netmask is below:
@@ -146,8 +146,8 @@ IP Address    CIDR
 Private address space (:rfc:`1918`)
 ===================================
 
-Certian ranges of addresses were reserved for private networks. Using this address space
-you cannot communicate with public machines without a NAT gateway or proxy. There are 
+Certain ranges of addresses were reserved for private networks. Using this address space
+you cannot communicate with public machines without a NAT gateway or proxy. There are
 three reserved blocks:
 
 ============== ===================== =============== ==============
@@ -195,7 +195,7 @@ LC vs SC
 LC and SC connectors are the two most common type of fiber connectors. 
 
 LC is also known as a Lucent Connector. They are typically used for high-density applications, and are
-the type of connector used on SFPs or XFPs. Typcially the connector is packaged in a duplex configuration
+the type of connector used on SFPs or XFPs. Typically the connector is packaged in a duplex configuration
 with each cable side by side. 
 
 SC connectors are also know as Subscriber Connector, Square Connector, or Standard Connector. This is the type
