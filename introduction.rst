@@ -23,8 +23,8 @@ Usenix defines this role as:
    -- Usenix, *Job Descriptions for System Administrators, 3d Edition Revised*
 
 Our goal is to teach these topics, but also to provide a good understanding of
-how the components work, which enables them to continue to grow their skills
-and contributions.
+how the components work, which enables the students to continue to grow their
+skills and contributions.
 
 Our focus is any person who has an interest in operations. There are often
 personality traits which allow people to understand the role of a systems
