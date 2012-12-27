@@ -18,12 +18,13 @@ with one another.
 The RFC Documents
 =================
 
-Starting in 1969, the RFC document series describes standards for how computers 
+Starting in 1969, the RFC document series describes standards for how computers
 communicate. The series gets its name from the RFC process, wherein industry
 experts publish documents for the community at large and solicit comments on
 them. If the Internet community finds errors in a document, a new, revised
-version is published, obsoleting the prior versions. Some documents, such as the
-document specifying email messages, have had several revisions.
+version is published. This new version obsoletes the prior versions. Some
+documents, such as the document specifying email messages, have had several
+revisions.
 
 The `RFC Editor <http://www.rfc-editor.org/>`_ manages the RFC archive, as well
 as associated standards. New documents go to the RFC Editor for publication
@@ -40,11 +41,10 @@ Important RFCs
 --------------
 
 There are a number of RFCs which don't pertain to any specific technology but
-which are nevertheless seminal. These documents established procedure or policy
-that have shaped everything coming after, and as such have a timeless quality.
-In some cases, later documents make references to them, making knowledge of
-their contents quite useful. This list is given in order of issue, increasing
-numerically. It is by no means an exhaustive list.
+which are nevertheless seminal. These documents establish procedure or policy
+which have shaped everything after, and as such have a timeless quality.
+In some cases, later documents make references to them. This list is given in
+increasing numerical order, though is not exhaustive.
 
 * :rfc:`1796`: Not All RFCs are Standards
 
