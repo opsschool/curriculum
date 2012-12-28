@@ -8,6 +8,67 @@ Systems Interconnection (:term:`OSI`) model, which is a standard framework with 
 implement communication systems. Next, we will delve into each layer of the OSI
 model in more detail as it applies to the role of systems administration.
 
+Before any discussion of networking, however, it's important to have a
+working knowledge of the numbered Request for Comments (:term:`RFC`) documents
+and how they apply to computer networking. These documents describe the
+mechanisms for the OSI layer implementations (e.g. TCP, IP, HTTP, SMTP)
+and as such are the authoritative source for how computers communicate
+with one another.
+
+The RFC Documents
+=================
+
+Starting in 1969, the RFC document series describes standards for how computers
+communicate. The series gets its name from the RFC process, wherein industry
+experts publish documents for the community at large and solicit comments on
+them. If the Internet community finds errors in a document, a new, revised
+version is published. This new version obsoletes the prior versions. Some
+documents, such as the document specifying email messages, have had several
+revisions.
+
+The `RFC Editor <http://www.rfc-editor.org/>`_ manages the RFC archive, as well
+as associated standards. New documents go to the RFC Editor for publication
+[#notquite]_, whether revision or new standard. These documents go through a
+standardization process, eventually becoming Internet-wide standards. Many of
+the networking protocols discussed in later chapters have RFCs governing their
+behavior, and each section should provide information on the relevant RFCs.
+
+.. [#notquite] This is a simplification, as there are actually many standards
+  bodies involved in the process. The `RFC Editor Publication Process
+  <http://www.rfc-editor.org/pubprocess.html>`_ document explains in full detail.
+
+Important RFCs
+--------------
+
+There are a number of RFCs which don't pertain to any specific technology but
+which are nevertheless seminal. These documents establish procedure or policy
+which have shaped everything after, and as such have a timeless quality.
+In some cases, later documents make references to them. This list is given in
+increasing numerical order, though is not exhaustive.
+
+* :rfc:`1796`: Not All RFCs are Standards
+
+  This document describes the different kinds of documents in the RFC series.
+
+* :rfc:`2026`: The Internet Standards Process
+
+  This document (and those that update it) describes in detail how RFCs are
+  published and how they become Internet standards.
+
+* :rfc:`2119`: Key words for use in RFCs to Indicate Requirement Levels
+
+  This document, referenced in many following RFCs, presents a common vocabulary
+  for specifying the relationship between a standard and implementations of that
+  standard. It provides keywords that specify how closely an implementation
+  needs to follow the standard for it to be compliant.
+
+* :rfc:`5000`: Internet Official Protocol Standards
+
+  This document provides an overview of the current standards documented by the
+  RFCs and which RFC is the most recent for each standard. This document is
+  regularly updated with the current standards document status.
+
+
 OSI model
 =========
 
