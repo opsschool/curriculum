@@ -48,25 +48,25 @@ increasing numerical order, though is not exhaustive.
 
 * :rfc:`1796`: Not All RFCs are Standards
 
-This document describes the different kinds of documents in the RFC series.
+  This document describes the different kinds of documents in the RFC series.
 
 * :rfc:`2026`: The Internet Standards Process
 
-This document (and those that update it) describes in detail how RFCs are
-published and how they become Internet standards.
+  This document (and those that update it) describes in detail how RFCs are
+  published and how they become Internet standards.
 
 * :rfc:`2119`: Key words for use in RFCs to Indicate Requirement Levels
 
-This document, referenced in many following RFCs, presents a common vocabulary
-for specifying the relationship between a standard and implementations of that
-standard. It provides keywords that specify how closely an implementation needs
-to follow the standard for it to be compliant.
+  This document, referenced in many following RFCs, presents a common vocabulary
+  for specifying the relationship between a standard and implementations of that
+  standard. It provides keywords that specify how closely an implementation
+  needs to follow the standard for it to be compliant.
 
 * :rfc:`5000`: Internet Official Protocol Standards
 
-This document provides an overview of the current standards documented by the
-RFCs and which RFC is the most recent for each standard. This document is
-regularly updated with the current standards document status.
+  This document provides an overview of the current standards documented by the
+  RFCs and which RFC is the most recent for each standard. This document is
+  regularly updated with the current standards document status.
 
 
 OSI model
