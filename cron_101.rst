@@ -36,12 +36,16 @@ a cron job are as follows:
 
 and that the acceptable values for each field are:
 
-  ``0-59 0-23 1-31 0-11 0-6 `filepath/command```
+  ``0-59 0-23 1-31 1-12 0-6 `filepath/command```
 
-Note that order matters. Knowing this, we can see that the output of
+Note that order matters, and that the first element is 0 for the minute, hour,
+and day of the week fields, while the day of the month and month
+field begin at 1.
+
+Knowing this, we can see that the output of
 ``crontab -l`` really means:
 
-At 12:05 every Monday, every month, regardless of the day of the month, run the
+At 12:05 every Sunday, every month, regardless of the day of the month, run the
 command `copy-to-partition` in the `/home/jdoe/jobs` directory.
 
 Let's take another example and create a cron job that checks disk space
