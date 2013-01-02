@@ -39,10 +39,10 @@ Let's dissect this a bit, as it will help when you're creating your own cron
 jobs. What is this output telling you? It is helpful to know that the fields of
 a cron job. Here's a table with the order of fields, and their values:
 
-====== ==== ========== ===== ========= ================
-MINUTE HOUR DAYOFMONTH MONTH DAYOFWEEK COMMAND
-0-59   0-23 1-31       1-12  0-6       filepath/command
-====== ==== ========== ===== ========= ================
+  ====== ==== ========== ===== ========= ================
+  MINUTE HOUR DAYOFMONTH MONTH DAYOFWEEK COMMAND
+  0-59   0-23 1-31       1-12  0-6       filepath/command
+  ====== ==== ========== ===== ========= ================
 
 .. note:: Order matters, and that the first element is 0 for the minute, hour,
   and day of the week fields, while the day of the month and month
