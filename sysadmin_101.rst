@@ -1,5 +1,6 @@
+############
 Sysadmin 101
-************
+############
 
 *System Administration* is the blanket title for a myriad of job
 responsibilities involving the management of information systems and/or
@@ -27,10 +28,12 @@ in the larger business context, a mindset and approach to systems administration
 demonstrate the importance of problem solving and ethics in the every day
 life of a system administrator.
 
+
 .. _whats-sysadmin:
 
+*******************************
 What is Systems Administration?
-===============================
+*******************************
 
 Like we mentioned above, the role of the System Administrator is diverse.
 
@@ -122,7 +125,7 @@ following descriptions compare and contrast:
 .. _whats-sysadmin-comparing-stories:
 
 Comparing Stories
------------------
+=================
 Did you notice any themes throughout the stories? How do they contrast?
 
 Highlighted themes include:
@@ -144,10 +147,13 @@ Highlighted themes include:
   ops person is concerned with proper implementation of a service so it
   continues to be scalable and reliable for the future.
 
+
 .. _whats-dev:
 
+********************
 What is Development?
-====================
+********************
+
 As mentioned in the section introduction, system administration doesn't exist
 in a vacuum. Computers don't just compute for the sake of it - not yet,
 anyways.
@@ -159,49 +165,49 @@ research a topic in a literary journal database.
 
 These backends can be big, and have a many considerations behind their design.
 
-.. todo:
+.. todo: TODO: Section needs more developer perspective.
 
-TODO: Section needs more developer perspective.
 
 .. _constrasting-devandops:
 
+**************************************
 Contrasting Development and Operations
-======================================
-At the end of the day, both groups have an important shared goal: to ensure that a
-system or service remains as *available* (think: accessible, usable, works how people expect it to)
-as a customer expects it to be. You'll see references to the idea of how "available" a system or service
-is later when Service Level Agreements (SLAs) are discussed.
+**************************************
+
+At the end of the day, both groups have an important shared goal: to ensure that
+a system or service remains as *available* (think: accessible, usable, works how
+people expect it to) as a customer expects it to be. You'll see references to
+the idea of how "available" a system or service is later when Service Level
+Agreements (SLAs) are discussed.
 
 That being said, Development and Operations have different day-to-day thoughts.
 
 Operations thoughts include:
 
 * How are we going to install (or, deploy) the servers that run this application?
-
 * How will we monitor the system/service to make sure it's working as we expect?
-
 * Can we deploy this system or service in a way that is easy to maintain?
-
 * What are the pros/cons of implementing this application in this way?
 
 Development thoughts include:
 
 * How will I implement message passing between two parts of this application?
-
 * What's the best algorithm to use for searching through this amount of data?
-
-* Should I be thinking of a key-value store for this data vs. using a relational database?
-
+* Should I be thinking of a key-value store for this data vs. using a relational
+  database?
 * What language will I implement this in?
 
 Again, this is by no means an exhaustive list - entire books could be written
 about the subject. It's just to give a feel for the different considerations.
 
+
+*************************************
 History of Development and Operations
-=====================================
-Historically, Developers made a product or application and Operations implemented it. Some
-companies still use this model today. Unfortunately, the effects of
-this style of work can be dangerous:
+*************************************
+
+Historically, Developers made a product or application and Operations
+implemented it. Some companies still use this model today. Unfortunately, the
+effects of this style of work can be dangerous:
 
 * **Developers and Operations personnel may have different goals.** Something
   important to the operations folk may not be important to the Development
@@ -215,39 +221,40 @@ this style of work can be dangerous:
 
 Fortunately, recent companies there has been more effort on ensuring that both
 teams are familiar with the concepts of the other - this is often referred to
-as "DevOps" - the combination of Development and Operations. Recall
-":ref:`Darren's story <whats-sysadmin-darren>`" - he's an operations
-person who worked with the developers to ensure that the developers understand
-the environment that their application will run on. The street went both ways, though:
-the developers need to share how they plan to implement various product features
-so that the operations team can figure out how to best support the developers needs.
+as *DevOps* - the combination of Development and Operations. Recall
+:ref:`Darren's story <whats-sysadmin-darren>` - he's an operations person who
+worked with the developers to ensure that the developers understand the
+environment that their application will run on. The street went both ways,
+though: the developers need to share how they plan to implement various product
+features so that the operations team can figure out how to best support the
+developers needs.
 
 If you're working in an environment without developers, that's OK. There are
 other people who you share a common, larger goal with. Businesses may have
 analysts that interpret needs and look to you for assistance. In
-":ref:`Karen's story <whats-sysadmin-karen>`," she supports hardware engineers who have requirements
-to deliver a particular sensor. Their ability to work hinges on Karen's ability
-to deliver a service for simulation that is available for them to work, which
-requires an understanding of their requirements and needs as well.
+:ref:`Karen's story <whats-sysadmin-karen>`, she supports hardware engineers who
+have requirements to deliver a particular sensor. Their ability to work hinges
+on Karen's ability to deliver a service for simulation that is available for
+them to work, which requires an understanding of their requirements and needs
+as well.
+
 
 .. _whats-not-sysadmin:
 
+**********************************
 What is System Administration Not?
-==================================
+**********************************
 
 * Professional Roadblock ("No-Men")
 
+
+********************************************
 The role of the SysAdmin in the organization
-============================================
+********************************************
 
 * "Who is that guy? Why is he always muttering about 'latency'?"
 * Understanding the greater role of delivering a service for a business
 
-Mindset and approach
-====================
-
-Generalists vs Specialists
---------------------------
 
 Problem Solving
 ===============
