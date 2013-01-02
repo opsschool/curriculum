@@ -35,7 +35,7 @@ wonderful things, please follow this process:
   feedback. Community review is also encouraged.
 
 If you submit a pull request and would like to have your name associated with
-the project, add it to the `credits.rst` file!
+the project, add it to the `meta/contributions.rst` file!
 
 Some cool things:
 
