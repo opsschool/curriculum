@@ -32,7 +32,9 @@ You can find the documentation source on Github and send pull requests:
 
 Please fork the repo to your own account, create a branch, make your changes
 there, and issue a pull request from your fork/branch to ``opsschool:master``.
-Be descriptive in your commit message for anything non-obvious.
+Be descriptive in your commit message for anything non-obvious. Also,
+please update the file ``meta/todo.rst`` to reflect your changes (if you
+changed anything that was requested in that file).
 
 If you'd like to join the mailing list, email avleen@gmail.com.
 
