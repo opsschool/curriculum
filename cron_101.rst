@@ -131,10 +131,11 @@ This would get us what we wanted (``df -h`` is the unix command for checking fre
 disk space).
 
 Field values can also be ranges. Let's say you want to edit this job to run the
-same command (``df -h``), but instead of running every minute, you only want
-the job to run it in the first 5 minutes of every hour, every day of the month,
-every month, for every day of the week. Run ``crontab -e`` again and changing
-the line to:
+same command (``df -h``), but instead of running every minute, you only want the
+job to run it in the first 5 minutes of every hour, every day of the month,
+every month, for every day of the week.
+
+Running ``crontab -e`` again and changing the line to:
 
 .. code-block:: console
 
