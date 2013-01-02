@@ -139,10 +139,10 @@ Highlighted themes include:
   Maybe that means a script that can take a list of users and add them to a
   system, maybe that means a script that can check to make sure a service is
   responding appropriately for a monitoring system.
-* **System Administration means a lot of *different* things to a lot of people.** The other
-  non-IT employees are looking for something that "just works" - the ops
-  person is concerned with proper implementation of a service so it continues
-  to be scalable and reliable for the future.
+* **System Administration means a *variety* of things to a lot of people.**
+  The other non-IT employees are looking for something that "just works" - the
+  ops person is concerned with proper implementation of a service so it
+  continues to be scalable and reliable for the future.
 
 .. _whats-dev:
 

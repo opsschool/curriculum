@@ -40,8 +40,12 @@ from the customer perspective:
 * What is the core mission of this organization?
 * How does Operations support the mission?
 * What does the organization need from the Operations professionals?
-* Why should this organization come to these Operations people for this service or solution? (What is the value proposition for Operations within this organization?)
-* How could Operations provide more value: higher level of competitiveness, faster service delivery, stronger security, or other benefit that aligns with the mission?
+* Why should this organization come to these Operations people for this service
+  or solution? (What is the value proposition for Operations within this
+  organization?)
+* How could Operations provide more value: higher level of competitiveness,
+  faster service delivery, stronger security, or other benefit that aligns with
+  the mission?
 
 Translating customer requirements is key to focusing the efforts
 of Operations. Operations work can be a slippery slope where the
