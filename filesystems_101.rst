@@ -13,7 +13,7 @@ handling many small files (ReiserFS), some are much better at large files and
 deleting files quickly (XFS, EXT4).
 
 The version of Unix you use will have picked a filesystem which is used by
-default, on Linux, this is often EXT3.
+default, on Linux this is often EXT3.
 
 Understanding the way filesystems work is important when you have to fix issues
 related to disk space, performance issues with reading and writing to disk, and
@@ -25,14 +25,15 @@ use them.
 
 Working with disks in Linux
 ===========================
-
-Disks in Linux are normally named /dev/sda, /dev/sdb, etc.
-If you are in a VM, they may be called /dev/xvda, /dev/xvdb, etc.
-The last letter (“a”, “b”, “c”..) relates to the physical hard drive in your
-computer. “a” is the first drive, “b” is the second.
+Disks in Linux are normally named ``/dev/sda``, ``/dev/sdb``, etc.
+If you are in a VM, they may be named ``/dev/xvda``, ``/dev/xvdb``, etc.
+The last letter ("a", "b", "c"..) relates to the physical hard drive in your
+computer. "a" is the first drive, "b" is the second.
 
 If you have an already configured system, you will likely see entries like
-this::
+this:
+
+.. code-block:: bash
 
     -bash-4.1$ ls -la /dev/sd*
     brw-rw---- 1 root disk 8, 0 Jul  6 16:51 /dev/sda
@@ -53,6 +54,15 @@ man parted
 Formatting partitions with new file systems
 ===========================================
 man mkfs
+
+Mounting a filesystem
+=====================
+.. todo:: explain different kinds of mounts, autofs, /etc/fstab
+
+Filesystem options
+==================
+noatime
+nobarriers
 
 How filesystems work
 ====================
@@ -82,14 +92,9 @@ http://en.wikipedia.org/wiki/Inode
 
 File system layout
 ==================
-File system heirarchy standard is a reference on managing a Unix filesystem or directory structure.
+File system hierarchy standard is a reference on managing a Unix filesystem or directory structure.
 
 http://www.pathname.com/fhs/
-
-Filesystem options
-==================
-noatime
-nobarriers
 
 Fragmentation in unix filesystems
 =================================
