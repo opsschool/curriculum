@@ -16,8 +16,24 @@ ps
 top
 ---
 
+df
+--
+Finding free disk space is critical.
+
+du
+--
+Finding disk space used is critical.
+
+find
+----
+Finding specific files is critical.
+
 kill
 ----
+
+ls
+--
+Knowing what exists on your system is critical.
 
 mount
 -----
@@ -108,5 +124,6 @@ Only talk about replacing text for now? It's the most common / needed piece of
 sed at this level.
 
 sort
----
+----
 Definitely need to discuss sort and how to use it in basic activities.
+
