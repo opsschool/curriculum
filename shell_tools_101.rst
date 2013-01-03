@@ -90,6 +90,9 @@ It is important to note that foobar.txt did not exist before running this comman
 
 
 
+cut
+---
+This is a very useful command which should be covered.
 
 grep
 ----
@@ -103,3 +106,7 @@ sed
 ---
 Only talk about replacing text for now? It's the most common / needed piece of
 sed at this level.
+
+sort
+---
+Definitely need to discuss sort and how to use it in basic activities.
