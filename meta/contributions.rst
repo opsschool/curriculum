@@ -96,4 +96,5 @@ Martin Gehrke <martin@teamgehrke.com>               LOPSA
 John Boris <jborissr@gmail.com>                     LOPSA
 John Dewey <john@dewey.ws>                          AT&T
 Carolyn Rowland <unpixie@gmail.com>
+Jordan Dea-Mattson                                  Numenta, Inc.
 ==================================================  ====================================
