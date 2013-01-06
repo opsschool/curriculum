@@ -165,7 +165,7 @@ research a topic in a literary journal database.
 
 These backends can be big, and have a many considerations behind their design.
 
-.. todo: TODO: Section needs more developer perspective.
+.. todo:: "What is Development" Section needs more developer perspective.
 
 
 .. _constrasting-devandops:
@@ -239,22 +239,19 @@ them to work, which requires an understanding of their requirements and needs
 as well.
 
 
-.. _whats-not-sysadmin:
+********************************
+What System Administration Isn't
+********************************
 
-**********************************
-What is System Administration Not?
-**********************************
+System Administration, like many things in life, can suffer from a cultural perception issue. 
+Primarily, some outside of the operations field that believe that the role 
+of IT is not to innovate; rather that IT exists to enforce rules decided on by others.
 
-* Professional Roadblock ("No-Men")
+We challenge that mindset. System administration is not about being a "no-man" (or a "no-woman")
+but about finding ways to intelligently implement the needs of a business in a way that increases
+maintainability, usability, and security for a group of people. 
 
-
-********************************************
-The role of the SysAdmin in the organization
-********************************************
-
-* "Who is that guy? Why is he always muttering about 'latency'?"
-* Understanding the greater role of delivering a service for a business
-
+.. todo:: Expand on what system administration isn't.
 
 Problem Solving
 ===============
