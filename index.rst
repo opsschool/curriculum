@@ -45,7 +45,7 @@ Table of Contents
    loadbalancing_101
    monitoring_101
    monitoring_201
-   backups
+   bcp
    architecture_101
    architecture_201
    config_management
