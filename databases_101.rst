@@ -4,10 +4,16 @@ Databases 101 (Relational databases)
 What is a Database?
 ===================
 
-A database is a structured collection of data. The structure is usually defined
-to help model some aspect of reality. Typically data is stored using data-types
-to ensure data consistency. Data is usually presented in tables, but can
-also be presented in a variety of different forms.
+A database is a program or library that helps you store data. They usually
+impose some sort of structure to the data to assist with querying and filtering. The
+most common structure databases use to store data is a table, and most database 
+will use multiple tables to store data.
+
+A table is composed of rows representing an item, and columns represent some
+attribute of that item; much like using a spreadsheet for a task list, where 
+a row would be a task, and you would have a column for a task name, and a second
+column for whether it has been completed.
+
 
 What is a Relational Database?
 ==============================
@@ -25,6 +31,13 @@ We use databases to store data. They help provide us guarantees that data is sto
 and that it exists in the correct format. In addition most databases are heavily
 optimized making data retrieval very fast.
 
+Because of these attributes, we use databases a lot. Most e-commerce sites use
+databases to keep inventory and sales records. Doctors offices use databases
+to store medical records, and the DMV uses databases to keep track of cars. Lawyers
+use databases to keep track of case law, and many websites use databases to
+store and organize content. Databases are everywhere, and you interact with them
+daily.
+
 What is SQL?
 ============
 
@@ -37,15 +50,17 @@ SQL shell
 =========
 
 Many relational databases provide an interactive CLI for interacting with the
-database. For example MySQL provides the mysql command, Postgresql provides psql, and Oracle
-provides psql. These programs give you the ability to compose queries, and diagnose
+database. For example MySQL provides the ``mysql`` command, Postgresql provides ``psql``, and Oracle
+provides ``sqlplus``. These programs give you the ability to compose queries, and diagnose
 issues with the software.
+
+todo:: Add example of connecting with each command.
 
 Creating databases
 ==================
 
-Most database platforms should support the creation of a database SQL *CREATE DATABASE*
-query. It can be executed via a connection to the server, or via the SQL shell.
+Most database platforms allow you to create a new database using the ``CREATE DATABASE``
+SQL query. It can be executed via a connection to the server, or via the SQL shell.
 
 .. code-block:: sql
 
@@ -57,7 +72,7 @@ Specialized Create Database Commands
 ------------------------------------
 
 Some database platforms have specialized GUI tools, or CLI tools. For example
-Postgresql has a UNIX command *createdb* that creates databases. In many
+Postgresql has a UNIX command ``createdb`` that creates databases. In many
 cases these commands are just wrappers around the standard SQL statement.
 
 MySQL
@@ -83,7 +98,7 @@ your particular vendor to see what is supported.
 Creating users
 ==============
 
-Users can be created in most databases using the the *CREATE USER* statement.
+Users can be created in most databases using the the ``CREATE USER`` statement.
 
 ..  code-block:: sql
 
@@ -98,7 +113,7 @@ command line programs.
 MySQL
 ~~~~~
 
-MySQL does not support creation of users via the *mysqladmin* command.
+MySQL does not support creation of users via the ``mysqladmin`` command.
 
 Postgresql
 ~~~~~~~~~~
@@ -224,7 +239,7 @@ data multiple times, and generally reduces the storage cost of a row. If
 San Francisco changed it's name you would only need to update
 a single and row instead of two tables like the first example. And,
 SQL makes it trivial to replace the id with a name using a JOIN statement
-when the data is retrieved, making it functionaly identical to the two
+when the data is retrieved, making it functionally identical to the two
 table example.
 
 Select, Insert, Update and Delete
