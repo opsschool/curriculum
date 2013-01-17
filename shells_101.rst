@@ -28,7 +28,7 @@ The command-line editing mode emulates the movement functions of two common text
 ``emacs`` and ``vi``.  In the case of the shell, the cursor's movement is being controlled.
 .. todo: Tighten up the above sentence.  It's wordy and doesn't seem to make the point I want it to make. 
 
-Be default, ``bash`` operates in ``emacs`` mode.
+By default, ``bash`` operates in ``emacs`` mode.
 
 Example Edit Commands
 ~~~~~~~~~~~~~~~~~~~~~
@@ -132,7 +132,7 @@ Any script called from this file is executed for all users.
 
 ``~/.bash_profile``
 ~~~~~~~~~~~~~~~~~~~
-This is the user profile.  Any eonvironment variable set in this file applies to the user only.
+This is the user profile.  Any environment variable set in this file applies to the user only.
 Any script called from this file is executed for the user only.
 
 Profile Precedence
@@ -241,7 +241,7 @@ To bring it back to the foreground, run ``fg``: ::
   sleep 30
   [23:24:56 ~]$
 
-While in the foreground, he job can be suspended via ``Ctrl-z`` and sent to the background once more using ``bg``: ::
+While in the foreground, the job can be suspended via ``Ctrl-z`` and sent to the background once more using ``bg``: ::
 
   [23:24:56  ~]$ sleep 30 &
   [1] 21078
