@@ -147,7 +147,7 @@ Some benefits of agile include the following:
 * project teams are empowered
 * can easily be combined with DevOps methodology to improve effectiveness of development-into-operations
 * if done well, can increase work output of teams (increased velocity)
-* everyone on the project can easily see where the project stands (e.g.  scrumboard or kanban wall)
+* everyone on the project can easily see where the project stands (e.g. scrumboard or kanban wall)
 
 Kanban
 ^^^^^^
@@ -189,6 +189,7 @@ Development's view:
 * agility is key
 
 Operation's view:
+
 * supporting the product for customers
 * keeping a handle on IT security
 * planning for deployment to production state 
@@ -369,14 +370,14 @@ alternatively, how does the organization view this particular issue?
 Those with strong acuity for business will see the big picture and
 be able to understand the implications of a decision on more than
 just operations.
-         
+
 In some cases it may not be a problem, but an opportunity that injects
 potential life into an organization or recalibrates it. Business
 leaders, stakeholders, customers or whatever you call them often don't
 understand what technology can do for them. Operations should understand
 the organization well enough to see where technology can support
 innovation. This leads into change as a constant.
-             
+
 What would it take to make this happen? What are the missing ingredients
 for success?
 
