@@ -6,16 +6,20 @@ Laziness is considered a virtue in system administration, meaning you should
 figure out ways to avoid having to perform the same task regularly by hand.
 **Cron** to the rescue!
 
+.. epigraph::
+
     **cron** is the time-based job scheduler in Unix-like computer operating
     systems. **cron** enables users to schedule jobs (commands or shell scripts)
     to run periodically at certain times or dates. It is commonly used to
     automate system maintenance or administration, though its general-purpose
     nature means that it can be used for other purposes, such as connecting
-    to the Internet and downloading email. [#]_
+    to the Internet and downloading email.
 
-**cron** allows you to run routine jobs on a user's system automatically at a
-specific future time or at regular intervals rather than running such jobs
-manually. Even knowing just the basics of crontab is a huge win, as this tool
+    -- `cron - From Wikipedia, the free encyclopedia <http://en.wikipedia.org/wiki/Cron>`_
+
+**cron** allows you to run routine jobs on a Unix-based system automatically at
+a specific future time or at regular intervals rather than running such jobs
+manually. Even knowing just the basics of cron is a huge win, as this tool
 increases productivity, saves time and is not prone to human error, i.e.
 forgetting to run a job.
 
@@ -35,8 +39,15 @@ under **cron**. They're composed of the following parts:
 - *command*: The rest of the line is interpreted as the command that **cron**
   should run at the specified time.
 
-"crontab" may also refer to a file containing any number of these "crontabs",
-one per line.
+"crontab" may also refer to a file containing any number of these cron
+tables, one per line.
+
+crontab files are commonly found in a couple of different places:
+
+- ``/etc/cron.d``, ``/etc/cron.daily``, ``/etc/cron.hourly``, and so on: System
+  crontabs, or crontabs installed by a software package
+- ``/var/spool/cron/<username>``: Users' crontabs; these are created
+  and managed with the ``crontab`` command.
 
 The ``crontab`` command
 =======================
@@ -44,17 +55,16 @@ The ``crontab`` command
 How do I list jobs scheduled to run with **cron**?
 --------------------------------------------------
 
-The easiest way to see jobs running regularly on the current user's system
-(aka "cron jobs") is to type:
+The easiest way to see jobs running regularly on the system (aka "cron jobs")
+is to type:
 
 .. code-block:: bash
 
   crontab -l
 
-in the shell. This will show all the cron jobs that currently run on the current
-user's system. For example, if you are logged in as ``jdoe``, then the current user
-is ``jdoe``, and if there are no cron jobs running the output will be something
-like:
+in the shell. This will show all the cron jobs scheduled to run as the
+current user. For example, if you are logged in as ``jdoe`` and there
+are no cron jobs running the output will be something like:
 
 .. code-block:: console
 
@@ -121,7 +131,7 @@ Knowing this, we can see that this "crontab" means:
 
 Let's take another example and create a cron job that checks disk space
 available every minute, every hour, every day of the month, every month, for
-every day of the week, and outputs it to a file named ``disk_space.txt``.
+every day of the week, and outputs it to a file named :file:``disk_space.txt``.
 
 .. code-block:: console
 
@@ -202,8 +212,9 @@ Modify a specific user's crontab
 --------------------------------
 
 The ``crontab`` command can be used to view or modify a specific user's crontab
-file, instead of the current user's crontab file. For instance, to edit
-``jsmith``'s crontab, type the following in a shell:
+file, instead of the current user's crontab file. For instance, if you
+are logged in as ``jdoe`` and you want to edit ``jsmith``'s crontab (and you
+have the permissions to do so), type the following in a shell:
 
 .. code-block:: bash
 
@@ -224,8 +235,6 @@ variable.
 
 Footnotes
 =========
-
-.. [#] `cron - From Wikipedia, the free encyclopedia <http://en.wikipedia.org/wiki/Cron>`_
 
 .. [#] `"Examples" in cron - Wikipedia, a free encyclopedia <http://en.wikipedia.org/wiki/Cron#Examples_2>`_
 
