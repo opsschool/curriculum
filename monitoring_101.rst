@@ -40,4 +40,15 @@ Icinga
 SNMP
 ----
 
+Sensu
+-----
+`Sensu <https://github.com/sensu>`_ was written as a highly
+configurable, Nagios replacement. Sensu can be described as a
+"monitoring router", since it connects check scripts across any number
+of systems with handler scripts run on one or more Sensu servers. It
+is compatible with existing Nagios checks and additional checks can be
+written in any language similar to writing Nagios checks. Check
+scripts can send alert data to one or more handlers for flexible
+notifications. Sensu provides the server, client, api and dashboard
+needed to build a complete monitoring system.
 
