@@ -302,12 +302,19 @@ services such as SSH and HTTP daemons load in the order defined in the
 init system. The network interfaces, if configured, are enabled. It's
 business as usual if you're booting to a multiuser runlevel.
 
+Conversely, single user mode has the bare minimum of services enabled
+(notably there is no networking enabled), making it useful for
+troubleshooting (and not much else).
+
 You will need (or involuntarily find yourself in) single user mode
 when something breaks: something you configured interferes with the
 boot process and you need to turn it off, or perhaps a key filesystem
-is corrupt and you need to run a disk check.  In single user mode,
-generally the bare minimum amount of services are started to get you
-to a command prompt.
+is corrupt and you need to run a disk check.
+
+In single user mode, the only available access is via the console,
+although that need not be limited to physical presence. Remote console
+access by way of serial consoles and similar devices is a common
+management tool for data centers.
 
 Getty
 =====
