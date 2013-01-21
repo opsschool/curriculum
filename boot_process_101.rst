@@ -216,16 +216,16 @@ On an MBR-formatted drive and standard BIOS
 -------------------------------------------
 
 These stages must fit in that first 448 bytes of the partition table. Generally,
-stage 1 and stage 1.5 are small enough to exist in that first 448 bytes. They
+Stage 1 and Stage 1.5 are small enough to exist in that first 448 bytes. They
 contain the appropriate logic that allow the loader to read the filesystem that
-stage 2 is located on.
+Stage 2 is located on.
 
 On a GPT-formatted drive and UEFI
 ---------------------------------
 
 UEFI motherboards are able to read FAT32 filesystems and execute code.
 The system firmware looks for an image file that contains the boot code
-for stages 1 and 1.5, so that stage 2 can be managed by the operating
+for Stages 1 and 1.5, so that Stage 2 can be managed by the operating
 system.
 
 The Kernel and the Ramdisk
