@@ -361,6 +361,22 @@ What have we done and where to go from here
 Dashboard: Info for ops and info for the business
 =================================================
 
+Tasseo
+------
+`Tasseo <https://github.com/obfuscurity/tasseo>`_ is a Graphite
+specific live dashboard. It is lightweight, easily configurable and
+provides a near-realtime view of Graphite metric data. It is a ruby
+based `Sinatra <http://www.sinatrarb.com/>`_ and javascript application.
+
+Dashing
+-------
+`Dashing <http://shopify.github.com/dashing/>`_ is a dashboard
+framework allowing you to build your own custom dashboards. Dashboards
+can be created with premade widgets, or custom widgets can be written
+using scss, html and coffeescript. Data bindings allow reuse and
+manipulation of data from a variety of sources.
+
+
 Third-party tools
 =================
 
@@ -373,7 +389,12 @@ Boundry
 NewRelic
 --------
 
+Librato Metrics
+---------------
+
 Circonus
 --------
 
+Geckoboard
+----------
 
