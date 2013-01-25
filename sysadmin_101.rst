@@ -165,6 +165,28 @@ research a topic in a literary journal database.
 
 These backends can be big, and have a many considerations behind their design.
 
+.. _whats-developer-rachel:
+
+* **Rachel works for an ecommerce company.** The company has a large
+team of developers, all working in different applications, usually in ruby or
+javascript, and the applications talk to each other via APIs to support the main
+site that customers interact with. Her obligations to the business are to create
+new features for the website and maintain or fix the old ones. Her obligations to
+her other developers are to keep the code clean and readable, with tests so others
+can confidently refactor her code. She works closely with the Operations team to
+make the app-level changes that help the ops team maintain a robust infrastructure,
+like making pages fully cachable or eliminating unnecessary HTML, CSS, javascript
+or images being sent to the browser.
+
+.. _whats-developer-tyler:
+
+* **Tyler is a systems developer at a small technology company.** He takes
+complex processes, like developing a search engine or collecting statistics, and
+creates several pieces of software to accomplish those tasks. He works primarily
+in C, Perl and Python and has to have a deep understanding of the operating system
+his code will run on. He works closely with his Operations engineers to make sure his
+code is performant and on capacity planning.
+
 .. todo:: "What is Development" Section needs more developer perspective.
 
 
