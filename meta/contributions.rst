@@ -98,4 +98,5 @@ John Dewey <john@dewey.ws>                          AT&T
 Carolyn Rowland <unpixie@gmail.com>
 Jordan Dea-Mattson <jdm@dea-mattson.com>            Numenta, Inc.
 Adam Compton <comptona@gmail.com>
+Sean Escriva <sean.escriva@gmail.com>               Heavy Water Ops
 ==================================================  ====================================
