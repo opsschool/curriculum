@@ -4,6 +4,18 @@ Ops School Curriculum
 
 Welcome to the Ops School curriculum documentation site.
 
+Ops School is a comprehensive program to teach you how to how to be an
+operations engineer.
+Operations engineers are highly skilled persons who manage the computer systems
+at small and large businesses, as well as the various computer, network and
+security systems that allow the Internet to work.
+
+Since the early 1990's, operations engineers have been in high demand. As a
+result, these positions often provide high salaries and long term job security.
+The `SAGE/LISA Salary Survey <https://www.usenix.org/lisa/salary-surveys>` has
+charted the average salaries for systems administrators and operations engineers
+since 1999. This has consistently shown the field to be a prosperous field for
+those people who enjoy diving into the inner workings of computer systems.
 
 *****************
 Table of Contents
