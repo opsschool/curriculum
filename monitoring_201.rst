@@ -345,18 +345,210 @@ path.
 The Graphite web application
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+Normalizing the metrics
+~~~~~~~~~~~~~~~~~~~~~~~
 
+To easily navigate within hundreds of metrics, it's important to normalize the name.  Here are a few naming scheme:
+
+* ``<ENV>.<CLUSTER>.<SERVER>.metric``
+* ``<ENV>.<APPLICATION-TYPE>.<APPLICATION>.metric``
+* ``<ENV>.APPLICATIONS.EVENTS.<APP-NAME>.deploy``
+
+Here a few rules to choose an appropriate scheme:
+
+* always put the most common part on the left of the name
+* differentiate them by type (e.g: hosts / applications)
+
+In the end, consistency.
+
+To achieve this, a common solution is to have a small proxy between
+the tool reporting a metrics and Graphite.  This could be a HTTP proxy
+(like `documented by Jason Dixon <http://obfuscurity.com/2012/05/Organizing-Your-Graphite-Metrics>`_,
+or a simple script that listen on a port, and rewrites the metric.
+
+Using this pattern, you'll get more control over the format and paths
+chosen by developers or operations.
 
 StatsD
 -------
 
+`StatsD <https://github.com/etsy/statsd/>`_ is a network daemon
+listening for statistics and send the aggregation to a backend.  In
+our case we will see how it works with Graphite.
 
 Setting it up and make it show pretty graphs
 ---------------------------------------------
 
+StatsD is daemon running on `node.js <http://nodejs.org/>`_.  To install
+it, you will need to install first node.js (if it's not
+packaged for your OS, you can `follow the instructions
+<https://github.com/joyent/node/wiki/Installation>`_.  Then, to
+actually run StatsD:
+
+.. code-block:: bash
+
+  % git clone git://github.com/etsy/statsd.git
+  % cd statsd
+  % $EDITOR /etc/statsd/config.js
+  % node stats.js /etc/statsd/config.js
+
+A basic configuration file will be similar to this:
+
+.. code-block:: javascript
+
+  {
+    graphitePort: 2303,
+    graphiteHost: "localhost",
+    port: 8125,
+    graphite: {
+      legacyNamespace: false,
+      prefixTimer: "aggregate",
+      globalPrefix: ""
+    }
+  }
+  
+Concepts
+--------
+
+StatsD listens on the UDP port 8125 for incoming statistics.  As for
+Graphite, the protocol is line based.  You send a string similar to
+``name:1|c``.  The first element (name) is the name of the statistic,
+the colon act as a separator with the value (1), and the pipe
+separates the value with the type (c, for *counter*).
+
+StatsD stores statistics in buckets.  A value is attached to the
+statistic, and periodically (by default it's every 10 seconds), the
+statistics are aggregated and send to the backend.
+
+A few types are supported, and we will now see them in detail.
+
+Counter
+~~~~~~~
+
+The *counter* is the most basic type.
+
+.. code-block:: bash
+
+  % echo "my.statistic:1|c" | nc -w 1 -u localhost 8125
+
+This will add 1 to the statistic named *my.statistic".  After the
+flush the value for this statistic will be 0.  It's also possible to
+specify to statsd that we are sampling:
+
+.. code-block:: bash
+
+  % echo "my.statistic:1|c|@0.1" | nc -w 1 -u localhost 8125
+
+Timing
+~~~~~~
+
+.. code-block:: bash
+
+  % echo "my.timer:43|ms" | nc -w 1 -u localhost 8125
+
+Actually, timers can be used to report other things that elapsed time.
+You can use it to report bytes, etc.  This type is one of the most
+interesting because StatsD will compute the percentiles, average,
+standard deviation, sum, lower and upper bounds for the flush
+interval.
+
+Gauges
+~~~~~~
+
+Gauges are arbitrary values.
+
+.. code-block:: bash
+
+  % echo "my.statistic:23|g" | nc -w 1 -u localhost 8125
+
+Gauges can be useful when you have a script that runs periodically and
+you want to report a value (e.g: count the number of rows in a
+database).  However, there's a few things to understand with gauges:
+
+  * if you send multiple values for the same gauges between 2 flushes,
+    only the last one will be kept
+  * if you're sending a gauges for the same metric from two different
+    places, only one of them will be kept
+  * if there's no new value during the time period, it will send the
+    one from the previous period
+  
+Sets
+~~~~
+
+Schema
+------
+
+When using graphite, you have to be sure that the smallest time
+retention in Graphite is the same as the interval between two flushes
+in StatsD.  If you're sending to Graphite two data points in the same
+time period, it will overwrite the first one.
+
+Stats interface
+---------------
+
+A stats interface is listening (by default) on the TCP port 8126.
+A few commands are supported:
+
+* ``stats`` will output statistics about the current process
+* ``counters`` will dump all the current counters
+* ``timers`` will dump all the current times
+
+The ``stats`` output looks like this:
+
+.. code-block:: bash
+
+  % telnet localhost 8125
+  stats
+  uptime: 334780
+  messages.last_msg_seen: 0
+  messages.bad_lines_seen: 1590
+  graphite.last_flush: 9
+  graphite.last_exception: 334780
+  END
+
+Where:
+
+* ``uptime`` is the number of seconds elapsed since the process
+  started
+* ``messages.last_msg_seen`` is the number of seconds since the last
+  message received
+* ``messages.bad_lines_seen`` is the number of badly formatted line
+  received
+* ``graphite.last_flush`` is the number of seconds elapsed since the
+  last flush to Graphite
+* ``graphite.last_exception`` is the number of seconds elapsed since
+  the last exception thrown by Graphite while flushing
+  
 What have we done and where to go from here
 --------------------------------------------
 
+This list is an idea of things to collect:
+
+Events
+~~~~~~
+
+Every time you push an application or use your configuration manager
+to push changes, you could send an event to statsd.  Something as
+simple as
+
+.. code-block:: bash
+
+  % echo "<ENV>.APPLICATIONS.EVENTS.<APP-NAME>.deploy:1|c" | nc -w 1 -u localhost 8125
+
+Now, in graphite, you can use the formula ``drawAsInfinite`` to
+represent this event as a vertical line.
+
+Caveats
+-------
+
+Size of the payload
+~~~~~~~~~~~~~~~~~~~
+
+When you're sending statistics to StatsD, you have to be careful about
+the size of the payload.  If the size is greater than your network's
+MTU, the frame will be dropped.  You can refer to `this
+documentation <https://github.com/etsy/statsd/#multi-metric-packets>`_
+to find the size that might work best for your network.
 
 Dashboard: Info for ops and info for the business
 =================================================
@@ -376,6 +568,12 @@ can be created with premade widgets, or custom widgets can be written
 using scss, html and coffeescript. Data bindings allow reuse and
 manipulation of data from a variety of sources.
 
+GDash
+-----
+
+`GDash <https://github.com/ripienaar/gdash>`_ is another dashboard for
+Graphite.  Dashboards are created using a simple `DSL
+<https://github.com/ripienaar/graphite-graph-dsl/wiki>`_.
 
 Third-party tools
 =================
