@@ -471,7 +471,7 @@ However, there's a few things to know about gauges:
   * if you're sending a gauges for the same metric from two different
     places, only one of them will be kept
   * if there's no new value during the time period, it will send the
-    one from the previous period
+    one from the previous period to Graphite
   
 Sets
 ~~~~
@@ -484,10 +484,10 @@ retention in Graphite is the same as the interval between two flushes
 in StatsD.  If you're sending to Graphite two data points in the same
 time period, it will overwrite the first one.
 
-Stats interface
+Management interface
 ---------------
 
-A stats interface is listening (by default) on the TCP port 8126.
+A management interface is listening (by default) on the TCP port 8126.
 A few commands are supported:
 
 * ``stats`` will output statistics about the current process
