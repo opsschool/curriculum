@@ -99,4 +99,5 @@ Carolyn Rowland <unpixie@gmail.com>
 Jordan Dea-Mattson <jdm@dea-mattson.com>            Numenta, Inc.
 Sean Escriva <sean.escriva@gmail.com>               Heavy Water Ops
 Adam Compton <comptona@gmail.com>
+Franck Cuny <franck@lumberjaph.net>                 SAY: Media
 ==================================================  ====================================
