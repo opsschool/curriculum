@@ -446,11 +446,10 @@ Timing
 
   % echo "my.timer:43|ms" | nc -w 1 -u localhost 8125
 
-Actually, timers can be used to report other things that elapsed time.
-You can use it to report bytes, etc.  This type is one of the most
-interesting because StatsD will compute the percentiles, average,
-standard deviation, sum, lower and upper bounds for the flush
-interval.
+This type is somewhat mis-named, since you can report more than time
+based metrics.  You give it times in milliseconds, and it will compute
+the percentiles, average, standard deviation, sum, lower and upper
+bounds for the flush interval.
 
 Gauges
 ~~~~~~
@@ -463,7 +462,9 @@ Gauges are arbitrary values.
 
 Gauges can be useful when you have a script that runs periodically and
 you want to report a value (e.g: count the number of rows in a
-database).  However, there's a few things to know about gauges:
+database).  The number is final, there's no additional processing.
+
+However, there's a few things to know about gauges:
 
   * if you send multiple values for the same gauges between 2 flushes,
     only the last one will be kept
