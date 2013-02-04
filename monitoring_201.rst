@@ -463,7 +463,7 @@ Gauges are arbitrary values.
 
 Gauges can be useful when you have a script that runs periodically and
 you want to report a value (e.g: count the number of rows in a
-database).  However, there's a few things to understand with gauges:
+database).  However, there's a few things to know about gauges:
 
   * if you send multiple values for the same gauges between 2 flushes,
     only the last one will be kept
@@ -522,7 +522,7 @@ Where:
 What have we done and where to go from here
 --------------------------------------------
 
-This list is an idea of things to collect:
+This list is a suggestion of things you can collect and measure.
 
 Events
 ~~~~~~
