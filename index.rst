@@ -12,7 +12,7 @@ security systems that allow the Internet to work.
 
 Since the early 1990's, operations engineers have been in high demand. As a
 result, these positions often provide high salaries and long term job security.
-The `SAGE/LISA Salary Survey <https://www.usenix.org/lisa/salary-surveys>` has
+The `SAGE/LISA Salary Survey <https://www.usenix.org/lisa/salary-surveys>`_ has
 charted the average salaries for systems administrators and operations engineers
 since 1999. This has consistently shown the field to be a prosperous field for
 those people who enjoy diving into the inner workings of computer systems.
