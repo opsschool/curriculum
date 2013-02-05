@@ -45,7 +45,7 @@ Collectd
 
 `Collectd <https://collectd.org>`_ collects system-level metrics on
 each machine.  It works by loading a list of plugins, and polls data
-from various sources.  The data are send to different back-end
+from various sources.  The data are sent to different backend
 (Graphite, Riemann) and can be used to trigger alerts with Nagios.
 
 Sensu
