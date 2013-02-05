@@ -345,26 +345,27 @@ path.
 The Graphite web application
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Normalizing the metrics
+Normalizing the Metrics
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-To easily navigate within hundreds of metrics, it's important to normalize the name.  Here are a few naming scheme:
+To easily navigate within hundreds of metrics, it's important to normalize the name.  Here are a few naming schemes:
 
 * ``<ENV>.<CLUSTER>.<SERVER>.metric``
 * ``<ENV>.<APPLICATION-TYPE>.<APPLICATION>.metric``
 * ``<ENV>.APPLICATIONS.EVENTS.<APP-NAME>.deploy``
 
-Here a few rules to choose an appropriate scheme:
+Here a couple rules to choose an appropriate scheme:
 
 * always put the most common part on the left of the name
-* differentiate them by type (e.g: hosts / applications)
+* differentiate them by type (e.g.: hosts / applications)
 
-In the end, consistency.
+Of course, you're free to adopt different schemes.  The most important
+rule is to be consistent when naming your metrics.
 
 To achieve this, a common solution is to have a small proxy between
-the tool reporting a metrics and Graphite.  This could be a HTTP proxy
+the tool reporting metrics and Graphite.  This could be an HTTP proxy
 (like `documented by Jason Dixon <http://obfuscurity.com/2012/05/Organizing-Your-Graphite-Metrics>`_,
-or a simple script that listen on a port, and rewrites the metric.
+or a simple script that listens on a port, and rewrites the metric.
 
 Using this pattern, you'll get more control over the format and paths
 chosen by developers or operations.
@@ -373,16 +374,22 @@ StatsD
 -------
 
 `StatsD <https://github.com/etsy/statsd/>`_ is a network daemon
-listening for statistics and send the aggregation to a backend.  In
+listening for statistics and sends the aggregation to a backend.  In
 our case we will see how it works with Graphite.
 
 Setting it up and make it show pretty graphs
 ---------------------------------------------
 
-StatsD is daemon running on `node.js <http://nodejs.org/>`_.  To install
-it, you will need to install first node.js (if it's not
-packaged for your OS, you can `follow the instructions
-<https://github.com/joyent/node/wiki/Installation>`_.  Then, to
+StatsD is a simple daemon listening for metrics.  The first
+implemtation was done by Etsy, and is written for `node.js
+<http://nodejs.org>`_. but other implementation exists (`Python
+<https://github.com/sivy/py-statsd>`_, `Ruby
+<https://github.com/fetep/ruby-statsdserver>`_, `C
+<https://github.com/armon/statsite.git>`_, etc).
+
+To install the one by Etsy, you will need to install node.js (if it's
+not packaged for your OS, you can `follow the instructions
+<https://github.com/joyent/node/wiki/Installation>`_).  Then, to
 actually run StatsD:
 
 .. code-block:: bash
@@ -413,7 +420,7 @@ Concepts
 StatsD listens on the UDP port 8125 for incoming statistics.  As for
 Graphite, the protocol is line based.  You send a string similar to
 ``name:1|c``.  The first element (name) is the name of the statistic,
-the colon act as a separator with the value (1), and the pipe
+the colon acts as a separator with the value (1), and the pipe
 separates the value with the type (c, for *counter*).
 
 StatsD stores statistics in buckets.  A value is attached to the
@@ -466,9 +473,9 @@ database).  The number is final, there's no additional processing.
 
 However, there's a few things to know about gauges:
 
-  * if you send multiple values for the same gauges between 2 flushes,
-    only the last one will be kept
-  * if you're sending a gauges for the same metric from two different
+  * if you send multiple values for the same gauge between 2 flushes,
+    only the most recent one will be kept
+  * if you're sending a gauge for the same metric from two different
     places, only one of them will be kept
   * if there's no new value during the time period, it will send the
     one from the previous period to Graphite
@@ -485,7 +492,7 @@ in StatsD.  If you're sending to Graphite two data points in the same
 time period, it will overwrite the first one.
 
 Management interface
----------------
+--------------------
 
 A management interface is listening (by default) on the TCP port 8126.
 A few commands are supported:
