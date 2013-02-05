@@ -431,7 +431,7 @@ The *counter* is the most basic type.
 
   % echo "my.statistic:1|c" | nc -w 1 -u localhost 8125
 
-This will add 1 to the statistic named *my.statistic".  After the
+This will add 1 to the statistic named "my.statistic".  After the
 flush the value for this statistic will be 0.  It's also possible to
 specify to statsd that we are sampling:
 
