@@ -30,6 +30,50 @@ Finding specific files is critical.
 
 kill
 ----
+``kill`` is used to send a signal to a process, which is a way of interrupting
+it. The most common use of this is to stop, or kill, processes. For example, to
+stop a process with the PID '123':
+
+.. code-block:: bash
+
+  $ kill 123
+
+Once the signal is sent the process can decide what to do with it. For instance
+the above ``kill 123`` sends a ``TERM`` signal to the process with
+PID 123. ``TERM`` (also known as ``SIGTERM``) means "Software Termination
+Signal". Some processes will notice that signal, finish what they are doing, and
+shut down. Others will just shut down immediately or ignore it entirely.
+
+But there are many more types of signals. (Check out ``man signal`` for a good
+list.) For instance, if the above kill command did not succeed in terminating
+your process, a more heavy-handed option is to send a ``KILL`` signal to the
+process:
+
+.. code-block:: bash
+
+  $ kill -KILL 123
+
+Every signal has a name and a number. You can reference them by either
+one. Another way of running ``kill -KILL`` is:
+
+.. code-block:: bash
+
+  $ kill -9 123
+
+Be careful when using the ``KILL`` signal as it is the one signal that cannot be
+caught by the process. It will not have a chance to gracefully shut down. This
+can lead to temporary files not being removed, open files not being closed, or
+even corruption of database files.
+
+Signals can be used in a wide variety of ways, not just for terminating
+processes. One interesting use: if your system is running Unicorn processes, you
+can send a ``TTIN`` signal to the master process and it will spawn an additional
+worker. Likewise, you can send a ``TTOU`` signal and it will remove one of the
+workers. Another example is Apache which accepts ``USR1``, which causes it to
+close and re-open log files, which is useful when you need to rotate your log
+files.
+
+For more on signals see :doc:`unix_signals`.
 
 ls
 --
