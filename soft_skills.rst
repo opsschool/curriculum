@@ -730,14 +730,17 @@ operations is paid and how it spends within the organization.
 How is operations funded?
 +++++++++++++++++++++++++
 
-* Where does operation's base funding originate?
- * Is Operations billable or do they have constant funding from year-to-year?
- * Does someone need to request this money or is it always there?
- * How are pay increases funded?
- * Is there only one source of money or are there multiple income streams?
-* Does everything come out of one cost center or are there multiple cost
-centers?
- * If multiple, are they broken down by project, type of expenditure (labor, contractors, services, supplies? 
+Where does operation's base funding originate?
+
+* Is Operations billable or do they have constant funding from year-to-year?
+* Does someone need to request this money or is it always there?
+* How are pay increases funded?
+* Is there only one source of money or are there multiple income streams?
+
+Does everything come out of one cost center or are there multiple cost centers?
+
+* If multiple, are they broken down by project, type of expenditure (labor, contractors, services, supplies? 
+
 * Is any of the money special (does it expire, come with strings/hooks to specific projects? billables?)
 
 How does operations spend?
