@@ -124,7 +124,7 @@ respect for operations as a whole.
 * Leave the customer with the assurance that you or someone will get back to him/her with a solution or feedback. 
 * Get back to the customer even if it is to say 
 
- * it was a one-off problem and here is why 
+ * It was a one-off problem and here is why 
  * We found a problem internally and it is now resolved 
  * We are improving our processes to reduce the likelihood of it happening again
  * Or an explanation that simply provides feedback to the customer.
@@ -159,13 +159,13 @@ person prioritize and accomplished?
 
 Recommended reading:
 
-* Tom Limoncelli's book `Time Management for System Administrators
-* <http://www.amazon.com/Management-System-Administrators-Thomas-Limoncelli/dp/0596007833/ref=sr_1_2?s=books&ie=UTF8&qid=1360301629&sr=1-2&keywords=limoncelli>` 
-* Tom Limoncelli's `Time Management Wiki <http://code.google.com/p/tomontime/wiki/Main>`
+* Tom Limoncelli's book `Time Management for System Administrators <http://www.amazon.com/Management-System-Administrators-Thomas-Limoncelli/dp/0596007833/ref=sr_1_2?s=books&ie=UTF8&qid=1360301629&sr=1-2&keywords=limoncelli>`_ 
+* Tom Limoncelli's `Time Management Wiki <http://code.google.com/p/tomontime/wiki/Main>`_
 
 Tom Limoncelli also teaches a Time Management tutorial at the `USENIX
-LISA conference <https://www.usenix.org/conferences>` and sometimes the
-LOPSA community conferences: `Lopsa-East <lopsa-east.org>` and `Cascadia <casitconf.org>`
+LISA conference <https://www.usenix.org/conferences>`_ and sometimes the
+LOPSA community conferences: `Lopsa-East <lopsa-east.org>`_ and
+`Cascadia <casitconf.org>`_
 
 Project Management
 ==================
@@ -177,7 +177,7 @@ larger ones.
 Be aware that project customers, or stakeholders, will often not know
 what they truly want from a project or they ask for the moon.  Familiarize 
 yourself with the `project management triangle
-<http://en.wikipedia.org/wiki/Project_management_triangle>` (good, cheap, fast: pick two).
+<http://en.wikipedia.org/wiki/Project_management_triangle>`_ (good, cheap, fast: pick two).
 
 Henry Ford is credited with saying about his customers "If I had asked
 customers what they wanted, they would have said faster horses."
@@ -233,7 +233,7 @@ Agile
 
 Agile is a project management methodology. Agile started in 2001
 when a group of software developers created the Agile Manifesto.
-The `Agile Manifesto <http://agilemanifesto.org/>` outlines the 12
+The `Agile Manifesto <http://agilemanifesto.org/>`_ outlines the 12
 principles of agile. Agile is seen most often in the software
 development world but it has crept into operations because of the
 obvious benefits over waterfall. Common implementations of Agile
@@ -440,7 +440,7 @@ limits and implement continuous work flow from Kanban.
 Agile Toolkit
 ^^^^^^^^^^^^^
 
-`jira <http://www.atlassian.com/software/jira/overview>`
+`jira <http://www.atlassian.com/software/jira/overview>`_
 
 
 The Tao of DevOps
