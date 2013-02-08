@@ -24,7 +24,7 @@ of answering some simple questions:
 
 Before sending one email or updating that web site, think about the
 answers to these questions. People are inundated with communication
-from email, voicemail, twitter, facebook/Google+, internal web/wikis,
+from email, voicemail, Twitter, Facebook/Google+, internal web/wikis,
 text, IM. How can you deliver your message in the best way possible to
 get the appropriate level of attention for your topic while not overly
 burden the recipient(s)?
@@ -65,8 +65,7 @@ attempts.
 
 * How broadly does this information need to be communicated?
 * Is there a sub-section of the population who are the only people who need this? 
-* Look for avenues to limit how widely you distribute information so
-* you are reaching the intended audience without burdening the rest of the organization..
+* Look for avenues to limit how widely you distribute information so you are reaching the intended audience without burdening the rest of the organization..
 
 Communicating to external customers
 -----------------------------------
@@ -124,10 +123,12 @@ respect for operations as a whole.
 * Agree to investigate if it isn't something you can resolve now or you don't have the time.
 * Leave the customer with the assurance that you or someone will get back to him/her with a solution or feedback. 
 * Get back to the customer even if it is to say 
-* it was a one-off problem and here is why 
-* We found a problem internally and it is now resolved 
-* We are improving our processes to reduce the likelihood of it happening again 
-* Or an explanation that simply provides feedback to the customer.
+
+ * it was a one-off problem and here is why 
+ * We found a problem internally and it is now resolved 
+ * We are improving our processes to reduce the likelihood of it happening again
+ * Or an explanation that simply provides feedback to the customer.
+
 * And don't forget to thank the customer for taking the time to provide feedback
 
 The reason to close the feedback loop is to show the customer that you
@@ -158,12 +159,13 @@ person prioritize and accomplished?
 
 Recommended reading:
 
-* Tom Limoncelli's "Time Management for System Administrator's" book
-* Tom Limoncelli's Time Management Wiki: http://code.google.com/p/tomontime/wiki/Main
+* Tom Limoncelli's book `Time Management for System Administrators
+* <http://www.amazon.com/Management-System-Administrators-Thomas-Limoncelli/dp/0596007833/ref=sr_1_2?s=books&ie=UTF8&qid=1360301629&sr=1-2&keywords=limoncelli>` 
+* Tom Limoncelli's `Time Management Wiki <http://code.google.com/p/tomontime/wiki/Main>`
 
-Tom Limoncelli also teaches a Time Management tutorial at the USENIX
-LISA conference and sometimes the LOPSA community conferences
-(casitconf.org, lopsa-east.org).
+Tom Limoncelli also teaches a Time Management tutorial at the `USENIX
+LISA conference <https://www.usenix.org/conferences>` and sometimes the
+LOPSA community conferences: `Lopsa-East <lopsa-east.org>` and `Cascadia <casitconf.org>`
 
 Project Management
 ==================
@@ -174,9 +176,8 @@ larger ones.
 
 Be aware that project customers, or stakeholders, will often not know
 what they truly want from a project or they ask for the moon.  Familiarize 
-yourself with the project management triangle (good, cheap, fast: pick two):
-
-* http://en.wikipedia.org/wiki/Project_management_triangle
+yourself with the `project management triangle
+<http://en.wikipedia.org/wiki/Project_management_triangle>` (good, cheap, fast: pick two).
 
 Henry Ford is credited with saying about his customers "If I had asked
 customers what they wanted, they would have said faster horses."
@@ -232,18 +233,18 @@ Agile
 
 Agile is a project management methodology. Agile started in 2001
 when a group of software developers created the Agile Manifesto.
-The Agile Manifesto outlines the 12 principles of agile:
-http://agilemanifesto.org/. Agile is seen most often in the software
+The `Agile Manifesto <http://agilemanifesto.org/>` outlines the 12
+principles of agile. Agile is seen most often in the software
 development world but it has crept into operations because of the
-obvious benefits over waterfall. Common implementations
-of Agile include: Scrum, Kanban, and the hybrid Scrumban that was
-created to meet more operational needs. The idea behind Agile is
-continuous release or delivery of a product. Instead of creating one big
-outcome at the end of a project, Agile allows a team to release a
-partially completed project for stakeholder review and requirements
-tweaking. Another big benefit of Agile methodologies is the discovery of
-problems early in the product development cycle when refactoring can be
-done immediately before the end product is set in a particular
+obvious benefits over waterfall. Common implementations of Agile
+include: Scrum, Kanban, and the hybrid Scrumban that was created
+to meet more operational needs. The idea behind Agile is continuous
+release or delivery of a product. Instead of creating one big outcome
+at the end of a project, Agile allows a team to release a partially
+completed project for stakeholder review and requirements tweaking.
+Another big benefit of Agile methodologies is the discovery of
+problems early in the product development cycle when refactoring
+can be done immediately before the end product is set in a particular
 architectural direction that would make it costly to change.
 
 Some documented benefits of agile include the following:
@@ -389,8 +390,7 @@ review the columns in our example Kanban board so you can understand
 their purpose.
 
 * Coming soon - these are tasks, projects, or user requests. They are un prioritized and may be big or small.
-* Review - These are tasks that are prioritized by management or the
-* team during the daily stand-up. They are put "in the hopper" so to speak as work items that should be reviewed and possibly broken into smaller pieces if they are too large. The downside of too large is similar to Scrum when the user stories were too broad. If an in progress items its in the active queue too long, it takes up a WIP slot and can make it difficult to understand if the team is making progress on that item.
+* Review - These are tasks that are prioritized by management or the team during the daily stand-up. They are put "in the hopper" so to speak as work items that should be reviewed and possibly broken into smaller pieces if they are too large. The downside of too large is similar to Scrum when the user stories were too broad. If an in progress items its in the active queue too long, it takes up a WIP slot and can make it difficult to understand if the team is making progress on that item.
 * Available - This item has been reviewed, broken into a reasonable sized task and approved by management or the team to be pulled into the active column at the next opportunity.
 * In progress - Similar to Scrum, these are the tasks being worked actively by the team.
 * Acceptance - When someone on the team considers a task complete, s/he moves it to this column. Acceptance means it is discussed at the next daily stand-up and possibly accepted as done by the team. Acceptance can also mean stakeholder acceptance. This could also be a testing phase for something that is rolling toward production. If something idles too long in this column, it will hold up other work because of the WIP in progress limits placed on this column. 
@@ -402,9 +402,7 @@ schools of thought that seem to pervade include:
 
 * 2n-1 - where n = the number of people on the operations team. The reason for this is to enable team members to work together on some tasks but to give enough tasks so team members stay busy.
 
-* n-1 - where n = the number of people on the operations team.  The
-* reason for this is to encourage collaboration on the team and not to
-* overwhelm them with too many tasks. If someone on the team completes all of his/her work, that person should be able to pull the next available task from the "Available" column. 
+* n-1 - where n = the number of people on the operations team.  The reason for this is to encourage collaboration on the team and not to overwhelm them with too many tasks. If someone on the team completes all of his/her work, that person should be able to pull the next available task from the "Available" column. 
 
 What is the risk of having a WIP limit too low or too high? A high WIP
 limit might mean the team is taking on too much at one time. Each member
@@ -432,15 +430,17 @@ Scrumban
 Scrumban is a hybrid of the two previously mentioned methodologies.
 Operations teams seem to embrace Kanban or Scrumban because of the
 flexibility of re-prioritizing daily and the WIP limits that keep the
-team from getting overwhelmed. Organizations can choose to track
-burndown and use project roles within Scrumban. This method can really
-be an a la carte hybrid of Scrum and Kanban.
+team from getting overwhelmed. 
+
+A Scrumban implemenation would take elements from both Scrum and Kanban.
+For example, you might decide to define some roles, keep the review and
+retrospectives, hold the daily standup from Scrum while enforcing WIP
+limits and implement continuous work flow from Kanban.
 
 Agile Toolkit
 ^^^^^^^^^^^^^
 
-jira
-http://www.atlassian.com/software/jira/overview
+`jira <http://www.atlassian.com/software/jira/overview>`
 
 
 The Tao of DevOps
@@ -695,7 +695,8 @@ Budgeting and Financial Skills
 
 A basic knowledge of Excel includes formulas, formatting for
 readability, using multiple worksheets, and importing external data,
-More advanced Excel knowledge includes use of macros and pivot tables.
+More advanced Excel knowledge includes use of macros, pivot tables and
+pivot charts.
 
 Some operations folks use other Excel-like programs such as OpenOffice
 or LibreOffice spreadsheet programs. Use caution when using something
@@ -708,14 +709,14 @@ are trying to bridge the gap between operations and the executive suite,
 so try to use their tools when possible to avoid small issues that can
 cause frustration to the people you are trying to persuade.
 
-Building a basic budget includes institutional knowledge. How is
+Building a basic budget requires institutional knowledge. How is
 employee labor computed?  You need to understand what income you have 
 and where it comes from? Are any employees billable to other projects?
 You may have a flat budgetary structure with a single cost center
 for all labor or you may have multiple cost centers. Is there any
 income that has special restrictions? How do you purchase things such as
 parts, services, software, contractor services?  Do you have to account
-for overages or money not spent at the end of the fiscal year?
+for overages or money not spent at the end of the fiscal year? 
 
 Generally organizations have financial people who can provide reports
 for various cost centers. If operations fits neatly within one or more
@@ -739,21 +740,29 @@ Where does operation's base funding originate?
 
 Does everything come out of one cost center or are there multiple cost centers?
 
-* If multiple, are they broken down by project, type of expenditure (labor, contractors, services, supplies? 
+* If multiple, are they broken down by project, type of expenditure (labor, contractors, services, supplies)? 
 
-* Is any of the money special (does it expire, come with strings/hooks to specific projects? billables?)
+Is any of the money special?
+
+* Does it expire 
+* Does it come with strings/hooks to specific projects or billables?
 
 How does operations spend?
 ++++++++++++++++++++++++++
 
 * How are employee salaries computed to include benefits and overhead?
-* How are contractors paid?  In some organizations, money must be allocated up front and cannot be reclaimed even if not spent until after the contract has completed or the fiscal year has ended.
+* How are contractors paid?  
+* Are there special rules for obligations? In some organizations, some kinds of money must be allocated up front and cannot be reclaimed even if not spent until after the contract or service has completed or the fiscal year has ended.
 * How do operational purchases work within your organization (parts, services, software, training, travel, supplies)?  Who pays for these purchases? Who tracks these expenses?
 * Does your organization have a CapEx process and where does that money originate?  Does depreciation impact your budget?
+* Are there any hidden costs?
+
+ * Service fees from internal organizations?
 
 Answering these questions and looking at reports from within should give
 you most of the answers you need. You may have to implement your own
-tracking to get some answers.
+tracking to get some answers if they aren't easily identified in the
+reports.
 
 Why would any sane operations person want to go through all of this to
 assemble a budget:
@@ -779,6 +788,7 @@ management.
 Let's take the example of a senior person leaving the organization.
 Operations needs to fill that slot with a new person to avoid getting
 overwhelmed. 
+
 * Does this vacant position present an opportunity? 
 * Does operations need to hire someone with specialized experience in a new area? 
 * Could operations benefit from hiring two junior level people using the same salary slot as the former senior person? Does that work mathematically within your organization's hiring rules?
@@ -787,7 +797,7 @@ overwhelmed.
 
 You can probably see how you could make some of these arguments
 mathematically in a spreadsheet. The part that is missing is the "why"
-and that's where the impact comes in. Senior management may say that
+and that's where the impact comes in. Senior management may believe that
 operations needs to reduce overall costs. This is when you need
 non-numerical supporting evidence to persuade management that operations
 does need to hire a specialist or make the case for an apprentice that
@@ -814,6 +824,8 @@ makes this step a bit easier. If not, then you can begin your
 reconnaissance by talking to project leaders or middle management within
 the organization. 
 
+When researching organizational needs, start with some basic questions:
+
 * Are you planning anything new in the next year?
 * What projects is your group starting?
 * What technologies are we not using that you think would make your unit more productive?
@@ -828,6 +840,52 @@ your own.
 * How would you build a basic budget to persuade senior management on your issue? 
 * What would be important to highlight? 
 * What non-monetary supporting information would help your cause?
+
+The cost benefit analysis
+^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Navigating the capital expenditure process
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+The Capital expenditure (CapEx) process is used by organizations to
+purchase assets that have value across multiple tax years. In operations 
+CapEx usually means new equipment or equipment that extends the useful
+life of existing equipment beyond the existing tax year.
+
+CapEx allows an organization to depreciate an asset over the estimated
+useful lifespan of that asset. How is this valuable? Well, on the
+organization's balance sheet, only part of the total expense is counted
+for a specific tax year. The amount of the expense depends on the type
+of depreciation used. 
+
+Straight Line Depreciation
+++++++++++++++++++++++++++
+
+With straight line depreciation, assets are depreciated at an equal
+amount each year. So a piece of equipment with an estimated useful
+lifespan of 4 years would be depreciated 25% per year on the
+organization's expense sheet. 
+
+Accelerated Depreciation
+++++++++++++++++++++++++
+
+Accelerated depreciation usually frontloads the depreciation costs. This
+method may more accurately reflect the value of equipment because there
+is a greater depreciation at the beginning of the cycle. An example of
+accelerated deprecation might require a piece of equipment to be
+depreciated over 4 years at a rate of 40 percent per year. Obviously you
+would have a greater expense in the first year because you calculate 40%
+of the total value of the asset. In the second year, you compute 40% of
+the remaining value, and so on until you get to the fourth year or $0.
+
+An analogy to help explain Accelerated depreciation might be the
+purchase of a new car. The car depreciates the moment you drive it off
+the lot. Even if you were to sell the car soon after purchasing it, the
+car has already sigificantly decreased in value. 
+
+Building a business case
+^^^^^^^^^^^^^^^^^^^^^^^^
+
 
 Distilling information for impact
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -849,15 +907,15 @@ questions in the heads of your senior leaders even before they ask them.
 
 What are their questions?
 
-What are we trying to accomplish? 
-What do we do today and how is this better?
-How do we know this is the best solution? 
-Do we have the right people to make it happen?
-How much will it cost?
-How long will it take?
-What is the benefit if we do it?
-What is the risk if we don't do it?
-How do we know if it worked?
+* What are we trying to accomplish? 
+* What do we do today and how is this better?
+* How do we know this is the best solution? 
+* Do we have the right people to make it happen?
+* How much will it cost?
+* How long will it take?
+* What is the benefit if we do it?
+* What is the risk if we don't do it?
+* How do we know if it worked?
 
 **Exercise**
 
@@ -881,12 +939,6 @@ Negotiating budgetary constraints vs. need/want requirements
 
 Evaluating a product offering
 -----------------------------
-
-The cost benefit analysis
-^^^^^^^^^^^^^^^^^^^^^^^^^
-
-Navigating the capital expenditure process
-------------------------------------------
 
 The importance of Documentation
 ===============================
