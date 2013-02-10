@@ -33,7 +33,7 @@ Communicating to internal customers
 -----------------------------------
 
 For those who are still communicating with internal customers via email,
-consider how many emails you send and how long they are. 
+consider how many emails you send and how long they are.
 
 Here's a hint with email: shorter is better. If you have to include
 a long technical writeup, consider posting that on an internal
@@ -42,10 +42,10 @@ wiki/site and including a link for those interested.
 Put the most important info at the top of the email. Many people will
 skim the first few lines to see if an email applies to them. Consider
 addressing it directly "All users of Macintosh systems" at the top of
-the email. 
+the email.
 
 If the email requires an action, put that with a deadline in the very
-first line: 
+first line:
 "The file cluster will be taken off-line for maintenance at 7:00pm
 Friday, January 10th. Please save before that time so you do not lose
 any of your work."
@@ -64,14 +64,14 @@ announcements), they will be more likely to read and respond to your
 attempts.
 
 * How broadly does this information need to be communicated?
-* Is there a sub-section of the population who are the only people who need this? 
+* Is there a sub-section of the population who are the only people who need this?
 * Look for avenues to limit how widely you distribute information so you are reaching the intended audience without burdening the rest of the organization..
 
 Communicating to external customers
 -----------------------------------
 
 Communicating with external customers can offer additional challenges.
-If the external customers are customers of your organization, there 
+If the external customers are customers of your organization, there
 is the possibility that your dealings with them could result in a
 complaint to your upper management.
 
@@ -82,7 +82,7 @@ external customers. Are most of your customers in the same time zone? If
 so, then your maintenance window could be outside of traditional working
 hours. If your external customers include international people in
 varying timezones, you will have to choose an outage window that impacts
-your core customers the least. 
+your core customers the least.
 
 Communicate maintenance windows decisions with your line management
 for communication up the chain. It is best if your management knows
@@ -121,8 +121,8 @@ respect for operations as a whole.
 * Listen without judgment
 * Rephrase the concern so you can confirm that you understood
 * Agree to investigate if it isn't something you can resolve now or you don't have the time.
-* Leave the customer with the assurance that you or someone will get back to him/her with a solution or feedback. 
-* Get back to the customer even if it is to say 
+* Leave the customer with the assurance that you or someone will get back to him/her with a solution or feedback.
+* Get back to the customer even if it is to say
 
   * It was a one-off problem and here is why
   * We found a problem internally and it is now resolved
@@ -147,7 +147,7 @@ someone is repeatedly impacting operations with complaints or becomes
 abusive, This advice stands if you feel like you are trying the
 techniques above and getting nowhere with the customer. Escalation to
 the next person in the management chain is a valid procedural step
-in any of these instances. 
+in any of these instances.
 
 Time Management
 ===============
@@ -155,7 +155,7 @@ Time Management
 Time management is a critical skill for the operations professional.
 Customer service requests and trouble tickets are up against project
 work and infrastructure maintenance and enhancements. How does one
-person prioritize and accomplished? 
+person prioritize and accomplished?
 
 Recommended reading:
 
@@ -172,10 +172,10 @@ Project Management
 
 Project management is a necessary skill for any mid-level operations
 person. You might start with small projects and work your way up to
-larger ones. 
+larger ones.
 
 Be aware that project customers, or stakeholders, will often not know
-what they truly want from a project or they ask for the moon.  Familiarize 
+what they truly want from a project or they ask for the moon.  Familiarize
 yourself with the `project management triangle
 <http://en.wikipedia.org/wiki/Project_management_triangle>`_ (good, cheap, fast: pick two).
 
@@ -187,7 +187,7 @@ are the technology expert. The stakeholders know they want a certain
 output or service. They may not know what that looks like or how to
 achieve it. Your challenge is to extract requirements from the
 stakeholders then realize that these may not be the real or complete
-requirements. 
+requirements.
 
 Enter project management. Project management should help you to
 frame the scope, resources, goals, and outcomes for the project.
@@ -202,7 +202,7 @@ from other industries for the software development world. In waterfall,
 think of the phases of a project as a cascading waterfall. Each phase
 must be completed before moving onto the next phase. The entirety of the
 project is scoped from beginning to end including milestones and
-and final deliverables. 
+and final deliverables.
 
 Technologies change, requirements change and scoping a large project
 over a long period of time with what are commonly incomplete
@@ -261,7 +261,7 @@ Some documented benefits of agile include the following:
 One thing to remember when implementing an Agile solution: adapt it to
 your needs. Each of the following has its own simple framework, but
 organizations can use some or all of the implementation and even combine
-Agile methods to achieve success.  
+Agile methods to achieve success.
 
 Scrum
 ^^^^^
@@ -272,7 +272,7 @@ burndown chart used for tracking project status, and the Scrum
 meetings: daily stand-up, and retrospectives.
 
 Some of the limiting factors of Scrum for operational teams include
-timeboxing and tracking the burndown velocity of the team. 
+timeboxing and tracking the burndown velocity of the team.
 
 Does all of this terminology seem foreign?
 
@@ -323,14 +323,14 @@ for each task.
 **Daily Standup** - This is a short daily meeting with the team at the
 Scrum board (virtual or physical). The person in the Scrum master role
 leads the daily stand-up by asking each team member a few questions:
- 
+
 * What are you working on?
 * Are there any impediments?
 * Do you need anything to be successful?
 
 Each member of the operations team now knows what is expected of him/her
 for the day. Sometimes this is bad if the team is also responsible for
-trouble tickets or responding to reactive work such as service outages. 
+trouble tickets or responding to reactive work such as service outages.
 
 **Burndown** - The burndown tracks estimates of time with the actual time
 spent working on a project's tasks. The resulting chart will show a
@@ -366,7 +366,7 @@ Kanban
 Kanban is a much less prescriptive Agile implementation. Kanban can be
 recognized by a similar task board to Scrum but often there are more
 columns. Kanban's strength is the work in progress (WIP) limit. Kanban
-doesn't require roles, timeboxing, or burndown tracking like Scrum. 
+doesn't require roles, timeboxing, or burndown tracking like Scrum.
 
 Because there is no timeboxed sprints, work continuously moves across
 the swimlanes on the Kanban board. Daily stand-ups are critical in Kanban
@@ -379,7 +379,7 @@ enable teams to pull work into the "In progress" column as they finish
 other work. The "In progress" column and other columns will have what is
 called a WIP limit. There are a few schools of thought regarding WIP
 limits. Each organization must experiment with the WIP limit until a
-sweet spot is found for operations. 
+sweet spot is found for operations.
 
 In Kanban for operations, the columns can be varied across teams or
 organizations. These columns are only provided as an example. Your
@@ -393,7 +393,7 @@ their purpose.
 * Review - These are tasks that are prioritized by management or the team during the daily stand-up. They are put "in the hopper" so to speak as work items that should be reviewed and possibly broken into smaller pieces if they are too large. The downside of too large is similar to Scrum when the user stories were too broad. If an in progress items its in the active queue too long, it takes up a WIP slot and can make it difficult to understand if the team is making progress on that item.
 * Available - This item has been reviewed, broken into a reasonable sized task and approved by management or the team to be pulled into the active column at the next opportunity.
 * In progress - Similar to Scrum, these are the tasks being worked actively by the team.
-* Acceptance - When someone on the team considers a task complete, s/he moves it to this column. Acceptance means it is discussed at the next daily stand-up and possibly accepted as done by the team. Acceptance can also mean stakeholder acceptance. This could also be a testing phase for something that is rolling toward production. If something idles too long in this column, it will hold up other work because of the WIP in progress limits placed on this column. 
+* Acceptance - When someone on the team considers a task complete, s/he moves it to this column. Acceptance means it is discussed at the next daily stand-up and possibly accepted as done by the team. Acceptance can also mean stakeholder acceptance. This could also be a testing phase for something that is rolling toward production. If something idles too long in this column, it will hold up other work because of the WIP in progress limits placed on this column.
 * Completed - These are tasks that are accepted as completed and put into production.
 
 **Work in Progress (WIP) limits** WIP limits define the maximum number of
@@ -402,7 +402,7 @@ schools of thought that seem to pervade include:
 
 * 2n-1 - where n = the number of people on the operations team. The reason for this is to enable team members to work together on some tasks but to give enough tasks so team members stay busy.
 
-* n-1 - where n = the number of people on the operations team.  The reason for this is to encourage collaboration on the team and not to overwhelm them with too many tasks. If someone on the team completes all of his/her work, that person should be able to pull the next available task from the "Available" column. 
+* n-1 - where n = the number of people on the operations team.  The reason for this is to encourage collaboration on the team and not to overwhelm them with too many tasks. If someone on the team completes all of his/her work, that person should be able to pull the next available task from the "Available" column.
 
 What is the risk of having a WIP limit too low or too high? A high WIP
 limit might mean the team is taking on too much at one time. Each member
@@ -430,7 +430,7 @@ Scrumban
 Scrumban is a hybrid of the two previously mentioned methodologies.
 Operations teams seem to embrace Kanban or Scrumban because of the
 flexibility of re-prioritizing daily and the WIP limits that keep the
-team from getting overwhelmed. 
+team from getting overwhelmed.
 
 A Scrumban implemenation would take elements from both Scrum and Kanban.
 For example, you might decide to define some roles, keep the review and
@@ -459,7 +459,7 @@ production. Instead of bringing operations into the conversation
 after the product is complete, the DevOps methodology includes
 operations in the development stream.
 
-Development's view: 
+Development's view:
 
 * Roll a product out to meet customer specifications within a certain timeframe
 * Continuous delivery means recurring change as bugs are fixed and features added
@@ -470,7 +470,7 @@ Operation's view:
 
 * supporting the product for customers
 * keeping a handle on IT security
-* planning for deployment to production state 
+* planning for deployment to production state
 * changes are slow/incremental
 * consistent environments are needed to support operations
 * stability is key
@@ -498,7 +498,7 @@ of the solution.
 
 What isn't DevOps
 -----------------
-A person cannot be a DevOp. You don't hire a DevOp. 
+A person cannot be a DevOp. You don't hire a DevOp.
 
 
 Business Acumen in Operations
@@ -521,8 +521,8 @@ organization DevOps friendly.
 
 Distilling the definition of business acumen for operations yields the
 following important skillsets:
-* Understand the role of operations within the context of your organization to correctly position operations. 
-* Think broadly about decisions and act decisively 
+* Understand the role of operations within the context of your organization to correctly position operations.
+* Think broadly about decisions and act decisively
 * Support and promote change as needed
 * Develop basic business skills that allow operations to communicate within the executive suite
 
@@ -648,7 +648,7 @@ so they can make the decision how to spend the organization's money.
 Good, fast, or cheap (pick two): it may be the Operations professional's
 responsibility to explain this concept from an IT perspective.
 
-Thinking broadly and acting decisively 
+Thinking broadly and acting decisively
 --------------------------------------
 
 These people can look at a problem from the viewpoint of other
@@ -670,13 +670,13 @@ innovation. This leads into change as a constant.
 What would it take to make this happen? What are the missing ingredients
 for success?
 
-Promoting Change 
+Promoting Change
 ----------------
 
 The operations world changes rapidly, more rapidly than other sectors.
 Operations people cannot afford to to a specific operating environment,
 hardware platform, or technical solution because the industry has
-already started moving toward the next innovation. 
+already started moving toward the next innovation.
 
 Building basic business skills
 ------------------------------
@@ -710,13 +710,13 @@ so try to use their tools when possible to avoid small issues that can
 cause frustration to the people you are trying to persuade.
 
 Building a basic budget requires institutional knowledge. How is
-employee labor computed?  You need to understand what income you have 
+employee labor computed?  You need to understand what income you have
 and where it comes from? Are any employees billable to other projects?
 You may have a flat budgetary structure with a single cost center
 for all labor or you may have multiple cost centers. Is there any
 income that has special restrictions? How do you purchase things such as
 parts, services, software, contractor services?  Do you have to account
-for overages or money not spent at the end of the fiscal year? 
+for overages or money not spent at the end of the fiscal year?
 
 Generally organizations have financial people who can provide reports
 for various cost centers. If operations fits neatly within one or more
@@ -726,7 +726,7 @@ work of separating operation's budget becomes a bit more complex.
 Starting with these reports is a good first step.
 
 To really understand how these reports work, you should understand how
-operations is paid and how it spends within the organization. 
+operations is paid and how it spends within the organization.
 
 How is operations funded?
 +++++++++++++++++++++++++
@@ -740,18 +740,18 @@ Where does operation's base funding originate?
 
 Does everything come out of one cost center or are there multiple cost centers?
 
-* If multiple, are they broken down by project, type of expenditure (labor, contractors, services, supplies)? 
+* If multiple, are they broken down by project, type of expenditure (labor, contractors, services, supplies)?
 
 Is any of the money special?
 
-* Does it expire 
+* Does it expire
 * Does it come with strings/hooks to specific projects or billables?
 
 How does operations spend?
 ++++++++++++++++++++++++++
 
 * How are employee salaries computed to include benefits and overhead?
-* How are contractors paid?  
+* How are contractors paid?
 * Are there special rules for obligations? In some organizations, some kinds of money must be allocated up front and cannot be reclaimed even if not spent until after the contract or service has completed or the fiscal year has ended.
 * How do operational purchases work within your organization (parts, services, software, training, travel, supplies)?  Who pays for these purchases? Who tracks these expenses?
 * Does your organization have a CapEx process and where does that money originate?  Does depreciation impact your budget?
@@ -768,7 +768,7 @@ Why would any sane operations person want to go through all of this to
 assemble a budget:
 
 * Operations is understaffed and wants to ask senior management to hire more people
-* There has been staff turnover and operations needs to fill those positions. How much is available and what opportunities exist to do something different? 
+* There has been staff turnover and operations needs to fill those positions. How much is available and what opportunities exist to do something different?
 * Senior management is asking hard questions about the operations budget (e.g. why do we spend so much on operations, where does the money go?).
 * You want to bring in a student or contractor to help with some short-term work but you need to demonstrate that operations is spending wisely in order to get approval for an increase.
 
@@ -779,18 +779,18 @@ Just putting numbers in a spreadsheet isn't budgeting. What do the
 numbers tell you? Are you spending too much on senior people?
 Equipment?  Vendor maintenance? Where is the majority of your
 spending (commonly it is labor)?  An easy to present budget can
-also help you to understand if operations is well managed. 
+also help you to understand if operations is well managed.
 
 Take that same view of the budget that gave you visibility into
 operations and use it to support a request or a claim to senior
-management. 
+management.
 
 Let's take the example of a senior person leaving the organization.
 Operations needs to fill that slot with a new person to avoid getting
-overwhelmed. 
+overwhelmed.
 
-* Does this vacant position present an opportunity? 
-* Does operations need to hire someone with specialized experience in a new area? 
+* Does this vacant position present an opportunity?
+* Does operations need to hire someone with specialized experience in a new area?
 * Could operations benefit from hiring two junior level people using the same salary slot as the former senior person? Does that work mathematically within your organization's hiring rules?
 * Could you reduce the overall cost of operations to help the organization by hiring one junior person and growing that person?
 * Could you hire a junior person and use the remaining money to refresh hardware or invest in a new technology to help the organization?
@@ -811,7 +811,7 @@ capabilities.
 When preparing for a big budget presentation where you are asking for
 a decision that will impact operations, consider the following
 supporting strategies:
- 
+
 * Enlist customer support. Customers are asking for improved capabilities, better response, new technology. How can they provide input to management that operations needs more or different resources to serve them better?
 
 * Find out if there are any new initiatives within the organization that would rely on specific expertise or additional operations resources.  This demonstrates a tangible need (e.g. Project X will require 50% of someone from operations to implement their technical plan).
@@ -822,7 +822,7 @@ to operations in the planning stages of new projects in order to get
 feedback on potential technology issues before they begin work.  That
 makes this step a bit easier. If not, then you can begin your
 reconnaissance by talking to project leaders or middle management within
-the organization. 
+the organization.
 
 When researching organizational needs, start with some basic questions:
 
@@ -835,10 +835,10 @@ When researching organizational needs, start with some basic questions:
 
 Now, the budget you build should directly respond to the problem or
 issue you are trying to address. Choose a scenario from above or make up
-your own. 
+your own.
 
-* How would you build a basic budget to persuade senior management on your issue? 
-* What would be important to highlight? 
+* How would you build a basic budget to persuade senior management on your issue?
+* What would be important to highlight?
 * What non-monetary supporting information would help your cause?
 
 The cost benefit analysis
@@ -848,7 +848,7 @@ Navigating the capital expenditure process
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 The Capital expenditure (CapEx) process is used by organizations to
-purchase assets that have value across multiple tax years. In operations 
+purchase assets that have value across multiple tax years. In operations
 CapEx usually means new equipment or equipment that extends the useful
 life of existing equipment beyond the existing tax year.
 
@@ -856,7 +856,7 @@ CapEx allows an organization to depreciate an asset over the estimated
 useful lifespan of that asset. How is this valuable? Well, on the
 organization's balance sheet, only part of the total expense is counted
 for a specific tax year. The amount of the expense depends on the type
-of depreciation used. 
+of depreciation used.
 
 Straight Line Depreciation
 ++++++++++++++++++++++++++
@@ -864,7 +864,7 @@ Straight Line Depreciation
 With straight line depreciation, assets are depreciated at an equal
 amount each year. So a piece of equipment with an estimated useful
 lifespan of 4 years would be depreciated 25% per year on the
-organization's expense sheet. 
+organization's expense sheet.
 
 Accelerated Depreciation
 ++++++++++++++++++++++++
@@ -881,7 +881,7 @@ the remaining value, and so on until you get to the fourth year or $0.
 An analogy to help explain Accelerated depreciation might be the
 purchase of a new car. The car depreciates the moment you drive it off
 the lot. Even if you were to sell the car soon after purchasing it, the
-car has already sigificantly decreased in value. 
+car has already sigificantly decreased in value.
 
 Building a business case
 ^^^^^^^^^^^^^^^^^^^^^^^^
@@ -903,13 +903,13 @@ fine to have one diagram that is completely unintelligible to them as
 long as it is only used to to demonstrate that operations did more than
 throw a blade in a rack and spin it up to achieve the solution. The most
 important part of the presentation is the part where you answer the
-questions in the heads of your senior leaders even before they ask them. 
+questions in the heads of your senior leaders even before they ask them.
 
 What are their questions?
 
-* What are we trying to accomplish? 
+* What are we trying to accomplish?
 * What do we do today and how is this better?
-* How do we know this is the best solution? 
+* How do we know this is the best solution?
 * Do we have the right people to make it happen?
 * How much will it cost?
 * How long will it take?
@@ -984,23 +984,23 @@ Learning and strategies for improvement
 Explicit vs Tacit knowledge
 ---------------------------
 
-*Explicit knowledge* can be defined as that gained from books or listening to a 
+*Explicit knowledge* can be defined as that gained from books or listening to a
 lecture. Basically some form of reading or auditory resource. It is typically
-easy to transfer to others, an example would be a manual for driving and 
+easy to transfer to others, an example would be a manual for driving and
 operating a car.
 
-*Tacit knowledge* can be defined and describes as that gained from experience, 
-action and practice. It is typically difficult to transfer this type of 
+*Tacit knowledge* can be defined and describes as that gained from experience,
+action and practice. It is typically difficult to transfer this type of
 knowledge to other people. A good example would be flying a plane.
 
-Let's start off by making a distinction between different types of knowledge. 
-The practice of system administration relies heavily on both types of learning 
+Let's start off by making a distinction between different types of knowledge.
+The practice of system administration relies heavily on both types of learning
 so just one type of experience is not enough to be great in this field.
 Essentially, the two knowledge types work hand in hand. So for example, reading
-a ton of books, while useful in its own right will not be nearly as effective 
-as reading books and then applying the knowledge gained from hands on 
-experience. Likewise, if somebody never bothers to pickup a book and relies 
-entirely on hands experiences they will not be as knowledgeable as someone who 
+a ton of books, while useful in its own right will not be nearly as effective
+as reading books and then applying the knowledge gained from hands on
+experience. Likewise, if somebody never bothers to pickup a book and relies
+entirely on hands experiences they will not be as knowledgeable as someone who
 incorporates both types of knowledge. It is in the opinion of many in the field
 that much more can be learned from hands on experience than by books alone.
 
@@ -1009,17 +1009,17 @@ Types of learning
 
 There has been a good deal of research done on this subject but for the purposes
 of this post I would like to boil this all down to what are considered the three
-primary or main styles of learning. Types of learning play an important role 
-because they work hand in hand with explicit and tacit knowledge. Each one of 
-these different styles represents a different sort of idiom to the learning 
+primary or main styles of learning. Types of learning play an important role
+because they work hand in hand with explicit and tacit knowledge. Each one of
+these different styles represents a different sort of idiom to the learning
 experience. So here they are:
 
 * Visual
 * Auditory
 * Kinesthetic
 
-It can be argued that employing a good variety of learning and study methods 
-would be the most appropriate way to develop your skills as a sysadmin or any 
+It can be argued that employing a good variety of learning and study methods
+would be the most appropriate way to develop your skills as a sysadmin or any
 other career related in the operations field. Instead of saying
 that one is better than another, one should employ all of these
 types learning in their own life.  Take a look at yourself and
@@ -1027,93 +1027,93 @@ figure out how you learn best and then decide which method(s) are
 the most and least helpful and then decide how to make these styles
 work to your advantage.
 
-For example, having a piece of reading material as a reference or as an 
-introduction is great. If the subject material is difficult and isn't easily 
-understood, a good next step to take is internalizing things by listening to or 
-watching others. Finally, with a good enough understanding about a topic, 
-quickly put things into your own experiences. It is much more easy to remember 
+For example, having a piece of reading material as a reference or as an
+introduction is great. If the subject material is difficult and isn't easily
+understood, a good next step to take is internalizing things by listening to or
+watching others. Finally, with a good enough understanding about a topic,
+quickly put things into your own experiences. It is much more easy to remember
 things when you are able to experience them yourself.
 
 Learning strategies
 -------------------
 
 It is important to highlight some of the major tactics that can be utilized when
-attempting to learn a new subject. Here are some different strategies and 
-techniques for learning new and difficult to understand information. Many of 
-these strategies work together or in tandem so they may described more than 
+attempting to learn a new subject. Here are some different strategies and
+techniques for learning new and difficult to understand information. Many of
+these strategies work together or in tandem so they may described more than
 once.
 
 **The Feynman technique** – This is as close to the end all be all that there is
 when it comes to learning. Everybody is probably familiar with this one, but am
-guessing the name is unfamiliar. This technique is used to explain or go 
-through a topic as if you were teaching it to somebody else that was just 
-learning about it for the first time. This basically forces you to know what 
-you’re talking about. If you get stuck when trying to explain a particular 
-concept or idea, make a note of what you are struggling with and research and 
-relearn the material until you can confidently explain it. You should be able 
-to explain the subject simply, if your explanations are wordy or convoluted you 
+guessing the name is unfamiliar. This technique is used to explain or go
+through a topic as if you were teaching it to somebody else that was just
+learning about it for the first time. This basically forces you to know what
+you’re talking about. If you get stuck when trying to explain a particular
+concept or idea, make a note of what you are struggling with and research and
+relearn the material until you can confidently explain it. You should be able
+to explain the subject simply, if your explanations are wordy or convoluted you
 probably don’t understand it as well as you think.
 
-**Reading** – This is a great technique to get an introduction to a topic by 
-reading up on (and bookmarking) what information you feel to be the most 
-important, whether it be official documentation, RFC’s, books, magazines, 
-respected blogs and authors, etc. It is a good idea to take very brief notes 
+**Reading** – This is a great technique to get an introduction to a topic by
+reading up on (and bookmarking) what information you feel to be the most
+important, whether it be official documentation, RFC’s, books, magazines,
+respected blogs and authors, etc. It is a good idea to take very brief notes
 when something looks like it would useful so to try it out yourself.
 
-**Watching/Listening to others** – After getting a good idea from reading about 
-a subject it is good to reinforce this by either watching demonstrations, 
-videos, listening to podcasts, lectures or anything else that will show how to 
+**Watching/Listening to others** – After getting a good idea from reading about
+a subject it is good to reinforce this by either watching demonstrations,
+videos, listening to podcasts, lectures or anything else that will show how to
 get a better idea of how to do something. An example of this would be to put on
 a podcast. It kills time as well as improves knowledge at the cost of nothing.
 Very efficient! The same with videos and demonstrations, the only thing holding
 you back is the motivation.
 
-**Try things for yourself** – Sometimes this can be the most difficult approach 
-but definitely can also be the most rewarding, there is nothing better than 
-learning things the hard way. Try things out for yourself in a lab or anywhere 
-that you can practice the concepts that you are attempting to learn and 
+**Try things for yourself** – Sometimes this can be the most difficult approach
+but definitely can also be the most rewarding, there is nothing better than
+learning things the hard way. Try things out for yourself in a lab or anywhere
+that you can practice the concepts that you are attempting to learn and
 understand.
 
-**Take notes** – This is important for your own understanding of how things 
-work in a way that you can internalize. Take notes on simple things like 
-commands you know you won’t remember, related topics and concepts or even just 
-jotting down keywords quickly to Google for later on. This goes hand in hand 
-with the reading technique described above, just jotting down very simple, 
+**Take notes** – This is important for your own understanding of how things
+work in a way that you can internalize. Take notes on simple things like
+commands you know you won’t remember, related topics and concepts or even just
+jotting down keywords quickly to Google for later on. This goes hand in hand
+with the reading technique described above, just jotting down very simple,
 brief notes can be really useful.
 
-**Communicate with others** - There are plenty of resources out there for 
-getting help and for communicating and discussing what you learn with others. 
-/r/sysadmin would be a good starting point. IRC channels are another great 
-place to ask questions and get help, there are channels for pretty much any 
+**Communicate with others** - There are plenty of resources out there for
+getting help and for communicating and discussing what you learn with others.
+/r/sysadmin would be a good starting point. IRC channels are another great
+place to ask questions and get help, there are channels for pretty much any
 subject you can think of out there. There are good sysadmin related channels at
 irc.freenode.net, if you don’t already utilize IRC, take a look.
 
-**Come back later** – Give your brain some time to start digesting some of the 
-information and to take a step back and put the pieces together to begin 
-creating a bigger picture. If you have been working on learning a new concept 
-or subject and felt overwhelmed and feel stuck, take a break. Do something 
-completely different or think about something else entirely and came back to 
-the subject later on with a fresh perspective. Sometimes these difficult 
-subjects just take time to fully understand so taking breaks and clearing your 
+**Come back later** – Give your brain some time to start digesting some of the
+information and to take a step back and put the pieces together to begin
+creating a bigger picture. If you have been working on learning a new concept
+or subject and felt overwhelmed and feel stuck, take a break. Do something
+completely different or think about something else entirely and came back to
+the subject later on with a fresh perspective. Sometimes these difficult
+subjects just take time to fully understand so taking breaks and clearing your
 head can be very useful.
 
-**Sleep on it** – Have you ever heard of the term before? This may sound crazy 
-but sometimes if there is a particular problem that you're struggling with, 
+**Sleep on it** – Have you ever heard of the term before? This may sound crazy
+but sometimes if there is a particular problem that you're struggling with,
 think about it before going to sleep. By blocking out all outside interference
-and noise it is much easier think about, come up with fresh perspectives and 
+and noise it is much easier think about, come up with fresh perspectives and
 ideas and often times you will wake up with an answer the next morning.
 
-**Break stuff** – One of the best ways to incorporate a number of these 
-techniques is to intentionally break stuff in your own setups. Triple check to 
-be sure that nothing important will get broken first and then go ahead and give 
-it a try. A much deeper and more intimate relationship with the way things work, why they 
-work and how they get broken occurs when things get broken. The great thing about 
-using this method is that it is almost always useful for something in the future, 
-whether it be the troubleshooting skills, the Googling skills or the specific 
+**Break stuff** – One of the best ways to incorporate a number of these
+techniques is to intentionally break stuff in your own setups. Triple check to
+be sure that nothing important will get broken first and then go ahead and give
+it a try. A much deeper and more intimate relationship with the way things work, why they
+work and how they get broken occurs when things get broken. The great thing about
+using this method is that it is almost always useful for something in the future,
+whether it be the troubleshooting skills, the Googling skills or the specific
 knowledge in the particular area that needed to be fixed.
 
-**Practice, practice, practice** – There is just no way around it.To get 
-better at something one must dedicate time and be prepared to practice like an 
+**Practice, practice, practice** – There is just no way around it.To get
+better at something one must dedicate time and be prepared to practice like an
 absolute maniac. For operations roles and system administration
 this can partially come from practical job experience but it also
 comes from dedicated study and lab time. The hands on component is
@@ -1128,10 +1128,10 @@ Things to keep in mind as you learn how to be an engineer
 General Tips for improvement
 ----------------------------
 
-These simple tips can go a really long way. There is no magical instant way to 
-improve yourself. If you take nothing else, just remember the following. The 
-best way to see results and really work on yourself starts by changing your 
-habits, working hard and being consistent.That might not be what you are 
+These simple tips can go a really long way. There is no magical instant way to
+improve yourself. If you take nothing else, just remember the following. The
+best way to see results and really work on yourself starts by changing your
+habits, working hard and being consistent.That might not be what you are
 looking for, but it has been proven to be true time and again that
 even by making just these few adjustments can go a long way in
 becoming better at what you do.
@@ -1145,28 +1145,28 @@ make a simple change as something to start with and work from there.
 There are many benefits of exercising and working your body regularly
 will help you improve your mind.
 
-**Sleep** - This is probably the most important thing to remember when you are 
-trying to work on hacking your mind and improving yourself. 8 hours of sleep 
-seems to be the general rule of thumb, and it should not be overlooked when you 
-are evaluating yourself and your goals for getting to where you want to be. If 
+**Sleep** - This is probably the most important thing to remember when you are
+trying to work on hacking your mind and improving yourself. 8 hours of sleep
+seems to be the general rule of thumb, and it should not be overlooked when you
+are evaluating yourself and your goals for getting to where you want to be. If
 you want to wake up early, you need to go to sleep early, it really is as simple
-as that. It is also important to be consistent on your sleep schedule so your 
-body can get used to when it should slow down and when it should speed up (even 
-on weekends!). For example, getting in a routine of winding down at a certain 
-time, say 9 pm every night by reading a book for an hour to train your body 
-that it is time to sleep. Read until say 10 pm every night if you want to wake 
-up at 6 am to get the sleep consistency your body needs, also giving your body 
+as that. It is also important to be consistent on your sleep schedule so your
+body can get used to when it should slow down and when it should speed up (even
+on weekends!). For example, getting in a routine of winding down at a certain
+time, say 9 pm every night by reading a book for an hour to train your body
+that it is time to sleep. Read until say 10 pm every night if you want to wake
+up at 6 am to get the sleep consistency your body needs, also giving your body
 enough time to repair and heal itself to get up and going.
 
 **Diet** - Also important. Everybody is different so please take this advice at
-face value. As with anything else, it is not recommended to go all out and 
-make completely polar changes to every eating habit at once. You will crash 
+face value. As with anything else, it is not recommended to go all out and
+make completely polar changes to every eating habit at once. You will crash
 and burn like many others.So while it may work for some you generally will be
-safer and more likely to make a lasting impact if you take things slowly. Work 
-on one thing at a time and gradually make the changes to improve your diet and 
-health. As an example, start by cutting out something small, like cutting out 
-a particular type of food that isn’t exactly healthy. Not entirely, but even 
-just cutting back is a good first step. Basically doing something is better 
+safer and more likely to make a lasting impact if you take things slowly. Work
+on one thing at a time and gradually make the changes to improve your diet and
+health. As an example, start by cutting out something small, like cutting out
+a particular type of food that isn’t exactly healthy. Not entirely, but even
+just cutting back is a good first step. Basically doing something is better
 than doing nothing.
 
 Golden rules for careers in ops
