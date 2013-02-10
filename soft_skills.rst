@@ -124,10 +124,10 @@ respect for operations as a whole.
 * Leave the customer with the assurance that you or someone will get back to him/her with a solution or feedback. 
 * Get back to the customer even if it is to say 
 
- * It was a one-off problem and here is why 
- * We found a problem internally and it is now resolved 
- * We are improving our processes to reduce the likelihood of it happening again
- * Or an explanation that simply provides feedback to the customer.
+  * It was a one-off problem and here is why
+  * We found a problem internally and it is now resolved
+  * We are improving our processes to reduce the likelihood of it happening again
+  * Or an explanation that simply provides feedback to the customer.
 
 * And don't forget to thank the customer for taking the time to provide feedback
 
@@ -757,7 +757,7 @@ How does operations spend?
 * Does your organization have a CapEx process and where does that money originate?  Does depreciation impact your budget?
 * Are there any hidden costs?
 
- * Service fees from internal organizations?
+  * Service fees from internal organizations?
 
 Answering these questions and looking at reports from within should give
 you most of the answers you need. You may have to implement your own
