@@ -159,7 +159,7 @@ person prioritize and accomplished?
 
 Recommended reading:
 
-* Tom Limoncelli's book `Time Management for System Administrators <http://www.amazon.com/Management-System-Administrators-Thomas-Limoncelli/dp/0596007833/ref=sr_1_2?s=books&ie=UTF8&qid=1360301629&sr=1-2&keywords=limoncelli>`_ 
+* Tom Limoncelli's book `Time Management for System Administrators <http://amzn.com/0596007833>`_
 * Tom Limoncelli's `Time Management Wiki <http://code.google.com/p/tomontime/wiki/Main>`_
 
 Tom Limoncelli also teaches a Time Management tutorial at the `USENIX
