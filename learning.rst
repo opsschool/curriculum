@@ -330,11 +330,7 @@ syllabi, course outcomes, exercises etc.
 - http://www.wit.edu/computer-science/programs/BSCN.html
 - http://www.his.se/english/education/island/net--og-kerfisstjornun/
 
-In addition, Usenix SAGE (now LISA) used to have a sage-edu@usenix.org mailing
-list, but I don't know if that is still active. LOPSA has
-`an educator's list
-[https://lists.lopsa.org/cgi-bin/mailman/listinfo/educators\`_
+LOPSA has an `educator's list <https://lists.lopsa.org/cgi-bin/mailman/listinfo/educators>`_
 
 Aleksey's `report on university programs
-[http://www.verticalsysadmin.com/Report_on_programs_in_System_Administration__25-June-2012.pdf]`_
-
+<http://www.verticalsysadmin.com/Report_on_programs_in_System_Administration__25-June-2012.pdf>`_
