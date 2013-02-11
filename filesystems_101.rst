@@ -29,7 +29,7 @@ Navigating the filesystem
 When you log into a Unix system, you will be given a command line by the
 :doc:`shell <shells_101>` which may look something like this:
 
-.. code-block:: bash
+.. code-block:: console
 
   bash-4.0$
 
@@ -41,7 +41,7 @@ advanced things.
 
 You can find the name of the current directory with the ``pwd`` command:
 
-.. code-block:: bash
+.. code-block:: console
 
   bash-4.0$ pwd
   /home/opsschool
@@ -49,7 +49,7 @@ You can find the name of the current directory with the ``pwd`` command:
 You can see the list of files and directories in this directory with the ``ls``
 command:
 
-.. code-block:: bash
+.. code-block:: console
 
   bash-4.0$ ls
   file1.txt file2.txt tmpdir
@@ -57,7 +57,7 @@ command:
 The ``ls`` command also accepts the ``-l`` argument to provide a long-listing,
 which will show you permissions, dates, ownership and other information:
 
-.. code-block:: bash
+.. code-block:: console
 
   bash-4.0$ ls -l
   -rw-r--r--  1 opsschool opsgroup   2444 Mar 29  2012 file1.txt
@@ -67,7 +67,7 @@ which will show you permissions, dates, ownership and other information:
 You can see the contents of other directories, by giving the name of the
 directory:
 
-.. code-block:: bash
+.. code-block:: console
 
   bash-4.0$ ls -l /
   dr-xr-xr-x    2 root root  4096 Apr 26  2012 bin
@@ -94,7 +94,7 @@ directory, which in turn contains the ``/home/opsschool`` directory.
 
 To change directories, use the ``cd`` command:
 
-.. code-block:: bash
+.. code-block:: console
 
   bash-4.0$ cd /tmp
   bash-4.0$ pwd
@@ -104,7 +104,7 @@ There may be times you need to find a file on your filesystem, based on its
 name, date, size, or other patriculars. For this you can use the ``find``
 command:
 
-.. code-block:: bash
+.. code-block:: console
 
   bash-4.0$ find /home/opsschool -type f -name file3.txt
   /home/opsschool/tmpdir/file3.txt
@@ -120,7 +120,7 @@ computer. "a" is the first drive, "b" is the second.
 If you have an already configured system, you will likely see entries like
 this:
 
-.. code-block:: bash
+.. code-block:: console
 
     -bash-4.1$ ls -la /dev/sd*
     brw-rw---- 1 root disk 8, 0 Jul  6 16:51 /dev/sda
