@@ -67,6 +67,7 @@ Table of Contents
    deployment_201
    soft_skills
    labs
+   learning
    seealso
    meta/contributions
    glossary
