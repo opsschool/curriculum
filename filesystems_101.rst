@@ -33,8 +33,13 @@ may look something like this:
 
   bash-4.0$
 
-By default you will be in the home directory of the user you are logged in as.
-You can find the name of the corrent directory with the ``pwd`` command:
+By default you will be in the "current working directory" if the process that
+spawned the shell. Normally this is the home directory of your user. 
+It can be different in some edge cases, such as if you manually change the
+current working directory, but these cases are rare until you start doing more
+advanced things.
+
+You can find the name of the current directory with the ``pwd`` command:
 
 .. code-block:: bash
 
@@ -49,7 +54,8 @@ command:
   bash-4.0$ ls
   file1.txt file2.txt tmpdir
 
-The ``ls`` command also accepts the ``-l`` argument to provide a long-listing:
+The ``ls`` command also accepts the ``-l`` argument to provide a long-listing,
+which will show you permissions, dates, ownership and other information:
 
 .. code-block:: bash
 
