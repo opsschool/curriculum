@@ -218,22 +218,19 @@ Where to look for help in the community
 Local user groups
 -----------------
 
-Local LOPSA Groups:
-* https://lopsa.org/localprogram
+`Local LOPSA Groups: <https://lopsa.org/localprogram>`_
 
-BayLISA
-* http://www.baylisa.org/
+`BayLISA <http://www.baylisa.org/>`_
 
-Back Bay LISA
-* http://www.bblisa.org/
+`Back Bay LISA <http://www.bblisa.org/>`_
 
 Mailing lists and forums
 ------------------------
 
-* `lopsa-tech@lopsa.org <http://lists.lopsa.org>`
-* `lisa@usenix.org <https://www.usenix.org/lisa/mailinglist>
-* `systers [women in computing] <http://anitaborg.org/initiatives/systers/>`
-* `ops-education Google group <https://groups.google.com/forum/?hl=en&fromgroups=#!forum/ops-education>`
+* `lopsa-tech@lopsa.org <http://lists.lopsa.org>`_
+* `lisa@usenix.org <https://www.usenix.org/lisa/mailinglist>`_
+* `systers [women in computing] <http://anitaborg.org/initiatives/systers/>`_
+* `ops-education Google group <https://groups.google.com/forum/?hl=en&fromgroups=#!forum/ops-education>`_
 
 irc
 ---
@@ -245,30 +242,24 @@ irc.freenode.net
 Membership organizations
 ------------------------
 
-`USENIX LISA Special Interest Group (SIG) <https://www.usenix.org/lisa>`
+`USENIX LISA Special Interest Group (SIG) <https://www.usenix.org/lisa>`_
 
-`League of Professional System Administrators (LOPSA) <https://lopsa.org/>`
+`League of Professional System Administrators (LOPSA) <https://lopsa.org/>`_
 
 Conferences and Events
 ----------------------
 
-USENIX Large Installation System Administration (LISA)
-www.usenix.org
+`USENIX Large Installation System Administration (LISA) <www.usenix.org>`_
 
-Velocity
-http://velocityconf.com/
+`Velocity <http://velocityconf.com/>`_
 
-Scale
-http://www.socallinuxexpo.org/
+`Scale <http://www.socallinuxexpo.org/>`_
 
-Ohio LinuxFest
-http://www.ohiolinux.org/
+`Ohio LinuxFest <http://www.ohiolinux.org/>`_
 
-Lopsa-East
-http://lopsa-east.org
+`Lopsa-East <http://lopsa-east.org>`_
 
-Cascadia
-http://casitconf.org
+`Cascadia <http://casitconf.org>`_
 
 
 Subreddits
@@ -342,8 +333,8 @@ syllabi, course outcomes, exercises etc.
 In addition, Usenix SAGE (now LISA) used to have a sage-edu@usenix.org mailing
 list, but I don't know if that is still active. LOPSA has
 `an educator's list
-[https://lists.lopsa.org/cgi-bin/mailman/listinfo/educators\`
+[https://lists.lopsa.org/cgi-bin/mailman/listinfo/educators\`_
 
 Aleksey's `report on university programs
-[http://www.verticalsysadmin.com/Report_on_programs_in_System_Administration__25-June-2012.pdf]`
+[http://www.verticalsysadmin.com/Report_on_programs_in_System_Administration__25-June-2012.pdf]`_
 
