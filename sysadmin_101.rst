@@ -72,7 +72,7 @@ following descriptions compare and contrast:
 * **Will works for a small town.** The town has 35 employees who use computers
   every day, and they need access to email and other collaboration tools. With
   so many services and options for e-mail, which one makes the most amount of
-  sense for the town? Daniel collects input from the employees about what
+  sense for the town? Will collects input from the employees about what
   capabilities are important, input from legal council about what laws a town
   must follow regarding electronic communication, and evaluates a few
   services or products with his user's needs in mind along with the town's. If he
