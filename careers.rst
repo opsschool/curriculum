@@ -203,3 +203,31 @@ and backups.
 They usually have strong skill overlaps with Network Engineers (with so much
 modern storage being network-attached in some manner) and usually have strong
 skills in capacity planning and performance management of infrastructure.
+
+************************************
+How to become an operations engineer
+************************************
+
+Employers look for a number of things when hiring junior engineers and admins:
+
+* An understanding of the basics of Unix-style operating systems, including
+  installing the operating system, installing and configuring packages and
+  editing files. You can find these in the :doc:`unix_101` section.
+* Knowledge of common internet protocols and systems, and how to implement and
+  manage them, including :doc:`dns_101`, :doc:`smtp_101` and
+  :doc:`networking_101`.
+* A solid grasp of how to :doc:`troubleshoot problems <troubleshooting_101>`.
+* Repeated success in completing the :doc:`Labs exercises <labs>`.
+
+These are only the beginning, and the bare minimum you should expect to know as
+a junior level engineer. While demand for operations engineers continues wo grow
+at a fast pace, you will still find there is competition for positions. The more
+you know, the stronger your chances of finding a job.
+
+Simply reading the 101 sections of Ops School is not sufficient, you must
+*understand* it. As an example: The :doc:`DNS <dns_101>` section explains there
+are 13 root name servers. In addition to knowing this fact, you have to
+understand why there are 13 root name servers and be able to explain it
+confidently to others.
+
+
