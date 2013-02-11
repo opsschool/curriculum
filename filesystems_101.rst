@@ -26,8 +26,8 @@ use them.
 Navigating the filesystem
 =========================
 
-When you log into a Unix command line you will be with a command prompt, which
-may look something like this:
+When you log into a Unix system, you will be given a command line by the
+:doc:`shell <shells_101>` which may look something like this:
 
 .. code-block:: bash
 
