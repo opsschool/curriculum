@@ -204,6 +204,8 @@ They usually have strong skill overlaps with Network Engineers (with so much
 modern storage being network-attached in some manner) and usually have strong
 skills in capacity planning and performance management of infrastructure.
 
+.. _how-to-become-an-operations-engineer:
+
 ************************************
 How to become an operations engineer
 ************************************
