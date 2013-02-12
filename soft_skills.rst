@@ -843,6 +843,64 @@ your own.
 
 The cost benefit analysis
 ^^^^^^^^^^^^^^^^^^^^^^^^^
+The cost benefit analysis, or CBA, provides senior management with
+concise proof that you have done your homework when you propose a
+solution.
+
+The first step in the CBA process is to know your audience. The higher
+up the organizational chain you go, the less detail you should need.
+Before you present a CBA to your management, you are going to have to
+prove to yourself that your solution is the best one.
+
+Before you can detail the cost of your solution, you need to know what
+you are spending today without it. What is the cost of not doing
+anything? This is where the benefits of performing your solution would
+need to outweigh the status quo.
+
+Building your case
+++++++++++++++++++
+
+Everything in a CBA should be represented in the same units. The units
+used are most often money. So you need to be able to consider benefits
+to your solution in terms of savings, efficiency, increased income to
+the organization.
+
+Cost should include anything that explicitly adds to the total cost of
+the solution:
+
+* employee labor
+* contractor costs
+* maintenance fees
+* up-front costs and licensing
+* hardware
+* depreciation
+* facilities costs (outfitting a space)
+* provisioning or migration costs
+* networking
+
+Benefits should include anything that is an outcome of your solution:
+
+* increased productivity
+* increased organization efficiency
+* increased income to the organization
+* increased capabilities that enhance the organization in another way
+
+Putting it all together
++++++++++++++++++++++++
+
+Might give an example here. Need to write more explaining how to
+assemble the pieces. 
+
+**Exercise**
+
+Put together a CBA for a recent project or task you worked on or
+encountered:
+
+* How would you estimate costs that are not known?
+* How do you monetize benefits that are not explicitly monetary?
+* What does the result tell you?
+* How could you sell this idea to non-technical people using your CBA?
+
 
 Navigating the capital expenditure process
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
