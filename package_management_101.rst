@@ -44,7 +44,7 @@ by running:
 Installing packages
 -------------------
 
-You can install a package through through yum, by running:
+You can install a package through yum, by running:
 
 .. code-block:: console
 
@@ -168,7 +168,7 @@ by running:
 Installing packages
 -------------------
 
-You can install a package through through apt, by running:
+You can install a package through apt, by running:
 
 .. code-block:: console
 
