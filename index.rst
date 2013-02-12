@@ -18,8 +18,8 @@ since 1999. This has consistently shown the field to be a prosperous field for
 those people who enjoy diving into the inner workings of computer systems.
 
 If you already know about the profession and want to know how to start, read
-`How to become an operations engineer
-<http://www.opsschool.org/en/latest/careers.html#how-to-become-an-operations-engineer>`.
+:ref:`How to become an operations engineer <how-to-become-an-operations-engineer>`.
+
 If you reading about this career for the first time and want to know if it is
 for you, check out the :doc:`Careers in Operations </careers>` chapter.
 
