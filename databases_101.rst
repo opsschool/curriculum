@@ -334,6 +334,7 @@ Pro Tips
 If your query is ``UPDATE users SET disabled=1 WHERE id=1;``
 
 then first run this to make sure you are getting the proper record:
+
 ``SELECT disabled FROM users WHERE id=1;`` 
 
 - use a ``LIMIT`` on ``UPDATE`` and ``DELETE FROM`` queries to limit damage imposed by an erroneous query
