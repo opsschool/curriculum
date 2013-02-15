@@ -329,6 +329,13 @@ Here is a simple example of a DELETE statement:
 Pro Tips
 ========
 
+- Before doing a write query, run it as a read query first to make sure you are getting exactly what you want.
+
+If your query is ``UPDATE users SET disabled=1 WHERE id=1;``
+
+then first run this to make sure you are getting the proper record:
+``SELECT disabled FROM users WHERE id=1;`` 
+
 - use a ``LIMIT`` on ``UPDATE`` and ``DELETE FROM`` queries to limit damage imposed by an erroneous query
 
   ``UPDATE users SET disabled=1 WHERE id=1 LIMIT 1;``
