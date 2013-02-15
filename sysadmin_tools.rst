@@ -248,10 +248,15 @@ There is a nifty cheat sheet [#]_ for the most important
 
 byobu
 -----
-.. todo::
+Byobu is available in major distro's as a packaged binary. It runs as a wrapper around either screen or tmux,
+launching byobu will run whichever the package maintainer included as a dependency, if you have both installed,
+you can select explicitly with byobu-{screen,tmux}.
 
-   - describe advantages of meta-multiplexers like ``byobu`` [#]_ that can use different backends.
-   - describe scrollback and copy and paste
+Byobu gives you a much more friendly face into your multiplexer, basic configuration is launched with F9 or byobu-config.
+
+Scrollback starts with F7, mark the start of your buffer by hitting the spacebar, then use the spacebar again to mark
+the end of your selection (which will be copied into byobu's clipboard automatically). Press Byobu-Escape 
+(typically Ctrl-A) + [ to paste.
 
 References
 ----------
@@ -260,7 +265,7 @@ References
 .. [#] http://www.dayid.org/os/notes/tm.html
 .. [#] http://pragprog.com/book/bhtmux/tmux
 .. [#] https://launchpad.net/byobu
-
+.. [#] https://help.ubuntu.com/community/Byobu
 
 Shell customisations
 ====================
