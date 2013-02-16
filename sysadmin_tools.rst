@@ -84,8 +84,98 @@ GNU Screen
 ``screen`` is one of the longest lived multiplexers. Almost everyone who has
 used a multiplexer has used screen, and you can't go far wrong with it.
 
-.. todo::
-   Explain how to use ``screen``
+``screen`` is a full-screen window manager that multiplexes a physical terminal 
+between several processes (typically interactive shells).  It is useful for 
+creating sessions that can be disconnected from and reconnected to later.  This
+is useful for running tasks that can take a long time that you do not want to 
+have an ssh session timeout on, such as a large database import.  In these cases
+cron is also a very good way to run one off long running tasks.
+
+``screen`` is also **very useful** for creating sessions that users can share.
+
+Installation
+~~~~~~~~~~~~
+Debian and descendants (Ubuntu,Mint,Suse,etc):
+
+.. code-block:: bash
+
+  aptitude install screen
+
+On RedHat-style distributions install with the command:
+
+.. code-block:: bash
+
+  yum install screen
+
+Basic usage
+~~~~~~~~~~~
+Create a session:
+
+.. code-block:: bash
+
+  screen -S session1
+
+To detach from a session - in the session type Ctrl+a+d
+
+List available screen sessions:
+
+.. code-block:: bash
+
+  screen -ls
+
+Reattach to a session:
+
+.. code-block:: bash
+
+  screen -r session1
+
+Share a session:
+
+UserA starts session:
+
+.. code-block:: bash
+
+  screen -S session1
+
+UserB can then attach to the same session (both UserA and UserB can send commands to the session):
+
+.. code-block:: bash
+
+  screen -x ${USERA}/session1
+
+If UserA and UserB are independent users on the system and UserB is not root, 
+then UserB must use sudo to attach to a root session.
+
+Create a session with a log:
+
+.. code-block:: bash
+
+  screen -L -S session1
+
+``screen`` will output the session log to the user's home directory with the 
+file ``~/screenlog.0`` (0 being the session id).  PuTTY is also as a very useful 
+and featureful ssh client that can be used for logging ssh sessions locally 
+(Windows and Linux).  ``screen`` can be used within a PuTTY session.
+
+Create a session with a log and 20000 lines of scrollback in the terminal:
+
+.. code-block:: bash
+
+  screen -h 20000 -L -S session1
+
+
+Configuration
+~~~~~~~~~~~~~
+``screen`` has a fairly extensive set of configuration options, when screen is invoked, it executes initialization commands from the files ``/etc/screenrc`` and ``.screenrc`` in the user's home directory.
+
+Further info
+~~~~~~~~~~~~
+
+.. code-block:: bash
+
+  man screen
+
+There is a nifty cheat sheet for the most important ``screen`` and ``tmux`` keybindings (see below in tmux references [3]_).
 
 .. _tmux:
 
