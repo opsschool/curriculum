@@ -1,9 +1,9 @@
 Tools for productivity
 **********************
 
-The work of operations is often helped by using the combinations of tools.
-The tools you choose to use will depend heavily on your work style. Over time
-you may even change the tools you use.
+The work of operations is often helped by using the combinations of tools. The
+tools you choose to use will depend heavily on your environment and work style.
+Over time you may even change the tools you use.
 
 This is a list of commonly used tools, we recommend trying as many of them as
 you have time for. Finding the right tool is often like finding a good pair of
@@ -15,6 +15,16 @@ Terminal emulators
 
 OSX: iTerm2
 -----------
+
+Rather than stick with the default terminal, many sysadmins on OS X install
+iTerm2_. iTerm2's greater flexibility and larger feature set have made it
+a de facto standard among technical Mac users. Like most modern
+terminals, it supports vertical and horizontal splits, tabs, profiles,
+etc. In addition, it stores the rendered buffer for a period of time
+which serves as a way to view previous things that might have been lost
+due to editor crashes or the like.
+
+.. _iTerm2: http://iterm2.com/
 
 
 SSH
@@ -51,7 +61,7 @@ There are however two limitations to working this way:
 
 #. You'll often need to be connected to more than one remote system at a time.
    Opening a whole new terminal each time can result in a lot of windows cluttering
-   up previous screen space.
+   up precious screen space.
 #. When happens if your internet connection stops working? All of your
    connections are reset. Any work you might have been doing on the remote servers
    can be lost.
