@@ -147,6 +147,7 @@ Creating packages
 -----------------
 .. todo: Mention spec files and roughly how RPMs are put together.
 .. todo: Then introduce FPM and tell them not to bother with spec files yet.
+
 There are two todos here.
 
 dpkg and APT (Debian, Ubuntu)
