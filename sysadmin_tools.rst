@@ -123,7 +123,7 @@ List available screen sessions:
 
   screen -ls
 
-.. code-block:: console_output
+.. code-block:: console
 
   [gary@mc9 ~]# screen -ls
   There are screens on:
