@@ -95,15 +95,15 @@ cron is also a very good way to run one off long running tasks.
 
 Installation
 ~~~~~~~~~~~~
-Debian and descendants (Ubuntu,Mint,Suse,etc):
+Debian and descendants (Ubuntu, Mint, Suse, etc):
 
-.. code-block:: bash
+.. code-block:: console
 
   aptitude install screen
 
 On RedHat-style distributions install with the command:
 
-.. code-block:: bash
+.. code-block:: console
 
   yum install screen
 
@@ -111,7 +111,7 @@ Basic usage
 ~~~~~~~~~~~
 Create a session:
 
-.. code-block:: bash
+.. code-block:: console
 
   screen -S session1
 
@@ -119,36 +119,47 @@ To detach from a session - in the session type Ctrl+a+d
 
 List available screen sessions:
 
-.. code-block:: bash
+.. code-block:: console
 
   screen -ls
 
+.. code-block:: console_output
+
+  [gary@mc9 ~]# screen -ls
+  There are screens on:
+          21707.session2  (Detached)
+          21692.session1  (Detached)
+          21936.session3  (Attached)
+  3 Sockets in /var/run/screen/S-gary.
+  [gary@mc9 ~]#
+
+Here we can see 3 screen sessions are running, 2 detached and 1 attached.
+
 Reattach to a session:
 
-.. code-block:: bash
+.. code-block:: console
 
   screen -r session1
 
 Share a session:
 
-UserA starts session:
+User alice starts session:
 
-.. code-block:: bash
+.. code-block:: console
 
   screen -S session1
 
-UserB can then attach to the same session (both UserA and UserB can send commands to the session):
+User bob can then attach to the same session (both alice and bob can send commands to the session):
 
-.. code-block:: bash
+.. code-block:: console
 
-  screen -x ${USERA}/session1
+  sudo screen -x alice/session1
 
-If UserA and UserB are independent users on the system and UserB is not root, 
-then UserB must use sudo to attach to a root session.
+Non root users, must use sudo to attach to another user's session.
 
 Create a session with a log:
 
-.. code-block:: bash
+.. code-block:: console
 
   screen -L -S session1
 
@@ -159,7 +170,7 @@ and featureful ssh client that can be used for logging ssh sessions locally
 
 Create a session with a log and 20000 lines of scrollback in the terminal:
 
-.. code-block:: bash
+.. code-block:: console
 
   screen -h 20000 -L -S session1
 
@@ -171,7 +182,7 @@ Configuration
 Further info
 ~~~~~~~~~~~~
 
-.. code-block:: bash
+.. code-block:: console
 
   man screen
 
