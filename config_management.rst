@@ -83,14 +83,14 @@ directions provided above, and have a command line session open on both your
 **master** and **slave** machines.
 You can check what version are you using on master with:
 
-.. code-block:: bash
+.. code-block:: console
 
   root@master:~# salt --version
   salt 0.10.3
 
 and on slave with:
 
-.. code-block:: bash
+.. code-block:: console
 
   root@slave:~# salt-minion --version
   salt-minion 0.10.3
@@ -117,7 +117,7 @@ you don't need to manage those manually, except in case when you want to
 To add the slave to minions list, you will have to use the command ``salt-key``
 on master. Execute ``salt-key -L`` to list available minions:
 
-.. code-block:: bash
+.. code-block:: console
 
   root@master:~# salt-key -L
   Unaccepted Keys:
@@ -127,7 +127,7 @@ on master. Execute ``salt-key -L`` to list available minions:
 
 To accept a minion, execute ``salt-key -a <minion-name>``:
 
-.. code-block:: bash
+.. code-block:: console
 
   root@master:~# salt-key -a slave
   Key for slave accepted.
@@ -141,7 +141,7 @@ To accept a minion, execute ``salt-key -a <minion-name>``:
 Once the minion is added, you can start managing it by using command ``salt``.
 For example, to check the communication with slave, you can ping the slave from the master:
 
-.. code-block:: bash
+.. code-block:: console
 
   root@master:~# salt 'slave*' test.ping
   slave: True
@@ -153,7 +153,7 @@ In order to understand how Salt does its configuration management on minions,
 we'll take look at the ``salt`` command line tool. Let's take our
 previous command and inspect the parts of the command:
 
-.. code-block:: bash
+.. code-block:: console
 
   root@master:~# salt 'slave*' test.ping
                              ^ ^
@@ -180,7 +180,7 @@ will be listed on master with the minion name as prefix.
 
 For example, to run command ``uname -a`` on our slave we will execute:
 
-.. code-block:: bash
+.. code-block:: console
 
   root@master:~# salt slave cmd.run 'uname -a'
   slave: Linux slave 2.6.24-27-openvz #1 SMP Fri Mar 12 04:18:54 UTC 2010 i686 GNU/Linux
@@ -249,7 +249,7 @@ you do not write ``pkg: new_state.init``, write just ``pkg: new_state``.
 Now to deploy it, we will use the function ``state.sls`` and indicate the state
 name:
 
-.. code-block:: bash
+.. code-block:: console
 
   root@master:~# salt slave state.sls apache
   slave:
@@ -335,7 +335,7 @@ Below is the directory listing of the changes we did: ::
 Using the newly created state file, we can try and deploy our brand new
 virtual host:
 
-.. code-block:: bash
+.. code-block:: console
 
   root@master:~# salt slave state.sls vhosts.www_opsschool_org
   slave:
@@ -384,7 +384,7 @@ by a list of states to be deployed on the matched host.
 
 Now you can execute:
 
-.. code-block:: bash
+.. code-block:: console
 
   root@master:~# salt slave state.highstate
 

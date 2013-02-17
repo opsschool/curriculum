@@ -86,14 +86,14 @@ In order to understand whisper files a little bit better, we can use the set
 of scripts distributed with whisper to take a look at a database file. First
 install whisper from the PyPi distribution:
 
-.. code-block:: bash
+.. code-block:: console
 
   % sudo pip install whisper
 
 And create a whisper database with a 10 second retention for 1 minute by using
 the ``whisper-create.py`` command:
 
-.. code-block:: bash
+.. code-block:: console
 
   % whisper-create.py test.wsp 10s:1minute
   Created: test.wsp (100 bytes)
@@ -131,7 +131,7 @@ epoch time. For updating the database with value there is the handy
 :file:`whisper-update.py` command, which takes a timestamp and a value as
 arguments:
 
-.. code-block:: bash
+.. code-block:: console
 
   % whisper-update.py test.wsp 1354509710:3
   % whisper-fetch.py test.wsp
@@ -148,7 +148,7 @@ points, they wouldn't be show anymore. However taking a look at the
 database file with :file:`whisper-dump.py` reveals a little more information about
 the storage system:
 
-.. code-block:: bash
+.. code-block:: console
 
   % whisper-dump.py test.wsp
   Meta data:
@@ -181,7 +181,7 @@ retention* from the invoked point in time. And it will also fetch the points
 from the retention archive that can cover most of the requested time. This
 becomes a bit more clear when adding a new archive:
 
-.. code-block:: bash
+.. code-block:: console
 
   % whisper-resize.py test.wsp 10s:1min 20s:2min
   Retrieving all data from the archives
@@ -274,7 +274,7 @@ archives to use for the metrics path in the same format that
 In order to get a basic carbon cache instance running (default listener is TCP
 on port 2003), install it from PyPi and copy the example config files:
 
-.. code-block:: bash
+.. code-block:: console
 
   % cd /opt/graphite/conf
   % cp carbon.conf.example carbon.conf
@@ -290,7 +290,7 @@ can also be changed within the configuration. After the carbon daemon has been
 started, metrics can just be recorded by sending one or more values in the
 format ``metric_path value timestamp\n``:
 
-.. code-block:: bash
+.. code-block:: console
 
   % echo "test 10 1354519378" | nc -w1 localhost 2003
   % whisper-fetch.py /opt/graphite/storage/whisper/test.wsp |
@@ -304,7 +304,7 @@ All metrics paths that are sent are relative to the
 interface also supports sub folders, which can be created by separate the
 metrics path with dots:
 
-.. code-block:: bash
+.. code-block:: console
 
   % echo "this.is.a.test 10 1354519680" | nc -w1 localhost 2003
   % whisper-fetch.py /opt/graphite/storage/whisper/this/is/a/test.wsp| tail -n 3
@@ -392,7 +392,7 @@ not packaged for your OS, you can `follow the instructions
 <https://github.com/joyent/node/wiki/Installation>`_).  Then, to
 actually run StatsD:
 
-.. code-block:: bash
+.. code-block:: console
 
   % git clone git://github.com/etsy/statsd.git
   % cd statsd
@@ -434,7 +434,7 @@ Counter
 
 The *counter* is the most basic type.
 
-.. code-block:: bash
+.. code-block:: console
 
   % echo "my.statistic:1|c" | nc -w 1 -u localhost 8125
 
@@ -442,14 +442,14 @@ This will add 1 to the statistic named "my.statistic".  After the
 flush the value for this statistic will be 0.  It's also possible to
 specify to statsd that we are sampling:
 
-.. code-block:: bash
+.. code-block:: console
 
   % echo "my.statistic:1|c|@0.1" | nc -w 1 -u localhost 8125
 
 Timing
 ~~~~~~
 
-.. code-block:: bash
+.. code-block:: console
 
   % echo "my.timer:43|ms" | nc -w 1 -u localhost 8125
 
@@ -463,7 +463,7 @@ Gauges
 
 Gauges are arbitrary values.
 
-.. code-block:: bash
+.. code-block:: console
 
   % echo "my.statistic:23|g" | nc -w 1 -u localhost 8125
 
@@ -503,7 +503,7 @@ A few commands are supported:
 
 The ``stats`` output looks like this:
 
-.. code-block:: bash
+.. code-block:: console
 
   % telnet localhost 8125
   stats
@@ -539,7 +539,7 @@ Every time you push an application or use your configuration manager
 to push changes, you could send an event to statsd.  Something as
 simple as
 
-.. code-block:: bash
+.. code-block:: console
 
   % echo "<ENV>.APPLICATIONS.EVENTS.<APP-NAME>.deploy:1|c" | nc -w 1 -u localhost 8125
 

@@ -34,7 +34,7 @@ kill
 it. The most common use of this is to stop, or kill, processes. For example, to
 stop a process with the PID '123':
 
-.. code-block:: bash
+.. code-block:: console
 
   $ kill 123
 
@@ -49,14 +49,14 @@ list.) For instance, if the above kill command did not succeed in terminating
 your process, a more heavy-handed option is to send a ``KILL`` signal to the
 process:
 
-.. code-block:: bash
+.. code-block:: console
 
   $ kill -KILL 123
 
 Every signal has a name and a number. You can reference them by either
 one. Another way of running ``kill -KILL`` is:
 
-.. code-block:: bash
+.. code-block:: console
 
   $ kill -9 123
 
