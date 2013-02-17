@@ -39,7 +39,7 @@ There are three ways to send a signal to another process.The simplest way
 is the execute the "kill" command with a signal specified. For example you
 can use the kill command from the shell to send the interrupt signal like so:
 
-.. code-block:: bash
+.. code-block:: console
 
   kill -SIGINT <PID>
 

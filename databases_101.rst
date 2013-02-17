@@ -78,7 +78,7 @@ cases these commands are just wrappers around the standard SQL statement.
 MySQL
 ~~~~~
 
-.. code-block:: bash
+.. code-block:: console
 
 	mysqladmin create example_database
 
@@ -86,7 +86,7 @@ MySQL
 Postgresql
 ~~~~~~~~~~
 
-.. code-block:: bash
+.. code-block:: console
 
 	createdb example_database
 
@@ -118,7 +118,7 @@ MySQL does not support creation of users via the ``mysqladmin`` command.
 Postgresql
 ~~~~~~~~~~
 
-.. code-block:: bash
+.. code-block:: console
 
    createuser username
 
