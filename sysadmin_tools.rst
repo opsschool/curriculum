@@ -48,6 +48,52 @@ the functionality you would need from an SSH client.
 
 iOS: iSSH
 ---------
+A universal app available on the App Store, iSSH supports most--if not all--of
+the features a demanding power user needs.
+
+SSH Usecases
+============
+Far more than just a secure way to access a shell on a remote machine, ssh has
+evolved to support a large collection of ways to encapsulate traffic over the
+encrypted channel. Each of these is useful in different situations. This
+section will present some common problems, and will present how to solve the
+problems with ssh.
+
+Single port on foreign machine firewalled
+-----------------------------------------
+For this usecase, consider a loadbalancer--``lb-foo-1``--with a Web management
+interface listening on port 9090. This interface is only routable to a LAN
+private to the datacenter--10.10.10.0/24. Its IP address is 10.10.10.20. There
+is a machine on the 10.10.10.0/24 network with ssh access--``jumphost-foo-1``,
+accessible via DNS with the LAN IP 10.10.10.19. Therefore, one way to
+access ``lb-foo-1`` is via bouncing through ``jumphost-foo-1``. OpenSSH
+supplies the ``-L`` option to bind a local port to a port opened on the
+other side of the tunnel. On the remote end, ssh opens a connection to
+the host and port specified to the ``-L`` option. An example for this
+usecase:
+
+``ssh -L 9090:lb-foo-1:9090 jumphost-foo-1``
+
+This will open a connection from ``jumphost-foo-1`` to ``lb-foo-1`` on
+port 9090, and will bind the local port 9090 to a tunnel through the
+connection to that port. All traffic sent to the local port 9090 will
+reach ``lb-foo-1:9090``. It is important to note that the host given to
+``-L`` uses the perspective of the machine ssh connects to directly.
+This is important to remember for environments using hosts files or
+private / split-horizon DNS. In this usecase, an invocation like the
+following would work as well:
+
+``ssh -L 9090:10.10.10.20:9090 jumphost-foo-1``
+
+In this case, ``jumphost-foo-1`` would try to connect to ``10.10.10.20``
+directly, skipping the DNS lookup.
+
+Tunnel all traffic through remote machine
+-----------------------------------------
+For this usecase, consider the rest of the machines in the 10.10.10.0/24
+network. There are many ways to access them, including VPNs of various
+sorts. In addition to creating tunnels to specific ports, OpenSSH can
+also create a SOCKS proxy.
 
 
 Multiplexers
