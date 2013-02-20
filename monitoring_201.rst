@@ -385,7 +385,7 @@ implemtation was done by Etsy, and is written for `node.js
 <http://nodejs.org>`_. but other implementation exists (`Python
 <https://github.com/sivy/py-statsd>`_, `Ruby
 <https://github.com/fetep/ruby-statsdserver>`_, `C
-<https://github.com/armon/statsite.git>`_, etc).
+<https://github.com/armon/statsite>`_, etc).
 
 To install the one by Etsy, you will need to install node.js (if it's
 not packaged for your OS, you can `follow the instructions
