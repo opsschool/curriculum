@@ -413,7 +413,7 @@ A basic configuration file will be similar to this:
       globalPrefix: ""
     }
   }
-  
+
 Concepts
 --------
 
@@ -479,7 +479,7 @@ However, there's a few things to know about gauges:
     places, only one of them will be kept
   * if there's no new value during the time period, it will send the
     one from the previous period to Graphite
-  
+
 Sets
 ~~~~
 
@@ -526,7 +526,7 @@ Where:
   last flush to Graphite
 * ``graphite.last_exception`` is the number of seconds elapsed since
   the last exception thrown by Graphite while flushing
-  
+
 What have we done and where to go from here
 --------------------------------------------
 
