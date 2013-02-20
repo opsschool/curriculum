@@ -19,10 +19,10 @@ calculations
 Cooling
 =======
 
-N+1, N+2 
+N+1, N+2
 ---------
 
-The cooling exhausts for redundant or load-sharing aircos should be 
+The cooling exhausts for redundant or load-sharing aircos should be
 located in enough distance from each other that they do not influence each
 others effectiveness.
 
@@ -30,9 +30,9 @@ Cooling efficiency
 ------------------
 
 Surrounding temperature and load both influence how good an airco can work.
-For example it will work best if it's not fully loaded (has to move as many 
-units of thermal heat as it's specified for) and if the outside temp is 
-somewhere below 30Deg Celsius. 
+For example it will work best if it's not fully loaded (has to move as many
+units of thermal heat as it's specified for) and if the outside temp is
+somewhere below 30Deg Celsius.
 (Hopefully someone knows a smart formula for that)
 Their effectiness drops if they're located too close to places where hot air
 is not really moving, i.e. ground level or non-raised on a rooftop, or on a
@@ -44,7 +44,7 @@ Cooling failures
 
 Very important is to gather information on the duration of a cooling failure
 so far. The surrounding datacenter structures delay a failures effect by
-absorbing heat. 
+absorbing heat.
 That means two things:
 1. At some point the walls have gained a temperature close to the ambient.
 From that moment, they will not absorb more heat, resulting in a massive
@@ -73,8 +73,8 @@ reached
 - can you shut down enough to keep the most critical systems running?
 - can you also shut down enough to massively flatten the temperature curve?
 
-Generally, the goal is to flatten the effects so that the critical 
-infrastructure gets away with a very and constant slow hike up and down at 
+Generally, the goal is to flatten the effects so that the critical
+infrastructure gets away with a very and constant slow hike up and down at
 less than 2-3 deg / hr.
 This is also to be respected when the cooling is fixed again, it should run
 at emergency power only till the pivot is taking off the curve and the the
@@ -98,12 +98,12 @@ at having you fill a form where you just write anything you want.
 Techs should need to bring a ticket ID, and this ticket ID plus the tech's
 name should be announced by the vendor to security, plus(!) a callback to
 a defined number known to security. So, a double handshake with a token.
-This is really important to avoid incidents like suddenly missing two 
+This is really important to avoid incidents like suddenly missing two
 servers because "there were some techs that replaced it"
 
 Most critical DCs will have security accompanying you to the server.
 Some will keep the sec person around while the tech is working.
-The really smart ones train their sec stuff so that they will know *which* 
+The really smart ones train their sec stuff so that they will know *which*
 server the tech needs to go to and *which* disk is to be replaced as to the
 original ticket. (If you think the security people can't handle that, then
 just ask yourself who's to blame since it does work for other DCs)
