@@ -260,20 +260,30 @@ on Karen's ability to deliver a service for simulation that is available for
 them to work, which requires an understanding of their requirements and needs
 as well.
 
-
 ********************************
 What System Administration Isn't
 ********************************
 
-System Administration, like many things in life, can suffer from a cultural perception issue. 
-Primarily, some outside of the operations field that believe that the role 
-of IT is not to innovate; rather that IT exists to enforce rules decided on by others.
+System Administration, like many things in life, can suffer from a cultural
+perception issue.  Primarily, some outside of the operations field that believe
+that the role of IT is not to innovate; rather that IT exists to enforce rules
+decided on by others.
 
-We challenge that mindset. System administration is not about being a "no-man" (or a "no-woman")
-but about finding ways to intelligently implement the needs of a business in a way that increases
-maintainability, usability, and security for a group of people. 
+We challenge that mindset. System administration is not about being a "no-man"
+(or a "no-woman") but about finding ways to intelligently implement the needs
+of a business in a way that increases maintainability, usability, and security
+for a group of people.
 
-.. todo:: Expand on what system administration isn't.
+Another perception issue is that of the `BOFH
+<http://www.theregister.co.uk/data_centre/bofh/>`_. While there's something of
+a grain of truth to the meme, most system administrators who adopt such an
+attitude quickly find themselves out of work. Beyond the social implications,
+this sort of obstructionist, adversarial behavior is the least effective way of
+addressing problems. The best path to success and satisfaction is collaboration,
+not obstinance. This requires cooperation from all involved, whether their role
+is technical or not. An administrator's job is to create order from chaos, to
+control the technology--not the people. As with all social reactions, people
+must be understood complexly, and everyone has their own needs and goals.
 
 Problem Solving
 ===============
