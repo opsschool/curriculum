@@ -61,15 +61,15 @@ reached
 - how long is the expected time of overheating
 
 - what damage to expect from quick heatup and cooldown
-(i.e. tape backups in progress at the time of failure will be probably lost 
-because of the stretching effects on the media. Disks can fail by the dozen at
-the same time)
+  (i.e. tape backups in progress at the time of failure will be probably lost
+  because of the stretching effects on the media. Disks can fail by the dozen at
+  the same time)
 
 - what are the absolutely critical systems running, and how much power do the use
 - how many not absolutely critical systems are running, and how much power will
-it save to turn them off. 
+  it save to turn them off.
 - How fast can you shut them down? (i.e. on Unix, that could mean init 2, wait,
- flip the switch)
+  flip the switch)
 - can you shut down enough to keep the most critical systems running?
 - can you also shut down enough to massively flatten the temperature curve?
 
