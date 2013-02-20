@@ -37,7 +37,7 @@ Be descriptive in your commit message for anything non-obvious.
 If all of this git and github stuff is a little overwhelming, take a
 look at `github's documentation`_. If you have still have questions
 after reading that, please feel free to join #opsschool on
-irc.freenoe.net and ask your questions there. We'll be glad to help you
+irc.freenode.net and ask your questions there. We'll be glad to help you
 get your patches merged--but please remember that many of us are busy ops
 professionals, so we may not respond immediately. 
 
