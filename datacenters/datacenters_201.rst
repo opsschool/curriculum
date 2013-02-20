@@ -34,7 +34,7 @@ For example it will work best if it's not fully loaded (has to move as many
 units of thermal heat as it's specified for) and if the outside temp is
 somewhere below 30Deg Celsius.
 (Hopefully someone knows a smart formula for that)
-Their effectiness drops if they're located too close to places where hot air
+Their effectiveness drops if they're located too close to places where hot air
 is not really moving, i.e. ground level or non-raised on a rooftop, or on a
 roof section that is surrounded by higher parts of the building.
 Spraying water with a sprinkler can help.
@@ -55,12 +55,12 @@ consumes power.
 
 Generally you need to assess a few things:
 - is the temperature currently still a tolerable operating temperature
-- how quicky is it rising
+- how quickly is it rising
 - how soon will the fault be fixed and when will a tolerable temperature be
 reached
 - how long is the expected time of overheating
 
-- what damage to expect from quick heatup and cooldown
+- what damage to expect from quick heat-up and cool-down
   (i.e. tape backups in progress at the time of failure will be probably lost
   because of the stretching effects on the media. Disks can fail by the dozen at
   the same time)
