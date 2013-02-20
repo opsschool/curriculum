@@ -30,7 +30,7 @@ continue, this self test has to complete successfully. If the power supply
 cannot confirm the self test, there will usually be no output at all.
 
 Most modern x86 computers, especially those using the `ATX
-<http://en.wikipedia.org/wiki/ATX>`_ standard will have two main connectors to
+<http://en.wikipedia.org/wiki/ATX>`_ standard, will have two main connectors to
 the motherboard: a 4-pin connector to power the CPU, and a 24-pin connector to
 power other motherboard components. If the self test passes successfully, the
 PSU will send a signal to the CPU on the 4-pin connector to indicate that it
@@ -47,9 +47,9 @@ Possible failures:
 BIOS and CMOS
 =============
 
-At its core, the Basic Input/Output System (:term:`BIOS`) is a integrated circuit
+At its core, the Basic Input/Output System (:term:`BIOS`) is an integrated circuit
 located on the computer's motherboard that can be programmed with firmware.
-This firmware is what facilitates the boot process so that an operating system
+This firmware facilitates the boot process so that an operating system
 can load.
 
 Let's examine each of these in more detail:
@@ -75,10 +75,10 @@ hardware exists:
 
 Once the existence of the hardware has been confirmed, it must be configured.
 
-The BIOS has its own memory storage known as the CMOS (Complimentary Metal Oxide
-Semiconductor). The CMOS contains all of the settings the BIOS needs to save
-about a system. Amongst others, these include the memory speed and the CPU
-frequency multiplier and the location and configuration of the hard drives and
+The BIOS has its own memory storage known as the CMOS (Complimentary
+Metal Oxide Semiconductor). The CMOS contains all of the settings the
+BIOS needs to save, such as the memory speed, CPU frequency
+multiplier, and the location and configuration of the hard drives and
 other devices.
 
 The BIOS first takes the memory frequency and attempts to set that on the memory
@@ -94,7 +94,7 @@ to doing this, including the potential for damaging your CPU.
 POST tests
 ==========
 
-Once the memory and CPU frequencies have been set, the BIOS begins the Power On
+Once the memory and CPU frequencies have been set, the BIOS begins the Power-On
 Self Test (POST). The POST will perform basic checks on many system components,
 including:
 
@@ -121,18 +121,18 @@ Your BIOS manual should document what its specific beep codes mean.
 Reading the Partition Table
 ===========================
 
-The next major function of the BIOS is to determine which device to use, to
+The next major function of the BIOS is to determine which device to use to
 start an operating system.
 
-A typical BIOS can read boot information from the following devices, and will
+A typical BIOS can read boot information from the devices below, and will
 boot from the first device that provides a successful response. The order of
 devices to scan can be set in the BIOS:
 
-* Floppy Disks
+* Floppy disks
 * CD-ROMs
-* USB Flash Drives
-* Hard Drives
-* A Network
+* USB flash drives
+* Hard drives
+* A network
 
 We'll cover the first four options here. There's another section that
 deals with booting over the network.
@@ -172,10 +172,10 @@ represent partitions defined in that 64-byte partition table.
 GPT - The GUID Partition Table (the new way)
 --------------------------------------------
 
-The design of the IBM-Compatable BIOS is an old design and has limitations in
-today's world of hardware. To address this, the United Extensible Firmware
-Interface (UEFI) was created. Along with the creation of the UEFI, a new
-partition format was created.
+The design of the IBM-Compatible BIOS is an old design and has
+limitations in today's world of hardware. To address this, the United
+Extensible Firmware Interface (UEFI) was created, along with GPT, a
+new partition format.
 
 There are a few advantages to the GPT format, specifically:
 
@@ -191,7 +191,7 @@ There are a few advantages to the GPT format, specifically:
   copy is corrupted. This copy is stored at the 'end' of the disk.
 
 There is some compatibility maintained to allow standard PCs that are using
-old BIOS to boot from a drive that has a GPT on it.
+an old BIOS to boot from a drive that has a GPT on it.
 
 The Bootloader
 ==============
@@ -199,7 +199,7 @@ The Bootloader
 The purpose of a bootloader is to load the initial kernel and supporting modules
 into memory.
 
-There are a few bootloaders which exist. We'll discuss the GRand Unified
+There are a few common bootloaders. We'll discuss the GRand Unified
 Bootloader (GRUB), a bootloader used by many Linux distributions today.
 
 GRUB is a "chain bootloader" initializes itself in stages. These stages are:
@@ -207,8 +207,8 @@ GRUB is a "chain bootloader" initializes itself in stages. These stages are:
 * *Stage 1* - This is the very tiny application that can exist in that first
   part of the drive. It exists to load the next, larger part of GRUB.
 
-* *Stage 1.5* - Contains the drivers necessary to access the filesystem that
-  stage 2 resides on
+* *Stage 1.5* - Contains the drivers necessary to access the filesystem with
+  stage 2.
 
 * *Stage 2* - This stage loads the menu and configuration options for GRUB.
 
@@ -216,30 +216,29 @@ On an MBR-formatted drive and standard BIOS
 -------------------------------------------
 
 These stages must fit in that first 448 bytes of the partition table. Generally,
-stage 1 and stage 1.5 are small enough to exist in that first 448 bytes. They
+Stage 1 and Stage 1.5 are small enough to exist in that first 448 bytes. They
 contain the appropriate logic that allow the loader to read the filesystem that
-stage two is located on.
+Stage 2 is located on.
 
 On a GPT-formatted drive and UEFI
 ---------------------------------
 
-UEFI motherboards actually are able to read FAT32 filesystems and execute code. So
-the system firmware goes and looks for an image file that contains the boot code
-for stages 1 and 1.5 so that stage 2 can be managed inside of the operating
+UEFI motherboards are able to read FAT32 filesystems and execute code.
+The system firmware looks for an image file that contains the boot code
+for Stages 1 and 1.5, so that Stage 2 can be managed by the operating
 system.
 
 The Kernel and the Ramdisk
 ==========================
 
-The kernel is the main component of any operating system. The kernel acts as the
-lowest-level intermediary between the hardware on your computer and the
-applications running on your computer. The kernel is responsible for many other
-things - memory management and how the processor's time will be used among some
-of them.
+The kernel is the main component of any operating system. The kernel
+acts as the lowest-level intermediary between the hardware on your
+computer and the applications running on your computer. The kernel
+abstracts away such resource management tasks as memory and
+processor allocation.
 
-The kernel sits between the hardware of the computer, and the software of the
-operating system. It allows software to talk to the hardware through "device
-drivers".
+The kernel and other software can access peripherals such as disk
+drives by way of device drivers.
 
 So what, then, is this Initial RAM Filesystem, or Ramdisk?
 
@@ -263,9 +262,10 @@ disk drive and continue booting our Linux system.
 OS Kernel and Init
 ==================
 
-The traditional init system in Linux is called "System V init".
-Some replacements for this have started to emerge in recent years, however the
-traditional init system remains the most common one in use.
+The organizational scheme for determining the load order for system
+services during the boot process is referred to as an init system.
+The traditional and still most common init system in Linux is called
+"System V init".
 
 After the initial ramdisk sets the stage for the kernel to access the hard
 drive, we now need to execute the first process that will essentially
@@ -276,37 +276,45 @@ initialize the system. This is a collection of scripts that vary based on the
 desired "runlevel" of the system.
 
 
-Run levels
+Runlevels
 ==========
 
-Various run levels have been defined to bring the system up in different
-states. In general, the following run levels are consistent in most Linux
+Various runlevels have been defined to bring the system up in different
+states. In general, the following runlevels are consistent in most Linux
 distributions:
 
 * 0: Halt the system
 * 1: Single User Mode
 * 6: Reboot the machine
 
-Between distributions there can be various meanings for runlevels 2-5.
+Across distributions there can be various meanings for runlevels 2-5.
 RedHat-based distributions use runlevel 3 for a multiuser console
 environment and 5 for a graphical-based environment.
 
-Multiuser vs. Singleuser run levels
+Multiuser vs. Single user runlevels
 -----------------------------------
 
-As the name implies, in one run level multiple users can use the machine, versus
+As the name implies, in some runlevels multiple users can use the machine, versus
 one user in single user mode. So why does single user mode exist, anyways?
 
-In multiuser run levels, the system boots as normal. All associated services -
-such as SSH, or HTTPd, or whatnot load in a particular order. The network
-interfaces, if configured, are enabled. It's business as usual if you're booting
-in a multiuser run level.
+In multiuser runlevels, the system boots as normal. All standard
+services such as SSH and HTTP daemons load in the order defined in the
+init system. The network interfaces, if configured, are enabled. It's
+business as usual if you're booting to a multiuser runlevel.
 
-You will find yourself in single user mode when something breaks: something
-you configured interferes with the boot process and you need to turn it off,  or
-perhaps the drive running the server has failed and you need to run a disk check.
-In single user mode, generally the bare minimum amount of services are started to
-get you to a command prompt.
+Conversely, single user mode has the bare minimum of services enabled
+(notably there is no networking enabled), making it useful for
+troubleshooting (and not much else).
+
+You will need (or involuntarily find yourself in) single user mode
+when something breaks: something you configured interferes with the
+boot process and you need to turn it off, or perhaps a key filesystem
+is corrupt and you need to run a disk check.
+
+In single user mode, the only available access is via the console,
+although that need not be limited to physical presence. Remote console
+access by way of serial consoles and similar devices is a common
+management tool for data centers.
 
 Getty
 =====
@@ -318,10 +326,11 @@ After all the system initialization scripts have run, we're ready to present the
 user with a prompt to login. The method of doing this is to provide a login prompt
 on a "TTY" which is short for teletype. This is a holdover from the days that a
 user running a Unix-based operating system sat at a serially-connected teletype
-machine. A TTY can be a physical serial console, or a virtual one, such as the
+machine. A TTY can be a physical or virtual serial console, such as the
 various terminals you'd be presented with if you used ALT+F# on the console of a
 Linux machine.
 
-Getty is often used to continuously spawn /bin/login, which reads the username and
-password of the user and, if correct, spawn the user's preferred shell. At this
-point, the boot and login process has completed.
+Getty is often used to continuously spawn ``/bin/login``, which reads
+the username and password of the user and, if authentication succeeds,
+spawn the user's preferred shell. At this point, the boot and login
+process has completed.

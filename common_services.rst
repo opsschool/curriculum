@@ -1,9 +1,6 @@
 Common services
 ***************
 
-.. todo::
-   Introduction to RFCs
-
 .. toctree::
    system_daemons_101
    dns_101

@@ -1,12 +1,31 @@
-.. Ops School Curriculum documentation master file, created by
-   sphinx-quickstart on Thu Oct 11 16:31:56 2012.
-   You can adapt this file completely to your liking, but it should at least
-   contain the root `toctree` directive.
+#####################
+Ops School Curriculum
+#####################
 
-Welcome to Ops School Curriculum's documentation!
-=================================================
+Welcome to the Ops School curriculum documentation site.
 
-Contents:
+Ops School is a comprehensive program to teach you how to how to be an
+operations engineer.
+Operations engineers are highly skilled persons who manage the computer systems
+at small and large businesses, as well as the various computer, network and
+security systems that allow the Internet to work.
+
+Since the early 1990's, operations engineers have been in high demand. As a
+result, these positions often provide high salaries and long term job security.
+The `SAGE/LISA Salary Survey <https://www.usenix.org/lisa/salary-surveys>`_ has
+charted the average salaries for systems administrators and operations engineers
+since 1999. This has consistently shown the field to be a prosperous field for
+those people who enjoy diving into the inner workings of computer systems.
+
+If you already know about the profession and want to know how to start, read
+:ref:`How to become an operations engineer <how-to-become-an-operations-engineer>`.
+
+If you reading about this career for the first time and want to know if it is
+for you, check out the :doc:`Careers in Operations </careers>` chapter.
+
+*****************
+Table of Contents
+*****************
 
 .. toctree::
    :maxdepth: 2
@@ -44,7 +63,7 @@ Contents:
    loadbalancing_101
    monitoring_101
    monitoring_201
-   backups
+   bcp
    architecture_101
    architecture_201
    config_management
@@ -54,18 +73,23 @@ Contents:
    deployment_201
    soft_skills
    labs
+   learning
    seealso
+   meta/contributions
    glossary
 
 
+*********
 TODO List
-=========
+*********
+
 .. todolist::
 
+
+******************
 Indices and tables
-==================
+******************
 
 * :ref:`genindex`
 * :ref:`modindex`
 * :ref:`search`
-

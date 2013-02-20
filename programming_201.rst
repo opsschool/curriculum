@@ -13,7 +13,7 @@ Variables
 Common data structures
 ----------------------
 
-Rosetta stone? One man’s hash is another’s associative array is another man’s
+Rosetta stone? One man's hash is another's associative array is another man's
 dict(ionary)?
 
 Functions

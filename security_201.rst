@@ -61,11 +61,11 @@ Role accounts vs individual accounts
 ------------------------------------
 
 
-Network Intrustion Detection
+Network Intrusion Detection
 ============================
 
 
-Host Intrustion Detection
+Host Intrusion Detection
 =========================
 
 

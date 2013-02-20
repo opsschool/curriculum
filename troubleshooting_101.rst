@@ -52,7 +52,7 @@ Walk through of a diagnosis
 * Common culprits (is it plugged in?)
 * Look through your logs
 * Communicating during an outage
-* ‘Talking Out-Loud’ (IRC/GroupChat)
+* 'Talking Out-Loud' (IRC/GroupChat)
 * Communicating after an outage (postmortems)
 
 
@@ -60,7 +60,7 @@ Recent changes
 --------------
 
 Often problems can be traced back to recent changes.
-Problems that start around the time of a change aren't usually coincedence.
+Problems that start around the time of a change aren't usually coincidence.
 
 Learning common errors
 ----------------------

@@ -4,7 +4,7 @@ Software Deployment 101
 Software deployment vs configuration management
 ===============================================
 
-definition of a host’s role or state
+definition of a host's role or state
 
 Running services
 ================
@@ -15,8 +15,8 @@ inetd
 Shared containers vs self-contained binaries
 --------------------------------------------
 
-Package mangement
-=================
+Package management
+==================
 
 Configuration files
 -------------------

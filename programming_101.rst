@@ -4,7 +4,7 @@ Programming 101
 Shell scripting basics
 ======================
 
-“#!/usr/bin/env bash” vs. “#!/bin/bash”  vs “#!/bin/sh”(portability
+"#!/usr/bin/env bash" vs. "#!/bin/bash"  vs "#!/bin/sh"(portability
 considerations)
 
 Variables
@@ -37,7 +37,7 @@ I/O
 Pipes
 -----
 
-stderr vs. stdout 
+stderr vs. stdout
 ------------------
 
 /dev/null and /dev/zero

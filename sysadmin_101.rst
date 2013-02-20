@@ -1,5 +1,6 @@
+############
 Sysadmin 101
-************
+############
 
 *System Administration* is the blanket title for a myriad of job
 responsibilities involving the management of information systems and/or
@@ -27,10 +28,12 @@ in the larger business context, a mindset and approach to systems administration
 demonstrate the importance of problem solving and ethics in the every day
 life of a system administrator.
 
+
 .. _whats-sysadmin:
 
+*******************************
 What is Systems Administration?
-===============================
+*******************************
 
 Like we mentioned above, the role of the System Administrator is diverse.
 
@@ -69,7 +72,7 @@ following descriptions compare and contrast:
 * **Will works for a small town.** The town has 35 employees who use computers
   every day, and they need access to email and other collaboration tools. With
   so many services and options for e-mail, which one makes the most amount of
-  sense for the town? Daniel collects input from the employees about what
+  sense for the town? Will collects input from the employees about what
   capabilities are important, input from legal council about what laws a town
   must follow regarding electronic communication, and evaluates a few
   services or products with his user's needs in mind along with the town's. If he
@@ -104,10 +107,25 @@ following descriptions compare and contrast:
   knows what they need as well. Darren's team may have ideas about what
   statistics are important to monitor.
 
+.. _whats-sysadmin-chris:
+
+* **Chris works for a consultancy.** The company has many clients for which it
+  provides software development and operations support. Every client has their
+  own infrastructure, their own requirements - some of them very similar
+  to the previous examples, some very different. Therefore, Chris needs to be
+  familiar with a wide range of technologies, in addition to being able to
+  learn new things quickly. There's a lot of variety in the day-to-day job.
+  While it's not his primary responsibility to write code, sometimes the job
+  calls for it - where context has already determined the implementation
+  language. Chris works closely not only with the clients but also with his
+  developer coworkers and the rest of the operations team to meet client goals.
+  In addition, Chris also works with the rest of the operations team to support
+  the consultancy's own infrastructure.
+
 .. _whats-sysadmin-comparing-stories:
 
 Comparing Stories
------------------
+=================
 Did you notice any themes throughout the stories? How do they contrast?
 
 Highlighted themes include:
@@ -124,15 +142,18 @@ Highlighted themes include:
   Maybe that means a script that can take a list of users and add them to a
   system, maybe that means a script that can check to make sure a service is
   responding appropriately for a monitoring system.
-* **System Administration means a lot of *different* things to a lot of people.** The other
-  non-IT employees are looking for something that "just works" - the ops
-  person is concerned with proper implementation of a service so it continues
-  to be scalable and reliable for the future.
+* **System Administration means a *variety* of things to a lot of people.**
+  The other non-IT employees are looking for something that "just works" - the
+  ops person is concerned with proper implementation of a service so it
+  continues to be scalable and reliable for the future.
+
 
 .. _whats-dev:
 
+********************
 What is Development?
-====================
+********************
+
 As mentioned in the section introduction, system administration doesn't exist
 in a vacuum. Computers don't just compute for the sake of it - not yet,
 anyways.
@@ -144,49 +165,71 @@ research a topic in a literary journal database.
 
 These backends can be big, and have a many considerations behind their design.
 
-.. todo:
+.. _whats-developer-rachel:
 
-TODO: Section needs more developer perspective.
+* **Rachel works for an ecommerce company.** The company has a large
+  team of developers, all working in different applications, usually in ruby or
+  javascript, and the applications talk to each other via APIs to support the main
+  site that customers interact with. Her obligations to the business are to create
+  new features for the website and maintain or fix the old ones. Her obligations to
+  her other developers are to keep the code clean and readable, with tests so others
+  can confidently refactor her code. She works closely with the Operations team to
+  make the app-level changes that help the ops team maintain a robust infrastructure,
+  like making pages fully cachable or eliminating unnecessary HTML, CSS, javascript
+  or images being sent to the browser.
+
+.. _whats-developer-tyler:
+
+* **Tyler is a systems developer at a small technology company.** He takes
+  complex processes, like developing a search engine or collecting statistics, and
+  creates several pieces of software to accomplish those tasks. He works primarily
+  in C, Perl and Python and has to have a deep understanding of the operating system
+  his code will run on. He works closely with his Operations engineers to make sure his
+  code is performant and on capacity planning.
+
+.. todo:: "What is Development" Section needs more developer perspective.
+
 
 .. _constrasting-devandops:
 
+**************************************
 Contrasting Development and Operations
-======================================
-At the end of the day, both groups have an important shared goal: to ensure that a
-system or service remains as *available* (think: accessible, usable, works how people expect it to)
-as a customer expects it to be. You'll see references to the idea of how "available" a system or service
-is later when Service Level Agreements (SLAs) are discussed.
+**************************************
+
+At the end of the day, both groups have an important shared goal: to ensure that
+a system or service remains as *available* (think: accessible, usable, works how
+people expect it to) as a customer expects it to be. You'll see references to
+the idea of how "available" a system or service is later when Service Level
+Agreements (SLAs) are discussed.
 
 That being said, Development and Operations have different day-to-day thoughts.
 
 Operations thoughts include:
 
 * How are we going to install (or, deploy) the servers that run this application?
-
 * How will we monitor the system/service to make sure it's working as we expect?
-
 * Can we deploy this system or service in a way that is easy to maintain?
-
 * What are the pros/cons of implementing this application in this way?
 
 Development thoughts include:
 
 * How will I implement message passing between two parts of this application?
-
 * What's the best algorithm to use for searching through this amount of data?
-
-* Should I be thinking of a key-value store for this data vs. using a relational database?
-
+* Should I be thinking of a key-value store for this data vs. using a relational
+  database?
 * What language will I implement this in?
 
 Again, this is by no means an exhaustive list - entire books could be written
 about the subject. It's just to give a feel for the different considerations.
 
+
+*************************************
 History of Development and Operations
-=====================================
-Historically, Developers made a product or application and Operations implemented it. Some
-companies still use this model today. Unfortunately, the effects of
-this style of work can be dangerous:
+*************************************
+
+Historically, Developers made a product or application and Operations
+implemented it. Some companies still use this model today. Unfortunately, the
+effects of this style of work can be dangerous:
 
 * **Developers and Operations personnel may have different goals.** Something
   important to the operations folk may not be important to the Development
@@ -200,48 +243,47 @@ this style of work can be dangerous:
 
 Fortunately, recent companies there has been more effort on ensuring that both
 teams are familiar with the concepts of the other - this is often referred to
-as "DevOps" - the combination of Development and Operations. Recall
-":ref:`Darren's story <whats-sysadmin-darren>`" - he's an operations
-person who worked with the developers to ensure that the developers understand
-the environment that their application will run on. The street went both ways, though:
-the developers need to share how they plan to implement various product features
-so that the operations team can figure out how to best support the developers needs.
+as *DevOps* - the combination of Development and Operations. Recall
+:ref:`Darren's story <whats-sysadmin-darren>` - he's an operations person who
+worked with the developers to ensure that the developers understand the
+environment that their application will run on. The street went both ways,
+though: the developers need to share how they plan to implement various product
+features so that the operations team can figure out how to best support the
+developers needs.
 
 If you're working in an environment without developers, that's OK. There are
 other people who you share a common, larger goal with. Businesses may have
 analysts that interpret needs and look to you for assistance. In
-":ref:`Karen's story <whats-sysadmin-karen>`," she supports hardware engineers who have requirements
-to deliver a particular sensor. Their ability to work hinges on Karen's ability
-to deliver a service for simulation that is available for them to work, which
-requires an understanding of their requirements and needs as well.
+:ref:`Karen's story <whats-sysadmin-karen>`, she supports hardware engineers who
+have requirements to deliver a particular sensor. Their ability to work hinges
+on Karen's ability to deliver a service for simulation that is available for
+them to work, which requires an understanding of their requirements and needs
+as well.
 
-.. _whats-not-sysadmin:
+********************************
+What System Administration Isn't
+********************************
 
-What is System Administration Not?
-==================================
+System Administration, like many things in life, can suffer from a cultural
+perception issue.  Primarily, some outside of the operations field that believe
+that the role of IT is not to innovate; rather that IT exists to enforce rules
+decided on by others.
 
-While there's something of a grain of truth to the `BOFH
-<http://www.theregister.co.uk/data_centre/bofh/>`_ meme, most system
-administrators who adopt such an attitude quickly find themselves out of work.
-Beyond the social implications, this sort of obstructionist, adversarial
-behavior is the least effective way of solving problems. The best path to
-success and satisfaction is collaboration, not obstinance. This requires
-cooperation from all involved, whether their role is technical or not. An
-administrator's job is to create order from chaos, to control the
-technology--not the people.
+We challenge that mindset. System administration is not about being a "no-man"
+(or a "no-woman") but about finding ways to intelligently implement the needs
+of a business in a way that increases maintainability, usability, and security
+for a group of people.
 
-
-The role of the SysAdmin in the organization
-============================================
-
-* “Who is that guy? Why is he always muttering about ‘latency’?”
-* Understanding the greater role of delivering a service for a business
-
-Mindset and approach
-====================
-
-Generalists vs Specialists
---------------------------
+Another perception issue is that of the `BOFH
+<http://www.theregister.co.uk/data_centre/bofh/>`_. While there's something of
+a grain of truth to the meme, most system administrators who adopt such an
+attitude quickly find themselves out of work. Beyond the social implications,
+this sort of obstructionist, adversarial behavior is the least effective way of
+addressing problems. The best path to success and satisfaction is collaboration,
+not obstinance. This requires cooperation from all involved, whether their role
+is technical or not. An administrator's job is to create order from chaos, to
+control the technology--not the people. As with all social reactions, people
+must be understood complexly, and everyone has their own needs and goals.
 
 Problem Solving
 ===============

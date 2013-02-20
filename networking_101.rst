@@ -8,6 +8,67 @@ Systems Interconnection (:term:`OSI`) model, which is a standard framework with 
 implement communication systems. Next, we will delve into each layer of the OSI
 model in more detail as it applies to the role of systems administration.
 
+Before any discussion of networking, however, it's important to have a
+working knowledge of the numbered Request for Comments (:term:`RFC`) documents
+and how they apply to computer networking. These documents describe the
+mechanisms for the OSI layer implementations (e.g. TCP, IP, HTTP, SMTP)
+and as such are the authoritative source for how computers communicate
+with one another.
+
+The RFC Documents
+=================
+
+Starting in 1969, the RFC document series describes standards for how computers
+communicate. The series gets its name from the RFC process, wherein industry
+experts publish documents for the community at large and solicit comments on
+them. If the Internet community finds errors in a document, a new, revised
+version is published. This new version obsoletes the prior versions. Some
+documents, such as the document specifying email messages, have had several
+revisions.
+
+The `RFC Editor <http://www.rfc-editor.org/>`_ manages the RFC archive, as well
+as associated standards. New documents go to the RFC Editor for publication
+[#notquite]_, whether revision or new standard. These documents go through a
+standardization process, eventually becoming Internet-wide standards. Many of
+the networking protocols discussed in later chapters have RFCs governing their
+behavior, and each section should provide information on the relevant RFCs.
+
+.. [#notquite] This is a simplification, as there are actually many standards
+  bodies involved in the process. The `RFC Editor Publication Process
+  <http://www.rfc-editor.org/pubprocess.html>`_ document explains in full detail.
+
+Important RFCs
+--------------
+
+There are a number of RFCs which don't pertain to any specific technology but
+which are nevertheless seminal. These documents establish procedure or policy
+which have shaped everything after, and as such have a timeless quality.
+In some cases, later documents make references to them. This list is given in
+increasing numerical order, though is not exhaustive.
+
+* :rfc:`1796`: Not All RFCs are Standards
+
+  This document describes the different kinds of documents in the RFC series.
+
+* :rfc:`2026`: The Internet Standards Process
+
+  This document (and those that update it) describes in detail how RFCs are
+  published and how they become Internet standards.
+
+* :rfc:`2119`: Key words for use in RFCs to Indicate Requirement Levels
+
+  This document, referenced in many following RFCs, presents a common vocabulary
+  for specifying the relationship between a standard and implementations of that
+  standard. It provides keywords that specify how closely an implementation
+  needs to follow the standard for it to be compliant.
+
+* :rfc:`5000`: Internet Official Protocol Standards
+
+  This document provides an overview of the current standards documented by the
+  RFCs and which RFC is the most recent for each standard. This document is
+  regularly updated with the current standards document status.
+
+
 OSI model
 =========
 
@@ -56,7 +117,7 @@ the layer below.
    just as easy to send text across the globe as it is to write to a file on a
    local disk - a technological miracle that is often taken for granted. The
    ICMP protocol, used by the ubiquitous ``ping`` utility, allows small test
-   packets to be sent to a destination for troublshooting purposes.
+   packets to be sent to a destination for troubleshooting purposes.
 
 *  Layer 5 - Session layer
 
@@ -70,7 +131,7 @@ the layer below.
    The job of the presentation layer is to handle data encoding and decoding as
    required by the application. An example of this function is the Multipurpose
    Internet Mail Extensions (MIME) protocol, used to encode things other than
-   unformated ASCII text into email messages. Both the session layer and the
+   unformatted ASCII text into email messages. Both the session layer and the
    presentation layer are often neglected when discussing TCP/IP because many
    application-layer protocols implement the functionality of these layers
    internally.
@@ -95,13 +156,13 @@ version to be widely deployed. This is the version of the protocol you're most l
 encounter, and the default version of the IP protocol in Linux.
 
 IPv4 uses a 32-bit address space most typically represented in 4 dotted decimal notation,
-each octect contains a value between 0-255, and is seperated by a dot. An example 
+each octet contains a value between 0-255, and is separated by a dot. An example
 address is below:
 
-    10.199.0.5 
+    10.199.0.5
 
-There are several other representations, like dotted hexidecimal, dotted octal, hexidecimal, 
-decimal, and octal. These are infrequently used, and will be covered in later sections. 
+There are several other representations, like dotted hexadecimal, dotted octal, hexadecimal,
+decimal, and octal. These are infrequently used, and will be covered in later sections.
 
 
 
@@ -117,20 +178,20 @@ TCP vs UDP
 
 Subnetting, netmasks and CIDR
 =============================
-A subnet is a logical devision of an IP network, and allows the host system to identify which 
+A subnet is a logical division of an IP network, and allows the host system to identify which
 other hosts can be reached on the local network. The host system determines
 this by the application of a routing prefix. There are two typical representations of this
-prefix: a netmask and CIDR. 
+prefix: a netmask and CIDR.
 
-Netmasks typically appear in the dotted decimal notation, with values between 0-255 in each 
+Netmasks typically appear in the dotted decimal notation, with values between 0-255 in each
 octet. These are applied as bitmasks, and numbers at 255 mean that this host is not reachable.
-Netmask can also be refered to as a Subnet Mask and these terms are often used interchangeably. An 
+Netmask can also be referred to as a Subnet Mask and these terms are often used interchangeably. An
 example IP Address with a typical netmask is below:
 
 ============= ===============
-IP Address    Netmask   
+IP Address    Netmask
 ============= ===============
-192.168.1.1   255.255.255.0 
+192.168.1.1   255.255.255.0
 ============= ===============
 
 CIDR notation is a two-digit representation of this routing prefix. Its value can range
@@ -138,16 +199,16 @@ between 0 and 32. This representation is typically used for networking equipment
 is the same example as above with CIDR notation:
 
 ============= ===============
-IP Address    CIDR   
+IP Address    CIDR
 ============= ===============
-192.168.1.1   /24 
+192.168.1.1   /24
 ============= ===============
 
 Private address space (:rfc:`1918`)
 ===================================
 
-Certian ranges of addresses were reserved for private networks. Using this address space
-you cannot communicate with public machines without a NAT gateway or proxy. There are 
+Certain ranges of addresses were reserved for private networks. Using this address space
+you cannot communicate with public machines without a NAT gateway or proxy. There are
 three reserved blocks:
 
 ============== ===================== =============== ==============
@@ -173,9 +234,9 @@ Practical networking
 Cat5e, Cat6, Cat6a
 ------------------
 
-Cat5e, Cat6, and Cat6a are all coper transport mediums. They use twisted pair 
+Cat5e, Cat6, and Cat6a are all coper transport mediums. They use twisted pair
 wiring, relying on the twist with differential signaling to prevent noise. This is the most
-common form of cabling for connecting computers in a network. 
+common form of cabling for connecting computers in a network.
 
 Fiber
 -----
@@ -187,19 +248,19 @@ Multimode vs Single Mode vs OM{3,4}
 Multimode fiber is a less expensive fiber optic cable, that is typically useable with lower
 cost optical components. Depending on the application and bandwidth required, multimode fiber
 can have a range up to 2000 meters, but as low as 33 meters. It is very common to see it
-used for building backbones, and system to switch applications. 
+used for building backbones, and system to switch applications.
 
 LC vs SC
 ^^^^^^^^
 
-LC and SC connectors are the two most common type of fiber connectors. 
+LC and SC connectors are the two most common type of fiber connectors.
 
 LC is also known as a Lucent Connector. They are typically used for high-density applications, and are
-the type of connector used on SFPs or XFPs. Typcially the connector is packaged in a duplex configuration
-with each cable side by side. 
+the type of connector used on SFPs or XFPs. Typically the connector is packaged in a duplex configuration
+with each cable side by side.
 
 SC connectors are also know as Subscriber Connector, Square Connector, or Standard Connector. This is the type
-of connector typically used in the telcom industry. They have a larger form factor than the LC connectors, and 
+of connector typically used in the telecom industry. They have a larger form factor than the LC connectors, and
 are often found in single and duplex configurations.
 
 
