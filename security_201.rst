@@ -17,9 +17,43 @@ NIS, NIS+, YP, Hesiod
 Firewalls and packet filters
 ============================
 
-.. todo::
-   Talk about running firewalls on host vs network.
-   "Crunchy outer shell, soft center is bad"
+host vs network
+---------------
+
+"Crunchy outer shell, soft center is bad"
+
+In general terms, implementing defense-in-depth strategies is always a sensible 
+practice.  The concept in which multiple layers of security controls (defense) 
+are placed throughout an information technology (IT) system.  Its intent is to 
+provide redundancy in the event a security control fails or a vulnerability is 
+exploited.
+
+Implementing a firewall on the network or like security rules/services e.g. ec2 
+security groups, **and** host-based packet filters such as iptables, Windows 
+Firewall (or WFAS) provides defense-in-depth layers to your infrastructure.  
+Although this can add additional complexity to setup and configurations, that 
+is not a reason to not implement it where appropriate.
+
+The defense-in-depth concept is mostly regarded in terms of attack and 
+compromise, however in ops it also safeguards **us**, everyone makes mistakes.  
+Sometimes, we ourselves or our colleagues are the point of failure.
+
+Strange as it may seem, people often make the mistake of disabling "rules" when 
+something is not working and they cannot figure out why.  The *just checking* 
+test.  This is always the first mistake.  In real world operations these things 
+do happen, whether it is a *just checking* mistake, an incorrect configuration 
+or action, sometimes we make serious mistakes, to err is human.
+
+In all these situations using a firewall/other and host-based packet filters 
+comes to the fore:
+
+- It protects us, the people working on the systems, from ourselves.
+- It protects the organisation's assets in the event of a failure or compromise 
+  at either layer, whether it be user error or a systematic failure.
+- It keeps us proficient and *in-hand* on both the network specific 
+  security implementation, the host-based security practices and the 
+  applications related to their management.
+- It is good practice.
 
 Stateful vs stateless
 ---------------------
