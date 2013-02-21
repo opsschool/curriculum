@@ -55,6 +55,40 @@ comes to the fore:
   applications related to their management.
 - It is good practice.
 
+An old skool, real world example:
+---------------------------------
+
+- You have a MSSQL server running on Windows Server 2000 (no "firewall" back 
+  then & ip filters are not enabled) - it has both private and public network 
+  interfaces.
+- The MSSQL server has a public NIC because it has run replication with your 
+  customer's MSSQL server sometimes for dev purposes and catalog updates.
+- You have rules on the diversely routed, mirrored NetScreen NS1000 firewalls 
+  that allows port 1433 between the MSSQL servers only on the public interface.
+- Your colleague has an issue that cannot be resolved and quickly just sets the
+  firewall/s to "Allows from all", the *just checking* test.
+- **Immediate** result - network unreachable.
+- SQL Slammer had just arrived and proceeded to gobble up 2Gbps of public T1 
+  bandwidth.
+- All points into the network and the network itself are saturated until you 
+  debug the issue via the serial port on the firewall and figure out what 
+  happened.
+
+The synopsis is that a practice of disabling rules was implemented, as it had 
+always been the last line in debugging.  It was a practice that had been done 
+many times by the engineers in the organisation at the time with no "apparent" 
+consequences in the past.  This time differed in that the MSSQL server had a 
+public interface added to allow for replication with the customer **and** 
+SQL Slammer was in the wild.
+
+If the MSSQL server had ip filtering enabled as well the situation would have 
+been mitigated.  Needless to say, it was the last time "Allow from all" debug 
+strategy was ever implemented.  However it is useful to note, that because this
+was done all the time, the engineer in question did not even tie the action of 
+"Allow from all" and the network becoming unreachable together at the time, 
+because the action previously had never resulted in the outcome that was 
+experienced in this instance.
+
 Stateful vs stateless
 ---------------------
 
