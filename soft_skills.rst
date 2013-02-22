@@ -164,8 +164,8 @@ Recommended reading:
 
 Tom Limoncelli also teaches a Time Management tutorial at the `USENIX
 LISA conference <https://www.usenix.org/conferences>`_ and sometimes the
-LOPSA community conferences: `Lopsa-East <lopsa-east.org>`_ and
-`Cascadia <casitconf.org>`_
+LOPSA community conferences: `Lopsa-East <http://lopsa-east.org>`_ and
+`Cascadia <http://casitconf.org>`_
 
 Project Management
 ==================
@@ -889,7 +889,7 @@ Putting it all together
 +++++++++++++++++++++++
 
 Might give an example here. Need to write more explaining how to
-assemble the pieces. 
+assemble the pieces.
 
 **Exercise**
 
