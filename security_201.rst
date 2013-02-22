@@ -28,14 +28,15 @@ are placed throughout an information technology (IT) system.  Its intent is to
 provide redundancy in the event a security control fails or a vulnerability is 
 exploited.
 
-Implementing a firewall on the network or like security rules/services e.g. ec2 
-security groups, **and** host-based packet filters such as iptables, Windows 
-Firewall (or WFAS) provides defense-in-depth layers to your infrastructure.  
-Although this can add additional complexity to setup and configurations, that 
-is not a reason to not implement it where appropriate.
+Implementing a firewall on the network **and** host-based packet filters 
+provides defense-in-depth layers to your infrastructure.  In today's landscape, 
+the firewall aspect could be a service like ec2 security groups with host-based 
+packet filters such as iptables, Windows Firewall (or WFAS).  Although this can 
+add additional complexity to deployment, that is not a reason to not implement 
+it where appropriate.
 
 The defense-in-depth concept is mostly regarded in terms of attack and 
-compromise, however in ops it also safeguards **us**, everyone makes mistakes.  
+compromise, however in ops it also safeguards **us** as everyone makes mistakes.  
 Sometimes, we ourselves or our colleagues are the point of failure.
 
 Strange as it may seem, people often make the mistake of disabling "rules" when 
