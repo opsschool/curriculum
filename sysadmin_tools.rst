@@ -140,8 +140,109 @@ GNU Screen
 ``screen`` is one of the longest lived multiplexers. Almost everyone who has
 used a multiplexer has used screen, and you can't go far wrong with it.
 
-.. todo::
-   Explain how to use ``screen``
+``screen`` is a full-screen window manager that multiplexes a physical terminal 
+between several processes (typically interactive shells).  It is useful for 
+creating sessions that can be disconnected from and reconnected to later.  This
+is useful for running tasks that can take a long time that you do not want to 
+have an ssh session timeout on, such as a large database import.  In these cases
+cron is also a very good way to run one off long running tasks.
+
+``screen`` is also **very useful** for creating sessions that users can share.
+
+Installation
+~~~~~~~~~~~~
+Debian and descendants (Ubuntu, Mint, Suse, etc):
+
+.. code-block:: console
+
+  aptitude install screen
+
+On RedHat-style distributions install with the command:
+
+.. code-block:: console
+
+  yum install screen
+
+Basic usage
+~~~~~~~~~~~
+Create a session:
+
+.. code-block:: console
+
+  screen -S session1
+
+To detach from a session - in the session type Ctrl+a+d
+
+List available screen sessions:
+
+.. code-block:: console
+
+  screen -ls
+
+.. code-block:: console
+
+  [gary@mc9 ~]# screen -ls
+  There are screens on:
+          21707.session2  (Detached)
+          21692.session1  (Detached)
+          21936.session3  (Attached)
+  3 Sockets in /var/run/screen/S-gary.
+  [gary@mc9 ~]#
+
+Here we can see 3 screen sessions are running, 2 detached and 1 attached.
+
+Reattach to a session:
+
+.. code-block:: console
+
+  screen -r session1
+
+Share a session:
+
+User alice starts session:
+
+.. code-block:: console
+
+  screen -S session1
+
+User bob can then attach to the same session (both alice and bob can send commands to the session):
+
+.. code-block:: console
+
+  sudo screen -x alice/session1
+
+Non root users, must use sudo to attach to another user's session.
+
+Create a session with a log:
+
+.. code-block:: console
+
+  screen -L -S session1
+
+``screen`` will output the session log to the user's home directory with the 
+file ``~/screenlog.0`` (0 being the session id).  PuTTY is also as a very useful 
+and featureful ssh client that can be used for logging ssh sessions locally 
+(Windows and Linux).  ``screen`` can be used within a PuTTY session.
+
+Create a session with a log and 20000 lines of scrollback in the terminal:
+
+.. code-block:: console
+
+  screen -h 20000 -L -S session1
+
+
+Configuration
+~~~~~~~~~~~~~
+``screen`` has a fairly extensive set of configuration options, when screen is invoked, it executes initialization commands from the files ``/etc/screenrc`` and ``.screenrc`` in the user's home directory.
+
+Further info
+~~~~~~~~~~~~
+
+.. code-block:: console
+
+  man screen
+
+There is a nifty cheat sheet for the most important ``screen`` and ``tmux`` keybindings (see below in tmux references [3]_).
 
 .. _tmux:
 
@@ -161,20 +262,20 @@ Installation
 tmux is available on Debian and its descendants like Ubuntu or Mint
 with the command:
 
-.. code-block:: bash
+.. code-block:: console
 
   aptitude install tmux
 
 On RedHat-style distributions you will have to use the :term:`EPEL` repo to
 get a pre-built package, and install with the command:
 
-.. code-block:: bash
+.. code-block:: console
 
   yum install tmux
 
 On MacOS you can use Homebrew to install via:
 
-.. code-block:: bash
+.. code-block:: console
 
   brew install tmux
 
@@ -195,13 +296,13 @@ If you want to detach from the session you have to hit ``ctrl-b`` and
 you started onside the ``tmux`` session continue to run, you can see
 this with a simple
 
-.. code-block:: bash
+.. code-block:: console
 
   ps -ef | grep tmux
 
 You should see something like the following:
 
-.. code-block:: bash
+.. code-block:: console
 
   cdrexler 13751     1  0 Nov30 ?        00:00:41 tmux
 
@@ -213,14 +314,14 @@ if your connectivity is flaky or you have to work from different
 locations. If you check the process table for the process id of the
 tmux process
 
-.. code-block:: bash
+.. code-block:: console
 
   ps -ef | grep 13751
 
 you will find that is the parent process of the two shells you created
 in the beginning of the chapter:
 
-.. code-block:: bash
+.. code-block:: console
 
    cdrexler  4525 13751  0 17:54 pts/2    00:00:00 -zsh
    cdrexler  4533 13751  0 17:54 pts/5    00:00:00 -zsh
@@ -228,27 +329,27 @@ in the beginning of the chapter:
 If you want to get an overview of the running tmux processes on your
 system you can use the command
 
-.. code-block:: bash
+.. code-block:: console
 
   tmux ls
 
 It will list all available ``tmux`` sessions on your system [#]_. If there
 is only one you can attach to it with the command:
 
-.. code-block:: bash
+.. code-block:: console
 
   tmux att
 
 If there is more than one session the output of ``tmux ls`` will look like this:
 
-.. code-block:: bash
+.. code-block:: console
 
    0: 3 windows (created Fri Nov 30 18:32:37 2012) [80x38]
    4: 1 windows (created Sun Dec  2 17:44:15 2012) [150x39] (attached)
 
 You will then have to select the right session with the ``-t`` command line switch:
 
-.. code-block:: bash
+.. code-block:: console
 
   tmux att -t 4
 
@@ -293,7 +394,7 @@ useful settings.
 Please note that you can force ``tmux`` to use another configfile with
 the ``-f`` command line switch like so:
 
-.. code-block:: bash
+.. code-block:: console
 
   tmux -f mytmuxconf.conf
 

@@ -58,7 +58,7 @@ How do I list jobs scheduled to run with **cron**?
 The easiest way to see jobs running regularly on the system (aka "cron jobs")
 is to type:
 
-.. code-block:: bash
+.. code-block:: console
 
   crontab -l
 
@@ -82,7 +82,7 @@ How do I schedule a job with **cron**?
 
 The way to schedule a new job is to type:
 
-.. code-block:: bash
+.. code-block:: console
 
   crontab -e
 
@@ -161,7 +161,7 @@ delete the line with that job in it from the file in your editor.
 
 To remove all cron jobs for the current user, type:
 
-.. code-block:: bash
+.. code-block:: console
 
   crontab -r
 
@@ -216,7 +216,7 @@ file, instead of the current user's crontab file. For instance, if you
 are logged in as ``jdoe`` and you want to edit ``jsmith``'s crontab (and you
 have the permissions to do so), type the following in a shell:
 
-.. code-block:: bash
+.. code-block:: console
 
   crontab -e -u jsmith
 

@@ -249,7 +249,7 @@ Membership organizations
 Conferences and Events
 ----------------------
 
-`USENIX Large Installation System Administration (LISA) <www.usenix.org>`_
+`USENIX Large Installation System Administration (LISA) <http://www.usenix.org>`_
 
 `Velocity <http://velocityconf.com/>`_
 
@@ -321,7 +321,7 @@ granting programs. It would be well worth our time to compare their
 syllabi, course outcomes, exercises etc.
 
 - http://www.hioa.no/Studier/TKD/Master/Network-and-System-Administration/
-- http://www.hioa.no/Programmes/Summer/Network-and-systems-administration
+- http://www.hioa.no/Studier/Summer/Network-and-system-administration
 - http://www.cs.stevens.edu/~jschauma/615/
 - http://goo.gl/4ygBn
 - http://www.cs.fsu.edu/current/grad/cnsa_ms.php
