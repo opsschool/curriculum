@@ -57,7 +57,10 @@ Far more than just a secure way to access a shell on a remote machine, ssh has
 evolved to support a large collection of ways to encapsulate traffic over the
 encrypted channel. Each of these is useful in different situations. This
 section will present some common problems, and will present how to solve the
-problems with ssh.
+problems with ssh. It is important to note that all port forwarding and
+proxying occurs over the secure ssh channel. Besides working around firewall
+rules, the tunnels also provided a layer of security where there may not
+otherwise be one.
 
 Single port on foreign machine firewalled
 -----------------------------------------
@@ -93,7 +96,54 @@ Tunnel all traffic through remote machine
 For this usecase, consider the rest of the machines in the 10.10.10.0/24
 network. There are many ways to access them, including VPNs of various
 sorts. In addition to creating tunnels to specific ports, OpenSSH can
-also create a SOCKS proxy.
+also create a SOCKS proxy. OpenSSH provides the ``-D`` option for this.
+As an example, to bounce from ``jumphost-1`` to the rest of the network:
+
+``ssh -D 9999 jumphost-foo-1``
+
+Once the SOCKS proxy is in place, the operating system or applications
+needing access to the proxy need to be configured to use it. This will
+vary per-application. Some operating systems (OS X) provide system-wide
+proxy configuration.
+
+Reverse Tunneling
+------------------
+
+In some situations it may be necessary to forward ports from the remote
+machine to the local one. While not as common as other port forwarding
+techniques, it is often the only option available in the situations
+where it sees use. For this feature, OpenSSH listens to a port on the
+remote machine and sends the traffic to the remote host and port. The
+syntax for the ``-R`` option is the same as for the ``-L`` option
+described above. As an example, to have OpenSSH tunnel the remote port
+9090 to the local port 8000 on host ``workstation``:
+
+``ssh -R 9090:workstation:8000 jumphost-foo-1``
+
+Then, programs on ``jumphost-foo-1``--or that can access its port
+9090--will be able to access the local port 8000 on ``workstation``.
+
+Tunneling stdin and stdout
+--------------------------
+
+This method makes using a jumphost transparent. The idea is to tunnel
+not a single port, but the entire connection over the ssh channel. This
+usage is typically a matter of configuration in the ``ssh_config`` file,
+taking advantage of its wildcard-capable ``Host`` directive::
+
+  Host *.lan
+  ProxyCommand ssh -W %h:22 jumphost-foo-1
+
+This configuration uses the ProxyCommand feature to cooperate with the
+``-W`` flag. Hostnames are resolved from the perspective of the
+jumphost. In this example, the machines use an internal pseudo-top level
+domain of ``.lan``. To reach, e.g., ``www-1.lan``:
+
+``ssh www-1.lan``
+
+Before doing DNS resolution, OpenSSH will look in its ``ssh_config``
+file for Host entries. Therefore, internal DNS on the foreign end is
+sufficient.
 
 
 Multiplexers
