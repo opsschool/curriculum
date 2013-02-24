@@ -202,7 +202,7 @@ into memory.
 There are a few common bootloaders. We'll discuss the GRand Unified
 Bootloader (GRUB), a bootloader used by many Linux distributions today.
 
-GRUB is a "chain bootloader" initializes itself in stages. These stages are:
+GRUB is a "chain bootloader" that initializes itself in stages. These stages are:
 
 * *Stage 1* - This is the very tiny application that can exist in that first
   part of the drive. It exists to load the next, larger part of GRUB.

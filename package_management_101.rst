@@ -27,7 +27,7 @@ RPM and yum (RedHat, CentOS, Fedora, Scientific Linux)
 ======================================================
 
 In the following examples, we will be using the ``dstat`` in our examples. The
-process however applies to any spftware you may want to install.
+process however applies to any software you may want to install.
 
 Yum provides a wrapper around RPM, which can be used to search, and install
 packages, from multiple package repositories.
@@ -154,7 +154,7 @@ dpkg and APT (Debian, Ubuntu)
 =============================
 
 In the following examples, we will be using the ``dstat`` in our examples. The
-process however applies to any spftware you may want to install.
+process however applies to any software you may want to install.
 
 apt provides a wrapper around dpkg, which can be used to search, and install
 packages, from multiple package repositories.
