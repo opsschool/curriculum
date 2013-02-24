@@ -112,6 +112,16 @@ Similarly, you can uninstall a package with rpm:
 
    bash-4.0$ rpm -e dstat
 
+Cleaning the RPM database
+-------------------------
+
+You can clean the RPM database, forcing it to refresh package metadata from it's
+sources on next install or upgrade operation.
+
+.. code-block:: console
+
+   bash-4.0$ yum clean all
+
 Querying the RPM database
 -------------------------
 
