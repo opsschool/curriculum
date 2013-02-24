@@ -32,7 +32,7 @@ process however applies to any spftware you may want to install.
 Yum provides a wrapper around RPM, which can be used to search, and install
 packages, from multiple package repositories.
 
-If your Linux distribution uses RPM and yum, you can search search for packages
+If your Linux distribution uses RPM and yum, you can search for packages
 by running:
 
 .. code-block:: console
@@ -159,7 +159,7 @@ process however applies to any spftware you may want to install.
 apt provides a wrapper around dpkg, which can be used to search, and install
 packages, from multiple package repositories.
 
-If your Linux distribution uses dpkg and apt, you can search search for packages
+If your Linux distribution uses dpkg and apt, you can search for packages
 by running:
 
 .. code-block:: console
