@@ -68,6 +68,22 @@ guideline wherever possible):
   a few packages and then explain how the package manager did its thing.
 
 
+****************************
+Overwriting existing content
+****************************
+
+There are times when you will want to update or replace sections of text written
+by others. When doing so, follow these guidelines to ensure your changes are
+integrated smoothly:
+
+* Submit your pull request
+* Reference the original author in your commit
+
+We'll wait a few days (up to one week) to let the original author comment, if we
+feel there may be anything contentious in the commit. For most simple and
+straightforward commits, we'll simply accept the commit.
+
+
 *******
 Credits
 *******
