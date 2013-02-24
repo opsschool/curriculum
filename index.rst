@@ -10,7 +10,7 @@ Operations engineers are highly skilled people who manage the computer systems
 of businesses big and small. In addition to corporate systems, operations
 engineers also maintain the systems that allow websites, networks, payments
 systems and other Internet services to function.
-he field of operations engineering covers a wide variety of topics, from systems
+The field of operations engineering covers a wide variety of topics, from systems
 administration, to security, networking and beyond. Ops School will guide you
 through all of these skill sets from beginner to expert.
 
