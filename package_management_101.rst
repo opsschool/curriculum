@@ -78,12 +78,18 @@ RPM and yum both make it easy to upgrade existing packages, too.
 Over time, new packages may be added to the yum repositories that are configured
 on your system, or you may have a newer RPM for an already installed package.
 
-To upgrade using yum, when a newer package is available, simply ask yum to
-install it again:
+To upgrade a package using yum, when a newer package is available, simply ask yum
+to install it again:
 
 .. code-block:: console
 
    bash-4.0$ yum install dstat
+
+To upgrade all packages that have newer versions avaliable, run:
+
+.. code-block:: console
+
+   bash-4.0$ yum upgrade
 
 To upgrade a package with an RPM file, run:
 
