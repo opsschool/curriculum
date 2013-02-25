@@ -6,7 +6,7 @@ Hardware Types
 
 Rackmount
 ---------
-Rackmount refers to server's mounted in 19-inch relay racks. The servers height
+Rackmount refers to servers mounted in 19-inch relay racks. The server's height
 is measured in U or rack units (1.75 inches) and servers typically range in
 height from 1U to 4U(though they can be larger). The rack they are installed
 into is typically 42U high, but you rarely see installations with more that 40
@@ -26,10 +26,11 @@ network, video, and other services. The blade chassis is typically a rackmount
 unit, but sizes of this are usually much larger, using 8U or more depending on
 the number of blades the chassis supports.
 
-Blades were originally hoped to solve server density issues, and the some
-products have the ability to house four  servers in only 2U of space. The 
-primary marketing message these days is the ease of physical cable management
-in complex environments.
+Blades were originally hoped to solve server density issues, and some
+products have the ability to house four servers in only 2U of space. In recent
+years blades have been used to solve physical cable management issues in
+complex environemnts, since there are very few cables required to connect the
+systems to other pieces of infrastructure.
 
 SANs
 ----
