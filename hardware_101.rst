@@ -61,7 +61,7 @@ require dedicated power circuit due to the large number of spinning disks.
 
 NAS
 ---
-A Network-Attache Storage device or NAS is a specialty server designed to
+A Network-Attached Storage device or NAS is a specialty server designed to
 provide storage to other servers. Unlike SANs, a NASs will typically implement
 an standard network protocol like SMB or NFS to expose the storage to the 
 client. The client will present these to its users as standard network share.
