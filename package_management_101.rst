@@ -32,7 +32,7 @@ process however applies to any spftware you may want to install.
 Yum provides a wrapper around RPM, which can be used to search, and install
 packages, from multiple package repositories.
 
-If your Linux distribution uses RPM and yum, you can search search for packages
+If your Linux distribution uses RPM and yum, you can search for packages
 by running:
 
 .. code-block:: console
@@ -78,12 +78,18 @@ RPM and yum both make it easy to upgrade existing packages, too.
 Over time, new packages may be added to the yum repositories that are configured
 on your system, or you may have a newer RPM for an already installed package.
 
-To upgrade using yum, when a newer package is available, simply ask yum to
-install it again:
+To upgrade a package using yum, when a newer package is available, simply ask yum
+to install it again:
 
 .. code-block:: console
 
    bash-4.0$ yum install dstat
+
+To upgrade all packages that have newer versions avaliable, run:
+
+.. code-block:: console
+
+   bash-4.0$ yum upgrade
 
 To upgrade a package with an RPM file, run:
 
@@ -105,6 +111,16 @@ Similarly, you can uninstall a package with rpm:
 .. code-block:: console
 
    bash-4.0$ rpm -e dstat
+
+Cleaning the RPM database
+-------------------------
+
+You can clean the RPM database, forcing it to refresh package metadata from it's
+sources on next install or upgrade operation.
+
+.. code-block:: console
+
+   bash-4.0$ yum clean all
 
 Querying the RPM database
 -------------------------
@@ -159,7 +175,7 @@ process however applies to any spftware you may want to install.
 apt provides a wrapper around dpkg, which can be used to search, and install
 packages, from multiple package repositories.
 
-If your Linux distribution uses dpkg and apt, you can search search for packages
+If your Linux distribution uses dpkg and apt, you can search for packages
 by running:
 
 .. code-block:: console
