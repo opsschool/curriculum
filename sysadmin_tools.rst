@@ -248,15 +248,14 @@ There is a nifty cheat sheet [#]_ for the most important
 
 byobu
 -----
-Byobu_ is a much more user-friendly wrapper around one of screen or tmux. It
-provides profile support, sane keybindings, configuration utilities and a
+Byobu_ is a wrapper around one of screen or tmux. It
+provides profile support, F-keybindings, configuration utilities and a
 system status notification bar for most Linux, BSD or Mac operating systems.
 
-Byobu is available in major distros as a packaged binary. It runs as a wrapper
-around either screen or tmux, launching byobu will run whichever the package
-maintainer included as a dependency, if you have both installed, you can select
-explicitly with byobu-{screen,tmux}.  Basic configuration is launched with F9
-or byobu-config.
+Byobu is available in major distros as a packaged binary. Launching byobu will 
+run whichever the package maintainer included as a dependency, if you have both 
+installed, you can select explicitly with byobu-{screen,tmux}.  Basic 
+configuration is launched with F9 or byobu-config.
 
 Scrollback starts with F7, mark the start of your buffer by hitting the
 spacebar, then use the spacebar again to mark the end of your selection (which
