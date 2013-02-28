@@ -222,7 +222,7 @@ Employers look for a number of things when hiring junior engineers and admins:
 * Repeated success in completing the :doc:`Labs exercises <labs>`.
 
 These are only the beginning, and the bare minimum you should expect to know as
-a junior level engineer. While demand for operations engineers continues wo grow
+a junior level engineer. While demand for operations engineers continues to grow
 at a fast pace, you will still find there is competition for positions. The more
 you know, the stronger your chances of finding a job.
 
