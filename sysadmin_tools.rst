@@ -99,7 +99,7 @@ Debian and descendants (Ubuntu, Mint, Suse, etc):
 
 .. code-block:: console
 
-  aptitude install screen
+  apt-get install screen
 
 On RedHat-style distributions install with the command:
 
@@ -208,7 +208,7 @@ with the command:
 
 .. code-block:: console
 
-  aptitude install tmux
+  apt-get install tmux
 
 On RedHat-style distributions you will have to use the :term:`EPEL` repo to
 get a pre-built package, and install with the command:
