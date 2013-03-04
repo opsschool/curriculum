@@ -28,7 +28,7 @@ it specificly, anything which does not should simply refer to ``#!/bin/sh``
 Caution must be used in writing scripts to specify the correct interpeter. ``#!/bin/sh`` is virtually guranteed to be a
 POSIX-compatable shell - that is, a shell which is compatable with the original bourne shell - but there is no gurantee
 that this shell will bash. The term "bashism" commonly refers to features of bash not contained in the POSIX ``/bin/sh``
-specifications. The bash manual contains a list of these functions. <http://www.gnu.org/software/bash/manual/html_node/Bash-POSIX-Mode.html#Bash-POSIX-Mode>
+specifications. The `bash manual <http://www.gnu.org/software/bash/manual/html_node/Bash-POSIX-Mode.html#Bash-POSIX-Mode>`_ contains a list of these functions.
 
 Aside from the ``/bin/bash`` vs ``/bin/sh`` considerations, it's not guranteed that bash will be located at ``/bin/bash`` - it may
 commonly be found at ``/usr/bin/bash``, ``/usr/local/bin/bash``, and many other locations on systems other than Linux - since you
