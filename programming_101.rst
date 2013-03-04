@@ -4,6 +4,15 @@ Programming 101
 Shell scripting basics
 ======================
 
+Specifying the interpeter
+-------------------------
+Shell scripts will start with ``#!/bin/sh`` or ``#!/bin/bash``.  This line, affectionally by various names including hashbang and shebang, 
+is treated as a directive to run the rest of the script with the given interpreter. This directive, combined with setting
+the execute bit via ``chmod`` tells the system that the file is an executable, rather than simply a file containing text.
+
+The same line may be used instead to specify another shell on the system, such as ``ksh``, ``tcsh``, ``zsh``, or another interpreter entirely, such as Perl, Python,
+or Ruby.
+
 Portability Considerations
 --------------------------
 
@@ -24,7 +33,8 @@ specifications. The bash manual contains a list of these functions. <http://www.
 Aside from the ``/bin/bash`` vs ``/bin/sh`` considerations, it's not guranteed that bash will be located at ``/bin/bash`` - it may
 commonly be found at ``/usr/bin/bash``, ``/usr/local/bin/bash``, and many other locations on systems other than Linux - since you
 won't know beforehand where it's located, a common trick is to specify the intrepeter as ``#!/usr/bin/env bash``, using the env
-utility as a way to search the path for bash.
+utility as a way to search the path for bash. This technique is also highly recommended for calling other shells and interpreters,
+as this allows them to be found anywhere in the path, rather than at some fixed locatation which may change between systems.
 
 A less common portability consideration, but once still worth mentioning, is that of limited enviroments, such as
 systems on which /usr has not yet been mounted, or recovery enviroments. If a script must run under such conditions,
