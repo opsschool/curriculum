@@ -41,7 +41,7 @@ daily.
 What is SQL?
 ============
 
-SQL or Structured Query Language is a domain specific language used for accessing
+SQL or Structured Query Language is a :term:`domain specific language` used for accessing
 databases. It has a declarative syntax, meaning you declare the structure you want
 returned, the sources, and constraints in a single statement. The database's
 query parser and planner will determine a how to retrieve your data from this statement.
