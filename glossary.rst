@@ -9,6 +9,9 @@ Glossary
     BIOS
         A set of computer instructions in firmware that control input and
         output operations.
+    
+    CLI
+        Command Line Interface
 
     Domain Specific Language
         A special purpose programming language dedicated to a particular
