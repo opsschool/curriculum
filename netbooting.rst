@@ -26,13 +26,83 @@ As the server itself is pretty simple, virtually every operating system has some
 
 PXE
 ===
-The PXE stack by itself is very limited.  It's designed to just be able to retrieve and execute a file, and by itself is not terribly useful.  The two most popular software packages used with PXE are iPXE [#]_ and PXELINUX [#]_.  Of these, PXELINUX is the older one, and is a varient of SysLinux.  SysLinux is most commonly used as the initial menu you see when you boot a Linux CD.  iPXE is newer, and supports booting over many different protocols (HTTP, )
+The PXE stack by itself is very limited.  It's designed to just be able to retrieve and execute a file, and by itself is not terribly useful.  The two most popular software packages used with PXE are iPXE [#]_ and PXELINUX [#]_.  Of these, PXELINUX is the older one, and is a varient of SysLinux.  SysLinux is most commonly used as the initial menu you see when you boot a Linux CD.  iPXE is newer, and supports booting over many different protocols (HTTP, iSCSI, various SAN types).
 
-bootp
-=====
+Basic Setup Process
+===
+For both iPXE and SysLinux you will need both a DHCP and TFTP server installed.  For TFTP, just install whatever package your operating system makes available.  All the server software is similar enough that it does not matter which varient you install.  The only important bit is to locate where the 'tftpboot' directory is.  This will be where you copy all the PXE software.
+
+For the DHCP server, ISC DHCPD would be suggested.  There are other DHCP servers available, but this one has the largest amount of documentation.  Aside from setting up a DHCP range, you'd need to add the following line to your dhcpd.conf file:
+
+.. code-block:: console
+
+    next-server <tftp server IP>;
+
+That is the bare minimum needed for both types of PXE software we're going to set up.
+
+iPXE Setup
+===
+Start by downloading [#]_ iPXE.  Make sure you save this to your tftpboot directory.  Next, add the following to your dhcpd.conf file:
+
+.. code-block:: console
+
+    if exists user-class and option user-class = "iPXE" {
+        filename "chainconfig.ipxe";
+    } else {
+        filename "undionly.kpxe";
+    }
+
+What this will do is serve up the iPXE file to any non-iPXE clients.  This would mean that whenever a machine boots off it's internal NIC, it would download a copy of iPXE.  Once iPXE finishes it's startup process, it will do another DHCP request and be told to download the 'chainconfig.ipxe' file.  This file will determine where iPXE goes from there.  A good place to start with this would be a basic menu.  Create a chainconfig.ipxe file in your tftpboot directory with the following:
+
+.. code-block:: console
+
+    #!ipxe
+
+    :start
+    # Define a generic title for the menu
+    menu iPXE boot menu
+    # And now we define some options for our menu
+    item localboot  	Boot from local disk
+    item centos6_x64	Install CentOS 6 x64
+    item centos6_i386	Install CentOS 6 i386
+
+    # Now we prompt the user to choose what they want to do.  If they don't select an option
+    # within 60s we default to booting from the local disk.  If they somehow choose an invalid
+    # option, we drop them to the iPXE shell for further debugging
+    choose --default localboot 60000 bootoption && goto ${bootoption} ||
+    echo Invalid option selected!
+    shell
+
+    # Here we define our two network installation options.  iPXE supports basic variable operations,
+    # so we can reuse much the same code for booting the two different architectures.  We'll define
+    # some options specifying the version and architecture we want, then jump to some common installer
+    # code
+    :centos6_x64
+    set centos-version 6
+    set arch x86_64
+    goto centos_installer
+
+    :centos6_i386
+    set centos-version 6
+    set arch i386
+    goto centos_installer
+
+    # This demostrates some of the power of iPXE.  We make use of variables to prevent config duplication
+    # and we load the installer files directly off the CentOS mirror.  There's no need to copy everything
+    # to a local TFTP server.  We also fallback to a shell if the boot fails so any issues can be debugged
+    :centos_installer
+    kernel http://mirror.centos.org/centos-${centos-version}/${centos-version}/os/${arch}/images/pxeboot/vmlinuz ramdisk_size=65535 noipv6 network
+    initrd http://mirror.centos.org/centos-${centos-version}/${centos-version}/os/${arch}/images/pxeboot/initrd.img
+    boot ||
+    goto shell
+
+    # This just exits iPXE entirely, and allows the rest of the boot process to proceed
+    :localboot
+    exit
 
 
 References
 ----------
 .. [#] http://ipxe.org
 .. [#] http://www.syslinux.org/wiki/index.php/PXELINUX
+.. [#] http://boot.ipxe.org/undionly.kpxe
