@@ -17,7 +17,6 @@ The network boot process works like this:
 * The PXE firmware downloads the file via TFTP, and begins executing it
 * From here, many different things can happen depending on what file was actually downloaded
 
-
 TFTP
 ====
 TFTP is a very basic file transfer protocol.  The PXE roms in most network cards do not support anything more complicated then TFTP.  This is okay, as the built in PXE stack is typically only used to retrieve another, more fully featured program.
@@ -34,17 +33,17 @@ For both iPXE and SysLinux you will need both a DHCP and TFTP server installed. 
 
 For the DHCP server, ISC DHCPD would be suggested.  There are other DHCP servers available, but this one has the largest amount of documentation.  Aside from setting up a DHCP range, you'd need to add the following line to your dhcpd.conf file:
 
-.. code-block:: console
+.. code-block:: 
 
     next-server <tftp server IP>;
 
 That is the bare minimum needed for both types of PXE software we're going to set up.
 
 iPXE Setup
-===
+====
 Start by downloading [#]_ iPXE.  Make sure you save this to your tftpboot directory.  Next, add the following to your dhcpd.conf file:
 
-.. code-block:: console
+.. code-block:: 
 
     if exists user-class and option user-class = "iPXE" {
         filename "chainconfig.ipxe";
@@ -54,7 +53,7 @@ Start by downloading [#]_ iPXE.  Make sure you save this to your tftpboot direct
 
 What this will do is serve up the iPXE file to any non-iPXE clients.  This would mean that whenever a machine boots off it's internal NIC, it would download a copy of iPXE.  Once iPXE finishes it's startup process, it will do another DHCP request and be told to download the 'chainconfig.ipxe' file.  This file will determine where iPXE goes from there.  A good place to start with this would be a basic menu.  Create a chainconfig.ipxe file in your tftpboot directory with the following:
 
-.. code-block:: console
+.. code-block:: 
 
     #!ipxe
 
@@ -62,7 +61,7 @@ What this will do is serve up the iPXE file to any non-iPXE clients.  This would
     # Define a generic title for the menu
     menu iPXE boot menu
     # And now we define some options for our menu
-    item localboot  	Boot from local disk
+    item localboot    	Boot from local disk
     item centos6_x64	Install CentOS 6 x64
     item centos6_i386	Install CentOS 6 i386
 
@@ -101,8 +100,63 @@ What this will do is serve up the iPXE file to any non-iPXE clients.  This would
     exit
 
 
+PXELINUX setup
+====
+
+Start by downloading [#]_ SysLinux.  Copy a few files from the archive into your tftpboot directory:
+
+* com32/menu/vesamenu.c32
+* core/pxelinux.0
+
+Next, we'll need to create the menu config file.  Create the file tftpboot/pxelinux.cfg/default:
+
+.. code-block:: 
+
+    # We want to load the vesamenu module, which generates GUI menus
+    UI vesamenu.c32
+    # Don't display a prompt for the user to type in a boot option (they'll be selecting one instead)
+    PROMPT 0
+    # Our default option is to boot from the local drive
+    DEFAULT localboot
+    # Wait 60s before booting to the default option
+    TIMEOUT 600
+
+    # Define a title for our menu
+    MENU TITLE SysLinux Boot Menu
+
+    # This is the internal name for this option.
+    LABEL centos6_x64
+        # And a human readable description
+        MENU LABEL Install CentOS 6 x64
+        # This is the kernel file to download (via TFTP) and boot
+        KERNEL centos/6/x64/vmlinuz
+        # And any command line options to pass to the kernel
+        APPEND initrd=centos/6/x64/initrd.img ramdisk_size=65535 noipv6 network
+
+    # Now for the i386 version.  As SysLinux doesn't support variables, we end up duplicating
+    # the majority of the config from the x64 version
+    LABEL centos6_i386
+        MENU LABEL Install CentOS 6 i386
+        KERNEL centos/6/i386/vmlinuz
+        APPEND initrd=centos/6/i386/initrd.img ramdisk_size=65535 noipv6 network
+
+    LABEL localboot
+        # Proceed through the rest of the normal boot process
+        LOCALBOOT 0
+
+
+Since PXELINUX doesn't support HTTP, we'll need to download the CentOS installer images to the tftpboot directory.  Create two directories and download the initrd.img and vmlinuz files to them:
+
+* Directory: tftpboot/centos/6/x64/ Files: http://mirror.centos.org/centos-/6/os/x86_64/images/pxeboot/
+* Directory: tftpboot/centos/6/i386/ Files: http://mirror.centos.org/centos-6/6/os/i386/images/pxeboot/
+
+
+
+
+
 References
 ----------
 .. [#] http://ipxe.org
 .. [#] http://www.syslinux.org/wiki/index.php/PXELINUX
 .. [#] http://boot.ipxe.org/undionly.kpxe
+.. [#] https://www.kernel.org/pub/linux/utils/boot/syslinux/
