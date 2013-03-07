@@ -28,7 +28,7 @@ PXE
 The PXE stack by itself is very limited.  It's designed to just be able to retrieve and execute a file, and by itself is not terribly useful.  The two most popular software packages used with PXE are iPXE [#]_ and PXELINUX [#]_.  Of these, PXELINUX is the older one, and is a varient of SysLinux.  SysLinux is most commonly used as the initial menu you see when you boot a Linux CD.  iPXE is newer, and supports booting over many different protocols (HTTP, iSCSI, various SAN types, among others).
 
 Basic Setup Process
-====
+===================
 For both iPXE and SysLinux you will need both a DHCP and TFTP server installed.  Your operating system will likely have a tftp server package available.  Don't worry too much about the exact one you use, there are only minor differences between them.  After this is installed, you will need to locate the directory that it is serving files from.  For the rest of this document we will refer to this directory as the 'tftpboot' directory.
 
 For the DHCP server, we'll be using the ISC DHCPD server.  This is available for many platforms, and has a large amount of documentation available.  Aside from setting up a DHCP range, you'd need to add the following line to your dhcpd.conf file:
@@ -40,8 +40,8 @@ For the DHCP server, we'll be using the ISC DHCPD server.  This is available for
 That is the bare minimum needed for both types of PXE software we're going to set up.
 
 iPXE Setup
-====
-Start by downloading [#]_ iPXE.  Make sure you save this to your tftpboot directory.  Next, add the following to your dhcpd.conf file:
+==========
+Start by downloading iPXE [#]_.  Make sure you save this to your tftpboot directory.  Next, add the following to your dhcpd.conf file:
 
 .. code-block::
 
@@ -61,9 +61,9 @@ This will cause the DHCP server to first tell clients to download iPXE.  Once iP
     # Define a generic title for the menu
     menu iPXE boot menu
     # And now we define some options for our menu
-    item localboot    	Boot from local disk
-    item centos6_x64	Install CentOS 6 x64
-    item centos6_i386	Install CentOS 6 i386
+    item localboot      Boot from local disk
+    item centos6_x64    Install CentOS 6 x64
+    item centos6_i386   Install CentOS 6 i386
 
     # Now we prompt the user to choose what they want to do.  If they don't select an option
     # within 60s we default to booting from the local disk.  If they somehow choose an invalid
@@ -101,9 +101,9 @@ This will cause the DHCP server to first tell clients to download iPXE.  Once iP
 
 
 PXELINUX setup
-====
+==============
 
-Start by downloading [#]_ SysLinux.  Copy a few files from the archive into your tftpboot directory:
+Start by downloading SysLinux [#]_.  Copy a few files from the archive into your tftpboot directory:
 
 * com32/menu/vesamenu.c32
 * core/pxelinux.0
