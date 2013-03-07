@@ -33,7 +33,7 @@ For both iPXE and SysLinux you will need both a DHCP and TFTP server installed. 
 
 For the DHCP server, we'll be using the ISC DHCPD server.  This is available for many platforms, and has a large amount of documentation available.  Aside from setting up a DHCP range, you'd need to add the following line to your dhcpd.conf file:
 
-.. code-block::
+::
 
     # Any clients that are PXE booting should attempt to retrieve files from this server
     next-server <tftp server IP>;
@@ -44,7 +44,7 @@ iPXE Setup
 ==========
 Start by downloading iPXE [#]_.  Make sure you save this to your tftpboot directory.  Next, add the following to your dhcpd.conf file:
 
-.. code-block::
+::
 
     if exists user-class and option user-class = "iPXE" {
         filename "chainconfig.ipxe";
@@ -54,7 +54,7 @@ Start by downloading iPXE [#]_.  Make sure you save this to your tftpboot direct
 
 This will cause the DHCP server to first tell clients to download iPXE.  Once iPXE starts up and does another DHCP request, it will be told the actual location of the configuration file to download.  Without this, we would end up with a continous loop of iPXE downloading itself. Create a chainconfig.ipxe file in your tftpboot directory with the following:
 
-.. code-block::
+::
 
     #!ipxe
 
@@ -111,7 +111,7 @@ Start by downloading SysLinux [#]_.  Copy a few files from the archive into your
 
 Next, we'll need to create the menu config file.  Create the file tftpboot/pxelinux.cfg/default:
 
-.. code-block::
+::
 
     # We want to load the vesamenu module, which generates GUI menus
     UI vesamenu.c32
