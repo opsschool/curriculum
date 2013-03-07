@@ -34,6 +34,7 @@ For both iPXE and SysLinux you will need both a DHCP and TFTP server installed. 
 For the DHCP server, we'll be using the ISC DHCPD server.  This is available for many platforms, and has a large amount of documentation available.  Aside from setting up a DHCP range, you'd need to add the following line to your dhcpd.conf file:
 
 .. code-block::
+
     # Any clients that are PXE booting should attempt to retrieve files from this server
     next-server <tftp server IP>;
 
