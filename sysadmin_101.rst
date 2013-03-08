@@ -14,7 +14,7 @@ might have guessed that though, having decided to enroll in Ops School.
 Like almost everything in this world, system administration does not exist in
 a vacuum. There are two other groups of people that exist to make
 an information system or service come together: developers and customers.
-Customers are often referred to end-users or people or humans - basically,
+Customers are often referred to as end-users or people or humans - basically,
 they're the folks you're implementing a system or service for.
 
 A system administrator experiences life in all three of these roles: sometimes
@@ -22,7 +22,7 @@ you will be tasked with maintaining a system or service, and sometimes you
 may be developing parts of a system. Many times, you'll be someone else's
 customer.
 
-This section will get into what system administrators (ops) professionals do,
+This section will get into what system administration (ops) professionals do,
 what developers do, where they compare and contrast, what role that ops plays
 in the larger business context, a mindset and approach to systems administration,
 demonstrate the importance of problem solving and ethics in the every day
