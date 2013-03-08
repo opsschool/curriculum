@@ -1,7 +1,7 @@
 Tools for productivity
 **********************
 
-The work of operations is often helped by using the combinations of tools. The
+The work of operations is often helped by using a combination of tools. The
 tools you choose to use will depend heavily on your environment and work style.
 Over time you may even change the tools you use.
 
@@ -51,7 +51,7 @@ iOS: iSSH
 A universal app available on the App Store, iSSH supports most--if not all--of
 the features a demanding power user needs.
 
-SSH Usecases
+SSH Use Cases
 ============
 Far more than just a secure way to access a shell on a remote machine, ssh has
 evolved to support a large collection of ways to encapsulate traffic over the
