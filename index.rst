@@ -39,6 +39,7 @@ Table of Contents
    sysadmin_101
    unix_101
    unix_201
+   windows_101
    text_editing_101
    text_editing_201
    sysadmin_tools
