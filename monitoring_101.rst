@@ -60,3 +60,10 @@ scripts can send alert data to one or more handlers for flexible
 notifications. Sensu provides the server, client, api and dashboard
 needed to build a complete monitoring system.
 
+Diamond
+-------
+`Diamond <https://github.com/BrightcoveOS/Diamond>`_ is a python daemon
+that collects system metrics and publishes them to Graphite
+(and others). It is capable of collecting cpu, memory, network, i/o,
+load and disk metrics. Additionally, it features an API for implementing
+custom collectors for gathering metrics from almost any source.
