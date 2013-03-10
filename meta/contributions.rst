@@ -127,4 +127,5 @@ Adam Compton <comptona@gmail.com>
 Franck Cuny <franck@lumberjaph.net>                 SAY Media
 Chris Nehren <cnehren@omniti.com>                   OmniTI
 Brian Rak <dn@devicenull.org>
+Aslan Brooke <aslandbrooke@yahoo.com>               ZynxHealth.com, InfoQ.com
 ==================================================  ====================================

@@ -173,7 +173,36 @@ IPv6
 
 TCP vs UDP
 ==========
-<discuss 3 way handshake here>
+
+Both TCP :rfc:`793` and UDP :rfc:`768` provide data transfer between processes 
+through ports. Those process ports can be on the same computer or separate 
+computers connected by a network. TCP provides the following: reliability, 
+flow control, and connections. (UDP does not)  This means TCP will be sending 
+more header data, more packets between ports and doing more processing to 
+provide its capabilities. UDP requires less header data in the individual 
+packets and requires less packets on the network to do its work. However, 
+because UDP does not guarantee reliability, UDP allows for packets not getting 
+communicated end to end after leaving the sender.  The choice of protocols to 
+use is often based on whether the risk of losing packets in real-time without 
+immediate alerting is acceptable. In some cases UDP  may be acceptable, such 
+as video or audio streaming where programs can interpolate over missing 
+packets. However, TCP will be required because of its guarantees in systems 
+that support banking or healthcare.
+
+An example of the difference between the two protocols that will help us 
+understand the tradeoffs is a comparison of what it takes to send the first 
+data byte. TCP requires an initial "three way handshake" in order to begin 
+sending data. That amounts to one initial packet sent between ports from 
+initiator of the communication to the receiver, then another packet sent back, 
+and then a final packet sent from the initiator to the receiver again. All 
+that happens before sending the first byte of data. In UDP the first packet 
+sent contains the first byte of data. 
+
+Another example of the difference between the protocols is the size of the 
+headers of the two protocols. The TCP header is 20 bytes and the UDP header 
+8 bytes. 
+
+ 
 
 
 Subnetting, netmasks and CIDR
