@@ -52,7 +52,7 @@ A universal app available on the App Store, iSSH supports most--if not all--of
 the features a demanding power user needs.
 
 SSH Use Cases
-============
+=============
 Far more than just a secure way to access a shell on a remote machine, ssh has
 evolved to support a large collection of ways to encapsulate traffic over the
 encrypted channel. Each of these is useful in different situations. This
