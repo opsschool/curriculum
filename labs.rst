@@ -199,7 +199,7 @@ Open a GitHub account
 ---------------------
 
 Create a new repository called 'scripts'
-----------------------------------
+----------------------------------------
 
 Place a useful shell script in it
 ---------------------------------
