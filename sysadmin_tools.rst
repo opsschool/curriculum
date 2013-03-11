@@ -316,7 +316,7 @@ with the command:
 
   apt-get install tmux
 
-On RedHat-style distributions you will have to use the :term:`EPEL` repo to
+On RedHat-style distributions you will have to use the :term:`EPEL` repository to
 get a pre-built package, and install with the command:
 
 .. code-block:: console
