@@ -195,7 +195,7 @@ D
 Version Control with Git 101
 ============================
 
-Open a github account
+Open a GitHub account
 ---------------------
 
 Create a new repository called 'scripts'

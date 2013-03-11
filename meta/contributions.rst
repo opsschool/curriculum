@@ -26,7 +26,7 @@ to being junior sysadmins. They're mostly blank slates.
 How to contribute
 *****************
 
-You can find the documentation source on Github and send pull requests:
+You can find the documentation source on GitHub and send pull requests:
 
   https://github.com/opsschool/curriculum
 
@@ -34,14 +34,14 @@ Please fork the repo to your own account, create a branch, make your changes
 there, and issue a pull request from your fork/branch to ``opsschool:master``.
 Be descriptive in your commit message for anything non-obvious.
 
-If all of this git and github stuff is a little overwhelming, take a
-look at `github's documentation`_. If you have still have questions
+If all of this git and GitHub stuff is a little overwhelming, take a
+look at `GitHub's documentation`_. If you have still have questions
 after reading that, please feel free to join #opsschool on
 irc.freenode.net and ask your questions there. We'll be glad to help you
 get your patches merged--but please remember that many of us are busy ops
 professionals, so we may not respond immediately. 
 
-.. _`github's documentation`: https://help.github.com
+.. _`GitHub's documentation`: https://help.github.com
 
 If you'd like to join the mailing list, email avleen@gmail.com.
 
