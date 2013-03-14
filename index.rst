@@ -35,6 +35,7 @@ Table of Contents
    :maxdepth: 2
 
    introduction
+   meta/guidelines
    careers
    sysadmin_101
    unix_101
