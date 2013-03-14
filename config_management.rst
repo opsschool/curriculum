@@ -1,10 +1,69 @@
 Configuration Management 101
 ****************************
 
-The Case for Configuration Management
-=====================================
+A Brief History of Configuration Management
+===========================================
 
-Idempotency
+Configuration management as a distinct sub-discipline of operations engineering 
+has roots back into the mid-1990s. Prior to then, even sites with a large 
+number of users (universities, large ISPs) had relatively few Unix systems.  
+Each of those systems was generally what today's CM community calls a 
+"snowflake system" (after the phrase "a precious and unique snowflake"), 
+meaning they were carefully hand-built to purpose, rarely replaced, and 
+providing a unique set of services to their users. 
+
+The rise of free Unix-like OSes (primarily Linux) and commodity x86 hardware, 
+coupled with the increasing demands to scale services as the internet exploded 
+in popularity meant the old paradigms of capturing configuration in text files, 
+post-bootstrap shell scripts, and tales told around the proverbial campfire 
+were no longer adequate. Administrators needed automation tools which could 
+stamp out new machines quickly plus manage configuration drift as users made 
+changes (deliberately or accidentally) that affected the functioning a system. 
+
+The first such tool to gain prominence was CFEngine, an open-source project 
+written in C by Mark Burgess, a CS professer at Oslo University. CFEngine 
+popularised the idea of _idempotence_ in systems administration tasks, 
+encouraging users to describe their system administration tasks in ways that 
+would be convergent over time rather than strictly imperative shell or perl 
+scripting. (This might be unclear and probably needs a specific example)
+
+In the early 2000s, the systems administration community began to focus more
+intently on configuration management as distributed systems became both more 
+complex and more common. A series of LISA papers and an explosion in the number 
+and sophistication of open-source tools emerged. Some highlights and background 
+reading:
+
+* Steve Traugott's isconf3 system and paper "Bootstrapping an 
+  Infrastructure" provided a concrete model for repeatable, scalable 
+  provisioning and config management.
+* Paul Young from Cambridge University wrote SmartFrog which XXX
+* CERN released and wrote about Quattor which they used to build and administer 
+  high-performance compute clusters at larger scale than most sites.
+* Alva Couch, CS prof at Dartmouth, developed theoretical underpinnings for XXX
+* Luke Kanies wrote a series of LISA papers in the years leading up to the 
+  initial release of Puppet 
+* Narayan Desai's bcfg2 system provided a hackable Python CM project
+* Adam Jacob created Chef in XXX to 
+
+By 2008, provisioning and configuration management of individual systems were 
+well-understood (if not completely "solved") problems, and the community's 
+attention had shifted to the next level of complexity: cross-node interactions 
+and orchestration, application deployment, and managing ephemeral cloud 
+computing instances rather than (or alongside) long-lived physical hardware.
+
+A new crop of CM tools and approaches "born in the cloud" began to emerge in 
+the 2010s to address this shift. SaltStack, Ansible, and Chef-v11 built on 
+advances in language (Erlang and Clojure vs Ruby and Python), methodology 
+(continuous deployment and orchestration vs static policy enforcement), and the 
+component stack (ZeroMQ and MongoDB vs MySQL). 
+
+Whatever specific configuration management tooling you encounter as an 
+operations engineer, ultimately the technology exists to enable business goals 
+-- short time-to-restoral in the face of component failure, auditable assurance 
+of control, low ratio of operators per managed system, etc -- in a world whose 
+IT systems are moving, in the words of CERN's Tim Bell, "from pets to cattle".
+
+Idempotence
 ===========
 
 Convergent and Congruent systems
