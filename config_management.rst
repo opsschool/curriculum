@@ -33,23 +33,34 @@ complex and more common. A series of LISA papers and an explosion in the number
 and sophistication of open-source tools emerged. Some highlights and background 
 reading:
 
-* Steve Traugott's isconf3 system and paper "Bootstrapping an 
-  Infrastructure" provided a concrete model for repeatable, scalable 
-  provisioning and config management.
-* Paul Young from Cambridge University wrote SmartFrog which XXX
-* CERN released and wrote about Quattor which they used to build and administer 
-  high-performance compute clusters at larger scale than most sites.
-* Alva Couch, CS prof at Dartmouth, developed theoretical underpinnings for XXX
-* Luke Kanies wrote a series of LISA papers in the years leading up to the 
-  initial release of Puppet 
-* Narayan Desai's bcfg2 system provided a hackable Python CM project
-* Adam Jacob created Chef in XXX to 
+* Steve Traugott's isconf3 system and paper `"Bootstrapping an 
+  Infrastructure" 
+  <http://www.infrastructures.org/papers/bootstrap/bootstrap.html>`_ provided a 
+  concrete model for repeatable, scalable provisioning and config management.
+* CERN released and wrote about `Quattor <http://quattor.org/index.html>`_ 
+  which they used to build and administer high-performance compute clusters at 
+  larger scale than most sites at the time had dealt with.
+* Alva Couch from Tufts University and Paul Anderson from University of 
+  Edinborough, laid out theoretical underpinnings for configuration management 
+  in a `joint session at LISA'04 
+  <http://static.usenix.org/event/lisa04/tech/talks/couch.pdf>`_
+* Narayan Desai's `bcfg2 system <http://bcfg2.org>`_ provided a hackable Python 
+  CM project with early support for advanced features like templating and 
+  encrypted data
+* Recapitulating Luke Kanies' `departure from cfengine 
+  <http://rootprompt.org/article.php3?article=10981>`_ to start Puppet, Adam 
+  Jacob created Chef in 2008 to address `fundamental differences 
+  <http://www.akitaonrails.com/2009/11/18/chatting-with-adam-jacob>`_ with 
+  Puppet (primarily execution of ordering and writing user code in Ruby vs a 
+  DSL).
 
 By 2008, provisioning and configuration management of individual systems were 
-well-understood (if not completely "solved") problems, and the community's 
-attention had shifted to the next level of complexity: cross-node interactions 
-and orchestration, application deployment, and managing ephemeral cloud 
-computing instances rather than (or alongside) long-lived physical hardware.
+well-understood (if not completely `"solved" 
+<http://blog.lusis.org/blog/2011/08/22/the-configuration-management-divide/>`_) 
+problems, and the community's attention had shifted to the next level of 
+complexity: cross-node interactions and orchestration, application deployment, 
+and managing ephemeral cloud computing instances rather than (or alongside) 
+long-lived physical hardware.
 
 A new crop of CM tools and approaches "born in the cloud" began to emerge in 
 the 2010s to address this shift. SaltStack, Ansible, and Chef-v11 built on 
