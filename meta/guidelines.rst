@@ -43,4 +43,4 @@ other forum that is used involving of Ops School. Please keep in mind that:
   working together, learning from our mistakes, and making the community as
   awesome as it can be.
 
-(Inspired by the Chef Community, Speak Up! project, and predecessors)
+(Inspired by the `Chef Community <http://docs.opscode.com/community_guidelines.html>`_, `Speak Up! project <http://speakup.io/coc.html>`_, and predecessors)
