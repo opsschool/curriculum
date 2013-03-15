@@ -241,9 +241,9 @@ effects of this style of work can be dangerous:
   operations teams to work together, it's possible that groups get too invested
   in assigning blame, instead of working together to fix an issue
 
-Fortunately, recent companies there has been more effort on ensuring that both
-teams are familiar with the concepts of the other - this is often referred to
-as *DevOps* - the combination of Development and Operations. Recall
+Fortunately, in recent years, many organizations have made more effort to ensure
+that both teams are familiar with the concepts of the other - this is often 
+referred to as *DevOps* - the combination of Development and Operations. Recall
 :ref:`Darren's story <whats-sysadmin-darren>` - he's an operations person who
 worked with the developers to ensure that the developers understand the
 environment that their application will run on. The street went both ways,
