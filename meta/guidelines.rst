@@ -38,7 +38,7 @@ other forum that is used involving of Ops School. Please keep in mind that:
 * People may not understand jokes, sarcasm, and oblique references in the same
   way that you do. Remember that and be kind to the other members of the community.
 * Sexist, racist, or exclusionary comments are not welcome in Ops School.
-* The strength of the Chef community comes from all of the people in it, their
+* The strength of the community comes from all of the people in it, their
   wide range of backgrounds, and the contributions everyone makes. Let's keep
   working together, learning from our mistakes, and making the community as
   awesome as it can be.
