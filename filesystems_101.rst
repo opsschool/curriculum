@@ -144,7 +144,92 @@ man mkfs
 
 Mounting a filesystem
 =====================
-.. todo:: explain different kinds of mounts, autofs, /etc/fstab
+
+Mounting a filesystem is the act of placing the root of one filesystem on
+a directory, or mount point, of a currently mounted filesystem. The mount
+command allows the user to do this manually. Typically, only the superuser
+can perform mounts. The root filesystem, mounted on ``/``, is unique and 
+it is mounted at boot. See :doc:`boot_process_101`.
+
+.. code-block:: console
+
+    -root@opsschool # mount -t ext4 -o noatime /dev/sdb1 /mnt
+
+It is common to specify which filesystem type is present on ``/dev/sdb1`` and
+which mounting options you would like to use, but if that information is not 
+specified then the Linux ``mount`` command is pretty good at picking sane 
+defaults. Most administrators would have typed the following instead of the
+above:
+
+.. code-block:: console
+
+    -root@opsschool # mount /dev/sdb1 /mnt
+
+The root filesystem, mounted on ``/``, is unique and its mounting 
+
+The type of the filesystem refers to the format of the data structure that is 
+the filesystem on disk. Files (generally) do not care what kind of filesystem 
+they are on, it is only in initial filesystem creation, automatic 
+mounting, and performance tuning that you have to concern yourself with the 
+filesystem type. Example filesystem types are ``ext2, ext3, ext4, FAT, NTFS 
+HFS, JFS, XFS, ZFS, BtrFS``. On Linux hosts, ext4 is a good default.  For 
+maximum compatibility with Windows and Macintosh, use FAT. 
+
+http://en.wikipedia.org/wiki/Comparison_of_file_systems
+
+The fstab, or file system table, is the file that configures automatic mounting
+at boot. It tabulates block devices, mount points, type and options for each 
+mount.  The dump and pass fields control booting behavior. Dumping is the act 
+of creating a backup of the filesystem (often to tape), and is not in common use.
+Pass is much more important. When the pass value is nonzero, the filesystem is 
+analyzed early in the boot process by fsck, the file system checker, for errors.
+The number, fs_passno, indicated priority. The root filesystem should always be
+1, other filesystems should be 2 or more. A zero value causes skips to be
+checked, an option often used to accelerate the boot process. In ``/etc/fstab``,
+there are a number of ways to specify the block device containing the filesystem
+. ``UUID``, or universally unique identifier, is one common way in modern Linux
+based systems to specify a filesystem.
+
+.. code-block:: console
+
+    -root@opsschool # cat /etc/fstab
+
+    # <file system> <mount point>  <type>  <options>         <dump>  <pass>
+    /dev/sda5         /            ext4    errors=remount-ro 0       1
+    /dev/sda6         none         swap    sw                0       0
+    /dev/sda1         /boot/efi    auto    auto              0       0 
+
+This ``/etc/fstab`` file mounts ``/dev/sda5`` on ``/`` using the ext4 filesystem
+. If it encounters a filesystem corruption it will use the ``fsck`` utility
+early in the boot process to try to clear the problem. If the physical disk
+reports errors in writing while the filesystem is mounted, the os will remount
+``/`` readonly. The ``/dev/sda6`` partition will be used as swap. The
+``/dev/sda1`` partition will be mounted on ``/boot/efi`` using autodetection, the
+partition will not be scanned for filesystem errors.
+
+.. code-block:: console
+
+    -root@opsschool # cat /etc/auto.master
+
+    /home -rw,hard,intr,nosuid,nobrowse bigserver:/exports/home/&
+    /stash ldap:ou=auto_stash,ou=Autofs,dc=example,dc=com -rw,hard,intr,nobrowse
+
+The ``auto.master`` file controls the ``autofs`` service. It is another way to
+tabulate filesystems for mounting. It is different from the ``/etc/fstab`` 
+because the filesystems listed in ``auto.master`` are not mounted at boot. The
+automounter allows the system to mount filesystems on demand, then clean up those
+filesystems when they are no longer being used. In this case, the system mounts
+home directories for each user from a remote NFS server. The filesystem remains
+unmounted until the user logs in, and is unmounted a short time after the user
+logs out. The automounter is triggered by an attempt to cd into ``/home/<key``,
+it will then attempt to find an nfs share on ``/exports/home/<key>`` and mount it
+on ``/home/key``, then allow the ``cd`` command to return successfully. The 
+``/home`` example above is using the ``&`` expansion syntax, the second line is
+using the LDAP syntax to look up a key under ``/stash/<key>`` in LDAP. LDAP will
+be covered later in the curriculum. The ``auto.master`` file is known as
+``auto_master`` on FreeBSD, Solaris, and Mac OS X.
+
+
 
 Filesystem options
 ==================
