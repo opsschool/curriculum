@@ -101,7 +101,7 @@ To change directories, use the ``cd`` command:
   /tmp
 
 There may be times you need to find a file on your filesystem, based on its
-name, date, size, or other patriculars. For this you can use the ``find``
+name, date, size, or other particulars. For this you can use the ``find``
 command:
 
 .. code-block:: console

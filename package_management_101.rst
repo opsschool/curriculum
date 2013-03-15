@@ -26,11 +26,12 @@ same functionality:
 RPM and yum (RedHat, CentOS, Fedora, Scientific Linux)
 ======================================================
 
-In the following examples, we will be using the ``dstat`` in our examples. The
-process however applies to any spftware you may want to install.
+In the following examples, we will be using the package ``dstat`` in our examples. The
+process however applies to any software you may want to install.
 
-Yum provides a wrapper around RPM, which can be used to search, and install
-packages, from multiple package repositories.
+Yum provides a wrapper around RPM, which can be used to search for, and install
+packages from multiple package repositories. It also resolves dependencies, so
+that if a package has prerequisites, they will be installed at the same time.
 
 If your Linux distribution uses RPM and yum, you can search for packages
 by running:
@@ -44,7 +45,7 @@ by running:
 Installing packages
 -------------------
 
-You can install a package through yum, by running:
+You can install a package using yum, by running:
 
 .. code-block:: console
 
@@ -115,7 +116,7 @@ Similarly, you can uninstall a package with rpm:
 Cleaning the RPM database
 -------------------------
 
-You can clean the RPM database, forcing it to refresh package metadata from it's
+You can clean the RPM database, forcing it to refresh package metadata from its
 sources on next install or upgrade operation.
 
 .. code-block:: console
@@ -169,11 +170,11 @@ There are two todos here.
 dpkg and APT (Debian, Ubuntu)
 =============================
 
-In the following examples, we will be using the ``dstat`` in our examples. The
-process however applies to any spftware you may want to install.
+In the following examples, we will be using the package ``dstat`` in our examples. The
+process however applies to any software you may want to install.
 
-apt provides a wrapper around dpkg, which can be used to search, and install
-packages, from multiple package repositories.
+apt provides a wrapper around dpkg, which can be used to search for, and install
+packages from multiple package repositories.
 
 If your Linux distribution uses dpkg and apt, you can search for packages
 by running:
@@ -246,7 +247,7 @@ Similarly, you can uninstall a package with dpkg:
    bash-4.0$ dpkg -r dstat
 
 With APT and dpkg, removing a package still leaves behind any configuration
-files, in cast you wish to reinstall the package again later. To full delete
+files, in case you wish to reinstall the package again later. To fully delete
 packages and their configuration files, you need to ``purge``:
 
 .. code-block:: console
@@ -263,7 +264,7 @@ Querying the dpkg database
 --------------------------
 
 Ocassionally you will want to find out specific information regarding installed
-packages. The ``dpkg-query`` command has many options to help with this. Let's
+packages. The ``dpkg-query`` command has many options to help. Let's
 take a look at a few examples:
 
 One common task is to see if you have a package installed. The ``-l`` option
@@ -294,7 +295,7 @@ Now let's say we want to list all of the files installed by a package. The
    ...
 
 We can also do the reverse of the previous operation. If we have a file, and
-want to known which package it belongs to:
+want to know to which package it belongs:
 
 .. code-block:: console
 
