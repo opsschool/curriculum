@@ -58,6 +58,8 @@ database servers (10.10.10.16-10.10.10.17), two DNS servers
 hostnames are web-1 through web-4; the app servers, app-1 and app-2; the
 databases, db-1 and db-2; the message queue, mq-1.
 
+.. todo:: Mainly for @apeiron: Simplify the topography description, possibly with use of a table to describe IP assingments
+
 This is a lot to conceptualize all at once; a diagram will elucidate the
 architecture.
 
