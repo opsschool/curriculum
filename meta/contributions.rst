@@ -39,7 +39,7 @@ look at `GitHub's documentation`_. If you have still have questions
 after reading that, please feel free to join #opsschool on
 irc.freenode.net and ask your questions there. We'll be glad to help you
 get your patches merged--but please remember that many of us are busy ops
-professionals, so we may not respond immediately. 
+professionals, so we may not respond immediately.
 
 .. _`GitHub's documentation`: https://help.github.com
 
