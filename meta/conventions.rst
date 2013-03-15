@@ -80,5 +80,10 @@ architecture.
       "jumphost x2" -> {"app stack"; "config mgmt"; "load balancer x2"; "mq"; "ldap"};
       "app stack" -> "config mgmt" [dir = both];
       "app stack" -> {"ldap"; "mq"};
-      {"firewall x2", "load balancer x2", "app stack", "jumphost x2", "config mgmt", "mq"} -> "dns";
+      "firewall x2" -> "dns";
+      "load balancer x2" -> "dns";
+      "app stack" -> "dns";
+      "jumphost x2" -> "dns";
+      "config mgmt" -> "dns";
+      "mq" -> "dns";
     }
