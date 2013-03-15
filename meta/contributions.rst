@@ -67,6 +67,7 @@ guideline wherever possible):
   Don't tell students that package managers install packages, have them install
   a few packages and then explain how the package manager did its thing.
 
+Please read the :ref:`conventions` topic for some style guideline and preferences.
 
 ****************************
 Overwriting existing content

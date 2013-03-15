@@ -82,6 +82,7 @@ Table of Contents
    learning
    seealso
    meta/contributions
+   meta/conventions
    glossary
 
 
