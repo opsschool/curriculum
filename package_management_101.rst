@@ -191,7 +191,7 @@ You can install a package through apt, by running:
 
 .. code-block:: console
 
-   bash-4.0$ apt-get install dstat
+   bash-4.0# apt-get install dstat
 
    The following NEW packages will be installed:
      dstat
@@ -209,7 +209,7 @@ with the ``dpkg`` command:
 
 .. code-block:: console
 
-  bash-4.0$ dpkg -i dstat_0.7.2-3_all.deb
+  bash-4.0# dpkg -i dstat_0.7.2-3_all.deb
 
 Upgrading packages
 ------------------
@@ -223,13 +223,13 @@ install it again:
 
 .. code-block:: console
 
-   bash-4.0$ apt-get install dstat
+   bash-4.0# apt-get install dstat
 
 To upgrade a package with an deb file, run:
 
 .. code-block:: console
 
-   bash-4.0$ dpkg -i dstat_0.7.2-3_all.deb
+   bash-4.0# dpkg -i dstat_0.7.2-3_all.deb
 
 Uninstalling packages
 ---------------------
@@ -238,13 +238,13 @@ To uninstall a package using apt, run:
 
 .. code-block:: console
 
-   bash-4.0$ apt-get remove dstat
+   bash-4.0# apt-get remove dstat
 
 Similarly, you can uninstall a package with dpkg:
 
 .. code-block:: console
 
-   bash-4.0$ dpkg -r dstat
+   bash-4.0# dpkg -r dstat
 
 With APT and dpkg, removing a package still leaves behind any configuration
 files, in case you wish to reinstall the package again later. To fully delete
@@ -252,13 +252,13 @@ packages and their configuration files, you need to ``purge``:
 
 .. code-block:: console
 
-   bash-4.0$ apt-get purge dstat
+   bash-4.0# apt-get purge dstat
 
 or:
 
 .. code-block:: console
 
-   bash-4.0$ dpkg -P dstat
+   bash-4.0# dpkg -P dstat
 
 Querying the dpkg database
 --------------------------
