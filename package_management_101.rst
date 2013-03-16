@@ -258,7 +258,14 @@ or:
 
 .. code-block:: console
 
+   bash-4.0# apt-get --purge remove dstat
+
+or:
+
+.. code-block:: console
+
    bash-4.0# dpkg -P dstat
+
 
 Querying the dpkg database
 --------------------------
