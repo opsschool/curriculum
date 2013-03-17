@@ -32,6 +32,8 @@ You have a variety of tools at your fingertips to help work out the cause of a
 problem. Over time you will expand what is in your toolbelt, but to start with
 you must know how to use each of these:
 
+* ''ping'', ''nslookup'', and ''traceroute'' are the trio of tools to start with for networking issues. Establish network-level connectivity, then friendly name connectivity. If those aren't working on a remoate and local basis, you'll need to look into deeper issues.
+
 * ``top``, ``vmstat``, ``iostat``, ``systat``, ``sar``, ``mpstat``
   These help you see the current state of the system - what is running, what is
   using cpu, memory? Is the disk being heavily used? There is a lot of
