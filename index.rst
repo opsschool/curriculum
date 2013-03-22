@@ -77,7 +77,8 @@ Table of Contents
    statistics
    deployment_101
    deployment_201
-   soft_skills
+   soft_skills_101
+   soft_skills_201
    labs
    learning
    seealso
