@@ -632,7 +632,7 @@ schools of thought that seem to pervade are:
   this is to enable team members to work together on some tasks but to give
   enough tasks so team members stay busy.
 
-* n-1 - where n = the number of people on the operations team.  The reason for
+* n-1 - where n = the number of people on the operations team. The reason for
   this is to encourage collaboration on the team and not to overwhelm them with
   too many tasks. If someone on the team completes all of their work, that
   person should be able to pull the next available task from the "Available"
@@ -697,17 +697,17 @@ Development's view:
 * Roll a product out to meet customer specifications within a certain timeframe
 * Continuous delivery means recurring change as bugs are fixed and features
   added
-* fast changing environments are needed to support dev
-* agility is key
+* Fast changing environments are needed to support dev
+* Agility is key
 
 Operation's view:
 
-* supporting the product for customers
-* keeping a handle on IT security
-* planning for deployment to production state
-* changes are slow/incremental
-* consistent environments are needed to support operations
-* stability is key
+* Supporting the product for customers
+* Keeping a handle on IT security
+* Planning for deployment to production state
+* Changes are slow/incremental
+* Consistent environments are needed to support operations
+* Stability is key
 
 Why DevOps is important
 -----------------------

@@ -31,10 +31,10 @@ following important skillsets:
 
 * Understand the role of operations within the context of the organization to
   correctly position operations.
-* Think broadly about decisions and act decisively
-* Support and promote change as needed
+* Think broadly about decisions and act decisively.
+* Support and promote change as needed.
 * Develop basic business skills that allow operations to communicate within the
-  executive suite
+  executive suite.
 
 Understanding the role of operations
 ====================================
@@ -410,22 +410,22 @@ efficiency, increased income to the organization.
 Cost should include anything that explicitly adds to the total cost of
 the solution:
 
-* employee labor
-* contractor costs
-* maintenance fees
-* up-front costs and licensing
-* hardware
-* depreciation
-* facilities costs (outfitting a space)
-* provisioning or migration costs
-* networking
+* Employee labor
+* Contractor costs
+* Maintenance fees
+* Up-front costs and licensing
+* Hardware
+* Depreciation
+* Facilities costs (outfitting a space)
+* Provisioning or migration costs
+* Networking
 
 Benefits should include anything that is an outcome of the solution:
 
-* increased productivity
-* increased organization efficiency
-* increased income to the organization
-* increased capabilities that enhance the organization in another way
+* Increased productivity
+* Increased organization efficiency
+* Increased income to the organization
+* Increased capabilities that enhance the organization in another way
 
 Putting it all together
 ^^^^^^^^^^^^^^^^^^^^^^^
