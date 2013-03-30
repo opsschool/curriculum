@@ -76,12 +76,17 @@ Retention periods
 
 Is there a risk to having a long retention period?
 
+.. TODO:: The idea of such a risk may not be immediately clear to a beginning ops person.
+
 What is the cost to retain backups for a 30-days, 6-months, or 1 year?
 
 Is there a business requirement for keeping backups for a specific length of time?
 
 Are there laws for maintaining electronic records for a specific period of
-time? If the organization is required to adhere to Freedom of
+time? 
+
+
+If the organization is required to adhere to Freedom of
 Information Act (FOIA) law, sometimes long retention periods are a
 detriment. FOIA requests can cover any kind of data including
 individual emails on a specific subject. If the information doesn't
