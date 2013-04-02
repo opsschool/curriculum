@@ -137,15 +137,15 @@ partition.
 Configuring your drive with partitions
 ======================================
 
-The ``parted`` tool allows you to create partitions on your disk. It also
-can create disk labels. Disk labels describe the partitioning scheme. Most Linux
+The ``parted`` tool is for modifying and creating disk partitions and disk 
+labels. Disk labels describe the partitioning scheme. Legacy Linux
 systems will have the msdos partitioning table, although newer systems with EFI
-will be using the gpt partitioning table. Msdos labeled drives will have a
+use the gpt partitioning table. Drives with ``msdos`` disk labels will have a
 Master Boot Record, or MBR, at the beginning of the drive. This is where the
-bootloader is installed. GPT labeled drives will usually have a FAT formatted
+bootloader is installed. GPT-labeled drives will usually have a FAT-formatted
 partition at the beginning of the disk for EFI programs and the bootloader.
 
-``parted`` has a subshell interface, call it with the name of a block device:
+``parted`` has a subshell interface. It takes as an argument a device name.
 
 .. code-block:: console
 
@@ -167,9 +167,9 @@ partition at the beginning of the disk for EFI programs and the bootloader.
 
 In this example ``parted`` ran against ``/dev/sda``. The user then used the
 ``print`` command to print out information about the disk and the current
-partitioning scheme. A 43GB disk is presented, using the msdos partition table
-format. One partition exists and it is flagged as bootable.  Looking at a second
-example:
+partitioning scheme. The user found a 43 GB disk using the ``msdos`` partition
+table format. The disk had one partition which was flagged as bootable.
+Looking at a second example:
 
 .. code-block:: console
 
@@ -207,17 +207,91 @@ example:
 
   (parted) 
 
-Here we have first found the disk label to be unreadable, so we created a new
-disk label of the msdos type. After that we were able to see the disk was 8GB.
-We created a primary 1GB partition at the beginning of the disk for ``/boot``
-and set the bootable flag on that partition. We created 4GB, 2GB, and 1GB
-partitions for root, var, and swap, respectively.
+``parted`` failed to read the label, so the user created a new ``msdos``
+disk label on the disk. After that ``parted`` was able to see that the disk was 
+8GB. We created a primary 1GB partition at the beginning of the disk for 
+``/boot`` and set the bootable flag on that partition. We created 4GB, 2GB,
+and 1GB partitions for root, var, and swap, respectively.
 
 
 
 Formatting partitions with new file systems
 ===========================================
-man mkfs
+
+New filesystems are created with the ``mkfs`` family of commands. There are a 
+variety of file systems to choose from, ``man fs`` has a list of filesystems
+with short descriptions of each. Choosing a filesystem involves characterizing
+the workload of the filesystema and weighing engineering tradeoffs. On Linux
+systems, ext4 is a good general purpose choice. Following from the example 
+above, we will create filesystems on each of the four partitions we created.
+
+``fdisk`` is another, older, tool to view and modify partitions on disk. It is
+limited to the msdos disk label.
+
+.. code-block:: console
+
+  root@opsschool# fdisk -l  /dev/sdb
+
+  Disk /dev/sdb: 8589 MB, 8589934592 bytes
+  255 heads, 63 sectors/track, 1044 cylinders, total 16777216 sectors
+  Units = sectors of 1 * 512 = 512 bytes
+  Sector size (logical/physical): 512 bytes / 512 bytes
+  I/O size (minimum/optimal): 512 bytes / 512 bytes
+  Disk identifier: 0x0004815e
+
+     Device Boot      Start         End      Blocks   Id  System
+     /dev/sdb1   *        2048     1953791      975872   83  Linux
+     /dev/sdb2         1953792     9764863     3905536   83  Linux
+     /dev/sdb3         9764864    13672447     1953792   83  Linux
+     /dev/sdb4        13672448    16777215     1552384   83  Linux
+
+The first partition, to contain ``/boot``, will be ext2. Create this by running:
+
+
+.. code-block:: console
+
+  root@opsschool:~# mkfs.ext2 /dev/sdb1
+  mke2fs 1.42 (29-Nov-2011)
+  Filesystem label=
+  OS type: Linux
+  Block size=4096 (log=2)
+  Fragment size=4096 (log=2)
+  Stride=0 blocks, Stripe width=0 blocks
+  61056 inodes, 243968 blocks
+  12198 blocks (5.00%) reserved for the super user
+  First data block=0
+  Maximum filesystem blocks=251658240
+  8 block groups
+  32768 blocks per group, 32768 fragments per group
+  7632 inodes per group
+  Superblock backups stored on blocks: 
+    32768, 98304, 163840, 229376
+
+  Allocating group tables: done                            
+  Writing inode tables: done                            
+  Writing superblocks and filesystem accounting information: done
+
+The second and third partitions, to contain ``/`` and ``/var``, will be ext4.
+Create these by running:
+
+.. code-block:: console
+
+  root@opsschool:~# mkfs.ext4 /dev/sdb2
+  root@opsschool:~# mkfs.ext4 /dev/sdb3
+
+The output of ``mkfs.ext4`` is very close to the output of ``mkfs.ext2`` and so
+it is omitted. 
+
+Finally, ``/dev/sdb4`` is set aside for swap space with the command:
+
+
+.. code-block:: console
+
+  root@opsschool:~# mkswap /dev/sdb4
+  Setting up swapspace version 1, size = 1552380 KiB
+  no label, UUID=cc9ba6e5-372f-48f6-a4bf-83296e5c7ebe
+
+
 
 Mounting a filesystem
 =====================
