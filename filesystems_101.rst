@@ -136,7 +136,84 @@ partition.
 
 Configuring your drive with partitions
 ======================================
-man parted
+
+The ``parted`` tool allows you to create partitions on your disk. It also
+can create disk labels. Disk labels describe the partitioning scheme. Most Linux
+systems will have the msdos partitioning table, although newer systems with EFI
+will be using the gpt partitioning table. Msdos labeled drives will have a
+Master Boot Record, or MBR, at the beginning of the drive. This is where the
+bootloader is installed. GPT labeled drives will usually have a FAT formatted
+partition at the beginning of the disk for EFI programs and the bootloader.
+
+``parted`` has a subshell interface, call it with the name of a block device:
+
+.. code-block:: console
+
+
+  roott@opsschool# parted /dev/sda
+  GNU Parted 2.3
+  Using /dev/sda
+  Welcome to GNU Parted! Type 'help' to view a list of commands.
+  (parted) print                                                            
+  Model: ATA VBOX HARDDISK (scsi)
+  Disk /dev/sda: 42.9GB
+  Sector size (logical/physical): 512B/512B
+  Partition Table: msdos
+
+  Number  Start   End     Size    Type     File system  Flags
+   1      8225kB  42.9GB  42.9GB  primary  ext4         boot
+
+   (parted)    
+
+In this example ``parted`` ran against ``/dev/sda``. The user then used the
+``print`` command to print out information about the disk and the current
+partitioning scheme. A 43GB disk is presented, using the msdos partition table
+format. One partition exists and it is flagged as bootable.  Looking at a second
+example:
+
+.. code-block:: console
+
+  root@opsschool# parted /dev/sdb
+  GNU Parted 2.3
+  Using /dev/sdb
+  Welcome to GNU Parted! Type 'help' to view a list of commands.
+  (parted) print                                                            
+  Error: /dev/sdb: unrecognised disk label                                  
+  (parted) mklabel msdos                                                    
+  (parted) print                                                            
+  Model: ATA VBOX HARDDISK (scsi)
+  Disk /dev/sdb: 8590MB
+  Sector size (logical/physical): 512B/512B
+  Partition Table: msdos
+
+  Number  Start  End  Size  Type  File system  Flags
+
+  (parted) mkpart primary 1 1G                                              
+  (parted) set 1 boot on                                                    
+  (parted) mkpart primary 1G 5G                                             
+  (parted) mkpart primary 5G 7G                                             
+  (parted) mkpart primary 7G 8G                                             
+  (parted) p                                                                
+  Model: ATA VBOX HARDDISK (scsi)
+  Disk /dev/sdb: 8590MB
+  Sector size (logical/physical): 512B/512B
+  Partition Table: msdos
+
+  Number  Start   End     Size    Type     File system  Flags
+   1      1049kB  1000MB  999MB   primary               boot
+   2      1000MB  5000MB  3999MB  primary
+   3      5000MB  7000MB  2001MB  primary
+   4      7000MB  8590MB  1590MB  primary
+
+  (parted) 
+
+Here we have first found the disk label to be unreadable, so we created a new
+disk label of the msdos type. After that we were able to see the disk was 8GB.
+We created a primary 1GB partition at the beginning of the disk for ``/boot``
+and set the bootable flag on that partition. We created 4GB, 2GB, and 1GB
+partitions for root, var, and swap, respectively.
+
+
 
 Formatting partitions with new file systems
 ===========================================
