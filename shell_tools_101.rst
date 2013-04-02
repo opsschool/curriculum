@@ -13,20 +13,75 @@ Working with your system
 ps
 --
 
+``ps`` shows the processes currently running on the system. ``ps`` takes many
+arguments but some good recopies are ``ps aux`` to see all processes from a user
+standpoint, whether they have a tty or not.
+Also good is ``ps -lfU <username>`` to see all processes owned by ``<username>``
+in long format. ``ps`` has output formatting with the ``-o`` switch and works 
+well with ``grep``. ``pgrep`` combines ``ps`` and ``grep`` into one command.
+
+.. code-block:: console
+
+  $ ps aux | grep vim
+  opsschool      5424  1.1  0.2 247360 10448 pts/0    Sl+  17:01   0:00 vim shell_tools_101.rst
+  opsschool      5499  0.0  0.0  13584   936 pts/5    S+   17:01   0:00 grep --color=auto vim
+
+Note that the ``grep`` command also shows up in the proccess table.
+
 top
 ---
 
+``top`` shows the top most cpu intensive processes in a table form with system
+stats summarized at the top.
+It refreshes every 1 second. By pressing ``m`` while running, ``top`` will sort 
+not by processor use but by memory use.
+
 df
 --
-Finding free disk space is critical.
+
+``df`` looks at all your mounted filesystems and reports on their status. This
+includes the filesystem type, total size, available space, percent used, and
+mountpoint. ``df -h`` will show the sizes in human readable form. ``df -h .``
+will show only the filesystem the current working directory is on, very useful
+when debugging ``nfs`` and ``autofs`` mounts.
+
+.. code-block:: console
+
+    $ df -h .
+    Filesystem      Size  Used Avail Use% Mounted on
+    /dev/sda5        43G   31G  9.6G  77% /
+
 
 du
 --
-Finding disk space used is critical.
+
+``du`` estimates the size on disk of a file or files. ``du -h`` returns the
+usage information in human readable format. If the argument to ``du`` is a
+directory, ``du`` will run and return a new value for each file in that
+directory, recursing into subdirectories as well. ``du -sh`` can be run on a
+directory to prevent this behavior and return the sum of the space on disk of
+all files under that directory.
+
+.. code-block:: console
+
+    $ du -sh drawing.svg 
+    24K drawing.svg
+    4.0K    style.css
+    20K sitemeter.js
 
 find
 ----
-Finding specific files is critical.
+
+``find`` is for finding files on the system. ``find .`` recursively walks the
+entire filesystem tree below the current working directory and prints out each 
+file by its relative path. ``find . -name 'opsschool'`` again recursively walks
+the entire filesystem tree, but only prints out files named ``opsschool``.
+``find . -name 'opschool' -type d`` prints out only directories and ``-type f``
+prints out only regular files. The ``-name`` filter also accepts wildcards.
+``find . -name '*.html'`` will print out all files ending in ``.html``. As you 
+become more skilled at Unix/Linux, use the find command often, as it becomes 
+more and more useful with experience.
+
 
 kill
 ----
