@@ -51,6 +51,8 @@ Table of Contents
    networking_201
    common_services
    identity_management
+   active_directory_101
+   active_directory_201
    remote_filesystems_101
    remote_filesystems_201
    programming_101
