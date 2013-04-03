@@ -35,14 +35,16 @@ and sophistication of open-source tools emerged. Some highlights and background
 reading:
 
 * Steve Traugott's isconf3 system and paper `"Bootstrapping an 
-  Infrastructure" <http://www.infrastructures.org/papers/bootstrap/bootstrap.html>`_ provided a 
+  Infrastructure" 
+  <http://www.infrastructures.org/papers/bootstrap/bootstrap.html>`_ provided a 
   concrete model for repeatable, scalable provisioning and config management.
 * CERN released and wrote about `Quattor <http://quattor.org/index.html>`_ 
   which they used to build and administer high-performance compute clusters at 
   larger scale than most sites at the time had dealt with.
 * Alva Couch from Tufts University and Paul Anderson from University of 
   Edinborough, laid out theoretical underpinnings for configuration management 
-  in a `joint session at LISA'04 <http://static.usenix.org/event/lisa04/tech/talks/couch.pdf>`_
+  in a `joint session at LISA'04 
+  <http://static.usenix.org/event/lisa04/tech/talks/couch.pdf>`_
 * Narayan Desai's `bcfg2 system <http://bcfg2.org>`_ provided a hackable Python 
   CM project with early support for advanced features like templating and 
   encrypted data
