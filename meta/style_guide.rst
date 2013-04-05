@@ -56,3 +56,31 @@ Spacing
   When in doubt, leave one blank line.
 
 - Leave one (1) blank line at the end of every file.
+
+Showing Examples
+================
+
+Very frequently, we may want to show the reader an example of code or console output.
+Sphinx provides `language-specific highlighting <http://sphinx-doc.org/markup/code.html>`_, so instead of using a standard literal block (``::``), use the more explicit ``code-block::`` syntax.
+
+An example::
+
+  .. code-block:: ruby
+
+  require 'date'
+  today = Date.today
+  puts "Today's date is #{today}"
+
+This would render so:
+
+.. code-block:: ruby
+
+  require 'date'
+  today = Date.today
+  puts "Today's date is #{today}"
+
+This highlighted version is superior, and more easily understood.
+
+Please use the language being displayed for the correct syntax.
+For examples of console output, use ``console``.
+When showing pseudo-code or items that do not fit a language or console, use ``none``.
