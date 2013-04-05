@@ -159,8 +159,52 @@ grep
 
 awk
 ---
-Only talk about column extraction for now? It's the most common / needed piece
-of awk at this level.
+
+``awk`` is a very powerful utility that lets you extract data from files.
+
+For example, if you had a file ``students.txt`` that stored a list of student names, ages and email addresses in columns separated by a space: ::
+
+  $ cat students.txt
+  John Doe 25 john@example.com
+  Jack Smith 26 jack@example.com
+  Jane Doe 24 jane@example.com
+
+Here, you can see that the first two columns have contain the student's name, the third has an age and the fourth, an email address. You can use awk to extract just the student's first name and email like this: ::
+
+  $ awk '{print $1, $4}' students.txt
+  John john@example.com
+  Jack jack@example.com
+  Jane jane@example.com
+
+By default, ``awk`` uses the space character to differentiate between columns. Using this, ``$1`` and ``$4`` told ``awk`` to only show the 1st and 4th columns of the file. 
+
+The order in which the columns is specified is important, because ``awk`` will print them out to the screen in exactly that order. So if you wanted to print the email column before the first name, here's how you would do it: ::
+
+  $ awk '{print $4, $1}' students.txt
+  john@example.com John
+  jack@example.com Jack
+  jane@example.com Jane
+
+You can also specify a custom delimiter for ``awk`` and override the default one (the space character) by using the ``-F`` option. Suppose the ``students.txt`` instead stored data like this: ::
+
+  $ cat students.txt
+  John Doe - 25 - john@example.com
+  Jack Smith - 26 - jack@example.com
+  Jane Doe - 24 - jane@example.com
+
+Now, if the ``-`` character is used as a delimiter, the first column would be the student's full name: ::
+  
+  $ awk -F '-' '{print $1}' students.txt
+  John Doe
+  Jack Smith
+  Jane Doe
+
+Using this same logic, the second column would be the student's age, and the third their email address. ::
+
+  $ awk -F '-' '{print $1, $4}' students.txt
+  John Doe john@example.com
+  Jack Smith jack@example.com
+  Jane Doe jane@example.com
 
 sed
 ---
