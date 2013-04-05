@@ -201,7 +201,7 @@ Now, if the ``-`` character is used as a delimiter, the first column would be th
 
 Using this same logic, the second column would be the student's age, and the third their email address. ::
 
-  $ awk -F '-' '{print $1, $4}' students.txt
+  $ awk -F '-' '{print $1, $3}' students.txt
   John Doe john@example.com
   Jack Smith jack@example.com
   Jane Doe jane@example.com
