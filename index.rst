@@ -86,6 +86,7 @@ Table of Contents
    seealso
    meta/contributions
    meta/conventions
+   meta/style_guide
    glossary
 
 

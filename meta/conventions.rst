@@ -13,9 +13,7 @@ here for uniformity.
 Style Guide
 ===========
 
-.. todo:: Fill in the `style guide`_.
-
-.. _`style guide`: https://github.com/opsschool/curriculum/issues/56
+See :doc:`style_guide` for more.
 
 
 Sample Network
