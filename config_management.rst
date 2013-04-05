@@ -9,7 +9,7 @@ has roots in the mid-1990s. Prior to then, even sites with a large number of
 users like universities and large ISPs had relatively few Unix systems. Each of 
 those systems was generally what today's operations community calls a 
 "snowflake system" (after the phrase "a precious and unique snowflake"). They 
-were carefully hand-built to purpose, rarely replaced, and providing a unique 
+were carefully hand-built to purpose, rarely replaced, and provided a unique 
 set of services to their users.
 
 The rise of free Unix-like OSes and commodity x86 hardware, coupled with the 
@@ -29,7 +29,7 @@ would be convergent over time rather than strictly imperative shell or perl
 scripting. (.. todo:: a specific example might help)
 
 In the early 2000s, the systems administration community began to focus more
-intently on configuration management as distributed systems became both more 
+intensely on configuration management as distributed systems became both more 
 complex and more common. A series of LISA papers and an explosion in the number 
 and sophistication of open-source tools emerged. Some highlights and background 
 reading:
