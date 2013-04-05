@@ -12,7 +12,7 @@ those systems was generally what today's operations community calls a
 were carefully hand-built to purpose, rarely replaced, and provided a unique 
 set of services to their users.
 
-The rise of free Unix-like OSes and commodity x86 hardware, coupled with the 
+The rise of free Unix-like Operating Systems and commodity x86 hardware, coupled with the 
 increasing demands to scale booming Internet services meant the old paradigms 
 of capturing configuration were no longer adequate. Lore kept in text files, 
 post-bootstrap shell scripts, and tales told around the proverbial campfire 
@@ -22,11 +22,13 @@ out new machines quickly, plus manage configuration drift as users made changes
 system. 
 
 The first such tool to gain prominence was CFEngine, an open-source project 
-written in C by Mark Burgess, a CS professer at Oslo University. CFEngine 
-popularised the idea of _idempotence_ in systems administration tasks, 
+written in C by Mark Burgess, a CS professor at Oslo University. CFEngine 
+popularized the idea of *idempotence* in systems administration tasks, 
 encouraging users to describe their system administration tasks in ways that 
 would be convergent over time rather than strictly imperative shell or perl 
-scripting. (.. todo:: a specific example might help)
+scripting.
+
+.. todo:: a specific example of convergent over time might help
 
 In the early 2000s, the systems administration community began to focus more
 intensely on configuration management as distributed systems became both more 
@@ -41,7 +43,7 @@ reading:
   which they used to build and administer high-performance compute clusters at 
   larger scale than most sites at the time had dealt with.
 * Alva Couch from Tufts University and Paul Anderson from University of 
-  Edinborough, laid out theoretical underpinnings for configuration management 
+  Edinburgh, laid out theoretical underpinnings for configuration management 
   in a `joint session at LISA'04 <http://static.usenix.org/event/lisa04/tech/talks/couch.pdf>`_
 * Narayan Desai's `bcfg2 system <http://bcfg2.org>`_ provided a hackable Python 
   CM project with early support for advanced features like templating and 
@@ -69,7 +71,7 @@ component stack (ZeroMQ and MongoDB vs MySQL).
 
 Whatever specific configuration management tooling operations engineers 
 encounter as an operations engineer, ultimately the technology exists to enable 
-business goals -- short time-to-restoral in the face of component failure, 
+business goals -- short time-to-restore in the face of component failure, 
 auditable assurance of control, low ratio of operators per managed system, etc.  
 -- in a world whose IT systems are moving, in the words of CERN's Tim Bell, 
 "from pets to cattle".
