@@ -54,8 +54,8 @@ To create a variable, all you need to do is assign it a value.
 
   $ ops_var=1
 
-NOTE: Make sure that you don't leave spaces in the expression; doing so will lead to an error.
-Always ensure that you don't have spaces when assigning values to variables.
+NOTE: When using a BASH shell or writing a BASH script, make sure that you don't leave spaces in the expression; doing so will lead to an error.
+Always make sure you don't have spaces in variable assignment statements in BASH.
 
 To echo out the value of this variable, use ``$ops_var`` like so:
 
