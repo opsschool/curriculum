@@ -142,7 +142,7 @@ Highlighted themes include:
   Maybe that means a script that can take a list of users and add them to a
   system, maybe that means a script that can check to make sure a service is
   responding appropriately for a monitoring system.
-* **System Administration means a *variety* of things to a lot of people.**
+* **System Administration has a wide variety of meanings to different people.**
   The other non-IT employees are looking for something that "just works" - the
   ops person is concerned with proper implementation of a service so it
   continues to be scalable and reliable for the future.
@@ -241,9 +241,9 @@ effects of this style of work can be dangerous:
   operations teams to work together, it's possible that groups get too invested
   in assigning blame, instead of working together to fix an issue
 
-Fortunately, recent companies there has been more effort on ensuring that both
-teams are familiar with the concepts of the other - this is often referred to
-as *DevOps* - the combination of Development and Operations. Recall
+Fortunately, in recent years, many organizations have made more effort to ensure
+that both teams are familiar with the concepts of the other - this is often 
+referred to as *DevOps* - the combination of Development and Operations. Recall
 :ref:`Darren's story <whats-sysadmin-darren>` - he's an operations person who
 worked with the developers to ensure that the developers understand the
 environment that their application will run on. The street went both ways,
@@ -269,10 +269,10 @@ perception issue.  Primarily, some outside of the operations field that believe
 that the role of IT is not to innovate; rather that IT exists to enforce rules
 decided on by others.
 
-We challenge that mindset. System administration is not about being a "no-man"
-(or a "no-woman") but about finding ways to intelligently implement the needs
-of a business in a way that increases maintainability, usability, and security
-for a group of people.
+We challenge that mindset. System administration is not about saying "no" to 
+requests but about finding ways to intelligently fulfill the needs of a business
+in a way that increases maintainability, usability, and security for a group of
+people and enhances their ability to useful work.
 
 Another perception issue is that of the `BOFH
 <http://www.theregister.co.uk/data_centre/bofh/>`_. While there's something of
@@ -280,10 +280,11 @@ a grain of truth to the meme, most system administrators who adopt such an
 attitude quickly find themselves out of work. Beyond the social implications,
 this sort of obstructionist, adversarial behavior is the least effective way of
 addressing problems. The best path to success and satisfaction is collaboration,
-not obstinance. This requires cooperation from all involved, whether their role
+not obstinacy. This requires cooperation from all involved, whether their role
 is technical or not. An administrator's job is to create order from chaos, to
-control the technology--not the people. As with all social reactions, people
-must be understood complexly, and everyone has their own needs and goals.
+control the technology--not the people. As with all social interactions, 
+everyone has their own needs and goals, and it can be complex to navigate safely, 
+but it is critical to the success of the organization.
 
 Problem Solving
 ===============

@@ -165,8 +165,8 @@ Apply it to your local machine
 Package Management 101
 ======================
 
-Setup a basic YUM or APT repo and put some packages in it
----------------------------------------------------------
+Setup a basic YUM or APT repository and put some packages in it
+---------------------------------------------------------------
 
 Setup a local mirror of CentOS (or what have you)
 -------------------------------------------------
@@ -195,11 +195,11 @@ D
 Version Control with Git 101
 ============================
 
-Open a github account
+Open a GitHub account
 ---------------------
 
-Create a new repo called 'scripts'
-----------------------------------
+Create a new repository called 'scripts'
+----------------------------------------
 
 Place a useful shell script in it
 ---------------------------------

@@ -13,20 +13,75 @@ Working with your system
 ps
 --
 
+``ps`` shows the processes currently running on the system. ``ps`` takes many
+arguments but some good recopies are ``ps aux`` to see all processes from a user
+standpoint, whether they have a tty or not.
+Also good is ``ps -lfU <username>`` to see all processes owned by ``<username>``
+in long format. ``ps`` has output formatting with the ``-o`` switch and works 
+well with ``grep``. ``pgrep`` combines ``ps`` and ``grep`` into one command.
+
+.. code-block:: console
+
+  $ ps aux | grep vim
+  opsschool      5424  1.1  0.2 247360 10448 pts/0    Sl+  17:01   0:00 vim shell_tools_101.rst
+  opsschool      5499  0.0  0.0  13584   936 pts/5    S+   17:01   0:00 grep --color=auto vim
+
+Note that the ``grep`` command also shows up in the proccess table.
+
 top
 ---
 
+``top`` shows the top most cpu intensive processes in a table form with system
+stats summarized at the top.
+It refreshes every 1 second. By pressing ``m`` while running, ``top`` will sort 
+not by processor use but by memory use.
+
 df
 --
-Finding free disk space is critical.
+
+``df`` looks at all your mounted filesystems and reports on their status. This
+includes the filesystem type, total size, available space, percent used, and
+mountpoint. ``df -h`` will show the sizes in human readable form. ``df -h .``
+will show only the filesystem the current working directory is on, very useful
+when debugging ``nfs`` and ``autofs`` mounts.
+
+.. code-block:: console
+
+    $ df -h .
+    Filesystem      Size  Used Avail Use% Mounted on
+    /dev/sda5        43G   31G  9.6G  77% /
+
 
 du
 --
-Finding disk space used is critical.
+
+``du`` estimates the size on disk of a file or files. ``du -h`` returns the
+usage information in human readable format. If the argument to ``du`` is a
+directory, ``du`` will run and return a new value for each file in that
+directory, recursing into subdirectories as well. ``du -sh`` can be run on a
+directory to prevent this behavior and return the sum of the space on disk of
+all files under that directory.
+
+.. code-block:: console
+
+    $ du -sh drawing.svg 
+    24K drawing.svg
+    4.0K    style.css
+    20K sitemeter.js
 
 find
 ----
-Finding specific files is critical.
+
+``find`` is for finding files on the system. ``find .`` recursively walks the
+entire filesystem tree below the current working directory and prints out each 
+file by its relative path. ``find . -name 'opsschool'`` again recursively walks
+the entire filesystem tree, but only prints out files named ``opsschool``.
+``find . -name 'opschool' -type d`` prints out only directories and ``-type f``
+prints out only regular files. The ``-name`` filter also accepts wildcards.
+``find . -name '*.html'`` will print out all files ending in ``.html``. As you 
+become more skilled at Unix/Linux, use the find command often, as it becomes 
+more and more useful with experience.
+
 
 kill
 ----
@@ -159,8 +214,118 @@ grep
 
 awk
 ---
-Only talk about column extraction for now? It's the most common / needed piece
-of awk at this level.
+
+``awk`` is a very powerful utility that lets you extract and manipulate data from files.
+
+For example, if you had a file ``students.txt`` that stored a list of student names, ages and email addresses in columns separated by a space: 
+
+.. code-block:: console
+
+  $ cat students.txt
+  John Doe 25 john@example.com
+  Jack Smith 26 jack@example.com
+  Jane Doe 24 jane@example.com
+
+Here, you can see that the first two columns have contain the student's name, the third has an age and the fourth, an email address.
+You can use awk to extract just the student's first name and email like this: 
+
+.. code-block:: console
+
+  $ awk '{print $1, $4}' students.txt
+  John john@example.com
+  Jack jack@example.com
+  Jane jane@example.com
+
+By default, ``awk`` uses the space character to differentiate between columns. 
+Using this, ``$1`` and ``$4`` told ``awk`` to only show the 1st and 4th columns of the file. 
+
+The order in which the columns is specified is important, because ``awk`` will print them out to the screen in exactly that order.
+So if you wanted to print the email column before the first name, here's how you would do it: 
+
+.. code-block:: console
+
+  $ awk '{print $4, $1}' students.txt
+  john@example.com John
+  jack@example.com Jack
+  jane@example.com Jane
+
+You can also specify a custom delimiter for ``awk`` and override the default one (the space character) by using the ``-F`` option.
+Suppose the ``students.txt`` instead stored data like this:
+
+.. code-block:: console
+
+  $ cat students.txt
+  John Doe - 25 - john@example.com
+  Jack Smith - 26 - jack@example.com
+  Jane Doe - 24 - jane@example.com
+
+Now, if the ``-`` character is used as a delimiter, the first column would be the student's full name: 
+
+.. code-block:: console
+  
+  $ awk -F '-' '{print $1}' students.txt
+  John Doe
+  Jack Smith
+  Jane Doe
+
+Using this same logic, the second column would be the student's age, and the third their email address. 
+
+.. code-block:: console
+
+  $ awk -F '-' '{print $1, $3}' students.txt
+  John Doe john@example.com
+  Jack Smith jack@example.com
+  Jane Doe jane@example.com
+
+
+``awk`` functionality doesn't stop at printing specific columns out to the screen; you can use it to:
+
+
+* extract a specific row from the file using the ``NR`` command
+
+.. code-block:: console
+
+  $ awk 'NR==2' students.txt
+  Jack Smith - 26 - jack@example.com
+
+NOTE: I didn't have to use the ``-F`` option here since rows are being manipulated, and the ``-F`` option specifies a delimiter for column manipulation 
+
+
+* extract lines longer than a specific length by using the ``length($0)`` command
+
+.. code-block:: console
+
+  $ awk 'length($0) > 30' students.txt
+  John Doe - 25 - john@example.com
+  Jack Smith - 26 - jack@example.com
+  Jane Doe - 24 - jane@example.com
+
+  $ awk 'length($0) > 32' students.txt
+  Jack Smith - 26 - jack@example.com
+
+
+* find the average of numbers in a column
+
+.. code-block:: console
+
+  $ awk -F '-' '{sum+=$2} END {print "Average age = ",sum/NR}' students.txt
+  Average age =  25
+
+In the last example, with the average age, ``{sum+=$2}`` tells awk to take each value in the second column and add it to the existing value of the variable ``sum``.
+It's important to note here that the variable ``sum`` didn't have to be declared or initialised anywhere, ``awk`` creates it on-the-fly.
+The ``END`` pattern tells ``awk`` what to do after all lines in the file have been processed.
+In our case, that involves printing out the average age of all students.
+To get the average age, the sum of all ages (stored in variable ``sum``) was divided by the total number of lines in the file, represented by ``NR``.
+
+In addition to the ``END`` pattern, ``awk`` also provides a ``BEGIN`` pattern, which describes an action that needs to be taken before a the first line of the file is processed.
+
+For example:
+
+.. code-block:: console
+
+  $ awk 'BEGIN {print "This is the second line of the file"} NR==2' students.txt
+  This is the second line of the file
+  Jack Smith - 26 - jack@example.com
 
 sed
 ---

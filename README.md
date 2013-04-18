@@ -23,7 +23,7 @@ If you are looking to add content, fix formatting, syntax, typos or other
 wonderful things, please follow this process:
 
 * Install Sphinx: `easy_install Sphinx` or `pip install Sphinx`
-* Fork the `opsschool/curriculum` repo to your own account
+* Fork the `opsschool/curriculum` repository to your own account
 * Check out a branch to make your changes on: `git checkout --branch <my_topic>`
 * Execute `make html` to build the docs in to `_build/`
 * Make your changes
