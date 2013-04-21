@@ -5,14 +5,14 @@ What is a Database?
 ===================
 
 A database is a program or library that helps you store data. They usually
-impose some sort of structure to the data to assist with querying and filtering. The
-most common structure databases use to store data is a table, and most database
-will use multiple tables to store data.
+impose some sort of structure to the data to assist with querying and filtering
+. The most common structure databases use to store data is a table, and most
+database will use multiple tables to store data.
 
 A table is composed of rows representing an item, and columns represent some
 attribute of that item; much like using a spreadsheet for a task list, where
-a row would be a task, and you would have a column for a task name, and a second
-column for whether it has been completed.
+a row would be a task, and you would have a column for a task name, and a
+second column for whether it has been completed.
 
 What is a Relational Database?
 ==============================
@@ -27,46 +27,48 @@ approach makes a relational database very efficient for storing data, since
 reused data can be stored in a single table and referenced in other tables.
 It thus also reduces the likelihood of mistakes.
 
-Data can be retrieved in many forms by combining multiple tables into new tables
-using operations like JOIN. The composed table will have new rows that are a
-combination of its parent tables.
+Data can be retrieved in many forms by combining multiple tables into new
+tables using operations like JOIN. The composed table will have new rows that
+are a combination of its parent tables.
 
 Why We Use Databases?
 =====================
 
-We use databases to store data. They help provide us guarantees that data is stored
-and that it exists in the correct format. In addition most databases are heavily
-optimized making data retrieval very fast.
+We use databases to store data. They help provide us guarantees that data is
+stored and that it exists in the correct format. In addition most databases are
+heavily optimized making data retrieval very fast.
 
 Because of these attributes, we use databases a lot. Most e-commerce sites use
 databases to keep inventory and sales records. Doctors offices use databases to
-store medical records, and the DMV uses databases to keep track of cars. Lawyers
-use databases to keep track of case law, and many websites use databases to
-store and organize content. Databases are everywhere, and you interact with them
-daily.
+store medical records, and the DMV uses databases to keep track of cars.
+Lawyers use databases to keep track of case law, and many websites use databases
+to store and organize content. Databases are everywhere, and you interact with
+them daily.
 
 What is SQL?
 ============
 
-SQL or Structured Query Language is a :term:`domain specific language` used for accessing
-databases. It has a declarative syntax, meaning you declare the structure you want
-returned, the sources, and constraints in a single statement. The database's
-query parser and planner will determine a how to retrieve your data from this statement.
+SQL or Structured Query Language is a :term:`domain specific language` used for
+accessing databases. It has a declarative syntax, meaning you declare the
+structure you want returned, the sources, and constraints in a single statement.
+The database's query parser and planner will determine a how to retrieve your
+data from this statement.
 
 SQL shell
 =========
 
-Many relational databases provide an interactive :term:`CLI` for interacting with the
-database. For example MySQL provides the ``mysql`` command, Postgresql provides ``psql``, and Oracle
-provides ``sqlplus``. These programs give you the ability to compose queries, and diagnose
-issues with the software.
+Many relational databases provide an interactive :term:`CLI` for interacting
+with the database. For example MySQL provides the ``mysql`` command, Postgresql
+provides ``psql``, and Oracle provides ``sqlplus``. These programs give you the
+ability to compose queries, and diagnose issues with the software.
 
 todo:: Add example of connecting with each command.
 
 MySQL
 -----
 
-To connect to a mysql database from the CLI your command would usually take the form:
+To connect to a MySQL database from the CLI your command would usually take the
+form:
 
 .. code-block:: console
 
@@ -81,8 +83,9 @@ password in your shell history.
 Creating databases
 ==================
 
-Most database platforms allow you to create a new database using the ``CREATE DATABASE``
-SQL query. It can be executed via a connection to the server, or via the SQL shell.
+Most database platforms allow you to create a new database using the
+``CREATE DATABASE`` SQL query. It can be executed via a connection to the
+server, or via the SQL shell.
 
 .. code-block:: sql
  
@@ -111,9 +114,9 @@ Postgresql
 	createdb example_database
 
 
-Some platforms, like MySQL support multiple databases per instance, while other platforms
-like Oracle support one database per instance. You should check the documentation for
-your particular vendor to see what is supported.
+Some platforms, like MySQL support multiple databases per instance, while other
+platforms like Oracle support one database per instance. You should check the
+documentation for your particular vendor to see what is supported.
 
 Creating users
 ==============
@@ -127,8 +130,8 @@ Users can be created in most databases using the the ``CREATE USER`` statement.
 Specialized Create User Commands
 --------------------------------
 
-Some relational databases provide additional ways of creating users like specialized
-command line programs.
+Some relational databases provide additional ways of creating users like
+specialized command line programs.
 
 MySQL
 ~~~~~
@@ -206,8 +209,9 @@ to reduce data redundancy. Typically data is placed into tables with a unique
 identifier, or primary key, and then is referenced by id in any tables that
 wish to use that data.
 
-Suppose we have two types of records in a database; one for a city's population and
-one for a city's average temperature. We could simply create the tables like so:
+Suppose we have two types of records in a database; one for a city's population
+and one for a city's average temperature. We could simply create the tables
+like so:
 
 City Population:
 
@@ -285,7 +289,8 @@ table addresses:
 
 .. code-block:: sql
 
-  SELECT user_id, user_name FROM users u JOIN addresses a on u.user_id = a.user_id  WHERE user_id = 1;
+  SELECT user_id, user_name FROM users u JOIN addresses a
+  ON u.user_id = a.user_id  WHERE user_id = 1;
 
 You can count the rows in a table by using an aggregation:
 
@@ -322,7 +327,8 @@ Or in bulk:
 
 .. code-block:: sql
 
-  INSERT INTO users (user_name,user_phone) VALUES ("John Smith","555-5555"),("Tom Jones","555-0987");
+  INSERT INTO users (user_name,user_phone)
+  VALUES ("John Smith","555-5555"),("Tom Jones","555-0987");
 
 Inserting in bulk like that is much quicker than using separate queries as the
 query planner only has to execute once, and any indexes are updated at the end.
