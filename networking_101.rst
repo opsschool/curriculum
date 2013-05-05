@@ -145,15 +145,15 @@ the layer below.
    (SSH). The various application-layer protocols are at the core of a good
    systems administrator's knowledge base.
 
-IP Addressing
-=============
-
 IPv4
-----
+====
 
 Internet Protocol Version 4 (IPv4) is the fourth version of the Internet protocol, the first
 version to be widely deployed. This is the version of the protocol you're most likely to
 encounter, and the default version of the IP protocol in Linux.
+
+Addressing
+----------
 
 IPv4 uses a 32-bit address space most typically represented in 4 dotted decimal notation,
 each octet contains a value between 0-255, and is separated by a dot. An example
@@ -164,24 +164,14 @@ address is below:
 There are several other representations, like dotted hexadecimal, dotted octal, hexadecimal,
 decimal, and octal. These are infrequently used, and will be covered in later sections.
 
-
-
-IPv6
-----
-
-
-
-TCP vs UDP
-==========
-<discuss 3 way handshake here>
-
-
 Subnetting, netmasks and CIDR
-=============================
+-----------------------------
+
 A subnet is a logical division of an IP network, and allows the host system to identify which
 other hosts can be reached on the local network. The host system determines
 this by the application of a routing prefix. There are two typical representations of this
 prefix: a netmask and CIDR.
+
 
 Netmasks typically appear in the dotted decimal notation, with values between 0-255 in each
 octet. These are applied as bitmasks, and numbers at 255 mean that this host is not reachable.
@@ -205,7 +195,7 @@ IP Address    CIDR
 ============= ===============
 
 Private address space (:rfc:`1918`)
-===================================
+-----------------------------------
 
 Certain ranges of addresses were reserved for private networks. Using this address space
 you cannot communicate with public machines without a NAT gateway or proxy. There are
@@ -219,13 +209,68 @@ First Address  Last Address          Netmask         CIDR
 192.168.0.0    192.168.255.255       255.255.0.0     /16
 ============== ===================== =============== ==============
 
+NAT
+---
+
+Network Address Translation is a process of a router modifiying IPv4 traffic to include additional information in the packet headers.
+
+NAT is commonly deployed in one of two configurations:
+
+* One To Many
+
+  This method allows many private computers to utilise a single public IP address for accessing the Internet. This can be combined with other methods to allow access to internal services from external devices.
+  
+* One To One
+
+  This method creates an explicit routing relationship between two addresses, commonly one internal and one external. This allows for traffic destined for one (e.g. a public address) to be routed to the other (e.g. a private address), and also allows for the reverse traffic (e.g. traffic to the Internet from a private network device) to appear to be from that second specified address
+
+Because computers deployed behind a NAT are not directly accessible, several methods have been developed to allow services inside a private network to be accessed from external sites. These include:
+
+* Port Forwarding
+
+  Using Port Forwarding means a router will forward connections in-bound on a particular port to another device inside its network. 
+
+.. todo: Add in STUN / ICE / UPnP / NAT-PMP
+
+
+IPv6
+====
+
+IPv6 is the latest revision of the Internet Protocol, and is intended to replace IPv4. Although 
+less commonly deployed, new systems should aspire to be deployed with IPv6 support. IPv6 is now
+supported in all modern Linux distributions, Windows, OS X, and most newer networking hardware.
+
+Addressing
+----------
+
+IPv6 uses a 128-bit address space, giving significantly more addresses than IPv4. Addresses are represented as eight colon separated groups of four hexadecimal digits, for example:
+
+    2001:41c8:0020:60e:0000:004c:0010
+
+In the IPv6 addressing scheme, leading zeros can be omitted, and sections of consecutive zeros can be omitted, leaving the above address as a shortened:
+
+    2001:41c8:20:60e::4c:10
+
+IPv6 has been designed to avoid the requirement for NAT (as above). As part of this, the idea of "private ranges" has a different meaning within IPv6 - :rfc:`4193` covers the definition of IPv6 unicast addresses for use within a private network which are not intended to be globally routed.
+
+Subnetting, netmasks and CIDR
+-----------------------------
+
+CIDR was originally introduced into IPv4 to attmept to improve the efficiency of utilisation of the small address space available. As this is less of a concern in IPv6, subnetting is handled differently.
+
+The practical implementations of this are that:
+
+ * An (:rfc:`4291`) compliant subnet uses IPv6 addresses with 64 bits for the host portion, meaning it will have a /64 routing prefix
+ * All addresses within a range are useable as there are no reserved addresses for broadcast traffic as there is with IPv4
+ * Customer site allocations are recommended to be 48-bit at a minimum
+
+
+TCP vs UDP
+==========
+
 
 Static routing
 ==============
-
-
-NAT
-===
 
 
 Practical networking
