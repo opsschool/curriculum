@@ -108,8 +108,8 @@ brief notes can be really useful.
 getting help and for communicating and discussing what you learn with others.
 /r/sysadmin would be a good starting point. IRC channels are another great
 place to ask questions and get help, there are channels for pretty much any
-subject you can think of out there. There are good sysadmin related channels at
-irc.freenode.net, if you don’t already utilize IRC, take a look.
+subject you can think of out there. There are good sysadmin related channels on the
+`Freenode <http://freenode.net/>`_ IRC network, if you don’t already utilize IRC, take a look.
 
 **Come back later** – Give your brain some time to start digesting some of the
 information and to take a step back and put the pieces together to begin
@@ -207,6 +207,7 @@ Golden rules for careers in ops
 
 Other skills that can help you
 ------------------------------
+
 * Be personable
 * Learn to code
 * Learn patience
@@ -218,11 +219,9 @@ Where to look for help in the community
 Local user groups
 -----------------
 
-`Local LOPSA Groups: <https://lopsa.org/localprogram>`_
-
-`BayLISA <http://www.baylisa.org/>`_
-
-`Back Bay LISA <http://www.bblisa.org/>`_
+* `Local LOPSA Groups: <https://lopsa.org/localprogram>`_
+* `BayLISA <http://www.baylisa.org/>`_
+* `Back Bay LISA <http://www.bblisa.org/>`_
 
 Mailing lists and forums
 ------------------------
@@ -234,43 +233,38 @@ Mailing lists and forums
 
 irc
 ---
-irc.freenode.net
 
- * #lopsa
- * #infra-talk
+*irc.freenode.net*
+
+* #lopsa
+* ##infra-talk
 
 Membership organizations
 ------------------------
 
-`USENIX LISA Special Interest Group (SIG) <https://www.usenix.org/lisa>`_
-
-`League of Professional System Administrators (LOPSA) <https://lopsa.org/>`_
+* `USENIX LISA Special Interest Group (SIG) <https://www.usenix.org/lisa>`_
+* `League of Professional System Administrators (LOPSA) <https://lopsa.org/>`_
 
 Conferences and Events
 ----------------------
 
-`USENIX Large Installation System Administration (LISA) <http://www.usenix.org>`_
-
-`Velocity <http://velocityconf.com/>`_
-
-`Scale <http://www.socallinuxexpo.org/>`_
-
-`Ohio LinuxFest <http://www.ohiolinux.org/>`_
-
-`Lopsa-East <http://lopsa-east.org>`_
-
-`Cascadia <http://casitconf.org>`_
+* `USENIX Large Installation System Administration (LISA) <http://www.usenix.org>`_
+* `Velocity <http://velocityconf.com/>`_
+* `Scale <http://www.socallinuxexpo.org/>`_
+* `Ohio LinuxFest <http://www.ohiolinux.org/>`_
+* `Lopsa-East <http://lopsa-east.org>`_
+* `Cascadia <http://casitconf.org>`_
 
 
 Subreddits
 ----------
 
-* /r/sysadmin
-* /r/networking
-* /r/netsec
-* /r/vim
-* /r/python
-* /r/programming
+* `/r/sysadmin <http://www.reddit.com/r/sysadmin>`_
+* `/r/networking <http://www.reddit.com/r/networking>`_
+* `/r/netsec <http://www.reddit.com/r/netsec>`_
+* `/r/vim <http://www.reddit.com/r/vim>`_
+* `/r/python <http://www.reddit.com/r/python>`_
+* `/r/programming <http://www.reddit.com/r/programming>`_
 
 Podcasts
 --------
@@ -287,16 +281,13 @@ Podcasts
 * The UC Architects - Exchange, Lync
 * The PowerScript Podcast - Powershell
 
-IRC Channels
-------------
-
 RSS Feeds
 ---------
 
 ServerFault
 -----------
 
-Sign up and participate. As your own questions, but also answer questions that
+Sign up and participate. Ask your own questions, but also answer questions that
 look interesting to you. This will not only help the community, but can keep you
 sharp, even on technologies you don't work with on a daily basis.
 
