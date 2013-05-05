@@ -268,6 +268,26 @@ The practical implementations of this are that:
 TCP vs UDP
 ==========
 
+TCP and UDP are the two most commonly referenced Transport Layer protocols used by the Internet Protocol. They have very different use cases, and a good rule of thumb is that TCP is used when a transmission must be received, and in the same order, whereas UDP is used when data loss, fragmentation or incorrect ordering is acceptable.
+
+TCP
+---
+
+TCP - Transmission Control Protocol - is a connection oriented protocol. It implements error checking, checksumming and packet ordering to ensure that data sent is received, and in the order with the same data with which it was sent. 
+
+Because of these extra checks, TCP is generally slower than UDP, especially over higher latency connections. Because of this
+
+.. todo: Add in TCP handshake
+
+UDP
+---
+
+UDP - User Datagram Protocol - is a simple, connectionless protocol. It is used commonly in media and voice delivery where low latency is preferable to guarantee of delivery. It has lower overheads because there is no error checking [#checksum]_, however this means that applications must tolerate this. 
+
+
+UDP is commonly used for DNS, SNMP, and VoIP.
+
+.. [#checksum] UDP does implement checksumming - but this is only relevant if the packet reaches its destination.
 
 Static routing
 ==============
