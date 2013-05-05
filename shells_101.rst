@@ -221,7 +221,7 @@ output of ``history``: ::
 
 Searching History
 ^^^^^^^^^^^^^^^^^
-Finally, one can search the history by typing ``Ctlr-r`` followed by a string to match a command: ::
+Finally, one can search the history by typing ``Ctrl-r`` followed by a string to match a command: ::
 
   $ (reverse-i-search)`ls': ls -F
 
