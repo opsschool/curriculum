@@ -55,7 +55,7 @@ to provide another method of learning for students. Filming happens
 approximately every 3 months in New York or Silicon Valley.
 
 The videos will be published under O'Reilly's subscription service to cover the
-costs of filming. And profits which would be made by Ops School are donated tot
+costs of filming. Any profits which would be made by Ops School are donated to
 non-profit organisations which aid in learning for low-income persons.
 
 The topics which have already been filmed are:
