@@ -197,7 +197,7 @@ reliable delivery guarantee in systems that support banking or healthcare.
 
 * Example 1
  
-  The TCP protocol requires upfront commnunication and the UDP protocol does 
+  The TCP protocol requires upfront communication and the UDP protocol does 
   not.  TCP requires an initial connection, known as the "three way handshake",
   in order to begin sending data. That amounts to one initial packet sent 
   between ports from initiator of the communication to the receiver, then 
@@ -210,7 +210,7 @@ reliable delivery guarantee in systems that support banking or healthcare.
   TCP and UDP differ in the size of their packet headers. The TCP header is 
   20 bytes and the UDP header is 8 bytes. For programs that send a lot of 
   packets with very little data, the header length can be a large percentage of
-  overhead data (e.g. games that send small packets about player posistion and state). 
+  overhead data (e.g. games that send small packets about player position and state). 
 
 Subnetting, netmasks and CIDR
 =============================
