@@ -56,22 +56,22 @@ approximately every 3 months in New York or Silicon Valley.
 
 The topics which have already been filmed are:
 
-* Boot process 101
+* Boot Process 101
 * DNS 101
 * Filesystems 101
 * MySQL 101
 * Nagios 101
 * Networking 101
-* Outage investigation 101
-* Package management 101
+* Outage Investigation 101
+* Package Management 101
 * Shells 101
 * SSH 101
-* Application level monitoring
-* Careers in operations
-* Operable service - what people expect from an operable service
-* Productivity tools and techniques
-* The ``/proc`` filesystem
-* Web flow - the life of a web request
+* Application Level Monitoring
+* Careers In Operations
+* Operable Service - What People Expect From an Operable Service
+* Productivity Tools and Techniques
+* The ``/proc`` Filesystem
+* Web Flow - The Life of a Web Request
 
 If you are interested in filming, please contact us, or open an issue on the
 Github project.
