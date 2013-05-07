@@ -46,6 +46,41 @@ professionals, so we may not respond immediately.
 If you'd like to join the mailing list, email avleen@gmail.com.
 
 
+*****************
+Ops School Videos
+*****************
+
+In collaboration with O'Reilly Media, we are filming the Ops School curriculum
+to provide another method of learning for students. Filming happens
+approximately every 3 months in New York or Silicon Valley.
+
+The videos will be published under O'Reilly's subscription service to cover the
+costs of filming. Any profits which would be made by Ops School are donated to
+non-profit organisations which aid in learning for low-income persons.
+
+The topics which have already been filmed are:
+
+* Boot Process 101
+* DNS 101
+* Filesystems 101
+* MySQL 101
+* Nagios 101
+* Networking 101
+* Outage Investigation 101
+* Package Management 101
+* Shells 101
+* SSH 101
+* Application Level Monitoring
+* Careers In Operations
+* Operable Service - What People Expect From an Operable Service
+* Productivity Tools and Techniques
+* The ``/proc`` Filesystem
+* Web Flow - The Life of a Web Request
+
+If you are interested in filming, please contact us, or open an issue on the
+Github project.
+
+
 *********************
 How to write sections
 *********************
