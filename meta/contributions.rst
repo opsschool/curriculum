@@ -164,4 +164,5 @@ Franck Cuny <franck@lumberjaph.net>                 SAY Media
 Chris Nehren <cnehren@omniti.com>                   OmniTI
 Brian Rak <dn@devicenull.org>
 Divij Rajkumar <drajkuma1@gmail.com>
+Aslan Brooke <aslandbrooke@yahoo.com>               ZynxHealth.com, InfoQ.com
 ==================================================  ====================================
