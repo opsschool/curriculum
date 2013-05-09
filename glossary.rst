@@ -9,6 +9,14 @@ Glossary
     BIOS
         A set of computer instructions in firmware that control input and
         output operations.
+    
+    CLI
+        Command Line Interface
+
+    Domain Specific Language
+        A special purpose programming language dedicated to a particular
+        problem area, e.g. SQL is a domain specific language for retrieval
+        of data from a database.
 
     EPEL
         Common acronym for Extra Packages for Enterprise Linux. These are
