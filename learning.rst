@@ -79,7 +79,7 @@ probably don’t understand it as well as you think.
 
 **Reading** – This is a great technique to get an introduction to a topic by
 reading up on (and bookmarking) what information you feel to be the most
-important, whether it be official documentation, RFC’s, books, magazines,
+important, whether it be official documentation, RFCs, books, magazines,
 respected blogs and authors, etc. It is a good idea to take very brief notes
 when something looks like it would useful so to try it out yourself.
 
@@ -245,6 +245,8 @@ Membership organizations
 `USENIX LISA Special Interest Group (SIG) <https://www.usenix.org/lisa>`_
 
 `League of Professional System Administrators (LOPSA) <https://lopsa.org/>`_
+
+`System Administrators' Guild of Australia (SAGE-AU) <http://www.sage-au.org.au/>`_
 
 Conferences and Events
 ----------------------
