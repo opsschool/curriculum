@@ -30,8 +30,8 @@ The command-line editing mode emulates the movement functions of two common text
 
 By default, ``bash`` operates in ``emacs`` mode.
 
-Example Edit Commands
-~~~~~~~~~~~~~~~~~~~~~
+Example Edit Commands - emacs
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 The following commands are very common while using the ``emacs`` mode.
 
 - ``Ctrl-b``: Move backward by one character
@@ -40,9 +40,29 @@ The following commands are very common while using the ``emacs`` mode.
 - ``Ctrl-e``: Move to the end of the line
 - ``Ctrl-k``: Delete from the cursor forward
 - ``Ctrl-u``: Delete from the cursor backward
+- ``Ctrl-w``: Delete from the cursor backward until whitespace
+- ``Esc-d``: Delete from the cursor forward until whitespace
+- ``Ctrl-y``: Insert at the cursor the contents of the kill buffer (eg. text deleted by ``Ctrl-k``)
 - ``Ctrl-r``: Search the command history
+- ``Ctrl-_``: Undo the last edit
 
-.. todo: Add vi examples. I haven't used that mode in years and will need to look up the mirror version of the above commands.
+Example Edit Commands - vi
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+The following commands are ``vi``-mode equivalents of the above ``emacs``-mode editing commands.
+
+- ``h``: Move backward by one character
+- ``l``: Move forward by one character
+- ``^``: Move to the beginning of the line
+- ``$``: Move to the end of the line
+- ``D``: Delete from the cursor forward
+- ``d^``: Delete from the cursor backward
+- ``dB``: Delete from the cursor backward until whitespace
+- ``dW``: Delete from the cursor forward until whitespace
+- ``p``: Insert after the cursor the contents of the kill buffer (eg. text deleted by ``D`` or ``d`` commands)
+- ``P``: Same as ``p`` but inserts before the cursor
+- ``/``: Search the command history
+- ``u``: Undo the last edit
 
 Setting the Mode
 ~~~~~~~~~~~~~~~~
