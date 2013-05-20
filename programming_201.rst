@@ -72,12 +72,152 @@ Databases
 
 Python
 ======
+Python is one of the most versatile languages you're going to use in your career.
+You will soon see that for almost everything you want to do, Python either has a something in its standard library or an amazing third-party module that you can import in seconds.
+But since this is a guide for operations engineers, I'll focus the discussion more towards Python's scripting capabilities.
+
+NOTE: Before I start, I want to point out a series of documents called Python Enhancement Proposals, PEP for short.
+Like their title suggests, these are potential enhancements to the Python language that have been proposed by members of the community.
+There's a lot of them, and you don't have to go over every single one, but you can find some very useful tips and best-practices there.
 
 Syntax
 ------
+* Indentation
+
+If you've ever written or read any code in C, C++, Java or C#, you're used to seeing curly braces (``{}``) pretty much everywhere.
+These compiled languages use curly braces to denote the start and end of functions, loops and conditional statements.
+Python, on the other hand, uses indentation to achieve the same goal. What this means is that where you see this in C++:
+
+.. code-block:: cpp
+
+  if (3>2) {
+      // Do something
+  }
+
+You will see this for Python:
+
+.. code-block:: python
+
+  if (3>2):
+      # Do something 
+
+As you can see, Python didn't need curly braces to signify the start or end of the if conditional; a simple indent does the job.
+Now when it comes to indentation, PEP8 says that you should use 4 spaces to indent your code.
+Keep in mind that this specifically means spaces and not tabs.
+Fortunately for you, most text editors today can automatically convert tabs to spaces so you don't have to hit four spaces every time you want to indent a line.
+However, if you are dealing with some legacy code that uses 8 space tabs, feel free to continue doing so.
+
+Indentation is by far the most important part of python's syntax you should keep track of.
+If there's two lines in your code where one uses 4 spaces and another uses one 4-space tab, Python's going to give you errors when you try to run your script.
+Be consistent with your indentation.
+
+* Conditionals
+
+Conditionals refer to ``if, else`` statements where you're checking if some condition is met and then taking action based on whether it is or not.
+Python supports conditionals just like any other language, with the only exception being indentation as explained above.
+A complete conditional block would look like this:
+
+.. code-block:: python
+
+  # Check if the variable 'num' is greater than or less than 5
+  if (num > 5):
+      print "Greater"
+  else:
+    print "Less"
+
+You can even have 'else if' conditions, which in Python are used as ``elif``
+
+.. code-block:: python
+
+  # Check if the variable 'num' is 2 or 5
+  if (num == 2):
+      print "Number is 2"
+  elif (num == 5):
+      print "Number is 5"
+  else:
+      print "Number is neither 2 nor 5"
+
+* Boolean Operations
+
+Python can perform all of the standard boolean operations:``and``, ``or`` and ``not``.
+The operations can be used as statements of their own:
+
+.. code-block:: python
+
+  >>> (3 > 2) and (3 < 4)
+  True
+  >>> (2 > 3) or (3 > 4)
+  False
+  >>> not (2 > 3)
+  True
+
+and even in conditionals:
+
+.. code-block:: python
+
+  if not ((2 < 3) or (3 > 4)):
+      print "Neither statment is true"
 
 Variables
 ---------
+Variables in Python work just like in any other language.
+They can be assigned values like this:
+
+.. code-block:: python
+
+  times = 4
+  name = "John"
+
+They can be used in almost any statement.
+
+.. code-block:: python
+
+  >>> print times
+  4
+  >>> times + times
+  8
+
+You might have noticed that the variable didn't have to be created with a specific type before being assigned a value.
+Python allows you to assign any value to a variable and will automatically infer the type based on the value it is assigned.
+This means that the value assigned to a variable can be replaced with another value of a completely different type without any issues.
+
+.. code-block:: python
+
+  >>> times = 4
+  >>> print times
+  4
+  >>> times = "Me"
+  >>> print times
+  'Me'
+
+However, if you try to perform an operation with two variables that have values of conflicting types, the interpreter will throw an error.
+Take this example where I will try to add a number and a string.
+
+.. code-block:: python
+
+  >>> times = 4
+  >>> name = "John"
+  >>> times + name
+  Traceback (most recent call last):
+    File "<stdin>", line 1, in <module>
+  TypeError: unsupported operand type(s) for +: 'int' and 'str'
+
+As you can see here, the interpreter threw a TypeError when we tried to add an integer and a string.
+But there is a way around this; Python lets you type cast variables so their values can be treated as a different type.
+So in the same example, I can either try to treat the variable ``times`` as a string, or the variable ``name`` as an integer.
+
+.. code-block:: python
+
+  >>> str(times) + name
+  '4John'
+  >>> times + int(name)
+  Traceback (most recent call last):
+    File "<stdin>", line 1, in <module>
+  ValueError: invalid literal for int() with base 10: 'John'
+
+Here you can see that when we cast ``times`` as a string and added it to name, Python concatenated the two strings and gave you the result.
+But trying to cast ``name`` as an integer threw a ValueError because 'John' doesn't have a valid base 10 representation.
+Remember, almost any type can be represented as a string, but not every string has a valid representation in another type.
 
 Common data structures
 ----------------------
