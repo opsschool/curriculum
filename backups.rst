@@ -112,6 +112,39 @@ information?
 Designing a Backup System
 =========================
 
+Data types
+----------
+
+The backup methodology used should be appropriate to the kind of
+data being protected. In some cases, particularly database systems,
+applications-specific software will be required in order to meet
+recovery objectives.
+
+Application data
+----------------
+
+This is typically the most valuable data that an organisation
+possesses. It may be used by applications developed in-house, or by
+third-party applications. It may be used only by internal
+stakeholders, by the organisation's customers, or both.
+
+The data protection requirements will likely differ from application
+to application. This must be considered when designing the system.
+
+Configuration data
+------------------
+
+System configuration can be as important as the "real" data on a
+system. Many modern environments use some kind of centralised
+configuration management system to control system configurations. In
+such cases, it is very important to protect the central configuration
+management system. It may or may not be so important to protect the
+configurations on the managed systems.
+
+Centralised configuration management systems can dramatically affect
+how bare-metal restores are conducted, and thus will need to be
+considered in the design process.
+
 Backup type and frequency
 -------------------------
 
@@ -125,6 +158,24 @@ organization survive with backups every 12-hours or once per day?
 * Snapshots
 * Bare-metal restore vs data only
 * online/offline
+
+The data recovery objectives should be the key design inputs when
+designing a backup system. These objectives will be set by the data
+owners.  Note that these objectives may not be identical for all
+data sets protected by the backup system! The objectives are:
+
+* Recovery Time Objective (RTO) - the amount of time required to complete a restore of the data set. Example: 3 hours
+* Recovery Point Objective (RPO) - the point in time to which a restore is required. Example: yesterday
+
+An RPO of "yesterday" necessitates backups at least once per day.
+
+Allowing less time to restore a data set will typically increase the
+cost of protecting that data set. For example, if the backup
+schedule is the classical "full backup weekly, incremental backup
+daily" regime, the restoration of a complete data set will require
+more time for each day since the last full backup, as multiple
+incremental backups will need to be restored. To reduce the restore
+time, more full backups will need to be made.
 
 .. TODO:: media -- should someone address the state of backup media? Some places are still doing tape. What about orgs who rely on standalone consumer-grade disks for client backups (e.g. Time Machine)? Risks, cost to maintain.
 
@@ -143,7 +194,8 @@ point of backing it up in the first place.
 Recovery testing
 ----------------
 
-How long does it take to restore the largest backup set?
+How long does it take to restore the largest backup set? Did it meet
+the RTO?
 
 Integrity of backups
 --------------------
@@ -175,6 +227,41 @@ Main items to cover in this chapter are:
 Archiving
 ---------
 
+Many organisations need to retain data in the longer term without a
+need to frequently access that data. For example, laws may require all
+financial data to be retained within a rolling seven-year window.
+
+If older data is not needed frequently (eg. the finance staff can
+perform their day-to-day duties without it) it can be archived
+instead, removed from the regular backup schedule, and only restored
+when required. As data moves outside the retention window, it can be
+purged from the archival media.
+
+Archiving of data typically involves writing it to a low-cost
+removeable media (commonly tapes) and securely storing the media,
+possibly off-site.
+
+Many data protection products also include some kind of data archive
+facilities, as much of the basic infrastructure can be shared between
+the two functions.
+
 Data replication
 ----------------
 
+Data replication is a technique that can be used to provide additional
+copies of a data set. Mirrored RAID is one example of this kind of
+data protection: data written to one side of the mirror is
+automatically replicated on the other side of the mirror. There are
+thus (at least) two copies of the data.
+
+Moving beyond RAID, a common arrangement with database systems is to
+have one or more "master" database servers at a primary site, and also
+one or more "slave" database servers at a secondary site. A common
+method of database replication is to send transaction log files from
+the primary site to the secondary site and have them applied to the
+secondary database. It may be possible to have more than one secondary
+system. Such a process is commonly known as "log shipping".
+
+It should be apparent that this kind of replication will not protect
+against human error - any errors will be replicated to the secondary
+systems.
