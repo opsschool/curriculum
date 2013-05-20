@@ -742,7 +742,7 @@ What to document
 ----------------
 
 * Runbooks? SOP? (cparedes: might be worthwhile even though we want to automate
-  SOP's away as much as possible - what should we check at 2 AM? What do folks
+  SOPs away as much as possible - what should we check at 2 AM? What do folks
   typically do in this situation if automation fails?)
 
 * Architecture and design (cparedes: also maybe talk about *why* we choose that
