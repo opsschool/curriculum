@@ -156,8 +156,8 @@ DNS GSLB
   algorithms by setting the time to live (TTL) of the DNS lookup for an
   appropriate duration.
 
-CDN's
------
+CDNs
+----
 
 (cparedes: I'd argue that it's valid in some contexts, depending on what
 you're load balancing)
