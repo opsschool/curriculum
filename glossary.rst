@@ -9,7 +9,7 @@ Glossary
     BIOS
         A set of computer instructions in firmware that control input and
         output operations.
-    
+
     CLI
         Command Line Interface
 
@@ -23,6 +23,11 @@ Glossary
         typically included in Fedora Linux, and provided for RedHat, CentOS,
         and other RPM-based distributions. The project's homepage is
         here: `FedoraProject:EPEL <http://fedoraproject.org/wiki/EPEL>`_.
+
+    GUI
+        Pronounced "gooey", this is an acronym for a Graphical User Interface.
+        This is distintly different from a :term:`CLI`, in that the GUI typically can contain more complex visual interactions.
+        Read more here: `Wikipedia:GUI <http://en.wikipedia.org/wiki/Graphical_user_interface>`_.
 
     MAC
         Pronounced as "mack" and often used as a noun referring to a network
