@@ -221,6 +221,88 @@ Remember, almost any type can be represented as a string, but not every string h
 
 Common data structures
 ----------------------
+Out of the box, Python implements a few major data structures.
+
+* Lists
+
+Lists in Python are the equivalent of arrays in other languages you may be familiar with.
+They are mutable collections of data that you can append to, remove from and whose elements you can iterate over.
+Here's some common operations you can perform with lists:
+
+.. code-block:: python
+  
+  >>> to_print = [1, 4]
+  >>> to_print.append('Hello')
+  >>> to_print.append('Hey')
+  >>> to_print
+  [1, 4, 'Hello', 'Hey']
+  >>> for i in to_print:
+  ...     print i
+  ...
+  1
+  4
+  Hello
+  Hey
+  >>> to_print[1]
+  4
+  >>> to_print[-1]
+  'Hey'
+  >>> to_print[-2:]
+  ['Hello', 'Hey']
+  >>> to_print.remove(4)
+  >>> to_print
+  [1, 'Hello', 'Hey']
+  
+Just like arrays in other languages, Python's lists are zero-indexed and also support negative indexing.
+You can use the ``:`` to get a range of items from the list.
+When I ran ``to_print[-2:]``, Python returned all items from the second last element to the end.
+
+You may have also noticed that I had both numbers and strings in the list.
+Python doesn't care about what kind of elements you throw onto a list.
+You can even store lists in lists, effectively making a 2-dimensional matrix since each element of the initial list will be another list.
+
+* Dictionary
+
+Dictionaries are a key-value store which Python implements by default.
+Unlike lists, dictionaries can have non-integer keys.
+Items of a list can only be referenced by their index in the list, whereas in dictionaries you can define your own keys which will then serve as the reference for the value you assign to it.
+
+.. code-block:: python
+
+  >>> fruit_colours = {}
+  >>> fruit_colours['mango'] = 'Yellow'
+  >>> fruit_colours['orange'] = 'Orange'
+  >>> fruit_colours
+  {'orange': 'Orange', 'mango': 'Yellow'}
+  >>> fruit_colours['apple'] = ['Red', 'Green']
+  {'orange': 'Orange', 'mango': 'Yellow', 'apple': ['Red', 'Green']}
+  >>> fruit_colours['mango']
+  'Yellow'
+  >>> for i in fruit_colours:
+  ...     print i
+  ...
+  orange
+  mango
+  apple
+  >>> for i in fruit_colours:
+  ...     print fruit_colours[i]
+  ...
+  Orange
+  Yellow
+  ['Red', 'Green']
+  
+You should be able to see now that dictionaries can take on custom keys.
+In this example, my keys were names of fruits, and the value for each key was the colour of that particular fruit.
+Dictionaries also don't care about what type your keys or values are, or whether the type of a key matches the type of its value.
+This lets us store lists as values, as you saw with the colour of apples, which could be red and green.
+
+An interesting property about dictionaries that you might have noticed, is that iterating through the dictionary returned only the keys in the dictionary.
+To see each value, you need to print the corresponding value for the key by calling ``fruit_colours[i]`` inside the for loop where ``i`` takes on the value of a key in the dictionary.
+
+  
+Python implements a lot more data structures like tuples, sets and dequeues.
+Check out the Python docs for more information these: http://docs.python.org/2/tutorial/datastructures.html
+
 
 Functions
 ---------
