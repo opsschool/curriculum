@@ -306,6 +306,38 @@ Check out the Python docs for more information these: http://docs.python.org/2/t
 
 Functions
 ---------
+Functions in Python work exactly like they do in other languages.
+Each function takes input arguments and returns a value.
+The only difference is syntax, you define functions with the keyword ``def``, and don't use cruly braces like in Java, C, C++ and C#.
+Instead, function blocks are separated using indentation.
+
+.. code-block:: python
+
+>>> def square(x):
+...     result = x*x
+...     return result
+...
+>>> square(3)
+9
+
+
+You can even call functions within other functions
+
+.. code-block:: python
+
+>>> def greet(name):
+...     greeting = "Hello "+name+"!"
+...     return greeting
+...
+>>> def new_user(first_name):
+...     user = first_name
+...     print "New User: "+user
+...     print greet(user)
+...
+>>> new_user('Jack')
+New User: Jack
+Hello Jack!
+
 
 Objects
 -------
