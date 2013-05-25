@@ -26,7 +26,7 @@ to being junior sysadmins. They're mostly blank slates.
 How to contribute
 *****************
 
-You can find the documentation source on Github and send pull requests:
+You can find the documentation source on GitHub and send pull requests:
 
   https://github.com/opsschool/curriculum
 
@@ -34,7 +34,51 @@ Please fork the repo to your own account, create a branch, make your changes
 there, and issue a pull request from your fork/branch to ``opsschool:master``.
 Be descriptive in your commit message for anything non-obvious.
 
+If all of this git and GitHub stuff is a little overwhelming, take a
+look at `GitHub's documentation`_. If you have still have questions
+after reading that, please feel free to join #opsschool on
+irc.freenode.net and ask your questions there. We'll be glad to help you
+get your patches merged--but please remember that many of us are busy ops
+professionals, so we may not respond immediately.
+
+.. _`GitHub's documentation`: https://help.github.com
+
 If you'd like to join the mailing list, email avleen@gmail.com.
+
+
+*****************
+Ops School Videos
+*****************
+
+In collaboration with O'Reilly Media, we are filming the Ops School curriculum
+to provide another method of learning for students. Filming happens
+approximately every 3 months in New York or Silicon Valley.
+
+The videos will be published under O'Reilly's subscription service to cover the
+costs of filming. Any profits which would be made by Ops School are donated to
+non-profit organisations which aid in learning for low-income persons.
+
+The topics which have already been filmed are:
+
+* Boot Process 101
+* DNS 101
+* Filesystems 101
+* MySQL 101
+* Nagios 101
+* Networking 101
+* Outage Investigation 101
+* Package Management 101
+* Shells 101
+* SSH 101
+* Application Level Monitoring
+* Careers In Operations
+* Operable Service - What People Expect From an Operable Service
+* Productivity Tools and Techniques
+* The ``/proc`` Filesystem
+* Web Flow - The Life of a Web Request
+
+If you are interested in filming, please contact us, or open an issue on the
+Github project.
 
 
 *********************
@@ -57,6 +101,23 @@ guideline wherever possible):
   happened.
   Don't tell students that package managers install packages, have them install
   a few packages and then explain how the package manager did its thing.
+
+Please read the :ref:`conventions` topic for some style guideline and preferences.
+
+****************************
+Overwriting existing content
+****************************
+
+There are times when you will want to update or replace sections of text written
+by others. When doing so, follow these guidelines to ensure your changes are
+integrated smoothly:
+
+* Submit your pull request
+* Reference the original author in your commit
+
+We'll wait a few days (up to one week) to let the original author comment, if we
+feel there may be anything contentious in the commit. For most simple and
+straightforward commits, we'll simply accept the commit.
 
 
 *******
@@ -100,4 +161,8 @@ Jordan Dea-Mattson <jdm@dea-mattson.com>            Numenta, Inc.
 Sean Escriva <sean.escriva@gmail.com>               Heavy Water Ops
 Adam Compton <comptona@gmail.com>
 Franck Cuny <franck@lumberjaph.net>                 SAY Media
+Chris Nehren <cnehren@omniti.com>                   OmniTI
+Brian Rak <dn@devicenull.org>
+Divij Rajkumar <drajkuma1@gmail.com>
+Aslan Brooke <aslandbrooke@yahoo.com>               ZynxHealth.com, InfoQ.com
 ==================================================  ====================================

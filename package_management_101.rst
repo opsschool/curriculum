@@ -26,13 +26,14 @@ same functionality:
 RPM and yum (RedHat, CentOS, Fedora, Scientific Linux)
 ======================================================
 
-In the following examples, we will be using the ``dstat`` in our examples. The
-process however applies to any spftware you may want to install.
+In the following examples, we will be using the package ``dstat`` in our examples. The
+process however applies to any software you may want to install.
 
-Yum provides a wrapper around RPM, which can be used to search, and install
-packages, from multiple package repositories.
+Yum provides a wrapper around RPM, which can be used to search for, and install
+packages from multiple package repositories. It also resolves dependencies, so
+that if a package has prerequisites, they will be installed at the same time.
 
-If your Linux distribution uses RPM and yum, you can search search for packages
+If your Linux distribution uses RPM and yum, you can search for packages
 by running:
 
 .. code-block:: console
@@ -44,7 +45,7 @@ by running:
 Installing packages
 -------------------
 
-You can install a package through yum, by running:
+You can install a package using yum, by running:
 
 .. code-block:: console
 
@@ -78,12 +79,18 @@ RPM and yum both make it easy to upgrade existing packages, too.
 Over time, new packages may be added to the yum repositories that are configured
 on your system, or you may have a newer RPM for an already installed package.
 
-To upgrade using yum, when a newer package is available, simply ask yum to
-install it again:
+To upgrade a package using yum, when a newer package is available, simply ask yum
+to install it again:
 
 .. code-block:: console
 
    bash-4.0$ yum install dstat
+
+To upgrade all packages that have newer versions avaliable, run:
+
+.. code-block:: console
+
+   bash-4.0$ yum upgrade
 
 To upgrade a package with an RPM file, run:
 
@@ -105,6 +112,16 @@ Similarly, you can uninstall a package with rpm:
 .. code-block:: console
 
    bash-4.0$ rpm -e dstat
+
+Cleaning the RPM database
+-------------------------
+
+You can clean the RPM database, forcing it to refresh package metadata from its
+sources on next install or upgrade operation.
+
+.. code-block:: console
+
+   bash-4.0$ yum clean all
 
 Querying the RPM database
 -------------------------
@@ -153,13 +170,13 @@ There are two todos here.
 dpkg and APT (Debian, Ubuntu)
 =============================
 
-In the following examples, we will be using the ``dstat`` in our examples. The
-process however applies to any spftware you may want to install.
+In the following examples, we will be using the package ``dstat`` in our examples. The
+process however applies to any software you may want to install.
 
-apt provides a wrapper around dpkg, which can be used to search, and install
-packages, from multiple package repositories.
+apt provides a wrapper around dpkg, which can be used to search for, and install
+packages from multiple package repositories.
 
-If your Linux distribution uses dpkg and apt, you can search search for packages
+If your Linux distribution uses dpkg and apt, you can search for packages
 by running:
 
 .. code-block:: console
@@ -174,7 +191,7 @@ You can install a package through apt, by running:
 
 .. code-block:: console
 
-   bash-4.0$ apt-get install dstat
+   bash-4.0# apt-get install dstat
 
    The following NEW packages will be installed:
      dstat
@@ -192,7 +209,7 @@ with the ``dpkg`` command:
 
 .. code-block:: console
 
-  bash-4.0$ dpkg -i dstat_0.7.2-3_all.deb
+  bash-4.0# dpkg -i dstat_0.7.2-3_all.deb
 
 Upgrading packages
 ------------------
@@ -206,13 +223,13 @@ install it again:
 
 .. code-block:: console
 
-   bash-4.0$ apt-get install dstat
+   bash-4.0# apt-get install dstat
 
 To upgrade a package with an deb file, run:
 
 .. code-block:: console
 
-   bash-4.0$ dpkg -i dstat_0.7.2-3_all.deb
+   bash-4.0# dpkg -i dstat_0.7.2-3_all.deb
 
 Uninstalling packages
 ---------------------
@@ -221,33 +238,40 @@ To uninstall a package using apt, run:
 
 .. code-block:: console
 
-   bash-4.0$ apt-get remove dstat
+   bash-4.0# apt-get remove dstat
 
 Similarly, you can uninstall a package with dpkg:
 
 .. code-block:: console
 
-   bash-4.0$ dpkg -r dstat
+   bash-4.0# dpkg -r dstat
 
 With APT and dpkg, removing a package still leaves behind any configuration
-files, in cast you wish to reinstall the package again later. To full delete
+files, in case you wish to reinstall the package again later. To fully delete
 packages and their configuration files, you need to ``purge``:
 
 .. code-block:: console
 
-   bash-4.0$ apt-get purge dstat
+   bash-4.0# apt-get purge dstat
 
 or:
 
 .. code-block:: console
 
-   bash-4.0$ dpkg -P dstat
+   bash-4.0# apt-get --purge remove dstat
+
+or:
+
+.. code-block:: console
+
+   bash-4.0# dpkg -P dstat
+
 
 Querying the dpkg database
 --------------------------
 
 Ocassionally you will want to find out specific information regarding installed
-packages. The ``dpkg-query`` command has many options to help with this. Let's
+packages. The ``dpkg-query`` command has many options to help. Let's
 take a look at a few examples:
 
 One common task is to see if you have a package installed. The ``-l`` option
@@ -278,7 +302,7 @@ Now let's say we want to list all of the files installed by a package. The
    ...
 
 We can also do the reverse of the previous operation. If we have a file, and
-want to known which package it belongs to:
+want to know to which package it belongs:
 
 .. code-block:: console
 

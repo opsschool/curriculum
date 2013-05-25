@@ -94,6 +94,61 @@ Being able to work successfully through a crisis is crucial to being a good
 operations person. For some it is a personality trait, but it can certainly be
 learned and is almost a requirement for many employers.
 
+A very important skill to learn is the ability to remain calm in the face of
+disaster. It's not always easy, especially with a client on the phone, but
+panicking will only make a situation worse. Yes, the most critical server in
+the infrastructure may have just completely failed without a backup. Instead of
+focusing on what will happen as a result of the crisis, focus on what needs to
+be done to bring the system back up. Deal with the results later, after fixing
+the immediate failure. The fallout of the crisis might be terrible, but it will
+almost certainly be worse if the immediate problem isn't fixed. A calm
+mind can carefully analyze a situation to determine the best solution.
+Panic responses do not benefit from the same calculating rationality.
+
+Different people will adapt to handling crisis situations in different ways.
+Some will adapt the detached, analytical calm of a surgeon. Others will
+take a few deep breaths to calm themselves before digging in to analyze
+the problem. The ability to stay calm in the face of disaster is more
+important than the method by which calm is achieved. It will take
+practice to reach the point of reacting to a disaster calmly.
+
+Avoid placing blame. It doesn't accomplish anything beyond creating
+animosity and tension when a team most needs cohesion and efficiency.
+While a good practice in general, it is even more important to resist
+the urge to point fingers during a crisis. It doesn't assist in solving
+the problem, which is the top priority. Everything else is secondary.
+
+The Importance of Procedure
+---------------------------
+
+Creating procedures for responding to disasters provides both a
+checklist of things to do in the given situation as well as a structured
+way to practice responding to the situation. The practice serves to
+solidify understanding of how to react, while the procedure itself
+provides a target of mental focus during an actual disaster. Adhering to
+the procedure ensures the steps taken to resolve a crisis are well-known
+and tested. Focus on the procedure to the exclusion of everything else.
+
+That said, not every situation will have an associated procedure. These
+situations call for their own procedures. Try to create a procedure for
+every situation that doesn't alreay have one. This diligence pays off
+over time, as history tends to repeat itself. In addition to this, a
+procedure for situations lacking a procedure provides a safety net when
+everything else fails. This will differ from one organization to the
+next, but the value is constant.
+
+Like backups, no disaster recovery procedure is useful unless and until it is
+tested. Thorough testing and practicing--in a real environment if
+possible--quickly finds problems that will happen in the real world. Beyond
+having procedures for known possible failures, a procedure for situations other
+procedures do not cover provides a fallback for what to do in the inevitable
+unpredictable crisis.
+
+In addition to the technical sector, other industries deal regularly with
+crisis response--fire fighters, law enforcement, paramedics. These organizations
+have their own procedures. These industries all predate technology, offering
+much to learn.
+
 Non-technical skills
 --------------------
 
