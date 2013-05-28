@@ -58,6 +58,13 @@ The videos will be published under O'Reilly's subscription service to cover the
 costs of filming. Any profits which would be made by Ops School are donated to
 non-profit organisations which aid in learning for low-income persons.
 
+Video can be short (10-20 mins), or longer. Depending on the content in the
+video, some presenters choose to use slides, while others prefer screen-casting
+live demonstrations. Some videos may not need any supporting material at all!
+
+The next scheduled filming is at the Santa Clara Hyatt, from Monday June 17th
+2013 to Friday June 21st 2013. Filming slots are available all day.
+
 The topics which have already been filmed are:
 
 * Boot Process 101
@@ -77,8 +84,8 @@ The topics which have already been filmed are:
 * The ``/proc`` Filesystem
 * Web Flow - The Life of a Web Request
 
-If you are interested in filming, please contact us, or open an issue on the
-Github project.
+If you are interested in filming, please contact Avleen Vig (avleen#gmail.com)
+or open an issue on the Github project.
 
 
 *********************
