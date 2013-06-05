@@ -33,7 +33,7 @@ When you log into a Unix system, you will be given a command line by the
 
   bash-4.0$
 
-By default you will be in the "current working directory" if the process that
+By default you will be in the "current working directory" of the process that
 spawned the shell. Normally this is the home directory of your user. 
 It can be different in some edge cases, such as if you manually change the
 current working directory, but these cases are rare until you start doing more
