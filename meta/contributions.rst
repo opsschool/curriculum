@@ -54,9 +54,9 @@ In collaboration with O'Reilly Media, we are filming the Ops School curriculum
 to provide another method of learning for students. Filming happens
 approximately every 3 months in New York or Silicon Valley.
 
-The videos will be published under O'Reilly's subscription service to cover the
-costs of filming. Any profits which would be made by Ops School are donated to
-non-profit organisations which aid in learning for low-income persons.
+O'Reilly is publishing the videos online, in individual form and in package
+form. Any profits which would be made by Ops School are donated to non-profit
+organisations which aid in learning for low-income persons.
 
 Video can be short (10-20 mins), or longer. Depending on the content in the
 video, some presenters choose to use slides, while others prefer screen-casting
