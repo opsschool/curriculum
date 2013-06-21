@@ -7,12 +7,12 @@ Typically, a machine will boot off of some type of local device.  However, there
 * You have a machine where the hard drive is failing, and you need to run some diagnostic tools
 * You have a machine in a remote location, but you need to reinstall the operating system
 
-In situations like this, it's possible to boot a machine entirely over the network.  This relies on a little piece of firmware built into pretty much every modern NIC.  This software is called Preboot eXecution Envionment (PXE).
+In situations like this, it's possible to boot a machine entirely over the network.  This relies on a little piece of firmware built into pretty much every modern NIC.  This software is called Preboot eXecution Environment (PXE).
 
 The network boot process works like this:
 
 * The machine boots off the NIC, which has PXE firmware built in
-* The PXE firmware intializes the NIC and sends out a DHCP request
+* The PXE firmware initializes the NIC and sends out a DHCP request
 * The DHCP response contains instructions to contact another server and download a file
 * The PXE firmware downloads the file via TFTP, and begins executing it
 * From here, many different things can happen depending on the type of software downloaded
@@ -25,7 +25,7 @@ Given the low complexity of the TFTP protocol, servers are available for virtual
 
 PXE
 ===
-The PXE stack by itself is very limited.  It's designed to just be able to retrieve and execute a file, and by itself is not terribly useful.  The two most popular software packages used with PXE are iPXE [#]_ and PXELINUX [#]_.  Of these, PXELINUX is the older one, and is a varient of SysLinux.  SysLinux is most commonly used as the initial menu you see when you boot a Linux CD.  iPXE is newer, and supports booting over many different protocols (HTTP, iSCSI, various SAN types, among others).
+The PXE stack by itself is very limited.  It's designed to just be able to retrieve and execute a file, and by itself is not terribly useful.  The two most popular software packages used with PXE are iPXE [#]_ and PXELINUX [#]_.  Of these, PXELINUX is the older one, and is a variant of SysLinux.  SysLinux is most commonly used as the initial menu you see when you boot a Linux CD.  iPXE is newer, and supports booting over many different protocols (HTTP, iSCSI, various SAN types, among others).
 
 Basic Setup Process
 ===================
@@ -52,7 +52,7 @@ Start by downloading iPXE [#]_.  Make sure you save this to your tftpboot direct
         filename "undionly.kpxe";
     }
 
-This will cause the DHCP server to first tell clients to download iPXE.  Once iPXE starts up and does another DHCP request, it will be told the actual location of the configuration file to download.  Without this, we would end up with a continous loop of iPXE downloading itself. Create a chainconfig.ipxe file in your tftpboot directory with the following:
+This will cause the DHCP server to first tell clients to download iPXE.  Once iPXE starts up and does another DHCP request, it will be told the actual location of the configuration file to download.  Without this, we would end up with a continuous loop of iPXE downloading itself. Create a chainconfig.ipxe file in your tftpboot directory with the following:
 
 .. code-block:: none
 
@@ -87,7 +87,7 @@ This will cause the DHCP server to first tell clients to download iPXE.  Once iP
     set arch i386
     goto centos_installer
 
-    # This demostrates some of the power of iPXE.  We make use of variables to prevent config duplication
+    # This demonstrates some of the power of iPXE.  We make use of variables to prevent config duplication
     # and we load the installer files directly off the CentOS mirror.  There's no need to copy everything
     # to a local TFTP server.  We also fallback to a shell if the boot fails so any issues can be debugged
     :centos_installer
