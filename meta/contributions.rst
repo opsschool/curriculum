@@ -45,6 +45,24 @@ professionals, so we may not respond immediately.
 
 If you'd like to join the mailing list, email avleen@gmail.com.
 
+*************************
+Rewards for contributions
+*************************
+
+We have a special reward for reaching either of the following goals with your
+contributions:
+
+* 10 pull requests totaling 50 or more lines changed
+* 1 recorded Ops School video
+
+For completing either of these, you will receive a dozen freshly baked cookies,
+made fresh for you by a professional baker, and a 3-inch die-cut sticker of the
+Ops School logo.
+
+Once you reach either of these, please fill in the `OpsSchool rewards form`_ and
+we will get your reward over to you!
+
+.. _`OpsSchool rewards form`: https://docs.google.com/forms/d/1XCNPKgqtK2FyB2zTUBW_aYVHUnhao9-CPhL2pB6ZGyU/viewform
 
 *****************
 Ops School Videos
