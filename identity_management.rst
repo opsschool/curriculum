@@ -52,7 +52,7 @@ when determining requirements of a project or feature implementation.
 
 Active Directory is typically managed through a variety of tools, including:
 
-Gui Tools
+GUI Tools
 
 * Active Directory Users & Computers (to manage the users, computers,
   and groups in a domain)
@@ -62,9 +62,9 @@ Gui Tools
 
 Command Line Tools 
 
-* Powershell (through the Active Directory cmdlets)
-* ldp (an extremely low-level tool for interacting with LDAP directly - not 
-  recommended for most uses)
+* Powershell - through the Active Directory cmdlets
+* ldp - an extremely low-level tool for interacting with LDAP directly, not 
+  recommended for most uses
 
 OpenLDAP
 --------
