@@ -10,9 +10,7 @@ or facilities failures.
 Could the organization survive if part or all of its information
 were lost?
 
-Just remember, RAID is not a backup solution.
-
-.. TODO:: Why is RAID not a backup solution? Experienced ops folks know why, but a junior ops person may not.
+Just remember, RAID is not a backup solution. RAID protects against the loss of individual drives, but if data gets corrupted or deleted, RAID will replicate that corruption across all RAID stripes. Making backups on separate media is the best way to protect yourself against both "hard" and "soft" data loss.
 
 Designing a backup policy
 =========================
