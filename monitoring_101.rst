@@ -60,6 +60,18 @@ Icinga
 
 SNMP
 ----
+Simple Network Management Protocol or SNMP, is a monitoring and management protocol.
+It is the standard way of monitoring on switches, routers, and other networking equipment.
+SNMP relies on an agents which when contacted by a management system return the information requested.
+The data provided by the agent uses Object Identifiers or OIDs that provide information about the current system.
+OIDs can contain anything from strings identifying information about the system, to total number of frames received by the Ethernet controller.
+Devices and systems often are provided with MIBs or Management Information Base these help the management system identify the information contained in the OID.
+Lastly, management systems request information by providing a community string, for example Public.
+These community strings allow the agent to determine what information is appropriate to return to the requester, and whether the requesting system has read-only or read-write access.
+
+There are three commonly used versions of the protocol, SNMPv1, SNMPv2c and SNMPv3.
+SNMPv3 is the only cryptographically secure version of the protocol.
+Most devices will have support at least two versions of SNMP.
 
 Collectd
 --------
