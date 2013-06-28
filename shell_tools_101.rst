@@ -136,6 +136,7 @@ ls
 to list the contents of your shell's current working directory:
 
 .. code-block:: console
+
     $ ls
     bar  foo
 
@@ -143,6 +144,7 @@ You can also pass a directory name to the ``ls`` command and it will list the
 contents of that directory:
 
 .. code-block:: console
+
     $ ls /usr/local
     bin  etc  games  include  lib  libexec  sbin  share  src
 
@@ -154,6 +156,7 @@ outputs what's called a long listing, where various attributes are given in addi
 to the filenames:
 
 .. code-block:: console
+
     $ ls -la
     total 26636
     drwx-----x. 39 luser luser   4096 Jun 28 01:56 .
