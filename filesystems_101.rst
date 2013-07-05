@@ -316,8 +316,6 @@ above:
 
     -root@opsschool # mount /dev/sdb1 /mnt
 
-The root filesystem, mounted on ``/``, is unique and its mounting 
-
 The type of the filesystem refers to the format of the data structure that is 
 the filesystem on disk. Files (generally) do not care what kind of filesystem 
 they are on, it is only in initial filesystem creation, automatic 
