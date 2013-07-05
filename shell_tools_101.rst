@@ -366,8 +366,8 @@ You can also reverse the order by passing in ``-r`` to the command:
   Cappuccino
   Americano
 
-All very easy so far. But, say we have another file ``orders.txt`` that is a list
-of how many of each drink has been bought in a day:
+All very easy so far.
+But, say we have another file ``orders.txt`` that is a list of how many of each drink has been bought in a day:
 
 .. code-block:: console
 
@@ -387,8 +387,8 @@ What happens when we run ``sort`` on this file?
   25 Cappuccino
   63 Espresso
 
-This isn't what we want at all. Luckily, ``sort`` has some more flags, ``-n`` is what
-we want here
+This isn't what we want at all.
+Luckily, ``sort`` has some more flags, ``-n`` is what we want here:
 
 .. code-block:: console
 
@@ -398,6 +398,6 @@ we want here
   100 Mocha
   1003 Americano
 
-There are man more flags available, ``man sort`` will show you them all, there is
-probably already something there for whatever you can throw at it.
+There are man more flags available, ``man sort`` will show you them all.
+There is probably already something there for whatever you can throw at it.
 
