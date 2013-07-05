@@ -334,5 +334,70 @@ sed at this level.
 
 sort
 ----
-Definitely need to discuss sort and how to use it in basic activities.
+``sort`` can be used to sort lines of text.
+
+For example, if you had a file ``coffee.txt`` that listed different types of coffee drinks:
+
+.. code-block:: console
+
+  $ cat coffee.txt
+  Mocha
+  Cappuccino
+  Espresso
+  Americano
+
+Running ``sort`` would sort these in alphabetical order:
+
+.. code-block:: console
+
+  $ sort coffee.txt
+  Americano
+  Cappuccino
+  Espresso
+  Mocha
+
+You can also reverse the order by passing in ``-r`` to the command:
+
+.. code-block:: console
+
+  $ sort -r coffee.txt
+  Mocha
+  Espresso
+  Cappuccino
+  Americano
+
+All very easy so far. But, say we have another file ``orders.txt`` that is a list
+of how many of each drink has been bought in a day:
+
+.. code-block:: console
+
+  $ cat orders.txt
+  100 Mocha
+  25 Cappuccino
+  63 Espresso
+  1003 Americano
+
+What happens when we run ``sort`` on this file?
+
+.. code-block:: console
+
+  $ sort orders.txt
+  1003 Americano
+  100 Mocha
+  25 Cappuccino
+  63 Espresso
+
+This isn't what we want at all. Luckily, ``sort`` has some more flags, ``-n`` is what
+we want here
+
+.. code-block:: console
+
+  $ sort -n orders.txt
+  25 Cappuccino
+  63 Espresso
+  100 Mocha
+  1003 Americano
+
+There are man more flags available, ``man sort`` will show you them all, there is
+probably already something there for whatever you can throw at it.
 
