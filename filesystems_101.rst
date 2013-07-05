@@ -393,7 +393,7 @@ Files, directories, inodes
 
 Inodes
 ======
-What the contain, how they work
+What they contain, how they work
 
 The POSIX standard dictates files must have the following attributes:
 
