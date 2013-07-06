@@ -132,28 +132,26 @@ For more on signals see :doc:`unix_signals`.
 
 ls
 --
-``ls`` is used to list the contents of a directory. It's most basic usage would be
-to list the contents of your shell's current working directory:
+``ls`` is used to list the contents of a directory.
+It's most basic usage would be to list the contents of your shell's current working directory:
 
 .. code-block:: console
 
     $ ls
     bar  foo
 
-You can also pass a directory name to the ``ls`` command and it will list the
-contents of that directory:
+You can also pass a directory name to the ``ls`` command and it will list the contents of that directory:
 
 .. code-block:: console
 
     $ ls /usr/local
     bin  etc  games  include  lib  libexec  sbin  share  src
 
-There are a number of options that can be passed to the ls command to control both
-what is output and how it's formatted.  Two of the more useful are the -a option
-and the -l option.  Files and directories that begin with a '.' are refered to as
-hidden files.  ``ls -a`` will list these hidden files and directories.  ``ls -l``
-outputs what's called a long listing, where various attributes are given in addition
-to the filenames:
+There are a number of options that can be passed to the ls command to control both what is output and how it's formatted.
+Two of the more useful are the -a option and the -l option.
+Files and directories that begin with a '.' are refered to as hidden files.
+``ls -a`` will list these hidden files and directories.
+``ls -l`` outputs what's called a long listing, where various attributes are given in addition to the filenames:
 
 .. code-block:: console
 
@@ -166,14 +164,13 @@ to the filenames:
     -rw-r--r--.  1 luser luser     18 May 10  2012 .bash_logout
     -rw-r--r--.  1 luser luser    176 May 10  2012 .bash_profile
 
-The first field lists the file type, it's permissions, and also any special attributes it
-might have.  The very first letter indicates the type.  Notice directories are indicated
-by a "d" and regular files are indicated by a "-".  After the first field, from left to
-right the fields are filetype\attributes\permissions, links, owner, group, file size,
-modification date, and file name.
+In a long listing the first field lists the file type, it's permissions, and also any special attributes it might have.
+The very first letter in the first field indicates the file type.
+Notice directories are indicated by a "d" and regular files are indicated by a "-".
+After the first field, from left to right the fields are filetype\attributes\permissions, links, owner, group, file size, modification date, and file name.
 
-Notice also the files named "." and "..".  These are the current directory and the
-directory up one level respectively.
+Notice also the files named "." and "..".
+These are the current directory and the directory up one level respectively.
 
 mount
 -----
@@ -186,13 +183,13 @@ vmstat
 
 lsof
 ----
-``lsof`` lists open files.  This command can be very useful in examining what a particular
-process or user happens to be doing on a system.  For each open file information is listed
-such as the process id that holds the file open, the command that started the
-process, and the name of the user running the process.
+``lsof`` lists open files.
+This command can be very useful in examining what a particular process or user happens to be doing on a system.
+For each open file information is listed such as the process id that holds the file open, the command that started the process, and the name of the user running the process.
 
-``lsof`` doesn't just list regular files.  Of particular use is examing what network
-activity is currently going on.  This can be viewed with by issuing ``lsof -i``.
+``lsof`` doesn't just list regular files.
+Of particular use is examing what network activity is currently going on.
+This can be viewed with by issuing ``lsof -i``.
 
 strace
 ------
