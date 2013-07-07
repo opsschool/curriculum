@@ -398,10 +398,7 @@ Luckily, ``sort`` has some more flags, ``-n`` is what we want here:
   100 Mocha
   1003 Americano
 
-What if we want to sort the new list by name? We will have to sort by the
-second column, not the first one. Sort assume that columns are space
-separated by default. ``sort`` has the flag ``-k`` that let us specify
-what key we want to use.
+What if we want to sort the new list by name? We will have to sort by the second column, not the first one. Sort assume that columns are space separated by default. ``sort`` has the flag ``-k`` that let us specify what key we want to use.
 
 .. code-block:: console
 
