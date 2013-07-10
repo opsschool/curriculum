@@ -52,8 +52,7 @@ Unlike SANs, a NASs will typically implement an standard network protocol like S
 The client will present these to its users as standard network share.
 
 NASs and SANs are almost indistinguishable from each other physically.
-They will typically have head units and array units, and there will typically be
-two head units for redundancy.
+They will typically have head units and array units, and there will typically be two head units for redundancy.
 They will typically install into a 19-inch rack, or come with a custom cabinet.
 Lastly, they will typically need a dedicated circuit due to the large number of spinning disks.
 
