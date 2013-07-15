@@ -32,7 +32,7 @@ OpenStack based cloud offering or HP's OpenStack based cloud.
 There are a variety of companies of various sizes offering these public cloud
 services.
 These services are run in the hosting company's datacenter, and an
-administrator's access to the infrastruture is limited to launching and
+administrator's access to the infrastructure is limited to launching and
 configuring virtual machines, normally through a web-based dashboard or an API.
 
 The second type of cloud is "private clouds".

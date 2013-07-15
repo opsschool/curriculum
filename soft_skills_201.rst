@@ -128,8 +128,8 @@ perspective. Senior management within an organization will usually understand
 risks related to financials, competition, manufacturing, etc. but they often do
 not understand IT enough to make an informed decision. Operations professionals
 are the ones with the deep technical expertise required to comprehend risks,
-threads, vulnerabilitis, and countermeasures. They use this expertise to
-express their concerns in a way suitabl for senior management. This is another
+threats, vulnerabilities, and countermeasures. They use this expertise to
+express their concerns in a way suitable for senior management. This is another
 area where the Operations professional is communicating with the organization's
 leaders to advise on appropriate actions to address IT security where it makes
 sense for the organization.
