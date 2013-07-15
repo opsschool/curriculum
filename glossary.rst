@@ -26,7 +26,7 @@ Glossary
 
     GUI
         Pronounced "gooey", this is an acronym for a Graphical User Interface.
-        This is distintly different from a :term:`CLI`, in that the GUI typically can contain more complex visual interactions.
+        This is distinctly different from a :term:`CLI`, in that the GUI typically can contain more complex visual interactions.
         Read more here: `Wikipedia:GUI <http://en.wikipedia.org/wiki/Graphical_user_interface>`_.
 
     MAC

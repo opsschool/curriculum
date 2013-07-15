@@ -43,7 +43,7 @@ is ``initctl(8)``'s ``show-config`` command:
     ...
 
 This snippet reveals that upstart will ``stop`` the ``avahi-daemon`` at the same
-time as dbus. Unlike many other daemons that depend on the hole filesystem, upstart
+time as dbus. Unlike many other daemons that depend on the whole filesystem, upstart
 will ``start`` ``cgroup-lite`` as soon as the ``/sys`` filesystem is mounted.
 
 Upstart is also able to "supervise" programs: that is, to restart a program

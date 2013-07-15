@@ -85,7 +85,7 @@ What is the cost to retain backups for a 30-days, 6-months, or 1 year?
 Is there a business requirement for keeping backups for a specific length of time?
 
 Are there laws for maintaining electronic records for a specific period of
-time? 
+time?
 
 
 If the organization is required to adhere to Freedom of
@@ -158,7 +158,7 @@ Security implications
 
 .. TODO:: Using backups to restore to a known "good" state after an incident just serves to put the machine in a known vulnerable state (security hole that was exploited is now back in operation)
 
-.. TODO:: can be used to restore system state that can be useful in a post mortem after an incident (say the attacker covered their tracks but backups were able to capture a rootkit before it was removed or before logs wer etampered with)
+.. TODO:: can be used to restore system state that can be useful in a post mortem after an incident (say the attacker covered their tracks but backups were able to capture a rootkit before it was removed or before logs were tampered with)
 
 Recovery basics
 ===============

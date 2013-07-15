@@ -63,7 +63,7 @@ To connect to a MySQL database from the CLI your command would usually take this
 
 Of these flags, ``-u`` = username, ``-p`` = password, and ``-h`` = hostname.
 You may provide the password on the command prompt: ``-ppassword`` (no space after flag!).
-We strongly advise against this, as this may leave the apssword visibile in your shell history.
+We strongly advise against this, as this may leave the password visible in your shell history.
 
 Creating databases
 ==================
