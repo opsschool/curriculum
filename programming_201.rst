@@ -90,7 +90,7 @@ Common data structures
 
 * Arrays
 
-Arrays in Ruby are ordered collections of heterogenous items. Items can be added, inserted, removed from an array. Arrays are indexed starting from 0. 
+Arrays in Ruby are ordered collections of heterogenous items. Items can be added, inserted, removed from an array. Arrays are indexed starting from 0.
 
 .. code-block:: ruby
   > empty_ary = []
@@ -125,12 +125,45 @@ Array objects are instances of Array class. So all instance methods are accessib
   > empty_ary.empty?
   => true
 
-It is highly recommended that one reads the Ruby Array API documentation.
+It is highly recommended that one reads the Ruby Array API documentation :
+http://ruby-doc.org/core-2.0/Array.html
 
 
 * Hashes
 
+Hashes in Ruby are ordered collection of unique keys and their values. A hash key can be of any object type. Values can be referenced by their keys.
+
 .. code-block:: ruby
+  > empty_hash = {}
+  > device_hash = { :samsung => "Galaxy S", :apple => "iPhone"}
+  > device_hash[:samsung]
+  => "Galaxy S"
+  > country_hash = { "America" => "Washington DC", "India" => "New Delhi", "Germany" => "Berlin" }
+
+Hash objects are instances of Hash class. So all instance methods are accessible to hash objects. Discussing every method is beyond the scope of this document but here are a few examples :
+
+.. code-block:: ruby
+  > country_hash["America"]
+  => "Washington"
+  > country_hash["Sweden"] = "Stockholm"
+  > country_hash
+  => {"America"=>"Washington DC", "India"=>"New Delhi", "Germany"=>"Berlin", "Sweden"=>"Stockholm"}
+  > country_hash.values
+  => ["Washington DC", "New Delhi", "Berlin", "Stockholm"]
+  > country_hash.length
+  => 4
+  > empty_hash.empty?
+  => true
+
+Iterating over hashes can be done in various ways :
+.. code-block:: ruby
+  > device_hash.each {|key, value| puts "#{key} - #{value}" }
+  samsung - Galaxy S
+  apple - iPhone
+
+It is highly recommended that one reads the Ruby Hash API documentation :
+http://www.ruby-doc.org/core-2.0/Hash.html
+
 
 Functions
 ---------
