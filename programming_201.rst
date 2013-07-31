@@ -50,7 +50,7 @@ Ruby
 ====
 Ruby is a very user friendly, flexible language and fun to use. To quote from Ruby's website Ruby is described as : "A dynamic, open source programming language with a focus on simplicity and productivity. It has an elegant syntax that is natural to read and easy to write."  The creator of Ruby,  Yukihiro “Matz” Matsumoto, took various parts of his favourite languages ( Perl, Smalltalk, Ada, Lisp and Eiffel ) to create Ruby.
 
-Reading and writing Ruby code is amazingly easy and fun. Once you learn the basics, it is amazing how much can be achieved in so little and concise code. A very simple example would be how iterations / loops are done in Ruby :
+Reading and writing Ruby code is amazingly easy and fun. Once you learn the basics, it is amazing how much can be achieved in so little and concise code. A very simple example would be how iterations or loops are done in Ruby :
 
 .. code-block:: cpp
 
@@ -62,22 +62,35 @@ You will see this for Ruby:
 
 .. code-block:: ruby
 
-  (1..10).each { #Do Something }
+  > (1..3).each { puts "Hello" }
+  Hello
+  Hello
+  Hello
+  => 1..3
 
-  (1..10).each do
-    #Do Something
-  end
+  > (1..3).each do
+    puts "Hello again"
+  > end
+  Hello again
+  Hello again
+  Hello again
+  => 1..3
 
-  Ruby is a very good tool to write scripts for various purposes. And there are bunch of tools for Operations that have been written which are written using Ruby or has Ruby like syntax.
+Ruby is a very good tool to write scripts for various purposes. And there are bunch of tools for Operations that have been written which are written using Ruby or has Ruby like syntax.
 
-  Although, this will be not covered here, a very important thing to keep in mind is that in Ruby, ``Everything is an Object.``. What that means is, you can treat everything - numbers, strings, classes, objects themselves etc as objects. Even the simplest of Ruby code will use this principle.
+Although, this will be not covered here, a very important thing to keep in mind is that in Ruby, ``Everything is an Object.``. What that means is, you can treat everything - numbers, strings, classes, objects themselves etc as objects. Even the simplest of Ruby code will use this principle.
 
-  .. code-block:: ruby
+.. code-block:: ruby
 
-    10.times { puts "hello" }
-    "michael".capitalize
+  > 3.times { puts "hello" }
+  hello
+  hello
+  hello
+  => 3
+  > "michael".capitalize
+  => Michael
 
-  Strictly speaking, there will be cases where the above statment is not true but that is beyond the scope of this document.
+Strictly speaking, there will be cases where the above statment is not true but that is beyond the scope of this document.
 
 Syntax
 ------
@@ -100,11 +113,17 @@ Common data structures
 Arrays in Ruby are ordered collections of heterogenous items. Items can be added, inserted, removed from an array. Arrays are indexed starting from 0.
 
 .. code-block:: ruby
+
   > empty_ary = []
+  => []
   > str_ary = ["Pune", "Mumbai", "Delhi"]
+  => ["Pune", "Mumbai", "Delhi"]
   > num_ary = [1, 2, 3.14, 10]
+  => [1, 2, 3.14, 10]
   > mix_ary = ["this array has", 3, "items"]
+  => ["this array has", 3, "items"]
   > arr_in_ary = [1, 2, [3, 4], 5]
+  => [1, 2, [3, 4], 5]
   > str_ary.each { |city| puts city }
   Pune
   Mumbai
@@ -115,11 +134,12 @@ Arrays in Ruby are ordered collections of heterogenous items. Items can be added
   > num_ary[2]
   => 3.14
 
-Notice how arrays are heterogenous, meaning, array elements can be of different types. And an array can have array as its element.
+Notice how arrays are heterogenous, i.e. array elements can be of different types. And an array can have array as its element.
 
 Array objects are instances of Array class. So all instance methods are accessible to array objects. Discussing every method is beyond the scope of this document but here are a few examples :
 
 .. code-block:: ruby
+
   num_ary = [1, 2, 3.14, 10]
   > num_ary.first
   => 1
@@ -141,18 +161,24 @@ http://ruby-doc.org/core-2.0/Array.html
 Hashes in Ruby are ordered collection of unique keys and their values. A hash key can be of any object type. Values can be referenced by their keys.
 
 .. code-block:: ruby
+
   > empty_hash = {}
+  => {}
   > device_hash = { samsung: "Galaxy S", apple: "iPhone"}
+  => {:samsung=>"Galaxy S", :apple=>"iPhone"}
   > device_hash[:samsung]
   => "Galaxy S"
   > country_hash = { "America" => "Washington DC", "India" => "New Delhi", "Germany" => "Berlin" }
+  => {"America"=>"Washington DC", "India"=>"New Delhi", "Germany"=>"Berlin"}
 
 Hash objects are instances of Hash class. So all instance methods are accessible to hash objects. Discussing every method is beyond the scope of this document but here are a few examples :
 
 .. code-block:: ruby
+
   > country_hash["America"]
   => "Washington"
   > country_hash["Sweden"] = "Stockholm"
+  => "Stockholm"
   > country_hash
   => {"America"=>"Washington DC", "India"=>"New Delhi", "Germany"=>"Berlin", "Sweden"=>"Stockholm"}
   > country_hash.values
@@ -161,12 +187,6 @@ Hash objects are instances of Hash class. So all instance methods are accessible
   => 4
   > empty_hash.empty?
   => true
-
-Iterating over hashes can be done in various ways :
-.. code-block:: ruby
-  > device_hash.each {|key, value| puts "#{key} - #{value}" }
-  samsung - Galaxy S
-  apple - iPhone
 
 It is highly recommended that one reads the Ruby Hash API documentation :
 http://www.ruby-doc.org/core-2.0/Hash.html
@@ -178,19 +198,20 @@ Functions are used in Ruby to perform a specific task. In Ruby parlance, functio
 
 A methods is enclosed inside ``def`` and the ``end``keywords. Parentheses is optional in Ruby for passing parameters. The last line inside a Ruby method is returned by the method. Using ``return`` keyword is optional.
 
-..  code-blocks:: ruby
-  def print_hello
-    puts "hello"
-  end
+..  code-block:: ruby
 
-  def sum(a, b)
-    a + b
-  end
-
-  def sum2 a, b
-    return a + b
-  end
-
+  > def print_hello
+      puts "hello"
+    end
+  => nil
+  > def sum(a, b)
+      a + b
+    end
+  => nil
+  > def sum2 a, b
+      return a + b
+    end
+  => nil
   > print_hello
   => hello
   > sum(2, 3)
@@ -203,34 +224,39 @@ Objects and Classes
 -------------------
 As mentioned above, in Ruby, ``everything is an object``. Ruby also has a class called ``Object``. It is the default root of all Ruby objects.
 
-Ruby objects can have attributes and methods.
+Ruby objects can have attributes and methods. An instance of Object class (and in general, to create an instance of any class) can be created as follows :
 
-..  code-blocks:: ruby
-  obj = Object.new
+..  code-block:: ruby
 
-In Ruby, you can create custom classes. These can used along with the classes that come with Ruby and its standard library.
+  > obj = Object.new
+  => #<Object:0x007fcba39874b8>
+
+In Ruby, you can create your custom classes. These can used along with the classes that come with Ruby and its standard library.
 
 Classes can have methods. Classes also have a special method called ``initialize``. When a new object is created in Ruby using ``new`` method, an uninitialized object is first created and then ``initialize`` is called. Any parameters passed to ``new`` is passed to ``initialize``.
 
 An instance variable in Ruby is prepended by ``@`` symbol.
 
-..  code-blocks:: ruby
-  class Student
-    def initialize(name, age)
-      @name = name
-      @age  = age
-    end
+..  code-block:: ruby
 
-    def details
-      puts @name
-      puts @age
-    end
-  end
+  > class Student
+      def initialize(name, age)
+        @name = name
+        @age  = age
+      end
 
+      def details
+        puts @name
+        puts @age
+      end
+    end
+  => nil
   > s1 = Student.new('Cathy', 20)
+  => #<Student:0x007fcba39b78c0 @name="Cathy", @age=20>
   > s1.details
   Cathy
   20
+  => nil
 
 
 Rubygems
