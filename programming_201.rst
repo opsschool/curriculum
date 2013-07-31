@@ -70,7 +70,7 @@ You will see this for Ruby:
 
   Ruby is a very good tool to write scripts for various purposes. And there are bunch of tools for Operations that have been written which are written using Ruby or has Ruby like syntax.
 
-  Although, this will be not covered here, a very important thing to keep in mind is that in Ruby, "Everything is an Object.". What that means is, you can treat everything - numbers, strings, objects themselves etc as objects. Even the simplest of Ruby code will use this principle.
+  Although, this will be not covered here, a very important thing to keep in mind is that in Ruby, ``Everything is an Object.``. What that means is, you can treat everything - numbers, strings, classes, objects themselves etc as objects. Even the simplest of Ruby code will use this principle.
 
   .. code-block:: ruby
 
@@ -174,9 +174,9 @@ http://www.ruby-doc.org/core-2.0/Hash.html
 
 Functions
 ---------
-Functions are used in Ruby to perform a specific task. Ideally, a single function should do a single task and no more. In Ruby, functions accept parameters and return a value.
+Functions are used in Ruby to perform a specific task. In Ruby parlance, functions are generally termed as methods.Ideally, a single method should do a single task and no more. In Ruby, methods accept parameters and return a value.
 
-A function is enclosed inside ``def`` and the ``end``keywords. Parentheses is optional in Ruby for parameters. In Ruby parlance, functions are generally termed as methods. The last line inside a Ruby method is returned by the method. Using ``return`` keyword is optional.
+A methods is enclosed inside ``def`` and the ``end``keywords. Parentheses is optional in Ruby for passing parameters. The last line inside a Ruby method is returned by the method. Using ``return`` keyword is optional.
 
 ..  code-blocks:: ruby
   def print_hello
@@ -199,8 +199,39 @@ A function is enclosed inside ``def`` and the ``end``keywords. Parentheses is op
   => 10
 
 
-Objects
--------
+Objects and Classes
+-------------------
+As mentioned above, in Ruby, ``everything is an object``. Ruby also has a class called ``Object``. It is the default root of all Ruby objects.
+
+Ruby objects can have attributes and methods.
+
+..  code-blocks:: ruby
+  obj = Object.new
+
+In Ruby, you can create custom classes. These can used along with the classes that come with Ruby and its standard library.
+
+Classes can have methods. Classes also have a special method called ``initialize``. When a new object is created in Ruby using ``new`` method, an uninitialized object is first created and then ``initialize`` is called. Any parameters passed to ``new`` is passed to ``initialize``.
+
+An instance variable in Ruby is prepended by ``@`` symbol.
+
+..  code-blocks:: ruby
+  class Student
+    def initialize(name, age)
+      @name = name
+      @age  = age
+    end
+
+    def details
+      puts @name
+      puts @age
+    end
+  end
+
+  > s1 = Student.new('Cathy', 20)
+  > s1.details
+  Cathy
+  20
+
 
 Rubygems
 --------
