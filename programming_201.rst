@@ -92,6 +92,24 @@ Although, this will be not covered here, a very important thing to keep in mind 
 
 Strictly speaking, there will be cases where the above statment is not true but that is beyond the scope of this document.
 
+Running Ruby Code
+-----------------
+
+Ruby scripts are file text files usually with .rb extension. You can run your ruby scripts as follows :
+
+.. code-block:: console
+
+  bash$ ruby script.rb
+
+You can run ad-hoc Ruby code in an interactive session called the Interactive Ruby or irb in short.
+
+.. code-block:: console
+
+  bash$ irb
+  1.9.3-p448 :001>
+
+All Ruby examples in this document will start with ``>``, short for 1.9.3-p448 :XXX >. It means that it is running inside an irb session. 1.9.3-p448 is the Ruby version the author was running while writing this document. The XXX are line numbers.
+
 Syntax
 ------
 
