@@ -48,6 +48,36 @@ it. Handle errors.
 
 Ruby
 ====
+Ruby is a very user friendly, flexible language and fun to use. To quote from Ruby's website Ruby is described as : "A dynamic, open source programming language with a focus on simplicity and productivity. It has an elegant syntax that is natural to read and easy to write."  The creator of Ruby,  Yukihiro “Matz” Matsumoto, took various parts of his favourite languages ( Perl, Smalltalk, Ada, Lisp and Eiffel ) to create Ruby.
+
+Reading and writing Ruby code is amazingly easy and fun. Once you learn the basics, it is amazing how much can be achieved in so little and concise code. A very simple example would be how iterations / loops are done in Ruby :
+
+.. code-block:: cpp
+
+  for(int i = 0; i < 10; ++i) {
+      // Do something
+  }
+
+You will see this for Ruby:
+
+.. code-block:: ruby
+
+  (1..10).each { #Do Something }
+
+  (1..10).each do
+    #Do Something
+  end
+
+  Ruby is a very good tool to write scripts for various purposes. And there are bunch of tools for Operations that have been written which are written using Ruby or has Ruby like syntax.
+
+  Although, this will be not covered here, a very important thing to keep in mind is that in Ruby, "Everything is an Object.". What that means is, you can treat everything - numbers, strings, objects themselves etc as objects. Even the simplest of Ruby code will use this principle.
+
+  .. code-block:: ruby
+
+    10.times { puts "hello" }
+    "michael".capitalize
+
+  Strictly speaking, there will be cases where the above statment is not true but that is beyond the scope of this document.
 
 Syntax
 ------
@@ -57,6 +87,50 @@ Variables
 
 Common data structures
 ----------------------
+
+* Arrays
+
+Arrays in Ruby are ordered collections of heterogenous items. Items can be added, inserted, removed from an array. Arrays are indexed starting from 0. 
+
+.. code-block:: ruby
+  > empty_ary = []
+  > str_ary = ["Pune", "Mumbai", "Delhi"]
+  > num_ary = [1, 2, 3.14, 10]
+  > mix_ary = ["this array has", 3, "items"]
+  > arr_in_ary = [1, 2, [3, 4], 5]
+  > str_ary.each { |city| puts city }
+  Pune
+  Mumbai
+  Delhi
+  => ["Pune", "Mumbai", "Delhi"]
+  > num_ary[0]
+  => 1
+  > num_ary[2]
+  => 3.14
+
+Notice how arrays are heterogenous, meaning, array elements can be of different types. And an array can have array as its element.
+
+Array objects are instances of Array class. So all instance methods are accessible to array objects. Discussing every method is beyond the scope of this document but here are a few examples :
+
+.. code-block:: ruby
+  num_ary = [1, 2, 3.14, 10]
+  > num_ary.first
+  => 1
+  > num_ary.last
+  => 10
+  > num_ary.length
+  => 4
+  > num_ary.empty?
+  => false
+  > empty_ary.empty?
+  => true
+
+It is highly recommended that one reads the Ruby Array API documentation.
+
+
+* Hashes
+
+.. code-block:: ruby
 
 Functions
 ---------
