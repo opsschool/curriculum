@@ -82,6 +82,13 @@ You will see this for Ruby:
 Syntax
 ------
 
+* Condtionals
+
+* Symbols
+
+* Blocks
+
+
 Variables
 ---------
 
@@ -135,7 +142,7 @@ Hashes in Ruby are ordered collection of unique keys and their values. A hash ke
 
 .. code-block:: ruby
   > empty_hash = {}
-  > device_hash = { :samsung => "Galaxy S", :apple => "iPhone"}
+  > device_hash = { samsung: "Galaxy S", apple: "iPhone"}
   > device_hash[:samsung]
   => "Galaxy S"
   > country_hash = { "America" => "Washington DC", "India" => "New Delhi", "Germany" => "Berlin" }
@@ -167,6 +174,30 @@ http://www.ruby-doc.org/core-2.0/Hash.html
 
 Functions
 ---------
+Functions are used in Ruby to perform a specific task. Ideally, a single function should do a single task and no more. In Ruby, functions accept parameters and return a value.
+
+A function is enclosed inside ``def`` and the ``end``keywords. Parentheses is optional in Ruby for parameters. In Ruby parlance, functions are generally termed as methods. The last line inside a Ruby method is returned by the method. Using ``return`` keyword is optional.
+
+..  code-blocks:: ruby
+  def print_hello
+    puts "hello"
+  end
+
+  def sum(a, b)
+    a + b
+  end
+
+  def sum2 a, b
+    return a + b
+  end
+
+  > print_hello
+  => hello
+  > sum(2, 3)
+  => 4
+  > sum 4, 6
+  => 10
+
 
 Objects
 -------
@@ -206,7 +237,7 @@ You will see this for Python:
 .. code-block:: python
 
   if (3>2):
-      # Do something 
+      # Do something
 
 As you can see, Python didn't need curly braces to signify the start or end of the if conditional; a simple indent does the job.
 Now when it comes to indentation, PEP8 says that you should use 4 spaces to indent your code.
@@ -337,7 +368,7 @@ They are mutable collections of data that you can append to, remove from and who
 Here's some common operations you can perform with lists:
 
 .. code-block:: python
-  
+
   >>> to_print = [1, 4]
   >>> to_print.append('Hello')
   >>> to_print.append('Hey')
@@ -359,7 +390,7 @@ Here's some common operations you can perform with lists:
   >>> to_print.remove(4)
   >>> to_print
   [1, 'Hello', 'Hey']
-  
+
 Just like arrays in other languages, Python's lists are zero-indexed and also support negative indexing.
 You can use the ``:`` to get a range of items from the list.
 When I ran ``to_print[-2:]``, Python returned all items from the second last element to the end.
@@ -397,7 +428,7 @@ Items of a list can only be referenced by their index in the list, whereas in di
   Orange
   Yellow
   ['Red', 'Green']
-  
+
 You should be able to see now that dictionaries can take on custom keys.
 In this example, my keys were names of fruits, and the value for each key was the colour of that particular fruit.
 Dictionaries also don't care about what type your keys or values are, or whether the type of a key matches the type of its value.
@@ -406,7 +437,7 @@ This lets us store lists as values, as you saw with the colour of apples, which 
 An interesting property about dictionaries that you might have noticed, is that iterating through the dictionary returned only the keys in the dictionary.
 To see each value, you need to print the corresponding value for the key by calling ``fruit_colours[i]`` inside the for loop where ``i`` takes on the value of a key in the dictionary.
 
-  
+
 Python implements a lot more data structures like tuples, sets and dequeues.
 Check out the Python docs for more information these: http://docs.python.org/2/tutorial/datastructures.html
 
