@@ -48,14 +48,19 @@ it. Handle errors.
 
 Ruby
 ====
-Ruby is a very user friendly, flexible language and fun to use. To quote from Ruby's website Ruby is described as : "A dynamic, open source programming language with a focus on simplicity and productivity. It has an elegant syntax that is natural to read and easy to write."  The creator of Ruby,  Yukihiro “Matz” Matsumoto, took various parts of his favourite languages ( Perl, Smalltalk, Ada, Lisp and Eiffel ) to create Ruby.
+Ruby is a very user friendly, flexible language and fun to use.
+To quote from Ruby's website Ruby is described as : "A dynamic, open source programming language with a focus on simplicity and productivity.
+It has an elegant syntax that is natural to read and easy to write."
+The creator of Ruby,  Yukihiro “Matz” Matsumoto, took various parts of his favourite languages ( Perl, Smalltalk, Ada, Lisp and Eiffel ) to create Ruby.
 
-Reading and writing Ruby code is amazingly easy and fun. Once you learn the basics, it is amazing how much can be achieved in so little and concise code. A very simple example would be how iterations or loops are done in Ruby :
+Reading and writing Ruby code is amazingly easy and fun.
+Once you learn the basics, it is amazing how much can be achieved in so little and concise code.
+A very simple example would be how iterations or loops are done in Ruby :
 
 .. code-block:: cpp
 
-  for(int i = 0; i < 10; ++i) {
-      // Do something
+  for(int i = 0; i < 3; ++i) {
+      std::cout << "Hello"
   }
 
 You will see this for Ruby:
@@ -76,9 +81,11 @@ You will see this for Ruby:
   Hello again
   => 1..3
 
-Ruby is a very good tool to write scripts for various purposes. And there are bunch of tools for Operations that have been written which are written using Ruby or has Ruby like syntax.
+Ruby is a very good tool to write scripts.
 
-Although, this will be not covered here, a very important thing to keep in mind is that in Ruby, ``Everything is an Object.``. What that means is, you can treat everything - numbers, strings, classes, objects themselves etc as objects. Even the simplest of Ruby code will use this principle.
+Although, this will be not covered here in detail, a very important thing to keep in mind is that in Ruby, ``Everything is an Object.``.
+What that means is, you can treat everything i.e. numbers, strings, classes, objects themselves etc as objects.
+Even the simplest of Ruby code will use this principle.
 
 .. code-block:: ruby
 
@@ -90,7 +97,10 @@ Although, this will be not covered here, a very important thing to keep in mind 
   > "michael".capitalize
   => Michael
 
-Strictly speaking, there will be cases where the above statment is not true but that is beyond the scope of this document.
+Strictly speaking, there will be cases where the above statment is not true in Ruby.
+For example, in Ruby, functions are not first class objects.
+In some languages, like Javascript and Python functions are first class objects.
+In these languages, a function can be treated like an object i.e. they have attributes, they can be referenced and passed as parameters etc.
 
 Running Ruby Code
 -----------------
@@ -108,7 +118,10 @@ You can run ad-hoc Ruby code in an interactive session called the Interactive Ru
   bash$ irb
   1.9.3-p448 :001>
 
-All Ruby examples in this document will start with ``>``, short for 1.9.3-p448 :XXX >. It means that it is running inside an irb session. 1.9.3-p448 is the Ruby version the author was running while writing this document. The XXX are line numbers.
+All Ruby examples in this document will start with ``>``, short for 1.9.3-p448 :XXX >.
+It means that it is running inside an irb session. 1.9.3-p448 is the Ruby version the author was running while writing this
+document.
+The XXX are line numbers.
 
 Syntax
 ------
@@ -128,7 +141,9 @@ Common data structures
 
 * Arrays
 
-Arrays in Ruby are ordered collections of heterogenous items. Items can be added, inserted, removed from an array. Arrays are indexed starting from 0.
+Arrays in Ruby are ordered collections of heterogenous items.
+Items can be added, inserted, removed from an array.
+Arrays are indexed starting from 0.
 
 .. code-block:: ruby
 
@@ -152,9 +167,12 @@ Arrays in Ruby are ordered collections of heterogenous items. Items can be added
   > num_ary[2]
   => 3.14
 
-Notice how arrays are heterogenous, i.e. array elements can be of different types. And an array can have array as its element.
+Notice how arrays are heterogenous, i.e. array elements can be of different types.
+And an array can have array as its element.
 
-Array objects are instances of Array class. So all instance methods are accessible to array objects. Discussing every method is beyond the scope of this document but here are a few examples :
+Array objects are instances of Array class.
+So all instance methods are accessible to array objects.
+Discussing every method is beyond the scope of this document but here are a few examples :
 
 .. code-block:: ruby
 
@@ -176,7 +194,9 @@ http://ruby-doc.org/core-2.0/Array.html
 
 * Hashes
 
-Hashes in Ruby are ordered collection of unique keys and their values. A hash key can be of any object type. Values can be referenced by their keys.
+Hashes in Ruby are ordered collection of unique keys and their values.
+A hash key can be of any object type.
+Values can be referenced by their keys.
 
 .. code-block:: ruby
 
@@ -189,7 +209,9 @@ Hashes in Ruby are ordered collection of unique keys and their values. A hash ke
   > country_hash = { "America" => "Washington DC", "India" => "New Delhi", "Germany" => "Berlin" }
   => {"America"=>"Washington DC", "India"=>"New Delhi", "Germany"=>"Berlin"}
 
-Hash objects are instances of Hash class. So all instance methods are accessible to hash objects. Discussing every method is beyond the scope of this document but here are a few examples :
+Hash objects are instances of Hash class.
+So all instance methods are accessible to hash objects.
+Discussing every method is beyond the scope of this document but here are a few examples :
 
 .. code-block:: ruby
 
@@ -212,9 +234,14 @@ http://www.ruby-doc.org/core-2.0/Hash.html
 
 Functions
 ---------
-Functions are used in Ruby to perform a specific task. In Ruby parlance, functions are generally termed as methods.Ideally, a single method should do a single task and no more. In Ruby, methods accept parameters and return a value.
+Functions are used in Ruby to perform a specific task.
+In Ruby parlance, functions are generally termed as methods.
+Ideally, a single method should do a single task and no more.
+In Ruby, methods accept parameters and return a value.
 
-A methods is enclosed inside ``def`` and the ``end``keywords. Parentheses is optional in Ruby for passing parameters. The last line inside a Ruby method is returned by the method. Using ``return`` keyword is optional.
+A methods is enclosed inside ``def`` and the ``end`` keywords.
+Parentheses is optional in Ruby for passing parameters.
+The last line inside a Ruby method is returned by the method. Using ``return`` keyword is optional.
 
 ..  code-block:: ruby
 
@@ -240,18 +267,25 @@ A methods is enclosed inside ``def`` and the ``end``keywords. Parentheses is opt
 
 Objects and Classes
 -------------------
-As mentioned above, in Ruby, ``everything is an object``. Ruby also has a class called ``Object``. It is the default root of all Ruby objects.
+As mentioned above, in Ruby, ``everything is an object``.
+Ruby also has a class called ``Object``.
+It is the default root of all Ruby objects.
 
-Ruby objects can have attributes and methods. An instance of Object class (and in general, to create an instance of any class) can be created as follows :
+Ruby objects can have attributes and methods.
+An instance of Object class (and in general, to create an instance of any class) can be created as follows :
 
 ..  code-block:: ruby
 
   > obj = Object.new
   => #<Object:0x007fcba39874b8>
 
-In Ruby, you can create your custom classes. These can used along with the classes that come with Ruby and its standard library.
+In Ruby, you can create your custom classes.
+These can used along with the classes that come with Ruby and its standard library.
 
-Classes can have methods. Classes also have a special method called ``initialize``. When a new object is created in Ruby using ``new`` method, an uninitialized object is first created and then ``initialize`` is called. Any parameters passed to ``new`` is passed to ``initialize``.
+Classes can have methods.
+Classes also have a special method called ``initialize``.
+When a new object is created in Ruby using ``new`` method, an uninitialized object is first created and then ``initialize`` is called.
+Any parameters passed to ``new`` is passed to ``initialize``.
 
 An instance variable in Ruby is prepended by ``@`` symbol.
 
