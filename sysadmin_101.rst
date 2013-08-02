@@ -89,7 +89,7 @@ following descriptions compare and contrast:
   built. She regularly writes scripts to reduce the number of manual steps
   something takes - like adding new users to the system. She also has to
   coordinate how the network will be patched regularly, what investments will be
-  required for the network to continue operating at peek performance, and work
+  required for the network to continue operating at peak performance, and work
   with the other administrators to create something that works for the engineers
   at the business.
 
