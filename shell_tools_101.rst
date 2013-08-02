@@ -182,6 +182,10 @@ For each open file information is listed such as the process id that holds the f
 Of particular use is examing what network activity is currently going on.
 This can be viewed with by issuing ``lsof -i``.
 
+man
+---
+This needs to be here.
+
 mount
 -----
 The ``mount`` command is used to mount filesystems.
@@ -412,6 +416,3 @@ sort
 ----
 Definitely need to discuss sort and how to use it in basic activities.
 
-man
-___
-This needs to be here.
