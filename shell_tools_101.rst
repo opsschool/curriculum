@@ -172,10 +172,20 @@ After the first field, from left to right the fields are filetype\attributes\per
 Notice also the files named "." and "..".
 These are the current directory and the directory up one level respectively.
 
+lsof
+----
+``lsof`` lists open files.
+This command can be very useful in examining what a particular process or user happens to be doing on a system.
+For each open file information is listed such as the process id that holds the file open, the command that started the process, and the name of the user running the process.
+
+``lsof`` doesn't just list regular files.
+Of particular use is examing what network activity is currently going on.
+This can be viewed with by issuing ``lsof -i``.
+
 mount
 -----
 The ``mount`` command is used to mount filesystems.
-For example, mounting an ext4 filesystem that resides on the /dev/sda2 partiton could be done as follows: ``mount -t ext4 /dev/sda2 /mnt``
+For example, mounting an ext4 filesystem that resides on the :file:`/dev/sda2` partiton could be done as follows: ``mount -t ext4 /dev/sda2 /mnt``
 In this example the "-t" switch tells the ``mount`` command that the filesystem type is ext4.
     
 When passed no arguments the ``mount`` command lists the filesystems that are currently mounted:
@@ -191,9 +201,9 @@ When passed no arguments the ``mount`` command lists the filesystems that are cu
    /dev/sda1 on /boot type ext4 (rw)
 
 
-The ``mount`` command will also consult /etc/fstab and if it's able to and use the entries and options it finds there.
+The ``mount`` command will also consult :file:`/etc/fstab` and if it's able to and use the entries and options it finds there.
 If an entry for /home exists in /etc/fstab one would be able to simply issue the command ``mount /home``.
-This command would mount whatever parition is found that is associated with the /home entry in /etc/fstab, and use any options that happen to be present.
+This command would mount whatever parition is found that is associated with the :file:`/home` entry in /etc/fstab, and use any options that happen to be present.
 
 Things don't necessarily have to be a partition on a disk to be mounted either.
 Mounting an iso file, an image of a optical disk, is especially handy: ``mount -o loop -t iso9660 /home/luser/installer.iso /mnt/cdrom``
@@ -211,16 +221,6 @@ stat
 
 vmstat
 ------
-
-lsof
-----
-``lsof`` lists open files.
-This command can be very useful in examining what a particular process or user happens to be doing on a system.
-For each open file information is listed such as the process id that holds the file open, the command that started the process, and the name of the user running the process.
-
-``lsof`` doesn't just list regular files.
-Of particular use is examing what network activity is currently going on.
-This can be viewed with by issuing ``lsof -i``.
 
 strace
 ------
