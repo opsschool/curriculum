@@ -172,15 +172,6 @@ After the first field, from left to right the fields are filetype\attributes\per
 Notice also the files named "." and "..".
 These are the current directory and the directory up one level respectively.
 
-mount
------
-
-stat
-----
-
-vmstat
-------
-
 lsof
 ----
 ``lsof`` lists open files.
@@ -190,6 +181,50 @@ For each open file information is listed such as the process id that holds the f
 ``lsof`` doesn't just list regular files.
 Of particular use is examing what network activity is currently going on.
 This can be viewed with by issuing ``lsof -i``.
+
+man
+---
+This needs to be here.
+
+mount
+-----
+The ``mount`` command is used to mount filesystems.
+For example, mounting an ext4 filesystem that resides on the :file:`/dev/sda2` partiton could be done as follows: ``mount -t ext4 /dev/sda2 /mnt``
+In this example the "-t" switch tells the ``mount`` command that the filesystem type is ext4.
+    
+When passed no arguments the ``mount`` command lists the filesystems that are currently mounted:
+
+.. code-block:: console
+
+   $ mount
+   /dev/sda2 on / type ext4 (rw)
+   proc on /proc type proc (rw)
+   sysfs on /sys type sysfs (rw)
+   devpts on /dev/pts type devpts (rw,gid=5,mode=620)
+   tmpfs on /dev/shm type tmpfs (rw)
+   /dev/sda1 on /boot type ext4 (rw)
+
+
+The ``mount`` command will also consult :file:`/etc/fstab` and if it's able to and use the entries and options it finds there.
+If an entry for /home exists in /etc/fstab one would be able to simply issue the command ``mount /home``.
+This command would mount whatever parition is found that is associated with the :file:`/home` entry in /etc/fstab, and use any options that happen to be present.
+
+Things don't necessarily have to be a partition on a disk to be mounted either.
+Mounting an iso file, an image of a optical disk, is especially handy: ``mount -o loop -t iso9660 /home/luser/installer.iso /mnt/cdrom``
+
+``mount`` can also operate on currently mounted filesystems.
+Of particular use is switching a currently mounted filesystem from read-write to read-only so that a filesystem check can be performed: ``mount -o remount,ro /``
+This particular command tells mount to remount the currently mounted / filesystem as read-only.
+
+There are quite a number of options that can be passed to the ``mount`` command's "-o" switch.
+Some are filesystem independent, while others depend entirely on the type of filesystem that's being mounted.
+Further documentation on either can be found in the man pages.
+
+stat
+----
+
+vmstat
+------
 
 strace
 ------
