@@ -241,7 +241,7 @@ For this particular usage, ``cat`` can create a file "on the fly".
 
   .. code-block:: console
 
-    $ cat /tmp/foo.txt /home/jdoe/bar.txt
+    $ cat /tmp/foo.txt > /home/jdoe/bar.txt
     $ cat /home/jdoe/bar.txt
     foo
 
