@@ -42,9 +42,9 @@ This includes the filesystem type, total size, available space, percent used, an
 
 .. code-block:: console
 
-    $ df -h .
-    Filesystem      Size  Used Avail Use% Mounted on
-    /dev/sda5        43G   31G  9.6G  77% /
+  $ df -h .
+  Filesystem      Size  Used Avail Use% Mounted on
+  /dev/sda5        43G   31G  9.6G  77% /
 
 
 du
@@ -57,10 +57,10 @@ If the argument to ``du`` is a directory, ``du`` will run and return a new value
 
 .. code-block:: console
 
-    $ du -sh drawing.svg 
-    24K drawing.svg
-    4.0K    style.css
-    20K sitemeter.js
+  $ du -sh drawing.svg
+  24K drawing.svg
+  4.0K    style.css
+  20K sitemeter.js
 
 find
 ----
@@ -122,15 +122,15 @@ It's most basic usage would be to list the contents of your shell's current work
 
 .. code-block:: console
 
-    $ ls
-    bar  foo
+  $ ls
+  bar  foo
 
 You can also pass a directory name to the ``ls`` command and it will list the contents of that directory:
 
 .. code-block:: console
 
-    $ ls /usr/local
-    bin  etc  games  include  lib  libexec  sbin  share  src
+  $ ls /usr/local
+  bin  etc  games  include  lib  libexec  sbin  share  src
 
 There are a number of options that can be passed to the ls command to control both what is output and how it's formatted.
 Two of the more useful are the -a option and the -l option.
@@ -140,14 +140,14 @@ Files and directories that begin with a '.' are refered to as hidden files.
 
 .. code-block:: console
 
-    $ ls -la
-    total 26636
-    drwx-----x. 39 luser luser   4096 Jun 28 01:56 .
-    drwxr-xr-x.  4 root root     4096 Dec 11  2012 ..
-    drwxrwxr-x   7 luser luser   4096 May 23 00:40 Applications
-    -rw-------.  1 luser luser  16902 Jun 28 01:33 .bash_history
-    -rw-r--r--.  1 luser luser     18 May 10  2012 .bash_logout
-    -rw-r--r--.  1 luser luser    176 May 10  2012 .bash_profile
+  $ ls -la
+  total 26636
+  drwx-----x. 39 luser luser   4096 Jun 28 01:56 .
+  drwxr-xr-x.  4 root root     4096 Dec 11  2012 ..
+  drwxrwxr-x   7 luser luser   4096 May 23 00:40 Applications
+  -rw-------.  1 luser luser  16902 Jun 28 01:33 .bash_history
+  -rw-r--r--.  1 luser luser     18 May 10  2012 .bash_logout
+  -rw-r--r--.  1 luser luser    176 May 10  2012 .bash_profile
 
 In a long listing the first field lists the file type, it's permissions, and also any special attributes it might have.
 The very first letter in the first field indicates the file type.
