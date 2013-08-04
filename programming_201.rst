@@ -48,14 +48,19 @@ it. Handle errors.
 
 Ruby
 ====
-Ruby is a very user friendly, flexible language and fun to use.
-To quote from Ruby's website Ruby is described as : "A dynamic, open source programming language with a focus on simplicity and productivity.
-It has an elegant syntax that is natural to read and easy to write."
-The creator of Ruby,  Yukihiro “Matz” Matsumoto, took various parts of his favourite languages ( Perl, Smalltalk, Ada, Lisp and Eiffel ) to create Ruby.
+Ruby is a very user-friendly, flexible language and fun to use.
+To quote from the `Ruby website <http://www.ruby-lang.org/>`_, Ruby is described as:
+
+.. epigraph::
+
+  A dynamic, open source programming language with a focus on simplicity and productivity.
+  It has an elegant syntax that is natural to read and easy to write.
+
+The creator of Ruby, `Yukihiro "Matz" Matsumoto <http://en.wikipedia.org/wiki/Yukihiro_Matsumoto>`_, took various parts of his favourite languages (Perl, Smalltalk, Ada, Lisp and Eiffel) to create Ruby.
 
 Reading and writing Ruby code is amazingly easy and fun.
 Once you learn the basics, it is amazing how much can be achieved in so little and concise code.
-A very simple example would be how iterations or loops are done in Ruby :
+A very simple example would be how iterations or loops are done in Ruby:
 
 .. code-block:: cpp
 
@@ -83,9 +88,9 @@ You will see this for Ruby:
 
 Ruby is a very good tool to write scripts.
 
-Although, this will be not covered here in detail, a very important thing to keep in mind is that in Ruby, ``Everything is an Object.``.
-What that means is, you can treat everything i.e. numbers, strings, classes, objects themselves etc as objects.
-Even the simplest of Ruby code will use this principle.
+Although this will be not covered here in detail, a very important thing to keep in mind is that in Ruby, **everything is an object**.
+This means that you can treat everything i.e. numbers, strings, classes, objects themselves etc as objects.
+Even the simplest of Ruby code will use this principle:
 
 .. code-block:: ruby
 
@@ -99,28 +104,27 @@ Even the simplest of Ruby code will use this principle.
 
 Strictly speaking, there will be cases where the above statment is not true in Ruby.
 For example, in Ruby, functions are not first class objects.
-In some languages, like Javascript and Python functions are first class objects.
-In these languages, a function can be treated like an object i.e. they have attributes, they can be referenced and passed as parameters etc.
+In some languages like Javascript and Python, functions are first class objects.
+In these languages, a function can be treated like an object, i.e. they have attributes, they can be referenced and passed as parameters etc.
 
 Running Ruby Code
 -----------------
 
-Ruby scripts are file text files usually with .rb extension. You can run your ruby scripts as follows :
+Ruby scripts are usually text files with ``.rb`` extension. You can run your ruby scripts as follows:
 
 .. code-block:: console
 
-  bash$ ruby script.rb
+  $ ruby script.rb
 
-You can run ad-hoc Ruby code in an interactive session called the Interactive Ruby or irb in short.
+You can run ad-hoc Ruby code in an interactive session called the Interactive Ruby or ``irb`` in short.
 
 .. code-block:: console
 
-  bash$ irb
+  $ irb
   1.9.3-p448 :001>
 
-All Ruby examples in this document will start with ``>``, short for 1.9.3-p448 :XXX >.
-It means that it is running inside an irb session. 1.9.3-p448 is the Ruby version the author was running while writing this
-document.
+All Ruby examples in this topic will start with ``>``, short for 1.9.3-p448 :XXX>.
+It means that it is running inside an irb session. *1.9.3-p448* is the Ruby version the author was running while writing this topic.
 The XXX are line numbers.
 
 Syntax
@@ -172,7 +176,7 @@ And an array can have array as its element.
 
 Array objects are instances of Array class.
 So all instance methods are accessible to array objects.
-Discussing every method is beyond the scope of this document but here are a few examples :
+Discussing every method is beyond the scope of this topic but here are a few examples:
 
 .. code-block:: ruby
 
@@ -188,9 +192,7 @@ Discussing every method is beyond the scope of this document but here are a few 
   > empty_ary.empty?
   => true
 
-It is highly recommended that one reads the Ruby Array API documentation :
-http://ruby-doc.org/core-2.0/Array.html
-
+It is highly recommended that one reads the `Ruby Array API documentation <http://ruby-doc.org/core-2.0/Array.html>`_.
 
 * Hashes
 
@@ -211,7 +213,7 @@ Values can be referenced by their keys.
 
 Hash objects are instances of Hash class.
 So all instance methods are accessible to hash objects.
-Discussing every method is beyond the scope of this document but here are a few examples :
+Discussing every method is beyond the scope of this topic but here are a few examples:
 
 .. code-block:: ruby
 
@@ -228,8 +230,7 @@ Discussing every method is beyond the scope of this document but here are a few 
   > empty_hash.empty?
   => true
 
-It is highly recommended that one reads the Ruby Hash API documentation :
-http://www.ruby-doc.org/core-2.0/Hash.html
+It is highly recommended that one reads the `Ruby Hash API documentation <http://www.ruby-doc.org/core-2.0/Hash.html>`_.
 
 
 Functions
@@ -267,12 +268,12 @@ The last line inside a Ruby method is returned by the method. Using ``return`` k
 
 Objects and Classes
 -------------------
-As mentioned above, in Ruby, ``everything is an object``.
+As mentioned above, in Ruby, **everything is an object**.
 Ruby also has a class called ``Object``.
 It is the default root of all Ruby objects.
 
 Ruby objects can have attributes and methods.
-An instance of Object class (and in general, to create an instance of any class) can be created as follows :
+An instance of Object class (and in general, to create an instance of any class) can be created as follows:
 
 ..  code-block:: ruby
 
@@ -313,6 +314,8 @@ An instance variable in Ruby is prepended by ``@`` symbol.
 
 Rubygems
 --------
+
+.. todo: Explain more about what rubygems are as well as http://rubygems.org
 
 Databases
 ---------
