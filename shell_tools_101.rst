@@ -163,11 +163,17 @@ These are the current directory and the directory up one level respectively.
 mount
 -----
 
+.. todo:: talk about this here, or link to filesystems topic
+
 stat
 ----
 
+.. todo:: stat command
+
 vmstat
 ------
+
+.. todo:: vmstat command
 
 lsof
 ----
@@ -182,8 +188,13 @@ This can be viewed with by issuing ``lsof -i``.
 strace
 ------
 
+.. todo:: strace command
+
 ulimit
 ------
+
+.. todo:: ulimit command
+
 
 Extracting and manipulating data
 ================================
@@ -239,10 +250,12 @@ Read more on `Useless Use of cat <http://en.wikipedia.org/wiki/Cat_(Unix)#Useles
 
 cut
 ---
-This is a very useful command which should be covered.
+.. todo:: This is a very useful command which should be covered.
 
 grep
 ----
+
+.. todo:: Talk a LOT about grep
 
 awk
 ---
@@ -320,7 +333,7 @@ Using this same logic, the second column would be the student's age, and the thi
   $ awk 'NR==2' students.txt
   Jack Smith - 26 - jack@example.com
 
-NOTE: I didn't have to use the ``-F`` option here since rows are being manipulated, and the ``-F`` option specifies a delimiter for column manipulation 
+.. NOTE:: The ``-F`` option was not used here since rows are being manipulated, and the ``-F`` option specifies a delimiter for column manipulation
 
 
 * extract lines longer than a specific length by using the ``length($0)`` command
@@ -361,8 +374,7 @@ For example:
 
 sed
 ---
-Only talk about replacing text for now? It's the most common / needed piece of
-sed at this level.
+..todo:: Only talk about replacing text for now? It's the most common / needed piece of sed at this level.
 
 sort
 ----
