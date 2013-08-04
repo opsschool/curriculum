@@ -9,6 +9,7 @@ They are an asynchronous mechanism the kernel uses to communicate with a process
 Signals are always delivered by the kernel but can be initiated by the kernel, the process itself, or even another process.
 Signals are often referred to by their name, or their numeric integer value.
 For example, the kill signal is know as SIGKILL, or 9.
+There are many different signals that can be sent, although the signals in which users are generally most interested are SIGTERM and SIGKILL. The default signal sent is SIGTERM.
 
 
 How Do Signals Work?
@@ -68,7 +69,7 @@ SIGKILL 9         Term    Kill signal
 SIGSEGV 11        Core    Invalid memory reference
 SIGPIPE 13        Term    Broken pipe: write to pipe with no readers
 SIGALRM 14        Term    Timer signal from alarm(2)
-SIGTERM 15        Term    Termination signal
+SIGTERM 15        Term    Termination signal (signal sent by default by the kill command when not specified)
 SIGUSR1 30,10,16  Term    User-defined signal 1
 SIGUSR2 31,12,17  Term    User-defined signal 2
 SIGCHLD 20,17,18  Ign     Child stopped or terminated
