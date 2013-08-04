@@ -199,43 +199,40 @@ cat
 Perhaps most frequently, ``cat`` is used to print the contents of a file to the shell.
 For example, if file :file:`foo.txt` contains the word 'foo':
 
-  $ cat /tmp/foo.txt
-  -bash: bar
+.. code-block:: console
 
-When cat is called on multiple files, the output is in the same order as the files.  If we have another file bar.txt that contains 'bar' and run: ::
+  $ cat /tmp/foo.txt
+  foo
+
+When ``cat`` is called on multiple files, the output is in the same order as the files.
+If we have another file :file:`bar.txt` that contains 'bar' and run:
+
+.. code-block:: console
 
   $ cat /tmp/foo.txt /home/jdoe/bar.txt
-  -bash: foo bar
+  foo bar
 
-If you need to combine the contents of two files: ::
+If you want to combine the contents of the two files:
+
+.. code-block:: console
 
   $ cat /tmp/foo.txt /home/jdoe/bar.txt > /home/jdoe/foobar.txt
   $ cat /home/jdoe/foobar.txt
-  -bash: foo
-         bar
+  foo
+  bar
 
-It is important to note that foobar.txt did not exist before running this command.  For this particular usage, ``cat`` can create a file "on the fly"
+It is important to note that :file:`foobar.txt` did not exist before running this command.
+For this particular usage, ``cat`` can create a file "on the fly".
 
-``cat`` can also be used to output the contents of one file to another file.  WARNING!  You should be careful when using ``cat`` this way since it will overwrite the contents of the receiving file. ::
+``cat`` can also be used to output the contents of one file to another file.
 
-  $ cat /tmp/foo.txt /home/jdoe/bar.txt
-  $ cat /home/jdoe/bar.txt
-  -bash: foo
+.. WARNING:: You should be careful when using ``cat`` this way since it will overwrite the contents of the receiving file.
 
+  .. code-block:: console
 
-
-
-
-
-
-
-
-
-
-
-  
-
-
+    $ cat /tmp/foo.txt /home/jdoe/bar.txt
+    $ cat /home/jdoe/bar.txt
+    foo
 
 
 cut
