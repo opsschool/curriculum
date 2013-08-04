@@ -234,6 +234,8 @@ For this particular usage, ``cat`` can create a file "on the fly".
     $ cat /home/jdoe/bar.txt
     foo
 
+There are many tools that you may use to parse the output of fiels, and since ``cat`` can provide a comfortable input method for other tools, it is not always necessary.
+Read more on `Useless Use of cat <http://en.wikipedia.org/wiki/Cat_(Unix)#Useless_use_of_cat>`_.
 
 cut
 ---
