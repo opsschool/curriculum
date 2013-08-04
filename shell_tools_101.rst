@@ -133,10 +133,13 @@ You can also pass a directory name to the ``ls`` command and it will list the co
   bin  etc  games  include  lib  libexec  sbin  share  src
 
 There are a number of options that can be passed to the ls command to control both what is output and how it's formatted.
-Two of the more useful are the -a option and the -l option.
 Files and directories that begin with a '.' are refered to as hidden files.
-``ls -a`` will list these hidden files and directories.
-``ls -l`` outputs what's called a long listing, where various attributes are given in addition to the filenames:
+Two of the more useful options are: ``-a`` and ``-l``:
+
+- ``ls -a`` will list these hidden files and directories.
+- ``ls -l`` outputs what's called a long listing, where various attributes are given in addition to the filenames.
+
+Emaple of using both:
 
 .. code-block:: console
 
@@ -149,7 +152,7 @@ Files and directories that begin with a '.' are refered to as hidden files.
   -rw-r--r--.  1 luser luser     18 May 10  2012 .bash_logout
   -rw-r--r--.  1 luser luser    176 May 10  2012 .bash_profile
 
-In a long listing the first field lists the file type, it's permissions, and also any special attributes it might have.
+In a long listing the first field lists the file type, its permissions, and also any special attributes it might have.
 The very first letter in the first field indicates the file type.
 Notice directories are indicated by a "d" and regular files are indicated by a "-".
 After the first field, from left to right the fields are filetype\attributes\permissions, links, owner, group, file size, modification date, and file name.
