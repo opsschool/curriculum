@@ -406,7 +406,7 @@ For example:
 
 sed
 ---
-..todo:: Only talk about replacing text for now? It's the most common / needed piece of sed at this level.
+.. todo:: Only talk about replacing text for now? It's the most common / needed piece of sed at this level.
 
 sort
 ----
