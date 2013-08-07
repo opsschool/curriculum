@@ -172,7 +172,22 @@ This can be viewed with by issuing ``lsof -i``.
 
 man
 ---
-This needs to be here.
+The ``man`` command is used to access the ``man`` pages.  A ``man`` page, short for manual page, is documentation on a particular aspect of your operating system, be it a command, a configuration file, or even functions from a library for a programming language.  To access a ``man`` page, simply type the ``man`` command followed by the name of the command, file, etc. that you're wanting to view documentation on.
+
+The man pages are split up into different sections based on their types.  For example if you access the ``bash`` ``man`` page, at the very top you will see "BASH(1)", indicating that the ``bash`` manual is in section 1: general commands.  Depending on what you're trying to access, you may have to include a section number when you run man.  For example ``man printf`` will show you the ``printf`` commands man page.  But if instead you were wanting to view documentation on the C printf function you would type ``man 3 printf`` as section 3 contains documentation on library functions.
+
+The ``man`` page sections are as follows:
+
+- Section 1: general commands
+- Section 2: system calls
+- Section 3: library functions
+- Section 4: special files
+- Section 5: file formats and conventions
+- Section 6: games and screensavers
+- Section 7: Miscellaneous
+- Section 8: system administration commands
+
+To search through the ``man`` pages run either ``man -k`` or ``apropos`` followed by your search term.  This will return a list of man pages who's descriptions match your search term.
 
 mount
 -----
