@@ -268,14 +268,29 @@ The practical implementations of this are that:
 TCP vs UDP
 ==========
 
-TCP and UDP are the two most commonly referenced Transport Layer protocols used by the Internet Protocol. They have very different use cases, and a good rule of thumb is that TCP is used when a transmission must be received, and in the same order, whereas UDP is used when data loss, fragmentation or incorrect ordering is acceptable.
+Both TCP :rfc:`793` and UDP :rfc:`768` provide data transfer between processes 
+through ports. These process ports can be on the same computer or separate 
+computers connected by a network. TCP and UDP are the two most commonly referenced
+Transport Layer protocols used by the Internet Protocol. They have very different 
+use cases - the choice of protocols to use is often based on whether the risk of losing 
+packets in real-time without immediate alerting is acceptable. In some cases 
+UDP may be acceptable, such as video or audio streaming where programs can 
+interpolate over missing packets. However, TCP will be required due to its 
+reliable delivery guarantee in systems that support banking or healthcare.
+
+
+UDP is a less feature-rich, it does its work with a header that only contains a source port, 
+destination port, a length, and a checksum. TCP provides its capabilities 
+by sending more header data, more packets between ports and performing more 
+processing
+
 
 TCP
 ---
 
-TCP - Transmission Control Protocol - is a connection oriented protocol. It implements error checking, checksumming and packet ordering to ensure that data sent is received, and in the order with the same data with which it was sent. 
+TCP - Transmission Control Protocol - is a connection oriented protocol. It provides reliability, flow control and connection ensurance by implementing error checking, checksumming and packet ordering to ensure that data sent is received, and in the order with the same data with which it was sent. (See Example 1 below)
 
-Because of these extra checks, TCP is generally slower than UDP, especially over higher latency connections. Because of this
+Because of these extra checks, TCP is generally considered slower than UDP, especially over higher latency connections. Because of this it can be considered be unsuitable for file transfers over long slow links. 
 
 .. todo: Add in TCP handshake
 
@@ -284,10 +299,40 @@ UDP
 
 UDP - User Datagram Protocol - is a simple, connectionless protocol. It is used commonly in media and voice delivery where low latency is preferable to guarantee of delivery. It has lower overheads because there is no error checking [#checksum]_, however this means that applications must tolerate this. 
 
+UDP requires less header data in the individual 
+packets and requires fewer packets on the network to do its work. UDP does no 
+bookkeeping about the fate of the packets sent from a source. They could be 
+dropped because of a full buffer at a random router between the source and 
+destination and UDP wouldn't account for it in itself (other monitoring systems
+can be put in place to do the accounting, however that is beyond the UDP
+protocol). 
+
 
 UDP is commonly used for DNS, SNMP, and VoIP.
 
 .. [#checksum] UDP does implement checksumming - but this is only relevant if the packet reaches its destination.
+
+
+
+Examples
+---
+
+* Example 1
+ 
+  The TCP protocol requires upfront communication and the UDP protocol does 
+  not.  TCP requires an initial connection, known as the "three way handshake",
+  in order to begin sending data. That amounts to one initial packet sent 
+  between ports from initiator of the communication to the receiver, then 
+  another packet sent back, and then a final packet sent from the initiator 
+  to the receiver again. All that happens before sending the first byte of
+  data. In UDP the first packet sent contains the first byte of data.
+
+* Example 2 
+  
+  TCP and UDP differ in the size of their packet headers. The TCP header is 
+  20 bytes and the UDP header is 8 bytes. For programs that send a lot of 
+  packets with very little data, the header length can be a large percentage of
+  overhead data (e.g. games that send small packets about player position and state). 
 
 Static routing
 ==============
