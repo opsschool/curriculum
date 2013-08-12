@@ -164,57 +164,6 @@ address is below:
 There are several other representations, like dotted hexadecimal, dotted octal, hexadecimal,
 decimal, and octal. These are infrequently used, and will be covered in later sections.
 
-<<<<<<< HEAD
-=======
-
-
-IPv6
-----
-
-
-
-TCP vs UDP
-==========
-
-Both TCP :rfc:`793` and UDP :rfc:`768` provide data transfer between processes 
-through ports. These process ports can be on the same computer or separate 
-computers connected by a network. TCP provides the following: reliability, 
-flow control, and connections (see Example Difference 1 below). UDP is less 
-feature-rich, it does its work with a header that only contains a source port, 
-destination port, a length, and a checksum. TCP provides its capabilities 
-by sending more header data, more packets between ports and performing more 
-processing. UDP requires less header data in the individual 
-packets and requires fewer packets on the network to do its work. UDP does no 
-bookkeeping about the fate of the packets sent from a source. They could be 
-dropped because of a full buffer at a random router between the source and 
-destination and UDP wouldn't account for it in itself (other monitoring systems
-can be put in place to do the accounting, however that is beyond the UDP
-protocol). 
-
-The choice of protocols to use is often based on whether the risk of losing 
-packets in real-time without immediate alerting is acceptable. In some cases 
-UDP may be acceptable, such as video or audio streaming where programs can 
-interpolate over missing packets. However, TCP will be required due to its 
-reliable delivery guarantee in systems that support banking or healthcare.
-
-* Example 1
- 
-  The TCP protocol requires upfront communication and the UDP protocol does 
-  not.  TCP requires an initial connection, known as the "three way handshake",
-  in order to begin sending data. That amounts to one initial packet sent 
-  between ports from initiator of the communication to the receiver, then 
-  another packet sent back, and then a final packet sent from the initiator 
-  to the receiver again. All that happens before sending the first byte of
-  data. In UDP the first packet sent contains the first byte of data.
-
-* Example 2 
-  
-  TCP and UDP differ in the size of their packet headers. The TCP header is 
-  20 bytes and the UDP header is 8 bytes. For programs that send a lot of 
-  packets with very little data, the header length can be a large percentage of
-  overhead data (e.g. games that send small packets about player position and state). 
-
->>>>>>> upstream/master
 Subnetting, netmasks and CIDR
 -----------------------------
 
