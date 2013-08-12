@@ -10,9 +10,11 @@ or facilities failures.
 Could the organization survive if part or all of its information
 were lost?
 
-Just remember, RAID is not a backup solution.
-
-.. TODO:: Why is RAID not a backup solution? Experienced ops folks know why, but a junior ops person may not.
+Remember, RAID is not a backup solution.
+RAID protects against the loss of individual drives, but if data gets corrupted
+or deleted, RAID will replicate that corruption across all RAID stripes.
+Making backups on separate media is the best way to protect yourself against
+both "hard" and "soft" data loss.
 
 Designing a backup policy
 =========================
@@ -83,7 +85,7 @@ What is the cost to retain backups for a 30-days, 6-months, or 1 year?
 Is there a business requirement for keeping backups for a specific length of time?
 
 Are there laws for maintaining electronic records for a specific period of
-time? 
+time?
 
 
 If the organization is required to adhere to Freedom of
@@ -156,7 +158,7 @@ Security implications
 
 .. TODO:: Using backups to restore to a known "good" state after an incident just serves to put the machine in a known vulnerable state (security hole that was exploited is now back in operation)
 
-.. TODO:: can be used to restore system state that can be useful in a post mortem after an incident (say the attacker covered their tracks but backups were able to capture a rootkit before it was removed or before logs wer etampered with)
+.. TODO:: can be used to restore system state that can be useful in a post mortem after an incident (say the attacker covered their tracks but backups were able to capture a rootkit before it was removed or before logs were tampered with)
 
 Recovery basics
 ===============

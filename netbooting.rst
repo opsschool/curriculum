@@ -1,37 +1,55 @@
 Booting over the network
 ************************
 
-Typically, a machine will boot off of some type of local device.  However, there are some cases where it makes more sense to boot a machine off a remote host.  For example:
+Typically, a machine will boot off of some type of local device.
+However, there are some cases where it makes more sense to boot a machine off a remote host.
+For example:
 
 * You have a large number of machines to install, and carrying a CD/USB drive to each of them is time consuming.
 * You have a machine where the hard drive is failing, and you need to run some diagnostic tools
 * You have a machine in a remote location, but you need to reinstall the operating system
 
-In situations like this, it's possible to boot a machine entirely over the network.  This relies on a little piece of firmware built into pretty much every modern NIC.  This software is called Preboot eXecution Envionment (PXE).
+In situations like this, it's possible to boot a machine entirely over the network.
+This relies on a little piece of firmware built into pretty much every modern NIC.
+This software is called Preboot eXecution Environment (PXE).
 
 The network boot process works like this:
 
 * The machine boots off the NIC, which has PXE firmware built in
-* The PXE firmware intializes the NIC and sends out a DHCP request
+* The PXE firmware initializes the NIC and sends out a DHCP request
 * The DHCP response contains instructions to contact another server and download a file
 * The PXE firmware downloads the file via TFTP, and begins executing it
 * From here, many different things can happen depending on the type of software downloaded
 
 TFTP
 ====
-Trivial File Transfer Protocol (TFTP) is a very basic file transfer protocol that's used for bootstrapping the PXE firmware into something more useful.  TFTP is implemented as a UDP service, typically running on port 69.  TFTP does not support any type of authentication.
+Trivial File Transfer Protocol (TFTP) is a very basic file transfer protocol that's used for bootstrapping the PXE firmware into something more useful.
+TFTP is implemented as a UDP service, typically running on port 69.
+TFTP does not support any type of authentication.
 
-Given the low complexity of the TFTP protocol, servers are available for virtually every operating system.  Configuration is typically just pointing the server at a directory full of files to serve up.  Unless you have very specific reasons to do so (and fully understand the implications), you should make sure your that your TFTP server is setup in read only mode.
+Given the low complexity of the TFTP protocol, servers are available for virtually every operating system.
+Configuration is typically just pointing the server at a directory full of files to serve up.
+Unless you have very specific reasons to do so (and fully understand the implications), you should make sure your that your TFTP server is setup in read only mode.
 
 PXE
 ===
-The PXE stack by itself is very limited.  It's designed to just be able to retrieve and execute a file, and by itself is not terribly useful.  The two most popular software packages used with PXE are iPXE [#]_ and PXELINUX [#]_.  Of these, PXELINUX is the older one, and is a varient of SysLinux.  SysLinux is most commonly used as the initial menu you see when you boot a Linux CD.  iPXE is newer, and supports booting over many different protocols (HTTP, iSCSI, various SAN types, among others).
+The PXE stack by itself is very limited.
+It's designed to just be able to retrieve and execute a file, and by itself is not terribly useful.
+The two most popular software packages used with PXE are iPXE [#]_ and PXELINUX [#]_.
+Of these, PXELINUX is the older one, and is a variant of SysLinux.
+SysLinux is most commonly used as the initial menu you see when you boot a Linux CD.
+iPXE is newer, and supports booting over many different protocols (HTTP, iSCSI, various SAN types, among others).
 
 Basic Setup Process
 ===================
-For both iPXE and SysLinux you will need both a DHCP and TFTP server installed.  Your operating system will likely have a tftp server package available.  Don't worry too much about the exact one you use, there are only minor differences between them.  After this is installed, you will need to locate the directory that it is serving files from.  For the rest of this document we will refer to this directory as the 'tftpboot' directory.
+For both iPXE and SysLinux you will need both a DHCP and TFTP server installed.  Your operating system will likely have a tftp server package available.
+Don't worry too much about the exact one you use, there are only minor differences between them.
+After this is installed, you will need to locate the directory that it is serving files from.
+For the rest of this document we will refer to this directory as the 'tftpboot' directory.
 
-For the DHCP server, we'll be using the ISC DHCPD server.  This is available for many platforms, and has a large amount of documentation available.  Aside from setting up a DHCP range, you'd need to add the following line to your dhcpd.conf file:
+For the DHCP server, we'll be using the ISC DHCPD server.
+This is available for many platforms, and has a large amount of documentation available.
+Aside from setting up a DHCP range, you'd need to add the following line to your dhcpd.conf file:
 
 .. code-block:: none
 
@@ -42,7 +60,9 @@ That is the bare minimum needed for both types of PXE software we're going to se
 
 iPXE Setup
 ==========
-Start by downloading iPXE [#]_.  Make sure you save this to your tftpboot directory.  Next, add the following to your dhcpd.conf file:
+Start by downloading iPXE [#]_.
+Make sure you save this to your tftpboot directory.
+Next, add the following to your dhcpd.conf file:
 
 .. code-block:: none
 
@@ -52,7 +72,10 @@ Start by downloading iPXE [#]_.  Make sure you save this to your tftpboot direct
         filename "undionly.kpxe";
     }
 
-This will cause the DHCP server to first tell clients to download iPXE.  Once iPXE starts up and does another DHCP request, it will be told the actual location of the configuration file to download.  Without this, we would end up with a continous loop of iPXE downloading itself. Create a chainconfig.ipxe file in your tftpboot directory with the following:
+This will cause the DHCP server to first tell clients to download iPXE.
+Once iPXE starts up and does another DHCP request, it will be told the actual location of the configuration file to download.
+Without this, we would end up with a continuous loop of iPXE downloading itself.
+Create a chainconfig.ipxe file in your tftpboot directory with the following:
 
 .. code-block:: none
 
@@ -87,7 +110,7 @@ This will cause the DHCP server to first tell clients to download iPXE.  Once iP
     set arch i386
     goto centos_installer
 
-    # This demostrates some of the power of iPXE.  We make use of variables to prevent config duplication
+    # This demonstrates some of the power of iPXE.  We make use of variables to prevent config duplication
     # and we load the installer files directly off the CentOS mirror.  There's no need to copy everything
     # to a local TFTP server.  We also fallback to a shell if the boot fails so any issues can be debugged
     :centos_installer
@@ -104,12 +127,14 @@ This will cause the DHCP server to first tell clients to download iPXE.  Once iP
 PXELINUX setup
 ==============
 
-Start by downloading SysLinux [#]_.  Copy a few files from the archive into your tftpboot directory:
+Start by downloading SysLinux [#]_.
+Copy a few files from the archive into your tftpboot directory:
 
 * com32/menu/vesamenu.c32
 * core/pxelinux.0
 
-Next, we'll need to create the menu config file.  Create the file tftpboot/pxelinux.cfg/default:
+Next, we'll need to create the menu config file.
+Create the file tftpboot/pxelinux.cfg/default:
 
 .. code-block:: none
 
@@ -146,7 +171,8 @@ Next, we'll need to create the menu config file.  Create the file tftpboot/pxeli
         LOCALBOOT 0
 
 
-Since PXELINUX doesn't support HTTP, we'll need to download the CentOS installer images to the tftpboot directory.  Create two directories and download the initrd.img and vmlinuz files to them:
+Since PXELINUX doesn't support HTTP, we'll need to download the CentOS installer images to the tftpboot directory.
+Create two directories and download the initrd.img and vmlinuz files to them:
 
 * Directory: tftpboot/centos/6/x64/ Files: http://mirror.centos.org/centos-/6/os/x86_64/images/pxeboot/
 * Directory: tftpboot/centos/6/i386/ Files: http://mirror.centos.org/centos-6/6/os/i386/images/pxeboot/

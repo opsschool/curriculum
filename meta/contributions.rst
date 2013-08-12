@@ -45,6 +45,66 @@ professionals, so we may not respond immediately.
 
 If you'd like to join the mailing list, email avleen@gmail.com.
 
+*************************
+Rewards for contributions
+*************************
+
+We have a special reward for reaching either of the following goals with your
+contributions:
+
+* 10 pull requests totaling 50 or more lines changed
+* 1 recorded Ops School video
+
+For completing either of these, you will receive a dozen freshly baked cookies,
+made fresh for you by a professional baker, and a 3-inch die-cut sticker of the
+Ops School logo.
+
+Once you reach either of these, please fill in the `OpsSchool rewards form`_ and
+we will get your reward over to you!
+
+.. _`OpsSchool rewards form`: https://docs.google.com/forms/d/1XCNPKgqtK2FyB2zTUBW_aYVHUnhao9-CPhL2pB6ZGyU/viewform
+
+*****************
+Ops School Videos
+*****************
+
+In collaboration with O'Reilly Media, we are filming the Ops School curriculum
+to provide another method of learning for students. Filming happens
+approximately every 3 months in New York or Silicon Valley.
+
+O'Reilly is publishing the videos online, in individual form and in package
+form. Any profits which would be made by Ops School are donated to non-profit
+organisations which aid in learning for low-income persons.
+
+Video can be short (10-20 mins), or longer. Depending on the content in the
+video, some presenters choose to use slides, while others prefer screen-casting
+live demonstrations. Some videos may not need any supporting material at all!
+
+The next scheduled filming is at the Santa Clara Hyatt, from Monday June 17th
+2013 to Friday June 21st 2013. Filming slots are available all day.
+
+The topics which have already been filmed are:
+
+* Boot Process 101
+* DNS 101
+* Filesystems 101
+* MySQL 101
+* Nagios 101
+* Networking 101
+* Outage Investigation 101
+* Package Management 101
+* Shells 101
+* SSH 101
+* Application Level Monitoring
+* Careers In Operations
+* Operable Service - What People Expect From an Operable Service
+* Productivity Tools and Techniques
+* The ``/proc`` Filesystem
+* Web Flow - The Life of a Web Request
+
+If you are interested in filming, please contact Avleen Vig (avleen#gmail.com)
+or open an issue on the Github project.
+
 
 *********************
 How to write sections
@@ -129,5 +189,7 @@ Franck Cuny <franck@lumberjaph.net>                 SAY Media
 Chris Nehren <cnehren@omniti.com>                   OmniTI
 Brian Rak <dn@devicenull.org>
 Divij Rajkumar <drajkuma1@gmail.com>
+Aslan Brooke <aslandbrooke@yahoo.com>               ZynxHealth.com, InfoQ.com
+Glen Kaukola <gkaukola@cs.ucr.edu>
 Alex Smith <alex@alexsmith.org>
 ==================================================  ====================================

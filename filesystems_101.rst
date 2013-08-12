@@ -33,7 +33,7 @@ When you log into a Unix system, you will be given a command line by the
 
   bash-4.0$
 
-By default you will be in the "current working directory" if the process that
+By default you will be in the "current working directory" of the process that
 spawned the shell. Normally this is the home directory of your user. 
 It can be different in some edge cases, such as if you manually change the
 current working directory, but these cases are rare until you start doing more
@@ -316,9 +316,7 @@ above:
 
     -root@opsschool # mount /dev/sdb1 /mnt
 
-The root filesystem, mounted on ``/``, is unique and its mounting 
-
-The type of the filesystem refers to the format of the data structure that is 
+The filesystem type refers to the format of the data structure that is used as
 the filesystem on disk. Files (generally) do not care what kind of filesystem 
 they are on, it is only in initial filesystem creation, automatic 
 mounting, and performance tuning that you have to concern yourself with the 
@@ -393,7 +391,7 @@ Files, directories, inodes
 
 Inodes
 ======
-What the contain, how they work
+What they contain, how they work
 
 The POSIX standard dictates files must have the following attributes:
 
