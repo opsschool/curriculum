@@ -172,7 +172,36 @@ This can be viewed with by issuing ``lsof -i``.
 
 man
 ---
-This needs to be here.
+
+The ``man`` comand is used to look at manual pages. 
+The manual pages are documentation that ship with the system and its programs. In the old days these manuals were hardcopy but now they are digitized, however, on some systems you will still see evidence of their page layout.
+There are man pages for most, if not all, programs on your system. If you install new software from a package manager, usually new man pages will be installed. 
+When man is invoked, it will display the manpage to you, when you press 'q', the page will dissapear.
+
+
+.. code-block:: console
+
+  man passwd
+
+
+``Man`` looks at the ``PAGER`` environment variable to see which program to display text in. Common pagers are ``less`` and ``more``, ``less`` is more featureful and ``more`` is more ubiquitous and compatible.
+There are also manpages for things that aren't programs, for instance ``/etc/passwd`` has a man page. However, the man page for ``/etc/passwd`` is not found by invoking ``man /etc/passwd``, rather it is found by invoking ``man 5 passwd``. There are a number of sections of manpages, relating to different parts of the system. Here athey are, straight from ``man man``:
+
+
+.. code-block:: console
+
+  1   Executable programs or shell commands
+  2   System calls (functions provided by the kernel)
+  3   Library calls (functions within program libraries)
+  4   Special files (usually found in /dev)
+  5   File formats and conventions eg /etc/passwd
+  6   Games
+  7   Miscellaneous (including macro packages and conventions), e.g. man(7), groff(7)
+  8   System administration commands (usually only for root)
+  9   Kernel routines [Non standard]
+
+The ``info`` command is another way to find out information about the system. Most system administrators are comfortable with the 'basics' of their core command set, but are constantly checking the manpages to look up odd flags and functionality.
+
 
 mount
 -----
