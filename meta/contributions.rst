@@ -191,4 +191,5 @@ Brian Rak <dn@devicenull.org>
 Divij Rajkumar <drajkuma1@gmail.com>
 Aslan Brooke <aslandbrooke@yahoo.com>               ZynxHealth.com, InfoQ.com
 Glen Kaukola <gkaukola@cs.ucr.edu>
+Jeremy Grosser <jeremy@synack.me>                   Uber Technologies, Inc.
 ==================================================  ====================================
