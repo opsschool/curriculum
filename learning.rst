@@ -4,28 +4,155 @@ Learning and the Community
 Learning and strategies for improvement
 =======================================
 
+Certification
+-------------
+
+Certification is a broad, overarching topic that could easily span an entire
+section. The goal here is to briefly describe some of the most useful and common
+aspects of certification and their relation to operations specific roles. There
+are numerous certifications out there, some bare more weight and clout than
+others, so it is important to get a grasp and basic understanding of what all is
+out there and what is worth your time if you choose to pursue different
+certifications to help strengthen your career in ops.
+
+There is some disagreement as to the value that certifications provide but it is
+important to make readers aware of the common arguments for and against
+certifications for purposes of completeness. 
+
+Some will argue that certifications are a waste of time and are only good for
+those that want to memorize facts or use test dumps in order to pass certain
+tests. The counter argument to that philosophy is that many of the higher level
+certs are much more difficult to obtain than by simply doing brain dumps, as
+they are typically a combination of written and lab type scenarios. Often times
+HR departments will use certifications as a filter and many IT managers and
+hiring staff believe experience to be a much stronger indicator of performance
+and ability than certifications. Another example for preference of certified
+individuals are government roles or otherwise top level security positions that
+lean heavily towards higher level security certifications.
+
+Generally, there are a few scenarios that you will see with regards to
+certification.
+
+The first scenario, and most common for those just starting out, is the group
+who use certification as a way to get their foot in the door or to launch their
+careers in ops. The types of certifications that these individuals target are
+typically the entry level, easiest to obtain certifications which will yield the
+greatest improvement of job prospects for those that obtain them.
+
+The second scenario that is typical is one where certain certifications are
+required either for an individuals' place of employment or are used as
+a requirement or prerequisite to obtain a position at a company. Many times,
+Managed Service Providers (MSP's) require a certain level of certification
+amongst their employees to retain their status as a certified partner with some
+technology companies, like Cisco or Microsoft for example.  These companies are
+required to have various levels of certification for their employees in certain
+specific areas and are also required to continually have their employees become
+re-certified periodically to retain their status as a "partner" to keep various
+perks and relationships associated with the vendors they certify and partner
+with. 
+
+The following is a partial list of some of the most popular certifications
+followed by a brief description of the certification and how it can help with
+a career in a specific area of IT operations.
+
+**Comptia**
+
+*A+* - Designed as an entry level certification, typically geared towards
+desktop support and help desk type positions. This certification demonstrates
+basic ability to troubleshoot hardware and software related problems.
+
+*Network+* - This is an entry level network certification. It covers topics in
+the realm of networking and is designed for those looking to go into careers as
+network administrators, network technicians, help desk and desktop support roles.
+
+*Security+* - Perhaps the most popular and trusted Comptia certification, the
+Security+ covers a number of broad topics in IT security including network
+security, compliance topics, cryptography, access controls and identity
+management. This certification is geared towards those in security roles, such
+as security engineers, consultants, systems/network administrators and security
+administrators.
+
+*Linux+* - Another introductory, entry level certification offered by Comptia.
+This certifications covers topics that are commonly seen in the Linux world,
+such as filesystems, different shell commands, package management, scripting and
+some other administrative topics unique to Linux environments. Those who obtain
+the Linux+ typically qualify for roles like junior network administrators,
+junior Linux administrators, web administrators and Linux based DBA's.
+
+One nice things about the Comptia certs is their vendor neutral position in the
+industry. The certifications are great for building foundation building with no
+prior knowledge or experience and are nice stepping stones into jobs as well as
+other, more advanced certifications.
+
+**Cisco**
+
+*CCNA* - 
+
+*CCNP* -
+
+*CCIE* -
+
+*CCDE* -
+
+*CCIA* -
+
+**Microsoft**
+
+*MCITP* - 
+
+*MCSE* - 
+
+*MCM* - 
+
+**Redhat**
+
+*RHCSA* - 
+
+*RHCE* - 
+
+**VMWare**
+
+*VCP* - 
+
+This list is only meant to be used as a guideline, and is by no means
+comprehensive. There are many other IT certifications out there and are simply
+too numerous to cover. The certifications and their requirements are in constant
+change and a number of the certifications listed here have gone through numerous
+revisions, some of which are currently going through revision. This is one
+downside to certification. Because the industry changes so rapidly these
+certifications can quickly become irrelevant if the necessary time is not taken
+to keep current with your knowledge and industry technologies. 
+
+There is one final note on certification that should be emphasized here. There
+are many resources available on the topic of certifications, a quick Google
+search will more than likely yield a large number of results. One good site
+worth mentioning is the TechExams site. Here you will find many valuable
+resources and materials to help with pretty much all aspects of certifications.
+Their forums are an excellent place to exchange ideas and get quick feedback as
+well.
+
 Explicit vs Tacit knowledge
 ---------------------------
 
-*Explicit knowledge* can be defined as that gained from books or listening to a
-lecture. Basically some form of reading or auditory resource. It is typically
+*Explicit knowledge* can be defined as that gained from books or listening to
+a lecture. Basically some form of reading or auditory resource. It is typically
 easy to transfer to others, an example would be a manual for driving and
 operating a car.
 
-*Tacit knowledge* can be defined and describes as that gained from experience,
-action and practice. It is typically difficult to transfer this type of
-knowledge to other people. A good example would be flying a plane.
+*Tacit knowledge* can be defined and described as knowledge gained from
+experience, action and practice. It is typically difficult to transfer this type
+of knowledge to other people. A good example would be flying a plane.
 
 Let's start off by making a distinction between different types of knowledge.
 The practice of system administration relies heavily on both types of learning
 so just one type of experience is not enough to be great in this field.
 Essentially, the two knowledge types work hand in hand. So for example, reading
-a ton of books, while useful in its own right will not be nearly as effective
-as reading books and then applying the knowledge gained from hands on
-experience. Likewise, if somebody never bothers to pickup a book and relies
-entirely on hands experiences they will not be as knowledgeable as someone who
-incorporates both types of knowledge. It is in the opinion of many in the field
-that much more can be learned from hands on experience than by books alone.
+a ton of books, while useful in its own right will not be nearly as effective as
+reading books and then applying the knowledge gained from hands on experience.
+Likewise, if somebody never bothers to pickup a book and relies entirely on
+hands experiences they will not be as knowledgeable as someone who incorporates
+both types of knowledge. It is in the opinion of many in the field that much
+more can be learned from hands on experience than by books alone.
 
 Types of learning
 -----------------
@@ -45,7 +172,7 @@ It can be argued that employing a good variety of learning and study methods
 would be the most appropriate way to develop your skills as a sysadmin or any
 other career related in the operations field. Instead of saying
 that one is better than another, one should employ all of these
-types learning in their own life.  Take a look at yourself and
+types learning in their own life. Take a look at yourself and
 figure out how you learn best and then decide which method(s) are
 the most and least helpful and then decide how to make these styles
 work to your advantage.
@@ -66,24 +193,24 @@ techniques for learning new and difficult to understand information. Many of
 these strategies work together or in tandem so they may described more than
 once.
 
-**The Feynman technique** – This is as close to the end all be all that there is
+**The Feynman technique** - This is as close to the end all be all that there is
 when it comes to learning. Everybody is probably familiar with this one, but am
 guessing the name is unfamiliar. This technique is used to explain or go
 through a topic as if you were teaching it to somebody else that was just
 learning about it for the first time. This basically forces you to know what
-you’re talking about. If you get stuck when trying to explain a particular
+you're talking about. If you get stuck when trying to explain a particular
 concept or idea, make a note of what you are struggling with and research and
 relearn the material until you can confidently explain it. You should be able
 to explain the subject simply, if your explanations are wordy or convoluted you
-probably don’t understand it as well as you think.
+probably don't understand it as well as you think.
 
-**Reading** – This is a great technique to get an introduction to a topic by
+**Reading** - This is a great technique to get an introduction to a topic by
 reading up on (and bookmarking) what information you feel to be the most
-important, whether it be official documentation, RFC’s, books, magazines,
+important, whether it be official documentation, RFC's, books, magazines,
 respected blogs and authors, etc. It is a good idea to take very brief notes
 when something looks like it would useful so to try it out yourself.
 
-**Watching/Listening to others** – After getting a good idea from reading about
+**Watching/Listening to others** - After getting a good idea from reading about
 a subject it is good to reinforce this by either watching demonstrations,
 videos, listening to podcasts, lectures or anything else that will show how to
 get a better idea of how to do something. An example of this would be to put on
@@ -91,15 +218,15 @@ a podcast. It kills time as well as improves knowledge at the cost of nothing.
 Very efficient! The same with videos and demonstrations, the only thing holding
 you back is the motivation.
 
-**Try things for yourself** – Sometimes this can be the most difficult approach
+**Try things for yourself** - Sometimes this can be the most difficult approach
 but definitely can also be the most rewarding, there is nothing better than
 learning things the hard way. Try things out for yourself in a lab or anywhere
 that you can practice the concepts that you are attempting to learn and
 understand.
 
-**Take notes** – This is important for your own understanding of how things
+**Take notes** - This is important for your own understanding of how things
 work in a way that you can internalize. Take notes on simple things like
-commands you know you won’t remember, related topics and concepts or even just
+commands you know you won't remember, related topics and concepts or even just
 jotting down keywords quickly to Google for later on. This goes hand in hand
 with the reading technique described above, just jotting down very simple,
 brief notes can be really useful.
@@ -109,9 +236,9 @@ getting help and for communicating and discussing what you learn with others.
 /r/sysadmin would be a good starting point. IRC channels are another great
 place to ask questions and get help, there are channels for pretty much any
 subject you can think of out there. There are good sysadmin related channels at
-irc.freenode.net, if you don’t already utilize IRC, take a look.
+irc.freenode.net, if you don't already utilize IRC, take a look.
 
-**Come back later** – Give your brain some time to start digesting some of the
+**Come back later** - Give your brain some time to start digesting some of the
 information and to take a step back and put the pieces together to begin
 creating a bigger picture. If you have been working on learning a new concept
 or subject and felt overwhelmed and feel stuck, take a break. Do something
@@ -120,13 +247,13 @@ the subject later on with a fresh perspective. Sometimes these difficult
 subjects just take time to fully understand so taking breaks and clearing your
 head can be very useful.
 
-**Sleep on it** – Have you ever heard of the term before? This may sound crazy
+**Sleep on it** - Have you ever heard of the term before? This may sound crazy
 but sometimes if there is a particular problem that you're struggling with,
 think about it before going to sleep. By blocking out all outside interference
 and noise it is much easier think about, come up with fresh perspectives and
 ideas and often times you will wake up with an answer the next morning.
 
-**Break stuff** – One of the best ways to incorporate a number of these
+**Break stuff** - One of the best ways to incorporate a number of these
 techniques is to intentionally break stuff in your own setups. Triple check to
 be sure that nothing important will get broken first and then go ahead and give
 it a try. A much deeper and more intimate relationship with the way things work, why they
@@ -135,7 +262,7 @@ using this method is that it is almost always useful for something in the future
 whether it be the troubleshooting skills, the Googling skills or the specific
 knowledge in the particular area that needed to be fixed.
 
-**Practice, practice, practice** – There is just no way around it.To get
+**Practice, practice, practice** - There is just no way around it.To get
 better at something one must dedicate time and be prepared to practice like an
 absolute maniac. For operations roles and system administration
 this can partially come from practical job experience but it also
@@ -188,7 +315,7 @@ and burn like many others.So while it may work for some you generally will be
 safer and more likely to make a lasting impact if you take things slowly. Work
 on one thing at a time and gradually make the changes to improve your diet and
 health. As an example, start by cutting out something small, like cutting out
-a particular type of food that isn’t exactly healthy. Not entirely, but even
+a particular type of food that isn't exactly healthy. Not entirely, but even
 just cutting back is a good first step. Basically doing something is better
 than doing nothing.
 
