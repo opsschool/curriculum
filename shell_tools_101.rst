@@ -172,36 +172,36 @@ This can be viewed with by issuing ``lsof -i``.
 
 man
 ---
+The ``man`` command is used to access the ``man`` pages.
+A ``man`` page, short for manual page, is documentation on a particular aspect of your operating system, be it a command, a configuration file, or even functions from a library for a programming language.
+To access a ``man`` page, simply type the ``man`` command followed by the name of the command, file, etc. that you want to view documentation on.
+In the old days these manuals were hardcopy and on some systems (e.g. Solaris) you will still see evidence of their page layout.
+There are ``man`` pages for most, if not all, programs on your system.
+If you install new software from a package manager, usually new ``man`` pages will be installed.
+When man is invoked, it will display the ``man`` page to you, when you press 'q', the page will disappear.
 
-The ``man`` comand is used to look at manual pages. 
-The manual pages are documentation that ship with the system and its programs. In the old days these manuals were hardcopy but now they are digitized, however, on some systems you will still see evidence of their page layout.
-There are man pages for most, if not all, programs on your system. If you install new software from a package manager, usually new man pages will be installed. 
-When man is invoked, it will display the manpage to you, when you press 'q', the page will dissapear.
+The man pages are split up into different sections based on their types.
+For example if you access the ``bash`` ``man`` page, at the very top you will see "BASH(1)", indicating that the ``bash`` manual is in section 1: general commands.
+Depending on what you're trying to access, you may have to include a section number when you run man.
+For example ``man printf`` will show you the ``printf`` commands man page.
+But if instead you were wanting to view documentation on the C printf function you would type ``man 3 printf`` as section 3 contains documentation on library functions.
 
+The ``man`` page sections are as follows:
 
-.. code-block:: console
+- Section 1: General commands
+- Section 2: System calls (functions provided by the kernel)
+- Section 3: Library functions (functions within program libraries)
+- Section 4: Special files (usually found in /dev)
+- Section 5: File formats and conventions (eg /etc/passwd)
+- Section 6: Games and screensavers
+- Section 7: Miscellaneous
+- Section 8: System administration commands
 
-  man passwd
+To search through the ``man`` pages run either ``man -k`` or ``apropos`` followed by your search term.
+This will return a list of man pages who's descriptions match your search term.
 
-
-``Man`` looks at the ``PAGER`` environment variable to see which program to display text in. Common pagers are ``less`` and ``more``, ``less`` is more featureful and ``more`` is more ubiquitous and compatible.
-There are also manpages for things that aren't programs, for instance ``/etc/passwd`` has a man page. However, the man page for ``/etc/passwd`` is not found by invoking ``man /etc/passwd``, rather it is found by invoking ``man 5 passwd``. There are a number of sections of manpages, relating to different parts of the system. Here athey are, straight from ``man man``:
-
-
-.. code-block:: console
-
-  1   Executable programs or shell commands
-  2   System calls (functions provided by the kernel)
-  3   Library calls (functions within program libraries)
-  4   Special files (usually found in /dev)
-  5   File formats and conventions eg /etc/passwd
-  6   Games
-  7   Miscellaneous (including macro packages and conventions), e.g. man(7), groff(7)
-  8   System administration commands (usually only for root)
-  9   Kernel routines [Non standard]
-
-The ``info`` command is another way to find out information about the system. Most system administrators are comfortable with the 'basics' of their core command set, but are constantly checking the manpages to look up odd flags and functionality.
-
+The ``info`` command is another way to find out information about the system and its utilities.
+Most system administrators are comfortable with the 'basics' of their core command set, but are frequently checking the ``man`` pages to look up odd flags and functionality.
 
 mount
 -----
