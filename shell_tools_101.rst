@@ -303,6 +303,8 @@ Here, you can see that the first two columns contain the student's name, the thi
   Jack jack@example.com
   Jane jane@example.com
 
+The flag, ``-f`` is used to select which fields we want to output.
+
 ``cut``, by default, uses tab as a delimiter, but we can change that by using the ``-d`` flag.
 
 Suppose the ``students.txt`` instead stored data like this:
@@ -318,10 +320,19 @@ Now, if the ``-`` character is used as a delimiter, the first column would be th
 
 .. code-block:: console
 
-  $ cut -f1 -d'-' students.txt
+  $ cut -f1 -d- students.txt
   John Doe
   Jack Smith
   Jane Doe
+
+If you want to use the space to delimit strings, you have to do it like so:
+
+.. code-bloc:: console
+
+  $ cut -f1 -d' ' students.txt
+  John
+  Jack
+  Jane
 
 grep
 ----
