@@ -282,7 +282,46 @@ Read more on `Useless Use of cat <http://en.wikipedia.org/wiki/Cat_(Unix)#Useles
 
 cut
 ---
-.. todo:: This is a very useful command which should be covered.
+
+The ``cut`` utility cuts out selected portions of each line and writes them to the standard output. 
+
+As an example, let's take a file ``students.txt`` that stored a list of student names, ages and email addresses in columns separated by a tab:
+
+.. code-block:: console
+
+  $ cat students.txt
+  John	Doe	25	john@example.com
+  Jack	Smith	26	jack@example.com
+  Jane	Doe	24	jane@example.com
+
+Here, you can see that the first two columns contain the student's name, the third has an age and the fourth, an email address.  You can use ``cut`` to extract just the student's first name and email like this:
+
+.. code-block:: console
+
+  $ cut -f1,4 students.txt
+  John john@example.com
+  Jack jack@example.com
+  Jane jane@example.com
+
+``cut``, by default, uses tab as a delimiter, but we can change that by using the ``-d`` flag.
+
+Suppose the ``students.txt`` instead stored data like this:
+
+.. code-block:: console
+
+  $ cat students.txt
+  John Doe - 25 - john@example.com
+  Jack Smith - 26 - jack@example.com
+  Jane Doe - 24 - jane@example.com
+
+Now, if the ``-`` character is used as a delimiter, the first column would be the student's full name:
+
+.. code-block:: console
+
+  $ cut -f1 -d'-' students.txt
+  John Doe
+  Jack Smith
+  Jane Doe
 
 grep
 ----
