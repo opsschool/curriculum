@@ -356,7 +356,7 @@ awk
 
 ``awk`` is a very powerful utility that lets you extract and manipulate data from files.
 
-For example, if you had a file ``students.txt`` that stored a list of student names, ages and email addresses in columns separated by a space:
+For example, if you had a file ``students.txt`` similar to the one above, but with the fields separated by a space:
 
 .. code-block:: console
 
@@ -365,7 +365,6 @@ For example, if you had a file ``students.txt`` that stored a list of student na
   Jack Smith 26 jack@example.com
   Jane Doe 24 jane@example.com
 
-Here, you can see that the first two columns have contain the student's name, the third has an age and the fourth, an email address.
 You can use awk to extract just the student's first name and email like this:
 
 .. code-block:: console
