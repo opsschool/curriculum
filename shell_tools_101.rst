@@ -294,7 +294,8 @@ As an example, let's take a file ``students.txt`` that stores a list of student 
   Jack	Smith	26	jack@example.com
   Jane	Doe	24	jane@example.com
 
-Here, you can see that the first two columns contain the student's name, the third has an age and the fourth, an email address.  You can use ``cut`` to extract just the student's first name and email like this:
+Here, you can see that the first two columns contain the student's name, the third has an age and the fourth, an email address.
+You can use ``cut`` to extract just the student's first name and email like this:
 
 .. code-block:: console
 
@@ -334,7 +335,8 @@ If you want to use the space to delimit strings, you would do it like so:
   Jack
   Jane
 
-``cut`` also has some other options. If you have some input with fixed width columns, you can use ``-c`` to break them apart. For example, to show the login names and times of the currently logged in users:
+``cut`` also has some other options. If you have some input with fixed width columns, you can use ``-c`` to break them apart.
+For example, to show the login names and times of the currently logged in users:
 
 .. code-block:: console
 
