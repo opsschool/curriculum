@@ -312,15 +312,15 @@ Suppose the ``students.txt`` instead stores data like this:
 .. code-block:: console
 
   $ cat students.txt
-  John Doe - 25 - john@example.com
-  Jack Smith - 26 - jack@example.com
-  Jane Doe - 24 - jane@example.com
+  John Doe|25|john@example.com
+  Jack Smith|26|jack@example.com
+  Jane Doe|24|jane@example.com
 
-Now, if the ``-`` character is used as a delimiter, the first column would be the student's full name:
+Now, if the ``|`` character is used as a delimiter, the first column would be the student's full name:
 
 .. code-block:: console
 
-  $ cut -f1 -d- students.txt
+  $ cut -f1 -d| students.txt
   John Doe
   Jack Smith
   Jane Doe
