@@ -334,6 +334,18 @@ If you want to use the space to delimit strings, you would do it like so:
   Jack
   Jane
 
+``cut`` also has some other options. If you have some input with fixed width columns, you can use ``-c`` to break them apart. For example, to show the login names and times of the currently logged in users:
+
+.. code-block:: console
+
+  $ who | cut -c 1-9,19-30
+  mike     Aug  1 23:42
+  mike     Aug  5 20:58
+  mike     Aug 22 10:34
+  mike     Aug  6 19:18
+
+You might have to change some of the character positions to make it work on your system.
+
 grep
 ----
 
