@@ -285,7 +285,7 @@ cut
 
 The ``cut`` utility cuts out selected portions of each line and writes them to the standard output. 
 
-As an example, let's take a file ``students.txt`` that stored a list of student names, ages and email addresses in columns separated by a tab:
+As an example, let's take a file ``students.txt`` that stores a list of student names, ages and email addresses in columns separated by a tab:
 
 .. code-block:: console
 
@@ -307,7 +307,7 @@ The flag, ``-f`` is used to select which fields we want to output.
 
 ``cut``, by default, uses tab as a delimiter, but we can change that by using the ``-d`` flag.
 
-Suppose the ``students.txt`` instead stored data like this:
+Suppose the ``students.txt`` instead stores data like this:
 
 .. code-block:: console
 
@@ -325,9 +325,9 @@ Now, if the ``-`` character is used as a delimiter, the first column would be th
   Jack Smith
   Jane Doe
 
-If you want to use the space to delimit strings, you have to do it like so:
+If you want to use the space to delimit strings, you would do it like so:
 
-.. code-bloc:: console
+.. code-block:: console
 
   $ cut -f1 -d' ' students.txt
   John
