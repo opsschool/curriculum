@@ -283,7 +283,7 @@ Read more on `Useless Use of cat <http://en.wikipedia.org/wiki/Cat_(Unix)#Useles
 cut
 ---
 
-The ``cut`` utility cuts out selected portions of each line and writes them to the standard output. 
+The ``cut`` utility cuts out selected portions of each line and writes them to the standard output.
 
 As an example, let's take a file ``students.txt`` that stores a list of student names, ages and email addresses in columns separated by a tab:
 
