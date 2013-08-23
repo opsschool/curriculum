@@ -282,7 +282,71 @@ Read more on `Useless Use of cat <http://en.wikipedia.org/wiki/Cat_(Unix)#Useles
 
 cut
 ---
-.. todo:: This is a very useful command which should be covered.
+
+The ``cut`` utility cuts out selected portions of each line and writes them to the standard output.
+
+As an example, let's take a file ``students.txt`` that stores a list of student names, ages and email addresses in columns separated by a tab:
+
+.. code-block:: console
+
+  $ cat students.txt
+  John	Doe	25	john@example.com
+  Jack	Smith	26	jack@example.com
+  Jane	Doe	24	jane@example.com
+
+Here, you can see that the first two columns contain the student's name, the third has an age and the fourth, an email address.
+You can use ``cut`` to extract just the student's first name and email like this:
+
+.. code-block:: console
+
+  $ cut -f1,4 students.txt
+  John john@example.com
+  Jack jack@example.com
+  Jane jane@example.com
+
+The flag, ``-f`` is used to select which fields we want to output.
+
+``cut``, by default, uses tab as a delimiter, but we can change that by using the ``-d`` flag.
+
+Suppose the ``students.txt`` instead stores data like this:
+
+.. code-block:: console
+
+  $ cat students.txt
+  John Doe|25|john@example.com
+  Jack Smith|26|jack@example.com
+  Jane Doe|24|jane@example.com
+
+Now, if the ``|`` character is used as a delimiter, the first column would be the student's full name:
+
+.. code-block:: console
+
+  $ cut -f1 -d| students.txt
+  John Doe
+  Jack Smith
+  Jane Doe
+
+If you want to use the space to delimit strings, you would do it like so:
+
+.. code-block:: console
+
+  $ cut -f1 -d' ' students.txt
+  John
+  Jack
+  Jane
+
+``cut`` also has some other options. If you have some input with fixed width columns, you can use ``-c`` to break them apart.
+For example, to show the login names and times of the currently logged in users:
+
+.. code-block:: console
+
+  $ who | cut -c 1-9,19-30
+  mike     Aug  1 23:42
+  mike     Aug  5 20:58
+  mike     Aug 22 10:34
+  mike     Aug  6 19:18
+
+You might have to change some of the character positions to make it work on your system.
 
 grep
 ----
@@ -294,7 +358,7 @@ awk
 
 ``awk`` is a very powerful utility that lets you extract and manipulate data from files.
 
-For example, if you had a file ``students.txt`` that stored a list of student names, ages and email addresses in columns separated by a space:
+For example, if you had a file ``students.txt`` similar to the one above, but with the fields separated by a space:
 
 .. code-block:: console
 
@@ -303,7 +367,6 @@ For example, if you had a file ``students.txt`` that stored a list of student na
   Jack Smith 26 jack@example.com
   Jane Doe 24 jane@example.com
 
-Here, you can see that the first two columns have contain the student's name, the third has an age and the fourth, an email address.
 You can use awk to extract just the student's first name and email like this:
 
 .. code-block:: console
