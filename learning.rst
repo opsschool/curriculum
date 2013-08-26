@@ -71,15 +71,15 @@ when it comes to learning. Everybody is probably familiar with this one, but am
 guessing the name is unfamiliar. This technique is used to explain or go
 through a topic as if you were teaching it to somebody else that was just
 learning about it for the first time. This basically forces you to know what
-you’re talking about. If you get stuck when trying to explain a particular
+you're talking about. If you get stuck when trying to explain a particular
 concept or idea, make a note of what you are struggling with and research and
 relearn the material until you can confidently explain it. You should be able
 to explain the subject simply, if your explanations are wordy or convoluted you
-probably don’t understand it as well as you think.
+probably don't understand it as well as you think.
 
 **Reading** – This is a great technique to get an introduction to a topic by
 reading up on (and bookmarking) what information you feel to be the most
-important, whether it be official documentation, RFC’s, books, magazines,
+important, whether it be official documentation, RFC's, books, magazines,
 respected blogs and authors, etc. It is a good idea to take very brief notes
 when something looks like it would useful so to try it out yourself.
 
@@ -99,7 +99,7 @@ understand.
 
 **Take notes** – This is important for your own understanding of how things
 work in a way that you can internalize. Take notes on simple things like
-commands you know you won’t remember, related topics and concepts or even just
+commands you know you won't remember, related topics and concepts or even just
 jotting down keywords quickly to Google for later on. This goes hand in hand
 with the reading technique described above, just jotting down very simple,
 brief notes can be really useful.
@@ -109,7 +109,7 @@ getting help and for communicating and discussing what you learn with others.
 /r/sysadmin would be a good starting point. IRC channels are another great
 place to ask questions and get help, there are channels for pretty much any
 subject you can think of out there. There are good sysadmin related channels on the
-`Freenode <http://freenode.net/>`_ IRC network, if you don’t already utilize IRC, take a look.
+`Freenode <http://freenode.net/>`_ IRC network, if you don't already utilize IRC, take a look.
 
 **Come back later** – Give your brain some time to start digesting some of the
 information and to take a step back and put the pieces together to begin
@@ -141,7 +141,7 @@ absolute maniac. For operations roles and system administration
 this can partially come from practical job experience but it also
 comes from dedicated study and lab time. The hands on component is
 where most experience and time will come from and becoming better
-doesn’t just happen, it takes cultivation and time, just like with
+doesn't just happen, it takes cultivation and time, just like with
 any other skill. Stick with it and never stop learning and improving
 on your skillset through practice and experience.
 
@@ -188,7 +188,7 @@ and burn like many others.So while it may work for some you generally will be
 safer and more likely to make a lasting impact if you take things slowly. Work
 on one thing at a time and gradually make the changes to improve your diet and
 health. As an example, start by cutting out something small, like cutting out
-a particular type of food that isn’t exactly healthy. Not entirely, but even
+a particular type of food that isn't exactly healthy. Not entirely, but even
 just cutting back is a good first step. Basically doing something is better
 than doing nothing.
 
