@@ -161,7 +161,7 @@ Michael Rembetsy <mcr@etsy.com>                     Etsy, Inc
 Magnus Hedemark <magnus@yonderway.com>              Wireless Generation
 Ariel Jolo <ajolo@sysarmy.com.ar>                   sysARmy
 Ryan Frantz <ryanleefrantz@gmail.com>               Crabby Admins (www.crabbyadmins.org)
-Mike Fiedler <miketheman@gmail.com>                 Magnetic, Inc.
+Mike Fiedler <miketheman@gmail.com>                 Datadog
 Nathan Milford <nathan@milford.io>                  Outbrain, Inc.
 Patrick Cable <pc@pcable.net>
 Benjamin Krueger <benjamin@seattlefenix.net>        Sourcefire, Inc
@@ -192,4 +192,5 @@ Divij Rajkumar <drajkuma1@gmail.com>
 Aslan Brooke <aslandbrooke@yahoo.com>               ZynxHealth.com, InfoQ.com
 Glen Kaukola <gkaukola@cs.ucr.edu>
 Alex Smith <alex@alexsmith.org>
-==================================================  ====================================
+Spencer Krum <krum.spencer@gmail.com>               UTi Worldwide Inc.
+Jeremy Grosser <jeremy@synack.me>                   Uber Technologies, Inc.
