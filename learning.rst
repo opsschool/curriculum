@@ -9,21 +9,21 @@ Certification
 
 Certification is a broad, overarching topic that could easily span an entire section.
 The goal here is to briefly describe some of the most useful and common aspects of certification and their relation to operations specific roles.
-There are numerous certifications out there, some bare more weight and clout than others, so it is important to get a grasp and basic understanding of what all is out there and what is worth your time if you choose to pursue different certifications to help strengthen your career in ops.
+There are a wide variation of certifications, some bear more weight and clout than others. Therefore it is important to get a basic understanding of the various certification options available if you choose to pursue certification to help strengthen your career in ops and increase your hiring eligibility with prospective employers.
 
 There is some disagreement as to the value that certifications provide but it is important to make readers aware of the common arguments for and against certifications for purposes of completeness.
 
-Some will argue that certifications are a waste of time and are only good for those that want to memorize facts or use test dumps in order to pass certain tests.
+One such argument against certifications is that they merely test trivial knowledge which does not translate well into IT ability by memorizing facts and using test dumps in order to pass certain tests.
 The counter argument to that philosophy is that many of the higher level certs are much more difficult to obtain than by simply doing brain dumps, as they are typically a combination of written and lab type scenarios.
 Often times HR departments will use certifications as a filter and many IT managers and hiring staff believe experience to be a much stronger indicator of performance and ability than certifications.
 Another example for preference of certified individuals are government roles or otherwise top level security positions that lean heavily towards higher level security certifications.
 
 Generally, there are a few scenarios that you will see with regards to certification.
 
-The first scenario, and most common for those just starting out, is the group who use certification as a way to get their foot in the door or to launch their careers in ops.
+* The first scenario, and most common for those just starting out, is the group who use certification as a way to get their foot in the door or to launch their careers in ops.
 The types of certifications that these individuals target are typically the entry level, easiest to obtain certifications which will yield the greatest improvement of job prospects for those that obtain them.
 
-The second scenario that is typical is one where certain certifications are required either for an individuals' place of employment or are used as a requirement or prerequisite to obtain a position at a company.
+* The second scenario that is typical is one where certain certifications are required either for an individuals' place of employment or are used as a requirement or prerequisite to obtain a position at a company.
 Many times, Managed Service Providers (MSP's) require a certain level of certification amongst their employees to retain their status as a certified partner with some technology companies, like Cisco or Microsoft for example.
 These companies are required to have various levels of certification for their employees in certain specific areas and are also required to continually have their employees become re-certified periodically to retain their status as a "partner" to keep various perks and relationships associated with the vendors they certify and partner with.
 
@@ -85,7 +85,7 @@ Because the industry changes so rapidly these certifications can quickly become 
 
 There is one final note on certification that should be emphasized here.
 There are many resources available on the topic of certifications, a quick Google search will more than likely yield a large number of results.
-One good site worth mentioning is the TechExams site.
+One good site worth mentioning is the `TechExams <http://techexams.net>`_ site.
 Here you will find many valuable resources and materials to help with pretty much all aspects of certifications.
 Their forums are an excellent place to exchange ideas and get quick feedback as well.
 
@@ -93,7 +93,7 @@ Explicit vs Tacit knowledge
 ---------------------------
 
 *Explicit knowledge* can be defined as that gained from books or listening to a lecture.
-Basically some form of reading or auditory resource.
+Basically, this type of knowledge would be some form of reading or auditory resource.
 It is typically easy to transfer to others, an example would be a manual for driving and operating a car.
 
 *Tacit knowledge* can be defined and described as knowledge gained from experience, action and practice.
@@ -314,11 +314,11 @@ IRC Channels
 RSS Feeds
 ---------
 
-ServerFault
+`ServerFault <http://serverfault.com>`_
 -----------
 
 Sign up and participate.
-As your own questions, but also answer questions that look interesting to you.
+Ask your own questions, but also answer questions that look interesting to you.
 This will not only help the community, but can keep you sharp, even on technologies you don't work with on a daily basis.
 
 Books (and concepts worth "Googling")
@@ -338,7 +338,7 @@ University Programs that teach Operations
 -----------------------------------------
 
 A list of System Administration or Ops related classes or degree granting programs.
-It would be well worth our time to compare their syllabi, course outcomes, exercises etc.
+It would be well worth your time to compare their syllabi, course outcomes, exercises etc.
 
 - http://www.hioa.no/Studier/TKD/Master/Network-and-System-Administration/
 - http://www.hioa.no/Studier/Summer/Network-and-system-administration
