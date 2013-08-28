@@ -253,63 +253,73 @@ Mailing lists and forums
 * `systers [women in computing] <http://anitaborg.org/initiatives/systers/>`_
 * `ops-education Google group <https://groups.google.com/forum/?hl=en&fromgroups=#!forum/ops-education>`_
 
-irc
----
+IRC Channels
+------------
+
 irc.freenode.net
 
  * #lopsa
  * #infra-talk
+ * #reddit-sysadmin
+ * #opsschool
 
 Membership organizations
 ------------------------
 
-`USENIX LISA Special Interest Group (SIG) <https://www.usenix.org/lisa>`_
-
-`League of Professional System Administrators (LOPSA) <https://lopsa.org/>`_
+* `USENIX LISA Special Interest Group (SIG) <https://www.usenix.org/lisa>`_
+* `League of Professional System Administrators (LOPSA) <https://lopsa.org/>`_
 
 Conferences and Events
 ----------------------
 
-`USENIX Large Installation System Administration (LISA) <http://www.usenix.org>`_
-
-`Velocity <http://velocityconf.com/>`_
-
-`Scale <http://www.socallinuxexpo.org/>`_
-
-`Ohio LinuxFest <http://www.ohiolinux.org/>`_
-
-`Lopsa-East <http://lopsa-east.org>`_
-
-`Cascadia <http://casitconf.org>`_
-
+* `USENIX Large Installation System Administration (LISA) <http://www.usenix.org>`_
+* `Velocity <http://velocityconf.com/>`_
+* `Scale <http://www.socallinuxexpo.org/>`_
+* `Ohio LinuxFest <http://www.ohiolinux.org/>`_
+* `Lopsa-East <http://lopsa-east.org>`_
+* `Cascadia <http://casitconf.org>`_
+* `VMWorld <http://www.vmworld.com/index.jspa>`_
+* `Toorcon <http://toorcon.net/>`_
+* `Blackhat <http://www.blackhat.com/us-13/>`_
+* `Derby Con <https://www.derbycon.com/>`_
+* `Def Con <http://www.defcon.org/>`_
+* `Schmoocon <http://www.shmoocon.org/>`_
+* `TechEd <http://northamerica.msteched.com/#fbid=arFawgdYKBY>`_
+* `Redhat Summit <http://www.redhat.com/summit/>`_
+* `Cisco Live! <http://www.ciscolive.com/us/>`_
+* `HP Discover <http://h30614.www3.hp.com/discover/home?jumpid=ex_r11754_go_discover>`_
+* `EMC World <http://www.emcworld.com/index.htm>`_
 
 Subreddits
 ----------
 
-* /r/sysadmin
-* /r/networking
-* /r/netsec
-* /r/vim
-* /r/python
-* /r/programming
+* `/r/sysadmin <http://www.reddit.com/r/sysadmin>`_
+* `/r/linuxadmin <http://www.reddit.com/r/linuxadmin>`_
+* `/r/commandline <http://www.reddit.com/r/commandline>`_
+* `/r/networking <http://www.reddit.com/r/networking>`_
+* `/r/netsec <http://www.reddit.com/r/netsec>`_
+* `/r/vim <http://www.reddit.com/r/vim>`_
+* `/r/python <http://www.reddit.com/r/python>`_
+* `/r/programming <http://www.reddit.com/r/programming>`_
+* `/r/learnprogramming <http://www.reddit.com/r/learnprogramming>`_
 
 Podcasts
 --------
 
-* Security Now! - Security
-* The Linux Action Show! - Linux focused podcast
-* Techsnap - Various IT topics
-* Hak 5 - Hacking and security related
-* Podnutz Pro - Various IT topics
-* My Hard Drive Died - Hard Drive focused podcast
-* Windows Weekly - Windows news
-* Packet Pushers - Networking
-* RunAs Radio - Various IT topics
-* The UC Architects - Exchange, Lync
-* The PowerScript Podcast - Powershell
-
-IRC Channels
-------------
+* `Security Now! <https://www.grc.com/securitynow.htm>`_ - Security
+* `The Linux Action Show! <http://www.jupiterbroadcasting.com/tag/linux-action-show/>`_ - Linux focused podcast
+* `Techsnap <http://www.jupiterbroadcasting.com/>`_ - Various IT topics
+* `Hak 5 <http://hak5.org/>`_ - Hacking and security related
+* `Podnutz Pro <http://podnutz.com/pro>`_ - SMB system administration
+* `Windows Weekly <http://twit.tv/ww>`_ - Windows news
+* `Packet Pushers <http://packetpushers.net/>`_ - Networking
+* `RunAs Radio <http://feeds.feedburner.com/RunasRadio>`_ - Various IT topics
+* `The UC Architects <http://www.theucarchitects.com/>`_ - Exchange, Lync
+* `The PowerScripting Podcast <http://powerscripting.wordpress.com/>`_ - Powershell
+* `FLOSS Weekly <http://twit.tv/show/floss-weekly>`_ - All things Open Source
+* `Stack Exchange Podcast <http://blog.stackoverflow.com/category/podcasts/>`_ - Various Programming and administration topics
+* `Healthy Paranoia <http://packetpushers.net/category/podcast-post/healthy-paranoia/>`_ - Security
+* `My Hard Drive Died <http://www.podnutz.com/myharddrivedied>`_ - Anything and everything Hard Drive related
 
 RSS Feeds
 ---------
