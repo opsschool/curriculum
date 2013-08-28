@@ -239,11 +239,9 @@ Where to look for help in the community
 Local user groups
 -----------------
 
-`Local LOPSA Groups: <https://lopsa.org/localprogram>`_
-
-`BayLISA <http://www.baylisa.org/>`_
-
-`Back Bay LISA <http://www.bblisa.org/>`_
+* `Local LOPSA Groups: <https://lopsa.org/localprogram>`_
+* `BayLISA <http://www.baylisa.org/>`_
+* `Back Bay LISA <http://www.bblisa.org/>`_
 
 Mailing lists and forums
 ------------------------
