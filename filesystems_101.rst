@@ -382,8 +382,39 @@ be covered later in the curriculum. The ``auto.master`` file is known as
 
 Filesystem options
 ==================
+
+Passing options to the ``mount`` command, or inserting them into the ``/etc/fstab`` file, control how the filesystem behaves.
+Different filesystems at different version support different options, but some options are ubiquitous.
+
+async
+-----
+
+The ``async`` option sets writing operations to the filesystem to be asyncronous.
+This means that the ``cp`` command will exit normally before the entire copy is done, and that the system will write the files to the filesystem at some point later on.
+You don't have a lot of guarantees here about when that will happen, though for a generally unloaded system you won't have to wait long.
+It is also hard to tell when the filesystem is actually done with the copy.
+The ``sync`` utility can be used to force a filesystem sync.
+The opposite of this option, the ``sync`` option is the default on most filesystems.
+
 noatime
+-------
+
+The ``noatime`` option tells the filesystem not to keep track of ``atime`` or access time.
+If you recall your ``inode`` lessons, you'll remember that the ``indoe`` keeps track of three dates, ``ctime`` or creation time, ``mtime`` or modification time, and ``atime``, or access time.
+Under normal circumstances, whenever a user reads from a file, the operating system will write a new ``atime`` to the ``inode``.
+For large groups of small files, read by a number of people, or by automated processes, this final write operation can hurt disk performance.
+As a result, many admins will turn of ``atime`` on filesystems to increase performance.
+
+Note that ``atime`` is not really a security/auditing feature. Any regular user can use the ``touch`` utility on a file to set the ``atime`` to some point in the past.
+
+
 nobarriers
+noexec
+nosuid
+rbind
+remount
+ro
+rw
 
 How filesystems work
 ====================
