@@ -370,7 +370,7 @@ automounter allows the system to mount filesystems on demand, then clean up thos
 filesystems when they are no longer being used. In this case, the system mounts
 home directories for each user from a remote NFS server. The filesystem remains
 unmounted until the user logs in, and is unmounted a short time after the user
-logs out. The automounter is triggered by an attempt to cd into ``/home/<key``,
+logs out. The automounter is triggered by an attempt to cd into ``/home/<key>``,
 it will then attempt to find an nfs share on ``/exports/home/<key>`` and mount it
 on ``/home/key``, then allow the ``cd`` command to return successfully. The 
 ``/home`` example above is using the ``&`` expansion syntax, the second line is
