@@ -171,7 +171,7 @@ For example:
    Bob's internet connection at work is questionable.
    To work around this, Bob connects to ``server1`` which is at his data centre.
    It is a reliable server which is close to the other servers Bob works on.
-   On ``server1``, but starts a multiplexer. The multiplexer gives Bob a regular
+   On ``server1``, Bob starts a multiplexer. The multiplexer gives Bob a regular
    looking command prompt, and Bob continues his work.
 
    If Bob's internet connection drops, he can reconnect to ``server1``, and then
