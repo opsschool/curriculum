@@ -109,7 +109,7 @@ getting help and for communicating and discussing what you learn with others.
 /r/sysadmin would be a good starting point. IRC channels are another great
 place to ask questions and get help, there are channels for pretty much any
 subject you can think of out there. There are good sysadmin related channels at
-irc.freenode.net, if you don’t already utilize IRC, take a look.
+``irc.freenode.net``, if you don’t already utilize IRC, take a look.
 
 **Come back later** – Give your brain some time to start digesting some of the
 information and to take a step back and put the pieces together to begin
@@ -236,8 +236,9 @@ irc
 ---
 irc.freenode.net
 
- * #lopsa
- * #infra-talk
+  * `#OpsSchool <http://webchat.freenode.net/?randomnick=1&channels=OpsSchool&prompt=1>`_
+  * `#lopsa <https://lopsa.org/irc>`_
+  * `##infra-talk <http://infra-talk.org/>`_
 
 Membership organizations
 ------------------------
@@ -286,9 +287,6 @@ Podcasts
 * RunAs Radio - Various IT topics
 * The UC Architects - Exchange, Lync
 * The PowerScript Podcast - Powershell
-
-IRC Channels
-------------
 
 RSS Feeds
 ---------
