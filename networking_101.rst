@@ -5,7 +5,7 @@ This chapter should provide enough knowledge on networking to enable a systems
 administrator to connect a Linux server to a network and troubleshoot basic
 network-related problems. First, we will go over the basics of the 7-layer Open
 Systems Interconnection (:term:`OSI`) model, which is a standard framework with which to
-implement communication systems. Next, we will delve into each layer of the OSI
+describe communication system logical layers. Next, we will delve into each layer of the OSI
 model in more detail as it applies to the role of systems administration.
 
 Before any discussion of networking, however, it's important to have a
@@ -85,27 +85,31 @@ the layer below.
 
    The physical layer describes the physical connections between devices. Most
    enterprise networks today implement Ethernet at the physical layer, described
-   in IEEE 802.3 for wired connections and IEEE 802.11 for wireless networks.
+   in IEEE 802.3 for wired connections and IEEE 802.11 for wireless networks. Other
+   layer 1 protocols that are no longer in wide use today are Token-Ring, and FDDI.
 
 *  Layer 2 - Data link layer
 
    The data link layer defines the basic protocol for communicating between two
-   points on a network that may consist of many intermediate devices and cables,
-   possibly spanning a large geographic area. Ethernet defines the data link
-   layer in addition to the physical layer, including (Media Access Control
-   (:term:`MAC`) addresses that allow hosts to address their data as being
-   relevant to one or more other hosts in particular.
+   points on a network, that may consist of many intermediate devices and cables,
+   possibly spanning a large geographic area. The Ethernet specification defines the 
+   data link layer in addition to the physical layer, including Media Access Control
+   (:term:`MAC`) addresses that allow hosts to address their data to one or more systems
+   on the same Ethernet segment. The MAC address is a flat (non-hierarchical) 48-bit address,
+   and therefore when a node sends out a MAC broadcast frame (usually written as
+   FF:FF:FF:FF:FF:FF), all stations on the layer-2 segment receive it. Therefore, a layer
+   2 segment is also known as a "broadcast domain". 
 
 *  Layer 3 - Network layer
 
-   The network layer is what allows many "Layer 2" networks to be
-   interconnected, forming much larger "Layer 3" networks. It is this layer of
+   The network layer is what allows many flat layer 2 networks to be
+   interconnected, and separates broadcast domains. It is this layer of
    the OSI model that enables the Internet to exist, using Internet Protocol
-   (IP) addressing. IP addressing allows for a logical taxonomy of systems and
-   networks built on top of the MAC addresses provided by Ethernet, which are
-   more closely tied to the physical hardware. Version 4 of the Internet
-   Protocol, most commonly found in production networks, is described in
-   :rfc:`791`.
+   (IP) addressing. Version 4 of the Internet Protocol (IPv4), most commonly found in
+   today's production networks, is described in :rfc:`791`. Its successor, IP version
+   6 (IPv6) is described in :rfc:`2460`. Both protocols utilize addresses that are
+   hierarchical in nature, providing for a ``network`` portion of the address space,
+   and also a ``host`` portion within the network.
 
 *  Layer 4 - Transport layer
 
@@ -116,8 +120,9 @@ the layer below.
    be sent from one system to another using simple "socket" APIs that make it
    just as easy to send text across the globe as it is to write to a file on a
    local disk - a technological miracle that is often taken for granted. The
-   ICMP protocol, used by the ubiquitous ``ping`` utility, allows small test
-   packets to be sent to a destination for troubleshooting purposes.
+   ICMP protocol provides for Layer-3 device control messaging, and among other
+   uses, allows small test packets to be sent to a destination for troubleshooting 
+   purposes, such as those used by the ubiquitous ``ping`` utility.
 
 *  Layer 5 - Session layer
 
@@ -270,7 +275,7 @@ Practical networking
 Cat5e, Cat6, Cat6a
 ------------------
 
-Cat5e, Cat6, and Cat6a are all coper transport mediums. They use twisted pair
+Cat5e, Cat6, and Cat6a are all copper transport mediums. They use twisted pair
 wiring, relying on the twist with differential signaling to prevent noise. This is the most
 common form of cabling for connecting computers in a network.
 
