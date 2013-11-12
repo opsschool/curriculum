@@ -106,7 +106,7 @@ mind can carefully analyze a situation to determine the best solution.
 Panic responses do not benefit from the same calculating rationality.
 
 Different people will adapt to handling crisis situations in different ways.
-Some will adapt the detached, analytical calm of a surgeon. Others will
+Some will adopt the detached, analytical calm of a surgeon. Others will
 take a few deep breaths to calm themselves before digging in to analyze
 the problem. The ability to stay calm in the face of disaster is more
 important than the method by which calm is achieved. It will take
