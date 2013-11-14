@@ -269,46 +269,93 @@ NAT
 ===
 
 
-Practical networking
-====================
+Networking cable
+================
+There are two main types of network cable in use today, namely copper and fiber-optic.
 
-Cat5e, Cat6, Cat6a
-------------------
+Copper
+------
+The most common type of network cables are what is known as "unshielded twisted pair" cables.
+They use 4 sets of twisted pairs of copper, relying on the twist with differential 
+signaling to prevent noise and signal propagation between the pairs. The four pairs of
+twisted copper wires are encased in a plastic sheath.
 
-Cat5e, Cat6, and Cat6a are all copper transport mediums. They use twisted pair
-wiring, relying on the twist with differential signaling to prevent noise. This is the most
-common form of cabling for connecting computers in a network.
+There are different standards for copper network cables set by the Telecommunications
+Industry Association (TIA) and the International Organization for Standardization (ISO).
+Both organizations use the same name ("Category __") for the components, but unfortunately
+differ on the naming for the cable standards. The most common reference is the TIA's, and
+the category designation is usually shortened to "Cat", so you'll hear references to
+"Cat5" or "Cat6" cable.
+
+Copper Cable Standards
+^^^^^^^^^^^^^^^^^^^^^^
+
+- Category 5e ("Cat5", ISO class D)
+
+- Category 6 ("Cat6", ISO class E)
+
+- Category 6A ("Cat6A", ISO class Ea)
 
 Fiber
 -----
 Fiber is a generic term that refers to optical transport mediums. It comes in several types,
 all of which look identical but are generally incompatible.
 
-Multimode vs Single Mode vs OM{3,4}
------------------------------------
-Multimode fiber is a less expensive fiber optic cable, that is typically useable with lower
-cost optical components. Depending on the application and bandwidth required, multimode fiber
-can have a range up to 2000 meters, but as low as 33 meters. It is very common to see it
-used for building backbones, and system to switch applications.
+Multimode vs Single Mode
+^^^^^^^^^^^^^^^^^^^^^^^^
+Single-mode fiber has a small core diameter, which only allows one (a single) mode of light
+to be transmitted through the fiber. Using a single mode of light completely eliminates
+the possibility of light dispersion and associated signal loss, and so is used mainly for
+long-haul runs, such as the cables that run between buildings and cities. However, since
+single-mode fiber can only transmit one wavelength of light at a time, it typically involves
+much more expensive light generation sources (i.e., laser diode transmitters) and is very
+expensive to produce.
 
-LC vs SC
-^^^^^^^^
+Multimode fiber has a larger core diameter (either 50u or 62.5u) and can therefore carry
+multiple modes ("multimode") of light, which can be used to transmit much more information
+during a given timeslice. The drawback is that carrying multimode lightwaves causes light
+dispersion and associated signal loss, which limits its effective distance.
+Multimode is a less expensive fiber optic cable, that is typically useable with lower
+cost optical components. It is very common to see it used for building intra-building
+backbones, and system/switch to switch applications.
 
-LC and SC connectors are the two most common type of fiber connectors.
+Multimode Fiber Standards
+^^^^^^^^^^^^^^^^^^^^^^^^^
+Multimode cables have classifications much like the copper cables discussed above; these
+are known as "Optical Multimode" (OM) classes. The four designations are:
 
-LC is also known as a Lucent Connector. They are typically used for high-density applications, and are
-the type of connector used on SFPs or XFPs. Typically the connector is packaged in a duplex configuration
-with each cable side by side.
+- OM1 - a "legacy" fiber class, the core being 62.5u, and cladding being 125u.
+  The bandwidth that can be carried ranges from 160 to 500 MHz.
+  
+- OM2 - a "legacy" fiber class, the core being 50u, and cladding being 125u.
+  The bandwidth that can be carried is 500 MHz.
+  
+- OM3 - a "modern" fiber class, the core being 50u, and cladding being 125u.
+  The bandwidth that can be carried ranges from 1500 to 2000 MHz.
+  
+- OM4 - a "modern" fiber class, the core being 50u, and cladding being 125u.
+  The bandwidth that can be carried ranges from 3500 to 4700 MHz.
 
-SC connectors are also know as Subscriber Connector, Square Connector, or Standard Connector. This is the type
-of connector typically used in the telecom industry. They have a larger form factor than the LC connectors, and
-are often found in single and duplex configurations.
+Optical Connector Types
+^^^^^^^^^^^^^^^^^^^^^^^
 
+LC and SC connectors are the two most common type of fiber connectors you will use.
+
+LC stands for "Lucent Connector", but is also referred to as "Little Connector".
+They are typically used for high-density applications, and are the type of connector used
+on SFPs or XFPs. Typically the connector is packaged in a duplex configuration with each
+cable side by side, and have a latch mechanism for locking.
+
+SC stands for "Subscriber Connector", but are also known as "Square Connector", or "Standard
+Connector". This is the type of connector typically used in the telecom industry. They
+have a larger form factor than the LC connectors, and can be found in single and
+duplex configurations. SC connectors have a push/pull locking mechanism, and because of
+this, are also colloquially known as "Stab-and-Click" connectors.
 
 SFP, SFP+, X2, QSFP
 ^^^^^^^^^^^^^^^^^^^
 
 Twinax
-------
+^^^^^^
 
 
