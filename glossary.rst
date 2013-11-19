@@ -60,12 +60,12 @@ Glossary
         standards for how the Internet and many other related technologies
         interrelate and interoperate.
 
-   VLAN
-	An acronym for "Virtual Local Area Network"; a single physical switch
-	can be divided into multiple "virtual" switches via the configuration
-	of VLANs, and assigning individual switchports into a given VLAN.
-	Each VLAN represents a Ethernet broadcast domain (boundry); best
-	practices dictate that a single IP (layer-3) network be mapped to a
-	single VLAN. Packets must be routed between VLANs (either by an
-	outboard router, or by an internal router in what is known as a
-	"Layer-3 switch.")
+    VLAN
+        An acronym for "Virtual Local Area Network"; a single physical switch
+        can be divided into multiple "virtual" switches via the configuration
+        of VLANs, and assigning individual switchports into a given VLAN.
+        Each VLAN represents a Ethernet broadcast domain (boundry); best
+        practices dictate that a single IP (layer-3) network be mapped to a
+        single VLAN. Packets must be routed between VLANs (either by an
+        outboard router, or by an internal router in what is known as a
+        "Layer-3 switch.")
