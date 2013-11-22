@@ -92,7 +92,7 @@ Suggested practices
 Access control
 --------------
 
-Security should require a ID from anyone coming onsite, and not stop
+Security should require an ID from anyone coming onsite, and not stop
 at having you fill a form where you just write anything you want.
 
 Techs should need to bring a ticket ID, and this ticket ID plus the tech's
@@ -103,7 +103,7 @@ servers because "there were some techs that replaced it"
 
 Most critical DCs will have security accompanying you to the server.
 Some will keep the sec person around while the tech is working.
-The really smart ones train their sec stuff so that they will know *which*
-server the tech needs to go to and *which* disk is to be replaced as to the
+The really smart ones train their sec staff so that they will know *which*
+server the tech needs to go to and *which* disk is to be replaced as per the
 original ticket. (If you think the security people can't handle that, then
 just ask yourself who's to blame since it does work for other DCs)
