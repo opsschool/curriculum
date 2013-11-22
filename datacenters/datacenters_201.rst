@@ -65,7 +65,7 @@ reached
   because of the stretching effects on the media. Disks can fail by the dozen at
   the same time)
 
-- what are the absolutely critical systems running, and how much power do the use
+- what are the absolutely critical systems running, and how much power do they use
 - how many not absolutely critical systems are running, and how much power will
   it save to turn them off.
 - How fast can you shut them down? (i.e. on Unix, that could mean init 2, wait,
