@@ -69,17 +69,29 @@ increasing numerical order, though is not exhaustive.
   regularly updated with the current standards document status.
 
 
-OSI model
-=========
+OSI 7-layer model (OSI Reference Model)
+=======================================
+
+The early history of computer networking was marked by various proprietary
+implementations of networking hardware and the protocols that ran on them (such
+as for example, IBM's "Systems Network Architecture" (SNA) and Digital Equipment
+Corp's "DECnet".) In the mid-1970's, two standards organizations (the
+International Organization for Standardization, known as the "ISO", and the
+International Telecommunications Union, known as the "ITU") led a push to define
+a set of open interconnection standards, which became known as the "Open Systems
+Interconnection" (OSI) standard. While the actual protocols they developed did
+not become popular and are not in wide use today, the model they came up with
+has achieved wide popularity as a way of thinking about the network protocol
+stack.
 
 The OSI model describes seven layers of abstraction that enable software
 programs to communicate with each other on separate systems. The seven layers
-are designed to allow communication to occur between systems at a given level of
-abstraction without concern for how the lower levels are implemented. In this
-way, more complex protocols can be built on top of simpler ones that can be used
-interchangeably without modifying the higher-level code. The job of each layer
-is to provide some service to the layer above by using the services provided by
-the layer below.
+are designed to allow communication to occur between systems at a given level,
+without concern for how the lower levels are implemented. In this way,
+innovation on the protocols in the various layers can be achieved without
+modifying any other layer's design and code. The job of each layer is to provide
+some service to the layer above by using the services provided by the layer
+below.
 
 *  Layer 1 - Physical layer
 
@@ -97,7 +109,7 @@ the layer below.
    addresses that allow hosts to address their data to one or more systems on the
    same Ethernet segment. The MAC address is a flat (non-hierarchical) 48-bit
    address, and therefore when a node sends out a MAC broadcast frame (usually
-   written as FF:FF:FF:FF:FF:FF), all stations on the layer-2 segment receive it.
+   written as FF:FF:FF:FF:FF:FF), all stations on the Layer 2 segment receive it.
    Therefore, a layer 2 segment is also known as a "broadcast domain". 
 
 *  Layer 3 - Network layer
@@ -109,20 +121,26 @@ the layer below.
    today's production networks, is described in :rfc:`791`. Its successor, IP version
    6 (IPv6) is described in :rfc:`2460`. Both protocols utilize addresses that are
    hierarchical in nature, providing for a *network* portion of the address space,
-   and also a *host* portion within the network.
+   and also a *host* portion within the network. 
+   
+   There are also two control protocols included in this layer; namely, the
+   "Internet Control Message Protocol" ("ICMP") as described in :rfc:`792`, and
+   "Internet Group Management Protocol" ("IGMP"), as described in :rfc:`1112`. The
+   ICMP protocol provides for Layer 3 device control messaging, and among other
+   uses, allows small test packets to be sent to a destination for troubleshooting
+   purposes, such as those used by the ubiquitous ``ping`` utility. The IGMP
+   protocol is used to manage multicast groups, which implements "one-to-many"
+   packet sending between interested systems.
 
 *  Layer 4 - Transport layer
 
    The transport layer is where things really start to get interesting for the
    systems administrator. It is at the transport layer that the Transmission
-   Control Protocol (TCP), User Datagram Protocol (UDP), and Internet Control
-   Message Protocol (ICMP) are defined. The TCP and UDP protocols allow data to
-   be sent from one system to another using simple "socket" APIs that make it
-   just as easy to send text across the globe as it is to write to a file on a
-   local disk - a technological miracle that is often taken for granted. The
-   ICMP protocol provides for Layer-3 device control messaging, and among other
-   uses, allows small test packets to be sent to a destination for troubleshooting 
-   purposes, such as those used by the ubiquitous ``ping`` utility.
+   Control Protocol (TCP), and the User Datagram Protocol (UDP) are defined.
+   The TCP and UDP protocols allow data to be sent from one system to another using
+   simple "socket" APIs that make it just as easy to send text across the globe as it
+   is to write to a file on a local disk - a technological miracle that is often
+   taken for granted.
 
 *  Layer 5 - Session layer
 
@@ -149,6 +167,43 @@ the layer below.
    Protocol (HTTP), Simple Mail Transfer Protocol (SMTP), and Secure SHell
    (SSH). The various application-layer protocols are at the core of a good
    systems administrator's knowledge base.
+
+
+TCP/IP (ARPA) 4-layer model
+===========================
+
+When the ARPAnet project spawned TCP/IP, which became the dominant network
+protocol stack used on the Internet, it was envisioned with a much simpler
+4-layer stack (the ISO layers roughly map to the ARPA model as indicated below.)
+The elements of this stack from the lowest to highest are as follows:
+
+*  Link Layer
+
+   Basically a combination of the ISO Layer 1 (physical) and Layer 2 (data link) layers.
+   This layer covers the physical network card in the computer (and the transmission
+   medium between the computers) as well as the device driver in the operating system
+   of the computer. As an example, both Ethernet and MAC are covered in this layer.
+   
+*  Network Layer
+
+   This layer maps to the ISO's Layer 3, and covers the movement of packets between
+   networks. For this reason, it is also called the "Internet Layer", and the main
+   protocol used in this layer is named the "Internet Protocol", or "IP" as it is commonly
+   referred to. As discussed above, the ICMP and IGMP protocols are also included in
+   this layer.
+   
+*  Transport Layer
+
+   This layer maps to the ISO's Layer 4, and covers the creation, management and teardown
+   of "virtual circuits" or "flows" between end hosts. There are two different protocols
+   in use at this layer as discussed above in the ISO Layer 4 section, namely, TCP and
+   UDP.
+   
+*  Application Layer
+
+   This layer maps to the ISO's Layer 5 through Layer 7, and covers the application
+   processes that use the network to communicate.
+   
 
 IP Addressing
 =============
@@ -285,11 +340,11 @@ pairs. The four pairs of twisted copper wires are encased in a plastic sheath.
 
 There are different standards for copper network cables set by the
 Telecommunications Industry Association (TIA) and the International Organization
-for Standardization (ISO). Both organizations use the same name ("Category __")
-for the components, but unfortunately differ on the naming for the cable
-standards. The most common reference is the TIA's, and the category designation
-is usually shortened to "Cat", so you'll hear references to "Cat5" or "Cat6"
-cable.
+for Standardization (ISO). Both organizations use the same naming convention
+("Category __") for the components, but unfortunately differ on the naming for
+the cable standards. The most common reference is the TIA's, and the category
+designation is usually shortened to "Cat", so you'll hear references to "Cat5"
+or "Cat6" cable.
 
 Copper Cable Standards
 ^^^^^^^^^^^^^^^^^^^^^^
