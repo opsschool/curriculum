@@ -33,7 +33,7 @@ These networks are typically separate and dedicated to providing access to stora
 
 SAN Array
 ---------
-A SAN Array is a dedicated a array of disks that has been designed to connect to a SAN.
+A SAN Array is a dedicated array of disks that has been designed to connect to a SAN.
 SAN Arrays will often support Ethernet or Fiber Channel, and some vendors will support both network types within the same unit. 
 
 Most SAN Arrays have two main components, a head unit and an array.
