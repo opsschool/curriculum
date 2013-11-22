@@ -2,16 +2,24 @@ Text Editing 101
 ****************
 
 As a sysadmin, and *especially* as a Linux/Unix sysadmin, you're going to have to get used to
-not only editing text files, but also efficiently making your way around the command line.
+not only making your way around the command line, but also editing text files.
 Both of these tasks require you to get familiarized and comfortable with the two most common
 text editors in this space: ``vi`` and ``emacs``
+
+Both of these editors, ``vi`` and ``emacs``, are command-line utilities that you run from a
+terminal window.  This means that you can also run them on remote machines over an ``ssh`` connection.
+While there are graphical versions of these tools availabile (``gvim`` and ``xemacs``), many
+administrators prefer the text-only versions, as it creates a uniform experience whether they
+are working on their own local machine, or a remote one being accessed over the network.
+Additionally, avoiding use of the mouse means your hands stay on the home row of the keyboard,
+meaning you work faster and with less fatigue.
 
 A little history
 ================
 
 Back when UNIX was just starting to appear on computers that had actual input/output systems
 (e.g. teletype), interaction with the computer was strictly a text-based affair.  The computer
-would send some data in the form of `ASCII <http://www.python.org/>`_ characters over a slow
+would send some data in the form of `ASCII <http://en.wikipedia.org/wiki/ASCII/>`_\* characters over a slow
 telephone link.  The user would then hit some keys on the keyboard, which would send back more
 ASCII characters to the computer, again over the slow telephone link.
 
@@ -24,6 +32,8 @@ today.  But these tools retain their UNIX heritage of lean efficiency.  Commands
 usually in single characters, there's no "toolbar", and the editor provides powerful tools
 to quickly shuttle the cursor around the file quickly, without having to display unrelated
 text/context in the file.
+
+\* Note: you can also run ``man ascii`` to quickly get an ASCII table
 
 ``vi`` basics
 =============
@@ -42,6 +52,16 @@ Virtually every Linux distribution out there provides ``vim`` either by default,
 as an easily installable package.  ``vim`` extends the feature set provided by the 
 POSIX-compliant ``vi`` utility in many ways.  In the examples below, features that
 are only present in ``vim`` will be noted.
+
+
+A Note About Vimtutor
+---------------------
+
+Vim, the modern, extended version of ``vi``, includes a tutorial of its own.  On
+a system with Vim installed, you should be able to run ``vimtutor`` to get an interactive
+session that walks you through most of the same content you'll get on this page.  You
+don't have to use ``vimtutor`` if you don't want to, though -- just know that it is
+there if you wish to try it out.
 
 Command and Insert mode
 -----------------------
@@ -110,9 +130,10 @@ extremely helpful to know:
 * ``b`` - move back one word
 * ``0`` - move to the beginning of the line
 * ``$`` - move to the end of the line
-* ``/some text`` - move forward to the next instance of ``some text``
-* ``?some text`` - move backward to the next instance of ``some text``
-* ``n`` - repeat the previous search operation
+* ``/some text`` - search forward to the next match of ``some text``, and place the cursor there
+* ``?some text`` - search backward to the previous instance of ``some text``, and place the cursor there
+* ``n`` - repeat the most recent search
+* ``N`` - repeat the most recent search, but in the opposite direction
 * ``:number`` - Go directly to line ``number`` (example: ``:20`` goes to line 20, ``:0`` goes to the top of the file)
 * ``G`` - Go directly to the bottom of the file
 
@@ -131,8 +152,7 @@ Text insertion commands
 Text removal commands
 ---------------------
 
-When you delete text in ``vi``, you are actually performing a "cut" operation into a buffer.  But you don't need to know that
-at the moment.  You will notice that while in **insert mode**, you can use the backspace and delete keys as expected.  This
+You will notice that while in **insert mode**, you can use the backspace and delete keys as expected.  This
 makes insert mode easiy to use, but it's not particularly efficient if you're trying to eliminate a whole paragraph or something
 from your document.  When in **command mode**, you can issue some commands that remove whole chunks of text:
 
