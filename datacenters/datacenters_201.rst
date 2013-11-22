@@ -43,7 +43,7 @@ Cooling failures
 ----------------
 
 Very important is to gather information on the duration of a cooling failure
-so far. The surrounding datacenter structures delay a failures effect by
+so far. The surrounding datacenter structures delay a failure's effect by
 absorbing heat.
 That means two things:
 1. At some point the walls have gained a temperature close to the ambient.
