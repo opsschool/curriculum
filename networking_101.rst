@@ -86,30 +86,30 @@ the layer below.
    The physical layer describes the physical connections between devices. Most
    enterprise networks today implement Ethernet at the physical layer, described
    in IEEE 802.3 for wired connections and IEEE 802.11 for wireless networks. Other
-   layer 1 protocols that are no longer in wide use today are Token-Ring, and FDDI.
+   Layer 1 protocols that are no longer in wide use today are Token-Ring, and FDDI.
 
 *  Layer 2 - Data link layer
 
    The data link layer defines the basic protocol for communicating between two
    points on a network, that may consist of many intermediate devices and cables,
-   possibly spanning a large geographic area. The Ethernet specification defines the 
-   data link layer in addition to the physical layer, including Media Access Control
-   (:term:`MAC`) addresses that allow hosts to address their data to one or more systems
-   on the same Ethernet segment. The MAC address is a flat (non-hierarchical) 48-bit address,
-   and therefore when a node sends out a MAC broadcast frame (usually written as
-   FF:FF:FF:FF:FF:FF), all stations on the layer-2 segment receive it. Therefore, a layer
-   2 segment is also known as a "broadcast domain". 
+   possibly spanning a large geographic area. The IEEE 802.3 specification defines
+   the data link layer, which includes the Media Access Control (:term:`MAC`)
+   addresses that allow hosts to address their data to one or more systems on the
+   same Ethernet segment. The MAC address is a flat (non-hierarchical) 48-bit
+   address, and therefore when a node sends out a MAC broadcast frame (usually
+   written as FF:FF:FF:FF:FF:FF), all stations on the layer-2 segment receive it.
+   Therefore, a layer 2 segment is also known as a "broadcast domain". 
 
 *  Layer 3 - Network layer
 
-   The network layer is what allows many flat layer 2 networks to be
+   The network layer is what allows many flat Layer 2 segments to be
    interconnected, and separates broadcast domains. It is this layer of
    the OSI model that enables the Internet to exist, using Internet Protocol
    (IP) addressing. Version 4 of the Internet Protocol (IPv4), most commonly found in
    today's production networks, is described in :rfc:`791`. Its successor, IP version
    6 (IPv6) is described in :rfc:`2460`. Both protocols utilize addresses that are
-   hierarchical in nature, providing for a ``network`` portion of the address space,
-   and also a ``host`` portion within the network.
+   hierarchical in nature, providing for a *network* portion of the address space,
+   and also a *host* portion within the network.
 
 *  Layer 4 - Transport layer
 
@@ -156,18 +156,20 @@ IP Addressing
 IPv4
 ----
 
-Internet Protocol Version 4 (IPv4) is the fourth version of the Internet protocol, the first
-version to be widely deployed. This is the version of the protocol you're most likely to
-encounter, and the default version of the IP protocol in Linux.
+Internet Protocol Version 4 (IPv4) is the fourth version of the Internet
+protocol, the first version to be widely deployed. This is the version of the
+protocol you're most likely to encounter, and the default version of the IP
+protocol in Linux.
 
-IPv4 uses a 32-bit address space most typically represented in 4 dotted decimal notation,
-each octet contains a value between 0-255, and is separated by a dot. An example
-address is below:
+IPv4 uses a 32-bit address space most typically represented in 4 dotted decimal
+notation, each octet contains a value between 0-255, and is separated by a dot.
+An example address is below:
 
     10.199.0.5
 
-There are several other representations, like dotted hexadecimal, dotted octal, hexadecimal,
-decimal, and octal. These are infrequently used, and will be covered in later sections.
+There are several other representations, like dotted hexadecimal, dotted octal,
+hexadecimal, decimal, and octal. These are infrequently used, and will be
+covered in later sections.
 
 
 
@@ -219,15 +221,16 @@ reliable delivery guarantee in systems that support banking or healthcare.
 
 Subnetting, netmasks and CIDR
 =============================
-A subnet is a logical division of an IP network, and allows the host system to identify which
-other hosts can be reached on the local network. The host system determines
-this by the application of a routing prefix. There are two typical representations of this
-prefix: a netmask and CIDR.
+A subnet is a logical division of an IP network, and allows the host system to
+identify which other hosts can be reached on the local network. The host system
+determines this by the application of a routing prefix. There are two typical
+representations of this prefix: a netmask and CIDR.
 
-Netmasks typically appear in the dotted decimal notation, with values between 0-255 in each
-octet. These are applied as bitmasks, and numbers at 255 mean that this host is not reachable.
-Netmask can also be referred to as a Subnet Mask and these terms are often used interchangeably. An
-example IP Address with a typical netmask is below:
+Netmasks typically appear in the dotted decimal notation, with values between
+0-255 in each octet. These are applied as bitmasks, and numbers at 255 mean that
+this host is not reachable. Netmask can also be referred to as a Subnet Mask and
+these terms are often used interchangeably. An example IP Address with a typical
+netmask is below:
 
 ============= ===============
 IP Address    Netmask
@@ -275,17 +278,18 @@ There are two main types of network cable in use today, namely copper and fiber-
 
 Copper
 ------
-The most common type of network cables are what is known as "unshielded twisted pair" cables.
-They use 4 sets of twisted pairs of copper, relying on the twist with differential 
-signaling to prevent noise and signal propagation between the pairs. The four pairs of
-twisted copper wires are encased in a plastic sheath.
+The most common type of network cables are what is known as "unshielded twisted
+pair" cables. They use 4 sets of twisted pairs of copper, relying on the twist
+with differential signaling to prevent noise and signal propagation between the
+pairs. The four pairs of twisted copper wires are encased in a plastic sheath.
 
-There are different standards for copper network cables set by the Telecommunications
-Industry Association (TIA) and the International Organization for Standardization (ISO).
-Both organizations use the same name ("Category __") for the components, but unfortunately
-differ on the naming for the cable standards. The most common reference is the TIA's, and
-the category designation is usually shortened to "Cat", so you'll hear references to
-"Cat5" or "Cat6" cable.
+There are different standards for copper network cables set by the
+Telecommunications Industry Association (TIA) and the International Organization
+for Standardization (ISO). Both organizations use the same name ("Category __")
+for the components, but unfortunately differ on the naming for the cable
+standards. The most common reference is the TIA's, and the category designation
+is usually shortened to "Cat", so you'll hear references to "Cat5" or "Cat6"
+cable.
 
 Copper Cable Standards
 ^^^^^^^^^^^^^^^^^^^^^^
@@ -298,26 +302,28 @@ Copper Cable Standards
 
 Fiber
 -----
-Fiber is a generic term that refers to optical transport mediums. It comes in several types,
-all of which look identical but are generally incompatible.
+Fiber is a generic term that refers to optical transport mediums. It comes in
+several types, all of which look identical but are generally incompatible.
 
 Multimode vs Single Mode
 ^^^^^^^^^^^^^^^^^^^^^^^^
-Single-mode fiber has a small core diameter, which only allows one (a single) mode of light
-to be transmitted through the fiber. Using a single mode of light completely eliminates
-the possibility of light dispersion and associated signal loss, and so is used mainly for
-long-haul runs, such as the cables that run between buildings and cities. However, since
-single-mode fiber can only transmit one wavelength of light at a time, it typically involves
-much more expensive light generation sources (i.e., laser diode transmitters) and is very
-expensive to produce.
+Single-mode fiber has a small core diameter, which only allows one (a single)
+mode of light to be transmitted through the fiber. Using a single mode of light
+completely eliminates the possibility of light dispersion and associated signal
+loss, and so is used mainly for long-haul runs, such as the cables that run
+between buildings and cities. However, since single-mode fiber can only transmit
+one wavelength of light at a time, it typically involves much more expensive
+light generation sources (i.e., laser diode transmitters) and is very expensive
+to produce.
 
-Multimode fiber has a larger core diameter (either 50u or 62.5u) and can therefore carry
-multiple modes ("multimode") of light, which can be used to transmit much more information
-during a given timeslice. The drawback is that carrying multimode lightwaves causes light
-dispersion and associated signal loss, which limits its effective distance.
-Multimode is a less expensive fiber optic cable, that is typically useable with lower
-cost optical components. It is very common to see it used for building intra-building
-backbones, and system/switch to switch applications.
+Multimode fiber has a larger core diameter (either 50u or 62.5u) and can
+therefore carry multiple modes ("multimode") of light, which can be used to
+transmit much more information during a given timeslice. The drawback is that
+carrying multimode lightwaves causes light dispersion and associated signal
+loss, which limits its effective distance. Multimode is a less expensive fiber
+optic cable, that is typically useable with lower cost optical components. It is
+very common to see it used for building intra-building backbones, and
+system/switch to switch applications.
 
 Multimode Fiber Standards
 ^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -339,18 +345,21 @@ are known as "Optical Multimode" (OM) classes. The four designations are:
 Optical Connector Types
 ^^^^^^^^^^^^^^^^^^^^^^^
 
-LC and SC connectors are the two most common type of fiber connectors you will use.
+LC and SC connectors are the two most common type of fiber connectors you will
+use.
 
 LC stands for "Lucent Connector", but is also referred to as "Little Connector".
-They are typically used for high-density applications, and are the type of connector used
-on SFPs or XFPs. Typically the connector is packaged in a duplex configuration with each
-cable side by side, and have a latch mechanism for locking.
+They are typically used for high-density applications, and are the type of
+connector used on SFPs or XFPs. Typically the connector is packaged in a duplex
+configuration with each cable side by side, and have a latch mechanism for
+locking.
 
-SC stands for "Subscriber Connector", but are also known as "Square Connector", or "Standard
-Connector". This is the type of connector typically used in the telecom industry. They
-have a larger form factor than the LC connectors, and can be found in single and
-duplex configurations. SC connectors have a push/pull locking mechanism, and because of
-this, are also colloquially known as "Stab-and-Click" connectors.
+SC stands for "Subscriber Connector", but are also known as "Square Connector",
+or "Standard Connector". This is the type of connector typically used in the
+telecom industry. They have a larger form factor than the LC connectors, and can
+be found in single and duplex configurations. SC connectors have a push/pull
+locking mechanism, and because of this, are also colloquially known as
+"Stab-and-Click" connectors.
 
 SFP, SFP+, X2, QSFP
 ^^^^^^^^^^^^^^^^^^^

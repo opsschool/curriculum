@@ -13,18 +13,18 @@ To communicate between VLANs, packets need to pass through a router or other Lay
 device. If one has a switch with many VLANs implemented on it, either of these two
 methods could work:
 
-1. Devote a switch (and respective router) interface per VLAN, with a single link for
-each VLAN. This is the simplest method, but the most wasteful of (expensive) switch and
-router interfaces.
+  1. Devote a switch (and respective router) interface per VLAN, with a single link for
+     each VLAN. This is the simplest method, but the most wasteful of (expensive) switch and
+     router interfaces.
 
-2. "Trunk" multiple VLANs over one physical link, which only requires a single interface
-per side (switch to router, or server to switch.) This method multiplexes multiple
-VLANs over the one link by "tagging" the frame with a 4-byte VLAN identifier field
-which is inserted after the destination MAC field in the Ethernet header. This tagging
-format is officially defined by the IEEE's 802.1q protocol. The tag field insertion
-happens at the sending trunk interface (which is a part of the sending station's VLAN),
-and the tag is stripped of by the receiving trunk interface, and the frame placed on
-the proper VLAN on the receiving device. 
+  2. "Trunk" multiple VLANs over one physical link, which only requires a single interface
+     per side (switch to router, or server to switch.) This method multiplexes multiple
+     VLANs over the one link by "tagging" the frame with a 4-byte VLAN identifier field
+     which is inserted after the destination MAC field in the Ethernet header. This tagging
+     format is officially defined by the IEEE's 802.1q protocol. The tag field insertion
+     happens at the sending trunk interface (which is a part of the sending station's VLAN),
+     and the tag is stripped of by the receiving trunk interface, and the frame placed on
+     the proper VLAN on the receiving device. 
 
 Spanning Tree
 =============
