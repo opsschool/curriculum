@@ -45,6 +45,22 @@ Additionally, the open-source version does not natively support adding and remov
 
 Graphite
 --------
+Graphite is an open-source monitoring tool. Graphite let's you store time-series based data and graph them. 
+
+Graphite consists of three components :
+
+* Carbon : A daemon which listens for time-series data
+* Whisper : Similar to RRD, it's a time series database.
+* Webapp: A Django based webapp which helps visualize beautiful graphs on the data collected.
+
+Graphite does not collect metrics for you, however there are simple ways using which you can send data to Graphite :
+Three ways in which Graphite let's you do that is :
+
+* PlainText
+* Pickle
+* AMQP
+
+Graphite is both simple to implement and highly-scalable. Creating applications on top of Graphite is also very easy because rendering graphs and retrieving data out from Graphite can be done via JSON, CSV or raw-data format.
 
 Ganglia
 -------
