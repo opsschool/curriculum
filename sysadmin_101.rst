@@ -163,7 +163,7 @@ make a computer do *something*. Developers created the backend that allows you
 to order a book on a site like Amazon.com, post a status on Facebook, or
 research a topic in a literary journal database.
 
-These backends can be big, and have a many considerations behind their design.
+These backends can be big, and have many considerations behind their design.
 
 .. _whats-developer-rachel:
 
