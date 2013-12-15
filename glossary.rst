@@ -64,8 +64,8 @@ Glossary
         An acronym for "Virtual Local Area Network"; a single physical switch
         can be divided into multiple "virtual" switches via the configuration
         of VLANs, and assigning individual switchports into a given VLAN.
-        Each VLAN represents a Ethernet broadcast domain (boundry); best
-        practices dictate that a single IP (layer-3) network be mapped to a
+        Each VLAN represents a Ethernet broadcast domain (boundary); best
+        practices dictate that a single IP (Layer 3) network be mapped to a
         single VLAN. Packets must be routed between VLANs (either by an
         outboard router, or by an internal router in what is known as a
-        "Layer-3 switch.")
+        "Layer 3 switch.")

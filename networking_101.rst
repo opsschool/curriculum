@@ -97,8 +97,8 @@ below.
 
    The physical layer describes the physical connections between devices. Most
    enterprise networks today implement Ethernet at the physical layer, described
-   in IEEE 802.3 for wired connections and IEEE 802.11 for wireless networks. Other
-   Layer 1 protocols that are no longer in wide use today are Token-Ring, and FDDI.
+   in IEEE 802.3 for wired connections and IEEE 802.11 for wireless networks.
+   Other Layer 1 protocols that are no longer in wide use today are Token-Ring, and FDDI.
 
 *  Layer 2 - Data link layer
 
@@ -146,7 +146,7 @@ below.
 
    The purpose of the session layer is to provide a mechanism for ongoing
    conversations between devices using application-layer protocols. Notable
-   "Layer 5" protocols include Transport Layer Security / Secure Sockets Layer
+   Layer 5 protocols include Transport Layer Security / Secure Sockets Layer
    (TLS/SSL) and, more recently, Google's SPDY protocol.
 
 *  Layer 6 - Presentation layer
@@ -421,5 +421,3 @@ SFP, SFP+, X2, QSFP
 
 Twinax
 ^^^^^^
-
-
