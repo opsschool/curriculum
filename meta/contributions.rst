@@ -193,4 +193,5 @@ Aslan Brooke <aslandbrooke@yahoo.com>               ZynxHealth.com, InfoQ.com
 Glen Kaukola <gkaukola@cs.ucr.edu>
 Spencer Krum <krum.spencer@gmail.com>               UTi Worldwide Inc.
 Jeremy Grosser <jeremy@synack.me>                   Uber Technologies, Inc.
+Hugo Landau <hlandau@devever.net>
 ==================================================  ====================================
