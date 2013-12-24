@@ -416,8 +416,66 @@ be found in single and duplex configurations. SC connectors have a push/pull
 locking mechanism, and because of this, are also colloquially known as
 "Stab-and-Click" connectors.
 
-SFP, SFP+, X2, QSFP
-^^^^^^^^^^^^^^^^^^^
+Transceivers
+^^^^^^^^^^^^
+
+The variety in optical fiber makes for a correspondingly large variety in
+optical fiber interface standards. Different interface types will impose
+different requirements on the fiber used and the length of the connection.
+
+If optical fiber interfaces were incorporated directly into network equipment,
+the number of models made by the manufacturer would have to be multiplied by
+the number of interface standards in existence. For this reason, modern network
+hardware rarely incorporates such interfaces directly. Instead, pluggable
+transceiver modules are used as a layer of indirection between medium-dependent
+and medium-independent interfaces. This allows a transceiver slot to be
+provided supporting any desired interface standard, whether copper or fiber.
+There are some limitations to this, detailed below.
+
+Various module types have been introduced over the years:
+
+============ ============ =========== =======
+  Name        Introduced   Speed       Size
+============ ============ =========== =======
+  GBIC        1995         1 Gb/s      Large
+  SFP         2001         1 Gb/s      Small
+  XENPAK      2001         10 Gb/s     Large
+  XFP         2002         10 Gb/s     Small
+  SFP+        2006         10 Gb/s     Small
+  QSFP        2006         40 Gb/s     Small
+  CFP         2009         100 Gb/s    Large
+============ ============ =========== =======
+
+There are a large number of compatibility issues with such modules. Some
+compatibility issues cause problems between two ends of a link; others cause
+problems between a module and its host device.
+
+- Transceivers are not generally compatible with lower speed versions of the
+  same standard. A 1000BASE-T Ethernet card can interface with a 10BASE-T card,
+  but a 1 Gb/s fiber transceiver cannot interface with a 10 or 100 Mb/s
+  transceiver. In the case of fiber, this is generally due to the different
+  wavelengths used; but even many copper transceivers do not support lower
+  speeds, although some do. You should assume that any transceiver will only
+  support the exact interface for which it is designed unless specified
+  otherwise.
+
+- Modules are only made for the speed targeted by a format. For example, SFP+
+  modules are only made for 10 Gb/s standards, and not for lower speeds.
+
+- Some equipment may accept SFP modules in SFP+ slots, but this is not
+  universal.
+
+- Vendor lock-in is widely practiced. Equipment may refuse to operate with the
+  modules made by a different manufacturer. Workarounds are generally
+  available, but this may complicate support or warranty arrangements.
+
+These issues can create pathological cases. Suppose you have two switches which
+should be connected to one another. One is connected via a 1 Gb/s transceiver
+to fiber. The other only has SFP+ slots. If these slots also support SFP
+modules, then a 1 Gb/s SFP transceiver can be used, but if they do not,
+interconnection is impossible: all SFP+ modules target 10 Gb/s, and fiber
+transceivers do not support lower speeds.
 
 Twinax
 ^^^^^^
+
