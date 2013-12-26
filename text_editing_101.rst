@@ -134,8 +134,9 @@ extremely helpful to know:
 * ``?some text`` - search backward to the previous instance of ``some text``, and place the cursor there
 * ``n`` - repeat the most recent search
 * ``N`` - repeat the most recent search, but in the opposite direction
-* ``:number`` - Go directly to line ``number`` (example: ``:20`` goes to line 20, ``:0`` goes to the top of the file)
+* ``gg`` - Go directly to the top of the file
 * ``G`` - Go directly to the bottom of the file
+* ``numberG`` - Go directly to line ``number`` (example: ``20G`` goes to line 20)
 
 Text insertion commands
 -----------------------
@@ -157,11 +158,11 @@ makes insert mode easiy to use, but it's not particularly efficient if you're tr
 from your document.  When in **command mode**, you can issue some commands that remove whole chunks of text:
 
 * ``x`` - Delete the character under the cursor
-* ``dd`` - Delete the line under the cursor
-* ``dG`` - Delete the current line, and everything else to the bottom of the file
-* ``d:0`` - Delete the current line, and everything else to the top of the file
 * ``dw`` - Delete from the character under the cursor to the beginning of the next word
+* ``dd`` - Delete the line under the cursor
 * ``NUMdd`` - Delete NUM lines of text, ex: ``10dd`` deletes 10 lines
+* ``dgg`` - Delete the current line, and everything else to the top of the file
+* ``dG`` - Delete the current line, and everything else to the bottom of the file
 
 Undo and Redo
 -------------
