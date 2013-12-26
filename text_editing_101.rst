@@ -129,6 +129,7 @@ extremely helpful to know:
 * ``w`` - move forward one word
 * ``b`` - move back one word
 * ``0`` - move to the beginning of the line
+* ``^`` - move to the first non-blank character of the line
 * ``$`` - move to the end of the line
 * ``/some text`` - search forward to the next match of ``some text``, and place the cursor there
 * ``?some text`` - search backward to the previous instance of ``some text``, and place the cursor there
@@ -144,7 +145,7 @@ Text insertion commands
 
 * ``i`` - insert text at the position of the cursor.  The first character you type will appear to the left of where the cursor is
 * ``a`` - append text at the position of the cursor.  The first character you type will appear to the right of where the cursor is
-* ``I`` - Same as insert, but first moves the cursor to the beginning of the line (equivalent to ``0i``.
+* ``I`` - Same as insert, but first moves the cursor to the beginning of the line (equivalent to ``^i``.
 * ``A`` - Same as append, but first moves the cursor to the end of the line (equivalent to ``$a``.
 * ``o`` - Open a new line under the cursor and begin inserting text there
 * ``O`` - Open a new line above the cursor and begin inserting text there
