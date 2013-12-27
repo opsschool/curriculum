@@ -38,10 +38,11 @@ text/context in the file.
 ``vi`` basics
 =============
 
-``vi`` was created as an extension to ``ed``.  When "modern" terminals (e.g. electronic
-displays, not teletypes) became common, it made sense to use a "visual" editing mode,
-where you could see the context of the line you were editing.  From ``ed``, you would
-enter "visual" mode by running ``:vi`` -- thus VI was born.
+``vi`` was created as an extension to ``ex`` (a sucessor to ``ed``).  When
+"modern" terminals (e.g. electronic displays, not teletypes) became common, it
+made sense to use a "visual" editing mode, where you could see the context of
+the line you were editing.  From ``ed``, you would enter "visual" mode by
+running ``:vi`` -- thus VI was born.
 
 Since then, ``vi`` has been written and re-written many many times.  But inside, you
 will still find good ol' ``ed``.  In ``Text Edting 201``, you will see how you can
@@ -63,19 +64,24 @@ session that walks you through most of the same content you'll get on this page.
 don't have to use ``vimtutor`` if you don't want to, though -- just know that it is
 there if you wish to try it out.
 
-Command and Insert mode
+``vi``  Modes
 -----------------------
 
-The first thing to understand about how ``vi`` works is that it operates in two modes.
+The first thing to understand about how ``vi`` works is that it operates in
+different modes.
 
-**Insert mode** is when you are actually typing in text.  The keys you type while
-in insert mode are simply dumped into the editor.  You exit insert mode by pressing
-the ``Esc`` key.
+**Normal mode** is ``vi``'s default mode and should be the mode you are in most
+of the time. When in normal mode, the keys you type are interpreted by ``vi``
+as commands, not as text you wish to put into the file.  For example, moving
+the cursor around the screen is a series of commands, as is deleting text.
 
-**Command mode** is when ``vi`` is *not* in insert mode.  When in command mode, the
-keys you type are interpreted by ``vi`` as commands, not as text you wish to put
-into the file.  For example, moving the cursor around the screen is a series of
-commands, as is writing to a file.
+**Insert mode** is when you are actually typing in text.  The keys you type
+while in insert mode are simply dumped into the buffer (``vi``'s name for the
+file you are editing).  You exit insert mode by pressing the ``Esc`` key.
+
+**Command-line mode** is when you are typing a command on the cmd line at the
+bottom of the window. This is for the Ex commands, ":", the pattern search
+commands, "?" and "/", and the filter command, "!".
 
 Hello, world!
 -------------
@@ -87,7 +93,7 @@ Start ``vi`` and edit a new file::
 
   vi helloworld.txt
 
-The editor will start up in command mode.  The first thing we want to do is add
+The editor will start up in normal mode.  The first thing we want to do is add
 some text to the file.  Press ``i`` to enter "insert" mode.  You will notice
 that the editor begins to let you start typing text into the file.  Enter
 some text into the file::
@@ -112,7 +118,7 @@ Now that you know how to open a file, put some text into it, and then exit the e
 is how to move around in the file.  While using the arrow keys might work, it's far from optimal, and may not be implemented in
 strictly POSIX-compliant versions of ``vi``.
 
-When in **command mode**, you use the ``h``, ``j``, ``k``, and ``l`` (ell) keys to move the cursor around:
+When in **normal mode**, you use the ``h``, ``j``, ``k``, and ``l`` (ell) keys to move the cursor around:
 
 * ``h`` - left
 * ``j`` - down
@@ -156,7 +162,7 @@ Text removal commands
 
 You will notice that while in **insert mode**, you can use the backspace and delete keys as expected.  This
 makes insert mode easiy to use, but it's not particularly efficient if you're trying to eliminate a whole paragraph or something
-from your document.  When in **command mode**, you can issue some commands that remove whole chunks of text:
+from your document.  When in **normal mode**, you can issue some commands that remove whole chunks of text:
 
 * ``x`` - Delete the character under the cursor
 * ``dw`` - Delete from the character under the cursor to the beginning of the next word
@@ -169,7 +175,7 @@ Undo and Redo
 -------------
 
 Now that you know how to add and remove text, you'll inevitably end up making a mistake.
-Luckily, ``vi`` lets you undo the last command or insertion, by going back to **command mode** and hitting
+Luckily, ``vi`` lets you undo the last command or insertion, by going back to **normal mode** and hitting
 the ``u`` key.
 
 In ``vim`` (but not strict POSIX ``vi``), you can also press ``R`` to redo the last thing
