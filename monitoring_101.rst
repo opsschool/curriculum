@@ -63,6 +63,25 @@ Apart from the out-of-box web-app that Graphite comes with you can even create y
 
 Ganglia
 -------
+Ganglia is a highly scalable distributed monitoring solution for high performance systems like clusters and grids.
+
+Ganglia leverages the following technologies:
+* XML for data representation.
+* XDR for compact and portable data transport.
+* RRD for data-storage.
+* PHP and RRDTool for data visualization.
+
+Ganglia is organized using the following conventions:
+* Grid: Consists of clusters.
+* Clusters: Consists of hosts/nodes. This is a logical grouping of machines and metrics like database servers, qa servers etc.
+* Host/Node: Typically a machine/server.
+
+Ganglia monitoring suite consists of three main components:
+* gmond: Daemon which needs to sit on every single node which needs to be monitored, gather monitoring statistics, send as well as receive the stats to and from within the same multicast or unicast channel.
+* gmetad: daemon that polls gmonds periodically and stores their metrics into a storage engine like RRD. It can poll multiple clusters and aggregate the metrics. It is also used by the web frontend in generating the UI.
+* ganglia-web: It should sit on the same machine as gmetad as it needs access to the RRD files.
+
+To get a feeling of what features Ganglia has, you can look at the demo at http://ganglia.wikimedia.org/latest/
 
 Munin
 -----
