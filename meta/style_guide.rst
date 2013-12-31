@@ -84,3 +84,20 @@ This highlighted version is superior, and more easily understood.
 Please use the language being displayed for the correct syntax.
 For examples of console output, use ``console``.
 When showing pseudo-code or items that do not fit a language or console, use ``none``.
+
+When showing shell commands, plese use the following standard prompts for user and root:
+
+.. code-block:: console
+
+  user@opsschool ~$ uptime
+   14:17:34 up 12:05, 16 users,  load average: 0.34, 0.16, 0.05
+
+  root@opsschool ~# uptime
+   14:18:15 up 12:05, 16 users,  load average: 0.22, 0.15, 0.06
+
+These prompts can be set with the following PS1 entries:
+
+.. code-block:: console
+
+  export PS1='user@opsschool \w$ '
+  export PS1='root@opsschool \w# '
