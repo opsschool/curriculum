@@ -63,7 +63,7 @@ Apart from the out-of-box web-app that Graphite comes with you can even create y
 
 Ganglia
 -------
-Ganglia is a highly scalable distributed monitoring solution for high performance systems like clusters and grids.
+`Ganglia <http://ganglia.info>`_ is a highly scalable distributed monitoring solution for high performance systems like clusters and grids.
 
 Ganglia leverages the following technologies:
 
