@@ -304,7 +304,7 @@ it is mounted at boot. See :doc:`boot_process_101`.
 
 .. code-block:: console
 
-    -root@opsschool # mount -t ext4 -o noatime /dev/sdb1 /mnt
+    root@opsschool # mount -t ext4 -o noatime /dev/sdb1 /mnt
 
 It is common to specify which filesystem type is present on ``/dev/sdb1`` and
 which mounting options you would like to use, but if that information is not
@@ -314,7 +314,7 @@ above:
 
 .. code-block:: console
 
-    -root@opsschool # mount /dev/sdb1 /mnt
+    root@opsschool # mount /dev/sdb1 /mnt
 
 The filesystem type refers to the format of the data structure that is used as
 the filesystem on disk. Files (generally) do not care what kind of filesystem
@@ -341,7 +341,7 @@ based systems to specify a filesystem.
 
 .. code-block:: console
 
-    -root@opsschool # cat /etc/fstab
+    root@opsschool # cat /etc/fstab
 
     # <file system> <mount point>  <type>  <options>         <dump>  <pass>
     /dev/sda5         /            ext4    errors=remount-ro 0       1
@@ -358,7 +358,7 @@ partition will not be scanned for filesystem errors.
 
 .. code-block:: console
 
-    -root@opsschool # cat /etc/auto.master
+    root@opsschool # cat /etc/auto.master
 
     /home -rw,hard,intr,nosuid,nobrowse bigserver:/exports/home/&
     /stash ldap:ou=auto_stash,ou=Autofs,dc=example,dc=com -rw,hard,intr,nobrowse
