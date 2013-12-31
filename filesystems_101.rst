@@ -407,14 +407,76 @@ As a result, many admins will turn off ``atime`` on filesystems to increase perf
 
 Note that ``atime`` is not really a security/auditing feature. Any regular user can use the ``touch`` utility on a file to set the ``atime`` to some point in the past, if they have the appropriate permissions for that file.
 
+ro
+--
+
+The ``ro`` option, called 'read-only', tells the filesystem to not allow writes to any of the files on the filesystem.
+This is useful for a legitimately read-only backing store such as a CD-ROM.
+It is also useful for protecting the filesystem from yourself or others, such as when you are mounting a drive you pulled from a different machine.
+If the filesystem is mounted read-only, you can't accidentally delete any data off of it.
+It is common for network shares to be mounted read-only, this way client machines can copy files from the network share, but can't corrupt the share with write locks or deletes.
+Sometimes, when the operating system detects that the block device (such as a hard drive) beneath the filesystem is beginning to fail, the operating system will remount the filesystem read-only.
+This will cause lots of problems for your running system, but it is intended to give you the maximum amount of time to copy your important data off of the filesystem before the disks beneath it fail completely.
+If this happens you can usually see it by checking ``mount`` for filesystems that should be read-write mounted as read-only.
+You can also check ``dmesg`` for messages like:
+
+.. code-block:: console
+
+    root@opsschool # dmesg 
+
+    [26729.124569] Write(10): 2a 00 03 96 5a b0 00 00 08 00
+    [26729.124576] end_request: I/O error, dev sda, sector 60185264
+    [26729.125298] Buffer I/O error on device sda2, logical block 4593494
+    [26729.125986] lost page write due to I/O error on sda2
+
+These messages strongly indicate that the disk ``/dev/sda`` is dying.
+In some cases you can recover the filesystem with the file system checker ``fsck``.
+You may also be able to force remount the filesystem read-write, as shown in the ``remount`` section below.
+
+
+rw
+--
+
+The ``rw`` option, called 'read-write', tells the filesystem to allow reads and writes to all files on the filesystem.
+
+Mounting a filesystem read-write is usually the default.
+There are times where you will not be able to make a read-write mount, such as when the backing physical media is fundamentally read-only, like a CD-ROM.
+
+remount
+-------
+
+Sometimes a filesystem will be mounted read-only, either by default, or because the operating system has remounted it ``ro`` because of disk failures.
+It is possible to remount the filesystem read-write with the following command:
+
+.. code-block:: console
+
+    [root@opsschool ~]# mount | grep boot
+    /dev/sda1 on /boot type ext3 (ro)
+    [root@opsschool ~]# mount -o remount,rw /boot
+    [root@opsschool ~]# mount | grep boot
+    /dev/sda1 on /boot type ext3 (rw)
+
+The syntax of the remount option is ``-o remount,<option>``.
+
+noexec
+------
+
+The ``noexec`` option tells the filesystem to ignore the execute bit on a filesystem.
+This would never work for the root filesystem, but it is often used as a security measure on world-writeable filesystems such as :file:`/tmp` . Note that there are many ways to get around this restriction.
+
+
+nosuid
+------
+
+Like the ``noexec`` option, the ``nosuid`` option ignores any setuserid bits set on files in the filesystem.
+This is also used for security purposes.
+It is generally recommended for removable devices such as CD-ROMs, USB sticks, and network filesystems.
+
+
 
 nobarriers
-noexec
-nosuid
 rbind
-remount
-ro
-rw
+
 
 How filesystems work
 ====================
