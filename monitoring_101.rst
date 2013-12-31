@@ -45,7 +45,7 @@ Additionally, the open-source version does not natively support adding and remov
 
 Graphite
 --------
-Graphite is an open-source monitoring tool that let's you store time-series based data and graph them. 
+`Graphite <http://graphite.wikidot.com/>`_ is an open-source monitoring tool that let's you store time-series based data and graph them. 
 
 Graphite consists of three components:
 
