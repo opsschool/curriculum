@@ -194,4 +194,5 @@ Glen Kaukola <gkaukola@cs.ucr.edu>
 Spencer Krum <krum.spencer@gmail.com>               UTi Worldwide Inc.
 Jeremy Grosser <jeremy@synack.me>                   Uber Technologies, Inc.
 Hugo Landau <hlandau@devever.net>
+Konark Modi <modi.konark@gmail.com>                 MakeMyTrip.com
 ==================================================  ====================================
