@@ -31,7 +31,7 @@ When you log into a Unix system, you will be given a command line by the
 
 .. code-block:: console
 
-  bash-4.0$
+  user@opsschool ~$ 
 
 By default you will be in the "current working directory" of the process that
 spawned the shell. Normally this is the home directory of your user.
@@ -43,7 +43,7 @@ You can find the name of the current directory with the ``pwd`` command:
 
 .. code-block:: console
 
-  bash-4.0$ pwd
+  user@opsschool ~$ pwd
   /home/opsschool
 
 You can see the list of files and directories in this directory with the ``ls``
@@ -51,7 +51,7 @@ command:
 
 .. code-block:: console
 
-  bash-4.0$ ls
+  user@opsschool ~$ ls
   file1.txt file2.txt tmpdir
 
 The ``ls`` command also accepts the ``-l`` argument to provide a long-listing,
@@ -59,7 +59,7 @@ which will show you permissions, dates, ownership and other information:
 
 .. code-block:: console
 
-  bash-4.0$ ls -l
+  user@opsschool ~$ ls -l
   -rw-r--r--  1 opsschool opsgroup   2444 Mar 29  2012 file1.txt
   -rw-r--r--  1 opsschool opsgroup  32423 Jun 03  2011 file2.txt
   drwxr-xr-x 15 opsschool opsgroup   4096 Apr 22  2012 tmpdir
@@ -69,7 +69,7 @@ directory:
 
 .. code-block:: console
 
-  bash-4.0$ ls -l /
+  user@opsschool ~$ s -l /
   dr-xr-xr-x    2 root root  4096 Apr 26  2012 bin
   dr-xr-xr-x    6 root root  1024 Sep 18 14:09 boot
   drwxr-xr-x   19 root root  8660 Jan  8 16:57 dev
@@ -96,8 +96,8 @@ To change directories, use the ``cd`` command:
 
 .. code-block:: console
 
-  bash-4.0$ cd /tmp
-  bash-4.0$ pwd
+  user@opsschool ~$ cd /tmp
+  user@opsschool ~$ pwd
   /tmp
 
 There may be times you need to find a file on your filesystem, based on its
@@ -106,7 +106,7 @@ command:
 
 .. code-block:: console
 
-  bash-4.0$ find /home/opsschool -type f -name file3.txt
+  user@opsschool ~$ find /home/opsschool -type f -name file3.txt
   /home/opsschool/tmpdir/file3.txt
 
 
@@ -150,7 +150,7 @@ partition at the beginning of the disk for EFI programs and the bootloader.
 .. code-block:: console
 
 
-  root@opsschool# parted /dev/sda
+  root@opsschool ~# parted /dev/sda
   GNU Parted 2.3
   Using /dev/sda
   Welcome to GNU Parted! Type 'help' to view a list of commands.
@@ -173,7 +173,7 @@ Looking at a second example:
 
 .. code-block:: console
 
-  root@opsschool# parted /dev/sdb
+  root@opsschool ~# parted /dev/sdb
   GNU Parted 2.3
   Using /dev/sdb
   Welcome to GNU Parted! Type 'help' to view a list of commands.
@@ -230,7 +230,7 @@ limited to the msdos disk label.
 
 .. code-block:: console
 
-  root@opsschool# fdisk -l  /dev/sdb
+  root@opsschool ~# fdisk -l  /dev/sdb
 
   Disk /dev/sdb: 8589 MB, 8589934592 bytes
   255 heads, 63 sectors/track, 1044 cylinders, total 16777216 sectors
@@ -250,7 +250,7 @@ The first partition, to contain ``/boot``, will be ext2. Create this by running:
 
 .. code-block:: console
 
-  root@opsschool:~# mkfs.ext2 /dev/sdb1
+  root@opsschool ~# mkfs.ext2 /dev/sdb1
   mke2fs 1.42 (29-Nov-2011)
   Filesystem label=
   OS type: Linux
@@ -450,10 +450,10 @@ It is possible to remount the filesystem read-write with the following command:
 
 .. code-block:: console
 
-    [root@opsschool ~]# mount | grep boot
+    root@opsschool ~# mount | grep boot
     /dev/sda1 on /boot type ext3 (ro)
-    [root@opsschool ~]# mount -o remount,rw /boot
-    [root@opsschool ~]# mount | grep boot
+    root@opsschool ~# mount -o remount,rw /boot
+    root@opsschool ~# mount | grep boot
     /dev/sda1 on /boot type ext3 (rw)
 
 The syntax of the remount option is ``-o remount,<option>``.
