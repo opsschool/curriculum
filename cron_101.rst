@@ -211,7 +211,7 @@ Notes on composing good "cron expressions"
   ``.zshrc`` or such). In particular, make sure to specify the full path to your
   program if it's not in a commonly-used location like ``/usr/bin``.
 - If you have problems with the syntax, or something isn't working properly, there
-  are websites [#]_ that will explain a particular line from crontab.
+  are websites [#]_ that will translate crontab to English, and vice versa. [#]_ 
 
 Modify a specific user's crontab
 --------------------------------
@@ -243,6 +243,8 @@ Footnotes
 
 .. [#] `"Examples" in cron - Wikipedia, a free encyclopedia <http://en.wikipedia.org/wiki/Cron#Examples_2>`_
 
-.. [#] `Crontab to plain english <http://cronchecker.net>`_
+.. [#] `Crontab to plain English <http://cronchecker.net>`_
 
-.. [#] `Where can I set environment variables that crontab will use?, <http://stackoverflow.com/questions/2229825/where-can-i-set-environment-variables-that-crontab-will-use/10657111#10657111>`_
+.. [#] `English to crontab <http://corntab.com/>`_
+
+.. [#] `Where can I set environment variables that crontab will use? <http://stackoverflow.com/questions/2229825/where-can-i-set-environment-variables-that-crontab-will-use/10657111#10657111>`_
