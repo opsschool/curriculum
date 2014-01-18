@@ -1,7 +1,7 @@
 DHCP
 ****
 DHCP, or, Dynamic Host Control Protocol is a standard that allows one central 
-source, ie. a server or router, to automatically assign requesting hosts an IP
+source, i.e. a server or router, to automatically assign requesting hosts an IP
 address.
 
 The most common DHCP servers on Linux platforms are the ISC's
