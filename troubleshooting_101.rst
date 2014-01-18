@@ -75,16 +75,20 @@ Cannot bind to socket
 There are two common reasons that you can't bind to a socket: the port is
 already in use, or you don't have permission.
 As an example, you can see what happens when I try to start a Python 
-SimpleHTTPServer on a port that is already in use::
+SimpleHTTPServer on a port that is already in use:
 
-    python -m SimpleHTTPServer 8080
+.. code-block:: console
+    
+    user@opsschool ~$ python -m SimpleHTTPServer 8080
     ...
     socket.error: [Errno 98] Address already in use
 
 Here's an example of what happens when I try to bind to a privileged port 
-without proper permissions (in Linux, ports < 1024 are privileged)::
+without proper permissions (in Linux, ports < 1024 are privileged):
 
-    python -m SimpleHTTPServer 80
+.. code-block:: console
+
+    user@opsschool ~$ python -m SimpleHTTPServer 80
     ...
     socket.error: [Errno 13] Permission denied
     
