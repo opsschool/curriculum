@@ -60,7 +60,9 @@ is to type:
 
 .. code-block:: console
 
-  crontab -l
+
+
+  user@opsschool ~$ crontab -l
 
 in the shell. This will show all the cron jobs scheduled to run as the
 current user. For example, if you are logged in as ``jdoe`` and there
@@ -68,7 +70,7 @@ are no cron jobs running the output will be something like:
 
 .. code-block:: console
 
-  -bash: crontab: no crontab for jdoe
+  jdoe@opsschool ~$ crontab: no crontab for jdoe
 
 If there are jobs scheduled to run, there will be a list of lines that looks
 something like this:
@@ -84,7 +86,7 @@ The way to schedule a new job is to type:
 
 .. code-block:: console
 
-  crontab -e
+  user@opsschool ~$ crontab -e
 
 in the shell. This will open an editor with your personal "crontab" file (or
 an empty file if you don't have any cron jobs already scheduled).
@@ -218,7 +220,8 @@ have the permissions to do so), type the following in a shell:
 
 .. code-block:: console
 
-  crontab -e -u jsmith
+
+  jdoe@opsschool ~$ crontab -e -u jsmith
 
 This option also combines with the other options we looked at before (``-l`` for
 listing and ``-r`` for removing a user's crontab file).
