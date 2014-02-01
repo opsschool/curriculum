@@ -26,6 +26,28 @@ due to editor crashes or the like.
 
 .. _iTerm2: http://iterm2.com/
 
+Linux: Gnome Terminator                                                         
+-----------------------                                                         
+                                                                                
+Many advanced Linux sysadmins prefer tiling window managers such as i3_,        
+Awesome_, xmonad_, herbstluftwm_, and others. However, these window managers
+can be daunting to a new user when compared to a more Windows-like desktop          
+environment like Unity_, KDE_, or XFCE_. A popular compromise is to use a       
+tiling terminal emulator, such as Terminator_, within a regular window
+manager. 
+                                                                                
+Terminator_ has some features which are convenient for performing similar       
+commands in several places at once, such as grouping terminals together and     
+then broadcasting your keystrokes to all terminals in the group.                
+                                                                                
+.. _i3: http://i3wm.org/                                                        
+.. _Awesome: http://awesome.naquadah.org/                                       
+.. _xmonad: http://xmonad.org/                                                  
+.. _herbstluftwm: http://herbstluftwm.org/                                      
+.. _Unity: https://unity.ubuntu.com/                                            
+.. _KDE: http://www.kde.org/                                                    
+.. _XFCE: http://www.xfce.org/                                                  
+.. _Terminator: http://gnometerminator.blogspot.com/p/introduction.html 
 
 SSH
 ===
