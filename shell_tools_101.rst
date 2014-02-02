@@ -380,7 +380,118 @@ You might have to change some of the character positions to make it work on your
 grep
 ----
 
-.. todo:: Talk a LOT about grep
+``grep`` matches patterns in files. 
+Its name comes from the ``ed`` command g/re/p (globally search a regular expression and print the results).
+``grep`` looks for the given pattern in the specified file or files and prints all lines which match. 
+
+Grep is an excellent tool for when you know the approximate location of the information you want and can describe its structure using a regular expression.  
+
+As you can learn from grep's man page, it takes some options, a pattern, and a file or list of files. 
+The files can be specified by ordinary shell globbing_, such as using ``*.log`` to refer to all files in the current directory whose names end in .log. 
+
+Grep's options allow you to customize what type of regular expressions you're using, modify which matches are printed (such as ignoring capitalization or printing only the lines which don't match), and control what's printed as output.
+`This post`_ explains some of the optimizations which allow GNU grep to search through large files so quickly, if you're interested in implementation details. 
+
+.. _globbing: http://tldp.org/LDP/abs/html/globbingref.html
+.. _`This post`: http://lists.freebsd.org/pipermail/freebsd-current/2010-August/019310.html
+
+**Intro to Regular Expressions**
+
+If you're looking for an exact word, the pattern is just that word.
+For example, let's say that I vaguely recall someone telling me about OpsSchool on IRC, and I'd like to find the article that they linked me to.
+I think that it was mentioned in a channel called #cschat:
+
+.. code-block:: console
+
+    user@opsschool ~$ grep opsschool \#cschat.log 
+     23:02 < nibalizer> http://www.opsschool.org/en/latest/
+
+That's the only place that 'opsschool' was mentioned.
+Since grep is case-sensitive by default, 'OpsSchool' would not have shown up in that search.
+To ignore case, use the -i flag: 
+
+.. code-block:: console
+
+    user@opsschool ~$ grep -i opsschool \#cschat.log 
+     23:02 < nibalizer> http://www.opsschool.org/en/latest/
+     15:33 < edunham> hmm, I wonder what I should use as an example in the OpsSchool writeup on grep...
+
+That's better.
+But what if I can't remember whether there was a space in 'ops school'? 
+I could grep twice, once with the space and once without, but that starts to get ugly very fast.
+The correct solution is to describe the pattern I'm trying to match using a regular expression. 
+
+There are a variety of regex tutorials available.
+The most important thing to remember about regular expressions is that some characters are special, and not taken literally. 
+The special characters are:
+
+==========      =======
+Characters      Meaning
+==========      =======
+``$``           End of a line
+``^``           Start of a line
+``[]``          Character class
+``?``           The preceding item is optional and matched at most once
+``*``           Zero or more of the preceding item
+``+``           One or more of the preceding item
+``{}``          Match some number of the preceding item
+``|``           Alternation (true if either of the regexes it separates match)
+``.``           Any one character
+``\``           Escape (take the following character literally)
+==========      =======
+
+Note that there's almost always more than one way to express a particular pattern. 
+When you're developing a regular expression, it can be helpful to test it on simplified input to see what it catches.
+To test a regex for various spellings of opsschool, you might put a variety of spellings in a file and then grep it to see which regex catches which spellings.
+
+.. code-block:: console
+
+    user@opsschool ~$ cat ops.txt 
+     OpsSchool
+     Ops School
+     opsschool
+     ops school
+     ops School
+     ops  School
+     Ops   school
+    user@opsschool ~$ grep -i "ops *school" ops.txt
+    user@opsschool ~$ grep "[oO]ps[ ?][sS]chool" ops.txt
+
+Try it yourself.
+Part of developing a regular expression is clarifying your ideas about exactly what pattern you're looking for.
+Might your regex catch false positives, such as how 2 or more spaces between the words of ops school will be caught by the first example above?
+If so, be sure to include some of those possible false positives when testing.
+
+Think about which of the regular expressions above you'd prefer.
+Which is easier to read?
+Which is better at matching your idea of the correct output?
+
+For more information about regular expressions, try ``man 7 regex``, `regularexpressions.info`_, and the `Advanced Bash Scripting Guide`_ chapter on the subject.
+
+.. _`regularexpressions.info`: http://www.regular-expressions.info/tutorial.html
+.. _`Advanced Bash Scripting Guide`: http://tldp.org/LDP/abs/html/x17046.html
+
+**Single vs. Double quotes in the shell**
+
+When grepping for bash variables in scripts, you'll probably want the name of the variable. 
+However, there might be times when you want its value.
+Below is a quick exercise to explore the difference:
+
+.. code-block:: console
+
+    user@opsschool ~$ echo "$HOME has my username in it" >> home.txt
+    user@opsschool ~$ echo '$HOME has a dollar sign in it' >> home.txt
+    user@opsschool ~$ cat home.txt
+     /home/username has my username in it
+     $HOME has a dollar sign in it
+    user@opsschool ~$ grep $HOME home.txt
+     /home/username has my username in it
+    user@opsschool ~$ grep "$HOME" home.txt
+     /home/username has my username in it
+    user@opsschool ~$ grep '$HOME' home.txt
+     $HOME has a dollar sign in it
+    user@opsschool ~$ grep \$HOME home.txt
+     $HOME has a dollar sign in it                                      
 
 awk
 ---
