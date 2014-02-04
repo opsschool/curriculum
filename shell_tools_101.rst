@@ -397,7 +397,7 @@ Grep's options allow you to customize what type of regular expressions you're us
 
 **Intro to Regular Expressions**
 
-If you're looking for an exact word, the pattern is just that word.
+If you're looking for a specific string, either a word or part of a word, the pattern is just that string.
 For example, let's say that I vaguely recall someone telling me about OpsSchool on IRC, and I'd like to find the article that they linked me to.
 I think that it was mentioned in a channel called #cschat:
 
@@ -459,8 +459,10 @@ To test a regex for various spellings of opsschool, you might put a variety of s
 
 Try it yourself.
 Part of developing a regular expression is clarifying your ideas about exactly what pattern you're looking for.
-Might your regex catch false positives, such as how 2 or more spaces between the words of ops school will be caught by the first example above?
-If so, be sure to include some of those possible false positives when testing.
+Will you get any false positives?
+For example, the first example above will return true if there are 2 or more spaces between the words of ops school.
+It's up to you to decide whether that behavior is correct.
+If your regular expression catches strings that it shouldn't, be sure to include some of those possible false positives when testing.
 
 Think about which of the regular expressions above you'd prefer.
 Which is easier to read?
