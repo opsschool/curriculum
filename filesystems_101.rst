@@ -69,7 +69,7 @@ directory:
 
 .. code-block:: console
 
-  user@opsschool ~$ s -l /
+  user@opsschool ~$ ls -l /
   dr-xr-xr-x    2 root root  4096 Apr 26  2012 bin
   dr-xr-xr-x    6 root root  1024 Sep 18 14:09 boot
   drwxr-xr-x   19 root root  8660 Jan  8 16:57 dev
