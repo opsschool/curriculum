@@ -75,7 +75,7 @@ following descriptions compare and contrast:
   sense for the town? Will collects input from the employees about what
   capabilities are important, input from legal council about what laws a town
   must follow regarding electronic communication, and evaluates a few
-  services or products with his user's needs in mind along with the town's. If he
+  services or products with his users' needs in mind along with the town's. If he
   ends up using a third-party service, he'll have to figure out how to roll it
   out to the users. If Will chooses to host himself, he'll have to coordinate
   getting the appropriate infrastructure set up to make sure that it can meet
@@ -132,8 +132,8 @@ Highlighted themes include:
 
 * **System Administrators rarely work on their own.** Some of the stories
   feature System Administrators who are the only "Information Technology" staff
-  in their organization - but it's a requirement for them to work with everyone
-  - the folks who "sign the paycheck at the end of the day," *and* the people
+  in their organization - but it's a requirement for them to work with everyone:
+  the folks who "sign the paycheck at the end of the day," *and* the people
   who use their technology.
 * **System Administration can be difficult if you don't automate!** Imagine if
   Matt had to install a software package on 200 machines by walking to each
@@ -155,8 +155,8 @@ What is Development?
 ********************
 
 As mentioned in the section introduction, system administration doesn't exist
-in a vacuum. Computers don't just compute for the sake of it - not yet,
-anyways.
+in a vacuum. Computers don't just compute for the sake of it; not yet,
+anyway.
 
 *Developers* write applications in a variety of programming languages to
 make a computer do *something*. Developers created the backend that allows you
@@ -168,14 +168,14 @@ These backends can be big, and have many considerations behind their design.
 .. _whats-developer-rachel:
 
 * **Rachel works for an ecommerce company.** The company has a large
-  team of developers, all working in different applications, usually in ruby or
-  javascript, and the applications talk to each other via APIs to support the main
+  team of developers, all working in different applications, usually in Ruby or
+  JavaScript, and the applications talk to each other via APIs to support the main
   site that customers interact with. Her obligations to the business are to create
   new features for the website and maintain or fix the old ones. Her obligations to
   her other developers are to keep the code clean and readable, with tests so others
   can confidently refactor her code. She works closely with the Operations team to
   make the app-level changes that help the ops team maintain a robust infrastructure,
-  like making pages fully cachable or eliminating unnecessary HTML, CSS, javascript
+  like making pages fully cachable or eliminating unnecessary HTML, CSS, JavaScript
   or images being sent to the browser.
 
 .. _whats-developer-tyler:
@@ -206,7 +206,7 @@ That being said, Development and Operations have different day-to-day thoughts.
 
 Operations thoughts include:
 
-* How are we going to install (or, deploy) the servers that run this application?
+* How are we going to install (or deploy) the servers that run this application?
 * How will we monitor the system/service to make sure it's working as we expect?
 * Can we deploy this system or service in a way that is easy to maintain?
 * What are the pros/cons of implementing this application in this way?
@@ -242,14 +242,14 @@ effects of this style of work can be dangerous:
   in assigning blame, instead of working together to fix an issue
 
 Fortunately, in recent years, many organizations have made more effort to ensure
-that both teams are familiar with the concepts of the other - this is often 
-referred to as *DevOps* - the combination of Development and Operations. Recall
+that both teams are familiar with the concepts of the other; this is often 
+referred to as *DevOps*, the combination of Development and Operations. Recall
 :ref:`Darren's story <whats-sysadmin-darren>` - he's an operations person who
 worked with the developers to ensure that the developers understand the
 environment that their application will run on. The street went both ways,
 though: the developers need to share how they plan to implement various product
 features so that the operations team can figure out how to best support the
-developers needs.
+developers' needs.
 
 If you're working in an environment without developers, that's OK. There are
 other people who you share a common, larger goal with. Businesses may have
@@ -282,7 +282,7 @@ this sort of obstructionist, adversarial behavior is the least effective way of
 addressing problems. The best path to success and satisfaction is collaboration,
 not obstinacy. This requires cooperation from all involved, whether their role
 is technical or not. An administrator's job is to create order from chaos, to
-control the technology--not the people. As with all social interactions, 
+control the technology -- not the people. As with all social interactions, 
 everyone has their own needs and goals, and it can be complex to navigate safely, 
 but it is critical to the success of the organization.
 
