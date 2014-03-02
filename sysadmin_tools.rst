@@ -531,6 +531,26 @@ further.
 Mosh
 ====
 
+Mosh is an alternative to remote shells, such as ``ssh`` or ``rsh``. The beauty
+of mosh is that it supports intermittent connectivity without killing the remote
+session. You can start a remote session just like you would with ssh on one side
+of town with one ip address, shut your laptop and go home, then open your laptop
+and connect back to your session like it was never interrupted. Also, if your
+wifi is spotty or internet connection is intermittent, mosh doesnt break the
+session when the connection drops out, unlike ssh. Mosh does not wait for the
+remote server to confirm each keystroke before displaying it to a terminal.
+Instead, it displays the typed characters locally and confirms entry on the
+remote end. There are packages available for GNU/Linux, FreeBSD, Solaris,
+Mac OS X and even Android apps.
+
+Mosh must be installed on both the client and remote server. When a session
+is started it spins up a mosh server and a local mosh client process. It can
+be installed in a home directory without privileged access.
+
+Mosh works just like ssh:
+
+``mosh username@remoteserver.org``
+
 
 Ticketing systems
 =================
