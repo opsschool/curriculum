@@ -531,19 +531,17 @@ further.
 Mosh
 ====
 
-#distinguish between prototol mosh and command mosh
-
 Mosh (MObile SHell) is an alternative to remote shell commands, such as ``ssh``
-or ``rsh``. The beauty of mosh is that it supports intermittent connectivity without killing the remote
-session. You can start a ``mosh`` session just like you would with ``ssh`` on one side
-of town with one IP address, shut your laptop and go home, then open your laptop
-and connect back to your mosh session like it was never interrupted. Also, if your
-wifi is spotty or internet connection is intermittent, ``mosh`` doesnt break the
-session when the connection drops out, unlike ``ssh``. Mosh does not wait for the
-remote server to confirm each keystroke before displaying it to a terminal.
-Instead, it displays the typed characters locally and confirms entry on the
-remote end. There are packages available for GNU/Linux, FreeBSD, Solaris,
-Mac OS X, Chrome and even Android apps.
+or ``rsh``. The beauty of the mosh protocol is that it supports intermittent
+connectivity without killing the remote session. You can start a ``mosh``
+session just like you would with ``ssh`` on one side of town with one IP address,
+shut your laptop and go home, then open your laptop and connect back to your mosh
+session like it was never interrupted. Also, if your wifi is spotty or internet
+connection is intermittent, ``mosh`` doesnt break the session when the connection
+drops out, unlike ``ssh``. Mosh does not wait for the remote server to confirm
+each keystroke before displaying it to a terminal. Instead, it displays the typed
+characters locally and confirms entry on the remote end. There are packages
+available for GNU/Linux, FreeBSD, Solaris, Mac OS X, Chrome and even Android apps.
 
 Mosh must be installed on both the client and remote server. When a session
 is started it spins up a mosh-server and a local mosh-client process. It can
@@ -555,21 +553,21 @@ Mosh works just like ssh:
 
 ``mosh username@remoteserver.org``
 
-You can have mosh utilize ssh style commands such as:
+You can also have mosh utilize ssh style commands such as:
 
 ``mosh username@remoteserver.org --ssh="ssh -i ~/.ssh/identity_file"``
 
-This specifies the private key to use to authenticate with the remove server.
+That specifies the private key to use to authenticate with the remove server.
 
 ``mosh username@remoteserver.org --ssh="ssh -p 1234"``
 
-This tells mosh to connect via the ssh port 1234 on the remote server, where
+That tells mosh to connect via the ssh port 1234 on the remote server, where
 ssh normally runs on port 22.
 
 The Mosh protocol is based on UDP packets compared to the ssh protocol that uses
 TCP packets. Mosh utilizes SSP or State Syncronization Protocol to transmit
-data between the client and server. This allows the connection to effectively #restated?
-break, the client to change IP addresses, 
+data between the client and server. Both the client and the server keep a running
+copy of the current running session.
 
 While ``ssh`` has been around long enough to have time tested security,
 ``mosh`` is relatively new and has not been through the same extensive testing.
