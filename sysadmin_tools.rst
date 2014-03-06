@@ -549,6 +549,19 @@ be installed in a home directory without privileged access. Mosh respects
 your current ``~/.ssh/config`` so migrating from ``ssh`` to ``mosh`` is
 relatively seamless.
 
+The Mosh protocol is based on UDP packets compared to the ssh protocol that uses
+TCP packets. Mosh utilizes SSP or State Syncronization Protocol to transmit
+data between the client and server. Both the client and the server keep a running
+copy of the current running session.
+
+While ``ssh`` has been around long enough to have time tested security,
+``mosh`` is relatively new and has not been through the same extensive testing.
+Mosh does tunnel traffic encrypted with AES-128 in OES mode, however mosh hasn't
+been under the security spotlight as long as ssh has.
+
+Examples
+~~~~~~~~
+
 Mosh works just like ssh:
 
 ``mosh username@remoteserver.org``
@@ -564,16 +577,8 @@ That specifies the private key to use to authenticate with the remove server.
 That tells mosh to connect via the ssh port 1234 on the remote server, where
 ssh normally runs on port 22.
 
-The Mosh protocol is based on UDP packets compared to the ssh protocol that uses
-TCP packets. Mosh utilizes SSP or State Syncronization Protocol to transmit
-data between the client and server. Both the client and the server keep a running
-copy of the current running session.
-
-While ``ssh`` has been around long enough to have time tested security,
-``mosh`` is relatively new and has not been through the same extensive testing.
-Mosh does tunnel traffic encrypted with AES-128 in OES mode, however mosh hasn't
-been under the security spotlight as long as ssh has.
-
+I use Mosh to stay connected to my persistent IRC session running on a server
+when I'm moving around buildings, or putting my laptop to sleep often.
 
 Ticketing systems
 =================
