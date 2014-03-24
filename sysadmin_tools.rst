@@ -532,16 +532,18 @@ Mosh
 ====
 
 Mosh (MObile SHell) is an alternative to remote shell commands, such as ``ssh``
-or ``rsh``. The beauty of the mosh protocol is that it supports intermittent
-connectivity without killing the remote session. You can start a ``mosh``
-session just like you would with ``ssh`` on one side of town with one IP address,
-shut your laptop and go home, then open your laptop and connect back to your mosh
-session like it was never interrupted. Also, if your wifi is spotty or internet
-connection is intermittent, ``mosh`` doesnt break the session when the connection
-drops out, unlike ``ssh``. Mosh does not wait for the remote server to confirm
-each keystroke before displaying it to a terminal. Instead, it displays the typed
-characters locally and confirms entry on the remote end. There are packages
-available for GNU/Linux, FreeBSD, Solaris, Mac OS X, Chrome and even Android apps.
+or ``rsh``. The beauty of the Mosh protocol is that it supports intermittent
+connectivity without losing the remote session.
+
+You can start a ``mosh`` session just like you would with ``ssh`` on one side
+of town with one IP address, shut your laptop and go home, then open your
+laptop and connect back to your Mosh session like it was never interrupted.
+Also, if your wifi is spotty or internet connection is intermittent, ``mosh``
+doesn't break the session when the connection drops out, unlike ``ssh``.
+Mosh does not wait for the remote server to confirm each keystroke before
+displaying it to a terminal. Instead, it displays the typed characters locally
+and confirms entry on the remote end. There are packages available for GNU/Linux,
+FreeBSD, Solaris, Mac OS X, Chrome and even Android apps.
 
 Mosh must be installed on both the client and remote server. When a session
 is started it spins up a mosh-server and a local mosh-client process. It can
@@ -549,36 +551,49 @@ be installed in a home directory without privileged access. Mosh respects
 your current ``~/.ssh/config`` so migrating from ``ssh`` to ``mosh`` is
 relatively seamless.
 
-The Mosh protocol is based on UDP packets compared to the ssh protocol that uses
-TCP packets. Mosh utilizes SSP or State Syncronization Protocol to transmit
-data between the client and server. Both the client and the server keep a running
-copy of the current running session.
+SSH connections work by sending a stream of data back and forth between the client
+and server. This stream can be broken in various ways, such as the connection
+timing out due to inactivity, or the client machine suspending state and shutting
+down network devices. The Mosh protocol is based on UDP packets compared to the SSH
+procotol that uses TCP packets. Mosh is the first application to use the Stateless
+Syncronization Protocol. Instead of a stream of data between the server and client
+that makes up a session over SSH, Mosh works by keeping a mirrored copy of the
+session on the client and server and syncronizing the changes between them.
 
 While ``ssh`` has been around long enough to have time tested security,
 ``mosh`` is relatively new and has not been through the same extensive testing.
-Mosh does tunnel traffic encrypted with AES-128 in OES mode, however mosh hasn't
-been under the security spotlight as long as ssh has.
+It is the first application to use the SSP protocol. Mosh does tunnel traffic
+encrypted with AES-128 in OES mode, however Mosh hasn't been under the
+security spotlight as long as SSH has.
 
 Examples
 ~~~~~~~~
 
 Mosh works just like ssh:
 
-``mosh username@remoteserver.org``
+.. code-block:: console
 
-You can also have mosh utilize ssh style commands such as:
+  mosh username@remoteserver.org
 
-``mosh username@remoteserver.org --ssh="ssh -i ~/.ssh/identity_file"``
+You can also have mosh utilize ssh style commands such as: This specifies the
+private key to use to authenticate with the remove server.
 
-That specifies the private key to use to authenticate with the remove server.
+.. code-block:: console
 
-``mosh username@remoteserver.org --ssh="ssh -p 1234"``
+  mosh username@remoteserver.org --ssh="ssh -i ~/.ssh/identity_file"
 
-That tells mosh to connect via the ssh port 1234 on the remote server, where
+This tells mosh to connect via the ssh port 1234 on the remote server, where
 ssh normally runs on port 22.
 
-I use Mosh to stay connected to my persistent IRC session running on a server
-when I'm moving around buildings, or putting my laptop to sleep often.
+.. code-block:: console
+
+  mosh username@remoteserver.org --ssh="ssh -p 1234"``
+
+References
+----------
+
+.. http://mosh.mit.edu
+
 
 Ticketing systems
 =================
