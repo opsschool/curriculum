@@ -323,9 +323,37 @@ Static routing
 ==============
 
 
-NAT
+NAT 
 ===
 
+Network Address Translation, or NAT, is a technology that allows multiple internet-
+connected devices to share one common **public** IP address, while still retaining
+unique, individual **private** IP addresses. The distinction between public and private
+is integral to the understanding of the service that NAT provides and how it works.
+
+A public IP address is the IP addresses that the internet outside of a device's local
+network see when the device sends a packet. If the router in front of a local network
+is NAT-enabled then all devices in that local network will have the same public IP
+address. A private IP address is what is used to uniquely identify a device within the
+same local network. At home, our computers are given IP addresses that look like
+192.168.xxx.xxx. This is the computer's private IP address and isn't seen by
+any device outside the computer's local network.
+
+When a device behind a NAT-enabled router sends a packet, the source IP address on the
+packet is the device's local IP address. If the packet is going outside the local
+network, it will pass through a router, which will modify the source IP address to its
+own public IP address. To ensure that, when a response for this packet comes back,
+the router can send it to the correct that device that sent it in the first place,
+it maintains what is called a **Translation Table**. This table maps a device's IP
+address and port to a port on the router itself. The router's public IP address and
+the correct port number from the table are used as the source IP and port on the packet
+and then sent to the destination.
+
+These maps are temporary and exist on a per-connection basis. This means that each
+connection opened by a device will have a unique port number on the device and a
+unique port number on the router as well. This port on the router is used as the
+public port for that connection. Once the connection terminates, the router is
+free to assign that port to another connection.
 
 Networking cable
 ================
