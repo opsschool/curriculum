@@ -130,3 +130,31 @@ Diamond
 `Diamond <https://github.com/BrightcoveOS/Diamond>`_ is a python daemon that collects system metrics and publishes them to Graphite (and others).
 It is capable of collecting cpu, memory, network, i/o, load and disk metrics.
 Additionally, it features an API for implementing custom collectors for gathering metrics from almost any source.
+
+Logster
+-------
+`Logster <https://github.com/etsy/logster/>`_ project was created at Etsy as a fork of `ganglia-logtailer <https://bitbucket.org/maplebed/ganglia-logtailer>`_ .
+
+Logster is a utility for reading log files and generating metrics in:
+
+* Graphite
+* Ganglia
+* Amazon CloudWatch
+
+It is ideal for visualizing trends of events that are occurring in any type of logs:
+
+* Application
+* System
+* Error logs
+
+For example, you might use logster to graph the number of occurrences of HTTP response code that appears in your web server logs.
+
+Logster maintains a cursor, via logtail on each log file that it reads so that each successive execution only inspects new log entries.
+
+A simple,1 minute crontab entry for logster would allow you to generate near real-time trends for anything you want to measure from your logs.
+
+This tool is made up of a framework script, logster, and parsing scripts that are written to accommodate your specific log format.
+
+Sample parsers are included in the distribution, which essentially read a log file line by line, applying a regular expression to extract useful data from the lines you are interested in, and then aggregate that data into metrics that will be submitted to Ganglia or Graphite or Amazon CloudWatch. 
+
+Do take a look through the `sample parsers <https://github.com/etsy/logster/tree/master/logster/parsers>`_, which should give you some idea of how to get started writing your own.
