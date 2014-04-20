@@ -26,28 +26,28 @@ due to editor crashes or the like.
 
 .. _iTerm2: http://iterm2.com/
 
-Linux: Gnome Terminator                                                         
------------------------                                                         
-                                                                                
-Many advanced Linux sysadmins prefer tiling window managers such as i3_,        
+Linux: Gnome Terminator
+-----------------------
+
+Many advanced Linux sysadmins prefer tiling window managers such as i3_,
 Awesome_, xmonad_, herbstluftwm_, and others. However, these window managers
-can be daunting to a new user when compared to a more Windows-like desktop          
-environment like Unity_, KDE_, or XFCE_. A popular compromise is to use a       
+can be daunting to a new user when compared to a more Windows-like desktop
+environment like Unity_, KDE_, or XFCE_. A popular compromise is to use a
 tiling terminal emulator, such as Terminator_, within a regular window
-manager. 
-                                                                                
-Terminator_ has some features which are convenient for performing similar       
-commands in several places at once, such as grouping terminals together and     
-then broadcasting your keystrokes to all terminals in the group.                
-                                                                                
-.. _i3: http://i3wm.org/                                                        
-.. _Awesome: http://awesome.naquadah.org/                                       
-.. _xmonad: http://xmonad.org/                                                  
-.. _herbstluftwm: http://herbstluftwm.org/                                      
-.. _Unity: https://unity.ubuntu.com/                                            
-.. _KDE: http://www.kde.org/                                                    
-.. _XFCE: http://www.xfce.org/                                                  
-.. _Terminator: http://gnometerminator.blogspot.com/p/introduction.html 
+manager.
+
+Terminator_ has some features which are convenient for performing similar
+commands in several places at once, such as grouping terminals together and
+then broadcasting your keystrokes to all terminals in the group.
+
+.. _i3: http://i3wm.org/
+.. _Awesome: http://awesome.naquadah.org/
+.. _xmonad: http://xmonad.org/
+.. _herbstluftwm: http://herbstluftwm.org/
+.. _Unity: https://unity.ubuntu.com/
+.. _KDE: http://www.kde.org/
+.. _XFCE: http://www.xfce.org/
+.. _Terminator: http://gnometerminator.blogspot.com/p/introduction.html
 
 SSH
 ===
@@ -212,10 +212,10 @@ GNU Screen
 ``screen`` is one of the longest lived multiplexers. Almost everyone who has
 used a multiplexer has used screen, and you can't go far wrong with it.
 
-``screen`` is a full-screen window manager that multiplexes a physical terminal 
-between several processes (typically interactive shells).  It is useful for 
+``screen`` is a full-screen window manager that multiplexes a physical terminal
+between several processes (typically interactive shells).  It is useful for
 creating sessions that can be disconnected from and reconnected to later.  This
-is useful for running tasks that can take a long time that you do not want to 
+is useful for running tasks that can take a long time that you do not want to
 have an ssh session timeout on, such as a large database import.  In these cases
 cron is also a very good way to run one off long running tasks.
 
@@ -291,9 +291,9 @@ Create a session with a log:
 
   screen -L -S session1
 
-``screen`` will output the session log to the user's home directory with the 
-file ``~/screenlog.0`` (0 being the session id).  PuTTY is also as a very useful 
-and featureful ssh client that can be used for logging ssh sessions locally 
+``screen`` will output the session log to the user's home directory with the
+file ``~/screenlog.0`` (0 being the session id).  PuTTY is also as a very useful
+and featureful ssh client that can be used for logging ssh sessions locally
 (Windows and Linux).  ``screen`` can be used within a PuTTY session.
 
 Create a session with a log and 20000 lines of scrollback in the terminal:
@@ -481,9 +481,9 @@ Byobu_ is a wrapper around one of screen or tmux. It
 provides profile support, F-keybindings, configuration utilities and a
 system status notification bar for most Linux, BSD or Mac operating systems.
 
-Byobu is available in major distros as a packaged binary. Launching byobu will 
-run whichever the package maintainer included as a dependency, if you have both 
-installed, you can select explicitly with byobu-{screen,tmux}.  Basic 
+Byobu is available in major distros as a packaged binary. Launching byobu will
+run whichever the package maintainer included as a dependency, if you have both
+installed, you can select explicitly with byobu-{screen,tmux}.  Basic
 configuration is launched with F9 or byobu-config.
 
 Scrollback starts with F7, mark the start of your buffer by hitting the
@@ -632,4 +632,3 @@ EverNote
 
 OneNote
 -------
-
