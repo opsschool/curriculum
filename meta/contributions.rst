@@ -196,4 +196,5 @@ Jeremy Grosser <jeremy@synack.me>                   Uber Technologies, Inc.
 Hugo Landau <hlandau@devever.net>
 Konark Modi <modi.konark@gmail.com>                 MakeMyTrip.com
 Josh Reichardt <josh.reichardt@gmail.com>           thepracticalsysadmin.com
+Ben Reichert <ben@benreichert.com>
 ==================================================  ====================================
