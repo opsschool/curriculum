@@ -139,7 +139,7 @@ Two of the more useful options are: ``-a`` and ``-l``:
 - ``ls -a`` will list these hidden files and directories.
 - ``ls -l`` outputs what's called a long listing, where various attributes are given in addition to the filenames.
 
-Emaple of using both:
+Example of using both:
 
 .. code-block:: console
 
@@ -158,7 +158,7 @@ Notice directories are indicated by a "d" and regular files are indicated by a "
 After the first field, from left to right the fields are filetype\attributes\permissions, links, owner, group, file size, modification date, and file name.
 
 Notice also the files named "." and "..".
-These are the current directory and the directory up one level respectively.
+These are the current directory and the directory up one level, respectively.
 
 lsof
 ----
@@ -306,7 +306,7 @@ For this particular usage, ``cat`` can create a file "on the fly".
     $ cat /home/jdoe/bar.txt
     foo
 
-There are many tools that you may use to parse the output of fiels, and since ``cat`` can provide a comfortable input method for other tools, it is not always necessary.
+There are many tools that you may use to parse the output of files, and since ``cat`` can provide a comfortable input method for other tools, it is not always necessary.
 Read more on `Useless Use of cat <http://en.wikipedia.org/wiki/Cat_(Unix)#Useless_use_of_cat>`_.
 
 cut
@@ -679,7 +679,7 @@ Luckily, ``sort`` has some more flags, ``-n`` is what we want here:
   100 Mocha
   1003 Americano
 
-What if we want to sort the new list by name? We will have to sort by the second column, not the first one. Sort assume that columns are space separated by default. ``sort`` has the flag ``-k`` that let us specify what key we want to use.
+What if we want to sort the new list by name? We will have to sort by the second column, not the first one. ``sort`` assumes that columns are space separated by default. ``sort`` has the flag ``-k`` that let us specify what key we want to use.
 
 .. code-block:: console
 
@@ -689,5 +689,5 @@ What if we want to sort the new list by name? We will have to sort by the second
   63 Espresso
   100 Mocha
 
-There are man more flags available, ``man sort`` will show you them all.
+There are many more flags available, ``man sort`` will show you them all.
 There is probably already something there for whatever you can throw at it.
