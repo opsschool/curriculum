@@ -131,6 +131,9 @@ Knowing this, we can see that this "crontab" means:
   At 12:05 every Sunday, every month, regardless of the day of the month, run the
   command ``copy-to-partition`` in the ``/home/jdoe/jobs`` directory.
 
+**Caveat**: entries in your crontab must be one long line; if you try to split it up
+(with the linebreak ``\`` character for example) you will get an error!
+
 Let's take another example and create a cron job that checks disk space
 available every minute, every hour, every day of the month, every month, for
 every day of the week, and outputs it to a file named :file:``disk_space.txt``.
@@ -209,6 +212,8 @@ Notes on composing good "cron expressions"
   variables that come from your shell initialization files (like ``.bashrc`` or
   ``.zshrc`` or such). In particular, make sure to specify the full path to your
   program if it's not in a commonly-used location like ``/usr/bin``.
+- If you have problems with the syntax, or something isn't working properly, there
+  are websites [#]_ that will translate crontab to English, and vice versa. [#]_ 
 
 Modify a specific user's crontab
 --------------------------------
@@ -241,4 +246,8 @@ Footnotes
 
 .. [#] `"Examples" in cron - Wikipedia, a free encyclopedia <http://en.wikipedia.org/wiki/Cron#Examples_2>`_
 
-.. [#] `Where can I set environment variables that crontab will use?, <http://stackoverflow.com/questions/2229825/where-can-i-set-environment-variables-that-crontab-will-use/10657111#10657111>`_
+.. [#] `Crontab to plain English <http://cronchecker.net>`_
+
+.. [#] `English to crontab <http://corntab.com/>`_
+
+.. [#] `Where can I set environment variables that crontab will use? <http://stackoverflow.com/questions/2229825/where-can-i-set-environment-variables-that-crontab-will-use/10657111#10657111>`_

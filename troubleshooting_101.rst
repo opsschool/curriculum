@@ -33,8 +33,8 @@ problem. Over time you will expand what is in your toolbelt, but to start with
 you must know how to use each of these:
 
 * ``top``, ``vmstat``, ``iostat``, ``systat``, ``sar``, ``mpstat``
-  These help you see the current state of the system - what is running, what is
-  using cpu, memory? Is the disk being heavily used? There is a lot of
+  help you see the current state of the system - what is running, what is
+  using cpu, memory? Is the disk being heavily used? There is a great deal of
   information, and knowing how these tools work will help you pick out the bits
   you should focus on.
 * ``tcpdump``, ``ngrep``
@@ -49,7 +49,7 @@ Walk through of a diagnosis
  * What changed recently?
  * Could any of the symptoms be red herrings?
 
-* Common culprits (is it plugged in?)
+* Common culprits (is it plugged in? is it network accessible?)
 * Look through your logs
 * Communicating during an outage
 * 'Talking Out-Loud' (IRC/GroupChat)
@@ -72,8 +72,30 @@ identify and fix them.
 Cannot bind to socket
 ^^^^^^^^^^^^^^^^^^^^^
 
+There are two common reasons that you can't bind to a socket: the port is
+already in use, or you don't have permission.
+As an example, you can see what happens when I try to start a Python 
+SimpleHTTPServer on a port that is already in use:
+
+.. code-block:: console
+    
+    user@opsschool ~$ python -m SimpleHTTPServer 8080
+    ...
+    socket.error: [Errno 98] Address already in use
+
+Here's an example of what happens when I try to bind to a privileged port 
+without proper permissions (in Linux, ports < 1024 are privileged):
+
+.. code-block:: console
+
+    user@opsschool ~$ python -m SimpleHTTPServer 80
+    ...
+    socket.error: [Errno 13] Permission denied
+    
 Permission denied reading to / writing from disk
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+
 
 Out of disk space
 ^^^^^^^^^^^^^^^^^
