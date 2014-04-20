@@ -21,9 +21,11 @@ Another example for preference of certified individuals are government roles or 
 Generally, there are a few scenarios that you will see with regards to certification.
 
 * The first scenario, and most common for those just starting out, is the group who use certification as a way to get their foot in the door or to launch their careers in ops.
+
 The types of certifications that these individuals target are typically the entry level, easiest to obtain certifications which will yield the greatest improvement of job prospects for those that obtain them.
 
 * The second scenario that is typical is one where certain certifications are required either for an individuals' place of employment or are used as a requirement or prerequisite to obtain a position at a company.
+
 Many times, Managed Service Providers (MSP's) require a certain level of certification amongst their employees to retain their status as a certified partner with some technology companies, like Cisco or Microsoft for example.
 These companies are required to have various levels of certification for their employees in certain specific areas and are also required to continually have their employees become re-certified periodically to retain their status as a "partner" to keep various perks and relationships associated with the vendors they certify and partner with.
 
@@ -322,7 +324,7 @@ RSS Feeds
 ---------
 
 `ServerFault <http://serverfault.com>`_
------------
+---------------------------------------
 
 Sign up and participate.
 Ask your own questions, but also answer questions that look interesting to you.
