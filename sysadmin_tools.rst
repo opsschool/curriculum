@@ -589,7 +589,7 @@ encrypted with AES-128 in OES mode, however Mosh hasn't been under the
 security spotlight as long as SSH has.
 
 Examples
-~~~~~~~~
+--------
 
 Mosh works just like ssh:
 
