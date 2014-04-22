@@ -13,7 +13,8 @@ To have a complete syllabus for training smart persons with high potential who
 already have a basic understanding of Linux or other UNIX variant, to become
 strong junior systems administrators. This course will focus on the Linux
 platform as a basis for competency in any UNIX ecosystem.
-Usenix defines this role as:
+
+Usenix defines the sysadmin role role as:
 
 .. epigraph::
    Familiarity with an operating system and its commands/utilities at a user
