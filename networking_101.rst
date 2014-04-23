@@ -323,31 +323,35 @@ Static routing
 ==============
 
 
-NAT 
+NAT
 ===
 
-Network Address Translation, or NAT, is a technology that allows multiple internet-
-connected devices to share one common **public** IP address, while still retaining
-unique, individual **private** IP addresses. The distinction between public and private
-is integral to the understanding of the service that NAT provides and how it works.
+Network Address Translation, or NAT, is a technology that allows multiple
+internet-connected devices to share one common **public** IP address, while
+still retaining unique, individual **private** IP addresses. The distinction
+between public and private is integral to the understanding of the service
+that NAT provides and how it works.
 
-A public IP address is the IP addresses that the internet outside of a device's local
-network see when the device sends a packet. If the router in front of a local network
-is NAT-enabled then all devices in that local network will have the same public IP
-address. A private IP address is what is used to uniquely identify a device within the
-same local network. At home, our computers are given IP addresses that look like
-192.168.xxx.xxx. This is the computer's private IP address and isn't seen by
-any device outside the computer's local network.
+In our :ref:`Sample Network <sample-network>` we can see that two firewall
+machines sit between the Internet and the other hosts in the network; traffic
+going in and out of the network will pass through these firewall machines. The
+addresses assigned to the firewalls (10.10.10.1 and 10.10.10.2) are private IPs
+and are visible to just the hosts within the network. A device on the external
+Internet will, instead, see the public IP address for each firewall. It's
+important to note that none of the hosts within the network will have a public
+IP address, except for the firewalls and the DNS servers, since they are the
+only parts of the network that directly communicate with the external Internet.
 
-When a device behind a NAT-enabled router sends a packet, the source IP address on the
-packet is the device's local IP address. If the packet is going outside the local
-network, it will pass through a router, which will modify the source IP address to its
-own public IP address. To ensure that, when a response for this packet comes back,
-the router can send it to the correct that device that sent it in the first place,
-it maintains what is called a **Translation Table**. This table maps a device's IP
-address and port to a port on the router itself. The router's public IP address and
-the correct port number from the table are used as the source IP and port on the packet
-and then sent to the destination.
+When a device behind a NAT-enabled router sends a packet, the source IP address
+on the packet is the device's local, private IP address. If the packet is going
+outside the local network, it will pass through a router, which will modify the
+source IP address to its own public IP address. When a response for the packet
+is received by the router, it needs to ensure that the response can be forwarded
+to the host that sent the packet in the first place. To do this, the router
+maintains a **Translation Table**. This table maps a device's IP address and
+port to a port on the router itself. The router's public IP address and
+the correct port number from the table are used as the source IP and port on
+the packet and then sent to the destination.
 
 These maps are temporary and exist on a per-connection basis. This means that each
 connection opened by a device will have a unique port number on the device and a
