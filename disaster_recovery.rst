@@ -1,14 +1,16 @@
 
 Disaster Recovery
-#################
+*****************
 
 Disaster Recovery is a process for securing business continiuity in the event of a disaster. The severity of the disaster may differ, as well as how to resolve it. However, the goal for a Disaster Recovery, or the Disaster Recovery Plan should always be to get to the state of business as usual as soon as possible.
 
 Planning
+========
 
 The most important thing about Disaster Recovery is preparation and planning. It is also very important to make sure that the plan is actually executable if or when a disaster actually happens. To make sure we cover those needs we will split this section into a couple of sub sections. 
 
 Business Needs
+--------------
 
 The first question we need to ask ourselves when creating a Disaster Recovery Plan, or DRP, is what the needs of the business actually is. In most cases, an organization has some sort of critical infrastructure or systems that need to be available at all time to be able to perform the core business. This might be an ERP, a document collaboration or versioning system, production system etc.
 
@@ -31,11 +33,15 @@ Using those answers, we then need to identify each system or infrastructural com
 * Failover
 
 Disaster Recovery Plans
+-----------------------
 
 Disaster Recovery Simulations
+-----------------------------
 
 Considerations
+--------------
 
-***Execution***
+Execution
+=========
 
 
