@@ -44,7 +44,7 @@ made sense to use a "visual" editing mode, where you could see the context of
 the line you were editing.  From ``ed``, you would enter "visual" mode by
 running ``:vi`` -- thus VI was born.
 
-Since then, ``vi`` has been written and re-written many many times.  But inside, you
+Since then, ``vi`` has been written and re-written many, many times.  But inside, you
 will still find good ol' ``ed``.  In ``Text Edting 201``, you will see how you can
 still access the very powerful ``ed`` features by using the colon (``:``) command.
 
