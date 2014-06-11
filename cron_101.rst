@@ -239,6 +239,17 @@ the top of a crontab file that affect all of the commands run by those crontabs.
 For example, you could modify the ``PATH``, ``MAILTO``, ``HOME``, or any other
 variable.
 
+Cron Output
+--------
+Output from cron commands can be emailed to the owner of the process using a local SMTP server, like ssmtp or postfix. 
+If you'd like the output to be sent to an email different than your ``root@yourhost`` address use the ``MAILTO="your@email"`` expression before the cron command. 
+An email will be sent containing the output from STDOUT/STDERR every time the command executes. 
+Unfortunately, the email gives no indication of the return status of the process (success or failure) and often leads to a cluttered inbox. 
+
+.. note:: If your crontab is misconfigured you won't receive an email at all. 
+Finding such failures (the lack of an email in your inbox) is hard to detect. 
+To save time and avoid these *silent failures*, it is better to use a service that will notify you only on cron failures. [#]_
+
 --------
 
 Footnotes
@@ -251,3 +262,5 @@ Footnotes
 .. [#] `English to crontab <http://corntab.com/>`_
 
 .. [#] `Where can I set environment variables that crontab will use? <http://stackoverflow.com/questions/2229825/where-can-i-set-environment-variables-that-crontab-will-use/10657111#10657111>`_
+
+.. [#] `Receive notifications when cron commands fail <https://deadmanssnitch.com/>`_
