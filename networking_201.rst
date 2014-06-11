@@ -45,6 +45,26 @@ can be enabled and disabled separately.
 
 Spanning Tree
 =============
+Spanning Tree protocol (STP) is a standard protocol used by Ethernet switches to prevent
+loops in the network. A loop may easily be created by connecting multiple cables directly
+between two switches, or by connecting any two switches in a broadcast domain together. As
+networks grow and become more complex, it becomes much easier to intentionally or
+unintentionally create such a loop.
+
+To disable loops, each switch that implements STP (IEEE 802.1D) will participate in electing
+a "root" device where the Spanning Tree is calculated from. Once the root is chosen, all other
+participating switches will calculate their least-cost path to the root device. This is
+(usually) a path that traverses the least number of switches between the source and the root.
+Once each device has chosen its least-cost path, it calculates the least-cost path for each
+network segment. By doing this, each switch obtains a Root Port (RP) and a Designated Port (DP)
+to designate which switchport and network segment to use when traversing the broadcast
+domain to the root device. Once these values are calculated, all other paths to the root device
+are disabled- marking them as Blocked Ports (BP).
+
+A benefit to using STP to prevent network loops is that network administrators can intentionally
+connect redundant paths for fault tollerance without causing an infinite loop during normal
+operation. Each participating switch will recalculate the DP and RP when a network change
+has been detected, modifying the status of BPs if necessary.
 
 Static Routing
 ==============
