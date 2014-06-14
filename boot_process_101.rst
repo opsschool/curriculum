@@ -159,8 +159,9 @@ logically laid out.
 
 The MBR has been heavily limited in its design, as it can only occupy the first
 512 bytes of space on the drive (which is the size of one physical sector).
-This limits the tasks the boot loader program is able to do. As the complexity
-of systems grew, it became necessary to add "chain boot loading". This allows the
+This limits the tasks the boot loader program is able to do. The execution of 
+the boot loader literally starts from the first byte. As the complexity of 
+systems grew, it became necessary to add "chain boot loading". This allows the
 MBR to load an another program from elsewhere on the drive into memory. The new
 program is then executed and continues the boot process.
 
