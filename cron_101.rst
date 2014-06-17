@@ -240,7 +240,7 @@ For example, you could modify the ``PATH``, ``MAILTO``, ``HOME``, or any other
 variable.
 
 Cron Output
---------
+-----------
 Output from cron commands can be emailed to the owner of the process using a local SMTP server, like ssmtp or postfix. 
 If you'd like the output to be sent to an email different than your ``root@yourhost`` address use the ``MAILTO="your@email"`` expression before the cron command. 
 An email will be sent containing the output from STDOUT/STDERR every time the command executes. 
