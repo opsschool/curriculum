@@ -247,8 +247,8 @@ An email will be sent containing the output from STDOUT/STDERR every time the co
 Unfortunately, the email gives no indication of the return status of the process (success or failure) and often leads to a cluttered inbox. 
 
 .. note:: If your crontab is misconfigured you won't receive an email at all. 
-Finding such failures (the lack of an email in your inbox) is hard to detect. 
-To save time and avoid these *silent failures*, it is better to use a service that will notify you only on cron failures. [#]_
+  Finding such failures (the lack of an email in your inbox) is hard to detect. 
+  To save time and avoid these *silent failures*, it is better to use a service that will notify you only on cron failures. [#]_
 
 --------
 
