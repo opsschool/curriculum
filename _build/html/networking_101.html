@@ -1,0 +1,1113 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Networking 101 &mdash; Ops School Curriculum 0.1 documentation</title>
+  
+
+  
+  
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="top" title="Ops School Curriculum 0.1 documentation" href="index.html"/>
+        <link rel="next" title="Networking 201" href="networking_201.html"/>
+        <link rel="prev" title="Troubleshooting" href="troubleshooting_101.html"/> 
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        <a href="index.html" class="fa fa-home"> Ops School Curriculum</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+        
+            <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="introduction.html#goals-and-focus">Goals and Focus</a></li>
+<li class="toctree-l2"><a class="reference internal" href="introduction.html#syllabus-layout">Syllabus layout</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="introduction.html#contributions">Contributions</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="introduction.html#how-we-ll-organize-work">How we&#8217;ll organize work</a></li>
+<li class="toctree-l2"><a class="reference internal" href="introduction.html#how-to-contribute">How to contribute</a></li>
+<li class="toctree-l2"><a class="reference internal" href="introduction.html#rewards-for-contributions">Rewards for contributions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="introduction.html#ops-school-videos">Ops School Videos</a></li>
+<li class="toctree-l2"><a class="reference internal" href="introduction.html#how-to-write-sections">How to write sections</a></li>
+<li class="toctree-l2"><a class="reference internal" href="introduction.html#overwriting-existing-content">Overwriting existing content</a></li>
+<li class="toctree-l2"><a class="reference internal" href="introduction.html#credits">Credits</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="meta/guidelines.html">Guidelines</a></li>
+<li class="toctree-l1"><a class="reference internal" href="careers.html">Careers in Operations</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="careers.html#deciding-a-career-path">Deciding a career path</a></li>
+<li class="toctree-l2"><a class="reference internal" href="careers.html#generalized-career-paths">Generalized career paths</a></li>
+<li class="toctree-l2"><a class="reference internal" href="careers.html#specialized-career-paths">Specialized career paths</a></li>
+<li class="toctree-l2"><a class="reference internal" href="careers.html#how-to-become-an-operations-engineer">How to become an operations engineer</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="sysadmin_101.html">Sysadmin 101</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="sysadmin_101.html#what-is-systems-administration">What is Systems Administration?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sysadmin_101.html#what-is-development">What is Development?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sysadmin_101.html#contrasting-development-and-operations">Contrasting Development and Operations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sysadmin_101.html#history-of-development-and-operations">History of Development and Operations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sysadmin_101.html#what-system-administration-isn-t">What System Administration Isn&#8217;t</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="unix_101.html">Unix fundamentals 101</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="filesystems_101.html">File systems</a></li>
+<li class="toctree-l2"><a class="reference internal" href="shells_101.html">Shells</a></li>
+<li class="toctree-l2"><a class="reference internal" href="package_management_101.html">Package management</a></li>
+<li class="toctree-l2"><a class="reference internal" href="boot_process_101.html">The Boot Process</a></li>
+<li class="toctree-l2"><a class="reference internal" href="shell_tools_101.html">Useful shell tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cron_101.html">Crontab</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="unix_201.html">Unix fundamentals 201</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="kernel_tuning.html">Kernel tuning</a></li>
+<li class="toctree-l2"><a class="reference internal" href="unix_signals.html">Signals</a></li>
+<li class="toctree-l2"><a class="reference internal" href="syscalls.html">Syscalls</a></li>
+<li class="toctree-l2"><a class="reference internal" href="netbooting.html">Booting over the network</a></li>
+<li class="toctree-l2"><a class="reference internal" href="inits.html"><tt class="docutils literal"><span class="pre">/bin/init</span></tt> and its descendants</a></li>
+<li class="toctree-l2"><a class="reference internal" href="stats_diagnosing.html">Looking at system metrics</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="windows_101.html">MS Windows fundamentals 101</a></li>
+<li class="toctree-l1"><a class="reference internal" href="text_editing_101.html">Text Editing 101</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="text_editing_101.html#a-little-history">A little history</a></li>
+<li class="toctree-l2"><a class="reference internal" href="text_editing_101.html#vi-basics"><tt class="docutils literal"><span class="pre">vi</span></tt> basics</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="text_editing_201.html">Text Editing 201</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="text_editing_201.html#vim">Vim</a></li>
+<li class="toctree-l2"><a class="reference internal" href="text_editing_201.html#emacs">Emacs</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="sysadmin_tools.html">Tools for productivity</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="sysadmin_tools.html#terminal-emulators">Terminal emulators</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sysadmin_tools.html#ssh">SSH</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sysadmin_tools.html#ssh-use-cases">SSH Use Cases</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sysadmin_tools.html#multiplexers">Multiplexers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sysadmin_tools.html#shell-customisations">Shell customisations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sysadmin_tools.html#mosh">Mosh</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sysadmin_tools.html#ticketing-systems">Ticketing systems</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sysadmin_tools.html#note-taking">Note-taking</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="security_101.html">Security 101</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="security_101.html#authentication-in-unix">Authentication in unix</a></li>
+<li class="toctree-l2"><a class="reference internal" href="security_101.html#adding-and-deleting-users-and-groups">Adding and deleting users and groups</a></li>
+<li class="toctree-l2"><a class="reference internal" href="security_101.html#standard-unix-filesystem-permissions">Standard unix filesystem permissions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="security_101.html#pam">PAM</a></li>
+<li class="toctree-l2"><a class="reference internal" href="security_101.html#chroot-jails-and-containers">Chroot, jails and containers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="security_101.html#sudo-or-why-you-should-not-log-in-as-root">Sudo (or, &#8220;Why you should not log in as root&#8221;)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="security_101.html#history-and-lore">History and Lore</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="security_201.html">Security 201</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="security_201.html#centralised-accounts">Centralised accounts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="security_201.html#firewalls-and-packet-filters">Firewalls and packet filters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="security_201.html#public-key-cryptography">Public Key Cryptography</a></li>
+<li class="toctree-l2"><a class="reference internal" href="security_201.html#two-factor-authentication">Two factor authentication</a></li>
+<li class="toctree-l2"><a class="reference internal" href="security_201.html#building-systems-to-be-auditable">Building systems to be auditable</a></li>
+<li class="toctree-l2"><a class="reference internal" href="security_201.html#network-intrusion-detection">Network Intrusion Detection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="security_201.html#host-intrusion-detection">Host Intrusion Detection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="security_201.html#defense-practices">Defense practices</a></li>
+<li class="toctree-l2"><a class="reference internal" href="security_201.html#risk-and-risk-management">Risk and risk management</a></li>
+<li class="toctree-l2"><a class="reference internal" href="security_201.html#compliance-the-bare-minimum">Compliance: The bare minimum</a></li>
+<li class="toctree-l2"><a class="reference internal" href="security_201.html#dealing-with-security-incidents">Dealing with security incidents</a></li>
+<li class="toctree-l2"><a class="reference internal" href="security_201.html#acls-and-extended-attributes-xattrs">ACLs and extended attributes (xattrs)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="security_201.html#selinux">SELinux</a></li>
+<li class="toctree-l2"><a class="reference internal" href="security_201.html#data-placement">Data placement</a></li>
+<li class="toctree-l2"><a class="reference internal" href="security_201.html#additional-reading">Additional reading</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="troubleshooting_101.html">Troubleshooting</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="troubleshooting_101.html#methodologies">Methodologies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="troubleshooting_101.html#working-effectively-during-a-crisis">Working effectively during a crisis</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="current reference internal" href="">Networking 101</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#the-rfc-documents">The RFC Documents</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#osi-7-layer-model-osi-reference-model">OSI 7-layer model (OSI Reference Model)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#tcp-ip-arpa-4-layer-model">TCP/IP (ARPA) 4-layer model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#ip-addressing">IP Addressing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#tcp-vs-udp">TCP vs UDP</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#subnetting-netmasks-and-cidr">Subnetting, netmasks and CIDR</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#private-address-space-rfc-1918">Private address space (<strong>RFC 1918</strong>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#static-routing">Static routing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#nat">NAT</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#networking-cable">Networking cable</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="networking_201.html">Networking 201</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="networking_201.html#vlans-802-1q-tagging">VLANs, 802.1q tagging</a></li>
+<li class="toctree-l2"><a class="reference internal" href="networking_201.html#spanning-tree">Spanning Tree</a></li>
+<li class="toctree-l2"><a class="reference internal" href="networking_201.html#static-routing">Static Routing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="networking_201.html#dynamic-routing-protocols-rip-ospf-bgp">Dynamic routing protocols (RIP, OSPF, BGP)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="networking_201.html#acls">ACLs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="networking_201.html#network-bonding-802-3ad-lacp-link-aggregation">Network Bonding (802.3ad / LACP link aggregation)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="networking_201.html#ios-switch-configuration">IOS switch configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="networking_201.html#gre-and-other-tunnels">GRE and other tunnels</a></li>
+<li class="toctree-l2"><a class="reference internal" href="networking_201.html#multi-homed-hosts">Multi-homed hosts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="networking_201.html#similarities-and-differences-between-ipv4-and-ipv6-networking">Similarities and differences between IPv4 and IPv6 networking</a></li>
+<li class="toctree-l2"><a class="reference internal" href="networking_201.html#implications-of-dual-stack-firewalls-especially-under-linux">Implications of dual-stack firewalls (especially under Linux)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="networking_201.html#multicast-uses-and-limitations">Multicast uses and limitations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="networking_201.html#latency-vs-bandwidth">Latency vs. Bandwidth</a></li>
+<li class="toctree-l2"><a class="reference internal" href="networking_201.html#vpns">VPNs</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="common_services.html">Common services</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="system_daemons_101.html">System daemons 101</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dns_101.html">DNS 101</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dns_201.html">DNS 201</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dhcp.html">DHCP</a></li>
+<li class="toctree-l2"><a class="reference internal" href="http_101.html">HTTP 101 (Core protocol)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="http_201.html">HTTP 201 (Application Servers &amp; Frameworks)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="smtp_101.html">SMTP 101</a></li>
+<li class="toctree-l2"><a class="reference internal" href="smtp_201.html">SMTP 201</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="identity_management.html">Identity Management 101</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="identity_management.html#ldap">LDAP</a></li>
+<li class="toctree-l2"><a class="reference internal" href="identity_management.html#nis">NIS</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="active_directory_101.html">Active Directory 101</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="active_directory_101.html#what-is-active-directory">What is Active Directory?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="active_directory_101.html#what-is-active-directory-used-for">What is Active Directory used for?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="active_directory_101.html#you-mention-separate-components-what-is-active-directory-composed-of">You mention &#8220;separate components&#8221;; what is Active Directory composed of?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="active_directory_101.html#what-specific-services-does-active-directory-provide">What specific services does Active Directory provide?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="active_directory_101.html#best-practices-for-managing-an-active-directory-installation">Best Practices for managing an Active Directory installation</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="active_directory_201.html">Active Directory 201</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="active_directory_201.html#detailed-breakdown-of-active-directory-components-services">Detailed Breakdown of Active Directory Components/Services</a></li>
+<li class="toctree-l2"><a class="reference internal" href="active_directory_201.html#advanced-active-directory-maintenance">Advanced Active Directory Maintenance</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="remote_filesystems_101.html">Remote Filesystems 101</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="remote_filesystems_101.html#nfsv3">NFSv3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="remote_filesystems_101.html#iscsi">iSCSI</a></li>
+<li class="toctree-l2"><a class="reference internal" href="remote_filesystems_101.html#samba-cifs">SAMBA/CIFS</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="remote_filesystems_201.html">Remote Filesystems 201</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="remote_filesystems_201.html#glusterfs">GlusterFS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="remote_filesystems_201.html#nfsv4">NFSv4</a></li>
+<li class="toctree-l2"><a class="reference internal" href="remote_filesystems_201.html#netatalk-afp">Netatalk / AFP</a></li>
+<li class="toctree-l2"><a class="reference internal" href="remote_filesystems_201.html#s3">S3</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="programming_101.html">Programming 101</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="programming_101.html#shell-scripting-basics">Shell scripting basics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="programming_101.html#regular-expressions">Regular Expressions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="programming_101.html#sed-awk">Sed &amp; awk</a></li>
+<li class="toctree-l2"><a class="reference internal" href="programming_101.html#gigo">GIGO</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="programming_201.html">Programming 201</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="programming_201.html#common-elements-in-scripting-and-what-they-do">Common elements in scripting, and what they do</a></li>
+<li class="toctree-l2"><a class="reference internal" href="programming_201.html#c-a-very-basic-overview">C (A very basic overview)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="programming_201.html#ruby">Ruby</a></li>
+<li class="toctree-l2"><a class="reference internal" href="programming_201.html#python">Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="programming_201.html#version-control">Version Control</a></li>
+<li class="toctree-l2"><a class="reference internal" href="programming_201.html#api-design-fundamentals">API design fundamentals</a></li>
+<li class="toctree-l2"><a class="reference internal" href="programming_201.html#continuous-integration">Continuous Integration</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="hardware_101.html">Hardware 101</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="hardware_101.html#hardware-types">Hardware Types</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hardware_101.html#basic-server-architecture">Basic server architecture</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hardware_101.html#disk-management">Disk management</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hardware_101.html#performance-redundancy">Performance/Redundancy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hardware_101.html#troubleshooting">Troubleshooting</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="datacenters/datacenters_101.html">Datacenters 101</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="datacenters/datacenters_101.html#power-budgets">Power budgets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="datacenters/datacenters_101.html#cooling-budgets">Cooling budgets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="datacenters/datacenters_101.html#you-will-be-judged-by-the-tidiness-of-your-rack">You will be judged by the tidiness of your rack</a></li>
+<li class="toctree-l2"><a class="reference internal" href="datacenters/datacenters_101.html#machine-and-cable-labeling">Machine and cable labeling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="datacenters/datacenters_101.html#traditional-naming-conventions">Traditional naming conventions</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="datacenters/datacenters_201.html">Datacenters 201</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="datacenters/datacenters_201.html#networking-many-racks">Networking many racks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="datacenters/datacenters_201.html#power">Power</a></li>
+<li class="toctree-l2"><a class="reference internal" href="datacenters/datacenters_201.html#cooling">Cooling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="datacenters/datacenters_201.html#physical-security-and-common-security-standards-compliance-requirements">Physical security and common security standards compliance requirements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="datacenters/datacenters_201.html#suggested-practices">Suggested practices</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="datacenters/datacenters_301.html">Datacenters 301</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="datacenters/datacenters_301.html#power">Power</a></li>
+<li class="toctree-l2"><a class="reference internal" href="datacenters/datacenters_301.html#increasing-cooling-efficiency">Increasing cooling efficiency</a></li>
+<li class="toctree-l2"><a class="reference internal" href="datacenters/datacenters_301.html#design-options">Design Options</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="virtualization_101.html">Virtualization 101</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="virtualization_101.html#intro-to-virtualization-technologies">Intro to virtualization technologies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="virtualization_101.html#the-cloud">The Cloud</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="virtualization_201.html">Virtualization 201</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="virtualization_201.html#managing-virtualized-infrastructures-private-clouds">Managing virtualized infrastructures (Private clouds)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="virtualization_201.html#leveraging-virtualization-for-development">Leveraging virtualization for development</a></li>
+<li class="toctree-l2"><a class="reference internal" href="virtualization_201.html#leveraging-virtualization-for-production">Leveraging virtualization for production</a></li>
+<li class="toctree-l2"><a class="reference internal" href="virtualization_201.html#security-implications-of-virtualization">Security implications of virtualization</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="logs_101.html">Logs 101</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="logs_101.html#common-system-logs-formats">Common system logs &amp; formats</a></li>
+<li class="toctree-l2"><a class="reference internal" href="logs_101.html#standard-error">Standard Error</a></li>
+<li class="toctree-l2"><a class="reference internal" href="logs_101.html#log-files">Log files</a></li>
+<li class="toctree-l2"><a class="reference internal" href="logs_101.html#syslog">Syslog</a></li>
+<li class="toctree-l2"><a class="reference internal" href="logs_101.html#log-rotation-append-truncate">Log rotation, append, truncate</a></li>
+<li class="toctree-l2"><a class="reference internal" href="logs_101.html#retention-and-archival">Retention and archival</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="logs_201.html">Logs 201</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="logs_201.html#centralized-logging">Centralized logging</a></li>
+<li class="toctree-l2"><a class="reference internal" href="logs_201.html#log-parsing">Log parsing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="logs_201.html#search-correlation">Search &amp; Correlation</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="databases_101.html">Databases 101 (Relational Databases)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="databases_101.html#what-is-a-database">What is a Database?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="databases_101.html#what-is-a-relational-database">What is a Relational Database?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="databases_101.html#why-we-use-databases">Why We Use Databases?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="databases_101.html#what-is-sql">What is SQL?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="databases_101.html#sql-shell">SQL shell</a></li>
+<li class="toctree-l2"><a class="reference internal" href="databases_101.html#creating-databases">Creating databases</a></li>
+<li class="toctree-l2"><a class="reference internal" href="databases_101.html#creating-users">Creating users</a></li>
+<li class="toctree-l2"><a class="reference internal" href="databases_101.html#granting-privileges">Granting privileges</a></li>
+<li class="toctree-l2"><a class="reference internal" href="databases_101.html#removing-privileges">Removing Privileges</a></li>
+<li class="toctree-l2"><a class="reference internal" href="databases_101.html#basic-normalized-schema-design">Basic normalized schema design</a></li>
+<li class="toctree-l2"><a class="reference internal" href="databases_101.html#select-insert-update-and-delete">Select, Insert, Update and Delete</a></li>
+<li class="toctree-l2"><a class="reference internal" href="databases_101.html#pro-tips">Pro Tips</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="databases_201.html">Databases 201</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="databases_201.html#database-theory">Database Theory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="databases_201.html#document-databases">Document Databases</a></li>
+<li class="toctree-l2"><a class="reference internal" href="databases_201.html#key-value-stores">Key-value Stores</a></li>
+<li class="toctree-l2"><a class="reference internal" href="databases_201.html#graph-databases">Graph Databases</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="application_components_201.html">Application Components 201</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="application_components_201.html#message-brokers">Message Brokers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="application_components_201.html#memory-caches">Memory Caches</a></li>
+<li class="toctree-l2"><a class="reference internal" href="application_components_201.html#specialized-caches">Specialized Caches</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="loadbalancing_101.html">Load Balancing</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="loadbalancing_101.html#why-do-we-use-load-balancers">Why do we use load balancers?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="loadbalancing_101.html#application-implications">Application implications</a></li>
+<li class="toctree-l2"><a class="reference internal" href="loadbalancing_101.html#non-http-use-cases">Non-HTTP use cases</a></li>
+<li class="toctree-l2"><a class="reference internal" href="loadbalancing_101.html#software">Software</a></li>
+<li class="toctree-l2"><a class="reference internal" href="loadbalancing_101.html#hardware">Hardware</a></li>
+<li class="toctree-l2"><a class="reference internal" href="loadbalancing_101.html#multi-dc">Multi-dc</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="monitoring_101.html">Monitoring, Notifications, and Metrics 101</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="monitoring_101.html#history-how-we-used-to-monitor-and-how-we-got-better-monitors-as-tests">History: How we used to monitor, and how we got better (monitors as tests)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="monitoring_101.html#perspective-end-to-end-vs-introspective-monitoring">Perspective (end-to-end) vs Introspective monitoring</a></li>
+<li class="toctree-l2"><a class="reference internal" href="monitoring_101.html#metrics-what-to-collect-what-to-do-with-them">Metrics: what to collect, what to do with them</a></li>
+<li class="toctree-l2"><a class="reference internal" href="monitoring_101.html#common-tools">Common tools</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="monitoring_201.html">Monitoring, Notifications, and Metrics 201</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="monitoring_201.html#dataviz-graphing">Dataviz &amp; Graphing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="monitoring_201.html#graphite-statsd">Graphite, StatsD</a></li>
+<li class="toctree-l2"><a class="reference internal" href="monitoring_201.html#dashboard-info-for-ops-and-info-for-the-business">Dashboard: Info for ops and info for the business</a></li>
+<li class="toctree-l2"><a class="reference internal" href="monitoring_201.html#third-party-tools">Third-party tools</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="bcp.html">Business Continuity Planning</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="backups.html">Backups</a></li>
+<li class="toctree-l2"><a class="reference internal" href="outages.html">Outages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="postmortems.html">Postmortems</a></li>
+<li class="toctree-l2"><a class="reference internal" href="disaster_recovery.html">Disaster Recovery</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="architecture_101.html">Architecture 101</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="architecture_101.html#how-to-make-good-architecture-decisions">How to make good architecture decisions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="architecture_101.html#patterns-and-anti-patterns">Patterns and anti-patterns</a></li>
+<li class="toctree-l2"><a class="reference internal" href="architecture_101.html#introduction-to-availability">Introduction to availability</a></li>
+<li class="toctree-l2"><a class="reference internal" href="architecture_101.html#introduction-to-scalability">Introduction to scalability</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="architecture_201.html">Architecture 201</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="architecture_201.html#service-oriented-architectures">Service Oriented Architectures</a></li>
+<li class="toctree-l2"><a class="reference internal" href="architecture_201.html#fault-tolerance-fault-protection-masking-dependability-fundamentals">Fault tolerance, fault protection, masking, dependability fundamentals</a></li>
+<li class="toctree-l2"><a class="reference internal" href="architecture_201.html#caching-concerns">Caching Concerns</a></li>
+<li class="toctree-l2"><a class="reference internal" href="architecture_201.html#crash-only">Crash only</a></li>
+<li class="toctree-l2"><a class="reference internal" href="architecture_201.html#synchronous-vs-asynchronous">Synchronous vs. Asynchronous</a></li>
+<li class="toctree-l2"><a class="reference internal" href="architecture_201.html#business-continuity-vs-disaster-recovery">Business continuity vs. Disaster Recovery</a></li>
+<li class="toctree-l2"><a class="reference internal" href="architecture_201.html#designing-for-scalability-horizontal-vertical">Designing for Scalability: Horizontal, Vertical</a></li>
+<li class="toctree-l2"><a class="reference internal" href="architecture_201.html#simplicity">Simplicity</a></li>
+<li class="toctree-l2"><a class="reference internal" href="architecture_201.html#performance">Performance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="architecture_201.html#tiered-architectures">Tiered architectures</a></li>
+<li class="toctree-l2"><a class="reference internal" href="architecture_201.html#mttr-mtbf">MTTR &gt; MTBF</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="config_management.html">Configuration Management 101</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="config_management.html#a-brief-history-of-configuration-management">A Brief History of Configuration Management</a></li>
+<li class="toctree-l2"><a class="reference internal" href="config_management.html#idempotence">Idempotence</a></li>
+<li class="toctree-l2"><a class="reference internal" href="config_management.html#convergent-and-congruent-systems">Convergent and Congruent systems</a></li>
+<li class="toctree-l2"><a class="reference internal" href="config_management.html#direct-and-indirect-systems-ansible-capistrano">Direct and Indirect systems: ansible, capistrano</a></li>
+<li class="toctree-l2"><a class="reference internal" href="config_management.html#chef">Chef</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="config_management.html#configuration-management-201">Configuration Management 201</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="config_management.html#ansible">Ansible</a></li>
+<li class="toctree-l2"><a class="reference internal" href="config_management.html#puppet">Puppet</a></li>
+<li class="toctree-l2"><a class="reference internal" href="config_management.html#cfengine-3">Cfengine 3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="config_management.html#saltstack">SaltStack</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="capacity_planning.html">Capacity Planning</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="capacity_planning.html#fundamentals-of-capacity-planning">Fundamentals of capacity planning</a></li>
+<li class="toctree-l2"><a class="reference internal" href="capacity_planning.html#forecasting">Forecasting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="capacity_planning.html#diagonal-scaling">Diagonal scaling</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="statistics.html">Statistics For Engineers</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="statistics.html#normal-distributions">Normal distributions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="statistics.html#percentiles-histograms-averages-mean-medians">Percentiles, histograms, averages, mean, medians</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="deployment_101.html">Software Deployment 101</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="deployment_101.html#software-deployment-vs-configuration-management">Software deployment vs configuration management</a></li>
+<li class="toctree-l2"><a class="reference internal" href="deployment_101.html#running-services">Running services</a></li>
+<li class="toctree-l2"><a class="reference internal" href="deployment_101.html#package-management">Package management</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="deployment_201.html">Software Deployment 201</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="deployment_201.html#running-services">Running services</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="soft_skills_101.html">Soft Skills 101</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="soft_skills_101.html#communication-basics">Communication basics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="soft_skills_101.html#communication-modes">Communication Modes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="soft_skills_101.html#special-cases-for-operations">Special cases for operations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="soft_skills_101.html#time-management">Time Management</a></li>
+<li class="toctree-l2"><a class="reference internal" href="soft_skills_101.html#project-management">Project Management</a></li>
+<li class="toctree-l2"><a class="reference internal" href="soft_skills_101.html#the-tao-of-devops">The Tao of DevOps</a></li>
+<li class="toctree-l2"><a class="reference internal" href="soft_skills_101.html#the-importance-of-documentation">The importance of Documentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="soft_skills_101.html#working-with-other-teams">Working with other teams</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="soft_skills_201.html">Soft Skills 201</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="soft_skills_201.html#business-acumen-in-operations">Business Acumen in Operations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="soft_skills_201.html#understanding-the-role-of-operations">Understanding the role of operations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="soft_skills_201.html#thinking-broadly">Thinking broadly</a></li>
+<li class="toctree-l2"><a class="reference internal" href="soft_skills_201.html#promoting-change">Promoting Change</a></li>
+<li class="toctree-l2"><a class="reference internal" href="soft_skills_201.html#building-basic-business-skills">Building basic business skills</a></li>
+<li class="toctree-l2"><a class="reference internal" href="soft_skills_201.html#specific-examples">Specific Examples</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="labs.html">Labs exercises</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="labs.html#bare-metal-provisioning-101">Bare-Metal Provisioning 101</a></li>
+<li class="toctree-l2"><a class="reference internal" href="labs.html#bare-metal-provisioning-201">Bare-Metal Provisioning 201</a></li>
+<li class="toctree-l2"><a class="reference internal" href="labs.html#cloud-provisioning-101">Cloud Provisioning 101</a></li>
+<li class="toctree-l2"><a class="reference internal" href="labs.html#cloud-provisioning-201">Cloud Provisioning 201</a></li>
+<li class="toctree-l2"><a class="reference internal" href="labs.html#database-101">Database 101</a></li>
+<li class="toctree-l2"><a class="reference internal" href="labs.html#database-201">Database 201</a></li>
+<li class="toctree-l2"><a class="reference internal" href="labs.html#database-301">Database 301</a></li>
+<li class="toctree-l2"><a class="reference internal" href="labs.html#automation-101">Automation 101</a></li>
+<li class="toctree-l2"><a class="reference internal" href="labs.html#automation-chef-201">Automation - Chef 201</a></li>
+<li class="toctree-l2"><a class="reference internal" href="labs.html#automation-chef-301">Automation - Chef 301</a></li>
+<li class="toctree-l2"><a class="reference internal" href="labs.html#automation-chef-302">Automation - Chef 302</a></li>
+<li class="toctree-l2"><a class="reference internal" href="labs.html#automation-puppet-201">Automation - Puppet 201</a></li>
+<li class="toctree-l2"><a class="reference internal" href="labs.html#automation-puppet-301">Automation - Puppet 301</a></li>
+<li class="toctree-l2"><a class="reference internal" href="labs.html#package-management-101">Package Management 101</a></li>
+<li class="toctree-l2"><a class="reference internal" href="labs.html#package-management-201">Package Management 201</a></li>
+<li class="toctree-l2"><a class="reference internal" href="labs.html#build-automation-fleets">Build automation fleets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="labs.html#version-control-with-git-101">Version Control with Git 101</a></li>
+<li class="toctree-l2"><a class="reference internal" href="labs.html#dns-101">DNS 101</a></li>
+<li class="toctree-l2"><a class="reference internal" href="labs.html#http-101">HTTP 101</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="learning.html">Learning and the Community</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="learning.html#learning-and-strategies-for-improvement">Learning and strategies for improvement</a></li>
+<li class="toctree-l2"><a class="reference internal" href="learning.html#things-to-keep-in-mind-as-you-learn-how-to-be-an-engineer">Things to keep in mind as you learn how to be an engineer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="learning.html#golden-rules-for-careers-in-ops">Golden rules for careers in ops</a></li>
+<li class="toctree-l2"><a class="reference internal" href="learning.html#where-to-look-for-help-in-the-community">Where to look for help in the community</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="seealso.html">See also</a></li>
+<li class="toctree-l1"><a class="reference internal" href="meta/contributions.html">Contributions</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="meta/contributions.html#how-we-ll-organize-work">How we&#8217;ll organize work</a></li>
+<li class="toctree-l2"><a class="reference internal" href="meta/contributions.html#how-to-contribute">How to contribute</a></li>
+<li class="toctree-l2"><a class="reference internal" href="meta/contributions.html#rewards-for-contributions">Rewards for contributions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="meta/contributions.html#ops-school-videos">Ops School Videos</a></li>
+<li class="toctree-l2"><a class="reference internal" href="meta/contributions.html#how-to-write-sections">How to write sections</a></li>
+<li class="toctree-l2"><a class="reference internal" href="meta/contributions.html#overwriting-existing-content">Overwriting existing content</a></li>
+<li class="toctree-l2"><a class="reference internal" href="meta/contributions.html#credits">Credits</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="meta/conventions.html">Conventions</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="meta/conventions.html#style-guide">Style Guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="meta/conventions.html#sample-network">Sample Network</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="meta/style_guide.html">Style Guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="meta/style_guide.html#editing">Editing</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="glossary.html">Glossary</a></li>
+</ul>
+
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="index.html">Ops School Curriculum</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="index.html">Docs</a> &raquo;</li>
+      
+    <li>Networking 101</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          <a href="_sources/networking_101.txt" rel="nofollow"> View page source</a>
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            
+  <div class="section" id="networking-101">
+<h1>Networking 101<a class="headerlink" href="#networking-101" title="Permalink to this headline">¶</a></h1>
+<p>This chapter should provide enough knowledge on networking to enable a systems
+administrator to connect a Linux server to a network and troubleshoot basic
+network-related problems. First, we will go over the basics of the 7-layer Open
+Systems Interconnection (<a class="reference internal" href="glossary.html#term-osi"><em class="xref std std-term">OSI</em></a>) model, which is a standard framework with which to
+describe communication system logical layers. Next, we will delve into each layer of the OSI
+model in more detail as it applies to the role of systems administration.</p>
+<p>Before any discussion of networking, however, it&#8217;s important to have a
+working knowledge of the numbered Request for Comments (<a class="reference internal" href="glossary.html#term-rfc"><em class="xref std std-term">RFC</em></a>) documents
+and how they apply to computer networking. These documents describe the
+mechanisms for the OSI layer implementations (e.g. TCP, IP, HTTP, SMTP)
+and as such are the authoritative source for how computers communicate
+with one another.</p>
+<div class="section" id="the-rfc-documents">
+<h2>The RFC Documents<a class="headerlink" href="#the-rfc-documents" title="Permalink to this headline">¶</a></h2>
+<p>Starting in 1969, the RFC document series describes standards for how computers
+communicate. The series gets its name from the RFC process, wherein industry
+experts publish documents for the community at large and solicit comments on
+them. If the Internet community finds errors in a document, a new, revised
+version is published. This new version obsoletes the prior versions. Some
+documents, such as the document specifying email messages, have had several
+revisions.</p>
+<p>The <a class="reference external" href="http://www.rfc-editor.org/">RFC Editor</a> manages the RFC archive, as well
+as associated standards. New documents go to the RFC Editor for publication
+<a class="footnote-reference" href="#notquite" id="id1">[1]</a>, whether revision or new standard. These documents go through a
+standardization process, eventually becoming Internet-wide standards. Many of
+the networking protocols discussed in later chapters have RFCs governing their
+behavior, and each section should provide information on the relevant RFCs.</p>
+<table class="docutils footnote" frame="void" id="notquite" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id1">[1]</a></td><td>This is a simplification, as there are actually many standards
+bodies involved in the process. The <a class="reference external" href="http://www.rfc-editor.org/pubprocess.html">RFC Editor Publication Process</a> document explains in full detail.</td></tr>
+</tbody>
+</table>
+<div class="section" id="important-rfcs">
+<h3>Important RFCs<a class="headerlink" href="#important-rfcs" title="Permalink to this headline">¶</a></h3>
+<p>There are a number of RFCs which don&#8217;t pertain to any specific technology but
+which are nevertheless seminal. These documents establish procedure or policy
+which have shaped everything after, and as such have a timeless quality.
+In some cases, later documents make references to them. This list is given in
+increasing numerical order, though is not exhaustive.</p>
+<ul>
+<li><p class="first"><span class="target" id="index-0"></span><a class="rfc reference external" href="http://tools.ietf.org/html/rfc1796.html"><strong>RFC 1796</strong></a>: Not All RFCs are Standards</p>
+<p>This document describes the different kinds of documents in the RFC series.</p>
+</li>
+<li><p class="first"><span class="target" id="index-1"></span><a class="rfc reference external" href="http://tools.ietf.org/html/rfc2026.html"><strong>RFC 2026</strong></a>: The Internet Standards Process</p>
+<p>This document (and those that update it) describes in detail how RFCs are
+published and how they become Internet standards.</p>
+</li>
+<li><p class="first"><span class="target" id="index-2"></span><a class="rfc reference external" href="http://tools.ietf.org/html/rfc2119.html"><strong>RFC 2119</strong></a>: Key words for use in RFCs to Indicate Requirement Levels</p>
+<p>This document, referenced in many following RFCs, presents a common vocabulary
+for specifying the relationship between a standard and implementations of that
+standard. It provides keywords that specify how closely an implementation
+needs to follow the standard for it to be compliant.</p>
+</li>
+<li><p class="first"><span class="target" id="index-3"></span><a class="rfc reference external" href="http://tools.ietf.org/html/rfc5000.html"><strong>RFC 5000</strong></a>: Internet Official Protocol Standards</p>
+<p>This document provides an overview of the current standards documented by the
+RFCs and which RFC is the most recent for each standard. This document is
+regularly updated with the current standards document status.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="osi-7-layer-model-osi-reference-model">
+<h2>OSI 7-layer model (OSI Reference Model)<a class="headerlink" href="#osi-7-layer-model-osi-reference-model" title="Permalink to this headline">¶</a></h2>
+<p>The early history of computer networking was marked by various proprietary
+implementations of networking hardware and the protocols that ran on them (such
+as for example, IBM&#8217;s &#8220;Systems Network Architecture&#8221; (SNA) and Digital Equipment
+Corp&#8217;s &#8220;DECnet&#8221;.) In the mid-1970&#8217;s, two standards organizations (the
+International Organization for Standardization, known as the &#8220;ISO&#8221;, and the
+International Telecommunications Union, known as the &#8220;ITU&#8221;) led a push to define
+a set of open interconnection standards, which became known as the &#8220;Open Systems
+Interconnection&#8221; (OSI) standard. While the actual protocols they developed did
+not become popular and are not in wide use today, the model they came up with
+has achieved wide popularity as a way of thinking about the network protocol
+stack.</p>
+<p>The OSI model describes seven layers of abstraction that enable software
+programs to communicate with each other on separate systems. The seven layers
+are designed to allow communication to occur between systems at a given level,
+without concern for how the lower levels are implemented. In this way,
+innovation on the protocols in the various layers can be achieved without
+modifying any other layer&#8217;s design and code. The job of each layer is to provide
+some service to the layer above by using the services provided by the layer
+below.</p>
+<ul>
+<li><p class="first">Layer 1 - Physical layer</p>
+<p>The physical layer describes the physical connections between devices. Most
+enterprise networks today implement Ethernet at the physical layer, described
+in IEEE 802.3 for wired connections and IEEE 802.11 for wireless networks.
+Other Layer 1 protocols that are no longer in wide use today are Token-Ring, and FDDI.</p>
+</li>
+<li><p class="first">Layer 2 - Data link layer</p>
+<p>The data link layer defines the basic protocol for communicating between two
+points on a network, that may consist of many intermediate devices and cables,
+possibly spanning a large geographic area. The IEEE 802.3 specification defines
+the data link layer, which includes the Media Access Control (<a class="reference internal" href="glossary.html#term-mac"><em class="xref std std-term">MAC</em></a>)
+addresses that allow hosts to address their data to one or more systems on the
+same Ethernet segment. The MAC address is a flat (non-hierarchical) 48-bit
+address, and therefore when a node sends out a MAC broadcast frame (usually
+written as FF:FF:FF:FF:FF:FF), all stations on the Layer 2 segment receive it.
+Therefore, a layer 2 segment is also known as a &#8220;broadcast domain&#8221;.</p>
+</li>
+<li><p class="first">Layer 3 - Network layer</p>
+<p>The network layer is what allows many flat Layer 2 segments to be
+interconnected, and separates broadcast domains. It is this layer of
+the OSI model that enables the Internet to exist, using Internet Protocol
+(IP) addressing. Version 4 of the Internet Protocol (IPv4), most commonly found in
+today&#8217;s production networks, is described in <span class="target" id="index-4"></span><a class="rfc reference external" href="http://tools.ietf.org/html/rfc791.html"><strong>RFC 791</strong></a>. Its successor, IP version
+6 (IPv6) is described in <span class="target" id="index-5"></span><a class="rfc reference external" href="http://tools.ietf.org/html/rfc2460.html"><strong>RFC 2460</strong></a>. Both protocols utilize addresses that are
+hierarchical in nature, providing for a <em>network</em> portion of the address space,
+and also a <em>host</em> portion within the network.</p>
+<p>There are also two control protocols included in this layer; namely, the
+&#8220;Internet Control Message Protocol&#8221; (&#8220;ICMP&#8221;) as described in <span class="target" id="index-6"></span><a class="rfc reference external" href="http://tools.ietf.org/html/rfc792.html"><strong>RFC 792</strong></a>, and
+&#8220;Internet Group Management Protocol&#8221; (&#8220;IGMP&#8221;), as described in <span class="target" id="index-7"></span><a class="rfc reference external" href="http://tools.ietf.org/html/rfc1112.html"><strong>RFC 1112</strong></a>. The
+ICMP protocol provides for Layer 3 device control messaging, and among other
+uses, allows small test packets to be sent to a destination for troubleshooting
+purposes, such as those used by the ubiquitous <tt class="docutils literal"><span class="pre">ping</span></tt> utility. The IGMP
+protocol is used to manage multicast groups, which implements &#8220;one-to-many&#8221;
+packet sending between interested systems.</p>
+</li>
+<li><p class="first">Layer 4 - Transport layer</p>
+<p>The transport layer is where things really start to get interesting for the
+systems administrator. It is at the transport layer that the Transmission
+Control Protocol (TCP), and the User Datagram Protocol (UDP) are defined.
+The TCP and UDP protocols allow data to be sent from one system to another using
+simple &#8220;socket&#8221; APIs that make it just as easy to send text across the globe as it
+is to write to a file on a local disk - a technological miracle that is often
+taken for granted.</p>
+</li>
+<li><p class="first">Layer 5 - Session layer</p>
+<p>The purpose of the session layer is to provide a mechanism for ongoing
+conversations between devices using application-layer protocols. Notable
+Layer 5 protocols include Transport Layer Security / Secure Sockets Layer
+(TLS/SSL) and, more recently, Google&#8217;s SPDY protocol.</p>
+</li>
+<li><p class="first">Layer 6 - Presentation layer</p>
+<p>The job of the presentation layer is to handle data encoding and decoding as
+required by the application. An example of this function is the Multipurpose
+Internet Mail Extensions (MIME) protocol, used to encode things other than
+unformatted ASCII text into email messages. Both the session layer and the
+presentation layer are often neglected when discussing TCP/IP because many
+application-layer protocols implement the functionality of these layers
+internally.</p>
+</li>
+<li><p class="first">Layer 7 - Application layer</p>
+<p>The application layer is where most of the interesting work gets done,
+standing on the shoulders of the layers below. It is at the application layer
+that we see protocols such as Domain Name System (DNS), HyperText Transfer
+Protocol (HTTP), Simple Mail Transfer Protocol (SMTP), and Secure SHell
+(SSH). The various application-layer protocols are at the core of a good
+systems administrator&#8217;s knowledge base.</p>
+</li>
+</ul>
+</div>
+<div class="section" id="tcp-ip-arpa-4-layer-model">
+<h2>TCP/IP (ARPA) 4-layer model<a class="headerlink" href="#tcp-ip-arpa-4-layer-model" title="Permalink to this headline">¶</a></h2>
+<p>When the ARPAnet project spawned TCP/IP, which became the dominant network
+protocol stack used on the Internet, it was envisioned with a much simpler
+4-layer stack (the ISO layers roughly map to the ARPA model as indicated below.)
+The elements of this stack from the lowest to highest are as follows:</p>
+<ul>
+<li><p class="first">Link Layer</p>
+<p>Basically a combination of the ISO Layer 1 (physical) and Layer 2 (data link) layers.
+This layer covers the physical network card in the computer (and the transmission
+medium between the computers) as well as the device driver in the operating system
+of the computer. As an example, both Ethernet and MAC are covered in this layer.</p>
+</li>
+<li><p class="first">Network Layer</p>
+<p>This layer maps to the ISO&#8217;s Layer 3, and covers the movement of packets between
+networks. For this reason, it is also called the &#8220;Internet Layer&#8221;, and the main
+protocol used in this layer is named the &#8220;Internet Protocol&#8221;, or &#8220;IP&#8221; as it is commonly
+referred to. As discussed above, the ICMP and IGMP protocols are also included in
+this layer.</p>
+</li>
+<li><p class="first">Transport Layer</p>
+<p>This layer maps to the ISO&#8217;s Layer 4, and covers the creation, management and teardown
+of &#8220;virtual circuits&#8221; or &#8220;flows&#8221; between end hosts. There are two different protocols
+in use at this layer as discussed above in the ISO Layer 4 section, namely, TCP and
+UDP.</p>
+</li>
+<li><p class="first">Application Layer</p>
+<p>This layer maps to the ISO&#8217;s Layer 5 through Layer 7, and covers the application
+processes that use the network to communicate.</p>
+</li>
+</ul>
+</div>
+<div class="section" id="ip-addressing">
+<h2>IP Addressing<a class="headerlink" href="#ip-addressing" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="ipv4">
+<h3>IPv4<a class="headerlink" href="#ipv4" title="Permalink to this headline">¶</a></h3>
+<p>Internet Protocol Version 4 (IPv4) is the fourth version of the Internet
+protocol, the first version to be widely deployed. This is the version of the
+protocol you&#8217;re most likely to encounter, and the default version of the IP
+protocol in Linux.</p>
+<p>IPv4 uses a 32-bit address space most typically represented in 4 dotted decimal
+notation, each octet contains a value between 0-255, and is separated by a dot.
+An example address is below:</p>
+<blockquote>
+<div>10.199.0.5</div></blockquote>
+<p>There are several other representations, like dotted hexadecimal, dotted octal,
+hexadecimal, decimal, and octal. These are infrequently used, and will be
+covered in later sections.</p>
+</div>
+<div class="section" id="ipv6">
+<h3>IPv6<a class="headerlink" href="#ipv6" title="Permalink to this headline">¶</a></h3>
+</div>
+</div>
+<div class="section" id="tcp-vs-udp">
+<h2>TCP vs UDP<a class="headerlink" href="#tcp-vs-udp" title="Permalink to this headline">¶</a></h2>
+<p>Both TCP <span class="target" id="index-8"></span><a class="rfc reference external" href="http://tools.ietf.org/html/rfc793.html"><strong>RFC 793</strong></a> and UDP <span class="target" id="index-9"></span><a class="rfc reference external" href="http://tools.ietf.org/html/rfc768.html"><strong>RFC 768</strong></a> provide data transfer between processes
+through ports. These process ports can be on the same computer or separate
+computers connected by a network. TCP provides the following: reliability,
+flow control, and connections (see Example Difference 1 below). UDP is less
+feature-rich, it does its work with a header that only contains a source port,
+destination port, a length, and a checksum. TCP provides its capabilities
+by sending more header data, more packets between ports and performing more
+processing. UDP requires less header data in the individual
+packets and requires fewer packets on the network to do its work. UDP does no
+bookkeeping about the fate of the packets sent from a source. They could be
+dropped because of a full buffer at a random router between the source and
+destination and UDP wouldn&#8217;t account for it in itself (other monitoring systems
+can be put in place to do the accounting, however that is beyond the UDP
+protocol).</p>
+<p>The choice of protocols to use is often based on whether the risk of losing
+packets in real-time without immediate alerting is acceptable. In some cases
+UDP may be acceptable, such as video or audio streaming where programs can
+interpolate over missing packets. However, TCP will be required due to its
+reliable delivery guarantee in systems that support banking or healthcare.</p>
+<ul>
+<li><p class="first">Example 1</p>
+<p>The TCP protocol requires upfront communication and the UDP protocol does
+not.  TCP requires an initial connection, known as the &#8220;three way handshake&#8221;,
+in order to begin sending data. That amounts to one initial packet sent
+between ports from initiator of the communication to the receiver, then
+another packet sent back, and then a final packet sent from the initiator
+to the receiver again. All that happens before sending the first byte of
+data. In UDP the first packet sent contains the first byte of data.</p>
+</li>
+<li><p class="first">Example 2</p>
+<p>TCP and UDP differ in the size of their packet headers. The TCP header is
+20 bytes and the UDP header is 8 bytes. For programs that send a lot of
+packets with very little data, the header length can be a large percentage of
+overhead data (e.g. games that send small packets about player position and state).</p>
+</li>
+</ul>
+</div>
+<div class="section" id="subnetting-netmasks-and-cidr">
+<h2>Subnetting, netmasks and CIDR<a class="headerlink" href="#subnetting-netmasks-and-cidr" title="Permalink to this headline">¶</a></h2>
+<p>A subnet is a logical division of an IP network, and allows the host system to
+identify which other hosts can be reached on the local network. The host system
+determines this by the application of a routing prefix. There are two typical
+representations of this prefix: a netmask and CIDR.</p>
+<p>Netmasks typically appear in the dotted decimal notation, with values between
+0-255 in each octet. These are applied as bitmasks, and numbers at 255 mean that
+this host is not reachable. Netmask can also be referred to as a Subnet Mask and
+these terms are often used interchangeably. An example IP Address with a typical
+netmask is below:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="46%" />
+<col width="54%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">IP Address</th>
+<th class="head">Netmask</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>192.168.1.1</td>
+<td>255.255.255.0</td>
+</tr>
+</tbody>
+</table>
+<p>CIDR notation is a two-digit representation of this routing prefix. Its value can range
+between 0 and 32. This representation is typically used for networking equipment. Below
+is the same example as above with CIDR notation:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="46%" />
+<col width="54%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">IP Address</th>
+<th class="head">CIDR</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>192.168.1.1</td>
+<td>/24</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="private-address-space-rfc-1918">
+<h2>Private address space (<span class="target" id="index-10"></span><a class="rfc reference external" href="http://tools.ietf.org/html/rfc1918.html"><strong>RFC 1918</strong></a>)<a class="headerlink" href="#private-address-space-rfc-1918" title="Permalink to this headline">¶</a></h2>
+<p>Certain ranges of addresses were reserved for private networks. Using this address space
+you cannot communicate with public machines without a NAT gateway or proxy. There are
+three reserved blocks:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="22%" />
+<col width="33%" />
+<col width="23%" />
+<col width="22%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">First Address</th>
+<th class="head">Last Address</th>
+<th class="head">Netmask</th>
+<th class="head">CIDR</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>10.0.0.0</td>
+<td>10.255.255.255</td>
+<td>255.0.0.0</td>
+<td>/8</td>
+</tr>
+<tr class="row-odd"><td>172.16.0.0</td>
+<td>172.31.255.255</td>
+<td>255.240.0.0</td>
+<td>/12</td>
+</tr>
+<tr class="row-even"><td>192.168.0.0</td>
+<td>192.168.255.255</td>
+<td>255.255.0.0</td>
+<td>/16</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="static-routing">
+<h2>Static routing<a class="headerlink" href="#static-routing" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="nat">
+<h2>NAT<a class="headerlink" href="#nat" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="networking-cable">
+<h2>Networking cable<a class="headerlink" href="#networking-cable" title="Permalink to this headline">¶</a></h2>
+<p>There are two main types of network cable in use today, namely copper and fiber-optic.</p>
+<div class="section" id="copper">
+<h3>Copper<a class="headerlink" href="#copper" title="Permalink to this headline">¶</a></h3>
+<p>The most common type of network cables are what is known as &#8220;unshielded twisted
+pair&#8221; cables. They use 4 sets of twisted pairs of copper, relying on the twist
+with differential signaling to prevent noise and signal propagation between the
+pairs. The four pairs of twisted copper wires are encased in a plastic sheath.</p>
+<p>There are different standards for copper network cables set by the
+Telecommunications Industry Association (TIA) and the International Organization
+for Standardization (ISO). Both organizations use the same naming convention
+(&#8220;Category __&#8221;) for the components, but unfortunately differ on the naming for
+the cable standards. The most common reference is the TIA&#8217;s, and the category
+designation is usually shortened to &#8220;Cat&#8221;, so you&#8217;ll hear references to &#8220;Cat5&#8221;
+or &#8220;Cat6&#8221; cable.</p>
+<div class="section" id="copper-cable-standards">
+<h4>Copper Cable Standards<a class="headerlink" href="#copper-cable-standards" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li>Category 5e (&#8220;Cat5&#8221;, ISO class D)</li>
+<li>Category 6 (&#8220;Cat6&#8221;, ISO class E)</li>
+<li>Category 6A (&#8220;Cat6A&#8221;, ISO class Ea)</li>
+</ul>
+</div>
+</div>
+<div class="section" id="fiber">
+<h3>Fiber<a class="headerlink" href="#fiber" title="Permalink to this headline">¶</a></h3>
+<p>Fiber is a generic term that refers to optical transport mediums. It comes in
+several types, all of which look identical but are generally incompatible.</p>
+<div class="section" id="multimode-vs-single-mode">
+<h4>Multimode vs Single Mode<a class="headerlink" href="#multimode-vs-single-mode" title="Permalink to this headline">¶</a></h4>
+<p>Single-mode fiber has a small core diameter, which only allows one (a single)
+mode of light to be transmitted through the fiber. Using a single mode of light
+completely eliminates the possibility of light dispersion and associated signal
+loss, and so is used mainly for long-haul runs, such as the cables that run
+between buildings and cities. However, since single-mode fiber can only transmit
+one wavelength of light at a time, it typically involves much more expensive
+light generation sources (i.e., laser diode transmitters) and is very expensive
+to produce.</p>
+<p>Multimode fiber has a larger core diameter (either 50u or 62.5u) and can
+therefore carry multiple modes (&#8220;multimode&#8221;) of light, which can be used to
+transmit much more information during a given timeslice. The drawback is that
+carrying multimode lightwaves causes light dispersion and associated signal
+loss, which limits its effective distance. Multimode is a less expensive fiber
+optic cable, that is typically useable with lower cost optical components. It is
+very common to see it used for building intra-building backbones, and
+system/switch to switch applications.</p>
+</div>
+<div class="section" id="multimode-fiber-standards">
+<h4>Multimode Fiber Standards<a class="headerlink" href="#multimode-fiber-standards" title="Permalink to this headline">¶</a></h4>
+<p>Multimode cables have classifications much like the copper cables discussed above; these
+are known as &#8220;Optical Multimode&#8221; (OM) classes. The four designations are:</p>
+<ul class="simple">
+<li>OM1 - a &#8220;legacy&#8221; fiber class, the core being 62.5u, and cladding being 125u.
+The bandwidth that can be carried ranges from 160 to 500 MHz.</li>
+<li>OM2 - a &#8220;legacy&#8221; fiber class, the core being 50u, and cladding being 125u.
+The bandwidth that can be carried is 500 MHz.</li>
+<li>OM3 - a &#8220;modern&#8221; fiber class, the core being 50u, and cladding being 125u.
+The bandwidth that can be carried ranges from 1500 to 2000 MHz.</li>
+<li>OM4 - a &#8220;modern&#8221; fiber class, the core being 50u, and cladding being 125u.
+The bandwidth that can be carried ranges from 3500 to 4700 MHz.</li>
+</ul>
+</div>
+<div class="section" id="optical-connector-types">
+<h4>Optical Connector Types<a class="headerlink" href="#optical-connector-types" title="Permalink to this headline">¶</a></h4>
+<p>LC and SC connectors are the two most common type of fiber connectors you will
+use.</p>
+<p>LC stands for &#8220;Lucent Connector&#8221;, but is also referred to as &#8220;Little Connector&#8221;.
+They are typically used for high-density applications, and are the type of
+connector used on SFPs or XFPs. Typically the connector is packaged in a duplex
+configuration with each cable side by side, and have a latch mechanism for
+locking.</p>
+<p>SC stands for &#8220;Subscriber Connector&#8221;, but are also known as &#8220;Square Connector&#8221;,
+or &#8220;Standard Connector&#8221;. This is the type of connector typically used in the
+telecom industry. They have a larger form factor than the LC connectors, and can
+be found in single and duplex configurations. SC connectors have a push/pull
+locking mechanism, and because of this, are also colloquially known as
+&#8220;Stab-and-Click&#8221; connectors.</p>
+</div>
+<div class="section" id="transceivers">
+<h4>Transceivers<a class="headerlink" href="#transceivers" title="Permalink to this headline">¶</a></h4>
+<p>The variety in optical fiber makes for a correspondingly large variety in
+optical fiber interface standards. Different interface types will impose
+different requirements on the fiber used and the length of the connection.</p>
+<p>If optical fiber interfaces were incorporated directly into network equipment,
+the number of models made by the manufacturer would have to be multiplied by
+the number of interface standards in existence. For this reason, modern network
+hardware rarely incorporates such interfaces directly. Instead, pluggable
+transceiver modules are used as a layer of indirection between medium-dependent
+and medium-independent interfaces. This allows a transceiver slot to be
+provided supporting any desired interface standard, whether copper or fiber.
+There are some limitations to this, detailed below.</p>
+<p>Various module types have been introduced over the years:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="29%" />
+<col width="29%" />
+<col width="26%" />
+<col width="17%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Name</th>
+<th class="head">Introduced</th>
+<th class="head">Speed</th>
+<th class="head">Size</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>GBIC</td>
+<td>1995</td>
+<td>1 Gb/s</td>
+<td>Large</td>
+</tr>
+<tr class="row-odd"><td>SFP</td>
+<td>2001</td>
+<td>1 Gb/s</td>
+<td>Small</td>
+</tr>
+<tr class="row-even"><td>XENPAK</td>
+<td>2001</td>
+<td>10 Gb/s</td>
+<td>Large</td>
+</tr>
+<tr class="row-odd"><td>XFP</td>
+<td>2002</td>
+<td>10 Gb/s</td>
+<td>Small</td>
+</tr>
+<tr class="row-even"><td>SFP+</td>
+<td>2006</td>
+<td>10 Gb/s</td>
+<td>Small</td>
+</tr>
+<tr class="row-odd"><td>QSFP</td>
+<td>2006</td>
+<td>40 Gb/s</td>
+<td>Small</td>
+</tr>
+<tr class="row-even"><td>CFP</td>
+<td>2009</td>
+<td>100 Gb/s</td>
+<td>Large</td>
+</tr>
+</tbody>
+</table>
+<p>There are a large number of compatibility issues with such modules. Some
+compatibility issues cause problems between two ends of a link; others cause
+problems between a module and its host device.</p>
+<ul class="simple">
+<li>Transceivers are not generally compatible with lower speed versions of the
+same standard. A 1000BASE-T Ethernet card can interface with a 10BASE-T card,
+but a 1 Gb/s fiber transceiver cannot interface with a 10 or 100 Mb/s
+transceiver. In the case of fiber, this is generally due to the different
+wavelengths used; but even many copper transceivers do not support lower
+speeds, although some do. You should assume that any transceiver will only
+support the exact interface for which it is designed unless specified
+otherwise.</li>
+<li>Modules are only made for the speed targeted by a format. For example, SFP+
+modules are only made for 10 Gb/s standards, and not for lower speeds.</li>
+<li>Some equipment may accept SFP modules in SFP+ slots, but this is not
+universal.</li>
+<li>Vendor lock-in is widely practiced. Equipment may refuse to operate with the
+modules made by a different manufacturer. Workarounds are generally
+available, but this may complicate support or warranty arrangements.</li>
+</ul>
+<p>These issues can create pathological cases. Suppose you have two switches which
+should be connected to one another. One is connected via a 1 Gb/s transceiver
+to fiber. The other only has SFP+ slots. If these slots also support SFP
+modules, then a 1 Gb/s SFP transceiver can be used, but if they do not,
+interconnection is impossible: all SFP+ modules target 10 Gb/s, and fiber
+transceivers do not support lower speeds.</p>
+</div>
+<div class="section" id="twinax">
+<h4>Twinax<a class="headerlink" href="#twinax" title="Permalink to this headline">¶</a></h4>
+</div>
+</div>
+</div>
+</div>
+
+
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="networking_201.html" class="btn btn-neutral float-right" title="Networking 201"/>Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="troubleshooting_101.html" class="btn btn-neutral" title="Troubleshooting"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2012, Avleen Vig (under Creative Commons license: https://github.com/opsschool/curriculum/blob/master/LICENSE).
+    </p>
+  </div>
+
+  <a href="https://github.com/snide/sphinx_rtd_theme">Sphinx theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'0.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

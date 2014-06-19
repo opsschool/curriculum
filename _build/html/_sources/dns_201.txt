@@ -1,0 +1,23 @@
+DNS 201
+*******
+
+Architecture/design choices
+===========================
+
+Master/slave
+------------
+
+Shadow master/slave
+-------------------
+
+Shadow master/multi=slave
+-------------------------
+
+Split horizon
+-------------
+
+DNSSEC
+======
+
+
+

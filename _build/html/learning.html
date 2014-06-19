@@ -1,0 +1,920 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Learning and the Community &mdash; Ops School Curriculum 0.1 documentation</title>
+  
+
+  
+  
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="top" title="Ops School Curriculum 0.1 documentation" href="index.html"/>
+        <link rel="next" title="See also" href="seealso.html"/>
+        <link rel="prev" title="Labs exercises" href="labs.html"/> 
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        <a href="index.html" class="fa fa-home"> Ops School Curriculum</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+        
+            <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="introduction.html#goals-and-focus">Goals and Focus</a></li>
+<li class="toctree-l2"><a class="reference internal" href="introduction.html#syllabus-layout">Syllabus layout</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="introduction.html#contributions">Contributions</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="introduction.html#how-we-ll-organize-work">How we&#8217;ll organize work</a></li>
+<li class="toctree-l2"><a class="reference internal" href="introduction.html#how-to-contribute">How to contribute</a></li>
+<li class="toctree-l2"><a class="reference internal" href="introduction.html#rewards-for-contributions">Rewards for contributions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="introduction.html#ops-school-videos">Ops School Videos</a></li>
+<li class="toctree-l2"><a class="reference internal" href="introduction.html#how-to-write-sections">How to write sections</a></li>
+<li class="toctree-l2"><a class="reference internal" href="introduction.html#overwriting-existing-content">Overwriting existing content</a></li>
+<li class="toctree-l2"><a class="reference internal" href="introduction.html#credits">Credits</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="meta/guidelines.html">Guidelines</a></li>
+<li class="toctree-l1"><a class="reference internal" href="careers.html">Careers in Operations</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="careers.html#deciding-a-career-path">Deciding a career path</a></li>
+<li class="toctree-l2"><a class="reference internal" href="careers.html#generalized-career-paths">Generalized career paths</a></li>
+<li class="toctree-l2"><a class="reference internal" href="careers.html#specialized-career-paths">Specialized career paths</a></li>
+<li class="toctree-l2"><a class="reference internal" href="careers.html#how-to-become-an-operations-engineer">How to become an operations engineer</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="sysadmin_101.html">Sysadmin 101</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="sysadmin_101.html#what-is-systems-administration">What is Systems Administration?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sysadmin_101.html#what-is-development">What is Development?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sysadmin_101.html#contrasting-development-and-operations">Contrasting Development and Operations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sysadmin_101.html#history-of-development-and-operations">History of Development and Operations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sysadmin_101.html#what-system-administration-isn-t">What System Administration Isn&#8217;t</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="unix_101.html">Unix fundamentals 101</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="filesystems_101.html">File systems</a></li>
+<li class="toctree-l2"><a class="reference internal" href="shells_101.html">Shells</a></li>
+<li class="toctree-l2"><a class="reference internal" href="package_management_101.html">Package management</a></li>
+<li class="toctree-l2"><a class="reference internal" href="boot_process_101.html">The Boot Process</a></li>
+<li class="toctree-l2"><a class="reference internal" href="shell_tools_101.html">Useful shell tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cron_101.html">Crontab</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="unix_201.html">Unix fundamentals 201</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="kernel_tuning.html">Kernel tuning</a></li>
+<li class="toctree-l2"><a class="reference internal" href="unix_signals.html">Signals</a></li>
+<li class="toctree-l2"><a class="reference internal" href="syscalls.html">Syscalls</a></li>
+<li class="toctree-l2"><a class="reference internal" href="netbooting.html">Booting over the network</a></li>
+<li class="toctree-l2"><a class="reference internal" href="inits.html"><tt class="docutils literal"><span class="pre">/bin/init</span></tt> and its descendants</a></li>
+<li class="toctree-l2"><a class="reference internal" href="stats_diagnosing.html">Looking at system metrics</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="windows_101.html">MS Windows fundamentals 101</a></li>
+<li class="toctree-l1"><a class="reference internal" href="text_editing_101.html">Text Editing 101</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="text_editing_101.html#a-little-history">A little history</a></li>
+<li class="toctree-l2"><a class="reference internal" href="text_editing_101.html#vi-basics"><tt class="docutils literal"><span class="pre">vi</span></tt> basics</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="text_editing_201.html">Text Editing 201</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="text_editing_201.html#vim">Vim</a></li>
+<li class="toctree-l2"><a class="reference internal" href="text_editing_201.html#emacs">Emacs</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="sysadmin_tools.html">Tools for productivity</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="sysadmin_tools.html#terminal-emulators">Terminal emulators</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sysadmin_tools.html#ssh">SSH</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sysadmin_tools.html#ssh-use-cases">SSH Use Cases</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sysadmin_tools.html#multiplexers">Multiplexers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sysadmin_tools.html#shell-customisations">Shell customisations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sysadmin_tools.html#mosh">Mosh</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sysadmin_tools.html#ticketing-systems">Ticketing systems</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sysadmin_tools.html#note-taking">Note-taking</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="security_101.html">Security 101</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="security_101.html#authentication-in-unix">Authentication in unix</a></li>
+<li class="toctree-l2"><a class="reference internal" href="security_101.html#adding-and-deleting-users-and-groups">Adding and deleting users and groups</a></li>
+<li class="toctree-l2"><a class="reference internal" href="security_101.html#standard-unix-filesystem-permissions">Standard unix filesystem permissions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="security_101.html#pam">PAM</a></li>
+<li class="toctree-l2"><a class="reference internal" href="security_101.html#chroot-jails-and-containers">Chroot, jails and containers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="security_101.html#sudo-or-why-you-should-not-log-in-as-root">Sudo (or, &#8220;Why you should not log in as root&#8221;)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="security_101.html#history-and-lore">History and Lore</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="security_201.html">Security 201</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="security_201.html#centralised-accounts">Centralised accounts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="security_201.html#firewalls-and-packet-filters">Firewalls and packet filters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="security_201.html#public-key-cryptography">Public Key Cryptography</a></li>
+<li class="toctree-l2"><a class="reference internal" href="security_201.html#two-factor-authentication">Two factor authentication</a></li>
+<li class="toctree-l2"><a class="reference internal" href="security_201.html#building-systems-to-be-auditable">Building systems to be auditable</a></li>
+<li class="toctree-l2"><a class="reference internal" href="security_201.html#network-intrusion-detection">Network Intrusion Detection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="security_201.html#host-intrusion-detection">Host Intrusion Detection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="security_201.html#defense-practices">Defense practices</a></li>
+<li class="toctree-l2"><a class="reference internal" href="security_201.html#risk-and-risk-management">Risk and risk management</a></li>
+<li class="toctree-l2"><a class="reference internal" href="security_201.html#compliance-the-bare-minimum">Compliance: The bare minimum</a></li>
+<li class="toctree-l2"><a class="reference internal" href="security_201.html#dealing-with-security-incidents">Dealing with security incidents</a></li>
+<li class="toctree-l2"><a class="reference internal" href="security_201.html#acls-and-extended-attributes-xattrs">ACLs and extended attributes (xattrs)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="security_201.html#selinux">SELinux</a></li>
+<li class="toctree-l2"><a class="reference internal" href="security_201.html#data-placement">Data placement</a></li>
+<li class="toctree-l2"><a class="reference internal" href="security_201.html#additional-reading">Additional reading</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="troubleshooting_101.html">Troubleshooting</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="troubleshooting_101.html#methodologies">Methodologies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="troubleshooting_101.html#working-effectively-during-a-crisis">Working effectively during a crisis</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="networking_101.html">Networking 101</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="networking_101.html#the-rfc-documents">The RFC Documents</a></li>
+<li class="toctree-l2"><a class="reference internal" href="networking_101.html#osi-7-layer-model-osi-reference-model">OSI 7-layer model (OSI Reference Model)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="networking_101.html#tcp-ip-arpa-4-layer-model">TCP/IP (ARPA) 4-layer model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="networking_101.html#ip-addressing">IP Addressing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="networking_101.html#tcp-vs-udp">TCP vs UDP</a></li>
+<li class="toctree-l2"><a class="reference internal" href="networking_101.html#subnetting-netmasks-and-cidr">Subnetting, netmasks and CIDR</a></li>
+<li class="toctree-l2"><a class="reference internal" href="networking_101.html#private-address-space-rfc-1918">Private address space (<strong>RFC 1918</strong>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="networking_101.html#static-routing">Static routing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="networking_101.html#nat">NAT</a></li>
+<li class="toctree-l2"><a class="reference internal" href="networking_101.html#networking-cable">Networking cable</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="networking_201.html">Networking 201</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="networking_201.html#vlans-802-1q-tagging">VLANs, 802.1q tagging</a></li>
+<li class="toctree-l2"><a class="reference internal" href="networking_201.html#spanning-tree">Spanning Tree</a></li>
+<li class="toctree-l2"><a class="reference internal" href="networking_201.html#static-routing">Static Routing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="networking_201.html#dynamic-routing-protocols-rip-ospf-bgp">Dynamic routing protocols (RIP, OSPF, BGP)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="networking_201.html#acls">ACLs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="networking_201.html#network-bonding-802-3ad-lacp-link-aggregation">Network Bonding (802.3ad / LACP link aggregation)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="networking_201.html#ios-switch-configuration">IOS switch configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="networking_201.html#gre-and-other-tunnels">GRE and other tunnels</a></li>
+<li class="toctree-l2"><a class="reference internal" href="networking_201.html#multi-homed-hosts">Multi-homed hosts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="networking_201.html#similarities-and-differences-between-ipv4-and-ipv6-networking">Similarities and differences between IPv4 and IPv6 networking</a></li>
+<li class="toctree-l2"><a class="reference internal" href="networking_201.html#implications-of-dual-stack-firewalls-especially-under-linux">Implications of dual-stack firewalls (especially under Linux)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="networking_201.html#multicast-uses-and-limitations">Multicast uses and limitations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="networking_201.html#latency-vs-bandwidth">Latency vs. Bandwidth</a></li>
+<li class="toctree-l2"><a class="reference internal" href="networking_201.html#vpns">VPNs</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="common_services.html">Common services</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="system_daemons_101.html">System daemons 101</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dns_101.html">DNS 101</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dns_201.html">DNS 201</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dhcp.html">DHCP</a></li>
+<li class="toctree-l2"><a class="reference internal" href="http_101.html">HTTP 101 (Core protocol)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="http_201.html">HTTP 201 (Application Servers &amp; Frameworks)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="smtp_101.html">SMTP 101</a></li>
+<li class="toctree-l2"><a class="reference internal" href="smtp_201.html">SMTP 201</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="identity_management.html">Identity Management 101</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="identity_management.html#ldap">LDAP</a></li>
+<li class="toctree-l2"><a class="reference internal" href="identity_management.html#nis">NIS</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="active_directory_101.html">Active Directory 101</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="active_directory_101.html#what-is-active-directory">What is Active Directory?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="active_directory_101.html#what-is-active-directory-used-for">What is Active Directory used for?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="active_directory_101.html#you-mention-separate-components-what-is-active-directory-composed-of">You mention &#8220;separate components&#8221;; what is Active Directory composed of?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="active_directory_101.html#what-specific-services-does-active-directory-provide">What specific services does Active Directory provide?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="active_directory_101.html#best-practices-for-managing-an-active-directory-installation">Best Practices for managing an Active Directory installation</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="active_directory_201.html">Active Directory 201</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="active_directory_201.html#detailed-breakdown-of-active-directory-components-services">Detailed Breakdown of Active Directory Components/Services</a></li>
+<li class="toctree-l2"><a class="reference internal" href="active_directory_201.html#advanced-active-directory-maintenance">Advanced Active Directory Maintenance</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="remote_filesystems_101.html">Remote Filesystems 101</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="remote_filesystems_101.html#nfsv3">NFSv3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="remote_filesystems_101.html#iscsi">iSCSI</a></li>
+<li class="toctree-l2"><a class="reference internal" href="remote_filesystems_101.html#samba-cifs">SAMBA/CIFS</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="remote_filesystems_201.html">Remote Filesystems 201</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="remote_filesystems_201.html#glusterfs">GlusterFS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="remote_filesystems_201.html#nfsv4">NFSv4</a></li>
+<li class="toctree-l2"><a class="reference internal" href="remote_filesystems_201.html#netatalk-afp">Netatalk / AFP</a></li>
+<li class="toctree-l2"><a class="reference internal" href="remote_filesystems_201.html#s3">S3</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="programming_101.html">Programming 101</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="programming_101.html#shell-scripting-basics">Shell scripting basics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="programming_101.html#regular-expressions">Regular Expressions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="programming_101.html#sed-awk">Sed &amp; awk</a></li>
+<li class="toctree-l2"><a class="reference internal" href="programming_101.html#gigo">GIGO</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="programming_201.html">Programming 201</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="programming_201.html#common-elements-in-scripting-and-what-they-do">Common elements in scripting, and what they do</a></li>
+<li class="toctree-l2"><a class="reference internal" href="programming_201.html#c-a-very-basic-overview">C (A very basic overview)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="programming_201.html#ruby">Ruby</a></li>
+<li class="toctree-l2"><a class="reference internal" href="programming_201.html#python">Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="programming_201.html#version-control">Version Control</a></li>
+<li class="toctree-l2"><a class="reference internal" href="programming_201.html#api-design-fundamentals">API design fundamentals</a></li>
+<li class="toctree-l2"><a class="reference internal" href="programming_201.html#continuous-integration">Continuous Integration</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="hardware_101.html">Hardware 101</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="hardware_101.html#hardware-types">Hardware Types</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hardware_101.html#basic-server-architecture">Basic server architecture</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hardware_101.html#disk-management">Disk management</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hardware_101.html#performance-redundancy">Performance/Redundancy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hardware_101.html#troubleshooting">Troubleshooting</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="datacenters/datacenters_101.html">Datacenters 101</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="datacenters/datacenters_101.html#power-budgets">Power budgets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="datacenters/datacenters_101.html#cooling-budgets">Cooling budgets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="datacenters/datacenters_101.html#you-will-be-judged-by-the-tidiness-of-your-rack">You will be judged by the tidiness of your rack</a></li>
+<li class="toctree-l2"><a class="reference internal" href="datacenters/datacenters_101.html#machine-and-cable-labeling">Machine and cable labeling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="datacenters/datacenters_101.html#traditional-naming-conventions">Traditional naming conventions</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="datacenters/datacenters_201.html">Datacenters 201</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="datacenters/datacenters_201.html#networking-many-racks">Networking many racks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="datacenters/datacenters_201.html#power">Power</a></li>
+<li class="toctree-l2"><a class="reference internal" href="datacenters/datacenters_201.html#cooling">Cooling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="datacenters/datacenters_201.html#physical-security-and-common-security-standards-compliance-requirements">Physical security and common security standards compliance requirements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="datacenters/datacenters_201.html#suggested-practices">Suggested practices</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="datacenters/datacenters_301.html">Datacenters 301</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="datacenters/datacenters_301.html#power">Power</a></li>
+<li class="toctree-l2"><a class="reference internal" href="datacenters/datacenters_301.html#increasing-cooling-efficiency">Increasing cooling efficiency</a></li>
+<li class="toctree-l2"><a class="reference internal" href="datacenters/datacenters_301.html#design-options">Design Options</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="virtualization_101.html">Virtualization 101</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="virtualization_101.html#intro-to-virtualization-technologies">Intro to virtualization technologies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="virtualization_101.html#the-cloud">The Cloud</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="virtualization_201.html">Virtualization 201</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="virtualization_201.html#managing-virtualized-infrastructures-private-clouds">Managing virtualized infrastructures (Private clouds)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="virtualization_201.html#leveraging-virtualization-for-development">Leveraging virtualization for development</a></li>
+<li class="toctree-l2"><a class="reference internal" href="virtualization_201.html#leveraging-virtualization-for-production">Leveraging virtualization for production</a></li>
+<li class="toctree-l2"><a class="reference internal" href="virtualization_201.html#security-implications-of-virtualization">Security implications of virtualization</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="logs_101.html">Logs 101</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="logs_101.html#common-system-logs-formats">Common system logs &amp; formats</a></li>
+<li class="toctree-l2"><a class="reference internal" href="logs_101.html#standard-error">Standard Error</a></li>
+<li class="toctree-l2"><a class="reference internal" href="logs_101.html#log-files">Log files</a></li>
+<li class="toctree-l2"><a class="reference internal" href="logs_101.html#syslog">Syslog</a></li>
+<li class="toctree-l2"><a class="reference internal" href="logs_101.html#log-rotation-append-truncate">Log rotation, append, truncate</a></li>
+<li class="toctree-l2"><a class="reference internal" href="logs_101.html#retention-and-archival">Retention and archival</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="logs_201.html">Logs 201</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="logs_201.html#centralized-logging">Centralized logging</a></li>
+<li class="toctree-l2"><a class="reference internal" href="logs_201.html#log-parsing">Log parsing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="logs_201.html#search-correlation">Search &amp; Correlation</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="databases_101.html">Databases 101 (Relational Databases)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="databases_101.html#what-is-a-database">What is a Database?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="databases_101.html#what-is-a-relational-database">What is a Relational Database?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="databases_101.html#why-we-use-databases">Why We Use Databases?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="databases_101.html#what-is-sql">What is SQL?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="databases_101.html#sql-shell">SQL shell</a></li>
+<li class="toctree-l2"><a class="reference internal" href="databases_101.html#creating-databases">Creating databases</a></li>
+<li class="toctree-l2"><a class="reference internal" href="databases_101.html#creating-users">Creating users</a></li>
+<li class="toctree-l2"><a class="reference internal" href="databases_101.html#granting-privileges">Granting privileges</a></li>
+<li class="toctree-l2"><a class="reference internal" href="databases_101.html#removing-privileges">Removing Privileges</a></li>
+<li class="toctree-l2"><a class="reference internal" href="databases_101.html#basic-normalized-schema-design">Basic normalized schema design</a></li>
+<li class="toctree-l2"><a class="reference internal" href="databases_101.html#select-insert-update-and-delete">Select, Insert, Update and Delete</a></li>
+<li class="toctree-l2"><a class="reference internal" href="databases_101.html#pro-tips">Pro Tips</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="databases_201.html">Databases 201</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="databases_201.html#database-theory">Database Theory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="databases_201.html#document-databases">Document Databases</a></li>
+<li class="toctree-l2"><a class="reference internal" href="databases_201.html#key-value-stores">Key-value Stores</a></li>
+<li class="toctree-l2"><a class="reference internal" href="databases_201.html#graph-databases">Graph Databases</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="application_components_201.html">Application Components 201</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="application_components_201.html#message-brokers">Message Brokers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="application_components_201.html#memory-caches">Memory Caches</a></li>
+<li class="toctree-l2"><a class="reference internal" href="application_components_201.html#specialized-caches">Specialized Caches</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="loadbalancing_101.html">Load Balancing</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="loadbalancing_101.html#why-do-we-use-load-balancers">Why do we use load balancers?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="loadbalancing_101.html#application-implications">Application implications</a></li>
+<li class="toctree-l2"><a class="reference internal" href="loadbalancing_101.html#non-http-use-cases">Non-HTTP use cases</a></li>
+<li class="toctree-l2"><a class="reference internal" href="loadbalancing_101.html#software">Software</a></li>
+<li class="toctree-l2"><a class="reference internal" href="loadbalancing_101.html#hardware">Hardware</a></li>
+<li class="toctree-l2"><a class="reference internal" href="loadbalancing_101.html#multi-dc">Multi-dc</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="monitoring_101.html">Monitoring, Notifications, and Metrics 101</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="monitoring_101.html#history-how-we-used-to-monitor-and-how-we-got-better-monitors-as-tests">History: How we used to monitor, and how we got better (monitors as tests)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="monitoring_101.html#perspective-end-to-end-vs-introspective-monitoring">Perspective (end-to-end) vs Introspective monitoring</a></li>
+<li class="toctree-l2"><a class="reference internal" href="monitoring_101.html#metrics-what-to-collect-what-to-do-with-them">Metrics: what to collect, what to do with them</a></li>
+<li class="toctree-l2"><a class="reference internal" href="monitoring_101.html#common-tools">Common tools</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="monitoring_201.html">Monitoring, Notifications, and Metrics 201</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="monitoring_201.html#dataviz-graphing">Dataviz &amp; Graphing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="monitoring_201.html#graphite-statsd">Graphite, StatsD</a></li>
+<li class="toctree-l2"><a class="reference internal" href="monitoring_201.html#dashboard-info-for-ops-and-info-for-the-business">Dashboard: Info for ops and info for the business</a></li>
+<li class="toctree-l2"><a class="reference internal" href="monitoring_201.html#third-party-tools">Third-party tools</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="bcp.html">Business Continuity Planning</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="backups.html">Backups</a></li>
+<li class="toctree-l2"><a class="reference internal" href="outages.html">Outages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="postmortems.html">Postmortems</a></li>
+<li class="toctree-l2"><a class="reference internal" href="disaster_recovery.html">Disaster Recovery</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="architecture_101.html">Architecture 101</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="architecture_101.html#how-to-make-good-architecture-decisions">How to make good architecture decisions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="architecture_101.html#patterns-and-anti-patterns">Patterns and anti-patterns</a></li>
+<li class="toctree-l2"><a class="reference internal" href="architecture_101.html#introduction-to-availability">Introduction to availability</a></li>
+<li class="toctree-l2"><a class="reference internal" href="architecture_101.html#introduction-to-scalability">Introduction to scalability</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="architecture_201.html">Architecture 201</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="architecture_201.html#service-oriented-architectures">Service Oriented Architectures</a></li>
+<li class="toctree-l2"><a class="reference internal" href="architecture_201.html#fault-tolerance-fault-protection-masking-dependability-fundamentals">Fault tolerance, fault protection, masking, dependability fundamentals</a></li>
+<li class="toctree-l2"><a class="reference internal" href="architecture_201.html#caching-concerns">Caching Concerns</a></li>
+<li class="toctree-l2"><a class="reference internal" href="architecture_201.html#crash-only">Crash only</a></li>
+<li class="toctree-l2"><a class="reference internal" href="architecture_201.html#synchronous-vs-asynchronous">Synchronous vs. Asynchronous</a></li>
+<li class="toctree-l2"><a class="reference internal" href="architecture_201.html#business-continuity-vs-disaster-recovery">Business continuity vs. Disaster Recovery</a></li>
+<li class="toctree-l2"><a class="reference internal" href="architecture_201.html#designing-for-scalability-horizontal-vertical">Designing for Scalability: Horizontal, Vertical</a></li>
+<li class="toctree-l2"><a class="reference internal" href="architecture_201.html#simplicity">Simplicity</a></li>
+<li class="toctree-l2"><a class="reference internal" href="architecture_201.html#performance">Performance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="architecture_201.html#tiered-architectures">Tiered architectures</a></li>
+<li class="toctree-l2"><a class="reference internal" href="architecture_201.html#mttr-mtbf">MTTR &gt; MTBF</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="config_management.html">Configuration Management 101</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="config_management.html#a-brief-history-of-configuration-management">A Brief History of Configuration Management</a></li>
+<li class="toctree-l2"><a class="reference internal" href="config_management.html#idempotence">Idempotence</a></li>
+<li class="toctree-l2"><a class="reference internal" href="config_management.html#convergent-and-congruent-systems">Convergent and Congruent systems</a></li>
+<li class="toctree-l2"><a class="reference internal" href="config_management.html#direct-and-indirect-systems-ansible-capistrano">Direct and Indirect systems: ansible, capistrano</a></li>
+<li class="toctree-l2"><a class="reference internal" href="config_management.html#chef">Chef</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="config_management.html#configuration-management-201">Configuration Management 201</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="config_management.html#ansible">Ansible</a></li>
+<li class="toctree-l2"><a class="reference internal" href="config_management.html#puppet">Puppet</a></li>
+<li class="toctree-l2"><a class="reference internal" href="config_management.html#cfengine-3">Cfengine 3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="config_management.html#saltstack">SaltStack</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="capacity_planning.html">Capacity Planning</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="capacity_planning.html#fundamentals-of-capacity-planning">Fundamentals of capacity planning</a></li>
+<li class="toctree-l2"><a class="reference internal" href="capacity_planning.html#forecasting">Forecasting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="capacity_planning.html#diagonal-scaling">Diagonal scaling</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="statistics.html">Statistics For Engineers</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="statistics.html#normal-distributions">Normal distributions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="statistics.html#percentiles-histograms-averages-mean-medians">Percentiles, histograms, averages, mean, medians</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="deployment_101.html">Software Deployment 101</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="deployment_101.html#software-deployment-vs-configuration-management">Software deployment vs configuration management</a></li>
+<li class="toctree-l2"><a class="reference internal" href="deployment_101.html#running-services">Running services</a></li>
+<li class="toctree-l2"><a class="reference internal" href="deployment_101.html#package-management">Package management</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="deployment_201.html">Software Deployment 201</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="deployment_201.html#running-services">Running services</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="soft_skills_101.html">Soft Skills 101</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="soft_skills_101.html#communication-basics">Communication basics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="soft_skills_101.html#communication-modes">Communication Modes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="soft_skills_101.html#special-cases-for-operations">Special cases for operations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="soft_skills_101.html#time-management">Time Management</a></li>
+<li class="toctree-l2"><a class="reference internal" href="soft_skills_101.html#project-management">Project Management</a></li>
+<li class="toctree-l2"><a class="reference internal" href="soft_skills_101.html#the-tao-of-devops">The Tao of DevOps</a></li>
+<li class="toctree-l2"><a class="reference internal" href="soft_skills_101.html#the-importance-of-documentation">The importance of Documentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="soft_skills_101.html#working-with-other-teams">Working with other teams</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="soft_skills_201.html">Soft Skills 201</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="soft_skills_201.html#business-acumen-in-operations">Business Acumen in Operations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="soft_skills_201.html#understanding-the-role-of-operations">Understanding the role of operations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="soft_skills_201.html#thinking-broadly">Thinking broadly</a></li>
+<li class="toctree-l2"><a class="reference internal" href="soft_skills_201.html#promoting-change">Promoting Change</a></li>
+<li class="toctree-l2"><a class="reference internal" href="soft_skills_201.html#building-basic-business-skills">Building basic business skills</a></li>
+<li class="toctree-l2"><a class="reference internal" href="soft_skills_201.html#specific-examples">Specific Examples</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="labs.html">Labs exercises</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="labs.html#bare-metal-provisioning-101">Bare-Metal Provisioning 101</a></li>
+<li class="toctree-l2"><a class="reference internal" href="labs.html#bare-metal-provisioning-201">Bare-Metal Provisioning 201</a></li>
+<li class="toctree-l2"><a class="reference internal" href="labs.html#cloud-provisioning-101">Cloud Provisioning 101</a></li>
+<li class="toctree-l2"><a class="reference internal" href="labs.html#cloud-provisioning-201">Cloud Provisioning 201</a></li>
+<li class="toctree-l2"><a class="reference internal" href="labs.html#database-101">Database 101</a></li>
+<li class="toctree-l2"><a class="reference internal" href="labs.html#database-201">Database 201</a></li>
+<li class="toctree-l2"><a class="reference internal" href="labs.html#database-301">Database 301</a></li>
+<li class="toctree-l2"><a class="reference internal" href="labs.html#automation-101">Automation 101</a></li>
+<li class="toctree-l2"><a class="reference internal" href="labs.html#automation-chef-201">Automation - Chef 201</a></li>
+<li class="toctree-l2"><a class="reference internal" href="labs.html#automation-chef-301">Automation - Chef 301</a></li>
+<li class="toctree-l2"><a class="reference internal" href="labs.html#automation-chef-302">Automation - Chef 302</a></li>
+<li class="toctree-l2"><a class="reference internal" href="labs.html#automation-puppet-201">Automation - Puppet 201</a></li>
+<li class="toctree-l2"><a class="reference internal" href="labs.html#automation-puppet-301">Automation - Puppet 301</a></li>
+<li class="toctree-l2"><a class="reference internal" href="labs.html#package-management-101">Package Management 101</a></li>
+<li class="toctree-l2"><a class="reference internal" href="labs.html#package-management-201">Package Management 201</a></li>
+<li class="toctree-l2"><a class="reference internal" href="labs.html#build-automation-fleets">Build automation fleets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="labs.html#version-control-with-git-101">Version Control with Git 101</a></li>
+<li class="toctree-l2"><a class="reference internal" href="labs.html#dns-101">DNS 101</a></li>
+<li class="toctree-l2"><a class="reference internal" href="labs.html#http-101">HTTP 101</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="current reference internal" href="">Learning and the Community</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#learning-and-strategies-for-improvement">Learning and strategies for improvement</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#things-to-keep-in-mind-as-you-learn-how-to-be-an-engineer">Things to keep in mind as you learn how to be an engineer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#golden-rules-for-careers-in-ops">Golden rules for careers in ops</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#where-to-look-for-help-in-the-community">Where to look for help in the community</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="seealso.html">See also</a></li>
+<li class="toctree-l1"><a class="reference internal" href="meta/contributions.html">Contributions</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="meta/contributions.html#how-we-ll-organize-work">How we&#8217;ll organize work</a></li>
+<li class="toctree-l2"><a class="reference internal" href="meta/contributions.html#how-to-contribute">How to contribute</a></li>
+<li class="toctree-l2"><a class="reference internal" href="meta/contributions.html#rewards-for-contributions">Rewards for contributions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="meta/contributions.html#ops-school-videos">Ops School Videos</a></li>
+<li class="toctree-l2"><a class="reference internal" href="meta/contributions.html#how-to-write-sections">How to write sections</a></li>
+<li class="toctree-l2"><a class="reference internal" href="meta/contributions.html#overwriting-existing-content">Overwriting existing content</a></li>
+<li class="toctree-l2"><a class="reference internal" href="meta/contributions.html#credits">Credits</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="meta/conventions.html">Conventions</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="meta/conventions.html#style-guide">Style Guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="meta/conventions.html#sample-network">Sample Network</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="meta/style_guide.html">Style Guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="meta/style_guide.html#editing">Editing</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="glossary.html">Glossary</a></li>
+</ul>
+
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="index.html">Ops School Curriculum</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="index.html">Docs</a> &raquo;</li>
+      
+    <li>Learning and the Community</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          <a href="_sources/learning.txt" rel="nofollow"> View page source</a>
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            
+  <div class="section" id="learning-and-the-community">
+<h1>Learning and the Community<a class="headerlink" href="#learning-and-the-community" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="learning-and-strategies-for-improvement">
+<h2>Learning and strategies for improvement<a class="headerlink" href="#learning-and-strategies-for-improvement" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="certification">
+<h3>Certification<a class="headerlink" href="#certification" title="Permalink to this headline">¶</a></h3>
+<p>Certification is a broad, overarching topic that could easily span an entire section.
+The goal here is to briefly describe some of the most useful and common aspects of certification and their relation to operations specific roles.
+There are a wide variation of certifications, some bear more weight and clout than others. Therefore it is important to get a basic understanding of the various certification options available if you choose to pursue certification to help strengthen your career in ops and increase your hiring eligibility with prospective employers.</p>
+<p>There is some disagreement as to the value that certifications provide but it is important to make readers aware of the common arguments for and against certifications for purposes of completeness.</p>
+<p>One such argument against certifications is that they merely test trivial knowledge which does not translate well into IT ability by memorizing facts and using test dumps in order to pass certain tests.
+The counter argument to that philosophy is that many of the higher level certs are much more difficult to obtain than by simply doing brain dumps, as they are typically a combination of written and lab type scenarios.
+Often times HR departments will use certifications as a filter and many IT managers and hiring staff believe experience to be a much stronger indicator of performance and ability than certifications.
+Another example for preference of certified individuals are government roles or otherwise top level security positions that lean heavily towards higher level security certifications.</p>
+<p>Generally, there are a few scenarios that you will see with regards to certification.</p>
+<ul class="simple">
+<li>The first scenario, and most common for those just starting out, is the group who use certification as a way to get their foot in the door or to launch their careers in ops.</li>
+</ul>
+<p>The types of certifications that these individuals target are typically the entry level, easiest to obtain certifications which will yield the greatest improvement of job prospects for those that obtain them.</p>
+<ul class="simple">
+<li>The second scenario that is typical is one where certain certifications are required either for an individuals&#8217; place of employment or are used as a requirement or prerequisite to obtain a position at a company.</li>
+</ul>
+<p>Many times, Managed Service Providers (MSP&#8217;s) require a certain level of certification amongst their employees to retain their status as a certified partner with some technology companies, like Cisco or Microsoft for example.
+These companies are required to have various levels of certification for their employees in certain specific areas and are also required to continually have their employees become re-certified periodically to retain their status as a &#8220;partner&#8221; to keep various perks and relationships associated with the vendors they certify and partner with.</p>
+<p>The following is a partial list of some of the most popular certifications followed by a brief description of the certification and how it can help with a career in a specific area of IT operations.</p>
+<p><strong>Comptia</strong></p>
+<p><em>A+</em> - Designed as an entry level certification, typically geared towards desktop support and help desk type positions.
+This certification demonstrates basic ability to troubleshoot hardware and software related problems.</p>
+<p><em>Network+</em> - This is an entry level network certification.
+It covers topics in the realm of networking and is designed for those looking to go into careers as network administrators, network technicians, help desk and desktop support roles.</p>
+<p><em>Security+</em> - Perhaps the most popular and trusted Comptia certification, the Security+ covers a number of broad topics in IT security including network security, compliance topics, cryptography, access controls and identity management.
+This certification is geared towards those in security roles, such as security engineers, consultants, systems/network administrators and security administrators.</p>
+<p><em>Linux+</em> - Another introductory, entry level certification offered by Comptia.
+This certifications covers topics that are commonly seen in the Linux world, such as filesystems, different shell commands, package management, scripting and some other administrative topics unique to Linux environments.
+Those who obtain the Linux+ typically qualify for roles like junior network administrators, junior Linux administrators, web administrators and Linux based DBA&#8217;s.</p>
+<p>One nice things about the Comptia certs is their vendor neutral position in the industry.
+The certifications are great for building foundation building with no prior knowledge or experience and are nice stepping stones into jobs as well as other, more advanced certifications.</p>
+<p><strong>Cisco</strong></p>
+<p><em>CCNA</em> -</p>
+<p><em>CCNP</em> -</p>
+<p><em>CCIE</em> -</p>
+<p><em>CCDE</em> -</p>
+<p><em>CCIA</em> -</p>
+<p><strong>Microsoft</strong></p>
+<p><em>MCITP</em> -</p>
+<p><em>MCSE</em> -</p>
+<p><em>MCM</em> -</p>
+<p><strong>Redhat</strong></p>
+<p><em>RHCSA</em> -</p>
+<p><em>RHCE</em> -</p>
+<p><strong>VMWare</strong></p>
+<p><em>VCP</em> -</p>
+<p>This list is only meant to be used as a guideline, and is by no means comprehensive.
+There are many other IT certifications out there and are simply too numerous to cover.
+The certifications and their requirements are in constant change and a number of the certifications listed here have gone through numerous revisions, some of which are currently going through revision.
+This is one downside to certification.
+Because the industry changes so rapidly these certifications can quickly become irrelevant if the necessary time is not taken to keep current with your knowledge and industry technologies.</p>
+<p>There is one final note on certification that should be emphasized here.
+There are many resources available on the topic of certifications, a quick Google search will more than likely yield a large number of results.
+One good site worth mentioning is the <a class="reference external" href="http://techexams.net">TechExams</a> site.
+Here you will find many valuable resources and materials to help with pretty much all aspects of certifications.
+Their forums are an excellent place to exchange ideas and get quick feedback as well.</p>
+</div>
+<div class="section" id="explicit-vs-tacit-knowledge">
+<h3>Explicit vs Tacit knowledge<a class="headerlink" href="#explicit-vs-tacit-knowledge" title="Permalink to this headline">¶</a></h3>
+<p><em>Explicit knowledge</em> can be defined as that gained from books or listening to a lecture.
+Basically, this type of knowledge would be some form of reading or auditory resource.
+It is typically easy to transfer to others, an example would be a manual for driving and operating a car.</p>
+<p><em>Tacit knowledge</em> can be defined and described as knowledge gained from experience, action and practice.
+It is typically difficult to transfer this type of knowledge to other people.
+A good example would be flying a plane.</p>
+<p>Let&#8217;s start off by making a distinction between different types of knowledge.
+The practice of system administration relies heavily on both types of learning so just one type of experience is not enough to be great in this field.
+Essentially, the two knowledge types work hand in hand.
+So for example, reading a ton of books, while useful in its own right will not be nearly as effective as reading books and then applying the knowledge gained from hands on experience.
+Likewise, if somebody never bothers to pickup a book and relies entirely on hands experiences they will not be as knowledgeable as someone who incorporates both types of knowledge.
+It is in the opinion of many in the field that much more can be learned from hands on experience than by books alone.</p>
+</div>
+<div class="section" id="types-of-learning">
+<h3>Types of learning<a class="headerlink" href="#types-of-learning" title="Permalink to this headline">¶</a></h3>
+<p>There has been a good deal of research done on this subject but for the purposes of this post I would like to boil this all down to what are considered the three primary or main styles of learning.
+Types of learning play an important role because they work hand in hand with explicit and tacit knowledge.
+Each one of these different styles represents a different sort of idiom to the learning experience.
+So here they are:</p>
+<ul class="simple">
+<li>Visual</li>
+<li>Auditory</li>
+<li>Kinesthetic</li>
+</ul>
+<p>It can be argued that employing a good variety of learning and study methods would be the most appropriate way to develop your skills as a sysadmin or any other career related in the operations field.
+Instead of saying that one is better than another, one should employ all of these types learning in their own life.
+Take a look at yourself and figure out how you learn best and then decide which method(s) are the most and least helpful and then decide how to make these styles work to your advantage.</p>
+<p>For example, having a piece of reading material as a reference or as an introduction is great.
+If the subject material is difficult and isn&#8217;t easily understood, a good next step to take is internalizing things by listening to or watching others.
+Finally, with a good enough understanding about a topic, quickly put things into your own experiences.
+It is much more easy to remember things when you are able to experience them yourself.</p>
+</div>
+<div class="section" id="learning-strategies">
+<h3>Learning strategies<a class="headerlink" href="#learning-strategies" title="Permalink to this headline">¶</a></h3>
+<p>It is important to highlight some of the major tactics that can be utilized when attempting to learn a new subject.
+Here are some different strategies and techniques for learning new and difficult to understand information.
+Many of these strategies work together or in tandem so they may described more than once.</p>
+<p><strong>The Feynman technique</strong> - This is as close to the end all be all that there is when it comes to learning.
+Everybody is probably familiar with this one, but am guessing the name is unfamiliar.
+This technique is used to explain or go through a topic as if you were teaching it to somebody else that was just learning about it for the first time.
+This basically forces you to know what you&#8217;re talking about.
+If you get stuck when trying to explain a particular concept or idea, make a note of what you are struggling with and research and relearn the material until you can confidently explain it.
+You should be able to explain the subject simply, if your explanations are wordy or convoluted you probably don&#8217;t understand it as well as you think.</p>
+<p><strong>Reading</strong> - This is a great technique to get an introduction to a topic by reading up on (and bookmarking) what information you feel to be the most important, whether it be official documentation, RFC&#8217;s, books, magazines, respected blogs and authors, etc.
+It is a good idea to take very brief notes when something looks like it would useful so to try it out yourself.</p>
+<p><strong>Watching/Listening to others</strong> - After getting a good idea from reading about a subject it is good to reinforce this by either watching demonstrations, videos, listening to podcasts, lectures or anything else that will show how to get a better idea of how to do something.
+An example of this would be to put on a podcast.
+It kills time as well as improves knowledge at the cost of nothing.
+Very efficient! The same with videos and demonstrations, the only thing holding you back is the motivation.</p>
+<p><strong>Try things for yourself</strong> - Sometimes this can be the most difficult approach but definitely can also be the most rewarding, there is nothing better than learning things the hard way.
+Try things out for yourself in a lab or anywhere that you can practice the concepts that you are attempting to learn and understand.</p>
+<p><strong>Take notes</strong> - This is important for your own understanding of how things work in a way that you can internalize.
+Take notes on simple things like commands you know you won&#8217;t remember, related topics and concepts or even just jotting down keywords quickly to Google for later on.
+This goes hand in hand with the reading technique described above, just jotting down very simple, brief notes can be really useful.</p>
+<p><strong>Communicate with others</strong> - There are plenty of resources out there for getting help and for communicating and discussing what you learn with others.
+/r/sysadmin would be a good starting point.
+IRC channels are another great place to ask questions and get help, there are channels for pretty much any subject you can think of out there.
+There are good sysadmin related channels at irc.freenode.net, if you don&#8217;t already utilize IRC, take a look.</p>
+<p><strong>Come back later</strong> - Give your brain some time to start digesting some of the information and to take a step back and put the pieces together to begin creating a bigger picture.
+If you have been working on learning a new concept or subject and felt overwhelmed and feel stuck, take a break.
+Do something completely different or think about something else entirely and came back to the subject later on with a fresh perspective.
+Sometimes these difficult subjects just take time to fully understand so taking breaks and clearing your head can be very useful.</p>
+<p><strong>Sleep on it</strong> - Have you ever heard of the term before? This may sound crazy but sometimes if there is a particular problem that you&#8217;re struggling with, think about it before going to sleep.
+By blocking out all outside interference and noise it is much easier think about, come up with fresh perspectives and ideas and often times you will wake up with an answer the next morning.</p>
+<p><strong>Break stuff</strong> - One of the best ways to incorporate a number of these techniques is to intentionally break stuff in your own setups.
+Triple check to be sure that nothing important will get broken first and then go ahead and give it a try.
+A much deeper and more intimate relationship with the way things work, why they work and how they get broken occurs when things get broken.
+The great thing about using this method is that it is almost always useful for something in the future, whether it be the troubleshooting skills, the Googling skills or the specific knowledge in the particular area that needed to be fixed.</p>
+<p><strong>Practice, practice, practice</strong> - There is just no way around it. To get better at something one must dedicate time and be prepared to practice like an absolute maniac.
+For operations roles and system administration this can partially come from practical job experience but it also comes from dedicated study and lab time.
+The hands on component is where most experience and time will come from and becoming better doesn’t just happen, it takes cultivation and time, just like with any other skill.
+Stick with it and never stop learning and improving on your skillset through practice and experience.</p>
+</div>
+</div>
+<div class="section" id="things-to-keep-in-mind-as-you-learn-how-to-be-an-engineer">
+<h2>Things to keep in mind as you learn how to be an engineer<a class="headerlink" href="#things-to-keep-in-mind-as-you-learn-how-to-be-an-engineer" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="general-tips-for-improvement">
+<h3>General Tips for improvement<a class="headerlink" href="#general-tips-for-improvement" title="Permalink to this headline">¶</a></h3>
+<p>These simple tips can go a really long way.
+There is no magical instant way to improve yourself.
+If you take nothing else, just remember the following.
+The best way to see results and really work on yourself starts by changing your habits, working hard and being consistent.That might not be what you are looking for, but it has been proven to be true time and again that even by making just these few adjustments can go a long way in becoming better at what you do.</p>
+<p><strong>Exercise</strong> - Just doing a Google search will reveal all the information on the massive benefits of proper exercise.
+Even just this one tip can make a huge difference in the way you think and feel.
+It is not recommended to completely change the way you live your life when starting out, especially if you are sedentary.
+Just make a simple change as something to start with and work from there.
+There are many benefits of exercising and working your body regularly will help you improve your mind.</p>
+<p><strong>Sleep</strong> - This is probably the most important thing to remember when you are trying to work on hacking your mind and improving yourself.
+8 hours of sleep seems to be the general rule of thumb, and it should not be overlooked when you are evaluating yourself and your goals for getting to where you want to be.
+If you want to wake up early, you need to go to sleep early, it really is as simple as that.
+It is also important to be consistent on your sleep schedule so your body can get used to when it should slow down and when it should speed up (even on weekends!).
+For example, getting in a routine of winding down at a certain time, say 9 pm every night by reading a book for an hour to train your body that it is time to sleep.
+Read until say 10 pm every night if you want to wake up at 6 am to get the sleep consistency your body needs, also giving your body enough time to repair and heal itself to get up and going.</p>
+<p><strong>Diet</strong> - Also important.
+Everybody is different so please take this advice at face value.
+As with anything else, it is not recommended to go all out and make completely polar changes to every eating habit at once.
+You will crash and burn like many others.So while it may work for some you generally will be safer and more likely to make a lasting impact if you take things slowly.
+Work on one thing at a time and gradually make the changes to improve your diet and health.
+As an example, start by cutting out something small, like cutting out a particular type of food that isn&#8217;t exactly healthy.
+Not entirely, but even just cutting back is a good first step.
+Basically doing something is better than doing nothing.</p>
+</div>
+</div>
+<div class="section" id="golden-rules-for-careers-in-ops">
+<h2>Golden rules for careers in ops<a class="headerlink" href="#golden-rules-for-careers-in-ops" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>A sysadmin is there to support the customer(s)</li>
+<li>Leave your ego outside</li>
+<li>Listen</li>
+<li>Learn to communicate tech ideas to non-techies</li>
+<li>Learn how to triage</li>
+<li>Take time to document</li>
+<li>Start with the known and move to the unknown</li>
+<li>It isn&#8217;t just backup, it&#8217;s also restore</li>
+<li>Learn to do post mortems</li>
+</ul>
+<div class="section" id="other-skills-that-can-help-you">
+<h3>Other skills that can help you<a class="headerlink" href="#other-skills-that-can-help-you" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>Be personable</li>
+<li>Learn to code</li>
+<li>Learn patience</li>
+<li>Learn to budget</li>
+</ul>
+</div>
+</div>
+<div class="section" id="where-to-look-for-help-in-the-community">
+<h2>Where to look for help in the community<a class="headerlink" href="#where-to-look-for-help-in-the-community" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="local-user-groups">
+<h3>Local user groups<a class="headerlink" href="#local-user-groups" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><a class="reference external" href="https://lopsa.org/localprogram">Local LOPSA Groups:</a></li>
+<li><a class="reference external" href="http://www.baylisa.org/">BayLISA</a></li>
+<li><a class="reference external" href="http://www.bblisa.org/">Back Bay LISA</a></li>
+</ul>
+</div>
+<div class="section" id="mailing-lists-and-forums">
+<h3>Mailing lists and forums<a class="headerlink" href="#mailing-lists-and-forums" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><a class="reference external" href="http://lists.lopsa.org">lopsa-tech&#64;lopsa.org</a></li>
+<li><a class="reference external" href="https://www.usenix.org/lisa/mailinglist">lisa&#64;usenix.org</a></li>
+<li><a class="reference external" href="http://anitaborg.org/initiatives/systers/">systers [women in computing]</a></li>
+<li><a class="reference external" href="https://groups.google.com/forum/?hl=en&amp;fromgroups=#!forum/ops-education">ops-education Google group</a></li>
+</ul>
+</div>
+<div class="section" id="irc-channels">
+<h3>IRC Channels<a class="headerlink" href="#irc-channels" title="Permalink to this headline">¶</a></h3>
+<p>irc.freenode.net</p>
+<ul class="simple">
+<li><a class="reference external" href="http://webchat.freenode.net/?randomnick=1&amp;channels=OpsSchool&amp;prompt=1">#OpsSchool</a></li>
+<li><a class="reference external" href="https://lopsa.org/irc">#lopsa</a></li>
+<li><a class="reference external" href="http://infra-talk.org/">##infra-talk</a></li>
+</ul>
+</div>
+<div class="section" id="membership-organizations">
+<h3>Membership organizations<a class="headerlink" href="#membership-organizations" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><a class="reference external" href="https://www.usenix.org/lisa">USENIX LISA Special Interest Group (SIG)</a></li>
+<li><a class="reference external" href="https://lopsa.org/">League of Professional System Administrators (LOPSA)</a></li>
+</ul>
+</div>
+<div class="section" id="conferences-and-events">
+<h3>Conferences and Events<a class="headerlink" href="#conferences-and-events" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><a class="reference external" href="http://www.usenix.org">USENIX Large Installation System Administration (LISA)</a></li>
+<li><a class="reference external" href="http://velocityconf.com/">Velocity</a></li>
+<li><a class="reference external" href="http://www.socallinuxexpo.org/">Scale</a></li>
+<li><a class="reference external" href="http://www.ohiolinux.org/">Ohio LinuxFest</a></li>
+<li><a class="reference external" href="http://lopsa-east.org">Lopsa-East</a></li>
+<li><a class="reference external" href="http://casitconf.org">Cascadia</a></li>
+<li><a class="reference external" href="http://www.vmworld.com/index.jspa">VMWorld</a></li>
+<li><a class="reference external" href="http://toorcon.net/">Toorcon</a></li>
+<li><a class="reference external" href="http://www.blackhat.com/us-13/">Blackhat</a></li>
+<li><a class="reference external" href="https://www.derbycon.com/">Derby Con</a></li>
+<li><a class="reference external" href="http://www.defcon.org/">Def Con</a></li>
+<li><a class="reference external" href="http://www.shmoocon.org/">Schmoocon</a></li>
+<li><a class="reference external" href="http://northamerica.msteched.com/#fbid=arFawgdYKBY">TechEd</a></li>
+<li><a class="reference external" href="http://www.redhat.com/summit/">Redhat Summit</a></li>
+<li><a class="reference external" href="http://www.ciscolive.com/us/">Cisco Live!</a></li>
+<li><a class="reference external" href="http://h30614.www3.hp.com/discover/home?jumpid=ex_r11754_go_discover">HP Discover</a></li>
+<li><a class="reference external" href="http://www.emcworld.com/index.htm">EMC World</a></li>
+</ul>
+</div>
+<div class="section" id="subreddits">
+<h3>Subreddits<a class="headerlink" href="#subreddits" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><a class="reference external" href="http://www.reddit.com/r/sysadmin">/r/sysadmin</a></li>
+<li><a class="reference external" href="http://www.reddit.com/r/linuxadmin">/r/linuxadmin</a></li>
+<li><a class="reference external" href="http://www.reddit.com/r/commandline">/r/commandline</a></li>
+<li><a class="reference external" href="http://www.reddit.com/r/networking">/r/networking</a></li>
+<li><a class="reference external" href="http://www.reddit.com/r/netsec">/r/netsec</a></li>
+<li><a class="reference external" href="http://www.reddit.com/r/vim">/r/vim</a></li>
+<li><a class="reference external" href="http://www.reddit.com/r/python">/r/python</a></li>
+<li><a class="reference external" href="http://www.reddit.com/r/programming">/r/programming</a></li>
+<li><a class="reference external" href="http://www.reddit.com/r/learnprogramming">/r/learnprogramming</a></li>
+</ul>
+</div>
+<div class="section" id="podcasts">
+<h3>Podcasts<a class="headerlink" href="#podcasts" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><a class="reference external" href="https://www.grc.com/securitynow.htm">Security Now!</a> - Security</li>
+<li><a class="reference external" href="http://www.jupiterbroadcasting.com/tag/linux-action-show/">The Linux Action Show!</a> - Linux focused podcast</li>
+<li><a class="reference external" href="http://www.jupiterbroadcasting.com/">Techsnap</a> - Various IT topics</li>
+<li><a class="reference external" href="http://hak5.org/">Hak 5</a> - Hacking and security related</li>
+<li><a class="reference external" href="http://podnutz.com/pro">Podnutz Pro</a> - SMB system administration</li>
+<li><a class="reference external" href="http://twit.tv/ww">Windows Weekly</a> - Windows news</li>
+<li><a class="reference external" href="http://packetpushers.net/">Packet Pushers</a> - Networking</li>
+<li><a class="reference external" href="http://feeds.feedburner.com/RunasRadio">RunAs Radio</a> - Various IT topics</li>
+<li><a class="reference external" href="http://www.theucarchitects.com/">The UC Architects</a> - Exchange, Lync</li>
+<li><a class="reference external" href="http://powerscripting.wordpress.com/">The PowerScripting Podcast</a> - Powershell</li>
+<li><a class="reference external" href="http://twit.tv/show/floss-weekly">FLOSS Weekly</a> - All things Open Source</li>
+<li><a class="reference external" href="http://blog.stackoverflow.com/category/podcasts/">Stack Exchange Podcast</a> - Various Programming and administration topics</li>
+<li><a class="reference external" href="http://packetpushers.net/category/podcast-post/healthy-paranoia/">Healthy Paranoia</a> - Security</li>
+<li><a class="reference external" href="http://www.podnutz.com/myharddrivedied">My Hard Drive Died</a> - Anything and everything Hard Drive related</li>
+</ul>
+</div>
+<div class="section" id="rss-feeds">
+<h3>RSS Feeds<a class="headerlink" href="#rss-feeds" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="id1">
+<h3><a class="reference external" href="http://serverfault.com">ServerFault</a><a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<p>Sign up and participate.
+Ask your own questions, but also answer questions that look interesting to you.
+This will not only help the community, but can keep you sharp, even on technologies you don&#8217;t work with on a daily basis.</p>
+</div>
+<div class="section" id="books-and-concepts-worth-googling">
+<h3>Books (and concepts worth &#8220;Googling&#8221;)<a class="headerlink" href="#books-and-concepts-worth-googling" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>Time Management for System Administrators, Thomas Limoncelli</li>
+<li>The Practice of System and Network Administration, Thomas Limoncelli</li>
+<li>Web Operations, John Allspaw and Jesse Robbins</li>
+<li>The Art of Capacity Planning, John Allspaw</li>
+<li>Blueprints for High Availability, Evan Marcus and Hal Stern</li>
+<li>Resilience Engineering, Erik Hollnagel</li>
+<li>Human Error, James Reason</li>
+<li>To Engineer is Human, Henry Petroski</li>
+<li>To Forgive Design, Henry Petroski</li>
+</ul>
+</div>
+<div class="section" id="university-programs-that-teach-operations">
+<h3>University Programs that teach Operations<a class="headerlink" href="#university-programs-that-teach-operations" title="Permalink to this headline">¶</a></h3>
+<p>A list of System Administration or Ops related classes or degree granting programs.
+It would be well worth your time to compare their syllabi, course outcomes, exercises etc.</p>
+<ul class="simple">
+<li><a class="reference external" href="http://www.hioa.no/Studier/TKD/Master/Network-and-System-Administration/">http://www.hioa.no/Studier/TKD/Master/Network-and-System-Administration/</a></li>
+<li><a class="reference external" href="http://www.hioa.no/Studier/Summer/Network-and-system-administration">http://www.hioa.no/Studier/Summer/Network-and-system-administration</a></li>
+<li><a class="reference external" href="http://www.cs.stevens.edu/~jschauma/615/">http://www.cs.stevens.edu/~jschauma/615/</a></li>
+<li><a class="reference external" href="http://goo.gl/4ygBn">http://goo.gl/4ygBn</a></li>
+<li><a class="reference external" href="http://www.cs.fsu.edu/current/grad/cnsa_ms.php">http://www.cs.fsu.edu/current/grad/cnsa_ms.php</a></li>
+<li><a class="reference external" href="http://www.rit.edu/programs/applied-networking-and-system-administration-bs">http://www.rit.edu/programs/applied-networking-and-system-administration-bs</a></li>
+<li><a class="reference external" href="http://www.mtu.edu/technology/undergraduate/cnsa/">http://www.mtu.edu/technology/undergraduate/cnsa/</a></li>
+<li><a class="reference external" href="http://www.wit.edu/computer-science/programs/BSCN.html">http://www.wit.edu/computer-science/programs/BSCN.html</a></li>
+<li><a class="reference external" href="http://www.his.se/english/education/island/net--og-kerfisstjornun/">http://www.his.se/english/education/island/net&#8211;og-kerfisstjornun/</a></li>
+</ul>
+<p>LOPSA has an <a class="reference external" href="https://lists.lopsa.org/cgi-bin/mailman/listinfo/educators">educator&#8217;s list</a></p>
+<p>Aleksey&#8217;s <a class="reference external" href="http://www.verticalsysadmin.com/Report_on_programs_in_System_Administration__25-June-2012.pdf">report on university programs</a></p>
+</div>
+</div>
+</div>
+
+
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="seealso.html" class="btn btn-neutral float-right" title="See also"/>Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="labs.html" class="btn btn-neutral" title="Labs exercises"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2012, Avleen Vig (under Creative Commons license: https://github.com/opsschool/curriculum/blob/master/LICENSE).
+    </p>
+  </div>
+
+  <a href="https://github.com/snide/sphinx_rtd_theme">Sphinx theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'0.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

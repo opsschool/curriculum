@@ -1,0 +1,889 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Shells &mdash; Ops School Curriculum 0.1 documentation</title>
+  
+
+  
+  
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="top" title="Ops School Curriculum 0.1 documentation" href="index.html"/>
+        <link rel="up" title="Unix fundamentals 101" href="unix_101.html"/>
+        <link rel="next" title="Package management" href="package_management_101.html"/>
+        <link rel="prev" title="File systems" href="filesystems_101.html"/> 
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        <a href="index.html" class="fa fa-home"> Ops School Curriculum</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+        
+            <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="introduction.html#goals-and-focus">Goals and Focus</a></li>
+<li class="toctree-l2"><a class="reference internal" href="introduction.html#syllabus-layout">Syllabus layout</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="introduction.html#contributions">Contributions</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="introduction.html#how-we-ll-organize-work">How we&#8217;ll organize work</a></li>
+<li class="toctree-l2"><a class="reference internal" href="introduction.html#how-to-contribute">How to contribute</a></li>
+<li class="toctree-l2"><a class="reference internal" href="introduction.html#rewards-for-contributions">Rewards for contributions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="introduction.html#ops-school-videos">Ops School Videos</a></li>
+<li class="toctree-l2"><a class="reference internal" href="introduction.html#how-to-write-sections">How to write sections</a></li>
+<li class="toctree-l2"><a class="reference internal" href="introduction.html#overwriting-existing-content">Overwriting existing content</a></li>
+<li class="toctree-l2"><a class="reference internal" href="introduction.html#credits">Credits</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="meta/guidelines.html">Guidelines</a></li>
+<li class="toctree-l1"><a class="reference internal" href="careers.html">Careers in Operations</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="careers.html#deciding-a-career-path">Deciding a career path</a></li>
+<li class="toctree-l2"><a class="reference internal" href="careers.html#generalized-career-paths">Generalized career paths</a></li>
+<li class="toctree-l2"><a class="reference internal" href="careers.html#specialized-career-paths">Specialized career paths</a></li>
+<li class="toctree-l2"><a class="reference internal" href="careers.html#how-to-become-an-operations-engineer">How to become an operations engineer</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="sysadmin_101.html">Sysadmin 101</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="sysadmin_101.html#what-is-systems-administration">What is Systems Administration?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sysadmin_101.html#what-is-development">What is Development?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sysadmin_101.html#contrasting-development-and-operations">Contrasting Development and Operations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sysadmin_101.html#history-of-development-and-operations">History of Development and Operations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sysadmin_101.html#what-system-administration-isn-t">What System Administration Isn&#8217;t</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="reference internal" href="unix_101.html">Unix fundamentals 101</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="filesystems_101.html">File systems</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">Shells</a></li>
+<li class="toctree-l2"><a class="reference internal" href="package_management_101.html">Package management</a></li>
+<li class="toctree-l2"><a class="reference internal" href="boot_process_101.html">The Boot Process</a></li>
+<li class="toctree-l2"><a class="reference internal" href="shell_tools_101.html">Useful shell tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cron_101.html">Crontab</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="unix_201.html">Unix fundamentals 201</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="kernel_tuning.html">Kernel tuning</a></li>
+<li class="toctree-l2"><a class="reference internal" href="unix_signals.html">Signals</a></li>
+<li class="toctree-l2"><a class="reference internal" href="syscalls.html">Syscalls</a></li>
+<li class="toctree-l2"><a class="reference internal" href="netbooting.html">Booting over the network</a></li>
+<li class="toctree-l2"><a class="reference internal" href="inits.html"><tt class="docutils literal"><span class="pre">/bin/init</span></tt> and its descendants</a></li>
+<li class="toctree-l2"><a class="reference internal" href="stats_diagnosing.html">Looking at system metrics</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="windows_101.html">MS Windows fundamentals 101</a></li>
+<li class="toctree-l1"><a class="reference internal" href="text_editing_101.html">Text Editing 101</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="text_editing_101.html#a-little-history">A little history</a></li>
+<li class="toctree-l2"><a class="reference internal" href="text_editing_101.html#vi-basics"><tt class="docutils literal"><span class="pre">vi</span></tt> basics</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="text_editing_201.html">Text Editing 201</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="text_editing_201.html#vim">Vim</a></li>
+<li class="toctree-l2"><a class="reference internal" href="text_editing_201.html#emacs">Emacs</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="sysadmin_tools.html">Tools for productivity</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="sysadmin_tools.html#terminal-emulators">Terminal emulators</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sysadmin_tools.html#ssh">SSH</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sysadmin_tools.html#ssh-use-cases">SSH Use Cases</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sysadmin_tools.html#multiplexers">Multiplexers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sysadmin_tools.html#shell-customisations">Shell customisations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sysadmin_tools.html#mosh">Mosh</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sysadmin_tools.html#ticketing-systems">Ticketing systems</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sysadmin_tools.html#note-taking">Note-taking</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="security_101.html">Security 101</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="security_101.html#authentication-in-unix">Authentication in unix</a></li>
+<li class="toctree-l2"><a class="reference internal" href="security_101.html#adding-and-deleting-users-and-groups">Adding and deleting users and groups</a></li>
+<li class="toctree-l2"><a class="reference internal" href="security_101.html#standard-unix-filesystem-permissions">Standard unix filesystem permissions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="security_101.html#pam">PAM</a></li>
+<li class="toctree-l2"><a class="reference internal" href="security_101.html#chroot-jails-and-containers">Chroot, jails and containers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="security_101.html#sudo-or-why-you-should-not-log-in-as-root">Sudo (or, &#8220;Why you should not log in as root&#8221;)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="security_101.html#history-and-lore">History and Lore</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="security_201.html">Security 201</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="security_201.html#centralised-accounts">Centralised accounts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="security_201.html#firewalls-and-packet-filters">Firewalls and packet filters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="security_201.html#public-key-cryptography">Public Key Cryptography</a></li>
+<li class="toctree-l2"><a class="reference internal" href="security_201.html#two-factor-authentication">Two factor authentication</a></li>
+<li class="toctree-l2"><a class="reference internal" href="security_201.html#building-systems-to-be-auditable">Building systems to be auditable</a></li>
+<li class="toctree-l2"><a class="reference internal" href="security_201.html#network-intrusion-detection">Network Intrusion Detection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="security_201.html#host-intrusion-detection">Host Intrusion Detection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="security_201.html#defense-practices">Defense practices</a></li>
+<li class="toctree-l2"><a class="reference internal" href="security_201.html#risk-and-risk-management">Risk and risk management</a></li>
+<li class="toctree-l2"><a class="reference internal" href="security_201.html#compliance-the-bare-minimum">Compliance: The bare minimum</a></li>
+<li class="toctree-l2"><a class="reference internal" href="security_201.html#dealing-with-security-incidents">Dealing with security incidents</a></li>
+<li class="toctree-l2"><a class="reference internal" href="security_201.html#acls-and-extended-attributes-xattrs">ACLs and extended attributes (xattrs)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="security_201.html#selinux">SELinux</a></li>
+<li class="toctree-l2"><a class="reference internal" href="security_201.html#data-placement">Data placement</a></li>
+<li class="toctree-l2"><a class="reference internal" href="security_201.html#additional-reading">Additional reading</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="troubleshooting_101.html">Troubleshooting</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="troubleshooting_101.html#methodologies">Methodologies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="troubleshooting_101.html#working-effectively-during-a-crisis">Working effectively during a crisis</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="networking_101.html">Networking 101</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="networking_101.html#the-rfc-documents">The RFC Documents</a></li>
+<li class="toctree-l2"><a class="reference internal" href="networking_101.html#osi-7-layer-model-osi-reference-model">OSI 7-layer model (OSI Reference Model)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="networking_101.html#tcp-ip-arpa-4-layer-model">TCP/IP (ARPA) 4-layer model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="networking_101.html#ip-addressing">IP Addressing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="networking_101.html#tcp-vs-udp">TCP vs UDP</a></li>
+<li class="toctree-l2"><a class="reference internal" href="networking_101.html#subnetting-netmasks-and-cidr">Subnetting, netmasks and CIDR</a></li>
+<li class="toctree-l2"><a class="reference internal" href="networking_101.html#private-address-space-rfc-1918">Private address space (<strong>RFC 1918</strong>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="networking_101.html#static-routing">Static routing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="networking_101.html#nat">NAT</a></li>
+<li class="toctree-l2"><a class="reference internal" href="networking_101.html#networking-cable">Networking cable</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="networking_201.html">Networking 201</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="networking_201.html#vlans-802-1q-tagging">VLANs, 802.1q tagging</a></li>
+<li class="toctree-l2"><a class="reference internal" href="networking_201.html#spanning-tree">Spanning Tree</a></li>
+<li class="toctree-l2"><a class="reference internal" href="networking_201.html#static-routing">Static Routing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="networking_201.html#dynamic-routing-protocols-rip-ospf-bgp">Dynamic routing protocols (RIP, OSPF, BGP)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="networking_201.html#acls">ACLs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="networking_201.html#network-bonding-802-3ad-lacp-link-aggregation">Network Bonding (802.3ad / LACP link aggregation)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="networking_201.html#ios-switch-configuration">IOS switch configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="networking_201.html#gre-and-other-tunnels">GRE and other tunnels</a></li>
+<li class="toctree-l2"><a class="reference internal" href="networking_201.html#multi-homed-hosts">Multi-homed hosts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="networking_201.html#similarities-and-differences-between-ipv4-and-ipv6-networking">Similarities and differences between IPv4 and IPv6 networking</a></li>
+<li class="toctree-l2"><a class="reference internal" href="networking_201.html#implications-of-dual-stack-firewalls-especially-under-linux">Implications of dual-stack firewalls (especially under Linux)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="networking_201.html#multicast-uses-and-limitations">Multicast uses and limitations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="networking_201.html#latency-vs-bandwidth">Latency vs. Bandwidth</a></li>
+<li class="toctree-l2"><a class="reference internal" href="networking_201.html#vpns">VPNs</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="common_services.html">Common services</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="system_daemons_101.html">System daemons 101</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dns_101.html">DNS 101</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dns_201.html">DNS 201</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dhcp.html">DHCP</a></li>
+<li class="toctree-l2"><a class="reference internal" href="http_101.html">HTTP 101 (Core protocol)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="http_201.html">HTTP 201 (Application Servers &amp; Frameworks)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="smtp_101.html">SMTP 101</a></li>
+<li class="toctree-l2"><a class="reference internal" href="smtp_201.html">SMTP 201</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="identity_management.html">Identity Management 101</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="identity_management.html#ldap">LDAP</a></li>
+<li class="toctree-l2"><a class="reference internal" href="identity_management.html#nis">NIS</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="active_directory_101.html">Active Directory 101</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="active_directory_101.html#what-is-active-directory">What is Active Directory?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="active_directory_101.html#what-is-active-directory-used-for">What is Active Directory used for?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="active_directory_101.html#you-mention-separate-components-what-is-active-directory-composed-of">You mention &#8220;separate components&#8221;; what is Active Directory composed of?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="active_directory_101.html#what-specific-services-does-active-directory-provide">What specific services does Active Directory provide?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="active_directory_101.html#best-practices-for-managing-an-active-directory-installation">Best Practices for managing an Active Directory installation</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="active_directory_201.html">Active Directory 201</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="active_directory_201.html#detailed-breakdown-of-active-directory-components-services">Detailed Breakdown of Active Directory Components/Services</a></li>
+<li class="toctree-l2"><a class="reference internal" href="active_directory_201.html#advanced-active-directory-maintenance">Advanced Active Directory Maintenance</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="remote_filesystems_101.html">Remote Filesystems 101</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="remote_filesystems_101.html#nfsv3">NFSv3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="remote_filesystems_101.html#iscsi">iSCSI</a></li>
+<li class="toctree-l2"><a class="reference internal" href="remote_filesystems_101.html#samba-cifs">SAMBA/CIFS</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="remote_filesystems_201.html">Remote Filesystems 201</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="remote_filesystems_201.html#glusterfs">GlusterFS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="remote_filesystems_201.html#nfsv4">NFSv4</a></li>
+<li class="toctree-l2"><a class="reference internal" href="remote_filesystems_201.html#netatalk-afp">Netatalk / AFP</a></li>
+<li class="toctree-l2"><a class="reference internal" href="remote_filesystems_201.html#s3">S3</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="programming_101.html">Programming 101</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="programming_101.html#shell-scripting-basics">Shell scripting basics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="programming_101.html#regular-expressions">Regular Expressions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="programming_101.html#sed-awk">Sed &amp; awk</a></li>
+<li class="toctree-l2"><a class="reference internal" href="programming_101.html#gigo">GIGO</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="programming_201.html">Programming 201</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="programming_201.html#common-elements-in-scripting-and-what-they-do">Common elements in scripting, and what they do</a></li>
+<li class="toctree-l2"><a class="reference internal" href="programming_201.html#c-a-very-basic-overview">C (A very basic overview)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="programming_201.html#ruby">Ruby</a></li>
+<li class="toctree-l2"><a class="reference internal" href="programming_201.html#python">Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="programming_201.html#version-control">Version Control</a></li>
+<li class="toctree-l2"><a class="reference internal" href="programming_201.html#api-design-fundamentals">API design fundamentals</a></li>
+<li class="toctree-l2"><a class="reference internal" href="programming_201.html#continuous-integration">Continuous Integration</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="hardware_101.html">Hardware 101</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="hardware_101.html#hardware-types">Hardware Types</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hardware_101.html#basic-server-architecture">Basic server architecture</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hardware_101.html#disk-management">Disk management</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hardware_101.html#performance-redundancy">Performance/Redundancy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hardware_101.html#troubleshooting">Troubleshooting</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="datacenters/datacenters_101.html">Datacenters 101</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="datacenters/datacenters_101.html#power-budgets">Power budgets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="datacenters/datacenters_101.html#cooling-budgets">Cooling budgets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="datacenters/datacenters_101.html#you-will-be-judged-by-the-tidiness-of-your-rack">You will be judged by the tidiness of your rack</a></li>
+<li class="toctree-l2"><a class="reference internal" href="datacenters/datacenters_101.html#machine-and-cable-labeling">Machine and cable labeling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="datacenters/datacenters_101.html#traditional-naming-conventions">Traditional naming conventions</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="datacenters/datacenters_201.html">Datacenters 201</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="datacenters/datacenters_201.html#networking-many-racks">Networking many racks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="datacenters/datacenters_201.html#power">Power</a></li>
+<li class="toctree-l2"><a class="reference internal" href="datacenters/datacenters_201.html#cooling">Cooling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="datacenters/datacenters_201.html#physical-security-and-common-security-standards-compliance-requirements">Physical security and common security standards compliance requirements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="datacenters/datacenters_201.html#suggested-practices">Suggested practices</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="datacenters/datacenters_301.html">Datacenters 301</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="datacenters/datacenters_301.html#power">Power</a></li>
+<li class="toctree-l2"><a class="reference internal" href="datacenters/datacenters_301.html#increasing-cooling-efficiency">Increasing cooling efficiency</a></li>
+<li class="toctree-l2"><a class="reference internal" href="datacenters/datacenters_301.html#design-options">Design Options</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="virtualization_101.html">Virtualization 101</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="virtualization_101.html#intro-to-virtualization-technologies">Intro to virtualization technologies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="virtualization_101.html#the-cloud">The Cloud</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="virtualization_201.html">Virtualization 201</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="virtualization_201.html#managing-virtualized-infrastructures-private-clouds">Managing virtualized infrastructures (Private clouds)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="virtualization_201.html#leveraging-virtualization-for-development">Leveraging virtualization for development</a></li>
+<li class="toctree-l2"><a class="reference internal" href="virtualization_201.html#leveraging-virtualization-for-production">Leveraging virtualization for production</a></li>
+<li class="toctree-l2"><a class="reference internal" href="virtualization_201.html#security-implications-of-virtualization">Security implications of virtualization</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="logs_101.html">Logs 101</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="logs_101.html#common-system-logs-formats">Common system logs &amp; formats</a></li>
+<li class="toctree-l2"><a class="reference internal" href="logs_101.html#standard-error">Standard Error</a></li>
+<li class="toctree-l2"><a class="reference internal" href="logs_101.html#log-files">Log files</a></li>
+<li class="toctree-l2"><a class="reference internal" href="logs_101.html#syslog">Syslog</a></li>
+<li class="toctree-l2"><a class="reference internal" href="logs_101.html#log-rotation-append-truncate">Log rotation, append, truncate</a></li>
+<li class="toctree-l2"><a class="reference internal" href="logs_101.html#retention-and-archival">Retention and archival</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="logs_201.html">Logs 201</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="logs_201.html#centralized-logging">Centralized logging</a></li>
+<li class="toctree-l2"><a class="reference internal" href="logs_201.html#log-parsing">Log parsing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="logs_201.html#search-correlation">Search &amp; Correlation</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="databases_101.html">Databases 101 (Relational Databases)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="databases_101.html#what-is-a-database">What is a Database?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="databases_101.html#what-is-a-relational-database">What is a Relational Database?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="databases_101.html#why-we-use-databases">Why We Use Databases?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="databases_101.html#what-is-sql">What is SQL?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="databases_101.html#sql-shell">SQL shell</a></li>
+<li class="toctree-l2"><a class="reference internal" href="databases_101.html#creating-databases">Creating databases</a></li>
+<li class="toctree-l2"><a class="reference internal" href="databases_101.html#creating-users">Creating users</a></li>
+<li class="toctree-l2"><a class="reference internal" href="databases_101.html#granting-privileges">Granting privileges</a></li>
+<li class="toctree-l2"><a class="reference internal" href="databases_101.html#removing-privileges">Removing Privileges</a></li>
+<li class="toctree-l2"><a class="reference internal" href="databases_101.html#basic-normalized-schema-design">Basic normalized schema design</a></li>
+<li class="toctree-l2"><a class="reference internal" href="databases_101.html#select-insert-update-and-delete">Select, Insert, Update and Delete</a></li>
+<li class="toctree-l2"><a class="reference internal" href="databases_101.html#pro-tips">Pro Tips</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="databases_201.html">Databases 201</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="databases_201.html#database-theory">Database Theory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="databases_201.html#document-databases">Document Databases</a></li>
+<li class="toctree-l2"><a class="reference internal" href="databases_201.html#key-value-stores">Key-value Stores</a></li>
+<li class="toctree-l2"><a class="reference internal" href="databases_201.html#graph-databases">Graph Databases</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="application_components_201.html">Application Components 201</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="application_components_201.html#message-brokers">Message Brokers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="application_components_201.html#memory-caches">Memory Caches</a></li>
+<li class="toctree-l2"><a class="reference internal" href="application_components_201.html#specialized-caches">Specialized Caches</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="loadbalancing_101.html">Load Balancing</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="loadbalancing_101.html#why-do-we-use-load-balancers">Why do we use load balancers?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="loadbalancing_101.html#application-implications">Application implications</a></li>
+<li class="toctree-l2"><a class="reference internal" href="loadbalancing_101.html#non-http-use-cases">Non-HTTP use cases</a></li>
+<li class="toctree-l2"><a class="reference internal" href="loadbalancing_101.html#software">Software</a></li>
+<li class="toctree-l2"><a class="reference internal" href="loadbalancing_101.html#hardware">Hardware</a></li>
+<li class="toctree-l2"><a class="reference internal" href="loadbalancing_101.html#multi-dc">Multi-dc</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="monitoring_101.html">Monitoring, Notifications, and Metrics 101</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="monitoring_101.html#history-how-we-used-to-monitor-and-how-we-got-better-monitors-as-tests">History: How we used to monitor, and how we got better (monitors as tests)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="monitoring_101.html#perspective-end-to-end-vs-introspective-monitoring">Perspective (end-to-end) vs Introspective monitoring</a></li>
+<li class="toctree-l2"><a class="reference internal" href="monitoring_101.html#metrics-what-to-collect-what-to-do-with-them">Metrics: what to collect, what to do with them</a></li>
+<li class="toctree-l2"><a class="reference internal" href="monitoring_101.html#common-tools">Common tools</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="monitoring_201.html">Monitoring, Notifications, and Metrics 201</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="monitoring_201.html#dataviz-graphing">Dataviz &amp; Graphing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="monitoring_201.html#graphite-statsd">Graphite, StatsD</a></li>
+<li class="toctree-l2"><a class="reference internal" href="monitoring_201.html#dashboard-info-for-ops-and-info-for-the-business">Dashboard: Info for ops and info for the business</a></li>
+<li class="toctree-l2"><a class="reference internal" href="monitoring_201.html#third-party-tools">Third-party tools</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="bcp.html">Business Continuity Planning</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="backups.html">Backups</a></li>
+<li class="toctree-l2"><a class="reference internal" href="outages.html">Outages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="postmortems.html">Postmortems</a></li>
+<li class="toctree-l2"><a class="reference internal" href="disaster_recovery.html">Disaster Recovery</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="architecture_101.html">Architecture 101</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="architecture_101.html#how-to-make-good-architecture-decisions">How to make good architecture decisions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="architecture_101.html#patterns-and-anti-patterns">Patterns and anti-patterns</a></li>
+<li class="toctree-l2"><a class="reference internal" href="architecture_101.html#introduction-to-availability">Introduction to availability</a></li>
+<li class="toctree-l2"><a class="reference internal" href="architecture_101.html#introduction-to-scalability">Introduction to scalability</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="architecture_201.html">Architecture 201</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="architecture_201.html#service-oriented-architectures">Service Oriented Architectures</a></li>
+<li class="toctree-l2"><a class="reference internal" href="architecture_201.html#fault-tolerance-fault-protection-masking-dependability-fundamentals">Fault tolerance, fault protection, masking, dependability fundamentals</a></li>
+<li class="toctree-l2"><a class="reference internal" href="architecture_201.html#caching-concerns">Caching Concerns</a></li>
+<li class="toctree-l2"><a class="reference internal" href="architecture_201.html#crash-only">Crash only</a></li>
+<li class="toctree-l2"><a class="reference internal" href="architecture_201.html#synchronous-vs-asynchronous">Synchronous vs. Asynchronous</a></li>
+<li class="toctree-l2"><a class="reference internal" href="architecture_201.html#business-continuity-vs-disaster-recovery">Business continuity vs. Disaster Recovery</a></li>
+<li class="toctree-l2"><a class="reference internal" href="architecture_201.html#designing-for-scalability-horizontal-vertical">Designing for Scalability: Horizontal, Vertical</a></li>
+<li class="toctree-l2"><a class="reference internal" href="architecture_201.html#simplicity">Simplicity</a></li>
+<li class="toctree-l2"><a class="reference internal" href="architecture_201.html#performance">Performance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="architecture_201.html#tiered-architectures">Tiered architectures</a></li>
+<li class="toctree-l2"><a class="reference internal" href="architecture_201.html#mttr-mtbf">MTTR &gt; MTBF</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="config_management.html">Configuration Management 101</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="config_management.html#a-brief-history-of-configuration-management">A Brief History of Configuration Management</a></li>
+<li class="toctree-l2"><a class="reference internal" href="config_management.html#idempotence">Idempotence</a></li>
+<li class="toctree-l2"><a class="reference internal" href="config_management.html#convergent-and-congruent-systems">Convergent and Congruent systems</a></li>
+<li class="toctree-l2"><a class="reference internal" href="config_management.html#direct-and-indirect-systems-ansible-capistrano">Direct and Indirect systems: ansible, capistrano</a></li>
+<li class="toctree-l2"><a class="reference internal" href="config_management.html#chef">Chef</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="config_management.html#configuration-management-201">Configuration Management 201</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="config_management.html#ansible">Ansible</a></li>
+<li class="toctree-l2"><a class="reference internal" href="config_management.html#puppet">Puppet</a></li>
+<li class="toctree-l2"><a class="reference internal" href="config_management.html#cfengine-3">Cfengine 3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="config_management.html#saltstack">SaltStack</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="capacity_planning.html">Capacity Planning</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="capacity_planning.html#fundamentals-of-capacity-planning">Fundamentals of capacity planning</a></li>
+<li class="toctree-l2"><a class="reference internal" href="capacity_planning.html#forecasting">Forecasting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="capacity_planning.html#diagonal-scaling">Diagonal scaling</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="statistics.html">Statistics For Engineers</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="statistics.html#normal-distributions">Normal distributions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="statistics.html#percentiles-histograms-averages-mean-medians">Percentiles, histograms, averages, mean, medians</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="deployment_101.html">Software Deployment 101</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="deployment_101.html#software-deployment-vs-configuration-management">Software deployment vs configuration management</a></li>
+<li class="toctree-l2"><a class="reference internal" href="deployment_101.html#running-services">Running services</a></li>
+<li class="toctree-l2"><a class="reference internal" href="deployment_101.html#package-management">Package management</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="deployment_201.html">Software Deployment 201</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="deployment_201.html#running-services">Running services</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="soft_skills_101.html">Soft Skills 101</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="soft_skills_101.html#communication-basics">Communication basics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="soft_skills_101.html#communication-modes">Communication Modes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="soft_skills_101.html#special-cases-for-operations">Special cases for operations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="soft_skills_101.html#time-management">Time Management</a></li>
+<li class="toctree-l2"><a class="reference internal" href="soft_skills_101.html#project-management">Project Management</a></li>
+<li class="toctree-l2"><a class="reference internal" href="soft_skills_101.html#the-tao-of-devops">The Tao of DevOps</a></li>
+<li class="toctree-l2"><a class="reference internal" href="soft_skills_101.html#the-importance-of-documentation">The importance of Documentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="soft_skills_101.html#working-with-other-teams">Working with other teams</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="soft_skills_201.html">Soft Skills 201</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="soft_skills_201.html#business-acumen-in-operations">Business Acumen in Operations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="soft_skills_201.html#understanding-the-role-of-operations">Understanding the role of operations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="soft_skills_201.html#thinking-broadly">Thinking broadly</a></li>
+<li class="toctree-l2"><a class="reference internal" href="soft_skills_201.html#promoting-change">Promoting Change</a></li>
+<li class="toctree-l2"><a class="reference internal" href="soft_skills_201.html#building-basic-business-skills">Building basic business skills</a></li>
+<li class="toctree-l2"><a class="reference internal" href="soft_skills_201.html#specific-examples">Specific Examples</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="labs.html">Labs exercises</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="labs.html#bare-metal-provisioning-101">Bare-Metal Provisioning 101</a></li>
+<li class="toctree-l2"><a class="reference internal" href="labs.html#bare-metal-provisioning-201">Bare-Metal Provisioning 201</a></li>
+<li class="toctree-l2"><a class="reference internal" href="labs.html#cloud-provisioning-101">Cloud Provisioning 101</a></li>
+<li class="toctree-l2"><a class="reference internal" href="labs.html#cloud-provisioning-201">Cloud Provisioning 201</a></li>
+<li class="toctree-l2"><a class="reference internal" href="labs.html#database-101">Database 101</a></li>
+<li class="toctree-l2"><a class="reference internal" href="labs.html#database-201">Database 201</a></li>
+<li class="toctree-l2"><a class="reference internal" href="labs.html#database-301">Database 301</a></li>
+<li class="toctree-l2"><a class="reference internal" href="labs.html#automation-101">Automation 101</a></li>
+<li class="toctree-l2"><a class="reference internal" href="labs.html#automation-chef-201">Automation - Chef 201</a></li>
+<li class="toctree-l2"><a class="reference internal" href="labs.html#automation-chef-301">Automation - Chef 301</a></li>
+<li class="toctree-l2"><a class="reference internal" href="labs.html#automation-chef-302">Automation - Chef 302</a></li>
+<li class="toctree-l2"><a class="reference internal" href="labs.html#automation-puppet-201">Automation - Puppet 201</a></li>
+<li class="toctree-l2"><a class="reference internal" href="labs.html#automation-puppet-301">Automation - Puppet 301</a></li>
+<li class="toctree-l2"><a class="reference internal" href="labs.html#package-management-101">Package Management 101</a></li>
+<li class="toctree-l2"><a class="reference internal" href="labs.html#package-management-201">Package Management 201</a></li>
+<li class="toctree-l2"><a class="reference internal" href="labs.html#build-automation-fleets">Build automation fleets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="labs.html#version-control-with-git-101">Version Control with Git 101</a></li>
+<li class="toctree-l2"><a class="reference internal" href="labs.html#dns-101">DNS 101</a></li>
+<li class="toctree-l2"><a class="reference internal" href="labs.html#http-101">HTTP 101</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="learning.html">Learning and the Community</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="learning.html#learning-and-strategies-for-improvement">Learning and strategies for improvement</a></li>
+<li class="toctree-l2"><a class="reference internal" href="learning.html#things-to-keep-in-mind-as-you-learn-how-to-be-an-engineer">Things to keep in mind as you learn how to be an engineer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="learning.html#golden-rules-for-careers-in-ops">Golden rules for careers in ops</a></li>
+<li class="toctree-l2"><a class="reference internal" href="learning.html#where-to-look-for-help-in-the-community">Where to look for help in the community</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="seealso.html">See also</a></li>
+<li class="toctree-l1"><a class="reference internal" href="meta/contributions.html">Contributions</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="meta/contributions.html#how-we-ll-organize-work">How we&#8217;ll organize work</a></li>
+<li class="toctree-l2"><a class="reference internal" href="meta/contributions.html#how-to-contribute">How to contribute</a></li>
+<li class="toctree-l2"><a class="reference internal" href="meta/contributions.html#rewards-for-contributions">Rewards for contributions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="meta/contributions.html#ops-school-videos">Ops School Videos</a></li>
+<li class="toctree-l2"><a class="reference internal" href="meta/contributions.html#how-to-write-sections">How to write sections</a></li>
+<li class="toctree-l2"><a class="reference internal" href="meta/contributions.html#overwriting-existing-content">Overwriting existing content</a></li>
+<li class="toctree-l2"><a class="reference internal" href="meta/contributions.html#credits">Credits</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="meta/conventions.html">Conventions</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="meta/conventions.html#style-guide">Style Guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="meta/conventions.html#sample-network">Sample Network</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="meta/style_guide.html">Style Guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="meta/style_guide.html#editing">Editing</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="glossary.html">Glossary</a></li>
+</ul>
+
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="index.html">Ops School Curriculum</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="unix_101.html">Unix fundamentals 101</a> &raquo;</li>
+      
+    <li>Shells</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          <a href="_sources/shells_101.txt" rel="nofollow"> View page source</a>
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            
+  <div class="section" id="shells">
+<h1>Shells<a class="headerlink" href="#shells" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="what-is-a-shell">
+<h2>What is a shell?<a class="headerlink" href="#what-is-a-shell" title="Permalink to this headline">¶</a></h2>
+<p>A [Li|U]nix shell is the command-line interface between the user and the system.
+It is used to perform some action, specifically, typing commands and displaying
+output, requested by the user.</p>
+</div>
+<div class="section" id="introduction-to-bash">
+<h2>Introduction to Bash<a class="headerlink" href="#introduction-to-bash" title="Permalink to this headline">¶</a></h2>
+<p><strong>Bash</strong> is known as the Bourne-again shell, written by Brian Fox, and is a play
+on the name of the previously named Bourne shell (/bin/sh) written by Steve
+Bourne. <a class="footnote-reference" href="#f1" id="id1">[1]</a></p>
+</div>
+<div class="section" id="shell-fundamentals">
+<h2>Shell Fundamentals<a class="headerlink" href="#shell-fundamentals" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="command-line-editing-modes">
+<h3>Command-line Editing Modes<a class="headerlink" href="#command-line-editing-modes" title="Permalink to this headline">¶</a></h3>
+<p>Over time, as one progresses with using the shell, it will become necessary to execute
+commands that may contain many arguments or have output piped to other commands.  Beyond
+simple commands such as <tt class="docutils literal"><span class="pre">cat</span></tt> and <tt class="docutils literal"><span class="pre">ls</span></tt>, it can be tedious should one need to re-type,
+or, in most cases, edit, a given command.  Luckily, <tt class="docutils literal"><span class="pre">bash</span></tt> provides a facility to make
+this scenario easier: the command-line editing mode.</p>
+<p>The command-line editing mode emulates the movement functions of two common text editors,
+<tt class="docutils literal"><span class="pre">emacs</span></tt> and <tt class="docutils literal"><span class="pre">vi</span></tt>.  In the case of the shell, the cursor&#8217;s movement is being controlled.
+.. todo: Tighten up the above sentence.  It&#8217;s wordy and doesn&#8217;t seem to make the point I want it to make.</p>
+<p>By default, <tt class="docutils literal"><span class="pre">bash</span></tt> operates in <tt class="docutils literal"><span class="pre">emacs</span></tt> mode.</p>
+<div class="section" id="example-edit-commands">
+<h4>Example Edit Commands<a class="headerlink" href="#example-edit-commands" title="Permalink to this headline">¶</a></h4>
+<p>The following commands are very common while using the <tt class="docutils literal"><span class="pre">emacs</span></tt> mode.</p>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">Ctrl-b</span></tt>: Move backward by one character</li>
+<li><tt class="docutils literal"><span class="pre">Ctrl-f</span></tt>: Move forward by one character</li>
+<li><tt class="docutils literal"><span class="pre">Ctrl-a</span></tt>: Move to the beginning of the line</li>
+<li><tt class="docutils literal"><span class="pre">Ctrl-e</span></tt>: Move to the end of the line</li>
+<li><tt class="docutils literal"><span class="pre">Ctrl-k</span></tt>: Delete from the cursor forward</li>
+<li><tt class="docutils literal"><span class="pre">Ctrl-u</span></tt>: Delete from the cursor backward</li>
+<li><tt class="docutils literal"><span class="pre">Ctrl-r</span></tt>: Search the command history</li>
+</ul>
+</div>
+<div class="section" id="setting-the-mode">
+<h4>Setting the Mode<a class="headerlink" href="#setting-the-mode" title="Permalink to this headline">¶</a></h4>
+<p>One can manually set the desired mode using the below commands.</p>
+<ul>
+<li><p class="first"><tt class="docutils literal"><span class="pre">emacs</span></tt></p>
+<p><tt class="docutils literal"><span class="pre">set</span> <span class="pre">-o</span> <span class="pre">emacs</span></tt></p>
+</li>
+<li><p class="first"><tt class="docutils literal"><span class="pre">vi</span></tt></p>
+<p><tt class="docutils literal"><span class="pre">set</span> <span class="pre">-o</span> <span class="pre">vi</span></tt></p>
+</li>
+</ul>
+<p>See <a class="reference internal" href="text_editing_101.html"><em>Text Editing 101</em></a> for details on appropriate edit commands to use on
+the command line.</p>
+</div>
+</div>
+<div class="section" id="environment-variables">
+<h3>Environment variables<a class="headerlink" href="#environment-variables" title="Permalink to this headline">¶</a></h3>
+<p>Environment variables are used to define values for often-used attributes of a
+user&#8217;s shell. In total, these variables define the user&#8217;s environment. Some
+environment variables provide a simple value describing some basic attribute,
+such the user&#8217;s current directory (<tt class="docutils literal"><span class="pre">$PWD</span></tt>). Others define the behavior of a
+command, such as whether or not the <tt class="docutils literal"><span class="pre">history</span></tt> command should log repeated
+commands individually or log the repeated command once (<tt class="docutils literal"><span class="pre">$HISTCONTROL</span></tt>).</p>
+<div class="section" id="path">
+<h4>$PATH<a class="headerlink" href="#path" title="Permalink to this headline">¶</a></h4>
+<p>The most common, or most recognized, environment variable is the <tt class="docutils literal"><span class="pre">$PATH</span></tt>
+variable. It defines the set of directories that the shell can search to find a
+command. Without an explicit path provided when calling a command (i.e. <tt class="docutils literal"><span class="pre">/bin/ps</span></tt>),
+the shell will search the directories listed in the <tt class="docutils literal"><span class="pre">$PATH</span></tt> variable until it
+finds the command. If the command is not found in any of the defined directories
+in <tt class="docutils literal"><span class="pre">$PATH</span></tt>, the shell will produce an error explaining as much.</p>
+<div class="highlight-python"><div class="highlight"><pre>$ foobar -V
+-bash: foobar: command not found
+</pre></div>
+</div>
+<p>To view the contents of the <tt class="docutils literal"><span class="pre">$PATH</span></tt> variable, use <tt class="docutils literal"><span class="pre">echo</span></tt> to print the variable&#8217;s value:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ echo $PATH
+/usr/local/sbin:/sbin:/bin:/usr/sbin:/usr/bin:/usr/local/bin
+</pre></div>
+</div>
+<p>The order of the directories in the <tt class="docutils literal"><span class="pre">$PATH</span></tt> variable, from left to right, is
+important; when searching directories for a command, the shell will stop looking
+after it finds its first match.
+In other words, using our example <tt class="docutils literal"><span class="pre">$PATH</span></tt> variable above, if there is a
+version of <tt class="docutils literal"><span class="pre">ps</span></tt> that exists in <tt class="docutils literal"><span class="pre">/usr/local/bin</span></tt> that is preferred (by the sysadmin)
+over the version that exists in <tt class="docutils literal"><span class="pre">/bin</span></tt>, the shell will still execute <tt class="docutils literal"><span class="pre">/bin/ps</span></tt>
+due to the precedence of the directories defined in the <tt class="docutils literal"><span class="pre">$PATH</span></tt> variable.</p>
+<p>To list all of the shell&#8217;s environment variables, use the <tt class="docutils literal"><span class="pre">env</span></tt> command:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ env
+HOSTNAME=foobar
+SHELL=/bin/bash
+TERM=xterm
+HISTSIZE=1000
+USER=root
+PATH=/usr/local/sbin:/sbin:/bin:/usr/sbin:/usr/bin:/root/bin:/usr/local/bin
+MAIL=/var/spool/mail/root
+PWD=/root/curriculum
+PS1=[\[\e[33;1m\]\t \[\e[31;1m\]\u\[\e[0m\]@\[\e[31;1m\]\h\[\e[0m\] \W\[\e[0m\]]#
+HISTCONTROL=ignoredups
+SHLVL=1
+SUDO_COMMAND=/bin/bash
+HOME=/root
+HISTTIMEFORMAT=[%Y-%m-%d %H:%M:%S]
+OLDPWD=/tmp
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="shell-profiles">
+<h3>Shell Profiles<a class="headerlink" href="#shell-profiles" title="Permalink to this headline">¶</a></h3>
+<p>Shell profiles are used to define a user&#8217;s environment.  In cases where an environment variable
+needs to be set or a script needs to be run at login, a profile can be used to ensure this
+happens consistently and automatically.  Anything that can be run in a standalone shell
+script can be placed in a profile.</p>
+<p>There are two types of profiles:</p>
+<ul class="simple">
+<li>Global profile (<tt class="docutils literal"><span class="pre">/etc/profile</span></tt>)</li>
+<li>User profile (<tt class="docutils literal"><span class="pre">~/.bash_profile</span></tt>)</li>
+</ul>
+<div class="section" id="etc-profile">
+<h4><tt class="docutils literal"><span class="pre">/etc/profile</span></tt><a class="headerlink" href="#etc-profile" title="Permalink to this headline">¶</a></h4>
+<p>This is the global profile.  Any environment variable set in this file applies to all users.
+Any script called from this file is executed for all users.</p>
+</div>
+<div class="section" id="bash-profile">
+<h4><tt class="docutils literal"><span class="pre">~/.bash_profile</span></tt><a class="headerlink" href="#bash-profile" title="Permalink to this headline">¶</a></h4>
+<p>This is the user profile.  Any environment variable set in this file applies to the user only.
+Any script called from this file is executed for the user only.</p>
+<div class="section" id="profile-precedence">
+<h5>Profile Precedence<a class="headerlink" href="#profile-precedence" title="Permalink to this headline">¶</a></h5>
+<p><strong>NOTE</strong>: It is possible to override settings from <tt class="docutils literal"><span class="pre">/etc/profile</span></tt> via <tt class="docutils literal"><span class="pre">~/.bash_profile</span></tt> as <tt class="docutils literal"><span class="pre">~/.bash_profile</span></tt>
+is executed after <tt class="docutils literal"><span class="pre">/etc/profile</span></tt>.</p>
+</div>
+</div>
+</div>
+<div class="section" id="special-environment-variables">
+<h3>Special Environment Variables<a class="headerlink" href="#special-environment-variables" title="Permalink to this headline">¶</a></h3>
+<p>Certain variables exist that provide useful information about what is happening in the environment.
+For example, it may be necessary to know the ID of a running process or the exit status of an executed command.</p>
+<div class="section" id="process-id">
+<h4>Process ID: <tt class="docutils literal"><span class="pre">$$</span></tt><a class="headerlink" href="#process-id" title="Permalink to this headline">¶</a></h4>
+<p>To determine the process ID (PID) of the current shell, first run <tt class="docutils literal"><span class="pre">ps</span></tt> to find the PID, then run <tt class="docutils literal"><span class="pre">echo</span> <span class="pre">$$</span></tt>
+to confirm the PID.</p>
+<div class="highlight-python"><div class="highlight"><pre>$ ps -efl | grep bash
+ 502 20440 20439   0 10:25PM ttys001    0:00.01 -bash                4006  31  0  2433436   1228 -      S                   0
+ 502 20447 20440   0 10:29PM ttys001    0:00.00 grep bash            4006  31  0  2432768    620 -      R+                  0
+$ echo $$
+20440
+</pre></div>
+</div>
+</div>
+<div class="section" id="background-process-id">
+<h4>Background Process ID: <tt class="docutils literal"><span class="pre">$!</span></tt><a class="headerlink" href="#background-process-id" title="Permalink to this headline">¶</a></h4>
+<p>Occasionally, commands will need to be executed in the background (via the <tt class="docutils literal"><span class="pre">&amp;</span></tt> operator).  The PID of that process
+can be found using the <tt class="docutils literal"><span class="pre">$!</span></tt> variable.  For example, call <tt class="docutils literal"><span class="pre">sleep</span></tt> for 30 seconds and place it in the background.
+Then <tt class="docutils literal"><span class="pre">echo</span> <span class="pre">$!</span></tt> to see the PID.  Alternatively, call <tt class="docutils literal"><span class="pre">ps</span></tt> to confirm the PID.</p>
+<div class="highlight-python"><div class="highlight"><pre>$ sleep 30 &amp;
+[1] 20450
+$ echo $!
+20450
+$ ps -efl | grep sleep
+502 20450 20440   0 10:33PM ttys001    0:00.00 sleep 30             4006  31  0  2432748    496 -      S                   0
+</pre></div>
+</div>
+</div>
+<div class="section" id="exit-status">
+<h4>Exit Status: <tt class="docutils literal"><span class="pre">$?</span></tt><a class="headerlink" href="#exit-status" title="Permalink to this headline">¶</a></h4>
+<p>When a command is executed, it always has an exit status.  That status defines whether or not the command was successful.
+For success, the exit status is <strong>0</strong>.  Non-zero values denote failure.  Many commands provide multiple exit codes to help
+define what the reason for failure was.  This helps the user troubleshoot any problems.</p>
+<p>As an example, try to list a known file within a user&#8217;s home directory, then list a file that is known <strong>not</strong> to exist.
+After each command, execute <tt class="docutils literal"><span class="pre">echo</span> <span class="pre">$?</span></tt> to see the exit status.</p>
+<div class="highlight-python"><div class="highlight"><pre>$ ls .bash_profile
+.bash_profile
+$ echo $?
+0
+$ ls foobar
+ls: foobar: No such file or directory
+$ echo $?
+1
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="history">
+<h3>History<a class="headerlink" href="#history" title="Permalink to this headline">¶</a></h3>
+<p>The history is a handy facility within <tt class="docutils literal"><span class="pre">bash</span></tt>; it stores all of the commands that the user has executed.</p>
+<p>To see the history, simply type <tt class="docutils literal"><span class="pre">history</span></tt> and all of the stored commands will be displayed to the terminal.
+Similarily, run <tt class="docutils literal"><span class="pre">cat</span> <span class="pre">~/.bash_history</span></tt> to see all stored commands.</p>
+<div class="section" id="re-executing-commands">
+<h4>Re-executing Commands<a class="headerlink" href="#re-executing-commands" title="Permalink to this headline">¶</a></h4>
+<p>A benefit of storing command history is that the commands can be easily recalled.  To execute the last command,
+type <tt class="docutils literal"><span class="pre">!!</span></tt>:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ ls
+file1 file2 dir1
+$ !!
+ls
+file1 file2 dir1
+</pre></div>
+</div>
+<p>Note that the last command is echoed just above the output of that command.</p>
+<p>To execute the nth command in history, run <tt class="docutils literal"><span class="pre">!n</span></tt> where <tt class="docutils literal"><span class="pre">n</span></tt> is the line number of the command as found in the
+output of <tt class="docutils literal"><span class="pre">history</span></tt>:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ history | less
+  1  ls -la
+  2  ls -F
+  3  pwd
+$ !2
+ls -F
+file1 file2 dir1/
+</pre></div>
+</div>
+<div class="section" id="searching-history">
+<h5>Searching History<a class="headerlink" href="#searching-history" title="Permalink to this headline">¶</a></h5>
+<p>Finally, one can search the history by typing <tt class="docutils literal"><span class="pre">Ctlr-r</span></tt> followed by a string to match a command:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ (reverse-i-search)`ls&#39;: ls -F
+</pre></div>
+</div>
+<p>To execute the command (if a match is found), simply type Enter.</p>
+</div>
+</div>
+</div>
+<div class="section" id="job-control">
+<h3>Job control<a class="headerlink" href="#job-control" title="Permalink to this headline">¶</a></h3>
+<p>From time to time, it may be necessary to manage commands running in the background.  These are typically referred to as jobs.
+A command can be placed in the background via the <tt class="docutils literal"><span class="pre">&amp;</span></tt> operator.  Use the <tt class="docutils literal"><span class="pre">jobs</span></tt> command to see the job in the background.
+To bring it back to the foreground, run <tt class="docutils literal"><span class="pre">fg</span></tt>:</p>
+<div class="highlight-python"><div class="highlight"><pre>[23:24:22 ~]$ sleep 30 &amp;
+[1] 20969
+[23:24:26 ~]$ jobs
+[1]+  Running                 sleep 30 &amp;
+[23:24:29 ~]$ fg
+sleep 30
+[23:24:56 ~]$
+</pre></div>
+</div>
+<p>While in the foreground, the job can be suspended via <tt class="docutils literal"><span class="pre">Ctrl-z</span></tt> and sent to the background once more using <tt class="docutils literal"><span class="pre">bg</span></tt>:</p>
+<div class="highlight-python"><div class="highlight"><pre>[23:24:56  ~]$ sleep 30 &amp;
+[1] 21078
+[23:28:25  ~]$ jobs
+[1]+  Running                 sleep 30 &amp;
+[23:28:27  ~]$ fg
+sleep 30
+^Z
+[1]+  Stopped                 sleep 30
+[23:28:33  ~]$ bg
+[1]+ sleep 30 &amp;
+[23:28:37  ~]$ jobs
+[1]+  Running                 sleep 30 &amp;
+[23:29:39 ~ ]$ jobs
+[1]+  Done                    sleep 30
+</pre></div>
+</div>
+<div class="section" id="multiple-jobs">
+<h4>Multiple Jobs<a class="headerlink" href="#multiple-jobs" title="Permalink to this headline">¶</a></h4>
+<p>It is possible to have multiple jobs running in the background at the same time.  Use the <tt class="docutils literal"><span class="pre">jobs</span></tt> command to track them
+via their job ID, noted between the square brackets after sending a job to the background. Knowing the job ID is helpful in
+the event that the job needs to be pulled into the foreground (via <tt class="docutils literal"><span class="pre">fg</span></tt>) or if the job needs to be killed:</p>
+<div class="highlight-python"><div class="highlight"><pre>[23:36:01  ~]$ sleep 120 &amp;
+[1] 21086
+[23:36:16  ~]$ sleep 240 &amp;
+[2] 21087
+[23:36:20  ~]$ jobs
+[1]-  Running                 sleep 120 &amp;
+[2]+  Running                 sleep 240 &amp;
+[23:36:21  ~]$ fg %1
+sleep 120
+^C
+[23:36:33  ~]$ jobs
+[2]+  Running                 sleep 240 &amp;
+[23:36:35  ~]$ kill %2
+[23:36:39  ~]$ jobs
+[2]+  Terminated: 15          sleep 240
+</pre></div>
+</div>
+<p><strong>NOTE</strong>: When manipulating jobs with any command, the jobs are described by their ID using the <tt class="docutils literal"><span class="pre">%n</span></tt> notation
+where <tt class="docutils literal"><span class="pre">n</span></tt> is the job ID.</p>
+<p>For information on ensuring running jobs continue, even when terminal
+connectivity is lost, see the sections on <a class="reference internal" href="sysadmin_tools.html#gnu-screen"><em>GNU Screen</em></a> and <a class="reference internal" href="sysadmin_tools.html#tmux"><em>Tmux</em></a>.</p>
+<p class="rubric">Footnotes</p>
+<table class="docutils footnote" frame="void" id="f1" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id1">[1]</a></td><td><a class="reference external" href="http://www.drdobbs.com/i-almost-get-a-linux-editor-and-compiler/184404693">C Programming by Al Stevens</a>, Dr. Dobb&#8217;s Journal, July 1, 2001</td></tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+
+
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="package_management_101.html" class="btn btn-neutral float-right" title="Package management"/>Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="filesystems_101.html" class="btn btn-neutral" title="File systems"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2012, Avleen Vig (under Creative Commons license: https://github.com/opsschool/curriculum/blob/master/LICENSE).
+    </p>
+  </div>
+
+  <a href="https://github.com/snide/sphinx_rtd_theme">Sphinx theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'0.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

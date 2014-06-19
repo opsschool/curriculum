@@ -1,0 +1,1005 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Configuration Management 101 &mdash; Ops School Curriculum 0.1 documentation</title>
+  
+
+  
+  
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="top" title="Ops School Curriculum 0.1 documentation" href="index.html"/>
+        <link rel="next" title="Capacity Planning" href="capacity_planning.html"/>
+        <link rel="prev" title="Architecture 201" href="architecture_201.html"/> 
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        <a href="index.html" class="fa fa-home"> Ops School Curriculum</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+        
+            <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="introduction.html#goals-and-focus">Goals and Focus</a></li>
+<li class="toctree-l2"><a class="reference internal" href="introduction.html#syllabus-layout">Syllabus layout</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="introduction.html#contributions">Contributions</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="introduction.html#how-we-ll-organize-work">How we&#8217;ll organize work</a></li>
+<li class="toctree-l2"><a class="reference internal" href="introduction.html#how-to-contribute">How to contribute</a></li>
+<li class="toctree-l2"><a class="reference internal" href="introduction.html#rewards-for-contributions">Rewards for contributions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="introduction.html#ops-school-videos">Ops School Videos</a></li>
+<li class="toctree-l2"><a class="reference internal" href="introduction.html#how-to-write-sections">How to write sections</a></li>
+<li class="toctree-l2"><a class="reference internal" href="introduction.html#overwriting-existing-content">Overwriting existing content</a></li>
+<li class="toctree-l2"><a class="reference internal" href="introduction.html#credits">Credits</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="meta/guidelines.html">Guidelines</a></li>
+<li class="toctree-l1"><a class="reference internal" href="careers.html">Careers in Operations</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="careers.html#deciding-a-career-path">Deciding a career path</a></li>
+<li class="toctree-l2"><a class="reference internal" href="careers.html#generalized-career-paths">Generalized career paths</a></li>
+<li class="toctree-l2"><a class="reference internal" href="careers.html#specialized-career-paths">Specialized career paths</a></li>
+<li class="toctree-l2"><a class="reference internal" href="careers.html#how-to-become-an-operations-engineer">How to become an operations engineer</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="sysadmin_101.html">Sysadmin 101</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="sysadmin_101.html#what-is-systems-administration">What is Systems Administration?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sysadmin_101.html#what-is-development">What is Development?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sysadmin_101.html#contrasting-development-and-operations">Contrasting Development and Operations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sysadmin_101.html#history-of-development-and-operations">History of Development and Operations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sysadmin_101.html#what-system-administration-isn-t">What System Administration Isn&#8217;t</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="unix_101.html">Unix fundamentals 101</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="filesystems_101.html">File systems</a></li>
+<li class="toctree-l2"><a class="reference internal" href="shells_101.html">Shells</a></li>
+<li class="toctree-l2"><a class="reference internal" href="package_management_101.html">Package management</a></li>
+<li class="toctree-l2"><a class="reference internal" href="boot_process_101.html">The Boot Process</a></li>
+<li class="toctree-l2"><a class="reference internal" href="shell_tools_101.html">Useful shell tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cron_101.html">Crontab</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="unix_201.html">Unix fundamentals 201</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="kernel_tuning.html">Kernel tuning</a></li>
+<li class="toctree-l2"><a class="reference internal" href="unix_signals.html">Signals</a></li>
+<li class="toctree-l2"><a class="reference internal" href="syscalls.html">Syscalls</a></li>
+<li class="toctree-l2"><a class="reference internal" href="netbooting.html">Booting over the network</a></li>
+<li class="toctree-l2"><a class="reference internal" href="inits.html"><tt class="docutils literal"><span class="pre">/bin/init</span></tt> and its descendants</a></li>
+<li class="toctree-l2"><a class="reference internal" href="stats_diagnosing.html">Looking at system metrics</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="windows_101.html">MS Windows fundamentals 101</a></li>
+<li class="toctree-l1"><a class="reference internal" href="text_editing_101.html">Text Editing 101</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="text_editing_101.html#a-little-history">A little history</a></li>
+<li class="toctree-l2"><a class="reference internal" href="text_editing_101.html#vi-basics"><tt class="docutils literal"><span class="pre">vi</span></tt> basics</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="text_editing_201.html">Text Editing 201</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="text_editing_201.html#vim">Vim</a></li>
+<li class="toctree-l2"><a class="reference internal" href="text_editing_201.html#emacs">Emacs</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="sysadmin_tools.html">Tools for productivity</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="sysadmin_tools.html#terminal-emulators">Terminal emulators</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sysadmin_tools.html#ssh">SSH</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sysadmin_tools.html#ssh-use-cases">SSH Use Cases</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sysadmin_tools.html#multiplexers">Multiplexers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sysadmin_tools.html#shell-customisations">Shell customisations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sysadmin_tools.html#mosh">Mosh</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sysadmin_tools.html#ticketing-systems">Ticketing systems</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sysadmin_tools.html#note-taking">Note-taking</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="security_101.html">Security 101</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="security_101.html#authentication-in-unix">Authentication in unix</a></li>
+<li class="toctree-l2"><a class="reference internal" href="security_101.html#adding-and-deleting-users-and-groups">Adding and deleting users and groups</a></li>
+<li class="toctree-l2"><a class="reference internal" href="security_101.html#standard-unix-filesystem-permissions">Standard unix filesystem permissions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="security_101.html#pam">PAM</a></li>
+<li class="toctree-l2"><a class="reference internal" href="security_101.html#chroot-jails-and-containers">Chroot, jails and containers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="security_101.html#sudo-or-why-you-should-not-log-in-as-root">Sudo (or, &#8220;Why you should not log in as root&#8221;)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="security_101.html#history-and-lore">History and Lore</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="security_201.html">Security 201</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="security_201.html#centralised-accounts">Centralised accounts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="security_201.html#firewalls-and-packet-filters">Firewalls and packet filters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="security_201.html#public-key-cryptography">Public Key Cryptography</a></li>
+<li class="toctree-l2"><a class="reference internal" href="security_201.html#two-factor-authentication">Two factor authentication</a></li>
+<li class="toctree-l2"><a class="reference internal" href="security_201.html#building-systems-to-be-auditable">Building systems to be auditable</a></li>
+<li class="toctree-l2"><a class="reference internal" href="security_201.html#network-intrusion-detection">Network Intrusion Detection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="security_201.html#host-intrusion-detection">Host Intrusion Detection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="security_201.html#defense-practices">Defense practices</a></li>
+<li class="toctree-l2"><a class="reference internal" href="security_201.html#risk-and-risk-management">Risk and risk management</a></li>
+<li class="toctree-l2"><a class="reference internal" href="security_201.html#compliance-the-bare-minimum">Compliance: The bare minimum</a></li>
+<li class="toctree-l2"><a class="reference internal" href="security_201.html#dealing-with-security-incidents">Dealing with security incidents</a></li>
+<li class="toctree-l2"><a class="reference internal" href="security_201.html#acls-and-extended-attributes-xattrs">ACLs and extended attributes (xattrs)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="security_201.html#selinux">SELinux</a></li>
+<li class="toctree-l2"><a class="reference internal" href="security_201.html#data-placement">Data placement</a></li>
+<li class="toctree-l2"><a class="reference internal" href="security_201.html#additional-reading">Additional reading</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="troubleshooting_101.html">Troubleshooting</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="troubleshooting_101.html#methodologies">Methodologies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="troubleshooting_101.html#working-effectively-during-a-crisis">Working effectively during a crisis</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="networking_101.html">Networking 101</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="networking_101.html#the-rfc-documents">The RFC Documents</a></li>
+<li class="toctree-l2"><a class="reference internal" href="networking_101.html#osi-7-layer-model-osi-reference-model">OSI 7-layer model (OSI Reference Model)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="networking_101.html#tcp-ip-arpa-4-layer-model">TCP/IP (ARPA) 4-layer model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="networking_101.html#ip-addressing">IP Addressing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="networking_101.html#tcp-vs-udp">TCP vs UDP</a></li>
+<li class="toctree-l2"><a class="reference internal" href="networking_101.html#subnetting-netmasks-and-cidr">Subnetting, netmasks and CIDR</a></li>
+<li class="toctree-l2"><a class="reference internal" href="networking_101.html#private-address-space-rfc-1918">Private address space (<strong>RFC 1918</strong>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="networking_101.html#static-routing">Static routing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="networking_101.html#nat">NAT</a></li>
+<li class="toctree-l2"><a class="reference internal" href="networking_101.html#networking-cable">Networking cable</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="networking_201.html">Networking 201</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="networking_201.html#vlans-802-1q-tagging">VLANs, 802.1q tagging</a></li>
+<li class="toctree-l2"><a class="reference internal" href="networking_201.html#spanning-tree">Spanning Tree</a></li>
+<li class="toctree-l2"><a class="reference internal" href="networking_201.html#static-routing">Static Routing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="networking_201.html#dynamic-routing-protocols-rip-ospf-bgp">Dynamic routing protocols (RIP, OSPF, BGP)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="networking_201.html#acls">ACLs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="networking_201.html#network-bonding-802-3ad-lacp-link-aggregation">Network Bonding (802.3ad / LACP link aggregation)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="networking_201.html#ios-switch-configuration">IOS switch configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="networking_201.html#gre-and-other-tunnels">GRE and other tunnels</a></li>
+<li class="toctree-l2"><a class="reference internal" href="networking_201.html#multi-homed-hosts">Multi-homed hosts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="networking_201.html#similarities-and-differences-between-ipv4-and-ipv6-networking">Similarities and differences between IPv4 and IPv6 networking</a></li>
+<li class="toctree-l2"><a class="reference internal" href="networking_201.html#implications-of-dual-stack-firewalls-especially-under-linux">Implications of dual-stack firewalls (especially under Linux)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="networking_201.html#multicast-uses-and-limitations">Multicast uses and limitations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="networking_201.html#latency-vs-bandwidth">Latency vs. Bandwidth</a></li>
+<li class="toctree-l2"><a class="reference internal" href="networking_201.html#vpns">VPNs</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="common_services.html">Common services</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="system_daemons_101.html">System daemons 101</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dns_101.html">DNS 101</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dns_201.html">DNS 201</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dhcp.html">DHCP</a></li>
+<li class="toctree-l2"><a class="reference internal" href="http_101.html">HTTP 101 (Core protocol)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="http_201.html">HTTP 201 (Application Servers &amp; Frameworks)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="smtp_101.html">SMTP 101</a></li>
+<li class="toctree-l2"><a class="reference internal" href="smtp_201.html">SMTP 201</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="identity_management.html">Identity Management 101</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="identity_management.html#ldap">LDAP</a></li>
+<li class="toctree-l2"><a class="reference internal" href="identity_management.html#nis">NIS</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="active_directory_101.html">Active Directory 101</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="active_directory_101.html#what-is-active-directory">What is Active Directory?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="active_directory_101.html#what-is-active-directory-used-for">What is Active Directory used for?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="active_directory_101.html#you-mention-separate-components-what-is-active-directory-composed-of">You mention &#8220;separate components&#8221;; what is Active Directory composed of?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="active_directory_101.html#what-specific-services-does-active-directory-provide">What specific services does Active Directory provide?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="active_directory_101.html#best-practices-for-managing-an-active-directory-installation">Best Practices for managing an Active Directory installation</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="active_directory_201.html">Active Directory 201</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="active_directory_201.html#detailed-breakdown-of-active-directory-components-services">Detailed Breakdown of Active Directory Components/Services</a></li>
+<li class="toctree-l2"><a class="reference internal" href="active_directory_201.html#advanced-active-directory-maintenance">Advanced Active Directory Maintenance</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="remote_filesystems_101.html">Remote Filesystems 101</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="remote_filesystems_101.html#nfsv3">NFSv3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="remote_filesystems_101.html#iscsi">iSCSI</a></li>
+<li class="toctree-l2"><a class="reference internal" href="remote_filesystems_101.html#samba-cifs">SAMBA/CIFS</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="remote_filesystems_201.html">Remote Filesystems 201</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="remote_filesystems_201.html#glusterfs">GlusterFS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="remote_filesystems_201.html#nfsv4">NFSv4</a></li>
+<li class="toctree-l2"><a class="reference internal" href="remote_filesystems_201.html#netatalk-afp">Netatalk / AFP</a></li>
+<li class="toctree-l2"><a class="reference internal" href="remote_filesystems_201.html#s3">S3</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="programming_101.html">Programming 101</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="programming_101.html#shell-scripting-basics">Shell scripting basics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="programming_101.html#regular-expressions">Regular Expressions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="programming_101.html#sed-awk">Sed &amp; awk</a></li>
+<li class="toctree-l2"><a class="reference internal" href="programming_101.html#gigo">GIGO</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="programming_201.html">Programming 201</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="programming_201.html#common-elements-in-scripting-and-what-they-do">Common elements in scripting, and what they do</a></li>
+<li class="toctree-l2"><a class="reference internal" href="programming_201.html#c-a-very-basic-overview">C (A very basic overview)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="programming_201.html#ruby">Ruby</a></li>
+<li class="toctree-l2"><a class="reference internal" href="programming_201.html#python">Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="programming_201.html#version-control">Version Control</a></li>
+<li class="toctree-l2"><a class="reference internal" href="programming_201.html#api-design-fundamentals">API design fundamentals</a></li>
+<li class="toctree-l2"><a class="reference internal" href="programming_201.html#continuous-integration">Continuous Integration</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="hardware_101.html">Hardware 101</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="hardware_101.html#hardware-types">Hardware Types</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hardware_101.html#basic-server-architecture">Basic server architecture</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hardware_101.html#disk-management">Disk management</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hardware_101.html#performance-redundancy">Performance/Redundancy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hardware_101.html#troubleshooting">Troubleshooting</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="datacenters/datacenters_101.html">Datacenters 101</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="datacenters/datacenters_101.html#power-budgets">Power budgets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="datacenters/datacenters_101.html#cooling-budgets">Cooling budgets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="datacenters/datacenters_101.html#you-will-be-judged-by-the-tidiness-of-your-rack">You will be judged by the tidiness of your rack</a></li>
+<li class="toctree-l2"><a class="reference internal" href="datacenters/datacenters_101.html#machine-and-cable-labeling">Machine and cable labeling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="datacenters/datacenters_101.html#traditional-naming-conventions">Traditional naming conventions</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="datacenters/datacenters_201.html">Datacenters 201</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="datacenters/datacenters_201.html#networking-many-racks">Networking many racks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="datacenters/datacenters_201.html#power">Power</a></li>
+<li class="toctree-l2"><a class="reference internal" href="datacenters/datacenters_201.html#cooling">Cooling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="datacenters/datacenters_201.html#physical-security-and-common-security-standards-compliance-requirements">Physical security and common security standards compliance requirements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="datacenters/datacenters_201.html#suggested-practices">Suggested practices</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="datacenters/datacenters_301.html">Datacenters 301</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="datacenters/datacenters_301.html#power">Power</a></li>
+<li class="toctree-l2"><a class="reference internal" href="datacenters/datacenters_301.html#increasing-cooling-efficiency">Increasing cooling efficiency</a></li>
+<li class="toctree-l2"><a class="reference internal" href="datacenters/datacenters_301.html#design-options">Design Options</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="virtualization_101.html">Virtualization 101</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="virtualization_101.html#intro-to-virtualization-technologies">Intro to virtualization technologies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="virtualization_101.html#the-cloud">The Cloud</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="virtualization_201.html">Virtualization 201</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="virtualization_201.html#managing-virtualized-infrastructures-private-clouds">Managing virtualized infrastructures (Private clouds)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="virtualization_201.html#leveraging-virtualization-for-development">Leveraging virtualization for development</a></li>
+<li class="toctree-l2"><a class="reference internal" href="virtualization_201.html#leveraging-virtualization-for-production">Leveraging virtualization for production</a></li>
+<li class="toctree-l2"><a class="reference internal" href="virtualization_201.html#security-implications-of-virtualization">Security implications of virtualization</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="logs_101.html">Logs 101</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="logs_101.html#common-system-logs-formats">Common system logs &amp; formats</a></li>
+<li class="toctree-l2"><a class="reference internal" href="logs_101.html#standard-error">Standard Error</a></li>
+<li class="toctree-l2"><a class="reference internal" href="logs_101.html#log-files">Log files</a></li>
+<li class="toctree-l2"><a class="reference internal" href="logs_101.html#syslog">Syslog</a></li>
+<li class="toctree-l2"><a class="reference internal" href="logs_101.html#log-rotation-append-truncate">Log rotation, append, truncate</a></li>
+<li class="toctree-l2"><a class="reference internal" href="logs_101.html#retention-and-archival">Retention and archival</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="logs_201.html">Logs 201</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="logs_201.html#centralized-logging">Centralized logging</a></li>
+<li class="toctree-l2"><a class="reference internal" href="logs_201.html#log-parsing">Log parsing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="logs_201.html#search-correlation">Search &amp; Correlation</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="databases_101.html">Databases 101 (Relational Databases)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="databases_101.html#what-is-a-database">What is a Database?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="databases_101.html#what-is-a-relational-database">What is a Relational Database?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="databases_101.html#why-we-use-databases">Why We Use Databases?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="databases_101.html#what-is-sql">What is SQL?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="databases_101.html#sql-shell">SQL shell</a></li>
+<li class="toctree-l2"><a class="reference internal" href="databases_101.html#creating-databases">Creating databases</a></li>
+<li class="toctree-l2"><a class="reference internal" href="databases_101.html#creating-users">Creating users</a></li>
+<li class="toctree-l2"><a class="reference internal" href="databases_101.html#granting-privileges">Granting privileges</a></li>
+<li class="toctree-l2"><a class="reference internal" href="databases_101.html#removing-privileges">Removing Privileges</a></li>
+<li class="toctree-l2"><a class="reference internal" href="databases_101.html#basic-normalized-schema-design">Basic normalized schema design</a></li>
+<li class="toctree-l2"><a class="reference internal" href="databases_101.html#select-insert-update-and-delete">Select, Insert, Update and Delete</a></li>
+<li class="toctree-l2"><a class="reference internal" href="databases_101.html#pro-tips">Pro Tips</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="databases_201.html">Databases 201</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="databases_201.html#database-theory">Database Theory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="databases_201.html#document-databases">Document Databases</a></li>
+<li class="toctree-l2"><a class="reference internal" href="databases_201.html#key-value-stores">Key-value Stores</a></li>
+<li class="toctree-l2"><a class="reference internal" href="databases_201.html#graph-databases">Graph Databases</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="application_components_201.html">Application Components 201</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="application_components_201.html#message-brokers">Message Brokers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="application_components_201.html#memory-caches">Memory Caches</a></li>
+<li class="toctree-l2"><a class="reference internal" href="application_components_201.html#specialized-caches">Specialized Caches</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="loadbalancing_101.html">Load Balancing</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="loadbalancing_101.html#why-do-we-use-load-balancers">Why do we use load balancers?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="loadbalancing_101.html#application-implications">Application implications</a></li>
+<li class="toctree-l2"><a class="reference internal" href="loadbalancing_101.html#non-http-use-cases">Non-HTTP use cases</a></li>
+<li class="toctree-l2"><a class="reference internal" href="loadbalancing_101.html#software">Software</a></li>
+<li class="toctree-l2"><a class="reference internal" href="loadbalancing_101.html#hardware">Hardware</a></li>
+<li class="toctree-l2"><a class="reference internal" href="loadbalancing_101.html#multi-dc">Multi-dc</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="monitoring_101.html">Monitoring, Notifications, and Metrics 101</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="monitoring_101.html#history-how-we-used-to-monitor-and-how-we-got-better-monitors-as-tests">History: How we used to monitor, and how we got better (monitors as tests)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="monitoring_101.html#perspective-end-to-end-vs-introspective-monitoring">Perspective (end-to-end) vs Introspective monitoring</a></li>
+<li class="toctree-l2"><a class="reference internal" href="monitoring_101.html#metrics-what-to-collect-what-to-do-with-them">Metrics: what to collect, what to do with them</a></li>
+<li class="toctree-l2"><a class="reference internal" href="monitoring_101.html#common-tools">Common tools</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="monitoring_201.html">Monitoring, Notifications, and Metrics 201</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="monitoring_201.html#dataviz-graphing">Dataviz &amp; Graphing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="monitoring_201.html#graphite-statsd">Graphite, StatsD</a></li>
+<li class="toctree-l2"><a class="reference internal" href="monitoring_201.html#dashboard-info-for-ops-and-info-for-the-business">Dashboard: Info for ops and info for the business</a></li>
+<li class="toctree-l2"><a class="reference internal" href="monitoring_201.html#third-party-tools">Third-party tools</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="bcp.html">Business Continuity Planning</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="backups.html">Backups</a></li>
+<li class="toctree-l2"><a class="reference internal" href="outages.html">Outages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="postmortems.html">Postmortems</a></li>
+<li class="toctree-l2"><a class="reference internal" href="disaster_recovery.html">Disaster Recovery</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="architecture_101.html">Architecture 101</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="architecture_101.html#how-to-make-good-architecture-decisions">How to make good architecture decisions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="architecture_101.html#patterns-and-anti-patterns">Patterns and anti-patterns</a></li>
+<li class="toctree-l2"><a class="reference internal" href="architecture_101.html#introduction-to-availability">Introduction to availability</a></li>
+<li class="toctree-l2"><a class="reference internal" href="architecture_101.html#introduction-to-scalability">Introduction to scalability</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="architecture_201.html">Architecture 201</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="architecture_201.html#service-oriented-architectures">Service Oriented Architectures</a></li>
+<li class="toctree-l2"><a class="reference internal" href="architecture_201.html#fault-tolerance-fault-protection-masking-dependability-fundamentals">Fault tolerance, fault protection, masking, dependability fundamentals</a></li>
+<li class="toctree-l2"><a class="reference internal" href="architecture_201.html#caching-concerns">Caching Concerns</a></li>
+<li class="toctree-l2"><a class="reference internal" href="architecture_201.html#crash-only">Crash only</a></li>
+<li class="toctree-l2"><a class="reference internal" href="architecture_201.html#synchronous-vs-asynchronous">Synchronous vs. Asynchronous</a></li>
+<li class="toctree-l2"><a class="reference internal" href="architecture_201.html#business-continuity-vs-disaster-recovery">Business continuity vs. Disaster Recovery</a></li>
+<li class="toctree-l2"><a class="reference internal" href="architecture_201.html#designing-for-scalability-horizontal-vertical">Designing for Scalability: Horizontal, Vertical</a></li>
+<li class="toctree-l2"><a class="reference internal" href="architecture_201.html#simplicity">Simplicity</a></li>
+<li class="toctree-l2"><a class="reference internal" href="architecture_201.html#performance">Performance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="architecture_201.html#tiered-architectures">Tiered architectures</a></li>
+<li class="toctree-l2"><a class="reference internal" href="architecture_201.html#mttr-mtbf">MTTR &gt; MTBF</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="current reference internal" href="">Configuration Management 101</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#a-brief-history-of-configuration-management">A Brief History of Configuration Management</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#idempotence">Idempotence</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#convergent-and-congruent-systems">Convergent and Congruent systems</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#direct-and-indirect-systems-ansible-capistrano">Direct and Indirect systems: ansible, capistrano</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#chef">Chef</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="#configuration-management-201">Configuration Management 201</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#ansible">Ansible</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#puppet">Puppet</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#cfengine-3">Cfengine 3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#saltstack">SaltStack</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="capacity_planning.html">Capacity Planning</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="capacity_planning.html#fundamentals-of-capacity-planning">Fundamentals of capacity planning</a></li>
+<li class="toctree-l2"><a class="reference internal" href="capacity_planning.html#forecasting">Forecasting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="capacity_planning.html#diagonal-scaling">Diagonal scaling</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="statistics.html">Statistics For Engineers</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="statistics.html#normal-distributions">Normal distributions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="statistics.html#percentiles-histograms-averages-mean-medians">Percentiles, histograms, averages, mean, medians</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="deployment_101.html">Software Deployment 101</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="deployment_101.html#software-deployment-vs-configuration-management">Software deployment vs configuration management</a></li>
+<li class="toctree-l2"><a class="reference internal" href="deployment_101.html#running-services">Running services</a></li>
+<li class="toctree-l2"><a class="reference internal" href="deployment_101.html#package-management">Package management</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="deployment_201.html">Software Deployment 201</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="deployment_201.html#running-services">Running services</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="soft_skills_101.html">Soft Skills 101</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="soft_skills_101.html#communication-basics">Communication basics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="soft_skills_101.html#communication-modes">Communication Modes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="soft_skills_101.html#special-cases-for-operations">Special cases for operations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="soft_skills_101.html#time-management">Time Management</a></li>
+<li class="toctree-l2"><a class="reference internal" href="soft_skills_101.html#project-management">Project Management</a></li>
+<li class="toctree-l2"><a class="reference internal" href="soft_skills_101.html#the-tao-of-devops">The Tao of DevOps</a></li>
+<li class="toctree-l2"><a class="reference internal" href="soft_skills_101.html#the-importance-of-documentation">The importance of Documentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="soft_skills_101.html#working-with-other-teams">Working with other teams</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="soft_skills_201.html">Soft Skills 201</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="soft_skills_201.html#business-acumen-in-operations">Business Acumen in Operations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="soft_skills_201.html#understanding-the-role-of-operations">Understanding the role of operations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="soft_skills_201.html#thinking-broadly">Thinking broadly</a></li>
+<li class="toctree-l2"><a class="reference internal" href="soft_skills_201.html#promoting-change">Promoting Change</a></li>
+<li class="toctree-l2"><a class="reference internal" href="soft_skills_201.html#building-basic-business-skills">Building basic business skills</a></li>
+<li class="toctree-l2"><a class="reference internal" href="soft_skills_201.html#specific-examples">Specific Examples</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="labs.html">Labs exercises</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="labs.html#bare-metal-provisioning-101">Bare-Metal Provisioning 101</a></li>
+<li class="toctree-l2"><a class="reference internal" href="labs.html#bare-metal-provisioning-201">Bare-Metal Provisioning 201</a></li>
+<li class="toctree-l2"><a class="reference internal" href="labs.html#cloud-provisioning-101">Cloud Provisioning 101</a></li>
+<li class="toctree-l2"><a class="reference internal" href="labs.html#cloud-provisioning-201">Cloud Provisioning 201</a></li>
+<li class="toctree-l2"><a class="reference internal" href="labs.html#database-101">Database 101</a></li>
+<li class="toctree-l2"><a class="reference internal" href="labs.html#database-201">Database 201</a></li>
+<li class="toctree-l2"><a class="reference internal" href="labs.html#database-301">Database 301</a></li>
+<li class="toctree-l2"><a class="reference internal" href="labs.html#automation-101">Automation 101</a></li>
+<li class="toctree-l2"><a class="reference internal" href="labs.html#automation-chef-201">Automation - Chef 201</a></li>
+<li class="toctree-l2"><a class="reference internal" href="labs.html#automation-chef-301">Automation - Chef 301</a></li>
+<li class="toctree-l2"><a class="reference internal" href="labs.html#automation-chef-302">Automation - Chef 302</a></li>
+<li class="toctree-l2"><a class="reference internal" href="labs.html#automation-puppet-201">Automation - Puppet 201</a></li>
+<li class="toctree-l2"><a class="reference internal" href="labs.html#automation-puppet-301">Automation - Puppet 301</a></li>
+<li class="toctree-l2"><a class="reference internal" href="labs.html#package-management-101">Package Management 101</a></li>
+<li class="toctree-l2"><a class="reference internal" href="labs.html#package-management-201">Package Management 201</a></li>
+<li class="toctree-l2"><a class="reference internal" href="labs.html#build-automation-fleets">Build automation fleets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="labs.html#version-control-with-git-101">Version Control with Git 101</a></li>
+<li class="toctree-l2"><a class="reference internal" href="labs.html#dns-101">DNS 101</a></li>
+<li class="toctree-l2"><a class="reference internal" href="labs.html#http-101">HTTP 101</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="learning.html">Learning and the Community</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="learning.html#learning-and-strategies-for-improvement">Learning and strategies for improvement</a></li>
+<li class="toctree-l2"><a class="reference internal" href="learning.html#things-to-keep-in-mind-as-you-learn-how-to-be-an-engineer">Things to keep in mind as you learn how to be an engineer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="learning.html#golden-rules-for-careers-in-ops">Golden rules for careers in ops</a></li>
+<li class="toctree-l2"><a class="reference internal" href="learning.html#where-to-look-for-help-in-the-community">Where to look for help in the community</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="seealso.html">See also</a></li>
+<li class="toctree-l1"><a class="reference internal" href="meta/contributions.html">Contributions</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="meta/contributions.html#how-we-ll-organize-work">How we&#8217;ll organize work</a></li>
+<li class="toctree-l2"><a class="reference internal" href="meta/contributions.html#how-to-contribute">How to contribute</a></li>
+<li class="toctree-l2"><a class="reference internal" href="meta/contributions.html#rewards-for-contributions">Rewards for contributions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="meta/contributions.html#ops-school-videos">Ops School Videos</a></li>
+<li class="toctree-l2"><a class="reference internal" href="meta/contributions.html#how-to-write-sections">How to write sections</a></li>
+<li class="toctree-l2"><a class="reference internal" href="meta/contributions.html#overwriting-existing-content">Overwriting existing content</a></li>
+<li class="toctree-l2"><a class="reference internal" href="meta/contributions.html#credits">Credits</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="meta/conventions.html">Conventions</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="meta/conventions.html#style-guide">Style Guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="meta/conventions.html#sample-network">Sample Network</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="meta/style_guide.html">Style Guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="meta/style_guide.html#editing">Editing</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="glossary.html">Glossary</a></li>
+</ul>
+
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="index.html">Ops School Curriculum</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="index.html">Docs</a> &raquo;</li>
+      
+    <li>Configuration Management 101</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          <a href="_sources/config_management.txt" rel="nofollow"> View page source</a>
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            
+  <div class="section" id="configuration-management-101">
+<h1>Configuration Management 101<a class="headerlink" href="#configuration-management-101" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="a-brief-history-of-configuration-management">
+<h2>A Brief History of Configuration Management<a class="headerlink" href="#a-brief-history-of-configuration-management" title="Permalink to this headline">¶</a></h2>
+<p>Configuration management as a distinct sub-discipline of operations engineering
+has roots in the mid-1990s. Prior to then, even sites with a large number of
+users like universities and large ISPs had relatively few Unix systems. Each of
+those systems was generally what today&#8217;s operations community calls a
+&#8220;snowflake system&#8221; (after the phrase &#8220;a precious and unique snowflake&#8221;). They
+were carefully hand-built to purpose, rarely replaced, and provided a unique
+set of services to their users.</p>
+<p>The rise of free Unix-like Operating Systems and commodity x86 hardware, coupled with the
+increasing demands to scale booming Internet services meant the old paradigms
+of capturing configuration were no longer adequate. Lore kept in text files,
+post-bootstrap shell scripts, and tales told around the proverbial campfire
+just didn&#8217;t scale.  Administrators needed automation tools which could stamp
+out new machines quickly, plus manage configuration drift as users made changes
+(deliberately or accidentally) that affected the functioning of a running
+system.</p>
+<p>The first such tool to gain prominence was CFEngine, an open-source project
+written in C by Mark Burgess, a CS professor at Oslo University. CFEngine
+popularized the idea of <em>idempotence</em> in systems administration tasks,
+encouraging users to describe their system administration tasks in ways that
+would be convergent over time rather than strictly imperative shell or perl
+scripting.</p>
+<div class="admonition-todo admonition" id="index-0">
+<p class="first admonition-title">Todo</p>
+<p class="last">a specific example of convergent over time might help</p>
+</div>
+<p>In the early 2000s, the systems administration community began to focus more
+intensely on configuration management as distributed systems became both more
+complex and more common. A series of LISA papers and an explosion in the number
+and sophistication of open-source tools emerged. Some highlights and background
+reading:</p>
+<ul class="simple">
+<li>Steve Traugott&#8217;s isconf3 system and paper <a class="reference external" href="http://www.infrastructures.org/papers/bootstrap/bootstrap.html">&#8220;Bootstrapping an
+Infrastructure&#8221;</a> provided a
+concrete model for repeatable, scalable provisioning and config management.</li>
+<li>CERN released and wrote about <a class="reference external" href="http://quattor.org/index.html">Quattor</a>
+which they used to build and administer high-performance compute clusters at
+larger scale than most sites at the time had dealt with.</li>
+<li>Alva Couch from Tufts University and Paul Anderson from University of
+Edinburgh, laid out theoretical underpinnings for configuration management
+in a <a class="reference external" href="http://static.usenix.org/event/lisa04/tech/talks/couch.pdf">joint session at LISA&#8216;04</a></li>
+<li>Narayan Desai&#8217;s <a class="reference external" href="http://bcfg2.org">bcfg2 system</a> provided a hackable Python
+CM project with early support for advanced features like templating and
+encrypted data</li>
+<li>Recapitulating Luke Kanies&#8217; <a class="reference external" href="http://rootprompt.org/article.php3?article=10981">departure from cfengine</a> to start Puppet, Adam
+Jacob created Chef in 2008 to address <a class="reference external" href="http://www.akitaonrails.com/2009/11/18/chatting-with-adam-jacob">fundamental differences</a> with
+Puppet (primarily execution of ordering and writing user code in Ruby vs a
+DSL).</li>
+</ul>
+<p>By 2008, provisioning and configuration management of individual systems were
+well-understood (if not completely <a class="reference external" href="http://blog.lusis.org/blog/2011/08/22/the-configuration-management-divide/">&#8220;solved&#8221;</a>)
+problems, and the community&#8217;s attention had shifted to the next level of
+complexity: cross-node interactions and orchestration, application deployment,
+and managing ephemeral cloud computing instances rather than (or alongside)
+long-lived physical hardware.</p>
+<p>A new crop of CM tools and approaches &#8220;born in the cloud&#8221; began to emerge in
+the 2010s to address this shift. SaltStack, Ansible, and Chef-v11 built on
+advances in language (Erlang and Clojure vs Ruby and Python), methodology
+(continuous deployment and orchestration vs static policy enforcement), and the
+component stack (ZeroMQ and MongoDB vs MySQL).</p>
+<p>Whatever specific configuration management tooling operations engineers
+encounter as an operations engineer, ultimately the technology exists to enable
+business goals &#8211; short time-to-restore in the face of component failure,
+auditable assurance of control, low ratio of operators per managed system, etc.
+&#8211; in a world whose IT systems are moving, in the words of CERN&#8217;s Tim Bell,
+&#8220;from pets to cattle&#8221;.</p>
+</div>
+<div class="section" id="idempotence">
+<h2>Idempotence<a class="headerlink" href="#idempotence" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="convergent-and-congruent-systems">
+<h2>Convergent and Congruent systems<a class="headerlink" href="#convergent-and-congruent-systems" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="direct-and-indirect-systems-ansible-capistrano">
+<h2>Direct and Indirect systems: ansible, capistrano<a class="headerlink" href="#direct-and-indirect-systems-ansible-capistrano" title="Permalink to this headline">¶</a></h2>
+<p>(mpdehaan: Are we talking about deployment here?  Then let&#8217;s start a deployment section.  What does direct/indirect mean? How about not addressing tools in 101 and talking about concepts, so as to make a better tools section? Ansible operates in both push and pull topologies, so I&#8217;m guessing that is not what is meant about direct/indirect?)</p>
+</div>
+<div class="section" id="chef">
+<h2>Chef<a class="headerlink" href="#chef" title="Permalink to this headline">¶</a></h2>
+<p>Chef (adam: I&#8217;m biased here, but I would do Chef in 101, puppet and cfengine in
+201, but it&#8217;s because I want junior admins to get better at scripting, not just
+because I&#8217;m a dick.)
+(Magnus: this goes back to why Ruby will be so much more for new guys coming in
+today like Perl was for a lot of us in the 90&#8217;s)</p>
+</div>
+</div>
+<div class="section" id="configuration-management-201">
+<h1>Configuration Management 201<a class="headerlink" href="#configuration-management-201" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="ansible">
+<h2>Ansible<a class="headerlink" href="#ansible" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference external" href="http://ansible.cc">Ansible</a> is a configuration management, deployment, and remote execution tool that uses SSH to address remote machines (though it offers other connection types, including 0mq).  It requires no server software nor any remote programs, and works by shipping small modules to remote machines that provide idempotent resource management.  While implemented in Python, Ansible uses a basic YAML data language to describe how to orchestrate operations on remote systems.</p>
+<p>Ansible can be extended by writing modules in any language you want, though there is some accelerated module writing ability that makes it easier to do them in Python.</p>
+<p>To prevent documentation drift, see <a class="reference external" href="http://ansible.cc/docs">Ansible documentation site</a>.</p>
+</div>
+<div class="section" id="puppet">
+<h2>Puppet<a class="headerlink" href="#puppet" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="cfengine-3">
+<h2>Cfengine 3<a class="headerlink" href="#cfengine-3" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="saltstack">
+<h2>SaltStack<a class="headerlink" href="#saltstack" title="Permalink to this headline">¶</a></h2>
+<p>SaltStack or just <strong>Salt</strong>, is a configuration management and remote
+execution tool written in Python. Salt uses ZeroMQ to manage communication
+between master and minions, and RSA keys to handle authentication.
+This chapter will explain the basics on how to get started with it.</p>
+<p>Salt is a centralized system, which means there is a main server (also referred
+here as <em>master</em>) which manages other machines connected to it or itself (also
+referred here as <em>minions</em>). This topology can be further split using
+<a class="reference external" href="http://docs.saltstack.org/en/latest/ref/syndic.html">Salt Syndic</a>,
+please refer to Salt documentation for more details on this topic.</p>
+<p>In examples below we will be using the master + 1 minion setup. The approximate
+time you will need to work through all the content is about 10 minutes.</p>
+<p>Prerequisites:</p>
+<ul class="simple">
+<li>access to 2 Linux/Solaris/FreeBSD/Windows machines in the same network</li>
+<li>basic understanding of command line instructions</li>
+<li>basic understanding of YAML file format</li>
+</ul>
+<div class="section" id="installation">
+<h3>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h3>
+<p>Salt has a <a class="reference external" href="https://salt.readthedocs.org/en/latest/topics/installation/index.html">dedicated page</a>
+on how to get it installed and ready to use, please refer to it after deciding
+what OS you will be using. These examples are shown on an Ubuntu installation
+with Salt installed from a <a class="reference external" href="https://salt.readthedocs.org/en/latest/topics/installation/ubuntu.html">project personal package archive</a>.</p>
+<p>To set-up the environment you can use virtual machines or real boxes, in the
+examples we will be using hostnames <strong>master</strong> and <strong>slave</strong> to refer to each
+one.</p>
+<p>At this point, you should install the latest version on both machines with the
+directions provided above, and have a command line session open on both your
+<strong>master</strong> and <strong>slave</strong> machines.
+You can check what version are you using on master with:</p>
+<div class="highlight-console"><div class="highlight"><pre><span class="gp">root@master:~#</span> salt --version
+<span class="go">salt 0.10.3</span>
+</pre></div>
+</div>
+<p>and on slave with:</p>
+<div class="highlight-console"><div class="highlight"><pre><span class="gp">root@slave:~#</span> salt-minion --version
+<span class="go">salt-minion 0.10.3</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="configuration">
+<h3>Configuration<a class="headerlink" href="#configuration" title="Permalink to this headline">¶</a></h3>
+<p>A minimum configuration is required to get the slave server to
+communicate with master. You will need to tell it what IP address and port
+master uses.
+The configuration file can typically be found at <tt class="file docutils literal"><span class="pre">/etc/salt/minion</span></tt>.</p>
+<p>You will need to edit the configuration file directive <tt class="docutils literal"><span class="pre">master:</span> <span class="pre">salt</span></tt> replacing
+<tt class="docutils literal"><span class="pre">salt</span></tt> with master IP address or its hostname/FQDN.</p>
+<p>Once done, you will need to restart the service: <strong>salt-minion</strong>. On most
+Linux distributions you can execute <tt class="docutils literal"><span class="pre">service</span> <span class="pre">salt-minion</span> <span class="pre">restart</span></tt> to restart
+the service.</p>
+<p>Authentication keys for master/slave are generated during installation so
+you don&#8217;t need to manage those manually, except in case when you want to
+<a class="reference external" href="https://salt.readthedocs.org/en/latest/topics/tutorials/preseed_key.html">preseed minions</a>.</p>
+<p>To add the slave to minions list, you will have to use the command <tt class="docutils literal"><span class="pre">salt-key</span></tt>
+on master. Execute <tt class="docutils literal"><span class="pre">salt-key</span> <span class="pre">-L</span></tt> to list available minions:</p>
+<div class="highlight-console"><div class="highlight"><pre><span class="gp">root@master:~#</span> salt-key -L
+<span class="go">Unaccepted Keys:</span>
+<span class="go">slave</span>
+<span class="go">Accepted Keys:</span>
+<span class="go">Rejected:</span>
+</pre></div>
+</div>
+<p>To accept a minion, execute <tt class="docutils literal"><span class="pre">salt-key</span> <span class="pre">-a</span> <span class="pre">&lt;minion-name&gt;</span></tt>:</p>
+<div class="highlight-console"><div class="highlight"><pre><span class="gp">root@master:~#</span> salt-key -a slave
+<span class="go">Key for slave accepted.</span>
+
+<span class="gp">root@master:~#</span> salt-key -L
+<span class="go">Unaccepted Keys:</span>
+<span class="go">Accepted Keys:</span>
+<span class="go">slave</span>
+<span class="go">Rejected:</span>
+</pre></div>
+</div>
+<p>Once the minion is added, you can start managing it by using command <tt class="docutils literal"><span class="pre">salt</span></tt>.
+For example, to check the communication with slave, you can ping the slave from the master:</p>
+<div class="highlight-console"><div class="highlight"><pre><span class="gp">root@master:~#</span> salt <span class="s1">&#39;slave*&#39;</span> test.ping
+<span class="go">slave: True</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="remote-execution">
+<h3>Remote execution<a class="headerlink" href="#remote-execution" title="Permalink to this headline">¶</a></h3>
+<p>In order to understand how Salt does its configuration management on minions,
+we&#8217;ll take look at the <tt class="docutils literal"><span class="pre">salt</span></tt> command line tool. Let&#8217;s take our
+previous command and inspect the parts of the command:</p>
+<div class="highlight-console"><div class="highlight"><pre><span class="gp">root@master:~#</span> salt <span class="s1">&#39;slave*&#39;</span> test.ping
+<span class="go">                           ^ ^</span>
+<span class="go">                     ______| |__________________</span>
+<span class="go">                     target  function to execute</span>
+</pre></div>
+</div>
+<p><strong>target</strong> is the minion(s) name. It can represent the exact name or only
+a part of it followed by a wildcard. For more details on how to match minions
+please take a look at <a class="reference external" href="http://docs.saltstack.org/en/latest/topics/targeting/globbing.html">Salt Globbing</a>.</p>
+<blockquote>
+<div>In order to run target matching by OS, architecture or other identifiers
+take a look at <a class="reference external" href="https://salt.readthedocs.org/en/latest/topics/targeting/grains.html">Salt Grains</a>.</div></blockquote>
+<p>Functions that can be executed are called Salt Modules.
+These modules are Python or Cython code written to abstract access to CLI or
+other minion resources. For the full list of modules please take a look
+<a class="reference external" href="https://salt.readthedocs.org/en/latest/ref/modules/all/index.html">this page</a>.</p>
+<p>One of the modules provided by Salt, is the <strong>cmd</strong> module. It has the <strong>run</strong>
+method, which accepts a string as an argument. The string is the exact
+command line which will be executed on the minions and contains both
+the command name and command&#8217;s arguments. The result of the command execution
+will be listed on master with the minion name as prefix.</p>
+<p>For example, to run command <tt class="docutils literal"><span class="pre">uname</span> <span class="pre">-a</span></tt> on our slave we will execute:</p>
+<div class="highlight-console"><div class="highlight"><pre><span class="gp">root@master:~#</span> salt slave cmd.run <span class="s1">&#39;uname -a&#39;</span>
+<span class="go">slave: Linux slave 2.6.24-27-openvz #1 SMP Fri Mar 12 04:18:54 UTC 2010 i686 GNU/Linux</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="writing-configuration-files">
+<h3>Writing configuration files<a class="headerlink" href="#writing-configuration-files" title="Permalink to this headline">¶</a></h3>
+<p>One of the Salt modules is called <tt class="docutils literal"><span class="pre">state</span></tt>. Its purpose is to manage minions
+state.</p>
+<blockquote>
+<div>Salt configuration management is fully managed by states, which purpose is
+to describe a machine behaviour: from what services are running to what
+software is installed and how it is configured. Salt configuration management
+files (<tt class="docutils literal"><span class="pre">.sls</span></tt> extension) contain collections of such states written in YAML
+format.</div></blockquote>
+<p>Salt states make use of modules and represent different module calls organised
+to achieve a specific purpose/result.</p>
+<p>Below you can find an example of such a <strong>SLS</strong> file, whose purpose is to get
+Apache Web server installed and running:</p>
+<div class="highlight-yaml"><div class="highlight"><pre><span class="l-Scalar-Plain">apache2</span><span class="p-Indicator">:</span>
+  <span class="l-Scalar-Plain">pkg</span><span class="p-Indicator">:</span>
+    <span class="p-Indicator">-</span> <span class="l-Scalar-Plain">installed</span>
+  <span class="l-Scalar-Plain">service.running</span><span class="p-Indicator">:</span>
+    <span class="p-Indicator">-</span> <span class="l-Scalar-Plain">require</span><span class="p-Indicator">:</span>
+      <span class="p-Indicator">-</span> <span class="l-Scalar-Plain">pkg</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">apache2</span>
+</pre></div>
+</div>
+<p>To understand the snippet above, you will need to refer to documentation on
+states: pkg and service. Basically our state calls methods <tt class="docutils literal"><span class="pre">pkg.installed</span></tt>
+and <tt class="docutils literal"><span class="pre">service.running</span></tt> with argument <tt class="docutils literal"><span class="pre">apache2</span></tt>. <tt class="docutils literal"><span class="pre">require</span></tt> directive is
+available for most of the states and describe dependencies if any.</p>
+<p>Back to <tt class="docutils literal"><span class="pre">state</span></tt> module, it has a couple of methods to manage these states. In
+a nutshell the state file form above can be executed using <tt class="docutils literal"><span class="pre">state.sls</span></tt>
+function. Before we do that, let&#8217;s take a look where state files reside on
+the master server.</p>
+<p>Salt master server configuration file has a directive named <tt class="docutils literal"><span class="pre">file_roots</span></tt>,
+it accepts an YAML hash/dictionary as a value, where keys will represent the
+environment (the default value is <tt class="docutils literal"><span class="pre">base</span></tt>) and values represent a set/array
+of paths on the file system (the default value is <tt class="file docutils literal"><span class="pre">/srv/salt</span></tt>).</p>
+<p>Now, lets save our state file and try to deploy it.</p>
+<p>Ideally you would split state files in directories (so that if there
+are also other files, say certificates or assets, we keep those organised). The
+directory layout we will use in our example will look like this:</p>
+<div class="highlight-python"><div class="highlight"><pre>/srv/salt/
+|-- apache
+|   `-- init.sls
+`-- top.sls
+</pre></div>
+</div>
+<p>When creating new states, there is a file naming convention.
+Look at <tt class="docutils literal"><span class="pre">init.sls</span></tt>, it is the default filename to be searched when loading
+a state. This is similar to Python or default web page name <tt class="docutils literal"><span class="pre">index.html</span></tt>.</p>
+<p>So when you create a new directory for a state with an <tt class="docutils literal"><span class="pre">init.sls</span></tt> file in it
+it translates as the Salt state name and you can refer to it as that. For example,
+you do not write <tt class="docutils literal"><span class="pre">pkg:</span> <span class="pre">new_state.init</span></tt>, write just <tt class="docutils literal"><span class="pre">pkg:</span> <span class="pre">new_state</span></tt>.</p>
+<p>Now to deploy it, we will use the function <tt class="docutils literal"><span class="pre">state.sls</span></tt> and indicate the state
+name:</p>
+<div class="highlight-console"><div class="highlight"><pre><span class="gp">root@master:~#</span> salt slave state.sls apache
+<span class="go">slave:</span>
+<span class="go">----------</span>
+<span class="go">    State: - pkg</span>
+<span class="go">    Name:      apache2</span>
+<span class="go">    Function:  installed</span>
+<span class="go">        Result:    True</span>
+<span class="go">        Comment:   Package apache2 installed</span>
+<span class="go">        Changes:   apache2.2-bin: {&#39;new&#39;: &#39;2.2.14-5ubuntu8.10&#39;, &#39;old&#39;: &#39;&#39;}</span>
+<span class="go">                   libapr1: {&#39;new&#39;: &#39;1.3.8-1ubuntu0.3&#39;, &#39;old&#39;: &#39;&#39;}</span>
+<span class="go">                   perl-modules: {&#39;new&#39;: &#39;5.10.1-8ubuntu2.1&#39;, &#39;old&#39;: &#39;&#39;}</span>
+<span class="go">                   ssl-cert: {&#39;new&#39;: &#39;1.0.23ubuntu2&#39;, &#39;old&#39;: &#39;&#39;}</span>
+<span class="go">                   apache2-utils: {&#39;new&#39;: &#39;2.2.14-5ubuntu8.10&#39;, &#39;old&#39;: &#39;&#39;}</span>
+<span class="go">                   libaprutil1-ldap: {&#39;new&#39;: &#39;1.3.9+dfsg-3ubuntu0.10.04.1&#39;, &#39;old&#39;: &#39;&#39;}</span>
+<span class="go">                   apache2-mpm-worker: {&#39;new&#39;: &#39;2.2.14-5ubuntu8.10&#39;, &#39;old&#39;: &#39;&#39;}</span>
+<span class="go">                   make: {&#39;new&#39;: &#39;3.81-7ubuntu1&#39;, &#39;old&#39;: &#39;&#39;}</span>
+<span class="go">                   libaprutil1: {&#39;new&#39;: &#39;1.3.9+dfsg-3ubuntu0.10.04.1&#39;, &#39;old&#39;: &#39;&#39;}</span>
+<span class="go">                   apache2: {&#39;new&#39;: &#39;2.2.14-5ubuntu8.10&#39;, &#39;old&#39;: &#39;&#39;}</span>
+<span class="go">                   libcap2: {&#39;new&#39;: &#39;1:2.17-2ubuntu1&#39;, &#39;old&#39;: &#39;&#39;}</span>
+<span class="go">                   libaprutil1-dbd-sqlite3: {&#39;new&#39;: &#39;1.3.9+dfsg-3ubuntu0.10.04.1&#39;, &#39;old&#39;: &#39;&#39;}</span>
+<span class="go">                   libgdbm3: {&#39;new&#39;: &#39;1.8.3-9&#39;, &#39;old&#39;: &#39;&#39;}</span>
+<span class="go">                   perl: {&#39;new&#39;: &#39;5.10.1-8ubuntu2.1&#39;, &#39;old&#39;: &#39;&#39;}</span>
+<span class="go">                   apache2.2-common: {&#39;new&#39;: &#39;2.2.14-5ubuntu8.10&#39;, &#39;old&#39;: &#39;&#39;}</span>
+<span class="go">                   libexpat1: {&#39;new&#39;: &#39;2.0.1-7ubuntu1.1&#39;, &#39;old&#39;: &#39;&#39;}</span>
+
+<span class="go">----------</span>
+<span class="go">    State: - service</span>
+<span class="go">    Name:      apache2</span>
+<span class="go">    Function:  running</span>
+<span class="go">        Result:    True</span>
+<span class="go">        Comment:   The service apache2 is already running</span>
+<span class="go">        Changes:</span>
+</pre></div>
+</div>
+<p>You can see from the above that Salt deployed our state to <strong>slave</strong> and reported changes.</p>
+<p>In our state file we indicated that our service requires that the package must
+be installed. Following the same approach, we can add other requirements like
+files, other packages or services.</p>
+<p>Let&#8217;s add a new virtual host to our server now using the <tt class="docutils literal"><span class="pre">file</span></tt> state. We
+can do this by creating a separate state file or re-using the existing one.
+Since creating a new file will keep code better organised, we will take that approach.</p>
+<p>We will create a new <tt class="docutils literal"><span class="pre">sls</span></tt> file with a relevant name, say <tt class="docutils literal"><span class="pre">www_opsschool_org.sls</span></tt>
+with the content below:</p>
+<div class="highlight-yaml"><div class="highlight"><pre><span class="l-Scalar-Plain">include</span><span class="p-Indicator">:</span>
+  <span class="p-Indicator">-</span> <span class="l-Scalar-Plain">apache</span>
+
+<span class="l-Scalar-Plain">extend</span><span class="p-Indicator">:</span>
+  <span class="l-Scalar-Plain">apache2</span><span class="p-Indicator">:</span>
+    <span class="l-Scalar-Plain">service</span><span class="p-Indicator">:</span>
+      <span class="p-Indicator">-</span> <span class="l-Scalar-Plain">require</span><span class="p-Indicator">:</span>
+        <span class="p-Indicator">-</span> <span class="l-Scalar-Plain">file</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">www_opsschool_org</span>
+      <span class="p-Indicator">-</span> <span class="l-Scalar-Plain">watch</span><span class="p-Indicator">:</span>
+        <span class="p-Indicator">-</span> <span class="l-Scalar-Plain">file</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">www_opsschool_org</span>
+
+<span class="l-Scalar-Plain">www_opsschool_org</span><span class="p-Indicator">:</span>
+  <span class="l-Scalar-Plain">file.managed</span><span class="p-Indicator">:</span>
+  <span class="p-Indicator">-</span> <span class="l-Scalar-Plain">name</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">/etc/apache2/sites-enabled/www.opsschool.org</span>
+  <span class="p-Indicator">-</span> <span class="l-Scalar-Plain">source</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">salt://vhosts/conf/www.opsschool.org</span>
+</pre></div>
+</div>
+<p>Above, we include already described state of the Apache service and extend it
+to include our configuration file. Notice we use a new directive <tt class="docutils literal"><span class="pre">watch</span></tt>
+to describe our state as being dependent on what changes the configuration
+file triggers. This way, if a newer version of the same file is deployed, it
+should restart the Apache service.</p>
+<p>Below is the directory listing of the changes we did:</p>
+<div class="highlight-python"><div class="highlight"><pre>/srv/salt/
+|-- apache
+|   `-- init.sls
+|-- top.sls
+`-- vhosts
+    |-- conf
+    |   `-- www.opsschool.org
+    `-- www_opsschool_org.sls
+</pre></div>
+</div>
+<p>Using the newly created state file, we can try and deploy our brand new
+virtual host:</p>
+<div class="highlight-console"><div class="highlight"><pre><span class="gp">root@master:~#</span> salt slave state.sls vhosts.www_opsschool_org
+<span class="go">slave:</span>
+<span class="go">----------</span>
+<span class="go">    State: - file</span>
+<span class="go">    Name:      /etc/apache2/sites-enabled/www.opsschool.org</span>
+<span class="go">    Function:  managed</span>
+<span class="go">        Result:    True</span>
+<span class="go">        Comment:   File /etc/apache2/sites-enabled/www.opsschool.org updated</span>
+<span class="go">        Changes:   diff: New file</span>
+
+<span class="go">----------</span>
+<span class="go">    State: - pkg</span>
+<span class="go">    Name:      apache2</span>
+<span class="go">    Function:  installed</span>
+<span class="go">        Result:    True</span>
+<span class="go">        Comment:   Package apache2 is already installed</span>
+<span class="go">        Changes:</span>
+<span class="go">----------</span>
+<span class="go">    State: - service</span>
+<span class="go">    Name:      apache2</span>
+<span class="go">    Function:  running</span>
+<span class="go">        Result:    True</span>
+<span class="go">        Comment:   Started Service apache2</span>
+<span class="go">        Changes:   apache2: True</span>
+</pre></div>
+</div>
+<p>Salt reports another successful deploy and lists the changes as in the example
+above.</p>
+<p>All this time, you were probably wondering why there is a file <tt class="docutils literal"><span class="pre">top.sls</span></tt> and
+it was never used?! Salt master will search for this file as indicated in the
+configuration of your install. This file is used to describe the state of all
+the servers that are being managed and is deployed across all the machines
+using the function <tt class="docutils literal"><span class="pre">state.highstate</span></tt>.</p>
+<p>Let&#8217;s add our state files to it to describe the high state of the <tt class="docutils literal"><span class="pre">slave</span></tt>.</p>
+<div class="highlight-yaml"><div class="highlight"><pre><span class="l-Scalar-Plain">base</span><span class="p-Indicator">:</span>
+  <span class="s">&#39;slave*&#39;</span><span class="p-Indicator">:</span>
+    <span class="p-Indicator">-</span> <span class="l-Scalar-Plain">vhosts.www_opsschool_org</span>
+</pre></div>
+</div>
+<p>Where <tt class="docutils literal"><span class="pre">base</span></tt> is the default environment containing minion matchers followed
+by a list of states to be deployed on the matched host.</p>
+<p>Now you can execute:</p>
+<div class="highlight-console"><div class="highlight"><pre><span class="gp">root@master:~#</span> salt slave state.highstate
+</pre></div>
+</div>
+<p>Salt should output the same results, as nothing changed since the last run. In order to
+add more services to your slave, feel free to create new states or extend the
+existing one. A good collection of states that can be used as examples can be
+found on Github:</p>
+<ul class="simple">
+<li><a class="reference external" href="https://github.com/saltstack/salt-states">https://github.com/saltstack/salt-states</a> &#8211; Community contributed states</li>
+<li><a class="reference external" href="https://github.com/AppThemes/salt-config-example">https://github.com/AppThemes/salt-config-example</a> &#8211; WordPress stack
+with deployments using Git</li>
+</ul>
+<div class="admonition seealso">
+<p class="first admonition-title">See also</p>
+<p class="last">For the full documentation on available states, please see <a class="reference external" href="http://salt.readthedocs.org/en/latest/ref/states/all/index.html">Salt States documentation</a>.</p>
+</div>
+</div>
+</div>
+</div>
+
+
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="capacity_planning.html" class="btn btn-neutral float-right" title="Capacity Planning"/>Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="architecture_201.html" class="btn btn-neutral" title="Architecture 201"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2012, Avleen Vig (under Creative Commons license: https://github.com/opsschool/curriculum/blob/master/LICENSE).
+    </p>
+  </div>
+
+  <a href="https://github.com/snide/sphinx_rtd_theme">Sphinx theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'0.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>
