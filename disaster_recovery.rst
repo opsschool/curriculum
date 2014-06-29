@@ -31,7 +31,7 @@ One method for identifying the needs might be interviews with collegues that wor
 
 **Questions that need to be answered by every role in the core process(es):**
 
-* In your every day work, what activities do you need to be able to perform to fulfil the goals of your role?
+* In your every day work, what activities do you need to be able to perform to fulfill the goals of your role?
 * How do you do these?
 
 Using the answers to the questions, we then need to identify each system or infrastructural component that is needed to realize that goal.
