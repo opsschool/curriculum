@@ -186,6 +186,14 @@ Forward DNS is, in essence, simply DNS as described above. When ``ftp.example.co
 
 However, whilst forward DNS is the type you're likely to run in to most often, it's also very important to know how reverse DNS works. If forward DNS maps hostnames to IP addresses, then reverse DNS does exactly the opposite: it maps IP addresses to hostnames. To do this, the zonefile in question must have a PTR record set for the record you're interested in. Getting used to PTR records and reverse DNS can be tricky, so it might take a few attempts until it catches on.
 
+Domain names follow a specific syntax - ``foo.tld``, where ``.tld`` is set by ICANN and chosen by the registrant when they register their domain. For instance, people can choose to register ``.aero``, ``.com`` and ``.tv`` domains wherever they live in the world, subject to a fee. With reverse DNS, a similar syntax exists. Let's assume that we want to know which hostname responds at ``22.33.44.55``. We do this as follows::
+
+# Reverse the octets of the IP address - ``22.33.44.55`` becomes ``55.44.33.22``, for instance
+# Add ``in-addr.arpa`` to the end of the reversed address - we now have ``55.44.33.22.in-addr.arpa
+# The root nameserver tells queries to find the ``arpa`` nameserver
+# The ``arpa`` nameserver directs the query to ``in-addr.arpa``'s nameserver
+# The ``in-addr.arpa`` nameserver then responds with details of ``22.in-addr.arpa``,  and so on...
+# In the zonefile, the IP address matching the query is then found and the relevant hostname is returned
 
 Useful DNS tools
 ================
