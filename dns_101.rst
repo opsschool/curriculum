@@ -18,22 +18,18 @@ Terminology
 
 Domain name
 ^^^^^^^^^^^
-
 A domain name is likely the way you interface with DNS most often when browsing the internet. Examples are, quite literally, everywhere - a very limited set of examples includes `google.com` and `wikipedia.org`. 
 
 Top-Level Domain
 ^^^^^^^^^^^^^^^^
-
 A top-level domain is an important, but rather generic, part of a domain name. Examples include `com`, `net`, `gov` and `org` - they were originally defined in [RFC 920](http://tools.ietf.org/html/rfc920).  ICANN controls the TLDs, and delegate responsibility for the registration and maintenance of specific domains to registrars.
 
 Fully Qualified Domain Name (FQDN)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
 A fully-qualifid domain name is equivalent to the absolute name. Domain names can also be relative to one another and therefore have a tendency to become ambiguous at times. Specifying an FQDN relative to the root ensures that you have specified exactly which domain you are interested in. Examples of FQDNs include `www.google.com.` and `www.gov.uk.`.
 
 IP address
 ^^^^^^^^^^
-
 An IP address is used to uniquely address a machine on a network in numerical (IPv4) or alphanumerical (IPv6) form. It is important that we understand the concept of "network" used here to be relative to what we are trying to achieve. For instance, trying to contact another computeri inside your home or office network means that the IP address of the machine you are trying to reach must be unique within your home or office. In terms of websites and publically-accessible information available via the internet, the 'network' is - in fact - the internet.
 
 There are two types of IP: one is becoming increasingly popular as we get close to running out of avaialble IPv4 addres.
@@ -44,12 +40,10 @@ IPv6 follows similar principles to IPv4 - it allows for machines to be uniquely 
 
 Zonefile
 ^^^^^^^^
-
 A zonefile is simply a text file made of a variety of different records for an individual domain. Each line of a zonefile contains the name of a particular domain, and then the value and type associated with it. For instance, in `google.com`'s zonefile, there may exist a line which denotes `www` translates, via an `A record`, to `173.194.34.68`.
 
 Records
 ^^^^^^^
-
 A DNS record is a single mapping between a domain and relevant data - for instance, an IP address in the case of an `A record`, or a mail server's domain name, in the case of an `MX record`. Many records make up a zonefile.
 
 How DNS works
@@ -57,21 +51,35 @@ How DNS works
 
 Root Servers
 ^^^^^^^^^^^^
-
 At the very top of the DNS tree are root servers. These are controlled by the [Internet Corporation for Assigned Names and Numbers](https://icann.org). As of writing, there are thirteen unique root servers - however, an interesting caveat applies in that each of these root servers is actually a pool of root servers, acting in a load-balanced fashion in order to deal with the huge number of requests they get from the billions of internet users daily. Their purpose is to handle requests for information about Top-Level Domains, such as `.com` and `.net`, where lower level nameservers cannot handle the request sufficiently. The root servers don't hold any records of real use, insofar as they cannot respond with an answer to a query on their own. Instead, they respond to the request with details of which nameserver is best advised to proceed further.
 
 For example, let's assume that a request for `www.google.com` came straight in to a root server. The root server would look at its records for `www.google.com`, but won't be able to find it. The best it will be able to produce is a partial match for `.com`. It sends this information back in a response to the original request.
 
 TLD Servers
 ^^^^^^^^^^^
-
 Once the request for `www.google.com` has been replied to, the requesting machine will instead ask the nameserver it received in reply to the original request to the root server where `www.google.com` is. At this stage, it knows that this server handles `.com`, so at least it is able to get some way further in mapping the address to an IP address. The TLD serve will try to find `www.google.com` in its records, but it will only be able to reply with details about `google.com`.
 
 Domain-level nameservers
 ^^^^^^^^^^^^^^^^^^^^^^^^
-
 By this stage, the original request for `www.google.com` has been responded to twice: once by the root server to tell it that it doesn't handle any records, but knows where `.com` is handled, and once by the TLD server which says that it handles `.com`, and knows where `google` is. We've still got one more stage to get to, though - that's the `www` stage. For this, the request is played against the server responsible for `google.com`, which duly looks up `www.google.com` in its records and responds with an IP address (or more, depending on the configuration).
 
 We've finally got to the end of a full request! In reality, DNS queries take place in seconds, and there are measures in place which we'll come on to in these DNS chapters about how DNS can be made faster.
 
+Resource types
+==============
 
+Whilst at it's most basic, DNS is responsible for mapping easily-remembered domain names to IP addresses, it is also used as a form of key/value database for the internet. DNS can hold details on which mail servers are responsible for a domain's mail and arbitrary human-readable text which is best placed in DNS for whatever reason.
+
+The most common types you'll see are:
+
+- A
+- AAAA
+- CNAME
+- MX
+- NS
+- PTR
+- SOA
+- SRV
+- TXT
+
+There's a good in-depth list of every record type, the description of its use and the related RFC in which it is defined in `this Wikipedia article <http://en.wikipedia.org/wiki/List_of_DNS_record_types>`__.
