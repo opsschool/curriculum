@@ -163,3 +163,49 @@ In this example, we would be specifying that any of ``192.168.1.1``, ``192.168.1
 
 Setting the ``domain`` directive - as in the above example, where we specified it as ``opsschool`` - allows users to specify hosts by address relative the domain. For instance, a user could reference ``sql01``, and a query would be sent to nameservers specified asking for records for both ``sql01`` and ``sql01.home``. In most cases, the responses should match - just be careful if they don't, as you'll end up with some very confused machines when DNS has split-brained like this!
 
+Caching
+^^^^^^^
+
+By itself, DNS doesn't scale very well. Imagine having a machine that needed to make many millions of DNS queries per day in order to perform its function - it would need to perform well and be constantly available. In order to cut the cost of hardware somewhat, to reduce pressure on networks, and to speed up receiving responses to common queries, many client machines will cache DNS records. The SOA record at the start of each zonefile on the nameservers specifies an ``expiry`` value, which tells clients for how long they can keep the zonefile in its current state before they must re-request it. This rather crude but effective updating method works well in the case of DNS.
+
+Generally speaking, caching of DNS records (at least on Unix-based machines) is managed by individual applications. In a Windows environment, however, it is more centralised. To that end, whilst you cannot easily view the cache as it exists on an individual machine all in one place in Unix, you can using Windows - the ``ipconfig /displaydns`` command will print the cache as it stands. In Windows, you'll be presented with the record name as a number - this is a binary representation of the record type itself. Conversion charts can be found online, for example `at Wikipedia <http://en.wikipedia.org/wiki/List_of_DNS_record_types>`__.
+
+Caching links directly to a phenomenon called propagation. Propagation is the process by which records that have previously existed and have been updated begin to get updated in other machines' caches. If the SOA record for a zonefile tells hosts to check back with the DNS server every 24 hours, then it should take - at most - 24 hours for machines to update their caches with the new record.
+
+TTLs
+====
+
+TTLs, or 'time to live' values, are a useful feature in DNS which allows you to force the expiry of individual records, thus bypassing the ``expiry`` time referenced in the SOA record on a per-record basis. For instance, let's say that opsschool.org has moved to a new web host but it needs to ensure that the service is available as much as possible. By reducing the TTL for the ``www`` and ``*`` records in the ``opsschool.org`` zonefile, the switch between previous and new vendor should be relatively pain-free. TTLs and caching (see above) work well together - with a suitably high TTL and suitable caching in place, the time for a request to be responded to and the time for updated records to exist on caches are both dramatically reduced.
+
+Forward and reverse DNS
+=======================
+
+By this point, we've covered many of the basic concepts of DNS - we've looked at what exactly DNS is, how the DNS tree works (in the forms of nameserver hierarchies and record types), and we've looked at host-side configuration using ``/etc/resolv.conf`` and ``/etc/hosts``. There is, however, one further concept we need to cover: forward and reverse DNS.
+
+Forward DNS is, in essence, simply DNS as described above. When ``ftp.example.com`` is requested, the root nameserver will reply with details of the nameserver responsible for ``.com``, which will reply with the address of the nameserer responsible for ``example.com``, which will then look in the ``example.com`` zonefile for the ``ftp`` record and reply appropriately. In fact, the terms 'forward DNS' and 'DNS' are pretty interchangeable: when talking about DNS, if you don't otherwise specify, most ops engineers will assume you're talking about forward DNS as it's the most often used direction.
+
+However, whilst forward DNS is the type you're likely to run in to most often, it's also very important to know how reverse DNS works. If forward DNS maps hostnames to IP addresses, then reverse DNS does exactly the opposite: it maps IP addresses to hostnames. To do this, the zonefile in question must have a PTR record set for the record you're interested in. Getting used to PTR records and reverse DNS can be tricky, so it might take a few attempts until it catches on.
+
+
+Useful DNS tools
+================
+
+There are a number of very useful tools for querying DNS. A list of the most common and some example commands can be found below - for further instructions, see each tool's man page (found, in Unix, by typing ``man $toolname`` at a prompt, and in Windows by appending ``-h`` to the command.
+
+Windows
+^^^^^^^
+
+``ipconfig`` is a useful tool for diagnosing and configuring TCP/IP networks. Among its many switches, it allows the use of ``/displaydns`` which will dump the output of the DNS cache to the console for you. You can then use the ``/flushdns`` entry to clear your DNS cache on a Windows machine.
+
+``nslookup``, however, might be more useful in your day-to-day use of DNS. It allows you to look up an entry on any nameserver that you know the public IP address or hostname for. In many respects, therefore, it acts much like ``dig`` on Unix systems does.
+
+Unix
+^^^^
+
+``dig`` can be used to query a nameserver to see what values it holds for a specific record. For instance, you could run ``dig opsschool.org`` will produce the entire query and entire response, which whilst useful, is often not the information you are looking for. Running the same command, but specifying the ``+short`` switch just provides you with relevant detail - in the case of looking up an IP address for a hostname by way of A record, then the output from ``dig`` will just be the relevant IP address. Dig can also be used to query external nameservers, such as ``8.8.8.8``, to see what values they hold.
+
+For instance, ``dig`` can be invoked as follows:
+
+- ``dig opsschool.org a`` for a verbose output listing only the ``A record`` for ``opsschool.org``
+- ``dig opsschool.org a +short`` for a much shorter, more concise version of the last command
+- ``dig @8.8.8.8 opsschool.org a +short`` to repeat the same command as above, but against Google's 8.8.8.8 nameserver
