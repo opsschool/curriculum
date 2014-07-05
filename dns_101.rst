@@ -9,7 +9,7 @@ A Brief History of DNS
 
 As the popularity of the internet grew, and more networked computers came online, there was an increasing need to be able to reference remote machines in a less-confusing way than solely by IP address. With a small enough network, referencing machines by IP address alone can work absolutely fine. The addition of descriptive names, however, makes referencing machines much easier.
 
-The first example of DNS was a `HOSTS.TXT` file created by staff running [ARPANET](http://en.wikipedia.org/wiki/ARPANET). ARPANET staff would amend this global `HOSTS.TXT` file on a regular basis, and it was distributed to anyone on the internet who wanted to use it to reference machines by name rather than by number. Eventually, as the internet grew, it was realised that a more automated system for mapping descriptive names to IP addresses was needed. To that end, `HOSTS.TXT` can be seen as the immediate forerunner to the Domain Name System we use today.
+The first example of DNS was a ``HOSTS.TXT`` file created by staff running [ARPANET](http://en.wikipedia.org/wiki/ARPANET). ARPANET staff would amend this global ``HOSTS.TXT`` file on a regular basis, and it was distributed to anyone on the internet who wanted to use it to reference machines by name rather than by number. Eventually, as the internet grew, it was realised that a more automated system for mapping descriptive names to IP addresses was needed. To that end, ``HOSTS.TXT`` can be seen as the immediate forerunner to the Domain Name System we use today.
 
 In 1983, Paul Mockapetris authored [RFC 882](http://tools.ietf.org/html/rfc882), which describes how a system mapping memorable names to unmemorable IP addresses could work. A team of students at [UC Berkeley](http://berkeley.edu) created the first implementation of Mockapetris' ideas in 1984, naming their creation Berkeley Internet Name Domain (BIND) server. Today, BIND is still the most widely-used nameserver software on the internet with over 70% of domains using it, according to the [ISC](http://isc.org/downloads/bind) and Don Moore's [survey](http://mydns.bboy.net/survey/). Since then, a number of RFC documents have been published which have continued to improve how DNS works and runs.
 
@@ -18,15 +18,15 @@ Terminology
 
 Domain name
 ^^^^^^^^^^^
-A domain name is likely the way you interface with DNS most often when browsing the internet. Examples are, quite literally, everywhere - a very limited set of examples includes `google.com` and `wikipedia.org`. 
+A domain name is likely the way you interface with DNS most often when browsing the internet. Examples are, quite literally, everywhere - a very limited set of examples includes ``google.com`` and ``wikipedia.org``. 
 
 Top-Level Domain
 ^^^^^^^^^^^^^^^^
-A top-level domain is an important, but rather generic, part of a domain name. Examples include `com`, `net`, `gov` and `org` - they were originally defined in [RFC 920](http://tools.ietf.org/html/rfc920).  ICANN controls the TLDs, and delegate responsibility for the registration and maintenance of specific domains to registrars.
+A top-level domain is an important, but rather generic, part of a domain name. Examples include ``com``, ``net``, ``gov`` and ``org`` - they were originally defined in [RFC 920](http://tools.ietf.org/html/rfc920).  ICANN controls the TLDs, and delegate responsibility for the registration and maintenance of specific domains to registrars.
 
 Fully Qualified Domain Name (FQDN)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-A fully-qualifid domain name is equivalent to the absolute name. Domain names can also be relative to one another and therefore have a tendency to become ambiguous at times. Specifying an FQDN relative to the root ensures that you have specified exactly which domain you are interested in. Examples of FQDNs include `www.google.com.` and `www.gov.uk.`.
+A fully-qualifid domain name is equivalent to the absolute name. Domain names can also be relative to one another and therefore have a tendency to become ambiguous at times. Specifying an FQDN relative to the root ensures that you have specified exactly which domain you are interested in. Examples of FQDNs include ``www.google.com.`` and ``www.gov.uk.``.
 
 IP address
 ^^^^^^^^^^
@@ -34,34 +34,34 @@ An IP address is used to uniquely address a machine on a network in numerical (I
 
 There are two types of IP: one is becoming increasingly popular as we get close to running out of avaialble IPv4 addres.
 
-An IPv4 address referenced everything in four sets of three period-separated digits. For instance, `8.8.8.8` and `102.92.190.91` are examples of IPv4 addresses. As more devices and people across the world come online, the demand for IPv4 addresses hit a peak, and ICANN are now very close to running out of available addresses. This is where IPv6 comes in.
+An IPv4 address referenced everything in four sets of three period-separated digits. For instance, ``8.8.8.8`` and ``102.92.190.91`` are examples of IPv4 addresses. As more devices and people across the world come online, the demand for IPv4 addresses hit a peak, and ICANN are now very close to running out of available addresses. This is where IPv6 comes in.
 
-IPv6 follows similar principles to IPv4 - it allows for machines to be uniquely referenced on the network on which they reside, but the addressing syntax incorporates alphanumeric characters to increase the number of available addresses by a significant base. They are written as `2001:0db8:85a3:0042:1000:8a2e:0370:7334`, although short-hand notations do exist (for instance, `::1` to refer to the local machine at any time).
+IPv6 follows similar principles to IPv4 - it allows for machines to be uniquely referenced on the network on which they reside, but the addressing syntax incorporates alphanumeric characters to increase the number of available addresses by a significant base. They are written as ``2001:0db8:85a3:0042:1000:8a2e:0370:7334``, although short-hand notations do exist (for instance, ``::1`` to refer to the local machine at any time).
 
 Zonefile
 ^^^^^^^^
-A zonefile is simply a text file made of a variety of different records for an individual domain. Each line of a zonefile contains the name of a particular domain, and then the value and type associated with it. For instance, in `google.com`'s zonefile, there may exist a line which denotes `www` translates, via an `A record`, to `173.194.34.68`.
+A zonefile is simply a text file made of a variety of different records for an individual domain. Each line of a zonefile contains the name of a particular domain, and then the value and type associated with it. For instance, in ``google.com``'s zonefile, there may exist a line which denotes ``www`` translates, via an ``A record``, to ``173.194.34.68``.
 
 Records
 ^^^^^^^
-A DNS record is a single mapping between a domain and relevant data - for instance, an IP address in the case of an `A record`, or a mail server's domain name, in the case of an `MX record`. Many records make up a zonefile.
+A DNS record is a single mapping between a domain and relevant data - for instance, an IP address in the case of an ``A record``, or a mail server's domain name, in the case of an ``MX record``. Many records make up a zonefile.
 
 How DNS works
 =============
 
 Root Servers
 ^^^^^^^^^^^^
-At the very top of the DNS tree are root servers. These are controlled by the [Internet Corporation for Assigned Names and Numbers](https://icann.org). As of writing, there are thirteen unique root servers - however, an interesting caveat applies in that each of these root servers is actually a pool of root servers, acting in a load-balanced fashion in order to deal with the huge number of requests they get from the billions of internet users daily. Their purpose is to handle requests for information about Top-Level Domains, such as `.com` and `.net`, where lower level nameservers cannot handle the request sufficiently. The root servers don't hold any records of real use, insofar as they cannot respond with an answer to a query on their own. Instead, they respond to the request with details of which nameserver is best advised to proceed further.
+At the very top of the DNS tree are root servers. These are controlled by the [Internet Corporation for Assigned Names and Numbers](https://icann.org). As of writing, there are thirteen unique root servers - however, an interesting caveat applies in that each of these root servers is actually a pool of root servers, acting in a load-balanced fashion in order to deal with the huge number of requests they get from the billions of internet users daily. Their purpose is to handle requests for information about Top-Level Domains, such as ``.com`` and ``.net``, where lower level nameservers cannot handle the request sufficiently. The root servers don't hold any records of real use, insofar as they cannot respond with an answer to a query on their own. Instead, they respond to the request with details of which nameserver is best advised to proceed further.
 
-For example, let's assume that a request for `www.google.com` came straight in to a root server. The root server would look at its records for `www.google.com`, but won't be able to find it. The best it will be able to produce is a partial match for `.com`. It sends this information back in a response to the original request.
+For example, let's assume that a request for ``www.google.com`` came straight in to a root server. The root server would look at its records for ``www.google.com``, but won't be able to find it. The best it will be able to produce is a partial match for ``.com``. It sends this information back in a response to the original request.
 
 TLD Servers
 ^^^^^^^^^^^
-Once the request for `www.google.com` has been replied to, the requesting machine will instead ask the nameserver it received in reply to the original request to the root server where `www.google.com` is. At this stage, it knows that this server handles `.com`, so at least it is able to get some way further in mapping the address to an IP address. The TLD serve will try to find `www.google.com` in its records, but it will only be able to reply with details about `google.com`.
+Once the request for ``www.google.com`` has been replied to, the requesting machine will instead ask the nameserver it received in reply to the original request to the root server where ``www.google.com`` is. At this stage, it knows that this server handles ``.com``, so at least it is able to get some way further in mapping the address to an IP address. The TLD serve will try to find ``www.google.com`` in its records, but it will only be able to reply with details about ``google.com``.
 
 Domain-level nameservers
 ^^^^^^^^^^^^^^^^^^^^^^^^
-By this stage, the original request for `www.google.com` has been responded to twice: once by the root server to tell it that it doesn't handle any records, but knows where `.com` is handled, and once by the TLD server which says that it handles `.com`, and knows where `google` is. We've still got one more stage to get to, though - that's the `www` stage. For this, the request is played against the server responsible for `google.com`, which duly looks up `www.google.com` in its records and responds with an IP address (or more, depending on the configuration).
+By this stage, the original request for ``www.google.com`` has been responded to twice: once by the root server to tell it that it doesn't handle any records, but knows where ``.com`` is handled, and once by the TLD server which says that it handles ``.com``, and knows where ``google`` is. We've still got one more stage to get to, though - that's the ``www`` stage. For this, the request is played against the server responsible for ``google.com``, which duly looks up ``www.google.com`` in its records and responds with an IP address (or more, depending on the configuration).
 
 We've finally got to the end of a full request! In reality, DNS queries take place in seconds, and there are measures in place which we'll come on to in these DNS chapters about how DNS can be made faster.
 
@@ -72,7 +72,7 @@ Whilst at it's most basic, DNS is responsible for mapping easily-remembered doma
 
 The most common types you'll see are:
 
-- A
+- ``A``: responsible for 
 - AAAA
 - CNAME
 - MX
@@ -82,4 +82,4 @@ The most common types you'll see are:
 - SRV
 - TXT
 
-There's a good in-depth list of every record type, the description of its use and the related RFC in which it is defined in `this Wikipedia article <http://en.wikipedia.org/wiki/List_of_DNS_record_types>`__.
+There's a good in-depth list of every record type, the description of its use and the related RFC in which it is defined in ``this Wikipedia article <http://en.wikipedia.org/wiki/List_of_DNS_record_types>``__.
