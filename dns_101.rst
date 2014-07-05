@@ -140,11 +140,25 @@ However, ``/etc/hosts`` is not a replacement for DNS - in fact, it is far from i
    ::1               localhost
    fe80::1%lo0	     localhost
 
-   192.168.1.2	     sql01
-   192.168.1.3       sql02
-   10.0.0.2          puppetmaster puppet pm01
+   192.168.2.2	     sql01
+   192.168.2.3       sql02
+   192.168.1.10      puppetmaster puppet pm01
 
-The first four lines of ``/etc/hosts`` are created automatically on a Unix machine and are used at boot: they shouldn't be changed unless you really know what you're doing! After these first four lines, though, we can specify a name and map it an IP address. In the above example, we've mapped ``sql01`` to ``192.168.1.2``, which means that on a host with the above ``/etc/hosts`` configuration, we could refer to ``sql01`` alone and get to the machine responding as ``192.168.1.2``. You'll see a similar example for ``sql02``, too. However, there is a slightly odd example for the box named ``puppetmaster`` in that multiple friendly names exist for the one box living at ``10.0.0.2``. When referenced in this way - with multiple space-separated names against each IP address - the box at ``10.0.0.2`` can be reached at any of the specified names. In effect, ``puppetmaster``, ``puppet``, and ``pm01`` are all valid ways to address ``10.0.0.2``.
+The first four lines of ``/etc/hosts`` are created automatically on a Unix machine and are used at boot: they shouldn't be changed unless you really know what you're doing! In fact, the last two lines of this section are the IPv6 equivalents of the first line. After these first four lines, though, we can specify a name and map it an IP address. In the above example, we've mapped ``sql01`` to ``192.168.2.2``, which means that on a host with the above ``/etc/hosts`` configuration, we could refer to ``sql01`` alone and get to the machine responding as ``192.168.2.2``. You'll see a similar example for ``sql02``, too. However, there is a slightly odd example for the box named ``puppetmaster`` in that multiple friendly names exist for the one box living at ``10.0.0.2``. When referenced in this way - with multiple space-separated names against each IP address - the box at ``10.0.0.2`` can be reached at any of the specified names. In effect, ``puppetmaster``, ``puppet``, and ``pm01`` are all valid ways to address ``10.0.0.2``.
 
 ``/etc/resolv.conf``
 ^^^^^^^^^^^^^^^^^^^^
+
+``/etc/resolv.conf`` exists on Unix machines to allow system administrators to set the nameservers which the machine should use. A DNS domain can also be referenced in this file, too. An example ``/etc/resolv.conf`` might look like:
+
+.. code-block:: bash
+   
+   domain     opsschool
+   nameserver 192.168.1.1
+   nameserver 192.168.1.2
+   nameserver 192.168.1.3
+
+In this example, we would be specifying that any of ``192.168.1.1``, ``192.168.1.2`` and ``192.168.1.3`` can be used by the host with the above configuration to query DNS. We are actually telling the host that it is allowed to use any of the nameservers in this file when it resolves (ie: makes a request for an entry and waits for a response) a host in DNS.
+
+Setting the ``domain`` directive - as in the above example, where we specified it as ``opsschool`` - allows users to specify hosts by address relative the domain. For instance, a user could reference ``sql01``, and a query would be sent to nameservers specified asking for records for both ``sql01`` and ``sql01.home``. In most cases, the responses should match - just be careful if they don't, as you'll end up with some very confused machines when DNS has split-brained like this!
+
