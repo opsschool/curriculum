@@ -118,3 +118,33 @@ An example zonefile
  
    _sip._tcp.example.com. IN SRV 0 5 5060 sip.example.com.
 
+Host-specific DNS configuration
+===============================
+
+If you are administering systems, specifically Unix systems, you should be aware of two pieces of host-side configuration which allow your machines to interface with DNS:
+
+  - ``/etc/hosts``
+  - ``/etc/resolv.conf``
+
+``/etc/hosts``
+^^^^^^^^^^^^^^
+
+The ``/etc/hosts`` file has the purpose of acting as a local alternative to DNS. You might use this when you want to override the record in place in DNS on a particular machine only, without impacting that record and its use for others - therefore, DNS can be over-ridden using ``/etc/hosts``. Alternatively, it can be used as a back-up to DNS: if you specify the hosts that are mission-critical in your infrastructure inside ``/etc/hosts``, then they can still be addressed by name even if the nameserver(s) holding your zonefile are down.
+
+However, ``/etc/hosts`` is not a replacement for DNS - in fact, it is far from it: DNS has a much richer set of records that it can hold, whereas ``/etc/hosts`` can only hold the equivalent of ``A`` records. An ``/etc/hosts`` file might, therefore, look like:
+
+.. code-block:: bash
+
+   127.0.0.1	     localhost
+   255.255.255.255   broadcasthost
+   ::1               localhost
+   fe80::1%lo0	     localhost
+
+   192.168.1.2	     sql01
+   192.168.1.3       sql02
+   10.0.0.2          puppetmaster puppet pm01
+
+The first four lines of ``/etc/hosts`` are created automatically on a Unix machine and are used at boot: they shouldn't be changed unless you really know what you're doing! After these first four lines, though, we can specify a name and map it an IP address. In the above example, we've mapped ``sql01`` to ``192.168.1.2``, which means that on a host with the above ``/etc/hosts`` configuration, we could refer to ``sql01`` alone and get to the machine responding as ``192.168.1.2``. You'll see a similar example for ``sql02``, too. However, there is a slightly odd example for the box named ``puppetmaster`` in that multiple friendly names exist for the one box living at ``10.0.0.2``. When referenced in this way - with multiple space-separated names against each IP address - the box at ``10.0.0.2`` can be reached at any of the specified names. In effect, ``puppetmaster``, ``puppet``, and ``pm01`` are all valid ways to address ``10.0.0.2``.
+
+``/etc/resolv.conf``
+^^^^^^^^^^^^^^^^^^^^
