@@ -72,14 +72,49 @@ Whilst at it's most basic, DNS is responsible for mapping easily-remembered doma
 
 The most common types you'll see are:
 
-- ``A``: responsible for 
-- AAAA
-- CNAME
-- MX
-- NS
-- PTR
-- SOA
-- SRV
-- TXT
+- ``A``: responsible for mapping individual hosts to an IP address, for instance ``www`` in the ``google.com`` zonefile to ``173.194.34.67`` 
+- ``AAAA``: similar to an `A` record, except for IPv6. It could be used to map ``www`` in the ``google.com`` zonefile to ``2001:4860:b002::68``
+- ``CNAME``: used to alias one record to another, for instance ``bar.example.com.`` could be aliased to ``foo.example.com.``
+- ``MX``: specifies mail servers responsible for handling mail for the domain. A priority is also assigned to denote an order of responsibility
+- ``SOA``: specifies authoritative details about a zonefile, including the zonemaster's email address, serial number (for revision purposes) and primary nameserver
+- ``SRV``: a semi-generic record used to specify a location. Used by newer services instead of creating protocol-specific records such as ``MX``.
+- ``TXT``: originally for human-readable information that did not fit other records, but now mostly used to create ``SPF <http://en.wikipedia.org/wiki/Sender_Policy_Framework>``__ records
 
-There's a good in-depth list of every record type, the description of its use and the related RFC in which it is defined in ``this Wikipedia article <http://en.wikipedia.org/wiki/List_of_DNS_record_types>``__.
+There's a good in-depth list of every record type, the description of its use and the related RFC in which it is defined in `this Wikipedia article <http://en.wikipedia.org/wiki/List_of_DNS_record_types>`__.
+
+An example zonefile
+===================
+
+.. code-block:: bash
+
+   $TTL     86400;	// specified in seconds, but could be 24h or 1d
+   $ORIGIN  example.com
+
+   @ 1D IN SOA ns1.example.com. hostmaster.example.com. (
+               123456 ; // serial
+	       3H     ;	// refresh
+               15     ; // retry
+               1w     ; // example
+               3h     ; // minimum
+               )
+
+         IN NS ns1.example.com
+	 IN NS ns2.example.com // Good practice to specify multiple nameservers for fault-tolerance
+         IN NS ns1.foo.com     // Using external nameservers for fault-tolerance is even better
+         IN NS ns1.bar.com     // And multiple external nameservers is better still!
+
+         IN MX 10 mail.example.com // Here, 10 is the highest priority mail server, so is the first to be used
+         IN MX 20 mail.foo.com     // If the highest priority mail server is unavailable, fall back to this one
+    
+   ns1   IN A     1.2.3.4
+   ns1   IN AAAA  1234:5678:a1234::12 // A and AAAA records can co-exist happily. Useful for supporting early IPv6 adopters.
+   ns2   IN A	  5.6.7.8
+   ns2   IN A     1234:5678:a1234::89
+   mail  IN A     1.3.5.7
+   www   IN A     2.4.6.8
+   sip   IN CNAME www.example.com.
+   ftp	 IN CNAME www.example.com.
+   mail  IN TXT   "v=spf1 a -all"  
+ 
+   _sip._tcp.example.com. IN SRV 0 5 5060 sip.example.com.
+
