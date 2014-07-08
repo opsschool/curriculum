@@ -51,17 +51,17 @@ If so, this information will make your work a lot easier.
 The components may contain, among other things:
 
 * SQL Servers (sqlsrv001 and sqlsrv002)
-* Domain Controllers (dcsrv001, dcsrv002 - used for loadbalancing, dcsrv003 - used for load balancing)
+* Domain Controllers (dcsrv001 - primary, dcsrv002 & dcsrv003 - used for load balancing)
 * Fileservers (stgsrv001)
 * Application servers (appsrv001, appsrv002)
 
 We will then, together with the rest of the organization, try to map these components to the bussiness activities we've identified earlier.
 For example:
 
-* The application server appsrv001 is running our ERP, which is needed to be able to place orders from customers.
+* The application server **appsrv001** is running our ERP, which is needed to be able to place orders from customers.
 * The SQL Server **sqlsrv001** contains the data from the ERP which means that it's a prerequisite for the application server.
-* The domain controller is needed so the users are able to sign in to the ERP. However, since 002 and 003's main purposes is load balancing, recovering will be our main objective001.
-* The fileserver stgsrv001 is used to store copies of the order receipts produced in the ERP.
+* The domain controller is needed so the users are able to sign in to the ERP. However, since 002 and 003's main purposes is load balancing, recovering **dcsrv001** will be our main objective.
+* The fileserver **stgsrv001** is used to store copies of the order receipts produced in the ERP.
 
 What we've concluded from this activity is that we need to recover four components to be able to use the ERP.
 Note however, that in reality, the IT environment's usually alot more complex then the one used in this example.
