@@ -56,9 +56,9 @@ For example, if you were running a web server like nginx or Apache that was conf
     127.0.0.1 - - [17/Aug/2013:02:53:43 -0700] "GET / HTTP/1.1" 200 151 "-" "curl/7.22.0 (x86_64-pc-linux-gnu) libcurl/7.22.0 OpenSSL/1.0.1"
     127.0.0.1 - - [17/Aug/2013:02:53:43 -0700] "GET / HTTP/1.1" 200 151 "-" "curl/7.22.0 (x86_64-pc-linux-gnu) libcurl/7.22.0 OpenSSL/1.0.1"
 
-The with the `-f` option tail won't exit on it's own, it will continue to wait for new lines to be written to the log file and write them to the terminal until it receives a signal or encounters an error.
+With the `-f` option, tail won't exit on it's own, it will continue to wait for new lines to be written to the log file and write them to the terminal until it receives a signal or encounters an error.
 
-It is important to understand that after a file is opened for writing, the process writing the file only refers to that file by it's file handle, which is a number assigned by the kernel.
+It is important to understand that after a file is opened for writing, the process writing the file only refers to that file by its file handle, which is a number assigned by the kernel.
 If that file is renamed with `mv` or deleted with `rm`, writes to that file handle will still succeed.
 This can sometimes lead to counter-intuitive situations where log messages are being written to a file that's been renamed for archival or to an inode that no longer has a filename associated with it.
 Some daemons provide mechanisms for closing and reopening their log files upon receiving a signal like SIGHUP but quite a few don't.
