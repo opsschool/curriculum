@@ -9,9 +9,9 @@ A Brief History of DNS
 
 As the popularity of the internet grew, and more networked computers came online, there was an increasing need to be able to reference remote machines in a less-confusing way than solely by IP address. With a small enough network, referencing machines by IP address alone can work absolutely fine. The addition of descriptive names, however, makes referencing machines much easier.
 
-The first example of DNS was a ``HOSTS.TXT`` file created by staff running [ARPANET](http://en.wikipedia.org/wiki/ARPANET). ARPANET staff would amend this global ``HOSTS.TXT`` file on a regular basis, and it was distributed to anyone on the internet who wanted to use it to reference machines by name rather than by number. Eventually, as the internet grew, it was realised that a more automated system for mapping descriptive names to IP addresses was needed. To that end, ``HOSTS.TXT`` can be seen as the immediate forerunner to the Domain Name System we use today.
+The first example of DNS was a ``HOSTS.TXT`` file created by staff running `ARPANET <http://en.wikipedia.org/wiki/ARPANET>`_. ARPANET staff would amend this global ``HOSTS.TXT`` file on a regular basis, and it was distributed to anyone on the internet who wanted to use it to reference machines by name rather than by number. Eventually, as the internet grew, it was realised that a more automated system for mapping descriptive names to IP addresses was needed. To that end, ``HOSTS.TXT`` can be seen as the immediate forerunner to the Domain Name System we use today.
 
-In 1983, Paul Mockapetris authored [RFC 882](http://tools.ietf.org/html/rfc882), which describes how a system mapping memorable names to unmemorable IP addresses could work. A team of students at [UC Berkeley](http://berkeley.edu) created the first implementation of Mockapetris' ideas in 1984, naming their creation Berkeley Internet Name Domain (BIND) server. Today, BIND is still the most widely-used nameserver software on the internet with over 70% of domains using it, according to the [ISC](http://isc.org/downloads/bind) and Don Moore's [survey](http://mydns.bboy.net/survey/). Since then, a number of RFC documents have been published which have continued to improve how DNS works and runs.
+In 1983, Paul Mockapetris authored `RFC 882 <http://tools.ietf.org/html/rfc882>`_, which describes how a system mapping memorable names to unmemorable IP addresses could work. A team of students at `UC Berkeley <http://berkeley.edu>`_ created the first implementation of Mockapetris' ideas in 1984, naming their creation Berkeley Internet Name Domain (BIND) server. Today, BIND is still the most widely-used nameserver software on the internet with over 70% of domains using it, according to the `ISC <http://isc.org/downloads/bind>`_ and Don Moore's `survey <http://mydns.bboy.net/survey/>`_. Since then, a number of RFC documents have been published which have continued to improve how DNS works and runs.
 
 Terminology
 ===========
@@ -26,7 +26,7 @@ A top-level domain is an important, but rather generic, part of a domain name. E
 
 Fully Qualified Domain Name (FQDN)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-A fully-qualifid domain name is equivalent to the absolute name. Domain names can also be relative to one another and therefore have a tendency to become ambiguous at times. Specifying an FQDN relative to the root ensures that you have specified exactly which domain you are interested in. Examples of FQDNs include ``www.google.com.`` and ``www.gov.uk.``.
+A fully-qualified domain name is equivalent to the absolute name. Domain names can also be relative to one another and therefore have a tendency to become ambiguous at times. Specifying an FQDN relative to the root ensures that you have specified exactly which domain you are interested in. Examples of FQDNs include ``www.google.com.`` and ``www.gov.uk.``.
 
 IP address
 ^^^^^^^^^^
@@ -51,7 +51,7 @@ How DNS works
 
 Root Servers
 ^^^^^^^^^^^^
-At the very top of the DNS tree are root servers. These are controlled by the [Internet Corporation for Assigned Names and Numbers](https://icann.org). As of writing, there are thirteen unique root servers - however, an interesting caveat applies in that each of these root servers is actually a pool of root servers, acting in a load-balanced fashion in order to deal with the huge number of requests they get from the billions of internet users daily. Their purpose is to handle requests for information about Top-Level Domains, such as ``.com`` and ``.net``, where lower level nameservers cannot handle the request sufficiently. The root servers don't hold any records of real use, insofar as they cannot respond with an answer to a query on their own. Instead, they respond to the request with details of which nameserver is best advised to proceed further.
+At the very top of the DNS tree are root servers. These are controlled by the `Internet Corporation for Assigned Names and Numbers <https://icann.org>`_. As of writing, there are thirteen unique root servers - however, an interesting caveat applies in that each of these root servers is actually a pool of root servers, acting in a load-balanced fashion in order to deal with the huge number of requests they get from the billions of internet users daily. Their purpose is to handle requests for information about Top-Level Domains, such as ``.com`` and ``.net``, where lower level nameservers cannot handle the request sufficiently. The root servers don't hold any records of real use, insofar as they cannot respond with an answer to a query on their own. Instead, they respond to the request with details of which nameserver is best advised to proceed further.
 
 For example, let's assume that a request for ``www.google.com`` came straight in to a root server. The root server would look at its records for ``www.google.com``, but won't be able to find it. The best it will be able to produce is a partial match for ``.com``. It sends this information back in a response to the original request.
 
@@ -79,7 +79,7 @@ The most common types you'll see are:
 - ``PTR``: resolves an IP address to an FQDN - in practice, this is the reverse of an ``A`` record when it is set
 - ``SOA``: specifies authoritative details about a zonefile, including the zonemaster's email address, serial number (for revision purposes) and primary nameserver
 - ``SRV``: a semi-generic record used to specify a location. Used by newer services instead of creating protocol-specific records such as ``MX``.
-- ``TXT``: originally for human-readable information that did not fit other records, but now mostly used to create ``SPF <http://en.wikipedia.org/wiki/Sender_Policy_Framework>``__ records
+- ``TXT``: originally for human-readable information that did not fit other records, but now mostly used to create ``SPF <http://en.wikipedia.org/wiki/Sender_Policy_Framework>``__ records```
 
 There's a good in-depth list of every record type, the description of its use and the related RFC in which it is defined in `this Wikipedia article <http://en.wikipedia.org/wiki/List_of_DNS_record_types>`__.
 
@@ -168,7 +168,7 @@ Caching
 
 By itself, DNS doesn't scale very well. Imagine having a machine that needed to make many millions of DNS queries per day in order to perform its function - it would need to perform well and be constantly available. In order to cut the cost of hardware somewhat, to reduce pressure on networks, and to speed up receiving responses to common queries, many client machines will cache DNS records. The SOA record at the start of each zonefile on the nameservers specifies an ``expiry`` value, which tells clients for how long they can keep the zonefile in its current state before they must re-request it. This rather crude but effective updating method works well in the case of DNS.
 
-Generally speaking, caching of DNS records (at least on Unix-based machines) is managed by individual applications. In a Windows environment, however, it is more centralised. To that end, whilst you cannot easily view the cache as it exists on an individual machine all in one place in Unix, you can using Windows - the ``ipconfig /displaydns`` command will print the cache as it stands. In Windows, you'll be presented with the record name as a number - this is a binary representation of the record type itself. Conversion charts can be found online, for example `at Wikipedia <http://en.wikipedia.org/wiki/List_of_DNS_record_types>`__.
+Generally speaking, caching of DNS records (at least on Unix-based machines) is managed by individual applications. In a Windows environment, however, it is more centralised. To that end, whilst you cannot easily view the cache as it exists on an individual machine all in one place in Unix, you can using Windows - the ``ipconfig /displaydns`` command will print the cache as it stands. In Windows, you'll be presented with the record name as a number - this is a binary representation of the record type itself. Conversion charts can be found online, for example `at Wikipedia <http://en.wikipedia.org/wiki/List_of_DNS_record_types>`_.
 
 Caching links directly to a phenomenon called propagation. Propagation is the process by which records that have previously existed and have been updated begin to get updated in other machines' caches. If the SOA record for a zonefile tells hosts to check back with the DNS server every 24 hours, then it should take - at most - 24 hours for machines to update their caches with the new record.
 
@@ -186,14 +186,14 @@ Forward DNS is, in essence, simply DNS as described above. When ``ftp.example.co
 
 However, whilst forward DNS is the type you're likely to run in to most often, it's also very important to know how reverse DNS works. If forward DNS maps hostnames to IP addresses, then reverse DNS does exactly the opposite: it maps IP addresses to hostnames. To do this, the zonefile in question must have a PTR record set for the record you're interested in. Getting used to PTR records and reverse DNS can be tricky, so it might take a few attempts until it catches on.
 
-Domain names follow a specific syntax - ``foo.tld``, where ``.tld`` is set by ICANN and chosen by the registrant when they register their domain. For instance, people can choose to register ``.aero``, ``.com`` and ``.tv`` domains wherever they live in the world, subject to a fee. With reverse DNS, a similar syntax exists. Let's assume that we want to know which hostname responds at ``22.33.44.55``. We do this as follows::
+Domain names follow a specific syntax - ``foo.tld``, where ``.tld`` is set by ICANN and chosen by the registrant when they register their domain. For instance, people can choose to register ``.aero``, ``.com`` and ``.tv`` domains wherever they live in the world, subject to a fee. With reverse DNS, a similar syntax exists. Let's assume that we want to know which hostname responds at ``22.33.44.55``. We do this as follows:
 
-# Reverse the octets of the IP address - ``22.33.44.55`` becomes ``55.44.33.22``, for instance
-# Add ``in-addr.arpa`` to the end of the reversed address - we now have ``55.44.33.22.in-addr.arpa
-# The root nameserver tells queries to find the ``arpa`` nameserver
-# The ``arpa`` nameserver directs the query to ``in-addr.arpa``'s nameserver
-# The ``in-addr.arpa`` nameserver then responds with details of ``22.in-addr.arpa``,  and so on...
-# In the zonefile, the IP address matching the query is then found and the relevant hostname is returned
+  1. Reverse the octets of the IP address - ``22.33.44.55`` becomes ``55.44.33.22``, for instance
+  2. Add ``in-addr.arpa`` to the end of the reversed address - we now have ``55.44.33.22.in-addr.arpa``
+  3. The root nameserver tells queries to find the ``arpa`` nameserver
+  4. The ``arpa`` nameserver directs the query to ``in-addr.arpa``'s nameserver
+  5. The ``in-addr.arpa`` nameserver then responds with details of ``22.in-addr.arpa``,  and so on...
+  6. In the zonefile, the IP address matching the query is then found and the relevant hostname is returned
 
 Useful DNS tools
 ================
@@ -217,3 +217,7 @@ For instance, ``dig`` can be invoked as follows:
 - ``dig opsschool.org a`` for a verbose output listing only the ``A record`` for ``opsschool.org``
 - ``dig opsschool.org a +short`` for a much shorter, more concise version of the last command
 - ``dig @8.8.8.8 opsschool.org a +short`` to repeat the same command as above, but against Google's 8.8.8.8 nameserver
+
+In place of ``dig``, you may also see ``host`` used in its place.  Essentially, both tools perform approximately the same action - given a DNS server (or not, as not doing queries the one you have specified in ``/etc/resolv.conf``), ``host`` also allows you to query a record and its value.
+
+For further details on the usage of each tool, have a look at the relevant manual pages - type `man dig` and `man host` to find the man pages on any Unix system. You might choose to stick with one tool, or get used to both.
