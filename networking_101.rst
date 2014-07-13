@@ -357,7 +357,17 @@ These maps are temporary and exist on a per-connection basis. This means that ea
 connection opened by a device will have a unique port number on the device and a
 unique port number on the router as well. This port on the router is used as the
 public port for that connection. Once the connection terminates, the router is
-free to assign that port to another connection.
+free to assign that port to another connection. However, the total number of
+available ports is limited to 65,536, so it is entirely possible that a router
+has no more free ports and cannot assign a new NAT address. This is commonly
+referred to as port exhaustion.
+
+Similar to port exhaustion, timeouts can also affect the router's ability to
+assign new NAT addresses. Each entry in the translation table has a timeout
+value which refers to the amount of time for which that entry can remain
+inactive and still keep its place in the table. An entry that has remained
+inactive for a period of time longer than the timeout will automatically be
+removed, freeing up space for a new one.
 
 Networking cable
 ================
