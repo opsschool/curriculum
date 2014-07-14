@@ -2,73 +2,112 @@
 DNS 101
 *******
 
-The Domain Name System is a very central part of how the Internet we use today works. Before the introduction of DNS, networked computers were referenced solely by IP address. After a while, this became confusing to remember and use on a daily name, thus DNS was born.
+The Domain Name System is a very central part of how the Internet we use today works.
+Before the introduction of DNS, networked computers were referenced solely by IP address.
+After a while, this became confusing to remember and use on a daily name, thus DNS was born.
 
 A Brief History of DNS
 ======================
 
-As the popularity of the Internet grew, and more networked computers came online, there was an increasing need to be able to reference remote machines in a less-confusing way than solely by IP address. With a small enough network, referencing machines by IP address alone can work absolutely fine. The addition of descriptive names, however, makes referencing machines much easier.
+As the popularity of the Internet grew, and more networked computers came online, there was an increasing need to be able to reference remote machines in a less-confusing way than solely by IP address.
+With a small enough network, referencing machines by IP address alone can work absolutely fine.
+The addition of descriptive names, however, makes referencing machines much easier.
 
-The first example of DNS was a ``HOSTS.TXT`` file created by staff running `ARPANET <http://en.wikipedia.org/wiki/ARPANET>`_. ARPANET staff would amend this global ``HOSTS.TXT`` file on a regular basis, and it was distributed to anyone on the Internet who wanted to use it to reference machines by name rather than by number. Eventually, as the Internet grew, it was realized that a more automated system for mapping descriptive names to IP addresses was needed. To that end, ``HOSTS.TXT`` can be seen as the immediate forerunner to the Domain Name System we use today.
+The first example of DNS was a ``HOSTS.TXT`` file created by staff running `ARPANET <http://en.wikipedia.org/wiki/ARPANET>`_.
+ARPANET staff would amend this global ``HOSTS.TXT`` file on a regular basis, and it was distributed to anyone on the Internet who wanted to use it to reference machines by name rather than by number.
+Eventually, as the Internet grew, it was realized that a more automated system for mapping descriptive names to IP addresses was needed.
+To that end, ``HOSTS.TXT`` can be seen as the immediate forerunner to the Domain Name System we use today.
 
-In 1983, Paul Mockapetris authored :rfc:`882`, which describes how a system mapping memorable names to unmemorable IP addresses could work. A team of students at `UC Berkeley <http://berkeley.edu>`_ created the first implementation of Mockapetris' ideas in 1984, naming their creation Berkeley Internet Name Domain (BIND) server. Today, BIND is still the most widely-used nameserver software on the Internet with over 70% of domains using it, according to the `ISC <http://isc.org/downloads/bind>`_ and Don Moore's `survey <http://mydns.bboy.net/survey/>`_. Since then, a number of RFC documents have been published which have continued to improve how DNS works and runs.
+In 1983, Paul Mockapetris authored :rfc:`882`, which describes how a system mapping memorable names to unmemorable IP addresses could work.
+A team of students at `UC Berkeley <http://berkeley.edu>`_ created the first implementation of Mockapetris' ideas in 1984, naming their creation Berkeley Internet Name Domain (BIND) server.
+Today, BIND is still the most widely-used nameserver software on the Internet with over 70% of domains using it, according to the `ISC <http://isc.org/downloads/bind>`_ and Don Moore's `survey <http://mydns.bboy.net/survey/>`_.
+Since then, a number of RFC documents have been published which have continued to improve how DNS works and runs.
 
 Terminology
 ===========
 
 Domain name
 ^^^^^^^^^^^
-A domain name is likely the way you interface with DNS most often when browsing the Internet. Examples are, quite literally, everywhere - a very limited set of example set includes ``google.com`` and ``wikipedia.org``. 
+A domain name is likely the way you interface with DNS most often when browsing the Internet.
+Examples are, quite literally, everywhere - a very limited set of example set includes ``google.com`` and ``wikipedia.org``.
 
 Top-Level Domain
 ^^^^^^^^^^^^^^^^
-A top-level domain is an important, but rather generic, part of a domain name. Examples include ``com``, ``net``, ``gov`` and ``org`` - they were originally defined in :rfc:`920`.  ICANN controls the TLDs, and delegate responsibility for the registration and maintenance of specific domains to registrars.
+A top-level domain is an important, but rather generic, part of a domain name.
+Examples include ``com``, ``net``, ``gov`` and ``org`` - they were originally defined in :rfc:`920`.
+ICANN controls the TLDs, and delegate responsibility for the registration and maintenance of specific domains to registrars.
 
 Fully Qualified Domain Name (FQDN)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-A fully-qualified domain name is equivalent to the absolute name. Domain names can also be relative to one another and therefore have a tendency to become ambiguous at times. Specifying an FQDN relative to the root ensures that you have specified exactly which domain you are interested in. Examples of FQDNs include ``www.google.com.`` and ``www.gov.uk.``.
+A fully-qualified domain name is equivalent to the absolute name.
+Domain names can also be relative to one another and therefore have a tendency to become ambiguous at times.
+Specifying an FQDN relative to the root ensures that you have specified exactly which domain you are interested in.
+Examples of FQDNs include ``www.google.com.`` and ``www.gov.uk.``.
 
 IP address
 ^^^^^^^^^^
-An IP address is used to uniquely address a machine on a network in numerical (IPv4) or alphanumerical (IPv6) form. It is important that we understand the concept of "network" used here to be relative to what we are trying to achieve. For instance, trying to contact another computeri inside your home or office network means that the IP address of the machine you are trying to reach must be unique within your home or office. In terms of websites and publically-accessible information available via the Internet, the 'network' is - in fact - the Internet.
+An IP address is used to uniquely address a machine on a network in numerical (IPv4) or alphanumerical (IPv6) form.
+It is important that we understand the concept of "network" used here to be relative to what we are trying to achieve.
+For instance, trying to contact another computeri inside your home or office network means that the IP address of the machine you are trying to reach must be unique within your home or office.
+In terms of websites and publically-accessible information available via the Internet, the 'network' is - in fact - the Internet.
 
 There are two types of IP: one is becoming increasingly popular as we get close to running out of avaialble IPv4 addres.
 
-An IPv4 address referenced everything in four sets of three period-separated digits. For instance, ``8.8.8.8`` and ``102.92.190.91`` are examples of IPv4 addresses. As more devices and people across the world come online, the demand for IPv4 addresses hit a peak, and ICANN are now very close to running out of available addresses. This is where IPv6 comes in.
+An IPv4 address referenced everything in four sets of three period-separated digits.
+For instance, ``8.8.8.8`` and ``102.92.190.91`` are examples of IPv4 addresses.
+As more devices and people across the world come online, the demand for IPv4 addresses hit a peak, and ICANN are now very close to running out of available addresses.
+This is where IPv6 comes in.
 
-IPv6 follows similar principles to IPv4 - it allows for machines to be uniquely referenced on the network on which they reside, but the addressing syntax incorporates alphanumeric characters to increase the number of available addresses by a significant base. They are written as ``2001:0db8:85a3:0042:1000:8a2e:0370:7334``, although short-hand notations do exist (for instance, ``::1`` to refer to the local machine at any time).
+IPv6 follows similar principles to IPv4 - it allows for machines to be uniquely referenced on the network on which they reside, but the addressing syntax incorporates alphanumeric characters to increase the number of available addresses by a significant base.
+They are written as ``2001:0db8:85a3:0042:1000:8a2e:0370:7334``, although short-hand notations do exist (for instance, ``::1`` to refer to the local machine at any time).
 
 Zonefile
 ^^^^^^^^
-A zonefile is simply a text file made of a variety of different records for an individual domain. Each line of a zonefile contains the name of a particular domain, and then the value and type associated with it. For instance, in ``google.com``'s zonefile, there may exist a line which denotes ``www`` translates, via an ``A record``, to ``173.194.34.68``.
+A zonefile is simply a text file made of a variety of different records for an individual domain.
+Each line of a zonefile contains the name of a particular domain, and then the value and type associated with it.
+For instance, in ``google.com``'s zonefile, there may exist a line which denotes ``www`` translates, via an ``A record``, to ``173.194.34.68``.
 
 Records
 ^^^^^^^
-A DNS record is a single mapping between a domain and relevant data - for instance, an IP address in the case of an ``A record``, or a mail server's domain name, in the case of an ``MX record``. Many records make up a zonefile.
+A DNS record is a single mapping between a domain and relevant data - for instance, an IP address in the case of an ``A record``, or a mail server's domain name, in the case of an ``MX record``.
+Many records make up a zonefile.
 
 How DNS works
 =============
 
 Root Servers
 ^^^^^^^^^^^^
-At the very top of the DNS tree are root servers. These are controlled by the `Internet Corporation for Assigned Names and Numbers <https://icann.org>`_. As of writing, there are thirteen unique root servers - however, an interesting caveat applies in that each of these root servers is actually a pool of root servers, acting in a load-balanced fashion in order to deal with the huge number of requests they get from the billions of Internet users daily. Their purpose is to handle requests for information about Top-Level Domains, such as ``.com`` and ``.net``, where lower level nameservers cannot handle the request sufficiently. The root servers don't hold any records of real use, insofar as they cannot respond with an answer to a query on their own. Instead, they respond to the request with details of which nameserver is best advised to proceed further.
+At the very top of the DNS tree are root servers.
+These are controlled by the `Internet Corporation for Assigned Names and Numbers <https://icann.org>`_.
+As of writing, there are thirteen unique root servers - however, an interesting caveat applies in that each of these root servers is actually a pool of root servers, acting in a load-balanced fashion in order to deal with the huge number of requests they get from the billions of Internet users daily.
+Their purpose is to handle requests for information about Top-Level Domains, such as ``.com`` and ``.net``, where lower level nameservers cannot handle the request sufficiently.
+The root servers don't hold any records of real use, insofar as they cannot respond with an answer to a query on their own. Instead, they respond to the request with details of which nameserver is best advised to proceed further.
 
-For example, let's assume that a request for ``www.google.com`` came straight in to a root server. The root server would look at its records for ``www.google.com``, but won't be able to find it. The best it will be able to produce is a partial match for ``.com``. It sends this information back in a response to the original request.
+For example, let's assume that a request for ``www.google.com`` came straight in to a root server.
+The root server would look at its records for ``www.google.com``, but won't be able to find it.
+The best it will be able to produce is a partial match for ``.com``.
+It sends this information back in a response to the original request.
 
 TLD Servers
 ^^^^^^^^^^^
-Once the request for ``www.google.com`` has been replied to, the requesting machine will instead ask the nameserver it received in reply to the original request to the root server where ``www.google.com`` is. At this stage, it knows that this server handles ``.com``, so at least it is able to get some way further in mapping the address to an IP address. The TLD serve will try to find ``www.google.com`` in its records, but it will only be able to reply with details about ``google.com``.
+Once the request for ``www.google.com`` has been replied to, the requesting machine will instead ask the nameserver it received in reply to the original request to the root server where ``www.google.com`` is.
+At this stage, it knows that this server handles ``.com``, so at least it is able to get some way further in mapping the address to an IP address.
+The TLD serve will try to find ``www.google.com`` in its records, but it will only be able to reply with details about ``google.com``.
 
 Domain-level nameservers
 ^^^^^^^^^^^^^^^^^^^^^^^^
-By this stage, the original request for ``www.google.com`` has been responded to twice: once by the root server to tell it that it doesn't handle any records, but knows where ``.com`` is handled, and once by the TLD server which says that it handles ``.com``, and knows where ``google`` is. We've still got one more stage to get to, though - that's the ``www`` stage. For this, the request is played against the server responsible for ``google.com``, which duly looks up ``www.google.com`` in its records and responds with an IP address (or more, depending on the configuration).
+By this stage, the original request for ``www.google.com`` has been responded to twice: once by the root server to tell it that it doesn't handle any records, but knows where ``.com`` is handled, and once by the TLD server which says that it handles ``.com``, and knows where ``google`` is.
+We've still got one more stage to get to, though - that's the ``www`` stage.
+For this, the request is played against the server responsible for ``google.com``, which duly looks up ``www.google.com`` in its records and responds with an IP address (or more, depending on the configuration).
 
-We've finally got to the end of a full request! In reality, DNS queries take place in seconds, and there are measures in place which we'll come on to in these DNS chapters about how DNS can be made faster.
+We've finally got to the end of a full request!
+In reality, DNS queries take place in seconds, and there are measures in place which we'll come on to in these DNS chapters about how DNS can be made faster.
 
 Resource types
 ==============
 
-Whilst at it's most basic, DNS is responsible for mapping easily-remembered domain names to IP addresses, it is also used as a form of key/value database for the Internet. DNS can hold details on which mail servers are responsible for a domain's mail and arbitrary human-readable text which is best placed in DNS for whatever reason.
+Whilst at it's most basic, DNS is responsible for mapping easily-remembered domain names to IP addresses, it is also used as a form of key/value database for the Internet.
+DNS can hold details on which mail servers are responsible for a domain's mail and arbitrary human-readable text which is best placed in DNS for whatever reason.
 
 The most common types you'll see are:
 
@@ -106,7 +145,7 @@ An example zonefile
 
          IN MX 10 mail.example.com // Here, 10 is the highest priority mail server, so is the first to be used
          IN MX 20 mail.foo.com     // If the highest priority mail server is unavailable, fall back to this one
-    
+
    ns1   IN A     1.2.3.4
    ns1   IN AAAA  1234:5678:a1234::12 // A and AAAA records can co-exist happily. Useful for supporting early IPv6 adopters.
    ns2   IN A	  5.6.7.8
@@ -115,8 +154,8 @@ An example zonefile
    www   IN A     2.4.6.8
    sip   IN CNAME www.example.com.
    ftp	 IN CNAME www.example.com.
-   mail  IN TXT   "v=spf1 a -all"  
- 
+   mail  IN TXT   "v=spf1 a -all"
+
    _sip._tcp.example.com. IN SRV 0 5 5060 sip.example.com.
 
 Host-specific DNS configuration
@@ -130,9 +169,12 @@ If you are administering systems, specifically Unix systems, you should be aware
 ``/etc/hosts``
 ^^^^^^^^^^^^^^
 
-The ``/etc/hosts`` file has the purpose of acting as a local alternative to DNS. You might use this when you want to override the record in place in DNS on a particular machine only, without impacting that record and its use for others - therefore, DNS can be over-ridden using ``/etc/hosts``. Alternatively, it can be used as a back-up to DNS: if you specify the hosts that are mission-critical in your infrastructure inside ``/etc/hosts``, then they can still be addressed by name even if the nameserver(s) holding your zonefile are down.
+The ``/etc/hosts`` file has the purpose of acting as a local alternative to DNS.
+You might use this when you want to override the record in place in DNS on a particular machine only, without impacting that record and its use for others - therefore, DNS can be over-ridden using ``/etc/hosts``.
+Alternatively, it can be used as a back-up to DNS: if you specify the hosts that are mission-critical in your infrastructure inside ``/etc/hosts``, then they can still be addressed by name even if the nameserver(s) holding your zonefile are down.
 
-However, ``/etc/hosts`` is not a replacement for DNS - in fact, it is far from it: DNS has a much richer set of records that it can hold, whereas ``/etc/hosts`` can only hold the equivalent of ``A`` records. An ``/etc/hosts`` file might, therefore, look like:
+However, ``/etc/hosts`` is not a replacement for DNS - in fact, it is far from it: DNS has a much richer set of records that it can hold, whereas ``/etc/hosts`` can only hold the equivalent of ``A`` records.
+An ``/etc/hosts`` file might, therefore, look like:
 
 .. code-block:: bash
 
@@ -145,48 +187,81 @@ However, ``/etc/hosts`` is not a replacement for DNS - in fact, it is far from i
    192.168.2.3       sql02
    192.168.1.10      puppetmaster puppet pm01
 
-The first four lines of ``/etc/hosts`` are created automatically on a Unix machine and are used at boot: they shouldn't be changed unless you really know what you're doing! In fact, the last two lines of this section are the IPv6 equivalents of the first line. After these first four lines, though, we can specify a name and map it an IP address. In the above example, we've mapped ``sql01`` to ``192.168.2.2``, which means that on a host with the above ``/etc/hosts`` configuration, we could refer to ``sql01`` alone and get to the machine responding as ``192.168.2.2``. You'll see a similar example for ``sql02``, too. However, there is a slightly odd example for the box named ``puppetmaster`` in that multiple friendly names exist for the one box living at ``10.0.0.2``. When referenced in this way - with multiple space-separated names against each IP address - the box at ``10.0.0.2`` can be reached at any of the specified names. In effect, ``puppetmaster``, ``puppet``, and ``pm01`` are all valid ways to address ``10.0.0.2``.
+The first four lines of ``/etc/hosts`` are created automatically on a Unix machine and are used at boot: they shouldn't be changed unless you really know what you're doing!
+In fact, the last two lines of this section are the IPv6 equivalents of the first line.
+After these first four lines, though, we can specify a name and map it an IP address.
+In the above example, we've mapped ``sql01`` to ``192.168.2.2``, which means that on a host with the above ``/etc/hosts`` configuration, we could refer to ``sql01`` alone and get to the machine responding as ``192.168.2.2``.
+You'll see a similar example for ``sql02``, too. However, there is a slightly odd example for the box named ``puppetmaster`` in that multiple friendly names exist for the one box living at ``10.0.0.2``.
+When referenced in this way - with multiple space-separated names against each IP address - the box at ``10.0.0.2`` can be reached at any of the specified names.
+In effect, ``puppetmaster``, ``puppet``, and ``pm01`` are all valid ways to address ``10.0.0.2``.
 
 ``/etc/resolv.conf``
 ^^^^^^^^^^^^^^^^^^^^
 
-``/etc/resolv.conf`` exists on Unix machines to allow system administrators to set the nameservers which the machine should use. A DNS domain can also be referenced in this file, too. An example ``/etc/resolv.conf`` might look like:
+``/etc/resolv.conf`` exists on Unix machines to allow system administrators to set the nameservers which the machine should use.
+A DNS domain can also be referenced in this file, too.
+An example ``/etc/resolv.conf`` might look like:
 
 .. code-block:: bash
-   
+
    domain     opsschool
    nameserver 192.168.1.1
    nameserver 192.168.1.2
    nameserver 192.168.1.3
 
-In this example, we would be specifying that any of ``192.168.1.1``, ``192.168.1.2`` and ``192.168.1.3`` can be used by the host with the above configuration to query DNS. We are actually telling the host that it is allowed to use any of the nameservers in this file when it resolves (ie: makes a request for an entry and waits for a response) a host in DNS.
+In this example, we would be specifying that any of ``192.168.1.1``, ``192.168.1.2`` and ``192.168.1.3`` can be used by the host with the above configuration to query DNS.
+We are actually telling the host that it is allowed to use any of the nameservers in this file when it resolves (ie: makes a request for an entry and waits for a response) a host in DNS.
 
-Setting the ``domain`` directive - as in the above example, where we specified it as ``opsschool`` - allows users to specify hosts by address relative the domain. For instance, a user could reference ``sql01``, and a query would be sent to nameservers specified asking for records for both ``sql01`` and ``sql01.home``. In most cases, the responses should match - just be careful if they don't, as you'll end up with some very confused machines when DNS has split-brained like this!
+Setting the ``domain`` directive - as in the above example, where we specified it as ``opsschool`` - allows users to specify hosts by address relative the domain.
+For instance, a user could reference ``sql01``, and a query would be sent to nameservers specified asking for records for both ``sql01`` and ``sql01.home``.
+In most cases, the responses should match - just be careful if they don't, as you'll end up with some very confused machines when DNS has split-brained like this!
 
 Caching
 ^^^^^^^
 
-By itself, DNS doesn't scale very well. Imagine having a machine that needed to make many millions of DNS queries per day in order to perform its function - it would need to perform well and be constantly available. In order to cut the cost of hardware somewhat, to reduce pressure on networks, and to speed up receiving responses to common queries, many client machines will cache DNS records. The SOA record at the start of each zonefile on the nameservers specifies an ``expiry`` value, which tells clients for how long they can keep the zonefile in its current state before they must re-request it. This rather crude but effective updating method works well in the case of DNS.
+By itself, DNS doesn't scale very well.
+Imagine having a machine that needed to make many millions of DNS queries per day in order to perform its function - it would need to perform well and be constantly available.
+In order to cut the cost of hardware somewhat, to reduce pressure on networks, and to speed up receiving responses to common queries, many client machines will cache DNS records.
+The SOA record at the start of each zonefile on the nameservers specifies an ``expiry`` value, which tells clients for how long they can keep the zonefile in its current state before they must re-request it.
+This rather crude but effective updating method works well in the case of DNS.
 
-Generally speaking, caching of DNS records (at least on Unix-based machines) is managed by individual applications. In a Windows environment, however, it is more centralised. To that end, whilst you cannot easily view the cache as it exists on an individual machine all in one place in Unix, you can using Windows - the ``ipconfig /displaydns`` command will print the cache as it stands. In Windows, you'll be presented with the record name as a number - this is a binary representation of the record type itself. Conversion charts can be found online, for example `at Wikipedia <http://en.wikipedia.org/wiki/List_of_DNS_record_types>`_.
+Generally speaking, caching of DNS records (at least on Unix-based machines) is managed by individual applications.
+In a Windows environment, however, it is more centralised.
+To that end, whilst you cannot easily view the cache as it exists on an individual machine all in one place in Unix, you can using Windows - the ``ipconfig /displaydns`` command will print the cache as it stands.
+In Windows, you'll be presented with the record name as a number - this is a binary representation of the record type itself.
+Conversion charts can be found online, for example `at Wikipedia <http://en.wikipedia.org/wiki/List_of_DNS_record_types>`_.
 
-Caching links directly to a phenomenon called propagation. Propagation is the process by which records that have previously existed and have been updated begin to get updated in other machines' caches. If the SOA record for a zonefile tells hosts to check back with the DNS server every 24 hours, then it should take - at most - 24 hours for machines to update their caches with the new record.
+Caching links directly to a phenomenon called propagation.
+Propagation is the process by which records that have previously existed and have been updated begin to get updated in other machines' caches.
+If the SOA record for a zonefile tells hosts to check back with the DNS server every 24 hours, then it should take - at most - 24 hours for machines to update their caches with the new record.
 
 TTLs
 ====
 
-TTLs, or 'time to live' values, are a useful feature in DNS which allows you to force the expiry of individual records, thus bypassing the ``expiry`` time referenced in the SOA record on a per-record basis. For instance, let's say that opsschool.org has moved to a new web host but it needs to ensure that the service is available as much as possible. By reducing the TTL for the ``www`` and ``*`` records in the ``opsschool.org`` zonefile, the switch between previous and new vendor should be relatively pain-free. TTLs and caching (see above) work well together - with a suitably high TTL and suitable caching in place, the time for a request to be responded to and the time for updated records to exist on caches are both dramatically reduced.
+TTLs, or 'time to live' values, are a useful feature in DNS which allows you to force the expiry of individual records, thus bypassing the ``expiry`` time referenced in the SOA record on a per-record basis.
+For instance, let's say that ``opsschool.org`` has moved to a new web host but it needs to ensure that the service is available as much as possible.
+By reducing the TTL for the ``www`` and ``*`` records in the ``opsschool.org`` zonefile, the switch between previous and new vendor should be relatively pain-free.
+TTLs and caching (see above) work well together - with a suitably high TTL and suitable caching in place, the time for a request to be responded to and the time for updated records to exist on caches are both dramatically reduced.
 
 Forward and reverse DNS
 =======================
 
 By this point, we've covered many of the basic concepts of DNS - we've looked at what exactly DNS is, how the DNS tree works (in the forms of nameserver hierarchies and record types), and we've looked at host-side configuration using ``/etc/resolv.conf`` and ``/etc/hosts``. There is, however, one further concept we need to cover: forward and reverse DNS.
 
-Forward DNS is, in essence, simply DNS as described above. When ``ftp.example.com`` is requested, the root nameserver will reply with details of the nameserver responsible for ``.com``, which will reply with the address of the nameserer responsible for ``example.com``, which will then look in the ``example.com`` zonefile for the ``ftp`` record and reply appropriately. In fact, the terms 'forward DNS' and 'DNS' are pretty interchangeable: when talking about DNS, if you don't otherwise specify, most ops engineers will assume you're talking about forward DNS as it's the most often used direction.
+Forward DNS is, in essence, simply DNS as described above.
+When ``ftp.example.com`` is requested, the root nameserver will reply with details of the nameserver responsible for ``.com``, which will reply with the address of the nameserer responsible for ``example.com``, which will then look in the ``example.com`` zonefile for the ``ftp`` record and reply appropriately.
+In fact, the terms 'forward DNS' and 'DNS' are pretty interchangeable: when talking about DNS, if you don't otherwise specify, most ops engineers will assume you're talking about forward DNS as it's the most often used direction.
 
-However, whilst forward DNS is the type you're likely to run in to most often, it's also very important to know how reverse DNS works. If forward DNS maps hostnames to IP addresses, then reverse DNS does exactly the opposite: it maps IP addresses to hostnames. To do this, the zonefile in question must have a PTR record set for the record you're interested in. Getting used to PTR records and reverse DNS can be tricky, so it might take a few attempts until it catches on.
+However, whilst forward DNS is the type you're likely to run in to most often, it's also very important to know how reverse DNS works.
+If forward DNS maps hostnames to IP addresses, then reverse DNS does exactly the opposite: it maps IP addresses to hostnames.
+To do this, the zonefile in question must have a PTR record set for the record you're interested in.
+Getting used to PTR records and reverse DNS can be tricky, so it might take a few attempts until it catches on.
 
-Domain names follow a specific syntax - ``foo.tld``, where ``.tld`` is set by ICANN and chosen by the registrant when they register their domain. For instance, people can choose to register ``.aero``, ``.com`` and ``.tv`` domains wherever they live in the world, subject to a fee. With reverse DNS, a similar syntax exists. Let's assume that we want to know which hostname responds at ``22.33.44.55``. We do this as follows:
+Domain names follow a specific syntax - ``foo.tld``, where ``.tld`` is set by ICANN and chosen by the registrant when they register their domain.
+For instance, people can choose to register ``.aero``, ``.com`` and ``.tv`` domains wherever they live in the world, subject to a fee.
+With reverse DNS, a similar syntax exists.
+Let's assume that we want to know which hostname responds at ``22.33.44.55``.
+We do this as follows:
 
   1. Reverse the octets of the IP address - ``22.33.44.55`` becomes ``55.44.33.22``, for instance
   2. Add ``in-addr.arpa`` to the end of the reversed address - we now have ``55.44.33.22.in-addr.arpa``
@@ -198,19 +273,27 @@ Domain names follow a specific syntax - ``foo.tld``, where ``.tld`` is set by IC
 Useful DNS tools
 ================
 
-There are a number of very useful tools for querying DNS. A list of the most common and some example commands can be found below - for further instructions, see each tool's man page (found, in Unix, by typing ``man $toolname`` at a prompt, and in Windows by appending ``-h`` to the command.
+There are a number of very useful tools for querying DNS.
+A list of the most common and some example commands can be found below - for further instructions, see each tool's man page (found, in Unix, by typing ``man $toolname`` at a prompt, and in Windows by appending ``-h`` to the command.
 
 Windows
 ^^^^^^^
 
-``ipconfig`` is a useful tool for diagnosing and configuring TCP/IP networks. Among its many switches, it allows the use of ``/displaydns`` which will dump the output of the DNS cache to the console for you. You can then use the ``/flushdns`` entry to clear your DNS cache on a Windows machine.
+``ipconfig`` is a useful tool for diagnosing and configuring TCP/IP networks.
+Among its many switches, it allows the use of ``/displaydns`` which will dump the output of the DNS cache to the console for you.
+You can then use the ``/flushdns`` entry to clear your DNS cache on a Windows machine.
 
-``nslookup``, however, might be more useful in your day-to-day use of DNS. It allows you to look up an entry on any nameserver that you know the public IP address or hostname for. In many respects, therefore, it acts much like ``dig`` on Unix systems does.
+``nslookup``, however, might be more useful in your day-to-day use of DNS.
+It allows you to look up an entry on any nameserver that you know the public IP address or hostname for.
+In many respects, therefore, it acts much like ``dig`` on Unix systems does.
 
 Unix
 ^^^^
 
-``dig`` can be used to query a nameserver to see what values it holds for a specific record. For instance, you could run ``dig opsschool.org`` will produce the entire query and entire response, which whilst useful, is often not the information you are looking for. Running the same command, but specifying the ``+short`` switch just provides you with relevant detail - in the case of looking up an IP address for a hostname by way of A record, then the output from ``dig`` will just be the relevant IP address. Dig can also be used to query external nameservers, such as ``8.8.8.8``, to see what values they hold.
+``dig`` can be used to query a nameserver to see what values it holds for a specific record.
+For instance, you could run ``dig opsschool.org`` will produce the entire query and entire response, which whilst useful, is often not the information you are looking for.
+Running the same command, but specifying the ``+short`` switch just provides you with relevant detail - in the case of looking up an IP address for a hostname by way of A record, then the output from ``dig`` will just be the relevant IP address.
+Dig can also be used to query external nameservers, such as ``8.8.8.8``, to see what values they hold.
 
 For instance, ``dig`` can be invoked as follows:
 
@@ -218,6 +301,8 @@ For instance, ``dig`` can be invoked as follows:
 - ``dig opsschool.org a +short`` for a much shorter, more concise version of the last command
 - ``dig @8.8.8.8 opsschool.org a +short`` to repeat the same command as above, but against Google's 8.8.8.8 nameserver
 
-In place of ``dig``, you may also see ``host`` used in its place.  Essentially, both tools perform approximately the same action - given a DNS server (or not, as not doing queries the one you have specified in ``/etc/resolv.conf``), ``host`` also allows you to query a record and its value.
+In place of ``dig``, you may also see ``host`` used in its place.
+Essentially, both tools perform approximately the same action - given a DNS server (or not, as not doing queries the one you have specified in ``/etc/resolv.conf``), ``host`` also allows you to query a record and its value.
 
-For further details on the usage of each tool, have a look at the relevant manual pages - type ``man dig`` and ``man host`` to find the man pages on any Unix system. You might choose to stick with one tool, or get used to both.
+For further details on the usage of each tool, have a look at the relevant manual pages - type ``man dig`` and ``man host`` to find the man pages on any Unix system.
+You might choose to stick with one tool, or get used to both.
