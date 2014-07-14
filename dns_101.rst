@@ -2,27 +2,27 @@
 DNS 101
 *******
 
-The Domain Name System is a very central part of how the internet we use today works. Before the introduction of DNS, networked computers were referenced solely by IP address. After a while, this became confusing to remember and use on a daily name, thus DNS was born.
+The Domain Name System is a very central part of how the Internet we use today works. Before the introduction of DNS, networked computers were referenced solely by IP address. After a while, this became confusing to remember and use on a daily name, thus DNS was born.
 
 A Brief History of DNS
 ======================
 
-As the popularity of the internet grew, and more networked computers came online, there was an increasing need to be able to reference remote machines in a less-confusing way than solely by IP address. With a small enough network, referencing machines by IP address alone can work absolutely fine. The addition of descriptive names, however, makes referencing machines much easier.
+As the popularity of the Internet grew, and more networked computers came online, there was an increasing need to be able to reference remote machines in a less-confusing way than solely by IP address. With a small enough network, referencing machines by IP address alone can work absolutely fine. The addition of descriptive names, however, makes referencing machines much easier.
 
-The first example of DNS was a ``HOSTS.TXT`` file created by staff running `ARPANET <http://en.wikipedia.org/wiki/ARPANET>`_. ARPANET staff would amend this global ``HOSTS.TXT`` file on a regular basis, and it was distributed to anyone on the internet who wanted to use it to reference machines by name rather than by number. Eventually, as the internet grew, it was realised that a more automated system for mapping descriptive names to IP addresses was needed. To that end, ``HOSTS.TXT`` can be seen as the immediate forerunner to the Domain Name System we use today.
+The first example of DNS was a ``HOSTS.TXT`` file created by staff running `ARPANET <http://en.wikipedia.org/wiki/ARPANET>`_. ARPANET staff would amend this global ``HOSTS.TXT`` file on a regular basis, and it was distributed to anyone on the Internet who wanted to use it to reference machines by name rather than by number. Eventually, as the Internet grew, it was realized that a more automated system for mapping descriptive names to IP addresses was needed. To that end, ``HOSTS.TXT`` can be seen as the immediate forerunner to the Domain Name System we use today.
 
-In 1983, Paul Mockapetris authored `RFC 882 <http://tools.ietf.org/html/rfc882>`_, which describes how a system mapping memorable names to unmemorable IP addresses could work. A team of students at `UC Berkeley <http://berkeley.edu>`_ created the first implementation of Mockapetris' ideas in 1984, naming their creation Berkeley Internet Name Domain (BIND) server. Today, BIND is still the most widely-used nameserver software on the internet with over 70% of domains using it, according to the `ISC <http://isc.org/downloads/bind>`_ and Don Moore's `survey <http://mydns.bboy.net/survey/>`_. Since then, a number of RFC documents have been published which have continued to improve how DNS works and runs.
+In 1983, Paul Mockapetris authored :rfc:`882`, which describes how a system mapping memorable names to unmemorable IP addresses could work. A team of students at `UC Berkeley <http://berkeley.edu>`_ created the first implementation of Mockapetris' ideas in 1984, naming their creation Berkeley Internet Name Domain (BIND) server. Today, BIND is still the most widely-used nameserver software on the Internet with over 70% of domains using it, according to the `ISC <http://isc.org/downloads/bind>`_ and Don Moore's `survey <http://mydns.bboy.net/survey/>`_. Since then, a number of RFC documents have been published which have continued to improve how DNS works and runs.
 
 Terminology
 ===========
 
 Domain name
 ^^^^^^^^^^^
-A domain name is likely the way you interface with DNS most often when browsing the internet. Examples are, quite literally, everywhere - a very limited set of examples includes ``google.com`` and ``wikipedia.org``. 
+A domain name is likely the way you interface with DNS most often when browsing the Internet. Examples are, quite literally, everywhere - a very limited set of example set includes ``google.com`` and ``wikipedia.org``. 
 
 Top-Level Domain
 ^^^^^^^^^^^^^^^^
-A top-level domain is an important, but rather generic, part of a domain name. Examples include ``com``, ``net``, ``gov`` and ``org`` - they were originally defined in [RFC 920](http://tools.ietf.org/html/rfc920).  ICANN controls the TLDs, and delegate responsibility for the registration and maintenance of specific domains to registrars.
+A top-level domain is an important, but rather generic, part of a domain name. Examples include ``com``, ``net``, ``gov`` and ``org`` - they were originally defined in :rfc:`920`.  ICANN controls the TLDs, and delegate responsibility for the registration and maintenance of specific domains to registrars.
 
 Fully Qualified Domain Name (FQDN)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -30,7 +30,7 @@ A fully-qualified domain name is equivalent to the absolute name. Domain names c
 
 IP address
 ^^^^^^^^^^
-An IP address is used to uniquely address a machine on a network in numerical (IPv4) or alphanumerical (IPv6) form. It is important that we understand the concept of "network" used here to be relative to what we are trying to achieve. For instance, trying to contact another computeri inside your home or office network means that the IP address of the machine you are trying to reach must be unique within your home or office. In terms of websites and publically-accessible information available via the internet, the 'network' is - in fact - the internet.
+An IP address is used to uniquely address a machine on a network in numerical (IPv4) or alphanumerical (IPv6) form. It is important that we understand the concept of "network" used here to be relative to what we are trying to achieve. For instance, trying to contact another computeri inside your home or office network means that the IP address of the machine you are trying to reach must be unique within your home or office. In terms of websites and publically-accessible information available via the Internet, the 'network' is - in fact - the Internet.
 
 There are two types of IP: one is becoming increasingly popular as we get close to running out of avaialble IPv4 addres.
 
@@ -51,7 +51,7 @@ How DNS works
 
 Root Servers
 ^^^^^^^^^^^^
-At the very top of the DNS tree are root servers. These are controlled by the `Internet Corporation for Assigned Names and Numbers <https://icann.org>`_. As of writing, there are thirteen unique root servers - however, an interesting caveat applies in that each of these root servers is actually a pool of root servers, acting in a load-balanced fashion in order to deal with the huge number of requests they get from the billions of internet users daily. Their purpose is to handle requests for information about Top-Level Domains, such as ``.com`` and ``.net``, where lower level nameservers cannot handle the request sufficiently. The root servers don't hold any records of real use, insofar as they cannot respond with an answer to a query on their own. Instead, they respond to the request with details of which nameserver is best advised to proceed further.
+At the very top of the DNS tree are root servers. These are controlled by the `Internet Corporation for Assigned Names and Numbers <https://icann.org>`_. As of writing, there are thirteen unique root servers - however, an interesting caveat applies in that each of these root servers is actually a pool of root servers, acting in a load-balanced fashion in order to deal with the huge number of requests they get from the billions of Internet users daily. Their purpose is to handle requests for information about Top-Level Domains, such as ``.com`` and ``.net``, where lower level nameservers cannot handle the request sufficiently. The root servers don't hold any records of real use, insofar as they cannot respond with an answer to a query on their own. Instead, they respond to the request with details of which nameserver is best advised to proceed further.
 
 For example, let's assume that a request for ``www.google.com`` came straight in to a root server. The root server would look at its records for ``www.google.com``, but won't be able to find it. The best it will be able to produce is a partial match for ``.com``. It sends this information back in a response to the original request.
 
@@ -68,7 +68,7 @@ We've finally got to the end of a full request! In reality, DNS queries take pla
 Resource types
 ==============
 
-Whilst at it's most basic, DNS is responsible for mapping easily-remembered domain names to IP addresses, it is also used as a form of key/value database for the internet. DNS can hold details on which mail servers are responsible for a domain's mail and arbitrary human-readable text which is best placed in DNS for whatever reason.
+Whilst at it's most basic, DNS is responsible for mapping easily-remembered domain names to IP addresses, it is also used as a form of key/value database for the Internet. DNS can hold details on which mail servers are responsible for a domain's mail and arbitrary human-readable text which is best placed in DNS for whatever reason.
 
 The most common types you'll see are:
 
@@ -220,4 +220,4 @@ For instance, ``dig`` can be invoked as follows:
 
 In place of ``dig``, you may also see ``host`` used in its place.  Essentially, both tools perform approximately the same action - given a DNS server (or not, as not doing queries the one you have specified in ``/etc/resolv.conf``), ``host`` also allows you to query a record and its value.
 
-For further details on the usage of each tool, have a look at the relevant manual pages - type `man dig` and `man host` to find the man pages on any Unix system. You might choose to stick with one tool, or get used to both.
+For further details on the usage of each tool, have a look at the relevant manual pages - type ``man dig`` and ``man host`` to find the man pages on any Unix system. You might choose to stick with one tool, or get used to both.
