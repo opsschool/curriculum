@@ -12,7 +12,7 @@ ps
 --
 
 ``ps`` shows the processes currently running on the system.
-``ps`` takes many arguments but some good recipies are ``ps aux`` to see all processes from a user standpoint, whether they have a tty or not.
+``ps`` takes many arguments but some good recipes are ``ps aux`` to see all processes from a user standpoint, whether they have a tty or not.
 Also good is ``ps -lfU <username>`` to see all processes owned by ``<username>`` in long format.
 ``ps`` has output formatting with the ``-o`` switch and works well with ``grep``.
 ``pgrep`` combines ``ps`` and ``grep`` into one command.
@@ -23,7 +23,7 @@ Also good is ``ps -lfU <username>`` to see all processes owned by ``<username>``
   opsschool      5424  1.1  0.2 247360 10448 pts/0    Sl+  17:01   0:00 vim shell_tools_101.rst
   opsschool      5499  0.0  0.0  13584   936 pts/5    S+   17:01   0:00 grep --color=auto vim
 
-Note that the ``grep`` command also shows up in the proccess table.
+Note that the ``grep`` command also shows up in the process table.
 
 top
 ---
@@ -68,7 +68,7 @@ find
 ``find`` is for finding files on the system.
 ``find .`` recursively walks the entire filesystem tree below the current working directory and prints out each file by its relative path.
 ``find . -name 'opsschool'`` again recursively walks the entire filesystem tree, but only prints out files named ``opsschool``.
-``find . -name 'opschool' -type d`` prints out only directories and ``-type f`` prints out only regular files.
+``find . -name 'opsschool' -type d`` prints out only directories and ``-type f`` prints out only regular files.
 The ``-name`` filter also accepts wildcards.
 ``find . -name '*.html'`` will print out all files ending in ``.html``.
 As you become more skilled at Unix/Linux, use the find command often, as it becomes more and more useful with experience.
@@ -133,7 +133,7 @@ You can also pass a directory name to the ``ls`` command and it will list the co
   bin  etc  games  include  lib  libexec  sbin  share  src
 
 There are a number of options that can be passed to the ls command to control both what is output and how it's formatted.
-Files and directories that begin with a '.' are refered to as hidden files.
+Files and directories that begin with a '.' are referred to as hidden files.
 Two of the more useful options are: ``-a`` and ``-l``:
 
 - ``ls -a`` will list these hidden files and directories.
@@ -206,7 +206,7 @@ Most system administrators are comfortable with the 'basics' of their core comma
 mount
 -----
 The ``mount`` command is used to mount filesystems.
-For example, mounting an ext4 filesystem that resides on the :file:`/dev/sda2` partiton could be done as follows: ``mount -t ext4 /dev/sda2 /mnt``
+For example, mounting an ext4 filesystem that resides on the :file:`/dev/sda2` partition could be done as follows: ``mount -t ext4 /dev/sda2 /mnt``
 In this example the "-t" switch tells the ``mount`` command that the filesystem type is ext4.
 
 When passed no arguments the ``mount`` command lists the filesystems that are currently mounted:
@@ -223,7 +223,7 @@ When passed no arguments the ``mount`` command lists the filesystems that are cu
 
 The ``mount`` command will also consult :file:`/etc/fstab` and if it's able to and use the entries and options it finds there.
 If an entry for /home exists in /etc/fstab one would be able to simply issue the command ``mount /home``.
-This command would mount whatever parition is found that is associated with the :file:`/home` entry in /etc/fstab, and use any options that happen to be present.
+This command would mount whatever partition is found that is associated with the :file:`/home` entry in /etc/fstab, and use any options that happen to be present.
 
 Items to you wish to mount don't necessarily have to be a partition on a disk to be mounted either.
 Mounting an ISO file, an image of a optical disk, is especially handy: ``mount -o loop -t iso9660 /home/luser/installer.iso /mnt/cdrom``

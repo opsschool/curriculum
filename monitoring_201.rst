@@ -381,7 +381,7 @@ Setting it up and make it show pretty graphs
 ---------------------------------------------
 
 StatsD is a simple daemon listening for metrics.  The first
-implemtation was done by Etsy, and is written for `node.js
+implementation was done by Etsy, and is written for `node.js
 <http://nodejs.org>`_. but other implementation exists (`Python
 <https://github.com/sivy/py-statsd>`_, `Ruby
 <https://github.com/fetep/ruby-statsdserver>`_, `C

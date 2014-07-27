@@ -97,7 +97,7 @@ Apache
 
 Apache has the ability to load balance using ``mod_proxy_balancer``, and ``mod_jk``.
 
-Mod_poxy_balancer is purpose-built load balancing solution. It supports the HTTP, FTP,
+Mod_proxy_balancer is purpose-built load balancing solution. It supports the HTTP, FTP,
 and AJP protocols. There is basic support for sessions stickiness's, weighted round-robin,
 and can remove unhealthy backends from the balancing pool. It lacks support for customizable
 health checks, other TCP protocols. Support for AJP is provided by ``mod_proxy_ajp`` and support

@@ -39,7 +39,7 @@ Once each device has chosen its least-cost port, or Root Port (RP), it calculate
 By doing this, each switch obtains a Designated Port (DP), or a port on which it should expect to accept traffic to forward through its RP.
 Upon calculating these values, all other paths to the root device are disabled- marking them as Blocked Ports (BP).
 
-A major benefit to using STP to prevent network loops is that network administrators can intentionally connect redundant paths for fault tollerance without worry of causing an infinite loop during normal operation.
+A major benefit to using STP to prevent network loops is that network administrators can intentionally connect redundant paths for fault tolerance without worry of causing an infinite loop during normal operation.
 Should a path in a broadcast domain fail, each participating switch will recalculate the DP and RP, modifying the status of BPs if necessary.
 This has the effect of repairing the broken path by routing traffic through segments around the failure.
 

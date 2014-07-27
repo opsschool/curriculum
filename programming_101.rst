@@ -4,7 +4,7 @@ Programming 101
 Shell scripting basics
 ======================
 
-Specifying the interpeter
+Specifying the interpreter
 -------------------------
 Shell scripts will typically start with ``#!/bin/sh`` or ``#!/bin/bash``.  This line, `affectionally known by various names including hashbang and shebang <http://en.wikipedia.org/wiki/Shebang_(Unix)>`_, is treated as a directive to run the rest of the script with the given interpreter.
 This directive, combined with setting the execute bit via ``chmod`` tells the system that the file is meant to be executed, rather than simply a file containing text.
@@ -149,7 +149,7 @@ To actually add these two numbers, the operation needed is a little different.
 
   echo ${result}
 
-Here, the ``$(( ))`` tells bash that anything that goes inside these double parentheses needs to be evaluated as an arithmentic operation.
+Here, the ``$(( ))`` tells bash that anything that goes inside these double parentheses needs to be evaluated as an arithmetic operation.
 
 .. code-block:: console
 
