@@ -153,7 +153,7 @@ and tested. Focus on the procedure to the exclusion of everything else.
 
 That said, not every situation will have an associated procedure. These
 situations call for their own procedures. Try to create a procedure for
-every situation that doesn't alreay have one. This diligence pays off
+every situation that doesn't already have one. This diligence pays off
 over time, as history tends to repeat itself. In addition to this, a
 procedure for situations lacking a procedure provides a safety net when
 everything else fails. This will differ from one organization to the

@@ -15,7 +15,7 @@ Business Acumen in Operations
 
 What is business acumen? Business acumen as a leadership competency simply
 defined as a general understanding of business principles that leads to an
-organization's success. While operations profssionals do not need to be senior
+organization's success. While operations professionals do not need to be senior
 executives, development of business acumen as applied to operations can help to
 bridge the gap between the organization's senior leadership and the operations
 team. Business acumen as applied to operations works on multiple levels. In

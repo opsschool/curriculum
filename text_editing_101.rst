@@ -8,7 +8,7 @@ text editors in this space: ``vi`` and ``emacs``
 
 Both of these editors, ``vi`` and ``emacs``, are command-line utilities that you run from a
 terminal window.  This means that you can also run them on remote machines over an ``ssh`` connection.
-While there are graphical versions of these tools availabile (``gvim`` and ``xemacs``), many
+While there are graphical versions of these tools available (``gvim`` and ``xemacs``), many
 administrators prefer the text-only versions, as it creates a uniform experience whether they
 are working on their own local machine, or a remote one being accessed over the network.
 Additionally, avoiding use of the mouse means your hands stay on the home row of the keyboard,
@@ -38,14 +38,14 @@ text/context in the file.
 ``vi`` basics
 =============
 
-``vi`` was created as an extension to ``ex`` (a sucessor to ``ed``).  When
+``vi`` was created as an extension to ``ex`` (a successor to ``ed``).  When
 "modern" terminals (e.g. electronic displays, not teletypes) became common, it
 made sense to use a "visual" editing mode, where you could see the context of
 the line you were editing.  From ``ed``, you would enter "visual" mode by
 running ``:vi`` -- thus VI was born.
 
 Since then, ``vi`` has been written and re-written many, many times.  But inside, you
-will still find good ol' ``ed``.  In ``Text Edting 201``, you will see how you can
+will still find good ol' ``ed``.  In ``Text Editing 201``, you will see how you can
 still access the very powerful ``ed`` features by using the colon (``:``) command.
 
 There are many versions of ``vi`` out there, but the most popular is ``vim`` (VI iMproved).

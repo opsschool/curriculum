@@ -102,7 +102,7 @@ Even the simplest of Ruby code will use this principle:
   > "michael".capitalize
   => Michael
 
-Strictly speaking, there will be cases where the above statment is not true in Ruby.
+Strictly speaking, there will be cases where the above statement is not true in Ruby.
 For example, in Ruby, functions are not first class objects.
 In some languages like Javascript and Python, functions are first class objects.
 In these languages, a function can be treated like an object, i.e. they have attributes, they can be referenced and passed as parameters etc.
@@ -406,7 +406,7 @@ and even in conditionals:
 .. code-block:: python
 
   if not ((2 < 3) or (3 > 4)):
-      print "Neither statment is true"
+      print "Neither statement is true"
 
 Variables
 ---------
@@ -558,7 +558,7 @@ Functions
 ---------
 Functions in Python work exactly like they do in other languages.
 Each function takes input arguments and returns a value.
-The only difference is syntax, you define functions with the keyword ``def``, and don't use cruly braces like in Java, C, C++ and C#.
+The only difference is syntax, you define functions with the keyword ``def``, and don't use curly braces like in Java, C, C++ and C#.
 Instead, function blocks are separated using indentation.
 
 .. code-block:: python

@@ -577,7 +577,7 @@ SSH connections work by sending a stream of data back and forth between the clie
 and server. This stream can be broken in various ways, such as the connection
 timing out due to inactivity, or the client machine suspending state and shutting
 down network devices. The Mosh protocol is based on UDP packets compared to the SSH
-procotol that uses TCP packets. Mosh is the first application to use the Stateless
+protocol that uses TCP packets. Mosh is the first application to use the Stateless
 Syncronization Protocol. Instead of a stream of data between the server and client
 that makes up a session over SSH, Mosh works by keeping a mirrored copy of the
 session on the client and server and syncronizing the changes between them.

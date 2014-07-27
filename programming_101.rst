@@ -4,8 +4,8 @@ Programming 101
 Shell scripting basics
 ======================
 
-Specifying the interpeter
--------------------------
+Specifying the interpreter
+--------------------------
 Shell scripts will typically start with ``#!/bin/sh`` or ``#!/bin/bash``.  This line, `affectionally known by various names including hashbang and shebang <http://en.wikipedia.org/wiki/Shebang_(Unix)>`_, is treated as a directive to run the rest of the script with the given interpreter.
 This directive, combined with setting the execute bit via ``chmod`` tells the system that the file is meant to be executed, rather than simply a file containing text.
 
@@ -70,7 +70,7 @@ Creating a script called ``ops_script.sh``
 .. code-block:: bash
 
   #!/usr/bin/env bash
-  
+
   # First an integer value
   ops_var=1
   echo $ops_var
@@ -149,7 +149,7 @@ To actually add these two numbers, the operation needed is a little different.
 
   echo ${result}
 
-Here, the ``$(( ))`` tells bash that anything that goes inside these double parentheses needs to be evaluated as an arithmentic operation.
+Here, the ``$(( ))`` tells bash that anything that goes inside these double parentheses needs to be evaluated as an arithmetic operation.
 
 .. code-block:: console
 
@@ -189,7 +189,7 @@ But there are other built-in variables you can use within your script which stor
   # Value of the 1st argument passed to the script
   ${1}
 
-These variables let your script take in parameters which can be then used throughout the script. 
+These variables let your script take in parameters which can be then used throughout the script.
 
 For example, I will write a script that prints the number of parameters received, and use the first one in a string
 
@@ -204,7 +204,7 @@ For example, I will write a script that prints the number of parameters received
 I'll run this script a couple of times with different arguments to show how this works
 
 .. code-block:: console
-  
+
   $ ./ops_script.sh hello world
   Number of arguments: 2
   First argument passed was: hello
@@ -212,7 +212,7 @@ I'll run this script a couple of times with different arguments to show how this
   $ ./ops_script.sh car truck bike scooter
   Number of arguments: 4
   First argument passed was: car
-  
+
 
 Control Statements
 ------------------
@@ -261,5 +261,3 @@ Validating output
 
 Trapping & handling exceptions with grace
 -----------------------------------------
-
-

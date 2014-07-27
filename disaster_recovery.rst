@@ -2,7 +2,7 @@
 Disaster Recovery
 *****************
 
-Disaster Recovery is a process for securing business continiuity in the event of a disaster.
+Disaster Recovery is a process for securing business continuity in the event of a disaster.
 The severity of the disaster may differ, as well as how to resolve it.
 However, the goal for a Disaster Recovery, or the Disaster Recovery Plan should always be to get to the state of business as usual as soon as possible.
 
@@ -27,7 +27,7 @@ The size of the organization as well as the grade of information technology adap
 
 Defining these business needs can't be the sole work of the IT Department or an Operations Engineer.
 It needs attention from all levels of the organizational hierarchy.
-One method for identifying the needs might be interviews with collegues that work in the core business.
+One method for identifying the needs might be interviews with colleagues that work in the core business.
 
 **Questions that need to be answered by every role in the core process(es):**
 

@@ -86,7 +86,7 @@ to install it again:
 
    bash-4.0$ yum install dstat
 
-To upgrade all packages that have newer versions avaliable, run:
+To upgrade all packages that have newer versions available, run:
 
 .. code-block:: console
 
@@ -126,7 +126,7 @@ sources on next install or upgrade operation.
 Querying the RPM database
 -------------------------
 
-Ocassionally you will want to find out specific information regarding installed
+Occasionally you will want to find out specific information regarding installed
 packages. The ``-q`` option to the ``rpm`` command comes in handy here. Let's
 take a look at a few examples:
 
@@ -270,7 +270,7 @@ or:
 Querying the dpkg database
 --------------------------
 
-Ocassionally you will want to find out specific information regarding installed
+Occasionally you will want to find out specific information regarding installed
 packages. The ``dpkg-query`` command has many options to help. Let's
 take a look at a few examples:
 
