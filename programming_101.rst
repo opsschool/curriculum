@@ -5,7 +5,7 @@ Shell scripting basics
 ======================
 
 Specifying the interpreter
--------------------------
+--------------------------
 Shell scripts will typically start with ``#!/bin/sh`` or ``#!/bin/bash``.  This line, `affectionally known by various names including hashbang and shebang <http://en.wikipedia.org/wiki/Shebang_(Unix)>`_, is treated as a directive to run the rest of the script with the given interpreter.
 This directive, combined with setting the execute bit via ``chmod`` tells the system that the file is meant to be executed, rather than simply a file containing text.
 
