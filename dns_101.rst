@@ -57,7 +57,7 @@ IP address
 An IP address is used to uniquely address a machine on a network in numerical (IPv4) or alphanumerical (IPv6) form.
 It is important that we understand the concept of "network" used here to be relative to what we are trying to achieve.
 For instance, trying to contact another computer inside your home or office network means that the IP address of the machine you are trying to reach must be unique within your home or office.
-In terms of websites and publicly-accessible information available via the Internet, the 'network' is - in fact - the Internet.
+In terms of websites and publicly-accessible information available via the Internet, the "network" is - in fact - the Internet.
 
 There are two types of IP: one is becoming increasingly popular as we get close to running out of avaialble IPv4 addres.
 
