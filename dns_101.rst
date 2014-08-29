@@ -43,6 +43,10 @@ Fully Qualified Domain Name (FQDN)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 A fully-qualified domain name is equivalent to the absolute name.
+An absolute is one in which the full location of an item is specified.
+For instance, in HTML, we might use ``<a href=http://www.google.com/>Google</a>`` to link to Google.
+But we might use ``<a href=page.html>Page</a>`` to link to a specific page relatively.
+The difference here is that relative names are relative to the current location.
 Domain names can also be relative to one another and therefore have a tendency to become ambiguous at times.
 Specifying an FQDN relative to the root ensures that you have specified exactly which domain you are interested in.
 Examples of FQDNs include ``www.google.com.`` and ``www.gov.uk.``.
