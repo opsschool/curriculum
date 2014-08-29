@@ -28,17 +28,20 @@ Terminology
 
 Domain name
 ^^^^^^^^^^^
+
 A domain name is likely the way you interface with DNS most often when browsing the Internet.
-Examples are, quite literally, everywhere - a very limited set of example set includes ``google.com`` and ``wikipedia.org``.
+Examples are, quite literally, everywhere - a very limited example set includes ``google.com`` and ``wikipedia.org``.
 
 Top-Level Domain
 ^^^^^^^^^^^^^^^^
+
 A top-level domain is an important, but rather generic, part of a domain name.
 Examples include ``com``, ``net``, ``gov`` and ``org`` - they were originally defined in :rfc:`920`.
-ICANN controls the TLDs, and delegate responsibility for the registration and maintenance of specific domains to registrars.
+[ICANN](https://www.icann.org) controls the TLDs, and delegate responsibility for the registration and maintenance of specific domains to registrars.
 
 Fully Qualified Domain Name (FQDN)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
 A fully-qualified domain name is equivalent to the absolute name.
 Domain names can also be relative to one another and therefore have a tendency to become ambiguous at times.
 Specifying an FQDN relative to the root ensures that you have specified exactly which domain you are interested in.
@@ -46,6 +49,7 @@ Examples of FQDNs include ``www.google.com.`` and ``www.gov.uk.``.
 
 IP address
 ^^^^^^^^^^
+
 An IP address is used to uniquely address a machine on a network in numerical (IPv4) or alphanumerical (IPv6) form.
 It is important that we understand the concept of "network" used here to be relative to what we are trying to achieve.
 For instance, trying to contact another computeri inside your home or office network means that the IP address of the machine you are trying to reach must be unique within your home or office.
@@ -63,12 +67,14 @@ They are written as ``2001:0db8:85a3:0042:1000:8a2e:0370:7334``, although short-
 
 Zonefile
 ^^^^^^^^
+
 A zonefile is simply a text file made of a variety of different records for an individual domain.
 Each line of a zonefile contains the name of a particular domain, and then the value and type associated with it.
 For instance, in ``google.com``'s zonefile, there may exist a line which denotes ``www`` translates, via an ``A record``, to ``173.194.34.68``.
 
 Records
 ^^^^^^^
+
 A DNS record is a single mapping between a domain and relevant data - for instance, an IP address in the case of an ``A record``, or a mail server's domain name, in the case of an ``MX record``.
 Many records make up a zonefile.
 
@@ -77,6 +83,7 @@ How DNS works
 
 Root Servers
 ^^^^^^^^^^^^
+
 At the very top of the DNS tree are root servers.
 These are controlled by the `Internet Corporation for Assigned Names and Numbers <https://icann.org>`_.
 As of writing, there are thirteen unique root servers - however, an interesting caveat applies in that each of these root servers is actually a pool of root servers, acting in a load-balanced fashion in order to deal with the huge number of requests they get from the billions of Internet users daily.
@@ -90,12 +97,14 @@ It sends this information back in a response to the original request.
 
 TLD Servers
 ^^^^^^^^^^^
+
 Once the request for ``www.google.com`` has been replied to, the requesting machine will instead ask the nameserver it received in reply to the original request to the root server where ``www.google.com`` is.
 At this stage, it knows that this server handles ``.com``, so at least it is able to get some way further in mapping the address to an IP address.
 The TLD serve will try to find ``www.google.com`` in its records, but it will only be able to reply with details about ``google.com``.
 
 Domain-level nameservers
 ^^^^^^^^^^^^^^^^^^^^^^^^
+
 By this stage, the original request for ``www.google.com`` has been responded to twice: once by the root server to tell it that it doesn't handle any records, but knows where ``.com`` is handled, and once by the TLD server which says that it handles ``.com``, and knows where ``google`` is.
 We've still got one more stage to get to, though - that's the ``www`` stage.
 For this, the request is played against the server responsible for ``google.com``, which duly looks up ``www.google.com`` in its records and responds with an IP address (or more, depending on the configuration).
@@ -120,12 +129,40 @@ The most common types you'll see are:
 - ``SRV``: a semi-generic record used to specify a location. Used by newer services instead of creating protocol-specific records such as ``MX``.
 - ``TXT``: originally for human-readable information that did not fit other records, but now mostly used to create ``SPF <http://en.wikipedia.org/wiki/Sender_Policy_Framework>``__ records```
 
+
++-------------+---------------------------+
+| Record Type |         Description       |
++=============+===========================+
+| A           | Responsible for mapping   |
+|             | individual hosts to an IP |
+|             | address. For instance,    |
+|             | ``www`` in the ``google.  |
+|             | com`` syntax.             |
++-------------+---------------------------+
+| AAAA        | The IPv6 equivalent of an |
+|             | ``A`` record (see above)  |
++-------------+---------------------------+
+| CNAME       | Canonical name. Used to   |
+|             | alias one record to       |
+|             | another. For example,     |
+|             | ``foo.example.com``       |
+|             | could be aliased to ``bar.|
+|             | example.com``.            |
++-------------+---------------------------+
+| MX          | Specifies mail servers    |
+|             | responsible for handling  |
+|             | mail for the domain.      |
+|             | A priority is also        |
+|             | assigned to denote an     |
+|             | order of responsibility.  |
++-------------+---------------------------+
+
 There's a good in-depth list of every record type, the description of its use and the related RFC in which it is defined in `this Wikipedia article <http://en.wikipedia.org/wiki/List_of_DNS_record_types>`__.
 
 An example zonefile
 ===================
 
-.. code-block:: bash
+.. code-block:: console
 
    $TTL     86400;	// specified in seconds, but could be 24h or 1d
    $ORIGIN  example.com
@@ -176,7 +213,7 @@ Alternatively, it can be used as a back-up to DNS: if you specify the hosts that
 However, ``/etc/hosts`` is not a replacement for DNS - in fact, it is far from it: DNS has a much richer set of records that it can hold, whereas ``/etc/hosts`` can only hold the equivalent of ``A`` records.
 An ``/etc/hosts`` file might, therefore, look like:
 
-.. code-block:: bash
+.. code-block:: console
 
    127.0.0.1	     localhost
    255.255.255.255   broadcasthost
@@ -202,7 +239,7 @@ In effect, ``puppetmaster``, ``puppet``, and ``pm01`` are all valid ways to addr
 A DNS domain can also be referenced in this file, too.
 An example ``/etc/resolv.conf`` might look like:
 
-.. code-block:: bash
+.. code-block:: console
 
    domain     opsschool
    nameserver 192.168.1.1
