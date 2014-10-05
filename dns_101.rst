@@ -104,7 +104,7 @@ TLD Servers
 
 Once the request for ``www.google.com`` has been replied to, the requesting machine will instead ask the nameserver it received in reply to the original request to the root server where ``www.google.com`` is.
 At this stage, it knows that this server handles ``.com``, so at least it is able to get some way further in mapping the address to an IP address.
-The TLD serve will try to find ``www.google.com`` in its records, but it will only be able to reply with details about ``google.com``.
+The TLD server will try to find ``www.google.com`` in its records, but it will only be able to reply with details about ``google.com``.
 
 Domain-level nameservers
 ^^^^^^^^^^^^^^^^^^^^^^^^
@@ -173,7 +173,7 @@ An example zonefile
 
    @ 1D IN SOA ns1.example.com. hostmaster.example.com. (
                123456 ; // serial
-	       3H     ;	// refresh
+	             3H     ;	// refresh
                15     ; // retry
                1w     ; // example
                3h     ; // minimum
