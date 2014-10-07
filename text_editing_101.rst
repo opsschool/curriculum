@@ -178,7 +178,7 @@ Now that you know how to add and remove text, you'll inevitably end up making a 
 Luckily, ``vi`` lets you undo the last command or insertion, by going back to **normal mode** and hitting
 the ``u`` key.
 
-In ``vim`` (but not strict POSIX ``vi``), you can also press ``R`` to redo the last thing
+In ``vim`` (but not strict POSIX ``vi``), you can also press ``Ctrl-R`` to redo the last thing
 you un-did.
 
 Professional Fonts (vim?)
