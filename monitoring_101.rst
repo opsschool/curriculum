@@ -40,7 +40,7 @@ It has basic scheduling for on-call periods, and supports time periods in which 
 
 Since Nagios is so configurable, it can often be difficult to configure for the uninitiated.
 It can use many files for configuration, and a single syntax error will prevent the system from starting.
-Additionally, the open-source version does not natively support adding and removing hosts dynamically; the configuration needs to be modified, and the server restarted to add or remove a host.
+Additionally, the open-source version does not natively support adding and removing hosts dynamically; the configuration needs to be modified, and the server reloaded to add or remove a host.
 
 
 Graphite
