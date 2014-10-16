@@ -130,6 +130,114 @@ Postgresql
 
    createuser username
 
+Create Tables
+=============
+Tables are organized into rows and columns. 
+Data is stored inside these tables. 
+In order to host this information we need to create a table.
+We do this with the ``CREATE TABLE`` statement.
+
+Standard Syntax is:
+
+.. code-block:: sql
+
+  CREATE TABLE table_name (
+  column1 datatype(size),
+  column2 datatype(size),
+  column3 datatype(size)
+  );
+
+Here is an example.
+This will create a table called "Users" with 2 columns.
+
+.. code-block:: sql
+
+  CREATE TABLE Users (
+  name varchar(50),
+  address varchar(50)
+  );
+
+Alter Table
+===========
+
+The ``ALTER`` statement will allow you to modify the design of your current database.
+For example, if you have a table called "Users" which contains Names and Addresses, but you need need to add an age column, you could do so with:
+
+.. code-block:: sql
+
+  ALTER TABLE Users ADD age int;
+  
+Standard Syntax is:
+  
+.. code-block:: sql
+ 
+  ALTER TABLE table_name ADD column_name datatype
+
+If we need to modify a current table, we can also do so with the ``ALTER`` statement.
+If in the previous example you wanted to change the datatype of age from an integer to varchar, you would do so with:
+
+.. code-block:: sql
+
+  ALTER TABLE Users MODIFY age varchar(50);
+
+Standard Syntax is:
+
+.. code-block:: sql
+
+  ALTER TABLE table_name MODIFY column_name datatype
+
+If you now realize you don't need the age column at all, you can drop it all together with:
+
+.. code-block:: sql
+
+  ALTER TABLE Users DROP age;
+
+Standard Syntax is:
+
+.. code-block:: sql
+
+  ALTER TABLE table_name DROP column_name
+
+Drop Table
+===========
+
+If you have created a table and need to remove it from your database, you can with the ``DROP`` statement:
+
+Standard Syntax is:
+
+.. code-block:: sql
+
+  DROP table table_name
+
+If we want to drop our table we created earlier (Users) we would use this command:
+
+.. code-block:: sql
+
+  DROP table Users;
+
+Data Type
+===========
+
+There are different types of data that we will store in our database.
+It can be simple text or a number, sometimes it is a mix of these things.
+The table below lists some common Standard SQL commands that are also in MySQL.
+It is important to note this is not a complete list.
+
+========== ==================================================================================================
+Data type  Description
+========== ==================================================================================================
+char(n)	   Fixed width character string, can hold letters and numbers-Max of 8,000 characters
+varchar(n) Variable width character string, can hold letters and numbers- Max of 8,000 characters
+text	   Variable width character string. Value is represented internally by a separately allocated object
+int        Allows whole numbers between -2,147,483,648 and 2,147,483,647
+float      A small number with a floating decimal point
+decimal    An exact numeric data value, allowing for a fixed decimal point
+date       Date formated as YYYY-MM-DD
+datetime   Date and time combination formated as YYYY-MM-DD HH:MM:SS
+timestamp  Stores a unique number that gets updated every time a row gets created or modified
+========== ==================================================================================================
+
+
 Granting privileges
 ===================
 
