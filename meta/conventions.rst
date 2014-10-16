@@ -15,6 +15,7 @@ Style Guide
 
 See :doc:`style_guide` for more.
 
+.. _sample-network:
 
 Sample Network
 ==============
