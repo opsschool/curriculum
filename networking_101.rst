@@ -231,11 +231,11 @@ covered in later sections.
 IPv6
 ----
 
-The internet has experienced tremendous growth from its beginnings in research at universities to its use in ecommerce and other applications today. 
-As a result, more and more IPv4 addresses were given out to enable users to connect to the internet. 
+The Internet has experienced tremendous growth from its beginnings in research at universities to its use in ecommerce and other applications today. 
+As a result, more and more IPv4 addresses were given out to enable users to connect to the Internet. 
 However, despite the number of IPv4 addresses being a large number (4294967296), they are slowly running out.
 
-Internet Protocol Version 6 (IPv6) is the latest version of the internet protocol which aims to address the IPv4 address exhausation problem.
+Internet Protocol Version 6 (IPv6) is the latest version of the Internet protocol which aims to address the IPv4 address exhausation problem.
 
 Probably the most obvious difference of IPv6 to IPv4 is the representation of addresses. Unlike IPV4, IPv6 uses a hexadecimal format to represent a 128-bit address. 
 The format is grouped into a quartet separated by a colon. For example: 
