@@ -233,7 +233,7 @@ IPv6
 
 The internet has experienced tremendous growth from its beginnings in research at universities to its use in ecommerce and other applications today. 
 As a result, more and more IPv4 addresses were given out to enable users to connect to the internet. 
-However, despite the number of IPv4 addresses being a large number (4294967296), the number of available IPv4 addresses are slowly running out.
+However, despite the number of IPv4 addresses being a large number (4294967296), they are slowly running out.
 
 Internet Protocol Version 6 (IPv6) is the latest version of the internet protocol which aims to address the IPv4 address exhausation problem.
 
