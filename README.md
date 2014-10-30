@@ -22,6 +22,7 @@ included in the documentation itself.
 If you are looking to add content, fix formatting, syntax, typos or other
 wonderful things, please follow this process:
 
+* Read the [Style Guide](http://www.opsschool.org/en/latest/meta/style_guide.html)
 * Install Sphinx: `easy_install Sphinx sphinx_rtd_theme` or `pip install -r requirements.txt`
 * Fork the `opsschool/curriculum` repository to your own account
 * Check out a branch to make your changes on: `git checkout --branch <my_topic>`
