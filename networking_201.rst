@@ -43,11 +43,14 @@ A major benefit to using STP to prevent network loops is that network administra
 Should a path in a broadcast domain fail, each participating switch will recalculate the DP and RP, modifying the status of BPs if necessary.
 This has the effect of repairing the broken path by routing traffic through segments around the failure.
 
-Static Routing
+Routing
 ==============
 
+Static Routing
+--------------
+
 Dynamic routing protocols (RIP, OSPF, BGP)
-==========================================
+------------------------------------------
 
 ACLs
 ====
