@@ -143,12 +143,12 @@ Read your syslog daemon's documentation to understand what options are supported
 Log Rotation
 ============
 
-No matter which logging option you choose, logging directly to files or using syslog (except for stderr) log files grow large and unwieldy over time and become difficult to use, for example identifying specific events.
+No matter which logging option you choose, logging directly to files or using syslog, log files grow large and unwieldy over time and become difficult to use, for example identifying specific events.
 
 To handle this problem, log files are rotated on a regular basis, by making a copy of the current log files and creating fresh log files.
-The old logs can be archived, compressed, mailed to an address or removed after sometime.
+The old logs can be archived, compressed, mailed to an address or removed at predetermined intervals.
 
-Logrotate eases the management of systems that generate large numbers of log files.
+The `Logrotate <https://iain.cx/src/logrotate/>`_ application eases management of systems that generate large numbers of log files.
 It allows automatic rotation, compression, removal, and mailing of log files.
 The log files may be handled at intervals (daily, weekly and monthly) or when they grow too large.
 It is usually scheduled to run daily.
@@ -157,7 +157,7 @@ Everything about the log files to be handled by logrotate as well as the actions
 The main configuration file is `/etc/logrotate.conf`.
 Applications can also create configuration files in the `/etc/logrotate.d` directory, logrotate automatically includes all configuration files in this directory.
 
-A simple configuration file::
+.. code-block:: none
 
     # sample logrotate configuration file
     compress
@@ -172,7 +172,7 @@ A simple configuration file::
 
     "/var/log/httpd/access.log" /var/log/httpd/error.log {
         rotate 5
-        mail www@my.org
+        mail foo@bar.org
         size=100k
         sharedscripts
         postrotate
@@ -180,7 +180,7 @@ A simple configuration file::
         endscript
     }
 
-Lines beginning with `#` are comments and can appear anywhere in the configuration file.
+Lines beginning with ``#`` are comments and can appear anywhere in the configuration file.
 The first few lines set global options.
 In this example logs are compressed after rotation.
 
@@ -192,7 +192,7 @@ Postrotate is usually used to force daemons to reload their configurations so th
 The second section defines how to handle two files, `/var/log/httpd/access.log` and `/var/log/httpd/error.log`.
 The quotes are used to allow matching log files with spaces in their names.
 These logs files are rotated when they grow over 100k in size.
-The old log log files are mailed to www@my.org (uncompressed) after going through 5 rotations.
+The old log log files are mailed to foo@bar.org (uncompressed) after going through 5 rotations.
 The sharedscripts options means that the command for postrotate should be run only once no matter how many log files match. In this case although two files are handled, the command `/sbin/killall` is executed once.
 
 There a lot more options available for logrotate, you can get a full list by checking the logrotate man page.
