@@ -45,6 +45,15 @@ This has the effect of repairing the broken path by routing traffic through segm
 
 Routing
 ==============
+When a network is subdivided into multiple Layer 2 broadcast domains, Layer 3 addressing enables hosts to communicate with another host in another broadcast domain.
+
+Recall that as mentioned in the section on VLANS, one domain of Layer 3 addresses is typically mapped to hosts one to one in a Layer 2 broadcast domain.
+Hence, no two hosts in a broadcast domain can have the same IP/Layer 3 address.
+
+The process of forwarding packets from one Layer 2 subdomain to another Layer 2 subdomain using Layer 3 addresses is called routing.
+
+A Layer 3 device or router is the device responsible for this function.
+Routers use many different techniques to forward packets but these methods can be categorized into two types.
 
 Static Routing
 --------------
