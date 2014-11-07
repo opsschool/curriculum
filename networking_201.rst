@@ -58,7 +58,7 @@ Routers use many different techniques to forward packets but these methods can b
 Static Routing
 --------------
 
-Dynamic routing protocols (RIP, OSPF, BGP)
+Dynamic routing protocols (RIP, OSPF, BGP, EIGRP, IS-IS)
 ------------------------------------------
 
 ACLs
