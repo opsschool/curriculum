@@ -124,16 +124,6 @@ DNS can hold details on which mail servers are responsible for a domain's mail a
 
 The most common types you'll see are:
 
-- ``A``: responsible for mapping individual hosts to an IP address, for instance ``www`` in the ``google.com`` zonefile to ``173.194.34.67`` 
-- ``AAAA``: similar to an `A` record, except for IPv6. It could be used to map ``www`` in the ``google.com`` zonefile to ``2001:4860:b002::68``
-- ``CNAME``: used to alias one record to another, for instance ``bar.example.com.`` could be aliased to ``foo.example.com.``
-- ``MX``: specifies mail servers responsible for handling mail for the domain. A priority is also assigned to denote an order of responsibility
-- ``PTR``: resolves an IP address to an FQDN - in practice, this is the reverse of an ``A`` record when it is set
-- ``SOA``: specifies authoritative details about a zonefile, including the zonemaster's email address, serial number (for revision purposes) and primary nameserver
-- ``SRV``: a semi-generic record used to specify a location. Used by newer services instead of creating protocol-specific records such as ``MX``.
-- ``TXT``: originally for human-readable information that did not fit other records, but now mostly used to create ``SPF <http://en.wikipedia.org/wiki/Sender_Policy_Framework>``__ records```
-
-
 +-------------+---------------------------+
 | Record Type |         Description       |
 +=============+===========================+
@@ -159,6 +149,32 @@ The most common types you'll see are:
 |             | A priority is also        |
 |             | assigned to denote an     |
 |             | order of responsibility.  |
++-------------+---------------------------+
+| PTR         | Resolves an IP address to |
+|             | an FQDN. In practice, this|
+|             | is the reverse of an A    |
+|             | record.                   |
++-------------+---------------------------+
+| SOA         | Specifies authoritative   |
+|             | details about a zonefile, |
+|             | including the zonemaster's|
+|             | email address, the serial |
+|             | number (for revision      |
+|             | purposes) and primary     |
+|             | nameserver.               |
++-------------+---------------------------+
+| SRV         | A semi-generic record used|
+|             | to specify a location.    |
+|             | Used by newer services    |
+|             | instead of creating       |
+|             | protocol-specific records |
+|             | such as `MX`.             |
++-------------+---------------------------+
+| TXT         | Arbitrary human-readable  |
+|             | information that needs to |
+|             | be stored in DNS. Examples|
+|             | include verification codes|
+|             | and SPF records.          |
 +-------------+---------------------------+
 
 There's a good in-depth list of every record type, the description of its use and the related RFC in which it is defined in `this Wikipedia article <http://en.wikipedia.org/wiki/List_of_DNS_record_types>`__.
