@@ -54,6 +54,27 @@ Routers may use many different ways to forward packets but these methods can be 
 
 Static Routing
 --------------
+The method of using manually configured routes is called static routing.
+
+Typically, there are three pieces of information that are needed to specify a static route: the destination subnet with its subnet mask and the next hop host or outgoing interface.
+Take for example the following static route configuration in Linux:
+
+.. code-block:: console
+
+   # ip route add 10.10.20.0/24 via 192.168.2.1
+
+The above command means that packets intended for hosts in the 10.10.20.0/24 network must be forwarded to the hostwith ip address 192.168.2.1.
+
+Below is another example in Cisco IOS:
+
+.. code-block:: console
+
+   Router(config)# ip route 10.10.20.0 255.255.255.0 Serial0/0/1
+
+Instead of passing a packet to a specific ip address however, this configuration states that packets intended for the 10.10.20.0/24 network should be forwarded to the host directly connected to Serial 0/0/1.
+
+Static routes do not change when the network changes but can be useful in cases where the network is small enough that it outweighs the cost of dynamic routing.
+It is often used in tandem with dynamic routing to specify a default route in case a dynamic route is unavailable.
 
 Dynamic routing protocols (RIP, OSPF, BGP, EIGRP, IS-IS)
 ------------------------------------------
