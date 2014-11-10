@@ -70,7 +70,7 @@ Take for example the following static route configuration in Linux:
 
    # ip route add 10.10.20.0/24 via 192.168.2.1
 
-The above command means that packets intended for hosts in the 10.10.20.0/24 network must be forwarded to the hostwith ip address 192.168.2.1.
+The above command means that packets intended for hosts in the 10.10.20.0/24 network must be forwarded to the host with ip address 192.168.2.1.
 
 Below is another example in Cisco IOS:
 
