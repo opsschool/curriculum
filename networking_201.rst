@@ -56,7 +56,14 @@ Static Routing
 --------------
 The method of using manually configured routes is called static routing.
 
-Typically, there are three pieces of information that are needed to specify a static route: the destination subnet with its subnet mask and the next hop host or outgoing interface.
+Typically, there are three pieces of information that are needed to specify a static route:
+
+1. the destination subnet
+
+2. the latter's subnet mask and
+
+3. the next hop host or outgoing interface.
+
 Take for example the following static route configuration in Linux:
 
 .. code-block:: console
