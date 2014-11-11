@@ -84,7 +84,7 @@ Static routes do not change when the network changes but can be useful in cases 
 It is often used in tandem with dynamic routing to specify a default route in case a dynamic route is unavailable.
 
 Dynamic routing protocols (RIP, OSPF, BGP, EIGRP, IS-IS)
-------------------------------------------
+--------------------------------------------------------
 
 ACLs
 ====
