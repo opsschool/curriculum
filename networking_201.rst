@@ -78,7 +78,7 @@ Below is another example in Cisco IOS:
 
    Router(config)# ip route 10.10.20.0 255.255.255.0 Serial0/0/1
 
-Instead of passing a packet to a specific ip address however, this configuration states that packets intended for the 10.10.20.0/24 network should be forwarded to the host directly connected to Serial 0/0/1.
+Instead of passing a packet to a specific ip address however, this configuration states that packets intended for the 10.10.20.0/24 network should be forwarded to the host directly connected to Serial 0/0/1 whose ip address can be anything.
 
 Static routes do not change when the network changes but can be useful in cases where the network is small enough that it outweighs the cost of dynamic routing.
 It is often used in tandem with dynamic routing to specify a default route in case a dynamic route is unavailable.
