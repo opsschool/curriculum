@@ -407,6 +407,9 @@ As a result, many admins will turn off ``atime`` on filesystems to increase perf
 
 Note that ``atime`` is not really a security/auditing feature. Any regular user can use the ``touch`` utility on a file to set the ``atime`` to some point in the past, if they have the appropriate permissions for that file.
 
+Also note that contrary to popular belief, ``ctime`` does *not* store a file's creation time.
+The change time stored in ``ctime`` is when the file's attributes or contents were changed, whereas the modification time stored in ``mtime`` only changes if the file's contents are modified.
+
 ro
 --
 
