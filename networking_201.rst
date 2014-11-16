@@ -43,11 +43,51 @@ A major benefit to using STP to prevent network loops is that network administra
 Should a path in a broadcast domain fail, each participating switch will recalculate the DP and RP, modifying the status of BPs if necessary.
 This has the effect of repairing the broken path by routing traffic through segments around the failure.
 
-Static Routing
+Routing
 ==============
+When a network is subdivided into multiple Layer 2 broadcast domains, Layer 3 addressing enables hosts to communicate with another host in another broadcast domain.
 
-Dynamic routing protocols (RIP, OSPF, BGP)
-==========================================
+The process of forwarding packets from one Layer 2 subdomain to another Layer 2 subdomain using Layer 3 addresses is called routing.
+
+A Layer 3 device or router is the device responsible for this function.
+Routers may use many different ways to forward packets but these methods can be categorized into two types.
+
+Static Routing
+--------------
+The method of using manually configured routes is called static routing.
+
+Typically, there are three pieces of information that are needed to specify a static route:
+
+1. the destination subnet
+
+2. the latter's subnet mask and
+
+3. the next hop host or outgoing interface.
+
+Take for example the following static route configuration in Linux:
+
+.. code-block:: console
+
+   # ip route add 10.10.20.0/24 via 192.168.2.1
+
+The above command means that packets intended for hosts in the 10.10.20.0/24 network must be forwarded to the host with ip address 192.168.2.1.
+
+Below is another example in Cisco IOS:
+
+.. code-block:: console
+
+   Router(config)# ip route 10.10.20.0 255.255.255.0 Serial0/0/1
+
+Instead of passing a packet to a specific ip address however, this configuration states that packets intended for the 10.10.20.0/24 network should be forwarded to the host directly connected to Serial 0/0/1 whose ip address can be anything.
+
+Static routes do not change when the network changes but can be useful in cases where the network is small enough that it outweighs the cost of dynamic routing.
+It is often used in tandem with dynamic routing to specify a default route in case a dynamic route is unavailable.
+
+Dynamic routing protocols (RIP, OSPF, BGP, EIGRP, IS-IS)
+--------------------------------------------------------
+For a small network, manually configuring routes will work just fine.
+As a network grows larger, however, doing this can be very arduous if not infeasible.
+Dynamic routing solves this problem by programmatically building a routing table.
 
 ACLs
 ====
