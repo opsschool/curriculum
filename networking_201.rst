@@ -85,6 +85,9 @@ It is often used in tandem with dynamic routing to specify a default route in ca
 
 Dynamic routing protocols (RIP, OSPF, BGP, EIGRP, IS-IS)
 --------------------------------------------------------
+For a small network, manually configuring routes will work just fine.
+As a network grows larger, however, doing this can be very arduous if not infeasible.
+Dynamic routing solves this problem by programmatically building a routing table.
 
 ACLs
 ====
