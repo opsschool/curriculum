@@ -83,7 +83,7 @@ Instead of passing a packet to a specific ip address however, this configuration
 Static routes do not change when the network changes but can be useful in cases where the network is small enough that it outweighs the cost of dynamic routing.
 It is often used in tandem with dynamic routing to specify a default route in case a dynamic route is unavailable.
 
-Dynamic routing protocols (RIP, OSPF, BGP, EIGRP, IS-IS)
+Dynamic routing protocols (RIP, EIGRP, IS-IS, OSPF, BGP)
 --------------------------------------------------------
 For a small network, manually configuring routes will work just fine.
 As a network grows larger, however, doing this can be very arduous if not infeasible.
