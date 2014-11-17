@@ -89,6 +89,14 @@ For a small network, manually configuring routes will work just fine.
 As a network grows larger, however, doing this can be very arduous if not infeasible.
 Dynamic routing solves this problem by programmatically building a routing table.
 
+Here are some examples of dynamic routing protocols:
+
+1. Routing Information Protocol (RIP) - RIP uses the number of routers between a router and the destination subnet as its path selection metric.
+When a RIP router first comes online, it sends a broadcast message and then all its neighbor routers respond back with their own routing table.
+This new RIP router then compares the routes in its own routing table with the routes from the other routing tables it has received.
+If there are routes to other subnets that are currently not in its own routing table, that route is added.
+More importantly, it updates routes in its own routing table if there is a route with less hops to a destination subnet.
+
 ACLs
 ====
 
