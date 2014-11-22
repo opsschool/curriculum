@@ -97,8 +97,8 @@ This new RIP router then compares the routes in its own routing table with the r
 If there are routes to other subnets that are currently not in its own routing table, that route is added.
 More importantly, it updates routes in its own routing table if there is a route with less hops to a destination subnet.
 
-2. Enhanced Interior Gateway Routing Protocol (EIGRP) - EIGRP uses a mix of path selection metrics such as bandwidth and delay to determine the route to a destination subnet.
-Unlike RIP, it only sends updates incrementally to reduce overhead on routers.
+2. Enhanced Interior Gateway Routing Protocol (EIGRP) - EIGRP is similar to RIP but uses a mix of path selection metrics such as bandwidth and delay to determine the route to a destination subnet.
+Unlike RIP, it only sends updates incrementally to reduce overhead.
 
 
 ACLs
