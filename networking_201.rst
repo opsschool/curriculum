@@ -83,7 +83,7 @@ Instead of passing a packet to a specific ip address however, this configuration
 Static routes do not change when the network changes but can be useful in cases where the network is small enough that it outweighs the cost of dynamic routing.
 It is often used in tandem with dynamic routing to specify a default route in case a dynamic route is unavailable.
 
-Dynamic routing protocols (RIP, EIGRP, IS-IS, OSPF, BGP)
+Dynamic routing protocols (RIP, OSPF, BGP)
 --------------------------------------------------------
 For a small network, manually configuring routes will work just fine.
 As a network grows larger, however, doing this can be very arduous if not infeasible.
@@ -96,10 +96,11 @@ When a RIP router first comes online, it sends a broadcast message and then all 
 This new RIP router then compares the routes in its own routing table with the routes from the other routing tables it has received.
 If there are routes to other subnets that are currently not in its own routing table, that route is added.
 More importantly, it updates routes in its own routing table if there is a route with less hops to a destination subnet.
-
-2. Enhanced Interior Gateway Routing Protocol (EIGRP) - EIGRP is similar to RIP but uses a mix of path selection metrics such as bandwidth and delay to determine the route to a destination subnet.
+RIP is part of a class of routing protocols called distance vector routing protocols.
+They are characterized by their sharing of routing tables with their neighbors.
+Similar protocols to RIP include Cisco's Enhanced Interior Gateway Routing Protocol (EIGRP).
+EIGRP is similar to RIP but uses a mix of path selection metrics such as bandwidth and delay to determine the route to a destination subnet.
 Unlike RIP, it only sends updates incrementally to reduce overhead.
-
 
 ACLs
 ====
