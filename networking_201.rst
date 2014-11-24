@@ -102,6 +102,17 @@ Similar protocols to RIP include Cisco's Enhanced Interior Gateway Routing Proto
 EIGRP is similar to RIP but uses a mix of path selection metrics such as bandwidth and delay to determine the route to a destination subnet.
 Unlike RIP, it only sends updates incrementally to reduce overhead.
 
+2. Open Shortest Path First (OSPF) - OSPF is a routing protocol that calculates the shortest path to each destination subnet in the network.
+Routing protocols like OSPF that work this way are said to be called Link State routing protocols.
+To be able to know the shortest path to each destination subnet, each router should know everything about the network from links, subnets and even other routers.
+To do this in OSPF, each router packages routing information they know in a data structure called Link State Advertisements (LSA) and floods the whole network with this information.
+Fellow OSPF routers listen for LSAs, collect this data and store them in a Link State Database (LSDB).
+The point of all this sharing is for each router to have identical LSDBs.
+Once this is achieved, each OSPF router calculates routes to all subnets from its own point of view using a shortest path algorithm.
+These routes are added then added to the router's routing table.
+
+3. Border Gateway Protocol (BGP) -
+
 ACLs
 ====
 
