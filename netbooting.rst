@@ -29,7 +29,7 @@ TFTP does not support any type of authentication.
 
 Given the low complexity of the TFTP protocol, servers are available for virtually every operating system.
 Configuration is typically just pointing the server at a directory full of files to serve up.
-Unless you have very specific reasons to do so (and fully understand the implications), you should make sure your that your TFTP server is setup in read only mode.
+Unless you have very specific reasons to do so (and fully understand the implications), you should make sure that your TFTP server is setup in read only mode.
 
 PXE
 ===
