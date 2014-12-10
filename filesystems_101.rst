@@ -400,12 +400,15 @@ noatime
 -------
 
 The ``noatime`` option tells the filesystem not to keep track of ``atime`` or access time.
-If you recall your ``inode`` lessons, you'll remember that the ``inode`` keeps track of three dates: ``ctime`` (creation time), ``mtime`` (modification time), and ``atime`` (access time).
+If you recall your ``inode`` lessons, you'll remember that the ``inode`` keeps track of three dates: ``ctime`` (change time), ``mtime`` (modification time), and ``atime`` (access time).
 Under normal circumstances, whenever a user reads from a file, the operating system will write a new ``atime`` to the ``inode``.
 For large groups of small files, read by a number of people, or by automated processes, this final write operation can hurt disk performance.
 As a result, many admins will turn off ``atime`` on filesystems to increase performance.
 
 Note that ``atime`` is not really a security/auditing feature. Any regular user can use the ``touch`` utility on a file to set the ``atime`` to some point in the past, if they have the appropriate permissions for that file.
+
+Also note that contrary to popular belief, ``ctime`` does *not* store a file's creation time.
+The change time stored in ``ctime`` is when the file's attributes or contents were changed, whereas the modification time stored in ``mtime`` only changes if the file's contents are modified.
 
 ro
 --
