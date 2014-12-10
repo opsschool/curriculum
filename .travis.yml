@@ -2,7 +2,7 @@ language: python
 python:
   - "2.7"
 before_install:
- - sudo apt-get install -qq graphviz
+ - sudo apt-get update && sudo apt-get install -qq graphviz
 # command to install dependencies
 install: "pip install -q -r requirements.txt --use-mirrors"
 # command to run tests
