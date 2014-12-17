@@ -563,30 +563,30 @@ Instead, function blocks are separated using indentation.
 
 .. code-block:: python
 
->>> def square(x):
-...     result = x*x
-...     return result
-...
->>> square(3)
-9
+    >>> def square(x):
+    ...     result = x*x
+    ...     return result
+    ...
+    >>> square(3)
+    9
 
 
 You can even call functions within other functions
 
 .. code-block:: python
 
->>> def greet(name):
-...     greeting = "Hello "+name+"!"
-...     return greeting
-...
->>> def new_user(first_name):
-...     user = first_name
-...     print "New User: "+user
-...     print greet(user)
-...
->>> new_user('Jack')
-New User: Jack
-Hello Jack!
+    >>> def greet(name):
+    ...     greeting = "Hello "+name+"!"
+    ...     return greeting
+    ...
+    >>> def new_user(first_name):
+    ...     user = first_name
+    ...     print "New User: "+user
+    ...     print greet(user)
+    ...
+    >>> new_user('Jack')
+    New User: Jack
+    Hello Jack!
 
 
 Objects
