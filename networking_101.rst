@@ -323,7 +323,7 @@ guide is out of the scope of this document.
 Classful addressing
 ===================
 
-You may hear people refer to networks as "Class A", "Class B", or "Class B". This is known
+You may hear people refer to networks as "Class A", "Class B", or "Class C". This is known
 as "Classful Addressing" and has been deprecated for decades, thanks to the introduction
 of CIDR in 1993 (:rfc:`1519`). Classful addressing has the drawback of assuming that a
 network is drawn on very large boundaries. For example, in the table in the next section,
