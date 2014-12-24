@@ -77,6 +77,7 @@ Table of Contents
    labs
    learning
    seealso
+   reading_list
    meta/contributions
    meta/conventions
    meta/style_guide
