@@ -82,7 +82,11 @@ a set of open interconnection standards, which became known as the "Open Systems
 Interconnection" (OSI) standard. While the actual protocols they developed did
 not become popular and are not in wide use today, the model they came up with
 has achieved wide popularity as a way of thinking about the network protocol
-stack.
+stack. It's important to understand that the OSI model is a conceptual model,
+and therefore more of a mental framework than a technical framework. It is useful
+primarily for troubleshooting and explanation purposes. While the OSI model may
+seem esoteric as you're learning it, it will eventually prove invaluable to your
+daily work once you have a grasp of the concepts.
 
 The OSI model describes seven layers of abstraction that enable software
 programs to communicate with each other on separate systems. The seven layers
