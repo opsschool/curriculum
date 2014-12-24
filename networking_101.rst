@@ -239,7 +239,7 @@ However, despite the number of IPv4 addresses being a large number (4294967296),
 are slowly running out.
 
 Internet Protocol Version 6 (IPv6) is the latest version of the Internet protocol
-which aims to address the IPv4 address exhausation problem.
+which aims to address the IPv4 address exhaustion problem.
 
 Probably the most obvious difference of IPv6 to IPv4 is the representation of addresses.
 Unlike IPV4, IPv6 uses a hexadecimal format to represent a 128-bit address. The format is
