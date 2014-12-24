@@ -292,12 +292,12 @@ Subnetting, netmasks and CIDR
 A subnet is a logical division of an IP network, and allows the host system to
 identify which other hosts can be reached on the local network. The host system
 determines this by the application of a routing prefix. There are two typical
-representations of this prefix: a netmask and CIDR.
+representations of this prefix: a netmask and Classless Inter-Domain Routing (CIDR).
 
 Netmasks typically appear in the dotted decimal notation, with values between
 0-255 in each octet. These are applied as bitmasks, and numbers at 255 mean that
 this host is not reachable. Netmask can also be referred to as a Subnet Mask and
-these terms are often used interchangeably. An example IP Address with a typical
+these terms are often used interchangeably. An example IPv4 address with a typical
 netmask is below:
 
 ============= ===============
@@ -307,14 +307,36 @@ IP Address    Netmask
 ============= ===============
 
 CIDR notation is a two-digit representation of this routing prefix. Its value can range
-between 0 and 32. This representation is typically used for networking equipment. Below
-is the same example as above with CIDR notation:
+between 0 and 32. While having long been a staple in network equipment and used mainly by
+network engineers, CIDR notation can now be found in Linux (iproute's `ip` command uses
+CIDR notation). In addition, CIDR notation is often encountered in discussions, as it's
+quicker and simpler to reference than a netmask. Below is the same example as above
+with CIDR notation:
 
 ============= ===============
 IP Address    CIDR
 ============= ===============
 192.168.1.1   /24
 ============= ===============
+
+As a server administrator, it is helpful to understand subnetting so as to communicate more
+effectively with network engineers, and to design networks yourself. There are many guides
+online for learning how to subnet, each with different approaches and tricks. A full subnetting
+guide is out of the scope of this document.
+
+Classful addressing
+===================
+
+You may hear people refer to networks as "Class A", "Class B", or "Class C". This is known
+as "Classful Addressing" and has been deprecated for decades, thanks to the introduction
+of CIDR in 1993 (:rfc:`1519`). Classful addressing has the drawback of assuming that a
+network is drawn on very large boundaries. For example, in the table in the next section,
+each block would be a single network. One can see how using an entire /16 (65534 hosts)
+when only five hosts are needed would be wasteful. As such, CIDR was created, allowing
+people to create subnets only as large as required. For these reasons, one should not refer
+to any particular network block as a "Class X" (eg, 10.0.0.0/28 should not be called a Class A
+network) as it is misleading at best, and incorrect at worst. You should always use CIDR
+notation to ensure accuracy.
 
 Private address space (:rfc:`1918`)
 ===================================
