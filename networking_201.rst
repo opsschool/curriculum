@@ -195,9 +195,16 @@ Network Troubleshooting
 
 ping
 ----
-ping is always a great first step in any network-related troubleshooting session.
+ping should always be the first step in any network-related troubleshooting session, due to
+the simple manner in which it works, and the information it returns.
+Many times, the resulting information from a ping will point you in the next direction.
+For example, if you notice jitter (ping responses varying wildly), you will know to start
+looking at layer 1 problems somewhere on the path, and that available bandwidth probably
+isn't an issue.
+
 You're probably already familiar with the basic usage of ping, but there are some really handy options
-that can used (these are on Linux, but also exist in most versions of ping, but under different flags):
+that can used (these are on Linux, but also exist in most versions of ping, but under different flags).
+Here are a couple of my most-often-used options:
 
 -I - Change the source IP address you're pinging from.
 For example, there might be multiple IP addresses on your box, and you want to verify that a particular
@@ -210,9 +217,9 @@ This is useful when debugging MTU mismatches, by increasing the packet size.
 telnet
 ------
 
-While telnet daemons are a big no-no in the wild (unencrypted traffic), the telnet client utility is great
-for verifying other daemons are responding.
-For example, you can verify HTTP is running on port 80 by connecting via telnet:
+While telnet daemons are a big no-no in the wild (unencrypted traffic), the telnet client
+utility can be used to test whether TCP connections can be made on the specified port.
+For example, you can verify a TCP connection to port 80 by connecting via telnet:
 
 .. code-block:: console
 
@@ -229,7 +236,8 @@ A connection failure would look like this (using port 8000, since nothing is lis
   Trying 98.138.253.109...
   telnet: connect to address 98.138.253.109: Connection timed out
 
-You can also send raw data via telnet, allowing you to test entirely by hand.
+You can also send raw data via telnet, allowing you to verify operation of the
+daemon at the other end.
 For example, we can send HTTP headers by hand:
 
 .. code-block:: console
@@ -269,6 +277,15 @@ Here's the response from the web server:
 Here we passed the bare minimum required to initiate an HTTP session to a remote web server,
 and it responded with HTTP data, in this case, telling us that the page we requested is located
 elsewhere.
+
+Note that the port you're connecting to might the port for HTTP, but it could be something
+other than an HTTP daemon running.
+Nothing prevents a service from running on a port other than it's usual one.
+In effect, you could run a SMTP daemon on port 80, and an HTTP daemon on port 25.
+Testing TCP connections with telnet would verify TCP operation, but you still would not
+have a working web server on port 80.
+Since the scope of this section is focused only on the networking aspect, see the other
+sections of OpsSchool for troubleshooting daemon operation and Linux troubleshooting.
 
 iproute / ifconfig
 ------------------
