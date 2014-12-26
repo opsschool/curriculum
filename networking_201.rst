@@ -356,7 +356,7 @@ traceroute is useful for finding connection problems along the path.
 
 traceroute works by a very clever mechanism, using UDP packets on Linux or ICMP packets on Windows.
 traceroute can also use TCP, if so configured.
-traceroute sends packet with an increasing TTL value, starting the TTL value at 1.
+traceroute sends packets with an increasing TTL value, starting the TTL value at 1.
 The first router (hop) receives the packet, then decrements the TTL value, resulting in the packet
 getting dropped since the TTL has reached zero.
 The router then sends an ICMP Time Exceeded back to the source.
