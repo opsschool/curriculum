@@ -234,8 +234,6 @@ For example, we can send HTTP headers by hand:
 
 .. code-block:: console
 
-  :emphasize-lines: 5,6
-
   user@opsschool ~$ telnet opsschool.org 80
   Trying 208.88.16.54...
   Connected to opsschool.org.
@@ -243,7 +241,7 @@ For example, we can send HTTP headers by hand:
   GET / HTTP/1.1
   host: www.opsschool.org
 
-The emphasized lines are the commands sent to the remote host.
+The last two lines are the commands sent to the remote host.
 
 Here's the response from the web server:
 
