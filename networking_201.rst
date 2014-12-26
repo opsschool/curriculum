@@ -525,7 +525,7 @@ for any one of the many great guides on tcpdump usage.
 
 
 Differences in perspective: network engineering and systems administration
-===================================================================
+==========================================================================
 
 Network engineering and systems administration have a tendency to speak different languages,
 due to the divide in skillsets and lack of overlap.
