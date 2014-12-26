@@ -213,6 +213,26 @@ This comes in useful when there's more than just default routes on a box.
 
 -s - Set the packet size.
 This is useful when debugging MTU mismatches, by increasing the packet size.
+Use in conjuction with the -M flag to set MTU Path Discovery hint.
+
+An example of using ping to test MTU:
+
+.. code-block:: console
+
+  user@opsschool ~$ ping -M do -s 1473 upstream-host
+  PING local-host (local-host) 1473(1501) bytes of data.
+  From upstream-host icmp_seq=1 Frag needed and DF set (mtu = 1500)
+  From upstream-host icmp_seq=1 Frag needed and DF set (mtu = 1500)
+  From upstream-host icmp_seq=1 Frag needed and DF set (mtu = 1500)
+
+I've used the `-M do` option to set the 'Don't Fragment' (DF) flag on the packet, then
+set the packet size to 1473.
+With the 28 bytes of overhead for Ethernet, you can see the total packet size becomes
+1501--just one byte over the MTU of the remote end.
+As you can see from the example, since the DF flag is set and the packet needs to fragment,
+it spits back an error, and helpfully tells us what the MTU size is on the other end.
+ping can be used to determine Path MTU (the smallest MTU size along a path), but other
+tools are better for that (see below).
 
 telnet
 ------
