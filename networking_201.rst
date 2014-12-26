@@ -321,8 +321,10 @@ netstat
 
 netstat is very useful for checking connections on a box.
 netstat will show SOCKET, TCP, and UDP connections, in various connection states.
-For example, here's netstat showing all TCP and UDP connections in the LISTEN state, with numeric representation(in other words,
-all daemons listening on UDP or TCP with DNS and port lookup disabled).
+For example, here's netstat showing all TCP and UDP connections in the LISTEN state, with
+numeric representation.
+In other words, this shows all daemons listening on UDP or TCP with DNS and port lookup
+disabled.
 
 .. code-block:: console
 
