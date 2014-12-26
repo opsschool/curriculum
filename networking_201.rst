@@ -430,6 +430,35 @@ iftop
 
 iftop displays bandwidth usage on a specific interface, broken down by remote host.
 You can use filters to filter out data you don't care about, such as DNS traffic.
+iftop is not available in the base reposities for RHEL/CentOS or Ubuntu, but is available in 
+`EPEL <https://fedoraproject.org/wiki/EPEL>`_, and the Universe repository, respectively.
+
+In this example, iftop is listening only to the eth0 interface, and for purposes of this document,
+is also using the -t option, which disables the ncurses interface (for your use, you won't need -t).
+This box is a very low-traffic VM, so there's not much here, but it does give a sense of what
+information is available via the tool.
+
+.. code-block:: console
+
+  user@opsschool ~$ sudo iftop -i eth0 -t
+  interface: eth0
+  IP address is: 10.0.2.15
+  MAC address is: 08:00:27:ffffff8a:6d:07
+  Listening on eth0
+    # Host name (port/service if enabled)            last 2s   last 10s   last 40s cumulative
+  --------------------------------------------------------------------------------------------
+    1 10.0.2.15                                =>       804b       804b       804b       201B
+      google-public-dns-a.google.com           <=       980b       980b       980b       245B
+    2 10.0.2.15                                =>       352b       352b       352b        88B
+      10.0.2.2                                 <=       320b       320b       320b        80B
+  --------------------------------------------------------------------------------------------
+  Total send rate:                                     1.13Kb     1.13Kb     1.13Kb
+  Total receive rate:                                  1.27Kb     1.27Kb     1.27Kb
+  Total send and receive rate:                         2.40Kb     2.40Kb     2.40Kb
+  --------------------------------------------------------------------------------------------
+  Peak rate (sent/received/total):                     1.12Kb     1.27Kb     2.40Kb
+  Cumulative (sent/received/total):                      289B       325B       614B
+  ============================================================================================
 
 iperf
 -----
