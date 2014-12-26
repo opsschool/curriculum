@@ -316,41 +316,57 @@ Show all routes on the box.
   default via 10.0.2.2 dev eth0
 
 
-netstat
--------
+ss
+--
 
-netstat is very useful for checking connections on a box.
-netstat will show SOCKET, TCP, and UDP connections, in various connection states.
-For example, here's netstat showing all TCP and UDP connections in the LISTEN state, with
+`ss` is the replacement for `netstat`, which is obsolete according to the `netstat man
+page <http://linux.die.net/man/8/netstat>`_.
+While most distributions will probably have netstat available for some time, it is
+worthwhile to get used to using ss instead, which is already included in the iproute
+package.
+
+ss is very useful for checking connections on a box.
+ss will show SOCKET, TCP, and UDP connections, in various connection states.
+For example, here's ss showing all TCP and UDP connections in the LISTEN state, with
 numeric representation.
 In other words, this shows all daemons listening on UDP or TCP with DNS and port lookup
 disabled.
 
 .. code-block:: console
 
-  user@opsschool ~$ netstat -tuln
-  Active Internet connections (only servers)
-  Proto Recv-Q Send-Q Local Address               Foreign Address             State
-  tcp        0      0 0.0.0.0:80                  0.0.0.0:*                   LISTEN
-  tcp        0      0 0.0.0.0:4242                0.0.0.0:*                   LISTEN
-  tcp        0      0 0.0.0.0:2003                0.0.0.0:*                   LISTEN
-  tcp        0      0 0.0.0.0:2004                0.0.0.0:*                   LISTEN
-  tcp        0      0 0.0.0.0:22                  0.0.0.0:*                   LISTEN
-  tcp        0      0 0.0.0.0:3000                0.0.0.0:*                   LISTEN
-  tcp        0      0 127.0.0.1:25                0.0.0.0:*                   LISTEN
-  tcp        0      0 0.0.0.0:7002                0.0.0.0:*                   LISTEN
-  tcp        0      0 :::4242                     :::*                        LISTEN
-  tcp        0      0 :::22                       :::*                        LISTEN
-  tcp        0      0 ::1:25                      :::*                        LISTEN
+  user@opsschool ~$ ss -tuln
+  Netid  State      Recv-Q Send-Q         Local Address:Port         Peer Address:Port
+  tcp    LISTEN     0      128                        *:80                      *:*
+  tcp    LISTEN     0      50                         *:4242                    *:*
+  tcp    LISTEN     0      50                        :::4242                   :::*
+  tcp    LISTEN     0      50                         *:2003                    *:*
+  tcp    LISTEN     0      50                         *:2004                    *:*
+  tcp    LISTEN     0      128                       :::22                     :::*
+  tcp    LISTEN     0      128                        *:22                      *:*
+  tcp    LISTEN     0      100                        *:3000                    *:*
+  tcp    LISTEN     0      100                      ::1:25                     :::*
+  tcp    LISTEN     0      100                127.0.0.1:25                      *:*
+  tcp    LISTEN     0      50                         *:7002                    *:*
 
 There are a few things to note in the output.
-Local address of 0.0.0.0 means the daemon is listening on all IP addresses the server might have.
+Local address of * means the daemon is listening on all IP addresses the server might have.
 Local address of 127.0.0.1 means the daemon is listening only to the loopback interface, and therefore
 won't accept connections from outside of the server itself.
-Local address of ::: is the same thing as 0.0.0.0, but for IPv6.
+Local address of ::: is the same thing as \*, but for IPv6.
 Likewise, ::1 is the same as 127.0.0.1, but for IPv6.
+In this example, we used the flags `-tuln`, which just happens to be one of my more-often
+used sets of flags.
 
-netstat has many more useful flags than just these, which you can find in the man pages.
+By default, ss shows only non-listening TCP connections:
+
+.. code-block:: console
+
+  user@opsschool ~$ ss
+
+  State      Recv-Q Send-Q                                    Local Address:Port                                        Peer Address:Port
+  ESTAB      0      0                                             10.0.2.15:ssh                                             10.0.2.2:64667
+
+ss has many more useful flags than just these, which you can find in the `ss man page <http://linux.die.net/man/8/ss>`_.
 
 traceroute
 ----------
