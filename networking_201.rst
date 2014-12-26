@@ -273,12 +273,14 @@ elsewhere.
 iproute / ifconfig
 ------------------
 
-ifconfig is ubiquitous and a mainstay of any network-related work on Linux, but it's actually `deprecated
-in RHEL7 <https://bugzilla.redhat.com/show_bug.cgi?id=1119297>`_ (the net-tools package which contains `ifconfig`
-isn't included in RHEL 7/CentOS 7 by default) and many major distributions include iproute by default.
-The :manpage:`ifconfig` man page also recommends using the iproute package.
+ifconfig is ubiquitous and a mainstay of any network-related work on Linux, but it's actually
+`deprecated in RHEL7 <https://bugzilla.redhat.com/show_bug.cgi?id=1119297>`_ (the net-tools
+package which contains `ifconfig` isn't included in RHEL 7/CentOS 7 by default) and many major
+distributions include iproute by default.
+The `ifconfig <http://linux.die.net/man/8/ifconfig>`_ man page also recommends using the iproute package.
 All examples used below will use iproute, and will cover only the basics of troubleshooting.
 It's highly recommended to play around and see what you can find.
+The `ip <http://linux.die.net/man/8/ip>`_ man page contains a wealth of knowledge on the tool.
 
 ip addr show
 ^^^^^^^^^^^^^^
