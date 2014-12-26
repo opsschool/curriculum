@@ -507,23 +507,46 @@ Since one could devote entire pages to the usage of tcpdump, it is recommended t
 for any one of the many great guides on tcpdump usage.
 
 
-Working with network engineers
-==============================
+Differences in perspective: network engineering and systems administration
+===================================================================
 
 Network engineering and systems administration have a tendency to speak different languages,
 due to the divide in skillsets and lack of overlap.
-As such, here are a few tips on how to work better with network engineers:
 
-1. Network engineers work in bits-per-second (bps), while many server-specific utilities
-   output bytes-per-second (Bps).
-   Be sure when you're sending throughput data to network engineering that it's in bps.
-2. When sending issue reports, be sure to send a `traceroute`/`mtr` report from *both* directions.
-   A path in use may be what's called 'asymmetrical', that is, using a different path out than it does
-   for the return trip.
-   One side of the path might be having issues, while the other is perfectly fine.
+A good way to view how network engineering sees the technology differently is consider
+the OSI model: network engineering is focused primarily on layers 1, 2, and 3, with the
+occasional venture into the higher layers when certain routing protocols are involved (eg,
+BGP peering sessions operate over TCP).
+System administrators, on the other hand, are typically more concerned with layers 4 through 7,
+with the occasional venture into layer 3 for IP addressing.
+If one considers the perspective of the other, empathy is understanding comes easier, and
+anticipating what the other side expects becomes straightforward.
+
+As such, here are a few tips on how the two specializations see the same technology:
+
+1. Network engineers output in bits-per-second (bps), while many server-specific utilities
+   output in bytes-per-second (Bps).
+   As such, be sure when you're sending throughput data to network engineering that it's in
+   bits-per-second.
+   Your monitoring tools will usually do this for you (look for a config option).
+   In the occasion you need to do it by hand, and you're working in bytes, simply multiply by eight
+   to get bits.
+   For more information on conversions, `wikipedia <http://en.wikipedia.org/wiki/Data_rate_units>`_
+   has a good article on unit measurements.
+   Alternatively, use an online calculator.
+2. Systems administrators often don't worry about network topology since it so often "just works".
+   However, in some cases, especially situations where you're troubleshooting hosts across the
+   open internet, you may run into something called an 'asymmetrical path', that is, the routing
+   is using a different path out than it does coming back in.
+   In such situations, one path might have issues, while the other path is perfectly fine.
+   For this reason, when sending issue reports to a network engineer, be sure to send
+   a `traceroute`/`mtr` report from *both* directions.
    This situation is not common on internal networks, but can be on the open Internet.
    You may also run into this situation when you have more complex routing set up on the local server.
-3. A simple `ping` sometimes isn't enough for an issue report. `traceroute`/`mtr` is better.
+3. A simple `ping` sometimes isn't enough for an issue report, for the simple reason that it contains
+   so little information.
+   A `traceroute`/`mtr` report is better.
    If there's suspected throughput issues, try to get an `iperf` report as well.
    Also include an interface configuration report, showing MTU, IP address, and MAC address
    of the relevant interface(s).
+
