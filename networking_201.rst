@@ -189,3 +189,237 @@ IPSec
 
 SSL
 ---
+
+Troubleshooting layer 1 problems
+================================
+
+Layer one problems (physical) deserve their own section, because of how cryptic
+they can seem without a solid understanding of the causes and symptoms.
+There are several data points that fall under layer one.
+
+Most layer problems are usually traced back to one of the following causes:
+
+* Bad cabling
+* Mismatched duplex/speed
+* Electrical interference (EMI)
+* Network congestion
+
+To find the metrics below, use either `ip -s link`, or `ethtool -S`.
+
+Example output of `ip -s link show eth0`:
+
+.. code-block:: console
+
+  user@opsschool ~$ ip -s link show eth0
+  2: eth0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc pfifo_fast state UP qlen 1000
+      link/ether 04:01:1c:dc:82:01 brd ff:ff:ff:ff:ff:ff
+      RX: bytes  packets  errors  dropped overrun mcast
+      150285334  221431013 0       0       0       0
+      TX: bytes  packets  errors  dropped carrier collsns
+      999121259  42410636 0       0       0       0
+
+Here we can see that the link is up (`state UP`), the MAC address
+(`04:01:1c:dc:82:01`), bytes, packets, errors, drops, overruns, multicast,
+carrier, and collisions, for both RX (receive) and TX (transmit).
+
+One thing you may notice is that overrun and mcast are only on RX, and
+carrier/collisions are only on TX.
+This is because overruns and multicast only affect the receiving side, while carrier
+and collisions only affect the transmitting side.
+The reason for this will be made clear when described below.
+
+Example output of `ethtool eth0`:
+
+.. code-block:: console
+
+  user@opsschool ~$ sudo ethtool eth0
+  Settings for eth0:
+    Supported ports: [ TP ]
+    Supported link modes:   10baseT/Half 10baseT/Full
+                            100baseT/Half 100baseT/Full
+                            1000baseT/Full
+    Supported pause frame use: No
+    Supports auto-negotiation: Yes
+    Advertised link modes:  10baseT/Half 10baseT/Full
+                            100baseT/Half 100baseT/Full
+                            1000baseT/Full
+    Advertised pause frame use: No
+    Advertised auto-negotiation: Yes
+    Speed: 1000Mb/s
+    Duplex: Full
+    Port: Twisted Pair
+    PHYAD: 0
+    Transceiver: internal
+    Auto-negotiation: on
+    MDI-X: Unknown
+    Supports Wake-on: umbg
+    Wake-on: d
+    Current message level: 0x00000007 (7)
+               drv probe link
+    Link detected: yes
+
+As we can see, ethtool gives a lot of information, and with additional flags,
+there's even more.
+ethtool is especially useful for looking into layer 1 configuration, due to
+how much information it can provide.
+A particularly useful option is `-S`, which shows all the same metrics as
+the `ip` command mentioned above, plus many, many more:
+
+.. code-block:: console
+
+  user@opsschool ~$ sudo ethtool -S eth0
+  NIC statistics:
+      rx_packets: 20831
+      tx_packets: 11160
+      rx_bytes: 14654723
+      tx_bytes: 3637509
+      rx_broadcast: 0
+      tx_broadcast: 9
+      rx_multicast: 0
+      tx_multicast: 11
+      rx_errors: 0
+      tx_errors: 0
+      tx_dropped: 0
+      multicast: 0
+      collisions: 0
+      rx_length_errors: 0
+      rx_over_errors: 0
+      rx_crc_errors: 0
+      rx_frame_errors: 0
+      rx_no_buffer_count: 0
+      rx_missed_errors: 0
+      tx_aborted_errors: 0
+      tx_carrier_errors: 0
+      tx_fifo_errors: 0
+      tx_heartbeat_errors: 0
+      tx_window_errors: 0
+      tx_abort_late_coll: 0
+      tx_deferred_ok: 0
+      tx_single_coll_ok: 0
+      tx_multi_coll_ok: 0
+      tx_timeout_count: 0
+      tx_restart_queue: 0
+      rx_long_length_errors: 0
+      rx_short_length_errors: 0
+      rx_align_errors: 0
+      tx_tcp_seg_good: 304
+      tx_tcp_seg_failed: 0
+      rx_flow_control_xon: 0
+      rx_flow_control_xoff: 0
+      tx_flow_control_xon: 0
+      tx_flow_control_xoff: 0
+      rx_long_byte_count: 14654723
+      rx_csum_offload_good: 0
+      rx_csum_offload_errors: 0
+      alloc_rx_buff_failed: 0
+      tx_smbus: 0
+      rx_smbus: 0
+      dropped_smbus: 0
+
+Common Network metrics
+---------------
+
+RX/TX errors
+^^^^^^^^^^^^
+
+These counters appear to be aggregates of various other counters, and information
+on exactly what's included in them is sparse.
+An increase of these counters is an indication that *something* is wrong, but
+they're too general to determine the exact cause.
+If you see these increasing, it will be more beneficial to check `ethtool -S`
+and see exactly which counters are increasing.
+
+Cyclic Redundancy Check (CRC)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+CRC is a sort of checksum.
+CRC errors can be a symptom for many different issues, such as a bad cable,
+noisy lines, and more.
+
+Drops
+^^^^^
+
+Drops occur when the network link is simply too saturated.
+The solution is to increase the bandwidth available, perhaps by upgrading the
+network link, or implementing some form of traffic limitation such as
+Quality-of-Service (QoS).
+Traffic limitation/shaping is out of the scope of this section, and should be
+considered an advanced topic.
+You can verify the saturation by checking your graphs for RX/TX bytes and see how
+much data is going through.
+
+Overruns
+^^^^^^^^
+
+Overruns occur when the network device is receiving data faster than the kernel
+driver can process it.
+Overruns sound similar to drops, but overruns have to do with the kernel's ability
+to process data, rather than the network link itself.
+The solution is either to replace the network device with a more capable one, or
+lower the amount of data coming in to the network device.
+
+Carrier
+^^^^^^^
+
+Carrier errors occur when the link signal is having issues.
+In the absence of collisions, this can usually be attributed to a bad cable
+or network device.
+If collisions are also increasing, check the duplex settings.
+
+Collisions
+^^^^^^^^^^
+
+Collisions occur when there is a duplex or speed mismatch.
+Verify duplex and speed at both ends of the cable (at the switch and at the server).
+Auto-negotiation being enabled on one end but not on the other is often a
+cause of duplex/speed mismatch.
+Some devices don't play nicely with each other when auto-negotiation is
+enabled on both sides, so be sure to verify what auto-negotiation resulted in.
+
+Electrical interference
+-----------------------
+
+The symptoms of electrical interference can be seen by an increase of CRC errors.
+Electrical interference can be caused by any number of things: power cables nearby,
+mechanical systems (such as HVAC units), etc.
+Since a visual inspection will often reveal electrical interferance culprits easier
+than checking metrics, it's simpler to do a visual inspection first if you suspect
+this.
+The problem can sometimes be solved/alleviated by replacing the cable with STP
+(Shielded Twisted Pair), but it's usually better to just relocate the network cable.
+Only copper cabling is suspectible to EMI.
+Fiber is immune to EMI, as signals are transmitted as light instead of current.
+
+Testing copper cabling
+---------------
+
+A link tester is an inexpensive device made by many different vendors, for the
+purpose of verifying that a cable's functionality.
+Link testers only verify a small amount of criteria, mainly that there are no
+opens or shorts.
+A link tester, however, is different from a cable certifier, which will verify
+full compliance with TIA/EIA and ISO cable standards, including metrics for
+crosstalk allowance, cable length, current loss, and many others.
+
+If you need to test cable used in low-impact environments (eg, wall jack to
+desktop), a link tester is usually sufficient.
+If you need to test cable used in high-impact environments (eg, datacenter),
+opt for a cable certifier.
+Reputable cable vendors will have already run certification tests on cable,
+so this is only useful if you are routinely making your own cable (which
+is not advised under most circumstances).
+
+Many vendors sell great testers, with Fluke Networks being one of the primary
+vendors.
+
+Fiber errors
+------------
+
+Issues with fiber cable generally fall into two categories:
+
+* Dirty/Scratched fiber
+* Bad optic/transceiver
+
+The symptoms for both are very similar: intermittent RX/TX and CRC errors
+indicate a dirty or scratched fiber, while persistent RX/TX and CRC errors
+indicate a bad optic/transceiver.
