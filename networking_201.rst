@@ -317,7 +317,7 @@ the `ip` command mentioned above, plus many, many more:
       dropped_smbus: 0
 
 Common Network metrics
----------------
+----------------------
 
 RX/TX errors
 ^^^^^^^^^^^^
@@ -391,7 +391,7 @@ Only copper cabling is suspectible to EMI.
 Fiber is immune to EMI, as signals are transmitted as light instead of current.
 
 Testing copper cabling
----------------
+----------------------
 
 A link tester is an inexpensive device made by many different vendors, for the
 purpose of verifying that a cable's functionality.
