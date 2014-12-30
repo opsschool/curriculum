@@ -102,11 +102,11 @@ Configuration Management 201
 Ansible
 =======
 
-`Ansible <http://ansible.cc>`_ is a configuration management, deployment, and remote execution tool that uses SSH to address remote machines (though it offers other connection types, including 0mq).  It requires no server software nor any remote programs, and works by shipping small modules to remote machines that provide idempotent resource management.  While implemented in Python, Ansible uses a basic YAML data language to describe how to orchestrate operations on remote systems.  
+`Ansible <http://ansible.com>`_ is a configuration management, deployment, and remote execution tool that uses SSH to address remote machines (though it offers other connection types, including 0mq).  It requires no server software nor any remote programs, and works by shipping small modules to remote machines that provide idempotent resource management.  While implemented in Python, Ansible uses a basic YAML data language to describe how to orchestrate operations on remote systems.  
 
 Ansible can be extended by writing modules in any language you want, though there is some accelerated module writing ability that makes it easier to do them in Python.
 
-To prevent documentation drift, see `Ansible documentation site <http://ansible.cc/docs>`_.
+To prevent documentation drift, see `Ansible documentation site <http://docs.ansible.com>`_.
 
 Puppet
 ======
