@@ -583,24 +583,47 @@ GDash
 Graphite.  Dashboards are created using a simple `DSL
 <https://github.com/ripienaar/graphite-graph-dsl/wiki>`_.
 
-Third-party tools
-=================
+Kibana
+------
 
-Datadog
--------
+`Kibana <http://www.elasticsearch.org/overview/kibana/>`_ is an open
+source (Apache Licensed), browser based analytics and search dashboard for
+Elasticsearch. Kibana is a snap to setup and start using. Kibana strives to
+be easy to get started with, while also being flexible and powerful, just like
+Elasticsearch.
+
+Third-party tools (alphabetical order)
+======================================
+
+Airbrake
+--------
 
 Boundry
 -------
 
-NewRelic
+Circonus
 --------
+
+Datadog
+-------
+
+Geckoboard
+----------
 
 Librato Metrics
 ---------------
 
-Circonus
+logstash
 --------
 
-Geckoboard
-----------
+NewRelic
+--------
+
+Rollbar
+-------
+
+ServerDensity
+-------------
+
+
 

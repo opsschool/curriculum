@@ -59,8 +59,92 @@ Walk through of a diagnosis
 Recent changes
 --------------
 
-Often problems can be traced back to recent changes.
-Problems that start around the time of a change aren't usually coincidence.
+As Roy Rapoport states, "change is often the enemey of stability." Frequently,
+you will find yourself troubleshooting outages or system issues that were
+self-inflicted.
+
+It's probably fairly obvious but when a system problem occurs or performance
+degrades, something has changed! If nothing had changed, no one would be
+complaining. Often problems can be traced back to recent changes. You
+will quickly learn that problems that start around the time of a change,
+are not usually a coincidence.
+
+As you troubleshoot an issue, you will find yourself logging in to hosts and
+monitoring systems to identify what's different. After all, the system is
+responding differently (suddenly) and it's your job to find out what's changed.
+Did someone on the team make a change? Or, was the change a degredation in the
+operating environment? Such as a service failing, a system failing, a bad disk
+or memory that's failed.
+
+Here are a few questions you may ask your servers, yourself, your teammates
+or developers who may deploy to assist in identifying a change:
+
+Who was last logged in to the system, and when?
+
+.. code-block:: console
+
+    user@opsschool ~$ last
+    brian    pts/0        nosferatu.krs.io Sun Jan  4 00:27   still logged in
+    brian    pts/0        nosferatu.krs.io Fri Jan  2 18:04 - 20:53  (02:48)
+    sjackson pts/0        192.168.10.2     Fri Jan  2 17:36 - 17:36  (00:00)
+    sjackson pts/0        192.168.10.2     Fri Jan  2 09:09 - 09:09  (00:00)
+
+What did they do?
+
+.. code-block:: console
+
+    user@opsschool ~$ sudo less /home/sjackson/.bash_history
+    ..
+    vi /etc/crontab
+    vi /etc/important-app/config
+    cd /opt/important-app
+    git checkout v1.6.0
+
+What software versions were recently deployed?
+
+What in the runtime environment has changed (configuration, database
+schema, etc.)?
+
+What other changes have been made on the network?
+
+What actors are involved from point a to z?
+
+This last question can be used as a very powerful exercise. If you imagine
+your service and all of the actors required to make that service work you
+can begin to visualize the entire application, platform and network stack
+that supports and facilitates your application.  For example, are you
+running a Python web service API, behind Apache 2, Hosted inside of a Docker
+instance, that running on top of an Amazon EC2 instance that speaks to a
+MySQL database? Picturing which actors are involved allows you to quickly
+ask which system has had changes recently and allows you to prioritize
+your troubleshooting efforts. For example, maybe performance is the current
+problem you are troubleshooting and you quickly surmise that delay is commonly
+added by a database server or by the Amazon EC2 instance that hosts the docker
+image.
+
+Remember, when you find what changed, be sure to add a monitoring test to more
+quickly identify this condition in the future. Operations teams are small and
+agile and preventing break-fix changes in the future is your first goal when
+identifying a change that caused an issue and your second goal is to add
+monitoring and notifications around the issue so if, unfortunately, it occurs
+again in the future you identify the issue very quickly.
+
+If you are on a medium to larger sized team and you find yourself frequently
+troubleshooting breaking changes, many operations teams are having success
+with deploying change notification systems. A change notification system is
+any lightweight logging tool that servers, automated applications (CI/CD)
+and Operations teammates use to post a change that has occurred. These change
+notification systems are usually a lightweight REST/Web service API. For
+example, when a new version of software is deployed, it could post and
+log that change to the web service api or when an operations engineer
+adds a new server he could curl and 'post' to the API and share with the
+team that 'something has changed.'
+
+Having a change notification platform allows anyone to pull up an Operations
+dashboard log that shows recent system changes. This quickly enables anyone
+to know very quickly what's recently changed in your environment.
+
+One that was open sourced recently was `Blesk <https://github.com/Netflix/blesk>`
 
 Learning common errors
 ----------------------
@@ -94,12 +178,57 @@ without proper permissions (in Linux, ports < 1024 are privileged):
     
 Permission denied reading to / writing from disk
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
+File system permissions, and attributes (chattr)?
 
 
 Out of disk space
 ^^^^^^^^^^^^^^^^^
-(finding large files, and also finding deleted-but-open files)
+
+If you have appropriate monitoring in place, hopefully you are troubleshooting
+a full disk because you received a proactive alert. If not, take an action item
+to dive deep into :doc:`monitoring_101` and configure your notification systems to
+alert for any volume that nears 75% utilization and configure a second critical
+alert if it exceeds 90% utilization.
+
+A frequent cause of downtime is a volumes disk space being fully utilizes.
+Operations engineers often find themselves logged in to a system not knowing what
+is specifically wrong but through habit have learned one of the first things
+they will want to do is check disk space utilization on all of the volumes.
+
+.. code-block:: console
+    
+    user@opsschool ~$ df -h
+    Filesystem            Size  Used Avail Use% Mounted on
+    /dev/sda6             454G  454G    0G 100% /
+    tmpfs                  12G     0   12G   0% /lib/init/rw
+    udev                   12G  144K   12G   1% /dev
+    tmpfs                  12G     0   12G   0% /dev/shm
+    /dev/sda1             236M   41M  183M  19% /boot
+
+Here we can see that /dev/sda6 is 100% used. We better quickly find the
+culprit.
+
+Find files that are larger than 50M:
+
+.. code-block:: console
+
+    user@opsschool ~$ sudo find / -size +50M
+    ..
+    user@opsschool ~$ sudo find / -size +50M -exec ls -lh {} \; | awk '{ print $9 ": " $5 }'
+
+
+Often times, you are going to find a large log file. In fact, you may quickly
+find out you are now solving for two or three symptoms. For example,
+the application servers disk filled, because it was logging a new critical
+event, because database schema changed.
+
+NOTE: Be very careful, just because you can use a few of these tools to
+identify large files, it does not mean they are the culprit or that they
+should be deleted. For example, it would be disastorous to delete a 1.1G file
+named /var/lib/mysql/ibdata1 or /var/lib/mysql/mysql-bin.000971. Use caution
+and if you aren't sure what the file is, be sure to Google it and identify the
+proper way to perform maintenance.
+
 
 Mystery problems and SELinux
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^

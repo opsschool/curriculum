@@ -1,14 +1,77 @@
 Monitoring, Notifications, and Metrics 101
 ******************************************
+An Operations team is only as responsive as the telemetry data they have.
+If you have very little or no telemetry data, you will only be reactive and
+when an issue is identified you will be slow to respond and will be
+troubleshooting based on hunches and gut feelings because you are in the dark
+about how the system is operating. If, however, you are proactive in adding
+telemetry to "all the things" by adding more monitoring, notifications,
+logging, and graphing systems you will have better insight in to your
+infrastructure and be able to respond rapidly.
+
+Don't fly blind. Pilots won't do it when flying a jet, and if your
+infrastructure is important enough to you and your companies mission, you won't
+do it either.
+
 
 History: How we used to monitor, and how we got better (monitors as tests)
 ==========================================================================
 
-Perspective (end-to-end) vs Introspective monitoring
-====================================================
+Reactive vs. Perspective (end-to-end) vs Introspective monitoring
+=================================================================
+There are three basic types of monitoring. Neither is "the best" and each
+method is the right one to use depending on what you are looking to monitor.
+
+An effective monitoring strategy employs all three methods.
+
+Tools like Nagios are great; they offer reactive monitoring. Specifically, a
+reactive monitoring system will alert and let you know when you are running out
+of memory, disk or the cpu utilization is maxed. This notifies the Operations
+team when something specifically bad is about to happen.
+
+Perspective monitoring performs an end-to-end test of the system to identify
+whether or not that specific actor is in error. For example, you may write a
+simple HTTP status check that GETs from a collection or PUTs to a collection
+to test your web services API.
+
+A third method of monitoring are more intelligent introspective services. They
+reflect upon their current status and let a centralized monitoring system know
+whether everything is okay, or if something is wrong.
+
+For example, an introspective service could identify he has had over 1,000
+failed write attempts to a specific node and raise a certain error condition
+with your monitoring solution and perform a web-hook to PagerDuty to inform
+operations personnel this error condition is occurring.
+
+The goal of proactive monitoring and introspective monitoring is to head off
+issues far before customers notice.
 
 Metrics: what to collect, what to do with them
 ==============================================
+You will want to collect data on "all of the things." If a number moves,
+capture it. If it may move in the future, capture it.
+
+With modern storage appliances or the ability to scale storage out with cloud
+computing, there is virtually no limitation to the storage capacity of your
+telemetry systems. These days, you can scale quickly and horizontally
+using open source tools like Graphite/StatsD, Hadoop or ElasticSearch built for
+"web scale." If you want to know more about how to graph "all the things" be sure
+to read :doc:`monitoring_201`
+
+In the mean time, begin considering want you want to graph or measure.
+ * Servers
+
+  * CPU
+  * Disk
+  * Memory
+  * Raid controllers
+  * Operating system logs (syslog, etc.)
+  
+ * Switches
+ * Appliances, load balancers, etc.
+ * Routers
+ * Applications
+
 
 Common tools
 ============
