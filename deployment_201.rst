@@ -19,4 +19,8 @@ runit
 monit
 -----
 
+supervisord
+-----------
 
+circus
+------

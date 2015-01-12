@@ -10,9 +10,9 @@ model in more detail as it applies to the role of systems administration.
 
 Before any discussion of networking, however, it's important to have a
 working knowledge of the numbered Request for Comments (:term:`RFC`) documents
-and how they apply to computer networking. These documents describe the
-mechanisms for the OSI layer implementations (e.g. TCP, IP, HTTP, SMTP)
-and as such are the authoritative source for how computers communicate
+and how they apply to computer networking. These documents describe the technical
+specifics for every protocol you will run into (eg, TCP, IP, HTTP, SMTP), and
+as such are the authoritative source for how computers communicate
 with one another.
 
 The RFC Documents
@@ -82,7 +82,11 @@ a set of open interconnection standards, which became known as the "Open Systems
 Interconnection" (OSI) standard. While the actual protocols they developed did
 not become popular and are not in wide use today, the model they came up with
 has achieved wide popularity as a way of thinking about the network protocol
-stack.
+stack. It's important to understand that the OSI model is a conceptual model,
+and therefore more of a mental framework than a technical framework. It is useful
+primarily for troubleshooting and explanation purposes. While the OSI model may
+seem esoteric as you're learning it, it will eventually prove invaluable to your
+daily work once you have a grasp of the concepts.
 
 The OSI model describes seven layers of abstraction that enable software
 programs to communicate with each other on separate systems. The seven layers
@@ -231,14 +235,20 @@ covered in later sections.
 IPv6
 ----
 
-The Internet has experienced tremendous growth from its beginnings in research at universities to its use in ecommerce and other applications today. 
-As a result, more and more IPv4 addresses were given out to enable users to connect to the Internet. 
-However, despite the number of IPv4 addresses being a large number (4294967296), they are slowly running out.
+The Internet has experienced tremendous growth from its beginnings in research
+at universities to its use in ecommerce and other applications today.
+As a result, more and more IPv4 addresses were given out to enable users to connect
+to the Internet.
+However, despite the number of IPv4 addresses being a large number (4294967296), they
+are slowly running out.
 
-Internet Protocol Version 6 (IPv6) is the latest version of the Internet protocol which aims to address the IPv4 address exhausation problem.
+Internet Protocol Version 6 (IPv6) is the latest version of the Internet protocol
+which aims to address the IPv4 address exhaustion problem.
 
-Probably the most obvious difference of IPv6 to IPv4 is the representation of addresses. Unlike IPV4, IPv6 uses a hexadecimal format to represent a 128-bit address. 
-The format is grouped into a quartet separated by a colon. For example: 
+Probably the most obvious difference of IPv6 to IPv4 is the representation of addresses.
+Unlike IPV4, IPv6 uses a hexadecimal format to represent a 128-bit address. The format is
+grouped into a quartet separated by a colon.
+For example: 
 
     3341:1112:AAAA:0001:4321:5876:CBAD:1234
 
@@ -288,12 +298,12 @@ Subnetting, netmasks and CIDR
 A subnet is a logical division of an IP network, and allows the host system to
 identify which other hosts can be reached on the local network. The host system
 determines this by the application of a routing prefix. There are two typical
-representations of this prefix: a netmask and CIDR.
+representations of this prefix: a netmask and Classless Inter-Domain Routing (CIDR).
 
 Netmasks typically appear in the dotted decimal notation, with values between
 0-255 in each octet. These are applied as bitmasks, and numbers at 255 mean that
 this host is not reachable. Netmask can also be referred to as a Subnet Mask and
-these terms are often used interchangeably. An example IP Address with a typical
+these terms are often used interchangeably. An example IPv4 address with a typical
 netmask is below:
 
 ============= ===============
@@ -303,14 +313,36 @@ IP Address    Netmask
 ============= ===============
 
 CIDR notation is a two-digit representation of this routing prefix. Its value can range
-between 0 and 32. This representation is typically used for networking equipment. Below
-is the same example as above with CIDR notation:
+between 0 and 32. While having long been a staple in network equipment and used mainly by
+network engineers, CIDR notation can now be found in Linux (iproute's `ip` command uses
+CIDR notation). In addition, CIDR notation is often encountered in discussions, as it's
+quicker and simpler to reference than a netmask. Below is the same example as above
+with CIDR notation:
 
 ============= ===============
 IP Address    CIDR
 ============= ===============
 192.168.1.1   /24
 ============= ===============
+
+As a server administrator, it is helpful to understand subnetting so as to communicate more
+effectively with network engineers, and to design networks yourself. There are many guides
+online for learning how to subnet, each with different approaches and tricks. A full subnetting
+guide is out of the scope of this document.
+
+Classful addressing
+===================
+
+You may hear people refer to networks as "Class A", "Class B", or "Class C". This is known
+as "Classful Addressing" and has been deprecated for decades, thanks to the introduction
+of CIDR in 1993 (:rfc:`1519`). Classful addressing has the drawback of assuming that a
+network is drawn on very large boundaries. For example, in the table in the next section,
+each block would be a single network. One can see how using an entire /16 (65534 hosts)
+when only five hosts are needed would be wasteful. As such, CIDR was created, allowing
+people to create subnets only as large as required. For these reasons, one should not refer
+to any particular network block as a "Class X" (eg, 10.0.0.0/28 should not be called a Class A
+network) as it is misleading at best, and incorrect at worst. You should always use CIDR
+notation to ensure accuracy.
 
 Private address space (:rfc:`1918`)
 ===================================
