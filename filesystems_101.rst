@@ -332,9 +332,9 @@ mount.  The dump and pass fields control booting behavior. Dumping is the act
 of creating a backup of the filesystem (often to tape), and is not in common use.
 Pass is much more important. When the pass value is nonzero, the filesystem is
 analyzed early in the boot process by fsck, the file system checker, for errors.
-The number, fs_passno, indicated priority. The root filesystem should always be
-1, other filesystems should be 2 or more. A zero value causes skips to be
-checked, an option often used to accelerate the boot process. In ``/etc/fstab``,
+The number, fs_passno, indicates priority. The root filesystem should always be
+1, other filesystems should be 2 or more. A zero value causes checks to be
+skipped, an option often used to accelerate the boot process. In ``/etc/fstab``,
 there are a number of ways to specify the block device containing the filesystem
 . ``UUID``, or universally unique identifier, is one common way in modern Linux
 based systems to specify a filesystem.
