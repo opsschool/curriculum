@@ -101,8 +101,8 @@ Do you need it? How much and why?
 
 http://www.kitchensoap.com/2012/09/21/a-mature-role-for-automation-part-i/
 
-* Talk basic theory and approach in terms of Idempodency and Convergence.
-* Write a bash script to install something as idempodently as possible.
+* Talk basic theory and approach in terms of Idempotency and Convergence.
+* Write a bash script to install something as idempotently as possible.
 * Discuss Chef and Puppet and while reflecting on the bash script.
 
 Automation - Chef 201
