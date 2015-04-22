@@ -290,8 +290,8 @@ Apache Web server installed and running:
 To understand the snippet above, you will need to refer to documentation on
 states: pkg and service. Basically our state calls methods ``pkg.installed``
 and ``service.running`` with argument ``apache2``. The ``watch`` directive is
-available for most of the states and describe dependencies if any, as well as
-restart the apache2 service if the apache pkg changes or gets updated.
+available for all states and creates a dependency,  as well as restarts the
+apache2 service if the apache package changes or gets updated.
 
 Back to ``state`` module, it has a couple of methods to manage these states. In
 a nutshell the state file form above can be executed using ``state.sls``
