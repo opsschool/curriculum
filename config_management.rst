@@ -281,7 +281,7 @@ Apache Web server installed and running:
     pkg:
       - installed
     service.running:
-      - require:
+      - watch:
         - pkg: apache2
 
 To understand the snippet above, you will need to refer to documentation on
