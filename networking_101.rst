@@ -247,7 +247,7 @@ which aims to address the IPv4 address exhaustion problem.
 
 Probably the most obvious difference of IPv6 to IPv4 is the representation of addresses.
 Unlike IPV4, IPv6 uses a hexadecimal format to represent a 128-bit address. The format is
-grouped into a quartet separated by a colon.
+grouped into 8 hextets separated by a colon.
 For example: 
 
     3341:1112:AAAA:0001:4321:5876:CBAD:1234
