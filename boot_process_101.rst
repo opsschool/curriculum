@@ -216,10 +216,10 @@ GRUB is a "chain bootloader" initializes itself in stages. These stages are:
 On an MBR-formatted drive and standard BIOS
 -------------------------------------------
 
-These stages must fit in that first 448 bytes of the partition table. Generally,
-Stage 1 and Stage 1.5 are small enough to exist in that first 448 bytes. They
-contain the appropriate logic that allow the loader to read the filesystem that
-Stage 2 is located on.
+These stages must fit in that first 448 bytes of the boot loader information 
+block table. Generally, Stage 1 and Stage 1.5 are small enough to exist in that 
+first 448 bytes. They contain the appropriate logic that allow the loader to 
+read the filesystem that Stage 2 is located on.
 
 On a GPT-formatted drive and UEFI
 ---------------------------------
