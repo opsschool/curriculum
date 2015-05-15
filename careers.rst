@@ -206,6 +206,25 @@ They usually have strong skill overlaps with Network Engineers (with so much
 modern storage being network-attached in some manner) and usually have strong
 skills in capacity planning and performance management of infrastructure.
 
+High Performance Computing Engineer
+===================================
+
+High Performance Computing (HPC) involves large scale infrastructure,
+which is at the cutting edge of presently available technology.
+Typically, HPC platforms are used for Scientific Computing, Big Data, Complex Models
+and may have applications in fields as diverse as physics, finance, medicine etc.
+fi. Meteorology and Climate prediction are just a tiny slice of the bigger picture.
+
+HPC Engineers are expected to master an array of technologies in fields such as
+networking (infiniband, multi-gigabit ethernet), computing (several computer architectures),
+parallel storage/filesystems/filers (lustre, gpfs, isilon, netapp, panasas), as well as
+be able to give advice on a number of software components (gnu/intel/pgi compilers,
+debuggers, mpi stacks, linear algebra and other optimized math libraries etc etc).
+
+Most importantly, HPC Engineers should be able to interface with other Operations Engineers,
+each specialist in his field, in order to let all systems run at top performance.
+
+
 .. _how-to-become-an-operations-engineer:
 
 ************************************
