@@ -180,7 +180,7 @@ There are however two limitations to working this way:
 #. You'll often need to be connected to more than one remote system at a time.
    Opening a whole new terminal each time can result in a lot of windows cluttering
    up precious screen space.
-#. When happens if your internet connection stops working? All of your
+#. What happens if your internet connection stops working? All of your
    connections are reset. Any work you might have been doing on the remote servers
    can be lost.
 
