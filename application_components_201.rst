@@ -53,7 +53,31 @@ Different applications can be separated by the concept of virtual hosts in a sim
 Configuration is provided by webGUI or commandline tools.
 Programming libraries and tools for a wide range of environments are available (see https://www.rabbitmq.com/devtools.html and https://www.rabbitmq.com/tutorials/amqp-concepts.html )
 
-To backup and restore configuration data the management plugin must be installed and configured.
+The installation of the debian repository listed at https://www.rabbitmq.com/install-debian.html leads to a configuration with a single hostsetup.
+Simelar installation instructions are provided for other operating systems.
+
+.. code-block:: console
+
+  $ curl https://www.rabbitmq.com/rabbitmq-signing-key-public.asc | sudo apt-key add -
+  $ echo "deb http://www.rabbitmq.com/debian/ testing main" | sudo tee /etc/sources.d/rabbitmq.list
+  $ sudo apt-get update
+  $ sudo apt-get upgrade
+  $ sudo apt-get install rabbitmq-server
+
+To backup and restore configuration data the management plugin should be configured.
+
+.. code-block:: console
+
+{ rabbitmq_management, [
+    {  listener, [ { port, 15672 },
+                   { ssl, true },
+                   { ssl_opts, [ { cacertfile, "/etc/ssl/certs/cacert.crt" },
+                                 { certfile,   "/etc/ssl/certs/node1.crt" },
+                                 { keyfile,    "/etc/ssl/private/node1.key" } ]}
+                 ]} // configure listener
+]} // configure rabbitmq_management
+]. // EOF
+
 
 .. code-block:: console
 
