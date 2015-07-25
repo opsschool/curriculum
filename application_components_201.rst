@@ -3,13 +3,13 @@ Application Components 201
 
 Message Queue Systems
 ======================
-In a distributed system a Message Queue Systems can provide but is not limited to higher level functions like
+In a distributed system a Message Queue Systems can provide a basic infrastructure to higher level functions like
 
  * decoupling processes or hosts from each other
  * parallel processes execution
  * distribute events and information like changes to data, entries from logfiles and statistics for monitoring and notification
  * data-streaming and file-transfers to multiple hosts via multicast and unicast
- * replace polling mechanism with an event system
+ * replace polling mechanism with an event orientated system
  * network wide accessible job queues
  * message rerouting on failure / escalation schemes
  * verification of results ( best of three )
