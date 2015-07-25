@@ -17,23 +17,23 @@ In a distributed system a Message Queue Systems can provide a basic infrastructu
  * network wide mutex
  * network or distributed system wide message bus
 
-[#]_  [#]_  [#]_  [#]_  [#]_
-
 Message Queue Systems are more alike peer2peer networks then client-server applications.
 They can be split up into message brokers and routers or brokerless message queuing systems. [0MQ]_
 A message as understood by the system is everything that can be represented as a bytestream.
 Properties like type and timestamp may are added to message. [Bok]_
 
+.. [Bok] http://sardes.inrialpes.fr/papers/files/Bouchenak08a.pdf
+.. [0MQ] https://en.wikipedia.org/wiki/%C3%98MQ
+
+
 Further Readings
 ----------------
 
-.. [#] http://c2.com/cgi/wiki?MessageQueuingArchitectures
-.. [#] https://en.wikipedia.org/wiki/Message-oriented_middleware and https://en.wikipedia.org/wiki/Message_oriented_middleware
-.. [#] https://en.wikipedia.org/wiki/Queueing_theory
-.. [#] https://en.wikipedia.org/wiki/Message_queue
-.. [#] http://www.slideshare.net/mwillbanks/art-of-message-queues
-.. [Bok] http://sardes.inrialpes.fr/papers/files/Bouchenak08a.pdf
-.. [0MQ] https://en.wikipedia.org/wiki/%C3%98MQ
+ * http://c2.com/cgi/wiki?MessageQueuingArchitectures
+ * https://en.wikipedia.org/wiki/Message-oriented_middleware and https://en.wikipedia.org/wiki/Message_oriented_middleware
+ * https://en.wikipedia.org/wiki/Queueing_theory
+ * https://en.wikipedia.org/wiki/Message_queue
+ * http://www.slideshare.net/mwillbanks/art-of-message-queues
 
 Message Brokers
 ===============
@@ -45,16 +45,17 @@ Message Brokers tend to become a critical system in an otherwise distributed env
 
 RabbitMQ
 --------
-RabbitMQ [rmq]_ is an open source Message Broker written in erlang.
+RabbitMQ_ is an open source Message Broker written in erlang.
 Its queuing protocol is the Advance Message Queuing Protocol. [wiki]_  [specs]_ 
 It provides plugins for different queuing protocols like STOMP and advanced setups.
 Installations scale from single host as an applicationmessagebus, to multi cluster installations in different networks.
 Messages are send to different type of exchanges.
-While Direct, Fanout, Topic and Header Exchanges are part of the core system, others plugins are rooted in the community. [#]_  [#]_ .
+While Direct, Fanout, Topic and Header Exchanges are part of the core system, others plugins are rooted in the community. 
 No prior understanding of the erlang programming language is needed to setup, configure and operate the message broker.
 The documentation on the projects homepage reads a fair amount of different configurations with explanations.
 
 To setup a cluster a minimum of two nodes is required.
+All nodes of a cluster must be in the same ip network segment.
 It is possible to send huge messages via AMQP to a RabbitMQ node.
 The maximum message size is limited by the amount of available RAM on the node.
 Depending on the durability of a message and the policy of queues, the messages are synchronized to other nodes.
@@ -67,9 +68,9 @@ No preshared password among all processes is needed, but different private keys 
 This is accomplished by using the commonname of the dn in the x509 client certificate as  username.
 Different applications can be separated by the concept of virtual hosts in a similar way the Apache web server does.
 Configuration is provided by webGUI or commandline tools.
-Programming libraries and tools for a wide range of environments are available [#]_  [#]_
+Programming libraries and tools for a wide range of environments are available.
 
-The installation of the Debian repository listed at [#]_ leads to a configuration with a single host.
+The installation from the Debian repository leads to a configuration with a single host.
 Similar installation instructions are provided for Windows, Solaris and other operation systems.
 
 .. code-block:: bash
@@ -105,14 +106,9 @@ Show a detailed report about queues, users and connections
 
   rabbitmqctrl report
 
-.. [rmq] https://www.rabbitmq.com
+.. _RabbitMQ: https://www.rabbitmq.com
 .. [wiki] https://en.wikipedia.org/wiki/AMQP
 .. [specs] http://www.amqp.org/resources/download
-.. [#] https://www.rabbitmq.com/plugins.html
-.. [#] https://www.rabbitmq.com/community-plugins.html
-.. [#] https://www.rabbitmq.com/devtools.html
-.. [#] https://www.rabbitmq.com/tutorials/amqp-concepts.html
-.. [#] https://www.rabbitmq.com/install-debian.html
 
 Apache ActiveMQ
 ---------------
