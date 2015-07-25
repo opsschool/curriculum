@@ -187,6 +187,45 @@ VPNs
 IPSec
 -----
 
+Establish a two way connection between two hosts using preshared keys.
+On the second host source and destinations must be switched while the keys stay the same.
+
+.. code-block:: console
+
+  DST6="2001:1234:abcd::1"
+  DST="4.3.2.1"
+  SRC6="2001:1234:abcd::2"
+  SRC="4.3.2.2"
+  LOCAL=${SRC}
+  REMOTE=${DST}
+  LOCAL6=${SRC6}
+  REMOTE6=${DST6}
+
+  #some random data
+  # authtication
+  KEY1=0xbeefbeefbeefbeefbeefbeefbeefbeefbeefbeefbeefbeefbeefbeefbeefbeef
+  # encryption
+  KEY2=0xcafecafecafecafecafecafecafecafecafecafecafecafecafecafecafecafe
+  ID=0x12345678
+
+  # cleanup prev settings
+  ip xfrm state flush
+  ip xfrm policy flush
+
+  # ipv4: configure credentials
+  ip xfrm state add src $SRC dst $DST proto esp spi $ID reqid $ID mode tunnel auth sha256 $KEY1 enc aes $KEY2
+  ip xfrm state add src $DST dst $SRC proto esp spi $ID reqid $ID mode tunnel auth sha256 $KEY1 enc aes $KEY2
+  # set policy to tunnel via ESP
+  ip xfrm policy add src $LOCAL dst $REMOTE dir out tmpl src $SRC dst $DST proto esp reqid $ID mode tunnel
+  ip xfrm policy add src $REMOTE dst $LOCAL dir in tmpl src $DST dst $SRC proto esp reqid $ID mode tunnel
+
+  # and the same for ipv6
+  ip xfrm state add src ${SRC6} dst ${DST6} proto esp spi ${ID} reqid ${ID} mode tunnel auth sha256 ${KEY1} enc aes ${KEY2}
+  ip xfrm state add src ${DST6} dst ${SRC6} proto esp spi ${ID} reqid ${ID} mode tunnel auth sha256 ${KEY1} enc aes ${KEY2}
+  ip xfrm policy add src ${LOCAL6} dst ${REMOTE6} dir out tmpl src ${SRC6} dst ${DST6} proto esp reqid ${ID} mode tunnel
+  ip xfrm policy add src ${REMOTE6} dst ${LOCAL6} dir in tmpl src ${DST6} dst ${SRC6} proto esp reqid ${ID} mode tunnel
+
+
 SSL
 ---
 
