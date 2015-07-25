@@ -25,8 +25,8 @@ Is one class of message queue systems that relies on a central system or cluster
 
 RabbitMQ
 --------
-RabbitMQ is an erlang based implementation of the Advance Message Queuing Protocol.
-It also provides plugins for different to queuing protocols like STOMP or MQTT.
+RabbitMQ is an erlang based implementation of the Advance Message Queuing Protocol (see https://en.wikipedia.org/wiki/AMQP)
+It provides a plugin system for different queuing protocols or advanced setups with multiple clusters in different environments.
 
 To setup a high availability cluster a minimum of two nodes are required.
 A disc-node ensures messages are stored to a disc before delivering it.
