@@ -25,23 +25,27 @@ Message Brokers
 Is a class of message queue systems that relies on a central system or cluster to route messages to its destination.
 Messages are send to exchanges and received from queues.
 Queues resists on the broker, also some protocols implement a clientsite queue for transaction like messaging and prefetching.
+Message Brokers tend to become critical system in an otherwise distributed system.
 
 
 RabbitMQ
 --------
-RabbitMQ is an erlang based open source implementation of a Advance Message Queuing Protocol Message Broker. (see https://en.wikipedia.org/wiki/AMQP)
-It also provides a plugin system for different queuing protocols or advanced setups with multiple clusters in different environments.
+RabbitMQ is an open source Message Broker written in erlang.
+Its main protocol is the Advance Message Queuing Protocol. (see https://en.wikipedia.org/wiki/AMQP)
+It provides a plugin system for different queuing protocols or advanced setups.
+Installations scale from single host to multi cluster installations in different networks and bussines critical environments.
 Messages are send to different type of exchanges.
-While Direct, Fanout, Topic and Header Exchanges are part of the core system, plugins like delayed message exchange are rooted in the community.
+While Direct, Fanout, Topic and Header Exchanges are part of the core system, others plugins are rooted in the community.
 ( https://www.rabbitmq.com/plugins.html , https://www.rabbitmq.com/community-plugins.html )
-Commercial support is available.
+No prior understanding of the erlang programming language is needed to configure or operate the message broker.
+The documentation on the projects homepage reads a fair amount of different configurations with explainations.
 
 To setup a high availability cluster a minimum of two nodes is required.
 Also it is possible to send huge messages via AMQP to a RabbitMQ node, the maximum size of a message is limited by the amount of available RAM on the nodes.
-Depending on the durability of a message and the policy of queues, the messages are synced to other nodes.
+Depending on the durability of a message and the policy of queues, the messages are syncronised to other nodes.
 A disc-node ensures a message is stored to a disc before delivering.
 Memory based nodes do provide a much higher message throughput.
-To establish an encrypted communication to syncronise messages, queues and configuration between nodes, IPSec or TLS can be used.
+To establish an encrypted communication between nodes, IPSec or TLS can be used.
 Authentication is possible via an internal database, LDAP, SASL and PKI client certificates.
 With a PKI in place consumers and publisher can share the same autorisation without the need for a prehared password among all processes.
 This is accomplished by using the commonname of the dn in the x509 client certificate.
@@ -52,6 +56,7 @@ Programming libraries and tools for a wide range of environments are available (
 To backup and restore configuration data the management plugin must be installed and configured.
 
 .. code-block:: console
+
   rabbitmqadmin export rabbit.config
   rabbitmqadmin -q import rabbit.config
 
