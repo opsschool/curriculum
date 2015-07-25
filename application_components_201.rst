@@ -1,55 +1,66 @@
 Application Components 201
 **************************
 
-Message Queues Systems
+Message Queue Systems
 ======================
-Messages Queue Systems can be used in many different ways.
-This includes but is not limited to
- * decouple processes or hosts from each other
- * parallel processes execution
- * distribute events or information
- * replace polling mechanism with an event system
- * asynchronous remote procedure calls
- * job queues
- * network wide mutex
- * data transfer to multiple hosts
- * message rerouting on failure / escalation schemes
- * data-streaming
- * network or system wide message bus
+In a distributed system with the function of sending and receiving messages a Message Queue Systems can provid but is not limited to
 
+ * decoupling processes or hosts from each other
+ * parallel processes execution
+ * distribute events or information like changes to data, entries from logfiles and statistics for monitoring and notification
+ * datastreaming and filetransfers to multiple hosts via multicast and unicast
+ * replace polling mechanism with an event system
+ * network wide accessible job queues
+ * message rerouting on failure / escalation schemes
+ * verification of results ( best of three )
+ * asynchronous remote procedure calls
+ * network wide mutex
+ * network or distributed system wide message bus
+
+The two major types are message brokers and routers or brokerless message queuing systems.
+   
 
 Message Brokers
 ===============
-Is one class of message queue systems that relies on a central system or cluster to route messages to its destination.
+Is a class of message queue systems that relies on a central system or cluster to route messages to its destination.
+Messages are send to exchanges and received from queues.
+Queues resists on the broker, also some protocols implement a clientsite queue for transaction like messaging and prefetching.
 
 
 RabbitMQ
 --------
-RabbitMQ is an erlang based implementation of the Advance Message Queuing Protocol (see https://en.wikipedia.org/wiki/AMQP)
-It provides a plugin system for different queuing protocols or advanced setups with multiple clusters in different environments.
+RabbitMQ is an erlang based open source implementation of a Advance Message Queuing Protocol Message Broker. (see https://en.wikipedia.org/wiki/AMQP)
+It also provides a plugin system for different queuing protocols or advanced setups with multiple clusters in different environments.
+Messages are send to different type of exchanges.
+While Direct, Fanout, Topic and Header Exchanges are part of the core system, plugins like delayed message exchange are rooted in the community.
+( https://www.rabbitmq.com/plugins.html , https://www.rabbitmq.com/community-plugins.html )
+Commercial support is available.
 
-To setup a high availability cluster a minimum of two nodes are required.
-A disc-node ensures messages are stored to a disc before delivering it.
-Memory based nodes do provide a much higher message throughput but messages in queues are lost during shutdown of the node.
-To establish an encrypted communication between two nodes, IP-Sec or TLS can be used.
-For authentication it is possible to use an internal database, LDAP, SASL or PKI client certificates.
-Different applications can be separated by the concept of virtual hosts in a similar way Apache web server does.
-For configuration a webGUI or the command line tool can be used.
-Programming libraries and tools are provided for a wide range of environments (see https://www.rabbitmq.com/devtools.html)
+To setup a high availability cluster a minimum of two nodes is required.
+Also it is possible to send huge messages via AMQP to a RabbitMQ node, the maximum size of a message is limited by the amount of available RAM on the nodes.
+Depending on the durability of a message and the policy of queues, the messages are synced to other nodes.
+A disc-node ensures a message is stored to a disc before delivering.
+Memory based nodes do provide a much higher message throughput.
+To establish an encrypted communication to syncronise messages, queues and configuration between nodes, IPSec or TLS can be used.
+Authentication is possible via an internal database, LDAP, SASL and PKI client certificates.
+With a PKI in place consumers and publisher can share the same autorisation without the need for a prehared password among all processes.
+This is accomplished by using the commonname of the dn in the x509 client certificate.
+Different applications can be separated by the concept of virtual hosts in a similar way the Apache web server does.
+Configuration is provided by webGUI or commandline tools.
+Programming libraries and tools for a wide range of environments are available (see https://www.rabbitmq.com/devtools.html and https://www.rabbitmq.com/tutorials/amqp-concepts.html )
 
-backup configuration with
+To backup and restore configuration data the management plugin must be installed and configured.
 
 .. code-block:: console
+  rabbitmqadmin export rabbit.config
+  rabbitmqadmin -q import rabbit.config
 
-  curl http://guest:guest@localhost:15671/api/definitions > /var/backups/rabbitmq_config
 
-full report:
+Show a detailed report:
 
 .. code-block:: console
 
   rabbitmqctrl report
-
-
 
 
 Apache ActiveMQ
