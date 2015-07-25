@@ -17,7 +17,7 @@ In a distributed system a Message Queue Systems can provide a basic infrastructu
  * network wide mutex
  * network or distributed system wide message bus
 
-[#]_  [#]_  [#]_  [#]_
+[#]_  [#]_  [#]_  [#]_  [#]_
 
 Message Queue Systems are more alike peer2peer networks then client-server applications.
 They can be split up into message brokers and routers or brokerless message queuing systems. [0MQ]_
@@ -31,9 +31,9 @@ Further Readings
 .. [#] https://en.wikipedia.org/wiki/Message-oriented_middleware and https://en.wikipedia.org/wiki/Message_oriented_middleware
 .. [#] https://en.wikipedia.org/wiki/Queueing_theory
 .. [#] https://en.wikipedia.org/wiki/Message_queue
+.. [#] http://www.slideshare.net/mwillbanks/art-of-message-queues
 .. [Bok] http://sardes.inrialpes.fr/papers/files/Bouchenak08a.pdf
 .. [0MQ] https://en.wikipedia.org/wiki/%C3%98MQ
-
 
 Message Brokers
 ===============
