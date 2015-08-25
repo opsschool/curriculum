@@ -583,6 +583,15 @@ GDash
 Graphite.  Dashboards are created using a simple `DSL
 <https://github.com/ripienaar/graphite-graph-dsl/wiki>`_.
 
+BigPanda
+--------
+BigPanda <https://bigpanda.io/>`_ is a dashboard which centralizes
+and normalizes monitoring alerts from any system, data center or cloud. 
+BigPanda is optimized for popular monitoring tools like 
+`Nagios <https://bigpanda.io/integrations/nagios-the-alternative-to-a-flood-of-alerts>`_,
+`Icinga <https://bigpanda.io/icinga-alternative>`_, Zenoss and Zabbix. It consumes alerts
+in real time, and uses algorithms to process and correlate those alerts.
+
 Third-party tools
 =================
 
