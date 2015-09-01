@@ -17,7 +17,7 @@ In a distributed system a Message Queue Systems can provide a basic infrastructu
  * network wide mutex
  * network or distributed system wide message bus
 
-Message Queue Systems are more alike peer2peer networks then client-server applications.
+Message Queue Systems are more like peer2peer networks then client-server applications.
 They can be split up into message brokers and routers or brokerless message queuing systems. [0MQ]_
 A message as understood by the system is everything that can be represented as a bytestream.
 Properties like type and timestamp may are added to message. [Bok]_
@@ -55,7 +55,7 @@ No prior understanding of the erlang programming language is needed to setup, co
 The documentation on the projects homepage reads a fair amount of different configurations with explanations.
 
 To setup a cluster a minimum of two nodes is required.
-All nodes of a cluster must be in the same ip network segment.
+All nodes of a cluster must be in the same IP network segment.
 It is possible to send huge messages via AMQP to a RabbitMQ node.
 The maximum message size is limited by the amount of available RAM on the node.
 Depending on the durability of a message and the policy of queues, the messages are synchronized to other nodes.
@@ -65,7 +65,7 @@ To establish an encrypted communication between nodes, IPSec or TLS can be used.
 Authentication is possible via an internal database, LDAP, SASL and PKI client certificates.
 With a PKI in place consumers and publisher can share the same authorization.
 No preshared password among all processes is needed, but different private keys are mandatory.
-This is accomplished by using the commonname of the dn in the x509 client certificate as  username.
+This is accomplished by using the commonname of the dn in the x509 client certificate as username.
 Different applications can be separated by the concept of virtual hosts in a similar way the Apache web server does.
 Configuration is provided by webGUI or commandline tools.
 Programming libraries and tools for a wide range of environments are available.
@@ -104,7 +104,7 @@ Show a detailed report about queues, users and connections
 
 .. code-block:: console
 
-  rabbitmqctrl report
+  rabbitmqctl report
 
 .. _RabbitMQ: https://www.rabbitmq.com
 .. [wiki] https://en.wikipedia.org/wiki/AMQP
