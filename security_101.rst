@@ -70,5 +70,5 @@ http://www.snowplow.org/tom/worm/worm.html
 
 /bin/false is not security
 --------------------------
-http://www.semicomplete.com/articles/ssh-security/
+https://web.archive.org/web/20150907095805/http://www.semicomplete.com/articles/ssh-security
 
