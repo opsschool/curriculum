@@ -110,8 +110,90 @@ To prevent documentation drift, see `Ansible documentation site <http://docs.ans
 
 Puppet
 ======
+Ordering and Relationship
+-------------------------
 
-Cfengine 3
+Resources weren't synced in order they are written in manifest. Puppet assumes that most resources are not related to each other and will manage the resources in whatever order is most efficient. But some resources depends on another resources. So puppet has a system of modelling relationship between resources. Puppet uses four metaparameter to establish relationship. The value of relationship metaparameter should be resource reference pointing to target resources. 
+
+Before and Require
+before-Applies a resource before the target resource. It used in earlier resource, and lists resources that depends on it.
+..code-block::ruby
+package { 'openssh-server':
+  ensure => present,
+  before => File['/etc/ssh/sshd_config'],
+}
+In above example target resource is file named sshd_config, Here package resourcse would be applied before target resources.
+require-Applies resource after the target resource. It used in later resource, and lists the resources that it depends on. 
+..code-block::ruby
+file { '/etc/ssh/sshd_config':
+  ensure  => file,
+  mode    => 600,
+  source  => 'puppet:///modules/sshd/sshd_config',
+  require => Package['openssh-server'],
+}
+In above example package resource is required before file resource type is required. If you have two resources and order matters then you can either use before or require. we can also specify this relationship using chaining arrows ->.
+..code-block::ruby
+Package['openssh-server'] -> File['/ets/ssh/sshd_config']
+Causes the resource on left to be applied before resource on right side.
+
+Notify and Subscribe
+Notify-Applies a resource before the target resource. The target resource refreshes if notifying resource changes. Notify operates in same way before metaparameter but target resource get refreshed if notifying resource changes.
+Subscribe-Applies a resource after the target resource. The subscribing resourcerefreshes if the target resource changes. It operates same way Require.
+Notify andd Subscribe also represented by chaining arrow ~>.
+..code-block::ruby
+Package['openssh-server'] -> File['/ets/ssh/sshd_config']
+Causes the resource on left to be applied first, and send refresh event to the resource on the right if the left resource changes.
+
+Variables and Facts
+-------------------
+
+Variables are like other programming languages. Starts with $ sign. It can hold strings,numbers,booleans,arrays,hashes and has special undef value. Each variable has two names 
+..code-block::ruby
+short name[$short_name_variable]
+long fully qualified name[$scope::variable]
+..code-block::ruby
+$user_name="admin"
+notify {$user_name:}
+
+Facts
+Puppet has a bunch of built-in, pre-assigned variables that you can use.
+Example
+..code-block::ruby
+notify {$fqdn:}
+
+Hiera and Facter
+----------------
+Facter-
+Puppet uses tool called Facter, which discovers some system information, normalize it into set of variables and passes them off to puppet. You can view what factor knows about a given system run 
+user@opsschool ~$ factor
+Hiera-
+
+Classes and Modules
+-------------------
+Classes are named block of puppet code. Stated another way, package, file, and service are individual Puppet resourc bundled together to define a single class. any reltionship formed with the class as a whole will be extended every resource in the class.Classes are named block of puppet code. It can be created one place and invoked elsewhere. Defining class does not invoke code inside class. Declaring class evaluates the code inside it, and applies  of its resources.
+
+Defining a class
+To define class use keyword class,braces, and a block of code.
+..code-block::ruby
+class class_name{
+...puppet code
+}
+Declaring a class
+To declare a class use the include function with class's name.
+..code-block::ruby
+class class_name{
+...puppet code
+}
+include class_name
+This time puppet will actually apply all those resources. 
+
+Modules
+To split up your manifests into understand structure, puppet uses modules. Modules are directories arrenged in specific structure. Puppet looks in modulepath for modules. modulepath is defined in puppet.conf file. If a class is defined in a module, you can declare that class by name in any manifest. 
+
+Templates
+---------
+ 
+ 3
 ==========
 
 SaltStack
