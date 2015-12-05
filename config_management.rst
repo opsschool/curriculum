@@ -111,6 +111,81 @@ To prevent documentation drift, see `Ansible documentation site <http://docs.ans
 Puppet
 ======
 
+As system administrators acquire more and more systems to manage, automation of mundane tasks is increasingly important.
+Rather than develop in-house scripts, it is desirable to share a system that everyone can use, and invest in tools that
+can be used regardless of one's employer. Certainly doing things manually doesn't scale.
+
+This is where Puppet comes to rescue. Puppet is a Configuration Management Tool. It is a framework for Systems Automation.
+An OpenSource software written in Ruby that uses Declarative Domain Specific Language (DSL).
+
+Puppet usually uses an agent/master (client/server) architecture for configuring systems, using the Puppet agent and Puppet master applications.
+It can also run in a self-contained architecture, where each managed server has its own complete copy of your configuration information and
+compiles its own catalog with the Puppet apply application.
+
+Installation
+------------
+
+Puppet has a `installing puppet page <http://docs.puppetlabs.com/puppet/3.8/reference/pre_install.html>`_ on how to get it installed and ready to use, 
+please refer to it after deciding what OS you will be using.
+The examples shown here use CentOS installion with standalone architecture and Puppet apply application.
+
+Manifests
+---------
+
+Puppet programs are called "manifests", and they use the .pp file extension. These programs comprise of resource declarations, described below.
+
+Resources
+---------
+
+System's configuration can be imagined as a collection of many independent atomic units, called "resources".
+Example of puppet resouces can be a specific file, a directory, a service.
+
+Anatomy of a Resource
+---------------------
+
+In Puppet, every resource is an instance of a resource type and is identified by a title, it has a number of attributes (which are defined by the type),
+and each attribute has a value.
+
+Puppet uses its own language to dsecribe and manage resources:
+
+.. code-block:: ruby
+
+  file{ '/tmp/example':
+    ensure   => present,
+    mode     => '600',
+    owner    => 'root',
+    group    => 'hosts',
+  }
+
+This syntax is called a resource declaration.
+
+Resource Type
+-------------
+
+As mentioned above, every resource has a type.
+
+Puppet has many built-in resource types, and you can install even more as plugins.
+Each type can behave a bit differently and has a different set of attributes available.
+
+The list of different puppet resource types can be accessed from `Resource Type Reference <http://docs.puppetlabs.com/references/3.stable/type.html>`_.
+
+Puppet Apply
+------------
+
+It is used below to test small manifests, but it can be used for larger jobs too. In fact, it can do nearly everything an agent/master Puppet 
+environment can do.
+
+'apply' is a Puppet subcommand. It takes the name of a manifest file as its argument, and enforces the desired state described in the manifest.
+
+Try applying the short manifest above:
+
+.. code-block:: console
+
+  # puppet apply /root/examples/file-1.pp
+  notice: /Stage[main]//File[testfile]/ensure: created
+  notice: Finished catalog run in 0.05 seconds
+
+
 Cfengine 3
 ==========
 
