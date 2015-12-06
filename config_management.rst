@@ -122,12 +122,33 @@ Puppet usually uses an agent/master (client/server) architecture for configuring
 It can also run in a self-contained architecture, where each managed server has its own complete copy of your configuration information and
 compiles its own catalog with the Puppet apply application.
 
+Puppet Agent/Master Communication
+---------------------------------
+
+Before being applied, manifests get compiled into a document called a "catalog", which only contains resources and hints about the order to sync them in.
+With puppet apply, the distinction doesn't mean much.
+
+In a master/agent Puppet environment, though, it matters more, because agents only see the catalog.
+
+Running Puppet in agent/master mode works much the same way, the main difference is that it moves the manifests and compilation to the puppet master server.
+Agents don't have to see any manifest files at all, and have no access to configuration information that isn't in their own catalog.
+
+How Do Agents Get Configurations ?
+
+Puppet's agent/master mode is pull-based. Usually, agents are configured to periodically fetch a catalog and apply it, and the master controls what goes into that catalog.
+
+By using this logic, manifests can be flexible and describe many systems at once. A catalog describes desired states for one system.
+By default, agent nodes can only retrieve their own catalog and they can't see information meant for any other node. This separation improves security.
+
+This way, one can have many machines being configured by Puppet, while only maintaining our manifests on one (or a few) servers.
+
 Installation
 ------------
 
-Puppet has a `installing puppet page <http://docs.puppetlabs.com/puppet/3.8/reference/pre_install.html>`_ on how to get it installed and ready to use, 
-please refer to it after deciding what OS you will be using.
-The examples shown here use CentOS installion with standalone architecture and Puppet apply application.
+Puppet has an `installing puppet page <http://docs.puppetlabs.com/puppet/latest/reference/install_pre.html>`_ on how to get it installed and ready to use, 
+please refer to it after deciding what OS and deployment type to use.
+
+The examples shown here use CentOS installation with standalone architecture and Puppet apply application.
 
 Manifests
 ---------
@@ -138,6 +159,7 @@ Resources
 ---------
 
 System's configuration can be imagined as a collection of many independent atomic units, called "resources".
+
 Example of puppet resouces can be a specific file, a directory, a service.
 
 Anatomy of a Resource
@@ -148,7 +170,18 @@ and each attribute has a value.
 
 Puppet uses its own language to dsecribe and manage resources:
 
-.. code-block:: ruby
+.. code-block:: puppet
+  
+  type { 'title':
+     argument  => value,
+     other_arg => value,
+  }
+
+This syntax is called a resource declaration.
+
+Example of file resource type.
+
+.. code-block:: puppet
 
   file{ '/tmp/example':
     ensure   => present,
@@ -156,8 +189,6 @@ Puppet uses its own language to dsecribe and manage resources:
     owner    => 'root',
     group    => 'hosts',
   }
-
-This syntax is called a resource declaration.
 
 Resource Type
 -------------
@@ -167,7 +198,7 @@ As mentioned above, every resource has a type.
 Puppet has many built-in resource types, and you can install even more as plugins.
 Each type can behave a bit differently and has a different set of attributes available.
 
-The list of different puppet resource types can be accessed from `Resource Type Reference <http://docs.puppetlabs.com/references/3.stable/type.html>`_.
+The full list of different puppet resource types can be found at the `Puppet Type Reference <http://docs.puppetlabs.com/references/latest/type.html>`_.
 
 Puppet Apply
 ------------
@@ -185,6 +216,32 @@ Try applying the short manifest above:
   notice: /Stage[main]//File[testfile]/ensure: created
   notice: Finished catalog run in 0.05 seconds
 
+Package/File/Service
+--------------------
+
+The package/file/service pattern is one of the most useful idioms in Puppet. This is a pattern constantly seen in the production Puppet code.
+
+Below is an example of a manifest that uses this pattern to install and configure ssh for Enterprise Linux - based Linux systems.
+
+.. code-block:: puppet
+
+   package { 'openssh-server':
+     ensure => present,
+     before => File['/etc/ssh/sshd_config'],
+   }
+   file { '/etc/ssh/sshd_config':
+     ensure => file,
+     mode => 600,
+     source => '/root/examples/sshd_config',
+   }
+   service { 'sshd':
+     ensure => running,
+     enable => true,
+     subscribe => File['/etc/ssh/sshd_config'],
+   }
+
+The package resource makes sure the software and its config file are installed, the config file depends on the package package resource, and 
+the service subscribes to the changes in the config file.
 
 Cfengine 3
 ==========
