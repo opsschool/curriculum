@@ -259,7 +259,7 @@ The ``vmstat [OPTION] [delay [count]]`` will display the report on virtual memor
 
 For example, executing the vmstat command ( ``vmstat`` ) will provide an output with abbreviations. For each variable, a number will be given. 
 
-The variables at the top of the output of the example mean the following:
+The variables at the top of the output mean the following:
 
 +---------------------+---------------------------------------------------------------------+
 | Abbreviation        | Meaning                                                             | 
