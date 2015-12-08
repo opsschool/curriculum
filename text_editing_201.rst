@@ -157,7 +157,7 @@ If you want to enable the syntax highlighting globally, you can also add next li
 ::
   (global-font-lock-mode 1)
   
-With font-lock-mode turned on, different types of text will appear in different colors. For instance, in a programming mode, variables will appear in one face, keywords in a second, and comments in a third. This will 
+With font-lock-mode turned on, different types of text will appear in different colors. For instance, in a programming mode, variables will appear in one face, keywords in a second, and comments in a third. With the syntax highlighting the user experience will be a lot better. 
 
 Line numbers
 ------------
