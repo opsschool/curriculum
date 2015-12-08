@@ -8,8 +8,9 @@ The differences between Vi and Vim aren’t terribly significant. Vim is simply 
 
 Within Vim you can see the differences between Vi and Vim by running the following command: 
 
-        :h vi-differences
-
+```
+:h vi-differences
+```
 
 
 Window Splitting
