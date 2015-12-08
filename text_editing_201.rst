@@ -63,9 +63,9 @@ Here we discuss the essentials of working with windows: opening, closing, resizi
 +--------------------------------------------------------------------------------------+----------------------------+
 | Action                                                                               |  Command                   |
 +--------------------------------------------------------------------------------------+----------------------------+
-| Increase height of current window by 1 line                                          | `ctrl-w -`                 |
+| Increase height of current window by 1 line                                          | `ctrl-w +`                 |
 +--------------------------------------------------------------------------------------+----------------------------+
-| Decrease height of current window by 1 line                                          | `ctrl-w +`                 |
+| Decrease height of current window by 1 line                                          | `ctrl-w -`                 |
 +--------------------------------------------------------------------------------------+----------------------------+
 | Maximise height of current window                                                    | `ctrl-w _`                 |
 +--------------------------------------------------------------------------------------+----------------------------+
@@ -87,7 +87,7 @@ Here we discuss the essentials of working with windows: opening, closing, resizi
 +--------------------------------------------------------------------------------------+----------------------------+
 | Move current window to top                                                           | `ctrl-w shift-K`           |
 +--------------------------------------------------------------------------------------+----------------------------+
-| Move current window to far right                                                     | `ctrl-w shift-L            |
+| Move current window to far right                                                     | `ctrl-w shift-L`           |
 +--------------------------------------------------------------------------------------+----------------------------+
 
 Plugins
