@@ -257,11 +257,7 @@ vmstat
 
 The ``vmstat [OPTION] [delay [count]]`` will display the report on virtual memory statistics, and is used to help identify performance bottlenecks. 
 
-For example, executing the vmstat command ( ``vmstat`` ) will provide something like the following output:
-
-procs -----------memory---------- ---swap-- -----io---- -system-- ----cpu----
- r  b   swpd   free   buff  cache   si   so    bi    bo   in   cs us sy id wa
- 1  0   9336 128468 238072 342704    0    0     2    11   20  104  6 32 62  0
+For example, executing the vmstat command ( ``vmstat`` ) will provide an output with abbreviations. For each variable, a number will be given. 
 
 The variables at the top of the output of the example mean the following:
 
