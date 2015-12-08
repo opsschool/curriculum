@@ -243,24 +243,17 @@ The `stat [OPTION] ... FILE...` will display the detailed status of a particular
 
 At the option parameter, we can use the following options:
 
-+---------------------+-------------------------------------------------+
-| Option     	   	    | Explanation										                  | 
-+=====================+=================================================+
-| -f, --filesystem    | display filesystem status instead of file status| 
-+---------------------+-------------------------------------------------+ 
-| -c, --format=FORMAT |	use the specified FORMAT instead of the default | 
-+---------------------+-------------------------------------------------+
-| -L, --dereference	  | follow links  		  						              	|
-+---------------------+-------------------------------------------------|
-| -Z, --context		    | print the SELinux security context          	  | 
-+---------------------+-------------------------------------------------+
-| -t, --terse		      | print the information in terse form             | 
-+---------------------+-------------------------------------------------+
-| --help	 		        | display this help and exit         				      | 
-+---------------------+-------------------------------------------------+
-| --version	 		      | output version information and exit       	    | 
-+---------------------+-------------------------------------------------+
-
+======                  ===========
+Option                  Explanation
+======                  ===========
+-f, --filesystem        display filesystem status instead of file status
+-c, --format=FORMAT     use the specified FORMAT instead of the default
+-L, --dereference	      follow links  
+-Z, --context           print the SELinux security context 
+-t, --terse	            print the information in terse form
+--help                  display this help and exit   
+--version	              output version information and exit  
+======                  ===========
 For example, executing the stat command on the a htm file ( `stat index.htm` ) will provide something like the following output:
 .. code-block:: console
 File: `index.htm'
