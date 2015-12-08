@@ -151,7 +151,7 @@ Syntax Highlighting
 -------------------
 The syntax highlighting in Emacs is enabled by default. If this is not the case you can enable the syntax highlighting with the following command.
 :: 
-M-x font-lock-mode RET
+  M-x font-lock-mode RET
 
 Line numbers
 ------------
