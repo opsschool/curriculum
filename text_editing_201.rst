@@ -105,10 +105,28 @@ Emacs is an extensible system for editing text built on top of a powerful progra
 
 Both VIM and Emacs support many fundamental virtues of text editors such as extensive syntax highlighting, collapsible functions, spell checking, macros, undo-redo, multiple document editing, and a large support community. They are both free, Open Source, mature and well developed pieces of software. But...while both Emacs and Vim are considered powerful text editors, both capable of providing many of the same feature lists for general editing commands, the primary difference between these editors is the fundamental philosophy behind their design, and more to the point, the types of workflow that they were originally designed to handle.
 
-[Intro to emacs, what it is, how it's different to Vi]
 
 Edit/Open/Close Files
 ---------------------
++--------------------------------------------------------------------------------------+----------------------------+
+| Action                                                                               |  Command                   |
++======================================================================================+============================+
+| Open/Create File                                                                     | `ctrl-x ctrl-c`            |
++--------------------------------------------------------------------------------------+----------------------------+
+| Close file                                                                           |  `ctrl-x k`                |
++--------------------------------------------------------------------------------------+----------------------------+
+| Save file                                                                            | `ctrl-w ctrl-s `           |
++--------------------------------------------------------------------------------------+----------------------------+
+| Undo                                                                                 | `ctrl-x u`                 |
++--------------------------------------------------------------------------------------+----------------------------+
+| Cut                                                                                  | `shift-del`                |
++--------------------------------------------------------------------------------------+----------------------------+
+| Copy                                                                                 | `ctrl-ins`                 |
++--------------------------------------------------------------------------------------+----------------------------+
+| Paste                                                                                | `shift-ins`                |
++--------------------------------------------------------------------------------------+----------------------------+
+| Interactive search                                                                   | `ctrl-s   `                |
++--------------------------------------------------------------------------------------+----------------------------+
 
 Edit/Open/Close Buffers
 -----------------------
