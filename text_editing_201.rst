@@ -158,3 +158,8 @@ Window Splitting
 
 Buffers
 -------
+The text you are editing in Emacs resides in an object called a buffer. Each time you visit a file, a buffer is used to hold the file’s text. Each time you invoke Dired, a buffer is used to hold the directory listing. If you send a message with C-x m, a buffer is used to hold the text of the message. When you ask for a command’s documentation, that appears in a buffer named *Help*.
+
+Each buffer has a unique name, which can be of any length. When a buffer is displayed in a window, its name is shown in the mode line. The distinction between upper and lower case matters in buffer names. Most buffers are made by visiting files, and their names are derived from the files’ names; however, you can also create an empty buffer with any name you want. A newly started Emacs has several buffers, including one named *scratch*, which can be used for evaluating Lisp expressions and is not associated with any file.
+
+At any time, one and only one buffer is selected; we call it the current buffer. We sometimes say that a command operates on “the buffer”; this really means that it operates on the current buffer. When there is only one Emacs window, the buffer displayed in that window is current. When there are multiple windows, the buffer displayed in the selected window is current.
