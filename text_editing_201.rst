@@ -10,6 +10,9 @@ Within Vim you can see the differences between Vi and Vim by running the followi
 
   :h vi-differences
 
+    where the name provided is the RST file path. The title will be linked to
+    the document like so:
+    :h vi-differences
 
 Window Splitting
 ----------------
