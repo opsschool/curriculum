@@ -146,6 +146,30 @@ Edit/Open/Close Buffers
 
 Directory Navigation
 --------------------
+Emacs is also an excellent tool for file management. For example, list files, copy/delete, rename, moving files, create/delete directory. Once you become familiar with it, you almost never go to shell or the OS desktop for these tasks.
+The file management tool is called "dired". “dired” is short for Directory Edit. It is an old term for file management.
+To start this tool, enter following command.
+::
+  M-x dired
+  
+When in dired, most commands have a single letter key.
+
++-----------------------------------------+--------------------------------------------------+----------------------------+
+| Action                                  |                Command                           |  Key                       |
++=========================================+==================================================+============================+
+| Open the file or directory              |  dired-find-file                                 | `enter`                    |
++-----------------------------------------+--------------------------------------------------+----------------------------+
+| Copy file                               |  dired-do-copy                                   | `c`                        |
++-----------------------------------------+--------------------------------------------------+----------------------------+
+| Rename/move file                        | dired-do-rename                                  | `r`                        |
++-----------------------------------------+--------------------------------------------------+----------------------------+
+| Delete file or directory                |  dired-do-delete                                 | `d`                        |
++-----------------------------------------+--------------------------------------------------+----------------------------+
+| create new dir                          | dired-create-directory                           | `+`                        |
++-----------------------------------------+--------------------------------------------------+----------------------------+
+| compress/decompress the file by gzip    |  dired-do-compress                               | `z`                        |
++-----------------------------------------+--------------------------------------------------+----------------------------+
+
 
 Syntax Highlighting
 -------------------
