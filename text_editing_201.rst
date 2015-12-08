@@ -152,6 +152,12 @@ Syntax Highlighting
 The syntax highlighting in Emacs is enabled by default. If this is not the case you can enable the syntax highlighting with the following command.
 :: 
   M-x font-lock-mode RET
+  
+If you want to enable the syntax highlighting globally, you can also add next line to the .emacs file. 
+::
+  (global-font-lock-mode 1)
+  
+With font-lock-mode turned on, different types of text will appear in different colors. For instance, in a programming mode, variables will appear in one face, keywords in a second, and comments in a third. This will 
 
 Line numbers
 ------------
