@@ -17,16 +17,14 @@ Here we discuss the essentials of working with windows: opening, closing, resizi
 
 ### Opening split windows
  
-=====  =====  ====== 
-   Inputs     Output 
-------------  ------ 
-  A      B    A or B 
-=====  =====  ====== 
-False  False  False 
-True   False  True 
-False  True   True 
-True   True   True 
-=====  =====  ======
+=====  =====   
+Action Command     
+=====  =====   
+Split the current window horizontally, loading the same file in the new window  `ctrl-w s`   
+True   False  
+False  True    
+True   True  
+=====  =====  
  
 | Action                                      | Command                   |
 | :---                                        | :---                      |
