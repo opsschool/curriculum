@@ -175,16 +175,16 @@ Sometimes you want to copy or delete many files. You can mark the files, then ap
 +-----------------------------------------+--------------------------------------------------+----------------------------+
 | Action                                  |                Command                           |  Key                       |
 +=========================================+==================================================+============================+
-| Mark a file                             |  dired-mark                                      | `m`                    |
+| Mark a file                             |  dired-mark                                      | `m`                        |
 +-----------------------------------------+--------------------------------------------------+----------------------------+
 | unmark                                  |  dired-unmark                                    | `u`                        |
 +-----------------------------------------+--------------------------------------------------+----------------------------+
 | unmark all                              |  dired-unmark-all-marks                          | `U`                        |
 +-----------------------------------------+--------------------------------------------------+----------------------------+
-| mark by pattern                         |  dired-mark-files-regexp                         | `% m`                        |
+| mark by pattern                         |  dired-mark-files-regexp                         | `% m`                      |
 +-----------------------------------------+--------------------------------------------------+----------------------------+
 
-For example, if you want to mark all HTML files, type 【% m】, then type \.html$
+For example, if you want to mark all HTML files, type `% m` , then type \.html$ <br>
 When there are marked files, dired command applies to the marked files.
 When no files are marked, dired command applies to the file under cursor.
 
