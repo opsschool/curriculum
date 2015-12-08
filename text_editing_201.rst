@@ -43,34 +43,52 @@ Here we discuss the essentials of working with windows: opening, closing, resizi
 
 
 ### Changing focus between windows
- 
-| Action                                      | Command                   |
-| :---                                        | :---                      |
-| Cycle between the open windows                  | `ctrl-w w`|
-| Focus the window at the left | `ctrl-w h`         |
-| Focus the window at the bottom                  | `ctrl-w j` |
-| Focus the window at the top        | `ctrl-w k` |
-| Focus the window at the right             | `ctrl-w l` |
+
++--------------------------------------------------------------------------------------+----------------------------+
+| Action                                                                               |  Command                   |
++--------------------------------------------------------------------------------------+----------------------------+
+| Cycle between the open windows                                                       | `ctrl-w w`                 |
++--------------------------------------------------------------------------------------+----------------------------+
+| Focus the window at the left                                                         |  `ctrl-w h`                |
++--------------------------------------------------------------------------------------+----------------------------+
+| Focus the window at the bottom                                                       | `ctrl-w j`                 |
++--------------------------------------------------------------------------------------+----------------------------+
+| Focus the window at the top                                                          | `ctrl-w k`                 |
++--------------------------------------------------------------------------------------+----------------------------+
+| Focus the window at the right                                                        | `ctrl-w l`                 |
++--------------------------------------------------------------------------------------+----------------------------+
 
 ### Resizing windows
 
-| Action                                      | Command                   |
-| :---                                        | :---                      |
-| Increase height of current window by 1 line                 | `ctrl-w -`|
-| Decrease height of current window by 1 line | `ctrl-w +`         |
-| Maximise height of current window                  | `ctrl-w _` |
-| Maximise width of current window        | `ctrl-w |` |
++--------------------------------------------------------------------------------------+----------------------------+
+| Action                                                                               |  Command                   |
++--------------------------------------------------------------------------------------+----------------------------+
+| Increase height of current window by 1 line                                          | `ctrl-w -`                 |
++--------------------------------------------------------------------------------------+----------------------------+
+| Decrease height of current window by 1 line                                          | `ctrl-w +`                 |
++--------------------------------------------------------------------------------------+----------------------------+
+| Maximise height of current window                                                    | `ctrl-w _`                 |
++--------------------------------------------------------------------------------------+----------------------------+
+| Maximise width of current window                                                     | `ctrl-w |`                 |
++--------------------------------------------------------------------------------------+----------------------------+
 
 ### Moving windows
 
-| Action                                      | Command                   |
-| :---                                        | :---                      |
-| Rotate all windows                 | `ctrl-w r`|
-| Exchange current window with its neighbour | `ctrl-w x`         |
-| Move current window to far left                | `ctrl-w shift-H` |
-| Move current window to bottom        | `ctrl-w shift-J` |
-| Move current window to top      | `ctrl-w shift-K` |
-| Move current window to far right    | `ctrl-w shift-L` |
++--------------------------------------------------------------------------------------+----------------------------+
+| Action                                                                               |  Command                   |
++--------------------------------------------------------------------------------------+----------------------------+
+| Rotate all windows                                                                   | `ctrl-w r`                 |
++--------------------------------------------------------------------------------------+----------------------------+
+| Exchange current window with its neighbour                                           |  `ctrl-w x`                |
++--------------------------------------------------------------------------------------+----------------------------+
+| Move current window to far left                                                      | `ctrl-w shift-H`           |
++--------------------------------------------------------------------------------------+----------------------------+
+| Move current window to bottom                                                        | `ctrl-w shift-J`           |
++--------------------------------------------------------------------------------------+----------------------------+
+| Move current window to top                                                           | `ctrl-w shift-K`           |
++--------------------------------------------------------------------------------------+----------------------------+
+| Move current window to far right                                                     | `ctrl-w shift-L            |
++--------------------------------------------------------------------------------------+----------------------------+
 
 Plugins
 -------
