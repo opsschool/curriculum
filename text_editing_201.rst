@@ -156,6 +156,16 @@ Line numbers
 Window Splitting
 ----------------
 
++--------------------------------------------------------------------------------------+----------------------------+
+| Action                                                                               |  Command                   |
++======================================================================================+============================+
+| Split window vertically                                                              | `ctrl-x 2`                 |
++--------------------------------------------------------------------------------------+----------------------------+
+| Split window horizontally                                                            | `ctrl-x 3`                 |
++--------------------------------------------------------------------------------------+----------------------------+
+| Select another window                                                                | `ctrl-x o`                 |
++--------------------------------------------------------------------------------------+----------------------------+
+
 Buffers
 -------
 The text you are editing in Emacs resides in an object called a buffer. Each time you visit a file, a buffer is used to hold the file’s text. Each time you invoke Dired, a buffer is used to hold the directory listing. If you send a message with C-x m, a buffer is used to hold the text of the message. When you ask for a command’s documentation, that appears in a buffer named *Help*.
