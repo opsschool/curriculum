@@ -254,6 +254,7 @@ Option                  Explanation
 --help                  display this help and exit   
 --version	              output version information and exit  
 ======                  ===========
+
 For example, executing the stat command on the a htm file ( `stat index.htm` ) will provide something like the following output:
 .. code-block:: console
 File: `index.htm'
