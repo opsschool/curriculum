@@ -20,21 +20,16 @@ Here we discuss the essentials of working with windows: opening, closing, resizi
 +--------------------------------------------------------------------------------------+----------------+
 | Action                                                                               |  Command       |
 +--------------------------------------------------------------------------------------+----------------+
-| row 2                                                                                |                |
+| Split the current window horizontally, loading the same file in the new window       | `ctrl-w s`     |
 +--------------------------------------------------------------------------------------+----------------+
-| row 3                                                                                |                |
+| Split the current window vertically, loading the same file in the new window         |  `ctrl-w v`    |
 +--------------------------------------------------------------------------------------+----------------+
-| row 3                                                                                |                |
+| Split the current window horizontally, loading filename in the new window            | `:sp[lit] filename`  |
 +--------------------------------------------------------------------------------------+----------------+
-| row 3                                                                                |                |
+| Split the current window vertically, loading filename in the new window              | `:vsp[lit] filename` |
 +--------------------------------------------------------------------------------------+----------------+
  
-| Action                                      | Command                   |
-| :---                                        | :---                      |
-| Split the current window horizontally, loading the same file in the new window                  | `ctrl-w s`         |
-| Split the current window vertically, loading the same file in the new window | `ctrl-w v`         |
-| Split the current window horizontally, loading filename in the new window                      | `:sp[lit] filename` |
-| Split the current window vertically, loading filename in the new window               | `:vsp[lit] filename`         |
+
 
 ### Closing split windows
 
