@@ -251,23 +251,52 @@ At the option parameter, we can use the following options.
 - ``--help``	= display this help and exit  
 - ``--version``	= output version information and exit 
 
-Example of executing ``stat index.htm``
-
-``File: `index.htm'
-Size: 17137 Blocks: 40 IO Block: 8192 regular file
-Device: 8h/8d Inode: 23161443 Links: 1
-Access: (0644/-rw-r--r--) 
-Uid: (17433/comphope) Gid: ( 32/ www)
-Access: 2007-04-03 09:20:18.000000000 -0600
-Modify: 2007-04-01 23:13:05.000000000 -0600
-Change: 2007-04-02 
-16:36:21.000000000 -0600``
-
 
 vmstat
 ------
 
-.. todo:: vmstat command
+The ``vmstat [OPTION] [delay [count]]`` will display the report on virtual memory statistics, and is used to help identify performance bottlenecks. 
+
+For example, executing the vmstat command ( ``vmstat`` ) will provide something like the following output:
+
+procs -----------memory---------- ---swap-- -----io---- -system-- ----cpu----
+ r  b   swpd   free   buff  cache   si   so    bi    bo   in   cs us sy id wa
+ 1  0   9336 128468 238072 342704    0    0     2    11   20  104  6 32 62  0
+
+The variables at the top of the output of the example mean the following:
+
++---------------------+---------------------------------------------------------------------+
+| Abbreviation        | Meaning                                                             | 
++=====================+=====================================================================+
+| swpd                | the amount of virtual memory used.                                  | 
++---------------------+---------------------------------------------------------------------+ 
+| free                |    the amount of idle memory.                                       | 
++---------------------+---------------------------------------------------------------------+
+| buff                | the amount of memory used as buffers.                               |
++---------------------+---------------------------------------------------------------------+
+| cache               | the amount of memory used as cache.                                 | 
++---------------------+---------------------------------------------------------------------+
+| si                  | Amount of memory swapped in from disk (per second).                 | 
++---------------------+---------------------------------------------------------------------+
+| so                  | Amount of memory swapped to disk (per second).                      | 
++---------------------+---------------------------------------------------------------------+
+| bi                  | Blocks received from a block device (blocks per second).            | 
++---------------------+---------------------------------------------------------------------+
+| bo                  | Blocks sent to a block device (blocks/s).                           | 
++---------------------+---------------------------------------------------------------------+
+| in                  | The number of interrupts per second, including the clock.           | 
++---------------------+---------------------------------------------------------------------+
+| cs                  | The number of context switches per second.                          | 
++---------------------+---------------------------------------------------------------------+
+| us                  | Time spent running non-kernel code. (user time, including nice time)| 
++---------------------+---------------------------------------------------------------------+
+| sy                  | Time spent running kernel code. (system time)                       | 
++---------------------+---------------------------------------------------------------------+
+| id                  | Time spent idle. Prior to Linux 2.5.41, this includes IO-wait time. | 
++---------------------+---------------------------------------------------------------------+
+| wa                  | Time spent waiting for IO. Prior to Linux 2.5.41, included in idle. | 
++---------------------+---------------------------------------------------------------------+
+
 
 strace
 ------
