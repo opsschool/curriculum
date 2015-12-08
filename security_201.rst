@@ -103,8 +103,14 @@ pf: Adding and deleting rules
 Public Key Cryptography
 =======================
 
-.. todo::
-   What is PKI? What uses it? Why is it important?
+A public key infrastructure (PKI) supports the distribution and identification of public encryption keys, enabling users and computers to both securely exchange data over networks such as the Internet and verify the identity of the other party. When PKI is not being used, sensitive information can be easily encrypted. Any form of sensitive data exchanged over the Internet is reliant on PKI for its security. 
+
+A PKI consists out of 4 elements. First there's the trusted party, also known as the certificate authority (CA). This certificate acts as the root of trust and provides services that authenticate the identity of individuals, computers and others. Next there's the policies that govern the operation of the PKI. The third element are the digital certificates themselves and the last element are the applications that are written to use the PKI. 
+
+When we ask the question, where is PKI being used? Basically, it's very often being used when there's sensitive information that has to cross between two places. For example, customers expect their bank to verify their identity before allowing them to view account balances or transfer funds via an online application.  This authentication is often accomplished using user names and passwords, but PKI provides an attractive alternative. SSL has the optional ability to require a client-side certificate before establishing a secure and encrypted connection. A big advantage of authentication using PKI is that the server does not need to have access to a database of user passwords.  Users may still need to supply a password to unlock their private key in their certificate, but that password is stored and managed locally on the client. This is inherently more secure and easier to manage than server password databases.
+
+Now we know the most important things about PKI its concept, but we might still be wondering, why are PKI's so important? Well, the answer is that almost all security controls come down to authentication and access controls. Encryption is a powerful tool, but unless that data can be decrypted, it might not be very useful. If a company cares about the integrity of its data and systems, it must either deploy a PKI with an appropriate set of checks and balances or use a third party service it can trust. Failure to do so leaves an organization exposed and increasingly vulnerable compared to other potential victims.
+
 
 Using public and private keys for SSH authentication
 ----------------------------------------------------
