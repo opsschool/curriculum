@@ -33,10 +33,14 @@ Here we discuss the essentials of working with windows: opening, closing, resizi
 
 ### Closing split windows
 
-| Action                                      | Command                   |
-| :---                                        | :---                      |
-| Close the currently active window                  | `:q[uit]`              |
-| Close all windows except the currently active window | `:on[ly]`         |
++--------------------------------------------------------------------------------------+----------------------------+
+| Action                                                                               |  Command                   |
++--------------------------------------------------------------------------------------+----------------------------+
+| Close the currently active window                                                    | `:q[uit]`                  |
++--------------------------------------------------------------------------------------+----------------------------+
+| Close all windows except the currently active window                                 |  `:on[ly]`                 |
++--------------------------------------------------------------------------------------+----------------------------+
+
 
 ### Changing focus between windows
  
