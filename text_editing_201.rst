@@ -15,8 +15,8 @@ Window Splitting
 In Vim, you can view several buffers at once by loading them into multiple windows. 
 Here we discuss the essentials of working with windows: opening, closing, resizing, moving between and rearranging them.
 
-### Opening split windows
-`easy_install Sphinx sphinx_rtd_theme`
+Opening split windows
+~~~~~~~~~~~~~~~~~~~~~
  
 +--------------------------------------------------------------------------------------+----------------------------+
 | Action                                                                               |  Command                   |
@@ -32,7 +32,8 @@ Here we discuss the essentials of working with windows: opening, closing, resizi
  
 
 
-### Closing split windows
+Closing split windows
+~~~~~~~~~~~~~~~~~~~~~
 
 +--------------------------------------------------------------------------------------+----------------------------+
 | Action                                                                               |  Command                   |
@@ -43,7 +44,8 @@ Here we discuss the essentials of working with windows: opening, closing, resizi
 +--------------------------------------------------------------------------------------+----------------------------+
 
 
-### Changing focus between windows
+Changing focus between windows
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 +--------------------------------------------------------------------------------------+----------------------------+
 | Action                                                                               |  Command                   |
@@ -59,7 +61,8 @@ Here we discuss the essentials of working with windows: opening, closing, resizi
 | Focus the window at the right                                                        | `ctrl-w l`                 |
 +--------------------------------------------------------------------------------------+----------------------------+
 
-### Resizing windows
+Resizing windows
+~~~~~~~~~~~~~~~~
 
 +--------------------------------------------------------------------------------------+----------------------------+
 | Action                                                                               |  Command                   |
@@ -73,7 +76,8 @@ Here we discuss the essentials of working with windows: opening, closing, resizi
 | Maximise width of current window                                                     | `ctrl-w |`                 |
 +--------------------------------------------------------------------------------------+----------------------------+
 
-### Moving windows
+Moving windows
+~~~~~~~~~~~~~~
 
 +--------------------------------------------------------------------------------------+----------------------------+
 | Action                                                                               |  Command                   |
