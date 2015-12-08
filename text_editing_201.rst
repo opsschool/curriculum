@@ -16,6 +16,7 @@ In Vim, you can view several buffers at once by loading them into multiple windo
 Here we discuss the essentials of working with windows: opening, closing, resizing, moving between and rearranging them.
 
 ### Opening split windows
+`easy_install Sphinx sphinx_rtd_theme`
  
 +--------------------------------------------------------------------------------------+----------------------------+
 | Action                                                                               |  Command                   |
