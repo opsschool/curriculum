@@ -21,7 +21,7 @@ Opening split windows
 +--------------------------------------------------------------------------------------+----------------------------+
 | Action                                                                               |  Command                   |
 +======================================================================================+============================+
-| Split the current window horizontally, loading the same file in the new window       | `ctrl-w s`_                |
+| Split the current window horizontally, loading the same file in the new window       | `ctrl-w s`                 |
 +--------------------------------------------------------------------------------------+----------------------------+
 | Split the current window vertically, loading the same file in the new window         |  `ctrl-w v`                |
 +--------------------------------------------------------------------------------------+----------------------------+
