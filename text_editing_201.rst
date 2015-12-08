@@ -184,7 +184,7 @@ Sometimes you want to copy or delete many files. You can mark the files, then ap
 | mark by pattern                         |  dired-mark-files-regexp                         | ``% m``                    |
 +-----------------------------------------+--------------------------------------------------+----------------------------+
 
-For example, if you want to mark all HTML files, type `% m` , then type \.html$ <br>
+For example, if you want to mark all HTML files, type ``% m`` , then type ``\.html$``.
 When there are marked files, dired command applies to the marked files.
 When no files are marked, dired command applies to the file under cursor.
 
@@ -234,7 +234,7 @@ Window Splitting
 
 Buffers
 -------
-The text you are editing in Emacs resides in an object called a buffer. Each time you visit a file, a buffer is used to hold the file’s text. Each time you invoke Dired, a buffer is used to hold the directory listing. If you send a message with C-x m, a buffer is used to hold the text of the message. When you ask for a command’s documentation, that appears in a buffer named *Help*.
+The text you are editing in Emacs resides in an object called a buffer. Each time you visit a file, a buffer is used to hold the file’s text. Each time you invoke Dired, a buffer is used to hold the directory listing. If you send a message with ``C-x m``, a buffer is used to hold the text of the message. When you ask for a command’s documentation, that appears in a buffer named *Help*.
 
 Each buffer has a unique name, which can be of any length. When a buffer is displayed in a window, its name is shown in the mode line. The distinction between upper and lower case matters in buffer names. Most buffers are made by visiting files, and their names are derived from the files’ names; however, you can also create an empty buffer with any name you want. A newly started Emacs has several buffers, including one named *scratch*, which can be used for evaluating Lisp expressions and is not associated with any file.
 
