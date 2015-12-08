@@ -119,6 +119,15 @@ Using public and private keys for SSH authentication
 Two factor authentication
 =========================
 
+Two-factor authentication adds a second level of authentication to an account log-in. When you have to enter only your username and one password, that's considered a single-factor authentication. 2FA requires the user to have two out of three types of credentials before being able to access an account. The three types are:
+
+- Something you know, such as a personal identification number (PIN), password or a pattern
+- Something you have, such as an ATM card, phone, or fob
+- Something you are, such as a biometric like a fingerprint or voice print
+
+Although many may think that 2FA is something new, it's actually not new at all. For example when you use your credit card and you must enter in your ZIP code to confirm a charge (online banking), that's 2FA in action. There's the physical factor (the card), and the knowledge factor (the ZIP code). But just because it's been around for a long time doesn't mean that it's easy to set up and use. It adds an extra step to your log-in process, meaning it can take some time to set up. Of course, alot depends on your patience and your willingness to spend some time on ensuring a higher level of security. 
+
+2FA isn't protected against hackers just because 2FA requires an extra credential. But then again, hackers will definitely have a harder time of intercepting or receiving your credentials.
 
 Building systems to be auditable
 ================================
