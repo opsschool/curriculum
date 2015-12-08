@@ -243,38 +243,31 @@ The `stat [OPTION] ... FILE...` will display the detailed status of a particular
 
 At the option parameter, we can use the following options.
 
-+----------------------------------------------------+------------------------------------------------------------+
-| Action                                             |  Command                                                   |
-+====================================================+============================================================+
-| -f, --filesystem                                   | display filesystem status instead of file status           |
-+----------------------------------------------------+------------------------------------------------------------+
-| -c, --format=FORMAT                                | use the specified FORMAT instead of the default            |
-+----------------------------------------------------+------------------------------------------------------------+
-| -L, --dereference                                  | follow links                                               |
-+----------------------------------------------------+------------------------------------------------------------+
-| -Z, --context	                                     | print the SELinux security context                         |
-+----------------------------------------------------+------------------------------------------------------------+
-| -t, --terse	                                       | print the information in terse form                        |
-+----------------------------------------------------+------------------------------------------------------------+
 
-
+- ``-f, --filesystem`` 
+- ``-c, --format=FORMAT``
+- ``-L, --dereference``
+- ``-Z, --context``
+- ``-t, --terse``	
+- ``--help``	
+- ``--version``	
 
 +---------------------+-----------------------------------------------------+
 | Option     	   	    | Explanation									                        | 
 +=====================+=====================================================+
-| -f, --filesystem    | display filesystem status instead of file status    | 
+| ``-f, --filesystem``    | display filesystem status instead of file status    | 
 +---------------------+-----------------------------------------------------+ 
-| -c, --format=FORMAT |	use the specified FORMAT instead of the default     | 
+| ``-c, --format=FORMAT`` |	use the specified FORMAT instead of the default     | 
 +---------------------+-----------------------------------------------------+
-| -L, --dereference	  | follow links  		  					              	    	|
+| ``-L, --dereference``	  | follow links  		  					              	    	|
 +---------------------+-----------------------------------------------------+
-| -Z, --context		    | print the SELinux security context                 	| 
+| ``-Z, --context``		    | print the SELinux security context                 	| 
 +---------------------+-----------------------------------------------------+
-| -t, --terse		      | print the information in terse form                 | 
+| ``-t, --terse``		      | print the information in terse form                 | 
 +---------------------+-----------------------------------------------------+
-| --help	 		        | display this help and exit         			            | 
+| ``--help``	 		        | display this help and exit         			            | 
 +---------------------+-----------------------------------------------------+
-| --version	 		      | output version information and exit       	        | 
+| ``--version``	 		      | output version information and exit       	        | 
 +---------------------+-----------------------------------------------------+
 
 
