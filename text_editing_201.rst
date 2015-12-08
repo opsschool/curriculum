@@ -12,6 +12,54 @@ Within Vim you can see the differences between Vi and Vim by running the followi
 
 Window Splitting
 ----------------
+In Vim, you can view several buffers at once by loading them into multiple windows. 
+Here we discuss the essentials of working with windows: opening, closing, resizing, moving between and rearranging them.
+
+### Opening split windows
+ 
+| Action                                      | Command                   |
+| :---                                        | :---                      |
+| Split the current window horizontally, loading the same file in the new window                  | `ctrl-w s`         |
+| Split the current window vertically, loading the same file in the new window | `ctrl-w v`         |
+| Split the current window horizontally, loading filename in the new window                      | `:sp[lit] filename` |
+| Split the current window vertically, loading filename in the new window               | `:vsp[lit] filename`         |
+
+### Closing split windows
+
+| Action                                      | Command                   |
+| :---                                        | :---                      |
+| Close the currently active window                  | `:q[uit]`              |
+| Close all windows except the currently active window | `:on[ly]`         |
+
+### Changing focus between windows
+ 
+| Action                                      | Command                   |
+| :---                                        | :---                      |
+| Cycle between the open windows                  | `ctrl-w w`|
+| Focus the window at the left | `ctrl-w h`         |
+| Focus the window at the bottom                  | `ctrl-w j` |
+| Focus the window at the top        | `ctrl-w k` |
+| Focus the window at the right             | `ctrl-w l` |
+
+### Resizing windows
+
+| Action                                      | Command                   |
+| :---                                        | :---                      |
+| Increase height of current window by 1 line                 | `ctrl-w -`|
+| Decrease height of current window by 1 line | `ctrl-w +`         |
+| Maximise height of current window                  | `ctrl-w _` |
+| Maximise width of current window        | `ctrl-w |` |
+
+### Moving windows
+
+| Action                                      | Command                   |
+| :---                                        | :---                      |
+| Rotate all windows                 | `ctrl-w r`|
+| Exchange current window with its neighbour | `ctrl-w x`         |
+| Move current window to far left                | `ctrl-w shift-H` |
+| Move current window to bottom        | `ctrl-w shift-J` |
+| Move current window to top      | `ctrl-w shift-K` |
+| Move current window to far right    | `ctrl-w shift-L` |
 
 Plugins
 -------
