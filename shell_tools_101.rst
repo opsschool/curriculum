@@ -265,14 +265,14 @@ At the option parameter, we can use the following options.
 
 For example, executing the stat command on the a htm file ( `stat index.htm` ) will provide something like the following output:
 
-``File: `index.htm'
-Size: 17137 Blocks: 40 IO Block: 8192 regular file
-Device: 8h/8d Inode: 23161443 Links: 1
-Access: (0644/-rw-r--r--) 
-Uid: (17433/comphope) Gid: ( 32/ www)
-Access: 2007-04-03 09:20:18.000000000 -0600
-Modify: 2007-04-01 23:13:05.000000000 -0600
-Change: 2007-04-02 
+``File: `index.htm'<br>
+Size: 17137 Blocks: 40 IO Block: 8192 regular file<br>
+Device: 8h/8d Inode: 23161443 Links: 1<br>
+Access: (0644/-rw-r--r--) <br>
+Uid: (17433/comphope) Gid: ( 32/ www)<br>
+Access: 2007-04-03 09:20:18.000000000 -0600<br>
+Modify: 2007-04-01 23:13:05.000000000 -0600<br>
+Change: 2007-04-02 <br>
 16:36:21.000000000 -0600``
 
 vmstat
