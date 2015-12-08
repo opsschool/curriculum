@@ -97,6 +97,7 @@ Moving windows
 
 Plugins
 -------
+Vim has a plugin system which can be used to add more functionality. These plugins are implemented as simple configuration files, located in subdirectories inside the `$HOME/.vim directory`. If you are using a lot of plugins, managing them can be a hassle, so a plugin manager can help take care of them effectively.
 
 Emacs
 =====
