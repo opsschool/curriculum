@@ -239,7 +239,39 @@ Further documentation on either can be found in the ``man`` pages.
 stat
 ----
 
-.. todo:: stat command
+The `stat [OPTION] ... FILE...` will display the detailed status of a particular file or a file system. 
+
+At the option parameter, we can use the following options:
+
++---------------------+-------------------------------------------------+
+| Option     	   	  | Explanation										| 
++=====================+=================================================+
+| -f, --filesystem    | display filesystem status instead of file status| 
++---------------------+-------------------------------------------------+ 
+| -c, --format=FORMAT |	use the specified FORMAT instead of the default | 
++---------------------+-------------------------------------------------+
+| -L, --dereference	  | follow links  		  							|
++---------------------+-------------------------------------------------|
+| -Z, --context		  | print the SELinux security context          	| 
++---------------------+-------------------------------------------------+
+| -t, --terse		  | print the information in terse form         	| 
++---------------------+-------------------------------------------------+
+| --help	 		  | display this help and exit         				| 
++---------------------+-------------------------------------------------+
+| --version	 		  | output version information and exit       	    | 
++---------------------+-------------------------------------------------+
+
+For example, executing the stat command on the a htm file ( `stat index.htm` ) will provide something like the following output:
+
+File: `index.htm'
+Size: 17137 Blocks: 40 IO Block: 8192 regular file
+Device: 8h/8d Inode: 23161443 Links: 1
+Access: (0644/-rw-r--r--) 
+Uid: (17433/comphope) Gid: ( 32/ www)
+Access: 2007-04-03 09:20:18.000000000 -0600
+Modify: 2007-04-01 23:13:05.000000000 -0600
+Change: 2007-04-02 
+16:36:21.000000000 -0600
 
 vmstat
 ------
