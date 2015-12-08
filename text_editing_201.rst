@@ -149,11 +149,15 @@ Directory Navigation
 
 Syntax Highlighting
 -------------------
-The syntax highlighting in Emacs is enabled by default. If this is not the case you can enable the syntax highlighting with the following command.
+The syntax highlighting in Emacs is enabled by default. If this is not the case you can enable the syntax highlighting for the current buffer with the following command.
 :: 
-  M-x font-lock-mode RET
+  M-x font-lock-mode
   
-If you want to enable the syntax highlighting globally, you can also add next line to the .emacs file. 
+If you want to enable syntax highlighting for all buffers then use following command
+::
+  M-x global-font-lock-mode
+  
+If you want to enable the syntax highlighting permanently, you can also add next line to the .emacs file. 
 ::
   (global-font-lock-mode 1)
   
@@ -161,6 +165,18 @@ With font-lock-mode turned on, different types of text will appear in different 
 
 Line numbers
 ------------
+Line numbers are always a must when you are using a texteditor, especially when you are writing a script.
+To enable line numbers for the current buffer of Emacs, use the following command.
+::
+  M-x linum-mode
+
+To enable line numbers globally.
+::
+  M-x global-linum-mode
+  
+If you want to enable line numbers permanently, you can also add next line to the .emacs file. 
+::
+  (global-linum-mode 1)
 
 Window Splitting
 ----------------
