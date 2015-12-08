@@ -153,7 +153,7 @@ The syntax highlighting in Emacs is enabled by default. If this is not the case 
 :: 
   M-x font-lock-mode
   
-If you want to enable syntax highlighting for all buffers then use following command
+If you want to enable syntax highlighting for all buffers then use following command.
 ::
   M-x global-font-lock-mode
   
