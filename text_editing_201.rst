@@ -7,7 +7,7 @@ Vim is an insertion mode editor just like VI.
 The differences between Vi and Vim aren’t terribly significant. Vim is simply an improved version of Vi. It pretty much has a ton of functionality that Vi doesn’t.
 
 Within Vim you can see the differences between Vi and Vim by running the following command: 
-
+::
   :h vi-differences
 
 Window Splitting
