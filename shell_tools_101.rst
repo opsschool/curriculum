@@ -7,7 +7,6 @@ When you work in a unix environment, you will need to make frequent use of the c
 
 Working with your system
 ========================
-
 ps
 --
 
@@ -244,7 +243,62 @@ stat
 vmstat
 ------
 
-.. todo:: vmstat command
+vmstat reports information about processes, memory, paging, block IO, traps, disks and cpu activity. 
+
+The first report produced gives averages since the last reboot. Additional reports give information on a sampling period of length delay.
+
+**Syntax** 
+
+vmstat [options] [delay [count]]
+
+Available options:
+
+
+ *delay* The delay between updates in seconds. 
+ 
+ *count*  Number of updates. Default is infinite if delay is defined. 
+ 
+ -a, --active  Display active and inactive memory. 
+ -f, --forks  The -f switch displays the forks since boot. This is equivalent to the total number of tasks created which includes fork, vfork and clone system calls. Each process is represented by one or more tasks, depending on thread usage. 
+ -m, --slabs  Displays the content of /proc/slabinfo/. 
+ -s, --stats  Displays a table of various event counters and memory statistics. 
+ -d, --disk  report disk statistics. 
+ -D, --disk-sum  report some summary statistics about disk activity. 
+ -S, --unit  Switches ouptut between 1000 (**k**), 1024 (**K**), 1000000 (**m**), or 1048576 (**M**) bytes. 
+ -V, --version  Show the information and exit. 
+ -h, --help  Show help and exit. 
+ -n, --one-header  Display the header only once rather than periodically. 
+ -p, --partition       Detailed statistics about partition. 
+
+**Notes**
+
+  vmstat does not require special permissions.
+  
+  Linux vmstat does not count itself as a running process.
+  
+  All linux block are mostly 1024 bytes.
+  
+  vmstat uses slabinfo 1.1.
+  
+**Files**
+
+  /proc/meminfo
+  
+  /proc/stat/
+  
+  /proc/*/stat
+  
+**Example**
+
+.. code-block:: console
+
+  [vagrant@linuxlamp ~]$ vmstat
+  procs -----------memory---------- ---swap-- -----io---- -system-- ------cpu-----
+   r  b   swpd   free   buff  cache   si   so    bi    bo   in   cs us sy id wa st
+   2  0  35164  35720      0 225868    2    7    23    35   52  120  0  0 99  1  0
+
+
+
 
 strace
 ------
