@@ -112,6 +112,21 @@ connections). It supports health checks using the method built into AJP protocol
 Nginx
 -----
 
+Nginx (pronounced "engine x") is a web server which pays a lot of attention to high concurrency, performance and low memory usage. It can also be used as a reverse proxy server for HTTP, HTTPS, SMTP, POP3 and IMAP protocols, and also as a load balancer and HTTP cache. 
+
+Using Apache and Nginx Together
+-------------------------------
+
+The best way is to place Nginx in front of Apache as a reverse proxy. This will allow Nginx to handle all requests from clients. This takes advantage of Nginx's fast processing speed and ability to handle large numbers of connections concurrently.
+
+For static content, which Nginx excels at, the files will be served quickly and directly to the client. For dynamic content, for instance PHP files, Nginx will proxy the request to Apache. 
+
+This setup works well for many people because it allows Nginx to function as a sorting machine. It will handle all requests it can and pass on the ones that it has no native ability to serve.
+
+**Conclusion:**
+As you can see, both Apache and Nginx are powerful, flexible and capable. Deciding which server is best for you will be your own choice, because there is no one-size-fits-all web server, so use the solution that best aligns with your objectives.
+
+
 HAProxy
 -------
 
