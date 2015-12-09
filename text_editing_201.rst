@@ -149,8 +149,8 @@ Directory Navigation
 Emacs is also an excellent tool for file management. For example, list files, copy/delete, rename, moving files, create/delete directory. Once you become familiar with it, you almost never go to shell or the OS desktop for these tasks.
 The file management tool is called "dired". “dired” is short for Directory Edit. It is an old term for file management.
 To start this tool, enter following command.
-::
-  M-x dired
+
+``M-x dired``
   
 When in dired, most commands have a single letter key.
 
@@ -191,12 +191,12 @@ When no files are marked, dired command applies to the file under cursor.
 Syntax Highlighting
 -------------------
 The syntax highlighting in Emacs is enabled by default. If this is not the case you can enable the syntax highlighting for the current buffer with the following command.
-:: 
-  M-x font-lock-mode
+
+``M-x font-lock-mode``
   
 If you want to enable syntax highlighting for all buffers then use following command.
 ::
-  M-x global-font-lock-mode
+  ``M-x global-font-lock-mode``
   
 If you want to enable the syntax highlighting permanently, you can also add next line to the .emacs file. 
 ::
