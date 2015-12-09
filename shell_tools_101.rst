@@ -239,12 +239,60 @@ Further documentation on either can be found in the ``man`` pages.
 stat
 ----
 
-.. todo:: stat command
+The ``stat [OPTION] ... FILE...`` will display the detailed status of a particular file or a file system. 
+
+At the option parameter, we can use the following options.
+
+- ``-f, --filesystem`` = display filesystem status instead of file status
+- ``-c, --format=FORMAT`` = use the specified FORMAT instead of the default 
+- ``-L, --dereference`` = follow links 
+- ``-Z, --context`` = print the SELinux security context  
+- ``-t, --terse``	= print the information in terse form   
+- ``--help``	= display this help and exit  
+- ``--version``	= output version information and exit 
+
 
 vmstat
 ------
 
-.. todo:: vmstat command
+The ``vmstat [OPTION] [delay [count]]`` will display the report on virtual memory statistics, and is used to help identify performance bottlenecks. 
+
+For example, executing the vmstat command ( ``vmstat`` ) will provide an output with abbreviations. For each variable, a number will be given. 
+
+The variables at the top of the output mean the following:
+
++---------------------+---------------------------------------------------------------------+
+| Abbreviation        | Meaning                                                             | 
++=====================+=====================================================================+
+| swpd                | the amount of virtual memory used.                                  | 
++---------------------+---------------------------------------------------------------------+ 
+| free                |    the amount of idle memory.                                       | 
++---------------------+---------------------------------------------------------------------+
+| buff                | the amount of memory used as buffers.                               |
++---------------------+---------------------------------------------------------------------+
+| cache               | the amount of memory used as cache.                                 | 
++---------------------+---------------------------------------------------------------------+
+| si                  | Amount of memory swapped in from disk (per second).                 | 
++---------------------+---------------------------------------------------------------------+
+| so                  | Amount of memory swapped to disk (per second).                      | 
++---------------------+---------------------------------------------------------------------+
+| bi                  | Blocks received from a block device (blocks per second).            | 
++---------------------+---------------------------------------------------------------------+
+| bo                  | Blocks sent to a block device (blocks/s).                           | 
++---------------------+---------------------------------------------------------------------+
+| in                  | The number of interrupts per second, including the clock.           | 
++---------------------+---------------------------------------------------------------------+
+| cs                  | The number of context switches per second.                          | 
++---------------------+---------------------------------------------------------------------+
+| us                  | Time spent running non-kernel code. (user time, including nice time)| 
++---------------------+---------------------------------------------------------------------+
+| sy                  | Time spent running kernel code. (system time)                       | 
++---------------------+---------------------------------------------------------------------+
+| id                  | Time spent idle. Prior to Linux 2.5.41, this includes IO-wait time. | 
++---------------------+---------------------------------------------------------------------+
+| wa                  | Time spent waiting for IO. Prior to Linux 2.5.41, included in idle. | 
++---------------------+---------------------------------------------------------------------+
+
 
 strace
 ------

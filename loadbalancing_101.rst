@@ -112,6 +112,18 @@ connections). It supports health checks using the method built into AJP protocol
 Nginx
 -----
 
+Nginx is a free, open-source, high-performance HTTP server and reverse proxy, as well as an IMAP/POP3 proxy server. Nginx is known for its high performance, stability, rich feature set, simple configuration, and low resource consumption.
+
+Nginx is one of a handful of servers written to address the C10K problem. Unlike traditional servers, Nginx doesn’t rely on threads to handle requests. Instead it uses a much more scalable event-driven (asynchronous) architecture. This architecture uses small, but more importantly, predictable amounts of memory under load. Even if you don’t expect to handle thousands of simultaneous requests, you can still benefit from Nginx’s high-performance and small memory footprint. Nginx scales in all directions: from the smallest VPS all the way up to large clusters of servers.
+
+Many famous sites make use of Nginx. For example Netflix, Github, WordPress, etc.
+
+Some people either choose for Apache or Nginx. These two are the most common used. Both of them are alternative web server softwares which serve web pages in response to browser requests. Nginx is better as in that it's more secure than apache and because Nginx doesn't need to spawn new processes or threads for each request that is being received, which is the case for Apache. Also, it's very ideal for high traffic websites. Also, Nginx is compatible with most platforms, for example WordPress, which is a platform that is used very often. 
+
+Ofcourse there's not only advantages about Nginx, but there's also a few downsides to it. It's known that it is very difficult to create modules using Nginx. Apache doesn't have this disadvantage, but Nginx has no function such as the Apache Portable Runtime. Therefore the creator needs to find the function needed for creating the module within the internal code of Nginx.
+
+When you don't have Nginx installed yet, you can install it by using the command ``yum install nginx``. Once installed, you can apply certain actions with the ``nginx -s signal`` where the signal paramter can be one of the following: ``stop``, ``quit``, ``reload``, ``reopen``. Once Nginx is installed, it can be configured in the following configuration file: ``/etc/nginx/nginx.conf``.
+
 HAProxy
 -------
 
