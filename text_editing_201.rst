@@ -195,12 +195,12 @@ The syntax highlighting in Emacs is enabled by default. If this is not the case 
 ``M-x font-lock-mode``
   
 If you want to enable syntax highlighting for all buffers then use following command.
-::
+
   ``M-x global-font-lock-mode``
   
 If you want to enable the syntax highlighting permanently, you can also add next line to the .emacs file. 
-::
-  (global-font-lock-mode 1)
+
+  ``(global-font-lock-mode 1)``
   
 With font-lock-mode turned on, different types of text will appear in different colors. For instance, in a programming mode, variables will appear in one face, keywords in a second, and comments in a third. With the syntax highlighting the user experience will be a lot better. 
 
@@ -208,16 +208,16 @@ Line numbers
 ------------
 Line numbers are always a must when you are using a texteditor, especially when you are writing a script.
 To enable line numbers for the current buffer of Emacs, use the following command.
-::
-  M-x linum-mode
+
+  ``M-x linum-mode``
 
 To enable line numbers globally.
-::
-  M-x global-linum-mode
+
+  ``M-x global-linum-mode``
   
 If you want to enable line numbers permanently, you can also add next line to the .emacs file. 
-::
-  (global-linum-mode 1)
+
+  ``(global-linum-mode 1)``
 
 Window Splitting
 ----------------
