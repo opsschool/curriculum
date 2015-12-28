@@ -110,90 +110,290 @@ To prevent documentation drift, see `Ansible documentation site <http://docs.ans
 
 Puppet
 ======
+
 Ordering and Relationship
 -------------------------
 
-Resources weren't synced in order they are written in manifest. Puppet assumes that most resources are not related to each other and will manage the resources in whatever order is most efficient. But some resources depends on another resources. So puppet has a system of modelling relationship between resources. Puppet uses four metaparameter to establish relationship. The value of relationship metaparameter should be resource reference pointing to target resources. 
+Puppet assumes that most resources are not related to each other and will manage the resources in whatever order is 
+most efficient. But some resources depend on other resources. So puppet has a system of modeling relationship between resources. Puppet uses four metaparameters to establish relationship. The value of relationship metaparameter should 
+be a resource reference pointing to target resources. 
 
 Before and Require
-before-Applies a resource before the target resource. It used in earlier resource, and lists resources that depends on it.
-..code-block::ruby
-package { 'openssh-server':
-  ensure => present,
-  before => File['/etc/ssh/sshd_config'],
-}
-In above example target resource is file named sshd_config, Here package resourcse would be applied before target resources.
-require-Applies resource after the target resource. It used in later resource, and lists the resources that it depends on. 
-..code-block::ruby
-file { '/etc/ssh/sshd_config':
-  ensure  => file,
-  mode    => 600,
-  source  => 'puppet:///modules/sshd/sshd_config',
-  require => Package['openssh-server'],
-}
-In above example package resource is required before file resource type is required. If you have two resources and order matters then you can either use before or require. we can also specify this relationship using chaining arrows ->.
-..code-block::ruby
-Package['openssh-server'] -> File['/ets/ssh/sshd_config']
-Causes the resource on left to be applied before resource on right side.
+------------------
+
+"before" applies a resource before the target resource. It is used in earlier resource, and lists resources that 
+depend on it.
+
+.. code-block:: puppet
+   
+   package { 'openssh-server':
+     ensure => present,
+     before => File['/etc/ssh/sshd_config']
+   } 
+
+In above example, target resource is file named sshd_config, here package resource would be applied before target 
+resource.
+
+"require" applies resource after the target resource. It is used in later resource, and lists the resources that 
+it depends on. 
+
+.. code-block:: puppet
+
+  file { '/etc/ssh/sshd_config':
+    ensure  => file,
+    mode    => 600,
+    source  => 'puppet:///modules/sshd/sshd_config',
+    require => Package['openssh-server'],
+  }
+
+In above example, package resource is required before file resource type. 
+
+If you have two resources and order matters then you can either use "before" and "require", or could specify this 
+relationship using chaining arrow "->".
+
+.. code-block:: puppet
+
+  Package['openssh-server'] -> File['/ets/ssh/sshd_config']
+
+The above example causes the resource on left to be applied before the resource on right hand side.
 
 Notify and Subscribe
-Notify-Applies a resource before the target resource. The target resource refreshes if notifying resource changes. Notify operates in same way before metaparameter but target resource get refreshed if notifying resource changes.
-Subscribe-Applies a resource after the target resource. The subscribing resourcerefreshes if the target resource changes. It operates same way Require.
-Notify andd Subscribe also represented by chaining arrow ~>.
-..code-block::ruby
-Package['openssh-server'] -> File['/ets/ssh/sshd_config']
-Causes the resource on left to be applied first, and send refresh event to the resource on the right if the left resource changes.
+--------------------
 
-Variables and Facts
--------------------
+"notify" applies a resource before the target resource. Notify operates in same way as "before" metaparameter but 
+target resource gets refreshed only if notifying resource changes.
 
-Variables are like other programming languages. Starts with $ sign. It can hold strings,numbers,booleans,arrays,hashes and has special undef value. Each variable has two names 
-..code-block::ruby
-short name[$short_name_variable]
-long fully qualified name[$scope::variable]
-..code-block::ruby
-$user_name="admin"
-notify {$user_name:}
+.. code-block:: puppet
 
-Facts
-Puppet has a bunch of built-in, pre-assigned variables that you can use.
-Example
-..code-block::ruby
-notify {$fqdn:}
+ file { '/etc/ssh/sshd_config':
+  ensure => file,
+  mode   => '0600',
+  source => 'puppet:///modules/sshd/sshd_config',
+  notify => Service['sshd'],
+ }
 
-Hiera and Facter
+"subscribe" applies a resource after the target resource. It operates the same way as "require" but the subscribing 
+resource refreshes only if the target resource changes. 
+
+.. code-block:: puppet
+
+ service { 'sshd':
+  ensure    => running,
+  enable    => true,
+  subscribe => File['/etc/ssh/sshd_config'],
+ }
+
+Notify and Subscribe can also represented by chaining arrow "~>".
+
+.. code-block:: puppet
+
+  Package['openssh-server'] ~> File['/ets/ssh/sshd_config']
+
+The above example causes the resource on left to be applied first, and send refresh event to the resource on the 
+right if, the left resource changes.
+
+Variables
+---------
+
+Variables are similar to variables in other programming languages. They start with a "$" sign and can hold strings, 
+numbers, booleans, arrays, hashes and has special undef value. Each variable has two names 
+
+.. code-block:: puppet
+
+  short name[$short_name_variable]
+  long fully qualified name[$scope::variable]
+
+Below is an example of variable declaration.
+
+.. code-block:: puppet
+
+  $user_name="admin"
+  notify {$user_name:}
+
+Facts and Facter
 ----------------
-Facter-
-Puppet uses tool called Facter, which discovers some system information, normalize it into set of variables and passes them off to puppet. You can view what factor knows about a given system run 
-user@opsschool ~$ factor
-Hiera-
+
+Facts are a bunch of built-in, pre-assigned variables that you can use.
+
+Example:architecture, fqdn, hostname, ipaddress etc
+
+.. code-block:: puppet
+
+  notify {$fqdn:}
+
+Puppet uses a tool called Facter, which discovers system information, normalizes it into a set of variables and 
+passes them off to puppet. 
+
+To view what factor knows about a given system run 
+
+.. code-block:: console
+
+  root@localhost ~$ factor
+
+Hiera
+-----
+
+Hiera is a key/value lookup tool for configuration data. Hiera helps by keeping site-specific data out of your 
+manifests. Hiera makes easier to re-use public Puppet modules. It uses configurable hierarchy. 
+
+Configuration and hiera.yaml
+
+Hiera's configuration file called hiera.yaml is used to store information about which backend's to use and setting 
+for each backend. Hiera config file is found in /etc/hiera.yaml.
+
+Example of config file
+
+.. code-block:: yaml
+
+  ---
+   :backends:
+    - yaml
+    - json
+   :yaml:
+   :datadir: /etc/puppet/hieradata
+   :json:
+    :datadir: /etc/puppet/hieradata
+   :hierarchy:
+    - common
+
+":hierarchy" is a string or an array of strings. String represents, name of static or dynamic data source. 
+Default value is "common".
+
+":backends" is a string or an array of strings. String represents, available hiera backends. Built-in backends are
+json and yaml.
+
+Hiera always takes a lookup key and returns a single value. hiera() is lookup function performs hiera lookup using lookup key as input.   
+
+# Hiera Example
+content of yaml file are as above. Content of common.yaml file are
+
+.. code-block:: yaml
+
+ ipaddress: 192.168.22.21
+
+Hiera lookup function
+
+.. code-block:: puppet
+   
+ file { 'ip_address':
+         content => hiera('ipaddress'),
+        }
 
 Classes and Modules
 -------------------
+
 Classes are named block of puppet code. Stated another way, package, file, and service are individual Puppet resourc bundled together to define a single class. any reltionship formed with the class as a whole will be extended every resource in the class.Classes are named block of puppet code. It can be created one place and invoked elsewhere. Defining class does not invoke code inside class. Declaring class evaluates the code inside it, and applies  of its resources.
 
 Defining a class
+
 To define class use keyword class,braces, and a block of code.
-..code-block::ruby
-class class_name{
-...puppet code
-}
+
+.. code-block:: puppet
+
+  class ntp {
+      case $operatingsystem {
+              centos, redhat: {
+                    $service_name = 'ntpd'
+                    $conf_file = 'ntp.conf.el'
+               }
+               debian, ubuntu: {
+                    $service_name = 'ntp'
+                    $conf_file = 'ntp.conf.debian'
+              }
+     }
+     package { 'ntp':
+          ensure => installed,
+     }
+     file { 'ntp.conf':
+          path => '/etc/ntp.conf',
+          ensure => file,
+          require => Package['ntp'],
+          source => "/root/examples/answers/${conf_file}"
+    }
+    service { 'ntp':
+        name => $service_name,
+        ensure => running,
+        enable => true,
+        subscribe => File['ntp.conf'],
+    }
+ }
+
 Declaring a class
+
 To declare a class use the include function with class's name.
-..code-block::ruby
-class class_name{
-...puppet code
-}
-include class_name
+
+.. code-block:: puppet
+
+ class class_name{
+       ...puppet code
+ }
+
+ include ntp
+
 This time puppet will actually apply all those resources. 
 
 Modules
+
 To split up your manifests into understand structure, puppet uses modules. Modules are directories arrenged in specific structure. Puppet looks in modulepath for modules. modulepath is defined in puppet.conf file. If a class is defined in a module, you can declare that class by name in any manifest. 
 
 Templates
 ---------
- 
- 3
+
+Templates provide a way to reuse static content filled with dynamic values updated at place holders. Generally templates are used to manage content of configuration file. Puppet supports two templating languages:
+Embedded Puppet(EPP) uses Puppet expression in special tags.
+Embedded Ruby(ERB) uses Ruby code in tags.
+Here ERB templates are described.
+Template should be stored in directory <module_name>/templates with .erb extension. To use template we need to render it to produce an output string. For this puppet uses template function. This function takes a path to one or more template files and returns an output string.
+
+.. code-block:: puppet
+
+  file {'/etc/fqdn_file':
+     ensure  => file,
+     content => template('fqdn_file.erb'),
+  }
+
+Content of fqdn_file.erb
+
+.. code-block:: puppet
+
+   <%=@fqdn%>
+
+will print a fully qualified domain name of the node.
+
+Variables in template
+
+Facts,local and global variables from current scope available to template as instance variable in ruby. Prefix used is @.
+Variable from other scope can be accessed with the scope.lookupvar method,to this input is long variable without $ prefix.
+
+Template tags
+
+Non-printing Tags or code tag <% ruby code %>
+Printing tag <%= some variable %>
+Comment <%# comment to be ignored %>
+
+Roles and Profiles
+------------------
+
+Roles and Profiles makes Puppet configuration easier to maintain and use. A profile is simply a wrapper class that groups Hiera lookups and class declarations into one functional unit. Roles and Profiles tasks is to take commonly written puppet modules building them into profiles and assingning those profiles to roles and telling the node to perform those role. Its like puppet module written in specific way to promote clarity and reusability. Roles is just declaration of what task that machine is to do. 
+
+.. code-block:: puppet
+   
+   node 'zeus.example.com'{
+      include role::dbserver 
+   }
+
+Here declaring zeus get role of dbserver.
+When building role simply declare profile that make up that role. 
+
+.. code-block:: puppet
+
+   class role {
+      include profile::base
+   }
+
+In this case there is base role that include configuration that every machine needs to include.
+
+Cfengine3
 ==========
 
 SaltStack
