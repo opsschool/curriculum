@@ -492,7 +492,7 @@ What they contain, how they work
 The POSIX standard dictates files must have the following attributes:
 
 * File size in bytes.
-* A device id.
+* A device ID.
 * User ID of file's owner.
 * Group ID of file.
 * The file's mode (permissions).
