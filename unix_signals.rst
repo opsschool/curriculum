@@ -51,7 +51,7 @@ A basic example is below:
 
 
 Lastly you can send signals from the keyboard in an interactive terminal.
-Ctrl-C will send SIGINT, and CTRL-Z send SIGTSTP.
+Ctrl-C will send SIGINT, and Ctrl-Z send SIGTSTP.
 
 
 List Of Posix 1990 Signals
