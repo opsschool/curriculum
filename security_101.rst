@@ -5,7 +5,7 @@ Authentication in unix
 ======================
 
 .. todo::
-   Discuss how authention works.
+   Discuss how authentication works.
    Touch on ``/etc/(passwd|group|shadow)``, hashing.
    What are groups? Lead in to the users/groups permissions model and how
    permissions are based on the user/group/other bits.
