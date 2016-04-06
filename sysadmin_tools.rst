@@ -135,7 +135,7 @@ In some situations it may be necessary to forward ports from the remote
 machine to the local one. While not as common as other port forwarding
 techniques, it is often the only option available in the situations
 where it sees use. For this feature, OpenSSH listens to a port on the
-remote machine and sends the traffic to the remote host and port. The
+remote machine and sends the traffic to the local host and port. The
 syntax for the ``-R`` option is the same as for the ``-L`` option
 described above. As an example, to have OpenSSH tunnel the remote port
 9090 to the local port 8000 on host ``workstation``:
