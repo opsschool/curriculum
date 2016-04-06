@@ -11,7 +11,7 @@ model in more detail as it applies to the role of systems administration.
 Before any discussion of networking, however, it's important to have a
 working knowledge of the numbered Request for Comments (:term:`RFC`) documents
 and how they apply to computer networking. These documents describe the technical
-specifics for every protocol you will run into (eg, TCP, IP, HTTP, SMTP), and
+specifics for every protocol you will run into (e.g., TCP, IP, HTTP, SMTP), and
 as such are the authoritative source for how computers communicate
 with one another.
 
@@ -236,7 +236,7 @@ IPv6
 ----
 
 The Internet has experienced tremendous growth from its beginnings in research
-at universities to its use in ecommerce and other applications today.
+at universities to its use in e-commerce and other applications today.
 As a result, more and more IPv4 addresses were given out to enable users to connect
 to the Internet.
 However, despite the number of IPv4 addresses being a large number (4294967296), they
