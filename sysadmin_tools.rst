@@ -271,13 +271,13 @@ Reattach to a session:
 
 Share a session:
 
-User alice starts session:
+User Alice starts session:
 
 .. code-block:: console
 
   screen -S session1
 
-User bob can then attach to the same session (both alice and bob can send commands to the session):
+User Bob can then attach to the same session (both Alice and Bob can send commands to the session):
 
 .. code-block:: console
 
