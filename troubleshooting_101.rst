@@ -92,7 +92,7 @@ without proper permissions (in Linux, ports < 1024 are privileged):
     ...
     socket.error: [Errno 13] Permission denied
     
-Permission denied reading to / writing from disk
+Permission denied reading from / writing to disk
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 
