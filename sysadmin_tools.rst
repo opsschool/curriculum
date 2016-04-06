@@ -54,7 +54,7 @@ SSH
 
 Common: ``ssh``
 ---------------
-If your operating system has a good terminal emulator available (eg, Linux, BSD,
+If your operating system has a good terminal emulator available (e.g., Linux, BSD,
 OSX), then the ``ssh`` command line utility is by far the best tool to use for
 SSH interactions.
 
