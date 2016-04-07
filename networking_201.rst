@@ -201,7 +201,7 @@ Most layer problems are usually traced back to one of the following causes:
 
 * Bad cabling
 * Mismatched duplex/speed
-* Electrical interference (EMI)
+* Electromagnetic interference (EMI)
 * Network congestion
 
 To find the metrics below, use either `ip -s link`, or `ethtool -S`.
@@ -376,13 +376,13 @@ cause of duplex/speed mismatch.
 Some devices don't play nicely with each other when auto-negotiation is
 enabled on both sides, so be sure to verify what auto-negotiation resulted in.
 
-Electrical interference
------------------------
+Electromagnetic interference (EMI)
+----------------------------------
 
-The symptoms of electrical interference can be seen by an increase of CRC errors.
-Electrical interference can be caused by any number of things: power cables nearby,
+The symptoms of electromagnetic interference can be seen by an increase of CRC errors.
+Electromagnetic interference can be caused by any number of things: power cables nearby,
 mechanical systems (such as HVAC units), etc.
-Since a visual inspection will often reveal electrical interferance culprits easier
+Since a visual inspection will often reveal electromagnetic interference culprits easier
 than checking metrics, it's simpler to do a visual inspection first if you suspect
 this.
 The problem can sometimes be solved/alleviated by replacing the cable with STP
@@ -401,9 +401,9 @@ A link tester, however, is different from a cable certifier, which will verify
 full compliance with TIA/EIA and ISO cable standards, including metrics for
 crosstalk allowance, cable length, current loss, and many others.
 
-If you need to test cable used in low-impact environments (eg, wall jack to
+If you need to test cable used in low-impact environments (e.g., wall jack to
 desktop), a link tester is usually sufficient.
-If you need to test cable used in high-impact environments (eg, datacenter),
+If you need to test cable used in high-impact environments (e.g., datacenter),
 opt for a cable certifier.
 Reputable cable vendors will have already run certification tests on cable,
 so this is only useful if you are routinely making your own cable (which
