@@ -59,7 +59,7 @@ It is important that we understand the concept of "network" used here to be rela
 For instance, trying to contact another computer inside your home or office network means that the IP address of the machine you are trying to reach must be unique within your home or office.
 In terms of websites and publicly-accessible information available via the Internet, the "network" is - in fact - the Internet.
 
-There are two types of IP addresses: one is becoming increasingly popular as we get close to running out of avaialble IPv4 addres.
+There are two types of IP addresses: one is becoming increasingly popular as we get close to running out of available IPv4 addresses.
 
 An IPv4 address referenced everything in four sets of three period-separated digits.
 For instance, ``8.8.8.8`` and ``102.92.190.91`` are examples of IPv4 addresses.
@@ -227,7 +227,7 @@ If you are administering systems, specifically Unix systems, you should be aware
 ^^^^^^^^^^^^^^
 
 The ``/etc/hosts`` file has the purpose of acting as a local alternative to DNS.
-You might use this when you want to override the record in place in DNS on a particular machine only, without impacting that record and its use for others - therefore, DNS can be over-ridden using ``/etc/hosts``.
+You might use this when you want to override the record in place in DNS on a particular machine only, without impacting that record and its use for others - therefore, DNS can be overridden using ``/etc/hosts``.
 Alternatively, it can be used as a back-up to DNS: if you specify the hosts that are mission-critical in your infrastructure inside ``/etc/hosts``, then they can still be addressed by name even if the nameserver(s) holding your zonefile are down.
 
 However, ``/etc/hosts`` is not a replacement for DNS - in fact, it is far from it: DNS has a much richer set of records that it can hold, whereas ``/etc/hosts`` can only hold the equivalent of ``A`` records.
@@ -267,7 +267,7 @@ An example ``/etc/resolv.conf`` might look like:
    nameserver 192.168.1.3
 
 In this example, we would be specifying that any of ``192.168.1.1``, ``192.168.1.2`` and ``192.168.1.3`` can be used by the host with the above configuration to query DNS.
-We are actually telling the host that it is allowed to use any of the nameservers in this file when it resolves (ie: makes a request for an entry and waits for a response) a host in DNS.
+We are actually telling the host that it is allowed to use any of the nameservers in this file when it resolves (i.e.: makes a request for an entry and waits for a response) a host in DNS.
 
 Setting the ``domain`` directive - as in the above example, where we specified it as ``opsschool`` - allows users to specify hosts by address relative the domain.
 For instance, a user could reference ``sql01``, and a query would be sent to nameservers specified asking for records for both ``sql01`` and ``sql01.home``.
