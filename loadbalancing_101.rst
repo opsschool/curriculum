@@ -112,6 +112,16 @@ connections). It supports health checks using the method built into AJP protocol
 Nginx
 -----
 
+Nginx reverse proxy implementation supports load balancing for HTTP, HTTPS, FastCGI, uwsgi, SCGI, 
+and memcached. The default method is round-robin, but session persistence/stickiness (``ip_hash``) 
+and least connections (``least_conn``) methods are available. Flags for weighted load balancing and passive 
+server health checks can also be set on any of the backends.
+
+`Nginx load balancing documentation`_
+
+.. _Nginx load balancing documentation: http://nginx.org/en/docs/http/load_balancing.html
+
+
 HAProxy
 -------
 
