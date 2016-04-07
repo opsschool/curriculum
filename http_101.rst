@@ -403,7 +403,7 @@ Apache and Nginx are the two most used open-source webservers on the internet.
 Though they share several features, their architectures differ significantly.
 
 Apache relies on a process-based model, either with a single or multiple threads per process that handle a connection, whereas Nginx operates event-driven with multiple single-threaded processes that all handle connections asynchronously.
-Nginx' event-driven aproach requires less resources, making it faster, especially for static content.
+Nginx' event-driven approach requires less resources, making it faster, especially for static content.
 For dynamic content however, Nginx needs to proxy requests to an external processor for execution as it has no programming language support.
 Therefore Nginx is often used as a front-end/proxy server in combination with other application servers, possibly Apache.
 
@@ -419,7 +419,7 @@ Elements are identified by tags that are enclosed by angle brackets.
 The root element is the ``<html>`` which on its turn contains the ``<head>`` element with information about the document, and ``<body>`` elements with the visible content of the page.
 
 HTML pages can reference to other pages by using hyperlinks identified by ``<a>`` tags.
-The developers of HTML, W3C, have the full specification on their websie: http://www.w3.org/html/.
+The developers of HTML, W3C, have the full specification on their website: http://www.w3.org/html/.
 
 Virtual hosting
 ===============
