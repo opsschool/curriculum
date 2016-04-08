@@ -128,7 +128,7 @@ Postgresql
 
 .. code-block:: console
 
-   createuser username
+   $ createuser username
 
 Create Tables
 =============
@@ -280,7 +280,7 @@ You can also grant multiple privileges in a single statement.
   GRANT SELECT,INSERT ON TABLE example_table TO user;
 
 Many databases stray from the SQL standard here, and it is important to read your database's documentation when granting privileges.
-There may be additional privileges not listed here and syntax can very significantly.
+There may be additional privileges not listed here and syntax can vary significantly.
 
 Removing Privileges
 ===================
@@ -384,7 +384,7 @@ Count the rows in a table by using an aggregation:
 
   SELECT COUNT(1) FROM users;
 
-Irder by a column:
+Order by a column:
 
 .. code-block:: sql
 
