@@ -89,7 +89,7 @@ You will see this for Ruby:
 Ruby is a very good tool to write scripts.
 
 Although this will be not covered here in detail, a very important thing to keep in mind is that in Ruby, **everything is an object**.
-This means that you can treat everything i.e. numbers, strings, classes, objects themselves etc as objects.
+This means that you can treat everything i.e. numbers, strings, classes, objects themselves, etc. as objects.
 Even the simplest of Ruby code will use this principle:
 
 .. code-block:: ruby
@@ -105,12 +105,12 @@ Even the simplest of Ruby code will use this principle:
 Strictly speaking, there will be cases where the above statement is not true in Ruby.
 For example, in Ruby, functions are not first class objects.
 In some languages like Javascript and Python, functions are first class objects.
-In these languages, a function can be treated like an object, i.e. they have attributes, they can be referenced and passed as parameters etc.
+In these languages, a function can be treated like an object, i.e. they have attributes, they can be referenced and passed as parameters, etc.
 
 Running Ruby Code
 -----------------
 
-Ruby scripts are usually text files with ``.rb`` extension. You can run your ruby scripts as follows:
+Ruby scripts are usually text files with ``.rb`` extension. You can run your Ruby scripts as follows:
 
 .. code-block:: console
 
@@ -130,7 +130,7 @@ The XXX are line numbers.
 Syntax
 ------
 
-* Condtionals
+* Conditionals
 
 * Symbols
 
@@ -326,7 +326,7 @@ Python is one of the most versatile languages you're going to use in your career
 You will soon see that for almost everything you want to do, Python either has a something in its standard library or an amazing third-party module that you can import in seconds.
 But since this is a guide for operations engineers, I'll focus the discussion more towards Python's scripting capabilities.
 
-NOTE: Before I start, I want to point out a series of documents called Python Enhancement Proposals, PEP for short.
+NOTE: Before I start, I want to point out a series of documents called `Python Enhancement Proposals <https://www.python.org/dev/peps/>`_, PEP for short.
 Like their title suggests, these are potential enhancements to the Python language that have been proposed by members of the community.
 There's a lot of them, and you don't have to go over every single one, but you can find some very useful tips and best-practices there.
 
@@ -352,12 +352,12 @@ You will see this for Python:
       # Do something
 
 As you can see, Python didn't need curly braces to signify the start or end of the if conditional; a simple indent does the job.
-Now when it comes to indentation, PEP8 says that you should use 4 spaces to indent your code.
+Now when it comes to indentation, `PEP8 <https://www.python.org/dev/peps/pep-0008/>`_ says that you should use 4 spaces to indent your code.
 Keep in mind that this specifically means spaces and not tabs.
 Fortunately for you, most text editors today can automatically convert tabs to spaces so you don't have to hit four spaces every time you want to indent a line.
 However, if you are dealing with some legacy code that uses 8 space tabs, feel free to continue doing so.
 
-Indentation is by far the most important part of python's syntax you should keep track of.
+Indentation is by far the most important part of Python's syntax you should keep track of.
 If there's two lines in your code where one uses 4 spaces and another uses one 4-space tab, Python's going to give you errors when you try to run your script.
 Be consistent with your indentation.
 
