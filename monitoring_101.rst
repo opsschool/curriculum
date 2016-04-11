@@ -75,7 +75,7 @@ Ganglia leverages the following technologies:
 Ganglia is organized using the following conventions:
 
 * Grid: Consists of clusters.
-* Clusters: Consists of hosts/nodes. This is a logical grouping of machines and metrics like database servers, qa servers etc.
+* Clusters: Consists of hosts/nodes. This is a logical grouping of machines and metrics like database servers, qa servers, etc.
 * Host/Node: Typically a machine/server.
 
 Ganglia monitoring suite consists of three main components:
@@ -123,11 +123,11 @@ Sensu
 Sensu can be described as a "monitoring router", since it connects check scripts across any number of systems with handler scripts run on one or more Sensu servers.
 It is compatible with existing Nagios checks and additional checks can be written in any language similar to writing Nagios checks.
 Check scripts can send alert data to one or more handlers for flexible notifications.
-Sensu provides the server, client, api and dashboard needed to build a complete monitoring system.
+Sensu provides the server, client, API and dashboard needed to build a complete monitoring system.
 
 Diamond
 -------
-`Diamond <https://github.com/BrightcoveOS/Diamond>`_ is a python daemon that collects system metrics and publishes them to Graphite (and others).
+`Diamond <https://github.com/BrightcoveOS/Diamond>`_ is a Python daemon that collects system metrics and publishes them to Graphite (and others).
 It is capable of collecting cpu, memory, network, i/o, load and disk metrics.
 Additionally, it features an API for implementing custom collectors for gathering metrics from almost any source.
 
@@ -147,13 +147,13 @@ It is ideal for visualizing trends of events that are occurring in any type of l
 * System
 * Error logs
 
-For example, you might use logster to graph the number of occurrences of HTTP response code that appears in your web server logs.
+For example, you might use Logster to graph the number of occurrences of HTTP response code that appears in your web server logs.
 
 Logster maintains a cursor, via logtail on each log file that it reads so that each successive execution only inspects new log entries.
 
 A simple,1 minute crontab entry for logster would allow you to generate near real-time trends for anything you want to measure from your logs.
 
-This tool is made up of a framework script, logster, and parsing scripts that are written to accommodate your specific log format.
+This tool is made up of a framework script, Logster, and parsing scripts that are written to accommodate your specific log format.
 
 Sample parsers are included in the distribution, which essentially read a log file line by line, applying a regular expression to extract useful data from the lines you are interested in, and then aggregate that data into metrics that will be submitted to Ganglia or Graphite or Amazon CloudWatch. 
 
