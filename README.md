@@ -1,6 +1,9 @@
 Ops School Curriculum
 =====================
-[![Build Status](https://secure.travis-ci.org/opsschool/curriculum.png?branch=master)](https://travis-ci.org/opsschool/curriculum)
+[![Build Status](https://travis-ci.org/opsschool/curriculum.svg?branch=master)](https://travis-ci.org/opsschool/curriculum)
+[![GitHub issues](https://img.shields.io/github/issues/opsschool/curriculum.svg?maxAge=2592000)](https://github.com/opsschool/curriculum/issues)
+
+[![Support via Gratipay](https://cdn.rawgit.com/gratipay/gratipay-badge/2.3.0/dist/gratipay.svg)](https://gratipay.com/Ops-School/)
 
 The current documentation based on these sources can be seen at:
 http://www.opsschool.org/
@@ -85,4 +88,3 @@ More on cross-referencing can be read in the [Sphinx Docs](http://sphinx-doc.org
 
 
 [![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/opsschool/curriculum/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
-
