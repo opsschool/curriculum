@@ -26,7 +26,7 @@ this scenario easier: the command-line editing mode.
 
 The command-line editing mode emulates the movement functions of two common text editors,
 ``emacs`` and ``vi``.  In the case of the shell, the cursor's movement is being controlled.
-.. todo: Tighten up the above sentence.  It's wordy and doesn't seem to make the point I want it to make. 
+.. todo:: Tighten up the above sentence.  It's wordy and doesn't seem to make the point I want it to make. 
 
 By default, ``bash`` operates in ``emacs`` mode.
 
