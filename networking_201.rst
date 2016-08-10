@@ -83,11 +83,35 @@ Instead of passing a packet to a specific ip address however, this configuration
 Static routes do not change when the network changes but can be useful in cases where the network is small enough that it outweighs the cost of dynamic routing.
 It is often used in tandem with dynamic routing to specify a default route in case a dynamic route is unavailable.
 
-Dynamic routing protocols (RIP, OSPF, BGP, EIGRP, IS-IS)
+Dynamic routing protocols (RIP, OSPF, BGP)
 --------------------------------------------------------
 For a small network, manually configuring routes will work just fine.
 As a network grows larger, however, doing this can be very arduous if not infeasible.
 Dynamic routing solves this problem by programmatically building a routing table.
+
+Here are some examples of dynamic routing protocols:
+
+1. Routing Information Protocol (RIP) - RIP uses the number of routers between a router and the destination subnet as its path selection metric.
+When a RIP router first comes online, it sends a broadcast message and then all its neighbor routers respond back with their own routing table.
+This new RIP router then compares the routes in its own routing table with the routes from the other routing tables it has received.
+If there are routes to other subnets that are currently not in its own routing table, that route is added.
+More importantly, it updates routes in its own routing table if there is a route with less hops to a destination subnet.
+RIP is part of a class of routing protocols called distance vector routing protocols.
+They are characterized by their sharing of routing tables with their neighbors.
+Similar protocols to RIP include Cisco's Enhanced Interior Gateway Routing Protocol (EIGRP).
+EIGRP is similar to RIP but uses a mix of path selection metrics such as bandwidth and delay to determine the route to a destination subnet.
+Unlike RIP, it only sends updates incrementally to reduce overhead.
+
+2. Open Shortest Path First (OSPF) - OSPF is a routing protocol that calculates the shortest path to each destination subnet in the network.
+Routing protocols like OSPF that work this way are said to be called Link State routing protocols.
+To be able to know the shortest path to each destination subnet, each router should know everything about the network from links, subnets and even other routers.
+To do this in OSPF, each router packages routing information they know in a data structure called Link State Advertisements (LSA) and floods the whole network with this information.
+Fellow OSPF routers listen for LSAs, collect this data and store them in a Link State Database (LSDB).
+The point of all this sharing is for each router to have identical LSDBs.
+Once this is achieved, each OSPF router calculates routes to all subnets from its own point of view using a shortest path algorithm.
+These routes are added then added to the router's routing table.
+
+3. Border Gateway Protocol (BGP) -
 
 ACLs
 ====
