@@ -75,7 +75,7 @@ In this example, this would most likely be as follows:
 * app-srv-001
 
 Prioritizing Recovery Components
---------------
+--------------------------------
 In the example above, the number of assets to prioritize is low, which might suggest that there is no need for making a priority list. However, one thing that you'll learn by doing a couple of disaster recovery excercises is that no matter how small the scope, stakeholders will always try to direct your effors to the assets mosts relevant to them. For example, the CEO might want you to prioritize the ERP System over the Domain Controller, which might very well be correct, but as the list of assets grow longer the number of stakeholders wanting to influence your decisions will aswell.
 
 As you might have guessed, it may be a good idea to actually prioritize your asset list, if not out of necessity then atleast to circumvent any issues that might occur because of differing opinions on what needs to be prioritized. A great way to start out is to create a spreadsheet consisting of the following columns:
