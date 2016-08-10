@@ -1,4 +1,6 @@
-_build/
-*.swp
 *.swo
+*.swp
 .DS*
+.direnv/
+.envrc
+_build/
