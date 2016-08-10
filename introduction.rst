@@ -2,7 +2,7 @@
 Introduction
 ############
 
-.. todo: Explain "What is Ops School?"
+.. todo:: Explain "What is Ops School?"
 
 
 ***************

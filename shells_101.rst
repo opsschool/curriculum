@@ -42,7 +42,7 @@ The following commands are very common while using the ``emacs`` mode.
 - ``Ctrl-u``: Delete from the cursor backward
 - ``Ctrl-r``: Search the command history
 
-.. todo: Add vi examples. I haven't used that mode in years and will need to look up the mirror version of the above commands.
+.. todo:: Add vi examples. I haven't used that mode in years and will need to look up the mirror version of the above commands.
 
 Setting the Mode
 ~~~~~~~~~~~~~~~~
