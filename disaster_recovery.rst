@@ -44,16 +44,54 @@ The identified objects gives us a list of what we actually need to secure in the
 * Off-Site Mirrored environment
 * Failover
 
+So, if we were to create a disaster recovery plan for Acme Inc, we would first need to identify what components we need to consider putting into the DRP.
+Usually, you have some kind of system (or excel spreadsheet for smaller companies) containing all the IT environment components.
+If so, this information will make your work a lot easier.
+
+The components may contain, among other things:
+
+* SQL Servers (sqlsrv001 and sqlsrv002)
+* Domain Controllers (dcsrv001 - primary, dcsrv002 & dcsrv003 - used for load balancing)
+* Fileservers (stgsrv001)
+* Application servers (appsrv001, appsrv002)
+
+We will then, together with the rest of the organization, try to map these components to the bussiness activities we've identified earlier.
+For example:
+
+* The application server **appsrv001** is running our ERP, which is needed to be able to place orders from customers.
+* The SQL Server **sqlsrv001** contains the data from the ERP which means that it's a prerequisite for the application server.
+* The domain controller is needed so the users are able to sign in to the ERP. However, since 002 and 003's main purposes is load balancing, recovering **dcsrv001** will be our main objective.
+* The fileserver **stgsrv001** is used to store copies of the order receipts produced in the ERP.
+
+What we've concluded from this activity is that we need to recover four components to be able to use the ERP.
+Note however, that in reality, the IT environment's usually alot more complex then the one used in this example.
+
+The identified objects then need to be ranked to determine in what order they need to be recovered to minimize downtime.
+In this example, this would most likely be as follows:
+
+1. dcsrv001
+2. sqlsrv001
+3. stgsrv001
+4. appsrv001
+
+.. TODO:: text - How to prioritize recovery components, shared resources, bussiness needs.
+
 Disaster Recovery Plans
 -----------------------
+
+.. TODO:: How to create a plan from the material we gathered in the planning phase.
+.. TODO:: Pros and cons on separating the disaster recovery manual from the technical recovery manual.
 
 Disaster Recovery Simulations
 -----------------------------
 
+.. TODO:: Strategies when simulating. Defining testing scopes. Measuring.
+
 Considerations
 --------------
+.. TODO:: Limiting the scope to core business
+.. TODO:: Expanding the scope in the disaster recovery environment vs. going back to production before expanding
 
 Execution
 =========
-
-
+.. TODO:: Communication
