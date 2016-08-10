@@ -277,17 +277,21 @@ Apache Web server installed and running:
 
 .. code-block:: yaml
 
-  apache2:
+  install_apache:
     pkg:
       - installed
-    service.running:
-      - require:
+      - name: apache2
+    service:
+      - running
+      - name: apache2
+      - watch:
         - pkg: apache2
 
 To understand the snippet above, you will need to refer to documentation on
 states: pkg and service. Basically our state calls methods ``pkg.installed``
-and ``service.running`` with argument ``apache2``. ``require`` directive is
-available for most of the states and describe dependencies if any.
+and ``service.running`` with argument ``apache2``. The ``watch`` directive is
+available for all states and creates a dependency,  as well as restarts the
+apache2 service if the apache package changes or gets updated.
 
 Back to ``state`` module, it has a couple of methods to manage these states. In
 a nutshell the state file form above can be executed using ``state.sls``
@@ -377,8 +381,6 @@ with the content below:
   extend:
     apache2:
       service:
-        - require:
-          - file: www_opsschool_org
         - watch:
           - file: www_opsschool_org
 
@@ -387,11 +389,10 @@ with the content below:
     - name: /etc/apache2/sites-enabled/www.opsschool.org
     - source: salt://vhosts/conf/www.opsschool.org
 
-Above, we include already described state of the Apache service and extend it
-to include our configuration file. Notice we use a new directive ``watch``
-to describe our state as being dependent on what changes the configuration
-file triggers. This way, if a newer version of the same file is deployed, it
-should restart the Apache service.
+Above, we include the existing Apache service state and extend it to include
+our configuration file. The ``watch`` requisite indicates that the Apache
+service is dependent on the ``www_opsschool_org`` file state and will restart
+the Apache service if the file changes.
 
 Below is the directory listing of the changes we did: ::
 
