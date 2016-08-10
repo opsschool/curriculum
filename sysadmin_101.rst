@@ -187,6 +187,15 @@ These backends can be big, and have many considerations behind their design.
   his code will run on. He works closely with his Operations engineers to make sure his
   code is performant and on capacity planning.
 
+  .. _whats-developer-francesca:
+
+  * **Francesca is one of five students working on the website for her school's
+  internationally famous hackathon. She and her friends run a Tornado web server
+  with a Postgres database. For the front end, they use GitHub pages and React.
+  Their website is hosted on Amazon Web Services. The team uses New Relic and
+  Pingdom to profile the code to see what time, CPU, and memory it consumes, as
+  well as to alert them if any aspect of the site is acting abnormally.
+
 .. todo:: "What is Development" Section needs more developer perspective.
 
 
