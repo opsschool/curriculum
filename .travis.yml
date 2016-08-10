@@ -4,7 +4,7 @@ python:
 before_install:
  - sudo apt-get update && sudo apt-get install -qq graphviz
 # command to install dependencies
-install: "pip install -q -r requirements.txt --use-mirrors"
+install: "pip install -q -r requirements.txt"
 # command to run tests
 script: sphinx-build -nW -b html -d _build/doctrees . _build/html
 # Flags used here, not in `make html`:
