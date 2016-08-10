@@ -76,26 +76,35 @@ In this example, this would most likely be as follows:
 
 Prioritizing Recovery Components
 --------------------------------
-In the example above, the number of assets to prioritize is low, which might suggest that there is no need for making a priority list. However, one thing that you'll learn by doing a couple of disaster recovery excercises is that no matter how small the scope, stakeholders will always try to direct your effors to the assets mosts relevant to them. For example, the CEO might want you to prioritize the ERP System over the Domain Controller, which might very well be correct, but as the list of assets grow longer the number of stakeholders wanting to influence your decisions will aswell.
+In the example above, the number of assets to prioritize is low, which might suggest that there is no need for making a priority list.
+However, one thing that you'll learn by doing a couple of disaster recovery excercises is that no matter how small the scope, stakeholders will always try to direct your effors to the assets mosts relevant to them.
+For example, the CEO might want you to prioritize the ERP System over the Domain Controller, which might very well be correct, but as the list of assets grow longer the number of stakeholders wanting to influence your decisions will aswell.
 
-As you might have guessed, it may be a good idea to actually prioritize your asset list, if not out of necessity then atleast to circumvent any issues that might occur because of differing opinions on what needs to be prioritized. A great way to start out is to create a spreadsheet consisting of the following columns:
+As you might have guessed, it may be a good idea to actually prioritize your asset list, if not out of necessity then atleast to circumvent any issues that might occur because of differing opinions on what needs to be prioritized.
+A great way to start out is to create a spreadsheet consisting of the following columns:
 
 * Asset Identification
-    A name, a FQDN or an IP. Whatever helpes you identifying the asset.
+    A name, a FQDN or an IP.
+    Whatever helpes you identifying the asset.
  
 * Business Priority
-    Non-Essential, Essential, Critical. This should be decided buy either the board or the senior management team.
+    Non-Essential, Essential, Critical.
+    This should be decided buy either the board or the senior management team.
 
 * Tiebreaker/Sequential numbering
-    A sequential numbering which will break ties in case multiple assets have the same priority. Should also be decided by the board or the senior management team.
+    A sequential numbering which will break ties in case multiple assets have the same priority.
+    Should also be decided by the board or the senior management team.
 
 * Business Impact
     A textual description of what would happen if this asset where to be unavailable.
 
 * Exceptions
-    Any exceptions to the priority above. A company that is doing billing once every month might not feel that the billing system is critical during any other period then the billing period. This will of course reflect your real time prioritization if (when) a disaster occurs.
+    Any exceptions to the priority above. 
+    A company that is doing billing once every month might not feel that the billing system is critical during any other period then the billing period. 
+    This will of course reflect your real time prioritization if (when) a disaster occurs.
 
-The finished product should, after a signoff from your department manager and the senior management team, be published on your companys intranet, available for anyone. This is very important as lack of transparency is one of the most common prejudices about IT Depts.
+The finished product should, after a signoff from your department manager and the senior management team, be published on your companys intranet, available for anyone.
+This is very important as lack of transparency is one of the most common prejudices about IT Depts.
 
 .. TODO:: shared resources, bussiness needs.
 
