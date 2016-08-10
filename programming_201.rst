@@ -315,7 +315,7 @@ An instance variable in Ruby is prepended by ``@`` symbol.
 Rubygems
 --------
 
-.. todo: Explain more about what rubygems are as well as http://rubygems.org
+.. todo:: Explain more about what rubygems are as well as http://rubygems.org
 
 Databases
 ---------

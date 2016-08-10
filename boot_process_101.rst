@@ -320,7 +320,7 @@ management tool for data centers.
 Getty
 =====
 
-.. todo: Check this section. I think i've got it down, but I'm not super
+.. todo:: Check this section. I think i've got it down, but I'm not super
          familiar with this part.
 
 After all the system initialization scripts have run, we're ready to present the
