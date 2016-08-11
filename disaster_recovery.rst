@@ -85,7 +85,7 @@ A great way to start out is to create a spreadsheet consisting of the following 
 
 * Asset Identification
     A name, a FQDN or an IP.
-    Whatever helpes you identifying the asset.
+    Whatever helps you identifying the asset.
  
 * Business Priority
     Non-Essential, Essential, Critical.
