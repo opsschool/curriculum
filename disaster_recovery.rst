@@ -50,18 +50,18 @@ If so, this information will make your work a lot easier.
 
 The components may contain, among other things:
 
-* SQL Servers (sqlsrv001 and sqlsrv002)
-* Domain Controllers (dcsrv001 - primary, dcsrv002 & dcsrv003 - used for load balancing)
+* SQL Servers (sql-srv-001 and sql-srv-002)
+* Domain Controllers (dc-srv-001 - primary, dc-srv-002 & dc-srv-003 - used for load balancing)
 * Fileservers (stgsrv001)
-* Application servers (appsrv001, appsrv002)
+* Application servers (app-srv-001, app-srv-002)
 
 We will then, together with the rest of the organization, try to map these components to the bussiness activities we've identified earlier.
 For example:
 
-* The application server **appsrv001** is running our ERP, which is needed to be able to place orders from customers.
-* The SQL Server **sqlsrv001** contains the data from the ERP which means that it's a prerequisite for the application server.
-* The domain controller is needed so the users are able to sign in to the ERP. However, since 002 and 003's main purposes is load balancing, recovering **dcsrv001** will be our main objective.
-* The fileserver **stgsrv001** is used to store copies of the order receipts produced in the ERP.
+* The application server **app-srv-001** is running our ERP, which is needed to be able to place orders from customers.
+* The SQL Server **sql-srv-001** contains the data from the ERP which means that it's a prerequisite for the application server.
+* The domain controller is needed so the users are able to sign in to the ERP. However, since 002 and 003's main purposes is load balancing, recovering **dc-srv-001** will be our main objective.
+* The fileserver **stg-srv-001** is used to store copies of the order receipts produced in the ERP.
 
 What we've concluded from this activity is that we need to recover four components to be able to use the ERP.
 Note however, that in reality, the IT environment's usually alot more complex then the one used in this example.
@@ -69,12 +69,44 @@ Note however, that in reality, the IT environment's usually alot more complex th
 The identified objects then need to be ranked to determine in what order they need to be recovered to minimize downtime.
 In this example, this would most likely be as follows:
 
-1. dcsrv001
-2. sqlsrv001
-3. stgsrv001
-4. appsrv001
+* dc-srv-001
+* sql-srv-001
+* stg-srv-001
+* app-srv-001
 
-.. TODO:: text - How to prioritize recovery components, shared resources, bussiness needs.
+Prioritizing Recovery Components
+--------------------------------
+In the example above, the number of assets to prioritize is low, which might suggest that there is no need for making a priority list.
+However, one thing that you'll learn by doing a couple of disaster recovery excercises is that no matter how small the scope, stakeholders will always try to direct your effors to the assets mosts relevant to them.
+For example, the CEO might want you to prioritize the ERP System over the Domain Controller, which might very well be correct, but as the list of assets grow longer the number of stakeholders wanting to influence your decisions will as well.
+
+As you might have guessed, it may be a good idea to actually prioritize your asset list, if not out of necessity then at least to circumvent any issues that might occur because of differing opinions on what needs to be prioritized.
+A great way to start out is to create a spreadsheet consisting of the following columns:
+
+* Asset Identification
+    A name, a FQDN or an IP.
+    Whatever helps you identifying the asset.
+ 
+* Business Priority
+    Non-Essential, Essential, Critical.
+    This should be decided by either the board or the senior management team.
+
+* Tiebreaker/Sequential numbering
+    A sequential numbering which will break ties in case multiple assets have the same priority.
+    Should also be decided by the board or the senior management team.
+
+* Business Impact
+    A textual description of what would happen if this asset where to be unavailable.
+
+* Exceptions
+    Any exceptions to the priority above. 
+    A company that is doing billing once every month might not feel that the billing system is critical during any other period then the billing period. 
+    This will of course reflect your real time prioritization if (when) a disaster occurs.
+
+The finished product should, after a signoff from your department manager and the senior management team, be published on your company's intranet, available for anyone.
+This is very important as lack of transparency is one of the most common prejudices about IT Departments.
+
+.. TODO:: shared resources, bussiness needs.
 
 Disaster Recovery Plans
 -----------------------
