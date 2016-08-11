@@ -103,7 +103,7 @@ A great way to start out is to create a spreadsheet consisting of the following 
     A company that is doing billing once every month might not feel that the billing system is critical during any other period then the billing period. 
     This will of course reflect your real time prioritization if (when) a disaster occurs.
 
-The finished product should, after a signoff from your department manager and the senior management team, be published on your companys intranet, available for anyone.
+The finished product should, after a signoff from your department manager and the senior management team, be published on your company's intranet, available for anyone.
 This is very important as lack of transparency is one of the most common prejudices about IT Depts.
 
 .. TODO:: shared resources, bussiness needs.
