@@ -104,7 +104,7 @@ A great way to start out is to create a spreadsheet consisting of the following 
     This will of course reflect your real time prioritization if (when) a disaster occurs.
 
 The finished product should, after a signoff from your department manager and the senior management team, be published on your company's intranet, available for anyone.
-This is very important as lack of transparency is one of the most common prejudices about IT Depts.
+This is very important as lack of transparency is one of the most common prejudices about IT Departments.
 
 .. TODO:: shared resources, bussiness needs.
 
