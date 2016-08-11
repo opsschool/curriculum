@@ -89,7 +89,7 @@ A great way to start out is to create a spreadsheet consisting of the following 
  
 * Business Priority
     Non-Essential, Essential, Critical.
-    This should be decided buy either the board or the senior management team.
+    This should be decided by either the board or the senior management team.
 
 * Tiebreaker/Sequential numbering
     A sequential numbering which will break ties in case multiple assets have the same priority.
