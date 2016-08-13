@@ -189,7 +189,7 @@ These backends can be big, and have many considerations behind their design.
 
   .. _whats-developer-francesca:
 
-  * **Francesca is one of five students working on the website for her school's
+* **Francesca is one of five students working on the website for her school's
   internationally famous hackathon. She and her friends run a Tornado web server
   with a Postgres database. For the front end, they use GitHub pages and React.
   Their website is hosted on Amazon Web Services. The team uses New Relic and
