@@ -187,6 +187,18 @@ These backends can be big, and have many considerations behind their design.
   his code will run on. He works closely with his Operations engineers to make sure his
   code is performant and on capacity planning.
 
+.. _whats-developer-jean:
+
+* **Jean works at a large technology firm.** The company has many teams of
+  developers, all working on different aspects of their product. Jean is a data
+  engineer who manages the collection and display of certain statistics that are
+  useful for other employees of the company. If Jean has any issues with their
+  computer or development environment, they ask the people running the
+  information technology desk. Core parts of the technology at this company are
+  maintained by site reliability engineers. Jean also has an embedded site
+  reliability engineer on their team who makes sure that the features they
+  create are scalable and maintainable.
+
 .. todo:: "What is Development" Section needs more developer perspective.
 
 
