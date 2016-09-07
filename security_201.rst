@@ -168,6 +168,10 @@ SELinux
 =======
 
 
+AppArmor
+========
+
+
 Data placement
 ==============
 Eg, local vs cloud, the implications, etc
