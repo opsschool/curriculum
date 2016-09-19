@@ -148,6 +148,19 @@ product supports SSL termination and offloading, with additional licensing.
 Netscaler
 ---------
 
+Citrix Netscaler is a proprietary load balancer that runs as a userspace process
+on a FreeBSD system. It is available as a hardware device or a virtual
+appliance.
+
+The system can be managed through a Cisco-style CLI, a web interface (older
+versions depend on Java in the browser), or the UNIX shell.
+
+Netscaler relies on patented traffic handling techniques to send layer 7
+requests from multiple clients over a single "warm" TCP connection. These
+techniques are known as "Request Switching" and "Connection Multiplexing".
+
+Netscaler supports SSL termination and offloading.
+
 Multi-dc
 ========
 
