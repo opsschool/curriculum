@@ -243,8 +243,14 @@ Below is an example of a manifest that uses this pattern to install and configur
 The package resource makes sure the software and its config file are installed, the config file depends on the package package resource, and 
 the service subscribes to the changes in the config file.
 
-Cfengine 3
+CFEngine 3
 ==========
+"If you are looking for a fast and highly scalable configuration management tool for your IT infrastructure, you should give CFEngine a try. Though the functionality it offers is quite similar to that offered by other popular tools such as Puppet and Chef, CFEngine has a much smaller footprint, both in terms of memory and CPU utilization, and is generally faster because it is written in C and thus runs natively on the OS." ,  `CFEngine tutorial on DigitalOcean.com <https://www.digitalocean.com/community/tutorials/how-to-install-and-use-cfengine-community-edition-on-ubuntu-14-04>`_
+
+To learn more see:
+`CFEngine Primer <https://digitalelf.net/cf-primer/>`_,
+`CFEngine Tutorial <http://www.cfenginetutorial.org/>`_,
+`CFEngine Learning Center <https://cfengine.com/learn/>`_,
 
 SaltStack
 =========
