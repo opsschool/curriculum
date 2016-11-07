@@ -6,7 +6,9 @@ When you work in a unix environment, you will need to make frequent use of the c
 The Unix Philosophy
 ===================
 
-Unix is characterized by its modular design philosophy. Unix programs are small, single purpose tools that can easily be chained together with other Unix programs. This modular approach allows for a much simpler, more flexible system, since you can combine multiple command line programs to solve a unique problem, without having to write a whole new program to get the job done.
+Unix is characterized by its modular design philosophy. 
+Unix programs are small, single purpose tools that can easily be chained together with other Unix programs. 
+This modular approach allows for a much simpler, more flexible system, since you can combine multiple command line programs to solve a unique problem, without having to write a whole new program to get the job done.
 
 Working with your system
 ========================
