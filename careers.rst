@@ -45,7 +45,7 @@ Generalized career paths
    :depth: 2
    :local:
 
-Persons in generalized careers are often in high demands by employers.
+Persons in generalized careers are often in high demand by employers.
 While the adage states "Jack of all trades, master of none", an operations
 generalist is very much expected to be *"Master of almost all trades."*
 
