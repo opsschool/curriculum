@@ -42,6 +42,14 @@ Since Nagios is so configurable, it can often be difficult to configure for the 
 It can use many files for configuration, and a single syntax error will prevent the system from starting.
 Additionally, the open-source version does not natively support adding and removing hosts dynamically; the configuration needs to be modified, and the server reloaded to add or remove a host.
 
+Icinga/Icing2
+------
+
+Icinga is a forked and in parts rewritten drop in replacement for nagios and also deprecated in favor for icinga2. New web interface for interacting with services, bulk select/acknowledgment etc.
+
+`Icinga2 <https://www.icinga.com/products/icinga-2/>`_ is a complerely rewritten system with a new configuration paradigm then nagios. Where you can have implicit looping over variables for services.
+When you apply services to a host it can be via wildcard matching to hostname, looping over various variables defined in the host, very flexible system.
+
 
 Graphite
 --------
@@ -98,13 +106,6 @@ Munin
 RRDTool / cacti
 ---------------
 
-Icinga/Icing2
-------
-
-Icinga is a forked and in parts rewritten drop in replacement for nagios and also deprecated in favor for icinga2. New web interface for interacting with services, bulk select/acknowledgment etc.
-
-`Icinga2 <https://www.icinga.com/products/icinga-2/>`_ is a complerely rewritten system with a new configuration paradigm then nagios. Where you can have implicit looping over variables for services.
-When you apply services to a host it can be via wildcard matching to hostname, looping over various variables defined in the host, very flexible system.
 
 
 SNMP
