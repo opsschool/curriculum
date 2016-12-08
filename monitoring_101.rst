@@ -45,7 +45,7 @@ Additionally, the open-source version does not natively support adding and remov
 
 Graphite
 --------
-`Graphite <http://graphite.wikidot.com/>`_ is an open-source monitoring tool that let's you store time-series based data and graph them. 
+`Graphite <http://graphite.wikidot.com/>`_ is an open-source monitoring tool that let's you store time-series based data and graph them.
 
 Graphite consists of three components:
 
@@ -60,6 +60,12 @@ Graphite does not collect metrics for you, however there are three methods using
 * AMQP
 
 Apart from the out-of-box web-app that Graphite comes with you can even create your own applications on top of Graphite by retrieving data in form of JSON, CSV or raw-data format.
+
+Grafana
+-------
+`Grafana <https://grafana.net>`_ nodejs based frontend for viewing graphs from graphite. Does also support a wide range of backends to visualize data from.
+Backends that grafana reads from nativly is graphite, influxdb. There is also a plugin infrastructure for many more backends. And multiple backends can reside on the
+same dashboard.
 
 Ganglia
 -------
@@ -92,8 +98,14 @@ Munin
 RRDTool / cacti
 ---------------
 
-Icinga
+Icinga/Icing2
 ------
+
+Icinga is a forked and in parts rewritten drop in replacement for nagios and also deprecated in favor for icinga2. New web interface for interacting with services, bulk select/acknowledgment etc.
+
+`Icinga2 <https://www.icinga.com/products/icinga-2/>`_ is a complerely rewritten system with a new configuration paradigm then nagios. Where you can have implicit looping over variables for services.
+When you apply services to a host it can be via wildcard matching to hostname, looping over various variables defined in the host, very flexible system.
+
 
 SNMP
 ----
@@ -155,6 +167,6 @@ A simple,1 minute crontab entry for logster would allow you to generate near rea
 
 This tool is made up of a framework script, Logster, and parsing scripts that are written to accommodate your specific log format.
 
-Sample parsers are included in the distribution, which essentially read a log file line by line, applying a regular expression to extract useful data from the lines you are interested in, and then aggregate that data into metrics that will be submitted to Ganglia or Graphite or Amazon CloudWatch. 
+Sample parsers are included in the distribution, which essentially read a log file line by line, applying a regular expression to extract useful data from the lines you are interested in, and then aggregate that data into metrics that will be submitted to Ganglia or Graphite or Amazon CloudWatch.
 
 Do take a look through the `sample parsers <https://github.com/etsy/logster/tree/master/logster/parsers>`_, which should give you some idea of how to get started writing your own.
