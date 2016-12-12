@@ -156,8 +156,9 @@ and any affiliation:
 ==================================================  ====================================
 Name                                                Company
 ==================================================  ====================================
-Avleen Vig <avleen@etsy.com>                        Etsy, Inc
-Michael Rembetsy <mcr@etsy.com>                     Etsy, Inc
+Avleen Vig <avleen@etsy.com>                        Etsy, Inc
+Patrick McDonnell
+Michael Rembetsy <mcr@etsy.com>                     Etsy, Inc
 Magnus Hedemark <magnus@yonderway.com>              Wireless Generation
 Ariel Jolo <ajolo@sysarmy.com.ar>                   sysARmy
 Ryan Frantz <ryanleefrantz@gmail.com>               Crabby Admins (www.crabbyadmins.org)
