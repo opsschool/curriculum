@@ -8,14 +8,14 @@ Scalability
 -----------
 
 The most basic scalability need is to allow one address handle a load that's too much for one physical server.
-A secondary scalability factor is offloading or reducing underlying tasks, such as SSL termination and TCP re-use.
-Smart load balancers that are able to poll and react to client load can seemlessly distribute work among heterogenous machines.
+A secondary scalability factor is offloading or reducing underlying tasks, such as SSL termination and re-using already-established TCP links between the load balancer and the servers to reduce the time taken to send data to the user.
+Smart load balancers that are able to poll and react to client load can seamlessly distribute work among heterogeneous machines.
 
-Reliabiltity
+Reliability
 ------------
 
 Simple health checking alone increases reliability.
-A load balancer that simply polls an endpoint like status/health can detect a machine that has failed and remove it from the pool of active servers.
+A load balancer that simply polls an endpoint like status/health can detect a machine or application that has failed and remove it from the pool of active servers.
 More advanced health checking can remove partially failed systems that are exhibiting poor or intermittent performance.
 
 Agility
