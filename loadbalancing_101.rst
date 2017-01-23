@@ -4,23 +4,29 @@ Load Balancing
 Why do we use load balancers?
 =============================
 
-* A fast, HTTP/TCP based load balancer can distribute between slower application
-  servers, and can keep each application server running optimally
-* They keep application servers busy by buffering responses and serving them to
-  slow clients (or keepalives). We want app servers to do real work, not waste
-  time waiting on the network.
-* Load balancers provide a mechanism to verify the health of backend servers to
-  ensure traffic is only routed to backends available to service the request.
-  These health checks can be simplistic ICMP pings to ensure host availability
-  to advanced HTTP (layer 7) health checks that use HTTP response codes or
-  content matching.
-* Can provide a layer of abstraction such that end user endpoints remain
-  consistent (i.e URLs) as backend application infrastructure expands
-  (or contracts)
-* Can be either software based (aka reverse proxies) or hardware based (physical
-  devices optimized for network throughput and ISO layer 2,3 and 4 routing).
-* Can be tuned by itself for max conns?
-* HTTP path based routing, 1 domain to multiple heterogeneous server pools.
+Scalability
+-----------
+
+The most basic scalability need is to allow one address handle a load that's too much for one physical server.
+A secondary scalability factor is offloading or reducing underlying tasks, such as SSL termination and re-using already-established TCP links between the load balancer and the servers to reduce the time taken to send data to the user.
+Smart load balancers that are able to poll and react to client load can seamlessly distribute work among heterogeneous machines.
+
+Reliability
+------------
+
+Simple health checking alone increases reliability.
+A load balancer that simply polls an endpoint like status/health can detect a machine or application that has failed and remove it from the pool of active servers.
+More advanced health checking can remove partially failed systems that are exhibiting poor or intermittent performance.
+
+Agility
+-------
+
+A load balancer can assist in making application development faster too.
+Load balancers could be configured to route requests using higher level information about the connection,
+such as certain URLs served by certain types of servers,
+or sending everybody who logs in as an employee to an internal staging server instead of production.
+Finally, a load balancer permits various different strategies for introducing new deployments in stages.
+
 
 Application implications
 ========================
