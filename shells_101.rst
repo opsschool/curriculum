@@ -42,7 +42,15 @@ The following commands are very common while using the ``emacs`` mode.
 - ``Ctrl-u``: Delete from the cursor backward
 - ``Ctrl-r``: Search the command history
 
-.. todo:: Add vi examples. I haven't used that mode in years and will need to look up the mirror version of the above commands.
+The following commands are very common while using the ``vi`` mode.
+
+- ``h``: Move backward by one character
+- ``l``: Move forward by one character
+- ``0``: Move to the beginning of the line
+- ``$``: Move to the end of the line
+- ``d$``: Delete from the cursor to the end of the line
+- ``d0``: Delete from the cursor the beginning of the line
+- ``:history s``: Search the command history
 
 Setting the Mode
 ~~~~~~~~~~~~~~~~
