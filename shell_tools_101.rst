@@ -604,7 +604,7 @@ The ``END`` pattern tells ``awk`` what to do after all lines in the file have be
 In our case, that involves printing out the average age of all students.
 To get the average age, the sum of all ages (stored in variable ``sum``) was divided by the total number of lines in the file, represented by ``NR``.
 
-In addition to the ``END`` pattern, ``awk`` also provides a ``BEGIN`` pattern, which describes an action that needs to be taken before a the first line of the file is processed.
+In addition to the ``END`` pattern, ``awk`` also provides a ``BEGIN`` pattern, which describes an action that needs to be taken before the first line of the file is processed.
 
 For example:
 
