@@ -26,7 +26,7 @@ same functionality:
 RPM and yum (RedHat, CentOS, Fedora, Scientific Linux)
 ======================================================
 
-In the following examples, we will be using the package ``dstat`` in our examples. The
+In the following examples, we will be using the package ``dstat``. The
 process however applies to any software you may want to install.
 
 Yum provides a wrapper around RPM, which can be used to search for, and install
