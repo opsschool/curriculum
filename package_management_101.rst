@@ -7,7 +7,7 @@ Workflow
 What is a package manager?
 ==========================
 
-Modern operating systems use package managers to take care of the installation
+Modern operating systems use package managers to take care of the installation,
 maintenance and removal of software. On Windows this is `Windows Installer
 <http://en.wikipedia.org/wiki/Windows_Installer>`_ (formerly Microsoft
 Installer). On Linux there are two popular package managers:
