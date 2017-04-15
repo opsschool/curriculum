@@ -99,6 +99,15 @@ IPTables: Adding and deleting rules
 pf: Adding and deleting rules
 -----------------------------
 
+Jump servers
+------------
+
+Firewalls are commonly configured to deny access to administrative ports, such as ``ssh`` and ``RDP``. In such configurations, it's common to provide a `jump server <http://en.wikipedia.org/wiki/Jump_Server>`_ which bridges the firewall. Simply put, a jump server has interfaces on both sides of a firewall, and a minimum of services - most commonly, it only provides ``ssh``, allowing administrators to reach the protected systems via either ssh port forwarding or by invoking ssh from a shell on the jump server. As they easily provide a bare minimum of access in a manner familiar to administrators, jump servers are commonly alternatives or supplements to VPN access, particularly where such access would only ever be used for management purposes.
+
+Jump servers may be used in a variety of ways depending on network topology and security policy. They may be completely unnecessary for routine, day to day work from within the operations center, but required for outside access as might be required for "on call" work  Jump servers may also be required to cross into a DMZ or across other security partitions, such as access into a customer's network in a colocation enviroment.
+
+Not all jump servers are authorized, or even intentional. Intruders have been known to install such facilities after gaining access to one machine in order to be able to further explore, exploit, and extend their access. Administrators and developers alike have been known to configure jump servers to circumvent access restrictions that make their jobs overly complicated, and any machine with ssh running that spans networks or security domains can potentially be an unintentional jump server depending on firewall topology.
+
 
 Public Key Cryptography
 =======================
