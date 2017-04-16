@@ -1,0 +1,1089 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Databases 101 (Relational Databases) &mdash; Ops School Curriculum 0.1 documentation</title>
+  
+
+  
+  
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="top" title="Ops School Curriculum 0.1 documentation" href="index.html"/>
+        <link rel="next" title="Databases 201" href="databases_201.html"/>
+        <link rel="prev" title="Logs 201" href="logs_201.html"/> 
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        <a href="index.html" class="fa fa-home"> Ops School Curriculum</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+        
+            <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="introduction.html#goals-and-focus">Goals and Focus</a></li>
+<li class="toctree-l2"><a class="reference internal" href="introduction.html#syllabus-layout">Syllabus layout</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="introduction.html#contributions">Contributions</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="introduction.html#how-we-ll-organize-work">How we&#8217;ll organize work</a></li>
+<li class="toctree-l2"><a class="reference internal" href="introduction.html#how-to-contribute">How to contribute</a></li>
+<li class="toctree-l2"><a class="reference internal" href="introduction.html#rewards-for-contributions">Rewards for contributions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="introduction.html#ops-school-videos">Ops School Videos</a></li>
+<li class="toctree-l2"><a class="reference internal" href="introduction.html#how-to-write-sections">How to write sections</a></li>
+<li class="toctree-l2"><a class="reference internal" href="introduction.html#overwriting-existing-content">Overwriting existing content</a></li>
+<li class="toctree-l2"><a class="reference internal" href="introduction.html#credits">Credits</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="meta/guidelines.html">Guidelines</a></li>
+<li class="toctree-l1"><a class="reference internal" href="careers.html">Careers in Operations</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="careers.html#deciding-a-career-path">Deciding a career path</a></li>
+<li class="toctree-l2"><a class="reference internal" href="careers.html#generalized-career-paths">Generalized career paths</a></li>
+<li class="toctree-l2"><a class="reference internal" href="careers.html#specialized-career-paths">Specialized career paths</a></li>
+<li class="toctree-l2"><a class="reference internal" href="careers.html#how-to-become-an-operations-engineer">How to become an operations engineer</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="sysadmin_101.html">Sysadmin 101</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="sysadmin_101.html#what-is-systems-administration">What is Systems Administration?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sysadmin_101.html#what-is-development">What is Development?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sysadmin_101.html#contrasting-development-and-operations">Contrasting Development and Operations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sysadmin_101.html#history-of-development-and-operations">History of Development and Operations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sysadmin_101.html#what-system-administration-isn-t">What System Administration Isn&#8217;t</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="unix_101.html">Unix fundamentals 101</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="filesystems_101.html">File systems</a></li>
+<li class="toctree-l2"><a class="reference internal" href="shells_101.html">Shells</a></li>
+<li class="toctree-l2"><a class="reference internal" href="package_management_101.html">Package management</a></li>
+<li class="toctree-l2"><a class="reference internal" href="boot_process_101.html">The Boot Process</a></li>
+<li class="toctree-l2"><a class="reference internal" href="shell_tools_101.html">Useful shell tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cron_101.html">Crontab</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="unix_201.html">Unix fundamentals 201</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="kernel_tuning.html">Kernel tuning</a></li>
+<li class="toctree-l2"><a class="reference internal" href="unix_signals.html">Signals</a></li>
+<li class="toctree-l2"><a class="reference internal" href="syscalls.html">Syscalls</a></li>
+<li class="toctree-l2"><a class="reference internal" href="netbooting.html">Booting over the network</a></li>
+<li class="toctree-l2"><a class="reference internal" href="inits.html"><tt class="docutils literal"><span class="pre">/bin/init</span></tt> and its descendants</a></li>
+<li class="toctree-l2"><a class="reference internal" href="stats_diagnosing.html">Looking at system metrics</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="windows_101.html">MS Windows fundamentals 101</a></li>
+<li class="toctree-l1"><a class="reference internal" href="text_editing_101.html">Text Editing 101</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="text_editing_101.html#a-little-history">A little history</a></li>
+<li class="toctree-l2"><a class="reference internal" href="text_editing_101.html#vi-basics"><tt class="docutils literal"><span class="pre">vi</span></tt> basics</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="text_editing_201.html">Text Editing 201</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="text_editing_201.html#vim">Vim</a></li>
+<li class="toctree-l2"><a class="reference internal" href="text_editing_201.html#emacs">Emacs</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="sysadmin_tools.html">Tools for productivity</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="sysadmin_tools.html#terminal-emulators">Terminal emulators</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sysadmin_tools.html#ssh">SSH</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sysadmin_tools.html#ssh-use-cases">SSH Use Cases</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sysadmin_tools.html#multiplexers">Multiplexers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sysadmin_tools.html#shell-customisations">Shell customisations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sysadmin_tools.html#mosh">Mosh</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sysadmin_tools.html#ticketing-systems">Ticketing systems</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sysadmin_tools.html#note-taking">Note-taking</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="security_101.html">Security 101</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="security_101.html#authentication-in-unix">Authentication in unix</a></li>
+<li class="toctree-l2"><a class="reference internal" href="security_101.html#adding-and-deleting-users-and-groups">Adding and deleting users and groups</a></li>
+<li class="toctree-l2"><a class="reference internal" href="security_101.html#standard-unix-filesystem-permissions">Standard unix filesystem permissions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="security_101.html#pam">PAM</a></li>
+<li class="toctree-l2"><a class="reference internal" href="security_101.html#chroot-jails-and-containers">Chroot, jails and containers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="security_101.html#sudo-or-why-you-should-not-log-in-as-root">Sudo (or, &#8220;Why you should not log in as root&#8221;)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="security_101.html#history-and-lore">History and Lore</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="security_201.html">Security 201</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="security_201.html#centralised-accounts">Centralised accounts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="security_201.html#firewalls-and-packet-filters">Firewalls and packet filters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="security_201.html#public-key-cryptography">Public Key Cryptography</a></li>
+<li class="toctree-l2"><a class="reference internal" href="security_201.html#two-factor-authentication">Two factor authentication</a></li>
+<li class="toctree-l2"><a class="reference internal" href="security_201.html#building-systems-to-be-auditable">Building systems to be auditable</a></li>
+<li class="toctree-l2"><a class="reference internal" href="security_201.html#network-intrusion-detection">Network Intrusion Detection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="security_201.html#host-intrusion-detection">Host Intrusion Detection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="security_201.html#defense-practices">Defense practices</a></li>
+<li class="toctree-l2"><a class="reference internal" href="security_201.html#risk-and-risk-management">Risk and risk management</a></li>
+<li class="toctree-l2"><a class="reference internal" href="security_201.html#compliance-the-bare-minimum">Compliance: The bare minimum</a></li>
+<li class="toctree-l2"><a class="reference internal" href="security_201.html#dealing-with-security-incidents">Dealing with security incidents</a></li>
+<li class="toctree-l2"><a class="reference internal" href="security_201.html#acls-and-extended-attributes-xattrs">ACLs and extended attributes (xattrs)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="security_201.html#selinux">SELinux</a></li>
+<li class="toctree-l2"><a class="reference internal" href="security_201.html#data-placement">Data placement</a></li>
+<li class="toctree-l2"><a class="reference internal" href="security_201.html#additional-reading">Additional reading</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="troubleshooting_101.html">Troubleshooting</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="troubleshooting_101.html#methodologies">Methodologies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="troubleshooting_101.html#working-effectively-during-a-crisis">Working effectively during a crisis</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="networking_101.html">Networking 101</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="networking_101.html#the-rfc-documents">The RFC Documents</a></li>
+<li class="toctree-l2"><a class="reference internal" href="networking_101.html#osi-7-layer-model-osi-reference-model">OSI 7-layer model (OSI Reference Model)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="networking_101.html#tcp-ip-arpa-4-layer-model">TCP/IP (ARPA) 4-layer model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="networking_101.html#ip-addressing">IP Addressing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="networking_101.html#tcp-vs-udp">TCP vs UDP</a></li>
+<li class="toctree-l2"><a class="reference internal" href="networking_101.html#subnetting-netmasks-and-cidr">Subnetting, netmasks and CIDR</a></li>
+<li class="toctree-l2"><a class="reference internal" href="networking_101.html#private-address-space-rfc-1918">Private address space (<strong>RFC 1918</strong>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="networking_101.html#static-routing">Static routing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="networking_101.html#nat">NAT</a></li>
+<li class="toctree-l2"><a class="reference internal" href="networking_101.html#networking-cable">Networking cable</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="networking_201.html">Networking 201</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="networking_201.html#vlans-802-1q-tagging">VLANs, 802.1q tagging</a></li>
+<li class="toctree-l2"><a class="reference internal" href="networking_201.html#spanning-tree">Spanning Tree</a></li>
+<li class="toctree-l2"><a class="reference internal" href="networking_201.html#static-routing">Static Routing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="networking_201.html#dynamic-routing-protocols-rip-ospf-bgp">Dynamic routing protocols (RIP, OSPF, BGP)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="networking_201.html#acls">ACLs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="networking_201.html#network-bonding-802-3ad-lacp-link-aggregation">Network Bonding (802.3ad / LACP link aggregation)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="networking_201.html#ios-switch-configuration">IOS switch configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="networking_201.html#gre-and-other-tunnels">GRE and other tunnels</a></li>
+<li class="toctree-l2"><a class="reference internal" href="networking_201.html#multi-homed-hosts">Multi-homed hosts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="networking_201.html#similarities-and-differences-between-ipv4-and-ipv6-networking">Similarities and differences between IPv4 and IPv6 networking</a></li>
+<li class="toctree-l2"><a class="reference internal" href="networking_201.html#implications-of-dual-stack-firewalls-especially-under-linux">Implications of dual-stack firewalls (especially under Linux)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="networking_201.html#multicast-uses-and-limitations">Multicast uses and limitations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="networking_201.html#latency-vs-bandwidth">Latency vs. Bandwidth</a></li>
+<li class="toctree-l2"><a class="reference internal" href="networking_201.html#vpns">VPNs</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="common_services.html">Common services</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="system_daemons_101.html">System daemons 101</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dns_101.html">DNS 101</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dns_201.html">DNS 201</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dhcp.html">DHCP</a></li>
+<li class="toctree-l2"><a class="reference internal" href="http_101.html">HTTP 101 (Core protocol)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="http_201.html">HTTP 201 (Application Servers &amp; Frameworks)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="smtp_101.html">SMTP 101</a></li>
+<li class="toctree-l2"><a class="reference internal" href="smtp_201.html">SMTP 201</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="identity_management.html">Identity Management 101</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="identity_management.html#ldap">LDAP</a></li>
+<li class="toctree-l2"><a class="reference internal" href="identity_management.html#nis">NIS</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="active_directory_101.html">Active Directory 101</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="active_directory_101.html#what-is-active-directory">What is Active Directory?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="active_directory_101.html#what-is-active-directory-used-for">What is Active Directory used for?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="active_directory_101.html#you-mention-separate-components-what-is-active-directory-composed-of">You mention &#8220;separate components&#8221;; what is Active Directory composed of?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="active_directory_101.html#what-specific-services-does-active-directory-provide">What specific services does Active Directory provide?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="active_directory_101.html#best-practices-for-managing-an-active-directory-installation">Best Practices for managing an Active Directory installation</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="active_directory_201.html">Active Directory 201</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="active_directory_201.html#detailed-breakdown-of-active-directory-components-services">Detailed Breakdown of Active Directory Components/Services</a></li>
+<li class="toctree-l2"><a class="reference internal" href="active_directory_201.html#advanced-active-directory-maintenance">Advanced Active Directory Maintenance</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="remote_filesystems_101.html">Remote Filesystems 101</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="remote_filesystems_101.html#nfsv3">NFSv3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="remote_filesystems_101.html#iscsi">iSCSI</a></li>
+<li class="toctree-l2"><a class="reference internal" href="remote_filesystems_101.html#samba-cifs">SAMBA/CIFS</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="remote_filesystems_201.html">Remote Filesystems 201</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="remote_filesystems_201.html#glusterfs">GlusterFS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="remote_filesystems_201.html#nfsv4">NFSv4</a></li>
+<li class="toctree-l2"><a class="reference internal" href="remote_filesystems_201.html#netatalk-afp">Netatalk / AFP</a></li>
+<li class="toctree-l2"><a class="reference internal" href="remote_filesystems_201.html#s3">S3</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="programming_101.html">Programming 101</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="programming_101.html#shell-scripting-basics">Shell scripting basics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="programming_101.html#regular-expressions">Regular Expressions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="programming_101.html#sed-awk">Sed &amp; awk</a></li>
+<li class="toctree-l2"><a class="reference internal" href="programming_101.html#gigo">GIGO</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="programming_201.html">Programming 201</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="programming_201.html#common-elements-in-scripting-and-what-they-do">Common elements in scripting, and what they do</a></li>
+<li class="toctree-l2"><a class="reference internal" href="programming_201.html#c-a-very-basic-overview">C (A very basic overview)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="programming_201.html#ruby">Ruby</a></li>
+<li class="toctree-l2"><a class="reference internal" href="programming_201.html#python">Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="programming_201.html#version-control">Version Control</a></li>
+<li class="toctree-l2"><a class="reference internal" href="programming_201.html#api-design-fundamentals">API design fundamentals</a></li>
+<li class="toctree-l2"><a class="reference internal" href="programming_201.html#continuous-integration">Continuous Integration</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="hardware_101.html">Hardware 101</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="hardware_101.html#hardware-types">Hardware Types</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hardware_101.html#basic-server-architecture">Basic server architecture</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hardware_101.html#disk-management">Disk management</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hardware_101.html#performance-redundancy">Performance/Redundancy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hardware_101.html#troubleshooting">Troubleshooting</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="datacenters/datacenters_101.html">Datacenters 101</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="datacenters/datacenters_101.html#power-budgets">Power budgets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="datacenters/datacenters_101.html#cooling-budgets">Cooling budgets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="datacenters/datacenters_101.html#you-will-be-judged-by-the-tidiness-of-your-rack">You will be judged by the tidiness of your rack</a></li>
+<li class="toctree-l2"><a class="reference internal" href="datacenters/datacenters_101.html#machine-and-cable-labeling">Machine and cable labeling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="datacenters/datacenters_101.html#traditional-naming-conventions">Traditional naming conventions</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="datacenters/datacenters_201.html">Datacenters 201</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="datacenters/datacenters_201.html#networking-many-racks">Networking many racks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="datacenters/datacenters_201.html#power">Power</a></li>
+<li class="toctree-l2"><a class="reference internal" href="datacenters/datacenters_201.html#cooling">Cooling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="datacenters/datacenters_201.html#physical-security-and-common-security-standards-compliance-requirements">Physical security and common security standards compliance requirements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="datacenters/datacenters_201.html#suggested-practices">Suggested practices</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="datacenters/datacenters_301.html">Datacenters 301</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="datacenters/datacenters_301.html#power">Power</a></li>
+<li class="toctree-l2"><a class="reference internal" href="datacenters/datacenters_301.html#increasing-cooling-efficiency">Increasing cooling efficiency</a></li>
+<li class="toctree-l2"><a class="reference internal" href="datacenters/datacenters_301.html#design-options">Design Options</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="virtualization_101.html">Virtualization 101</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="virtualization_101.html#intro-to-virtualization-technologies">Intro to virtualization technologies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="virtualization_101.html#the-cloud">The Cloud</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="virtualization_201.html">Virtualization 201</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="virtualization_201.html#managing-virtualized-infrastructures-private-clouds">Managing virtualized infrastructures (Private clouds)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="virtualization_201.html#leveraging-virtualization-for-development">Leveraging virtualization for development</a></li>
+<li class="toctree-l2"><a class="reference internal" href="virtualization_201.html#leveraging-virtualization-for-production">Leveraging virtualization for production</a></li>
+<li class="toctree-l2"><a class="reference internal" href="virtualization_201.html#security-implications-of-virtualization">Security implications of virtualization</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="logs_101.html">Logs 101</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="logs_101.html#common-system-logs-formats">Common system logs &amp; formats</a></li>
+<li class="toctree-l2"><a class="reference internal" href="logs_101.html#standard-error">Standard Error</a></li>
+<li class="toctree-l2"><a class="reference internal" href="logs_101.html#log-files">Log files</a></li>
+<li class="toctree-l2"><a class="reference internal" href="logs_101.html#syslog">Syslog</a></li>
+<li class="toctree-l2"><a class="reference internal" href="logs_101.html#log-rotation-append-truncate">Log rotation, append, truncate</a></li>
+<li class="toctree-l2"><a class="reference internal" href="logs_101.html#retention-and-archival">Retention and archival</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="logs_201.html">Logs 201</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="logs_201.html#centralized-logging">Centralized logging</a></li>
+<li class="toctree-l2"><a class="reference internal" href="logs_201.html#log-parsing">Log parsing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="logs_201.html#search-correlation">Search &amp; Correlation</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="current reference internal" href="">Databases 101 (Relational Databases)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#what-is-a-database">What is a Database?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#what-is-a-relational-database">What is a Relational Database?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#why-we-use-databases">Why We Use Databases?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#what-is-sql">What is SQL?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#sql-shell">SQL shell</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#creating-databases">Creating databases</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#creating-users">Creating users</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#create-tables">Create Tables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#alter-table">Alter Table</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#drop-table">Drop Table</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#data-type">Data Type</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#granting-privileges">Granting privileges</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#removing-privileges">Removing Privileges</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#basic-normalized-schema-design">Basic normalized schema design</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#select-insert-update-and-delete">Select, Insert, Update and Delete</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#pro-tips">Pro Tips</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="databases_201.html">Databases 201</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="databases_201.html#database-theory">Database Theory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="databases_201.html#document-databases">Document Databases</a></li>
+<li class="toctree-l2"><a class="reference internal" href="databases_201.html#key-value-stores">Key-value Stores</a></li>
+<li class="toctree-l2"><a class="reference internal" href="databases_201.html#graph-databases">Graph Databases</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="application_components_201.html">Application Components 201</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="application_components_201.html#message-brokers">Message Brokers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="application_components_201.html#memory-caches">Memory Caches</a></li>
+<li class="toctree-l2"><a class="reference internal" href="application_components_201.html#specialized-caches">Specialized Caches</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="loadbalancing_101.html">Load Balancing</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="loadbalancing_101.html#why-do-we-use-load-balancers">Why do we use load balancers?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="loadbalancing_101.html#application-implications">Application implications</a></li>
+<li class="toctree-l2"><a class="reference internal" href="loadbalancing_101.html#non-http-use-cases">Non-HTTP use cases</a></li>
+<li class="toctree-l2"><a class="reference internal" href="loadbalancing_101.html#software">Software</a></li>
+<li class="toctree-l2"><a class="reference internal" href="loadbalancing_101.html#hardware">Hardware</a></li>
+<li class="toctree-l2"><a class="reference internal" href="loadbalancing_101.html#multi-dc">Multi-dc</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="monitoring_101.html">Monitoring, Notifications, and Metrics 101</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="monitoring_101.html#history-how-we-used-to-monitor-and-how-we-got-better-monitors-as-tests">History: How we used to monitor, and how we got better (monitors as tests)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="monitoring_101.html#perspective-end-to-end-vs-introspective-monitoring">Perspective (end-to-end) vs Introspective monitoring</a></li>
+<li class="toctree-l2"><a class="reference internal" href="monitoring_101.html#metrics-what-to-collect-what-to-do-with-them">Metrics: what to collect, what to do with them</a></li>
+<li class="toctree-l2"><a class="reference internal" href="monitoring_101.html#common-tools">Common tools</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="monitoring_201.html">Monitoring, Notifications, and Metrics 201</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="monitoring_201.html#dataviz-graphing">Dataviz &amp; Graphing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="monitoring_201.html#graphite-statsd">Graphite, StatsD</a></li>
+<li class="toctree-l2"><a class="reference internal" href="monitoring_201.html#dashboard-info-for-ops-and-info-for-the-business">Dashboard: Info for ops and info for the business</a></li>
+<li class="toctree-l2"><a class="reference internal" href="monitoring_201.html#third-party-tools">Third-party tools</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="bcp.html">Business Continuity Planning</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="backups.html">Backups</a></li>
+<li class="toctree-l2"><a class="reference internal" href="outages.html">Outages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="postmortems.html">Postmortems</a></li>
+<li class="toctree-l2"><a class="reference internal" href="disaster_recovery.html">Disaster Recovery</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="architecture_101.html">Architecture 101</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="architecture_101.html#how-to-make-good-architecture-decisions">How to make good architecture decisions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="architecture_101.html#patterns-and-anti-patterns">Patterns and anti-patterns</a></li>
+<li class="toctree-l2"><a class="reference internal" href="architecture_101.html#introduction-to-availability">Introduction to availability</a></li>
+<li class="toctree-l2"><a class="reference internal" href="architecture_101.html#introduction-to-scalability">Introduction to scalability</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="architecture_201.html">Architecture 201</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="architecture_201.html#service-oriented-architectures">Service Oriented Architectures</a></li>
+<li class="toctree-l2"><a class="reference internal" href="architecture_201.html#fault-tolerance-fault-protection-masking-dependability-fundamentals">Fault tolerance, fault protection, masking, dependability fundamentals</a></li>
+<li class="toctree-l2"><a class="reference internal" href="architecture_201.html#caching-concerns">Caching Concerns</a></li>
+<li class="toctree-l2"><a class="reference internal" href="architecture_201.html#crash-only">Crash only</a></li>
+<li class="toctree-l2"><a class="reference internal" href="architecture_201.html#synchronous-vs-asynchronous">Synchronous vs. Asynchronous</a></li>
+<li class="toctree-l2"><a class="reference internal" href="architecture_201.html#business-continuity-vs-disaster-recovery">Business continuity vs. Disaster Recovery</a></li>
+<li class="toctree-l2"><a class="reference internal" href="architecture_201.html#designing-for-scalability-horizontal-vertical">Designing for Scalability: Horizontal, Vertical</a></li>
+<li class="toctree-l2"><a class="reference internal" href="architecture_201.html#simplicity">Simplicity</a></li>
+<li class="toctree-l2"><a class="reference internal" href="architecture_201.html#performance">Performance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="architecture_201.html#tiered-architectures">Tiered architectures</a></li>
+<li class="toctree-l2"><a class="reference internal" href="architecture_201.html#mttr-mtbf">MTTR &gt; MTBF</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="config_management.html">Configuration Management 101</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="config_management.html#a-brief-history-of-configuration-management">A Brief History of Configuration Management</a></li>
+<li class="toctree-l2"><a class="reference internal" href="config_management.html#idempotence">Idempotence</a></li>
+<li class="toctree-l2"><a class="reference internal" href="config_management.html#convergent-and-congruent-systems">Convergent and Congruent systems</a></li>
+<li class="toctree-l2"><a class="reference internal" href="config_management.html#direct-and-indirect-systems-ansible-capistrano">Direct and Indirect systems: ansible, capistrano</a></li>
+<li class="toctree-l2"><a class="reference internal" href="config_management.html#chef">Chef</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="config_management.html#configuration-management-201">Configuration Management 201</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="config_management.html#ansible">Ansible</a></li>
+<li class="toctree-l2"><a class="reference internal" href="config_management.html#puppet">Puppet</a></li>
+<li class="toctree-l2"><a class="reference internal" href="config_management.html#cfengine-3">Cfengine 3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="config_management.html#saltstack">SaltStack</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="capacity_planning.html">Capacity Planning</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="capacity_planning.html#fundamentals-of-capacity-planning">Fundamentals of capacity planning</a></li>
+<li class="toctree-l2"><a class="reference internal" href="capacity_planning.html#forecasting">Forecasting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="capacity_planning.html#diagonal-scaling">Diagonal scaling</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="statistics.html">Statistics For Engineers</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="statistics.html#normal-distributions">Normal distributions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="statistics.html#percentiles-histograms-averages-mean-medians">Percentiles, histograms, averages, mean, medians</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="deployment_101.html">Software Deployment 101</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="deployment_101.html#software-deployment-vs-configuration-management">Software deployment vs configuration management</a></li>
+<li class="toctree-l2"><a class="reference internal" href="deployment_101.html#running-services">Running services</a></li>
+<li class="toctree-l2"><a class="reference internal" href="deployment_101.html#package-management">Package management</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="deployment_201.html">Software Deployment 201</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="deployment_201.html#running-services">Running services</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="soft_skills_101.html">Soft Skills 101</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="soft_skills_101.html#communication-basics">Communication basics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="soft_skills_101.html#communication-modes">Communication Modes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="soft_skills_101.html#special-cases-for-operations">Special cases for operations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="soft_skills_101.html#time-management">Time Management</a></li>
+<li class="toctree-l2"><a class="reference internal" href="soft_skills_101.html#project-management">Project Management</a></li>
+<li class="toctree-l2"><a class="reference internal" href="soft_skills_101.html#the-tao-of-devops">The Tao of DevOps</a></li>
+<li class="toctree-l2"><a class="reference internal" href="soft_skills_101.html#the-importance-of-documentation">The importance of Documentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="soft_skills_101.html#working-with-other-teams">Working with other teams</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="soft_skills_201.html">Soft Skills 201</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="soft_skills_201.html#business-acumen-in-operations">Business Acumen in Operations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="soft_skills_201.html#understanding-the-role-of-operations">Understanding the role of operations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="soft_skills_201.html#thinking-broadly">Thinking broadly</a></li>
+<li class="toctree-l2"><a class="reference internal" href="soft_skills_201.html#promoting-change">Promoting Change</a></li>
+<li class="toctree-l2"><a class="reference internal" href="soft_skills_201.html#building-basic-business-skills">Building basic business skills</a></li>
+<li class="toctree-l2"><a class="reference internal" href="soft_skills_201.html#specific-examples">Specific Examples</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="labs.html">Labs exercises</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="labs.html#bare-metal-provisioning-101">Bare-Metal Provisioning 101</a></li>
+<li class="toctree-l2"><a class="reference internal" href="labs.html#bare-metal-provisioning-201">Bare-Metal Provisioning 201</a></li>
+<li class="toctree-l2"><a class="reference internal" href="labs.html#cloud-provisioning-101">Cloud Provisioning 101</a></li>
+<li class="toctree-l2"><a class="reference internal" href="labs.html#cloud-provisioning-201">Cloud Provisioning 201</a></li>
+<li class="toctree-l2"><a class="reference internal" href="labs.html#database-101">Database 101</a></li>
+<li class="toctree-l2"><a class="reference internal" href="labs.html#database-201">Database 201</a></li>
+<li class="toctree-l2"><a class="reference internal" href="labs.html#database-301">Database 301</a></li>
+<li class="toctree-l2"><a class="reference internal" href="labs.html#automation-101">Automation 101</a></li>
+<li class="toctree-l2"><a class="reference internal" href="labs.html#automation-chef-201">Automation - Chef 201</a></li>
+<li class="toctree-l2"><a class="reference internal" href="labs.html#automation-chef-301">Automation - Chef 301</a></li>
+<li class="toctree-l2"><a class="reference internal" href="labs.html#automation-chef-302">Automation - Chef 302</a></li>
+<li class="toctree-l2"><a class="reference internal" href="labs.html#automation-puppet-201">Automation - Puppet 201</a></li>
+<li class="toctree-l2"><a class="reference internal" href="labs.html#automation-puppet-301">Automation - Puppet 301</a></li>
+<li class="toctree-l2"><a class="reference internal" href="labs.html#package-management-101">Package Management 101</a></li>
+<li class="toctree-l2"><a class="reference internal" href="labs.html#package-management-201">Package Management 201</a></li>
+<li class="toctree-l2"><a class="reference internal" href="labs.html#build-automation-fleets">Build automation fleets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="labs.html#version-control-with-git-101">Version Control with Git 101</a></li>
+<li class="toctree-l2"><a class="reference internal" href="labs.html#dns-101">DNS 101</a></li>
+<li class="toctree-l2"><a class="reference internal" href="labs.html#http-101">HTTP 101</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="learning.html">Learning and the Community</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="learning.html#learning-and-strategies-for-improvement">Learning and strategies for improvement</a></li>
+<li class="toctree-l2"><a class="reference internal" href="learning.html#things-to-keep-in-mind-as-you-learn-how-to-be-an-engineer">Things to keep in mind as you learn how to be an engineer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="learning.html#golden-rules-for-careers-in-ops">Golden rules for careers in ops</a></li>
+<li class="toctree-l2"><a class="reference internal" href="learning.html#where-to-look-for-help-in-the-community">Where to look for help in the community</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="seealso.html">See also</a></li>
+<li class="toctree-l1"><a class="reference internal" href="meta/contributions.html">Contributions</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="meta/contributions.html#how-we-ll-organize-work">How we&#8217;ll organize work</a></li>
+<li class="toctree-l2"><a class="reference internal" href="meta/contributions.html#how-to-contribute">How to contribute</a></li>
+<li class="toctree-l2"><a class="reference internal" href="meta/contributions.html#rewards-for-contributions">Rewards for contributions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="meta/contributions.html#ops-school-videos">Ops School Videos</a></li>
+<li class="toctree-l2"><a class="reference internal" href="meta/contributions.html#how-to-write-sections">How to write sections</a></li>
+<li class="toctree-l2"><a class="reference internal" href="meta/contributions.html#overwriting-existing-content">Overwriting existing content</a></li>
+<li class="toctree-l2"><a class="reference internal" href="meta/contributions.html#credits">Credits</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="meta/conventions.html">Conventions</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="meta/conventions.html#style-guide">Style Guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="meta/conventions.html#sample-network">Sample Network</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="meta/style_guide.html">Style Guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="meta/style_guide.html#editing">Editing</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="glossary.html">Glossary</a></li>
+</ul>
+
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="index.html">Ops School Curriculum</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="index.html">Docs</a> &raquo;</li>
+      
+    <li>Databases 101 (Relational Databases)</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          <a href="_sources/databases_101.txt" rel="nofollow"> View page source</a>
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            
+  <div class="section" id="databases-101-relational-databases">
+<h1>Databases 101 (Relational Databases)<a class="headerlink" href="#databases-101-relational-databases" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="what-is-a-database">
+<h2>What is a Database?<a class="headerlink" href="#what-is-a-database" title="Permalink to this headline">¶</a></h2>
+<p>A database is a program or library that helps you store data.
+They usually impose some sort of structure to the data to assist with querying and filtering.
+The most common structure databases use to store data is a table, and most databases will use multiple tables to store data.</p>
+<p>A table is composed of rows representing an item, and columns represent some attribute of that item.
+Much like using a spreadsheet for a task list, where a row would be a task, and you may have a column for a task name, and a second column to determine whether it has been completed.</p>
+</div>
+<div class="section" id="what-is-a-relational-database">
+<h2>What is a Relational Database?<a class="headerlink" href="#what-is-a-relational-database" title="Permalink to this headline">¶</a></h2>
+<p>A relational database is a database in which data is organized into tables, usually with some form of relationship between them.
+For example, a table containing customer names and addresses, and a table containing sales transactions.
+Rather than repeat customer details every time a transaction is done, the data is stored once in one table, and then a unique reference is stored in the sales transactions table, linking each transaction to the customer.
+This approach makes a relational database very efficient for storing data, since reused data can be stored in a single table and referenced in other tables.</p>
+<p>Data can be retrieved in many forms by combining multiple tables into new tables using operations like <tt class="docutils literal"><span class="pre">JOIN</span></tt>.
+The composed table will have new rows that are a combination of its parent tables.</p>
+</div>
+<div class="section" id="why-we-use-databases">
+<h2>Why We Use Databases?<a class="headerlink" href="#why-we-use-databases" title="Permalink to this headline">¶</a></h2>
+<p>We use databases to store data.
+They help provide us guarantees that data is stored and that it exists in the correct format.
+In addition most databases are heavily optimized making data retrieval very fast.</p>
+<p>Because of these attributes, we use databases a lot.
+Most e-commerce sites use databases to keep inventory and sales records.
+Doctors offices use databases to store medical records, and the DMV uses databases to keep track of cars.
+Lawyers use databases to keep track of case law, and many websites use databases to store and organize content.
+Databases are everywhere, and you interact with them daily.</p>
+</div>
+<div class="section" id="what-is-sql">
+<h2>What is SQL?<a class="headerlink" href="#what-is-sql" title="Permalink to this headline">¶</a></h2>
+<p>SQL or Structured Query Language is a <a class="reference internal" href="glossary.html#term-domain-specific-language"><em class="xref std std-term">domain specific language</em></a> used for accessing databases.
+It has a declarative syntax, meaning you declare the structure you want returned, the sources, and constraints in a single statement.
+The database&#8217;s query parser and planner will determine a how to retrieve your data from this statement.</p>
+</div>
+<div class="section" id="sql-shell">
+<h2>SQL shell<a class="headerlink" href="#sql-shell" title="Permalink to this headline">¶</a></h2>
+<p>Many relational databases provide an interactive <a class="reference internal" href="glossary.html#term-cli"><em class="xref std std-term">CLI</em></a> for interacting with the database.
+For example, MySQL provides the <tt class="docutils literal"><span class="pre">mysql</span></tt> command, Postgresql provides <tt class="docutils literal"><span class="pre">psql</span></tt>, and Oracle provides <tt class="docutils literal"><span class="pre">sqlplus</span></tt>.
+These programs give you the ability to compose queries, and diagnose issues with the software.</p>
+<p>todo:: Add example of connecting with each command.</p>
+<div class="section" id="mysql">
+<h3>MySQL<a class="headerlink" href="#mysql" title="Permalink to this headline">¶</a></h3>
+<p>To connect to a MySQL database from the CLI your command would usually take this form:</p>
+<div class="highlight-console"><div class="highlight"><pre><span class="gp">$</span> mysql -u username -p -h server-address
+<span class="go">Password:</span>
+</pre></div>
+</div>
+<p>Of these flags, <tt class="docutils literal"><span class="pre">-u</span></tt> = username, <tt class="docutils literal"><span class="pre">-p</span></tt> = password, and <tt class="docutils literal"><span class="pre">-h</span></tt> = hostname.
+You may provide the password on the command prompt: <tt class="docutils literal"><span class="pre">-ppassword</span></tt> (no space after flag!).
+We strongly advise against this, as this may leave the password visible in your shell history.</p>
+</div>
+</div>
+<div class="section" id="creating-databases">
+<h2>Creating databases<a class="headerlink" href="#creating-databases" title="Permalink to this headline">¶</a></h2>
+<p>Most database platforms allow you to create a new database using the <tt class="docutils literal"><span class="pre">CREATE</span> <span class="pre">DATABASE</span></tt> SQL query.
+It can be executed via a connection to the server, or via the SQL shell.</p>
+<p>A MySQL example:</p>
+<div class="highlight-sql"><div class="highlight"><pre><span class="n">mysql</span><span class="o">&gt;</span> <span class="k">CREATE</span> <span class="k">DATABASE</span> <span class="n">example_database</span><span class="p">;</span>
+</pre></div>
+</div>
+<div class="section" id="specialized-create-database-commands">
+<h3>Specialized Create Database Commands<a class="headerlink" href="#specialized-create-database-commands" title="Permalink to this headline">¶</a></h3>
+<p>Some database platforms have specialized <a class="reference internal" href="glossary.html#term-gui"><em class="xref std std-term">GUI</em></a> tools, or CLI tools.
+For example Postgresql has a UNIX command <tt class="docutils literal"><span class="pre">createdb</span></tt> that creates databases.
+In many cases these commands are just wrappers around the standard SQL statements.</p>
+<div class="section" id="id1">
+<h4>MySQL<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-console"><div class="highlight"><pre><span class="gp">$</span> mysqladmin create example_database
+</pre></div>
+</div>
+</div>
+<div class="section" id="postgresql">
+<h4>Postgresql<a class="headerlink" href="#postgresql" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-console"><div class="highlight"><pre><span class="gp">$</span> createdb example_database
+</pre></div>
+</div>
+<p>Some platforms, like MySQL support multiple databases per instance, while other platforms like Oracle support one database per instance.
+You should check the documentation for your particular vendor to see what is supported.</p>
+</div>
+</div>
+</div>
+<div class="section" id="creating-users">
+<h2>Creating users<a class="headerlink" href="#creating-users" title="Permalink to this headline">¶</a></h2>
+<p>Users can be created in most databases using the the <tt class="docutils literal"><span class="pre">CREATE</span> <span class="pre">USER</span></tt> statement.</p>
+<div class="highlight-sql"><div class="highlight"><pre><span class="n">mysql</span><span class="o">&gt;</span> <span class="k">CREATE</span> <span class="k">USER</span> <span class="n">username</span><span class="p">;</span>
+</pre></div>
+</div>
+<div class="section" id="specialized-create-user-commands">
+<h3>Specialized Create User Commands<a class="headerlink" href="#specialized-create-user-commands" title="Permalink to this headline">¶</a></h3>
+<p>Some relational databases provide additional ways of creating users like specialized command line programs.</p>
+<div class="section" id="id2">
+<h4>MySQL<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h4>
+<p>MySQL does not support creation of users via the <tt class="docutils literal"><span class="pre">mysqladmin</span></tt> command.</p>
+</div>
+<div class="section" id="id3">
+<h4>Postgresql<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-console"><div class="highlight"><pre><span class="go">createuser username</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="create-tables">
+<h2>Create Tables<a class="headerlink" href="#create-tables" title="Permalink to this headline">¶</a></h2>
+<p>Tables are organized into rows and columns. Data is stored inside these tables. In order to host this information we need to create a table.  We do this with the <tt class="docutils literal"><span class="pre">CREATE</span> <span class="pre">TABLE</span></tt> statement.</p>
+<p>Standard Syntax is:</p>
+<div class="highlight-sql"><div class="highlight"><pre><span class="k">CREATE</span> <span class="k">TABLE</span> <span class="k">table_name</span> <span class="p">(</span>
+<span class="n">column1</span> <span class="n">datatype</span><span class="p">(</span><span class="k">size</span><span class="p">),</span>
+<span class="n">column2</span> <span class="n">datatype</span><span class="p">(</span><span class="k">size</span><span class="p">),</span>
+<span class="n">column3</span> <span class="n">datatype</span><span class="p">(</span><span class="k">size</span><span class="p">)</span>
+<span class="p">);</span>
+</pre></div>
+</div>
+<p>Here is an example.  This will create a table called &#8220;Users&#8221; with 2 columns.</p>
+<div class="highlight-sql"><div class="highlight"><pre><span class="k">CREATE</span> <span class="k">TABLE</span> <span class="n">Users</span> <span class="p">(</span>
+<span class="n">name</span> <span class="nb">varchar</span><span class="p">(</span><span class="mi">50</span><span class="p">),</span>
+<span class="n">address</span> <span class="nb">varchar</span><span class="p">(</span><span class="mi">50</span><span class="p">)</span>
+<span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="alter-table">
+<h2>Alter Table<a class="headerlink" href="#alter-table" title="Permalink to this headline">¶</a></h2>
+<p>The <tt class="docutils literal"><span class="pre">ALTER</span></tt> statement will allow you to modify the design of your current database.  For example, if you have a table called &#8220;Users&#8221; which contains Names and Addresses, but you need need to add an age column, you could do so with:</p>
+<div class="highlight-sql"><div class="highlight"><pre><span class="k">ALTER</span> <span class="k">TABLE</span> <span class="n">Users</span> <span class="k">ADD</span> <span class="n">age</span> <span class="nb">int</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>Standard Syntax is:</p>
+<div class="highlight-sql"><div class="highlight"><pre><span class="k">ALTER</span> <span class="k">TABLE</span> <span class="k">table_name</span> <span class="k">ADD</span> <span class="k">column_name</span> <span class="n">datatype</span>
+</pre></div>
+</div>
+<p>If we need to modify a current table, we can also do so with the <tt class="docutils literal"><span class="pre">ALTER</span></tt> statement.  If in the previous example you wanted to change the datatype of age from an integer to varchar, you would do so with:</p>
+<div class="highlight-sql"><div class="highlight"><pre><span class="k">ALTER</span> <span class="k">TABLE</span> <span class="n">Users</span> <span class="k">MODIFY</span> <span class="n">age</span> <span class="nb">varchar</span><span class="p">(</span><span class="mi">50</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>Standard Syntax is:</p>
+<div class="highlight-sql"><div class="highlight"><pre><span class="k">ALTER</span> <span class="k">TABLE</span> <span class="k">table_name</span> <span class="k">MODIFY</span> <span class="k">column_name</span> <span class="n">datatype</span>
+</pre></div>
+</div>
+<p>If you now realize you don&#8217;t need the age column at all, you can drop it all together with:</p>
+<div class="highlight-sql"><div class="highlight"><pre><span class="k">ALTER</span> <span class="k">TABLE</span> <span class="n">Users</span> <span class="k">DROP</span> <span class="n">age</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>Standard Syntax is:</p>
+<div class="highlight-sql"><div class="highlight"><pre><span class="k">ALTER</span> <span class="k">TABLE</span> <span class="k">table_name</span> <span class="k">DROP</span> <span class="k">column_name</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="drop-table">
+<h2>Drop Table<a class="headerlink" href="#drop-table" title="Permalink to this headline">¶</a></h2>
+<p>If you have created a table and need to remove it from your database, you can with the <tt class="docutils literal"><span class="pre">DROP</span></tt> statement:</p>
+<p>Standard Syntax is:</p>
+<div class="highlight-sql"><div class="highlight"><pre><span class="k">DROP</span> <span class="k">table</span> <span class="k">table_name</span>
+</pre></div>
+</div>
+<p>If we want to drop our table we created earlier (Users) we would use this command:</p>
+<div class="highlight-sql"><div class="highlight"><pre><span class="k">DROP</span> <span class="k">table</span> <span class="n">Users</span><span class="p">;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="data-type">
+<h2>Data Type<a class="headerlink" href="#data-type" title="Permalink to this headline">¶</a></h2>
+<p>There are different types of data that we will store in our database. It can be simple text or a number, sometimes it is a mix of these things. The table below lists some common Standard SQL commands that are also in MySQL. It is important to note this is not a complete list.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="9%" />
+<col width="91%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Data type</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>char(n)</td>
+<td>Fixed width character string, can hold letters and numbers. Maximum 8,000 characters</td>
+</tr>
+<tr class="row-odd"><td>varchar(n)</td>
+<td>Variable width character string, can hold letters and numbers. Maximum 8,000 characters</td>
+</tr>
+<tr class="row-even"><td>text</td>
+<td>Variable width character string. Value is represented internally by a separately allocated object. This is in contrast to all other data types</td>
+</tr>
+<tr class="row-odd"><td>int</td>
+<td>Allows whole numbers between -2,147,483,648 and 2,147,483,647</td>
+</tr>
+<tr class="row-even"><td>float</td>
+<td>A small number with a floating decimal point</td>
+</tr>
+<tr class="row-odd"><td>decimal</td>
+<td>An exact numeric data value, allowing for a fixed decimal point</td>
+</tr>
+<tr class="row-even"><td>date</td>
+<td>Date formated as YYYY-MM-DD</td>
+</tr>
+<tr class="row-odd"><td>datetime</td>
+<td>Date and time combination formated as YYYY-MM-DD HH:MM:SS</td>
+</tr>
+<tr class="row-even"><td>timestamp</td>
+<td>Stores a unique number that gets updated every time a row gets created or modified.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="granting-privileges">
+<h2>Granting privileges<a class="headerlink" href="#granting-privileges" title="Permalink to this headline">¶</a></h2>
+<p>Privileges can be granted using the SQL GRANT statement. These
+statements are persisted by the RDBMS when issued. The typical
+command format is:</p>
+<div class="highlight-sql"><div class="highlight"><pre><span class="k">GRANT</span> <span class="p">[</span><span class="n">PRIVILEGE</span><span class="p">]</span> <span class="k">on</span> <span class="p">[</span><span class="k">OBJECT</span><span class="p">]</span> <span class="k">to</span> <span class="p">[</span><span class="k">USER</span><span class="p">];</span>
+</pre></div>
+</div>
+<p>The standard SQL privileges are:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="16%" />
+<col width="84%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Privilege</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>ALL</td>
+<td>Allows user all privileges</td>
+</tr>
+<tr class="row-odd"><td>ALTER</td>
+<td>Allows user to alter schema objects</td>
+</tr>
+<tr class="row-even"><td>CREATE</td>
+<td>Allows user to create schema object like tables</td>
+</tr>
+<tr class="row-odd"><td>DELETE</td>
+<td>Allows user to delete from an object</td>
+</tr>
+<tr class="row-even"><td>EXECUTE</td>
+<td>Allows user to execute a store procedure or function</td>
+</tr>
+<tr class="row-odd"><td>INSERT</td>
+<td>Allows user to add new data to an object</td>
+</tr>
+<tr class="row-even"><td>REFERENCES</td>
+<td>Allows user to create a referential table constraint</td>
+</tr>
+<tr class="row-odd"><td>SELECT</td>
+<td>Allows user to read from an object</td>
+</tr>
+<tr class="row-even"><td>TRIGGER</td>
+<td>Allows user to create a trigger</td>
+</tr>
+<tr class="row-odd"><td>TEMPORARY</td>
+<td>Allows user to create temporary tables</td>
+</tr>
+<tr class="row-even"><td>UPDATE</td>
+<td>Allows user to update existing data in an object</td>
+</tr>
+</tbody>
+</table>
+<p>Below is an example granting a user SELECT privileges on a table</p>
+<div class="highlight-sql"><div class="highlight"><pre><span class="k">GRANT</span> <span class="k">SELECT</span> <span class="k">ON</span> <span class="k">TABLE</span> <span class="n">example_table</span> <span class="k">TO</span> <span class="k">user</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>You can also grant multiple privileges in a single statement.</p>
+<div class="highlight-sql"><div class="highlight"><pre><span class="k">GRANT</span> <span class="k">SELECT</span><span class="p">,</span><span class="k">INSERT</span> <span class="k">ON</span> <span class="k">TABLE</span> <span class="n">example_table</span> <span class="k">TO</span> <span class="k">user</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>Many databases stray from the SQL standard here, and it is important to read your database&#8217;s documentation when granting privileges.
+There may be additional privileges not listed here and syntax can very significantly.</p>
+</div>
+<div class="section" id="removing-privileges">
+<h2>Removing Privileges<a class="headerlink" href="#removing-privileges" title="Permalink to this headline">¶</a></h2>
+<p>Privileges are removed with the SQL <tt class="docutils literal"><span class="pre">REVOKE</span></tt> statement.
+It follows a similar command format like grant:</p>
+<div class="highlight-sql"><div class="highlight"><pre><span class="k">REVOKE</span> <span class="p">[</span><span class="n">PRIVILEGE</span><span class="p">]</span> <span class="k">on</span> <span class="p">[</span><span class="k">OBJECT</span><span class="p">]</span> <span class="k">FROM</span> <span class="p">[</span><span class="k">USER</span><span class="p">];</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="basic-normalized-schema-design">
+<h2>Basic normalized schema design<a class="headerlink" href="#basic-normalized-schema-design" title="Permalink to this headline">¶</a></h2>
+<p>A normalized schema is a database with a table and column structure designed to reduce data redundancy.
+Typically data is placed into tables with a unique identifier, or primary key, and then is referenced by id in any tables that wish to use that data.</p>
+<p>Suppose we have two types of records in a database; one for a city&#8217;s population
+and one for a city&#8217;s average temperature.
+We could simply create the tables like so:</p>
+<p>City Population:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="57%" />
+<col width="43%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">City</th>
+<th class="head">Population</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>San Francisco</td>
+<td>812,826</td>
+</tr>
+</tbody>
+</table>
+<p>City Temperature:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="54%" />
+<col width="46%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">City</th>
+<th class="head">Temperature</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>San Francisco</td>
+<td>73 F</td>
+</tr>
+</tbody>
+</table>
+<p>A normalized version of this would have three tables instead of two.</p>
+<p>City ID and Name:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">City_id</th>
+<th class="head">Name</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>1</td>
+<td>San Francisco</td>
+</tr>
+</tbody>
+</table>
+<p>City ID and Temperature:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="54%" />
+<col width="46%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">City_id</th>
+<th class="head">Temperature</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>1</td>
+<td>73 F</td>
+</tr>
+</tbody>
+</table>
+<p>City ID and Population:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="57%" />
+<col width="43%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">City_id</th>
+<th class="head">Population</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>1</td>
+<td>812,826</td>
+</tr>
+</tbody>
+</table>
+<p>The advantage of this design is that it prevents you from having to enter data multiple times, and generally reduces the storage cost of a row.
+If San Francisco changed its name you would only need to update a single row instead of two tables like the first example.
+SQL allows you to replace the <tt class="docutils literal"><span class="pre">id</span></tt> with a name using a <tt class="docutils literal"><span class="pre">JOIN</span></tt> statement
+when the data is retrieved, making it functionally identical to the two table example.</p>
+</div>
+<div class="section" id="select-insert-update-and-delete">
+<h2>Select, Insert, Update and Delete<a class="headerlink" href="#select-insert-update-and-delete" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="select">
+<h3>SELECT<a class="headerlink" href="#select" title="Permalink to this headline">¶</a></h3>
+<p>The <tt class="docutils literal"><span class="pre">SELECT</span></tt> statement is the standard way you read from a table in an SQL database.
+You can use it to retrieve a set of data, and perform aggregations on them.
+The standard syntax is:</p>
+<div class="highlight-sql"><div class="highlight"><pre><span class="k">SELECT</span> <span class="p">[</span><span class="n">column1</span><span class="p">,</span><span class="n">column2</span><span class="o">|*</span><span class="p">]</span> <span class="k">FROM</span> <span class="p">[</span><span class="k">TABLE</span><span class="p">];</span>
+</pre></div>
+</div>
+<p>By adding a <tt class="docutils literal"><span class="pre">WHERE</span></tt> statement, you can have the database filter results:</p>
+<div class="highlight-sql"><div class="highlight"><pre><span class="k">SELECT</span> <span class="n">user_id</span><span class="p">,</span> <span class="n">user_name</span> <span class="k">FROM</span> <span class="n">users</span> <span class="k">WHERE</span> <span class="n">user_id</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>You can join tables using a <tt class="docutils literal"><span class="pre">JOIN</span></tt> statement.
+In this example we&#8217;re temporarily assigning an alias of &#8216;u&#8217; for the table users and an alias of &#8216;a&#8217; for the table addresses:</p>
+<div class="highlight-sql"><div class="highlight"><pre><span class="k">SELECT</span> <span class="n">user_id</span><span class="p">,</span> <span class="n">user_name</span> <span class="k">FROM</span> <span class="n">users</span> <span class="n">u</span> <span class="k">JOIN</span> <span class="n">addresses</span> <span class="n">a</span>
+<span class="k">ON</span> <span class="n">u</span><span class="p">.</span><span class="n">user_id</span> <span class="o">=</span> <span class="n">a</span><span class="p">.</span><span class="n">user_id</span>  <span class="k">WHERE</span> <span class="n">user_id</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>Count the rows in a table by using an aggregation:</p>
+<div class="highlight-sql"><div class="highlight"><pre><span class="k">SELECT</span> <span class="k">COUNT</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="k">FROM</span> <span class="n">users</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>Irder by a column:</p>
+<div class="highlight-sql"><div class="highlight"><pre><span class="k">SELECT</span> <span class="o">*</span> <span class="k">FROM</span> <span class="n">users</span> <span class="k">ORDER</span> <span class="k">BY</span> <span class="n">user_name</span><span class="p">;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="insert">
+<h3>INSERT<a class="headerlink" href="#insert" title="Permalink to this headline">¶</a></h3>
+<p>The <tt class="docutils literal"><span class="pre">INSERT</span></tt> statement is used to add additional data into a table.
+It can be used to insert data either a row at a time or in bulk.
+The standard syntax is:</p>
+<div class="highlight-sql"><div class="highlight"><pre><span class="k">INSERT</span> <span class="k">INTO</span> <span class="k">table</span> <span class="p">(</span><span class="n">column1</span><span class="p">,</span> <span class="n">column2</span><span class="p">,</span> <span class="n">column3</span><span class="p">)</span> <span class="k">VALUES</span> <span class="p">(</span><span class="n">value1</span><span class="p">,</span> <span class="n">value2</span><span class="p">,</span> <span class="n">value2</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>The column list is optional, if you don’t specify which columns you’re inserting data into, you must provide data for all columns.</p>
+<p>For example, to insert a single row:</p>
+<div class="highlight-sql"><div class="highlight"><pre><span class="k">INSERT</span> <span class="k">INTO</span> <span class="n">users</span> <span class="p">(</span><span class="n">user_name</span><span class="p">,</span><span class="n">user_phone</span><span class="p">)</span> <span class="k">VALUES</span> <span class="p">(</span><span class="ss">&quot;Joe Bloggs&quot;</span><span class="p">,</span><span class="ss">&quot;555-1234&quot;</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>Or in bulk:</p>
+<div class="highlight-sql"><div class="highlight"><pre><span class="k">INSERT</span> <span class="k">INTO</span> <span class="n">users</span> <span class="p">(</span><span class="n">user_name</span><span class="p">,</span><span class="n">user_phone</span><span class="p">)</span>
+<span class="k">VALUES</span> <span class="p">(</span><span class="ss">&quot;John Smith&quot;</span><span class="p">,</span><span class="ss">&quot;555-5555&quot;</span><span class="p">),(</span><span class="ss">&quot;Tom Jones&quot;</span><span class="p">,</span><span class="ss">&quot;555-0987&quot;</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>Inserting in bulk like that is typically much quicker than using separate queries as the query planner only has to execute once, and any indexes are updated at the end.</p>
+</div>
+<div class="section" id="update">
+<h3>UPDATE<a class="headerlink" href="#update" title="Permalink to this headline">¶</a></h3>
+<p><tt class="docutils literal"><span class="pre">UPDATE</span></tt> is the SQL statement for updating existing data in a table.
+It should almost always be used with a conditional statement.
+The standard syntax is:</p>
+<div class="highlight-sql"><div class="highlight"><pre>UPDATE [TABLE] SET [COLUMN] = {expression}, {COLUMN2={expression}, ...}
+[WHERE condition]
+[ORDER BY ...]
+[LIMIT count];
+</pre></div>
+</div>
+<p>Without a <tt class="docutils literal"><span class="pre">WHERE</span></tt> condition, the statement will apply to all the rows in a table.</p>
+<p>Here is a simple example of an <tt class="docutils literal"><span class="pre">UPDATE</span></tt> statement:</p>
+<div class="highlight-sql"><div class="highlight"><pre><span class="k">UPDATE</span> <span class="n">users</span> <span class="k">SET</span> <span class="n">user_name</span> <span class="o">=</span> <span class="s1">&#39;Jim Smith&#39;</span> <span class="k">WHERE</span> <span class="n">user_name</span> <span class="o">=</span> <span class="s1">&#39;James Smith&#39;</span><span class="p">;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="delete">
+<h3>DELETE<a class="headerlink" href="#delete" title="Permalink to this headline">¶</a></h3>
+<p><tt class="docutils literal"><span class="pre">DELETE</span></tt> is the SQL statement for removing rows from a table.
+The standard syntax is:</p>
+<div class="highlight-sql"><div class="highlight"><pre><span class="k">DELETE</span> <span class="k">FROM</span> <span class="p">[</span><span class="k">TABLE</span><span class="p">]</span>
+<span class="p">[</span><span class="k">WHERE</span> <span class="n">condition</span><span class="p">]</span>
+<span class="p">[</span><span class="k">ORDER</span> <span class="k">BY</span> <span class="p">...]</span>
+<span class="p">[</span><span class="k">LIMIT</span> <span class="k">count</span><span class="p">]</span> <span class="p">;</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Without a <tt class="docutils literal"><span class="pre">WHERE</span></tt> condition the statement will apply to <strong>all</strong> the rows of a table.</p>
+</div>
+<p>Here is a simple example of a DELETE statement:</p>
+<div class="highlight-sql"><div class="highlight"><pre><span class="k">DELETE</span> <span class="k">FROM</span> <span class="n">users</span> <span class="k">WHERE</span> <span class="n">user_name</span> <span class="o">=</span> <span class="s1">&#39;James Smith&#39;</span><span class="p">;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="pro-tips">
+<h2>Pro Tips<a class="headerlink" href="#pro-tips" title="Permalink to this headline">¶</a></h2>
+<ul>
+<li><p class="first">Before doing a write query, run it as a read query first to make sure you are retrieveing exactly what you want.
+If your query is:</p>
+<blockquote>
+<div><p><tt class="docutils literal"><span class="pre">UPDATE</span> <span class="pre">users</span> <span class="pre">SET</span> <span class="pre">disabled=1</span> <span class="pre">WHERE</span> <span class="pre">id=1;</span></tt></p>
+</div></blockquote>
+<p>Run this first to validate you will be affecting the proper record:</p>
+<blockquote>
+<div><p><tt class="docutils literal"><span class="pre">SELECT</span> <span class="pre">disabled</span> <span class="pre">FROM</span> <span class="pre">users</span> <span class="pre">WHERE</span> <span class="pre">id=1;</span></tt></p>
+</div></blockquote>
+</li>
+<li><p class="first">use a <tt class="docutils literal"><span class="pre">LIMIT</span></tt> on <tt class="docutils literal"><span class="pre">UPDATE</span></tt> and <tt class="docutils literal"><span class="pre">DELETE</span> <span class="pre">FROM</span></tt> queries to limit damage imposed by an erroneous query</p>
+<p><tt class="docutils literal"><span class="pre">UPDATE</span> <span class="pre">users</span> <span class="pre">SET</span> <span class="pre">disabled=1</span> <span class="pre">WHERE</span> <span class="pre">id=1</span> <span class="pre">LIMIT</span> <span class="pre">1;</span></tt></p>
+<p><tt class="docutils literal"><span class="pre">DELETE</span> <span class="pre">FROM</span> <span class="pre">users</span> <span class="pre">WHERE</span> <span class="pre">id=1</span> <span class="pre">LIMIT</span> <span class="pre">1;</span></tt></p>
+</li>
+<li><p class="first">If your database supports transactions, run <tt class="docutils literal"><span class="pre">START</span> <span class="pre">TRANSACTION</span></tt> first then run your query and check what it has done.
+If you&#8217;re happy with what you see then run <tt class="docutils literal"><span class="pre">COMMIT</span></tt> and finally <tt class="docutils literal"><span class="pre">STOP</span> <span class="pre">TRANSACTION</span></tt>.
+If you realize you&#8217;ve made a mistake, you can run <tt class="docutils literal"><span class="pre">ROLLBACK</span></tt> and any changes you&#8217;ve made will be
+undone.</p>
+</li>
+</ul>
+</div>
+</div>
+
+
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="databases_201.html" class="btn btn-neutral float-right" title="Databases 201"/>Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="logs_201.html" class="btn btn-neutral" title="Logs 201"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2012, Avleen Vig (under Creative Commons license: https://github.com/opsschool/curriculum/blob/master/LICENSE).
+    </p>
+  </div>
+
+  <a href="https://github.com/snide/sphinx_rtd_theme">Sphinx theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'0.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

@@ -1,0 +1,855 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Contributions &mdash; Ops School Curriculum 0.1 documentation</title>
+  
+
+  
+  
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="top" title="Ops School Curriculum 0.1 documentation" href="../index.html"/>
+        <link rel="next" title="Conventions" href="conventions.html"/>
+        <link rel="prev" title="See also" href="../seealso.html"/> 
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        <a href="../index.html" class="fa fa-home"> Ops School Curriculum</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+        
+            <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../introduction.html">Introduction</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../introduction.html#goals-and-focus">Goals and Focus</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../introduction.html#syllabus-layout">Syllabus layout</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../introduction.html#contributions">Contributions</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../introduction.html#how-we-ll-organize-work">How we&#8217;ll organize work</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../introduction.html#how-to-contribute">How to contribute</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../introduction.html#rewards-for-contributions">Rewards for contributions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../introduction.html#ops-school-videos">Ops School Videos</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../introduction.html#how-to-write-sections">How to write sections</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../introduction.html#overwriting-existing-content">Overwriting existing content</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../introduction.html#credits">Credits</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="guidelines.html">Guidelines</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../careers.html">Careers in Operations</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../careers.html#deciding-a-career-path">Deciding a career path</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../careers.html#generalized-career-paths">Generalized career paths</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../careers.html#specialized-career-paths">Specialized career paths</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../careers.html#how-to-become-an-operations-engineer">How to become an operations engineer</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../sysadmin_101.html">Sysadmin 101</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../sysadmin_101.html#what-is-systems-administration">What is Systems Administration?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sysadmin_101.html#what-is-development">What is Development?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sysadmin_101.html#contrasting-development-and-operations">Contrasting Development and Operations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sysadmin_101.html#history-of-development-and-operations">History of Development and Operations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sysadmin_101.html#what-system-administration-isn-t">What System Administration Isn&#8217;t</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../unix_101.html">Unix fundamentals 101</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../filesystems_101.html">File systems</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../shells_101.html">Shells</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../package_management_101.html">Package management</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../boot_process_101.html">The Boot Process</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../shell_tools_101.html">Useful shell tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cron_101.html">Crontab</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../unix_201.html">Unix fundamentals 201</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../kernel_tuning.html">Kernel tuning</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../unix_signals.html">Signals</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../syscalls.html">Syscalls</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../netbooting.html">Booting over the network</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../inits.html"><tt class="docutils literal"><span class="pre">/bin/init</span></tt> and its descendants</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../stats_diagnosing.html">Looking at system metrics</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../windows_101.html">MS Windows fundamentals 101</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../text_editing_101.html">Text Editing 101</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../text_editing_101.html#a-little-history">A little history</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../text_editing_101.html#vi-basics"><tt class="docutils literal"><span class="pre">vi</span></tt> basics</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../text_editing_201.html">Text Editing 201</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../text_editing_201.html#vim">Vim</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../text_editing_201.html#emacs">Emacs</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../sysadmin_tools.html">Tools for productivity</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../sysadmin_tools.html#terminal-emulators">Terminal emulators</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sysadmin_tools.html#ssh">SSH</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sysadmin_tools.html#ssh-use-cases">SSH Use Cases</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sysadmin_tools.html#multiplexers">Multiplexers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sysadmin_tools.html#shell-customisations">Shell customisations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sysadmin_tools.html#mosh">Mosh</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sysadmin_tools.html#ticketing-systems">Ticketing systems</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sysadmin_tools.html#note-taking">Note-taking</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../security_101.html">Security 101</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../security_101.html#authentication-in-unix">Authentication in unix</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../security_101.html#adding-and-deleting-users-and-groups">Adding and deleting users and groups</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../security_101.html#standard-unix-filesystem-permissions">Standard unix filesystem permissions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../security_101.html#pam">PAM</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../security_101.html#chroot-jails-and-containers">Chroot, jails and containers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../security_101.html#sudo-or-why-you-should-not-log-in-as-root">Sudo (or, &#8220;Why you should not log in as root&#8221;)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../security_101.html#history-and-lore">History and Lore</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../security_201.html">Security 201</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../security_201.html#centralised-accounts">Centralised accounts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../security_201.html#firewalls-and-packet-filters">Firewalls and packet filters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../security_201.html#public-key-cryptography">Public Key Cryptography</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../security_201.html#two-factor-authentication">Two factor authentication</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../security_201.html#building-systems-to-be-auditable">Building systems to be auditable</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../security_201.html#network-intrusion-detection">Network Intrusion Detection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../security_201.html#host-intrusion-detection">Host Intrusion Detection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../security_201.html#defense-practices">Defense practices</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../security_201.html#risk-and-risk-management">Risk and risk management</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../security_201.html#compliance-the-bare-minimum">Compliance: The bare minimum</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../security_201.html#dealing-with-security-incidents">Dealing with security incidents</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../security_201.html#acls-and-extended-attributes-xattrs">ACLs and extended attributes (xattrs)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../security_201.html#selinux">SELinux</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../security_201.html#data-placement">Data placement</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../security_201.html#additional-reading">Additional reading</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../troubleshooting_101.html">Troubleshooting</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../troubleshooting_101.html#methodologies">Methodologies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../troubleshooting_101.html#working-effectively-during-a-crisis">Working effectively during a crisis</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../networking_101.html">Networking 101</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../networking_101.html#the-rfc-documents">The RFC Documents</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../networking_101.html#osi-7-layer-model-osi-reference-model">OSI 7-layer model (OSI Reference Model)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../networking_101.html#tcp-ip-arpa-4-layer-model">TCP/IP (ARPA) 4-layer model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../networking_101.html#ip-addressing">IP Addressing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../networking_101.html#tcp-vs-udp">TCP vs UDP</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../networking_101.html#subnetting-netmasks-and-cidr">Subnetting, netmasks and CIDR</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../networking_101.html#private-address-space-rfc-1918">Private address space (<strong>RFC 1918</strong>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../networking_101.html#static-routing">Static routing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../networking_101.html#nat">NAT</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../networking_101.html#networking-cable">Networking cable</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../networking_201.html">Networking 201</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../networking_201.html#vlans-802-1q-tagging">VLANs, 802.1q tagging</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../networking_201.html#spanning-tree">Spanning Tree</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../networking_201.html#static-routing">Static Routing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../networking_201.html#dynamic-routing-protocols-rip-ospf-bgp">Dynamic routing protocols (RIP, OSPF, BGP)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../networking_201.html#acls">ACLs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../networking_201.html#network-bonding-802-3ad-lacp-link-aggregation">Network Bonding (802.3ad / LACP link aggregation)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../networking_201.html#ios-switch-configuration">IOS switch configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../networking_201.html#gre-and-other-tunnels">GRE and other tunnels</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../networking_201.html#multi-homed-hosts">Multi-homed hosts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../networking_201.html#similarities-and-differences-between-ipv4-and-ipv6-networking">Similarities and differences between IPv4 and IPv6 networking</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../networking_201.html#implications-of-dual-stack-firewalls-especially-under-linux">Implications of dual-stack firewalls (especially under Linux)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../networking_201.html#multicast-uses-and-limitations">Multicast uses and limitations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../networking_201.html#latency-vs-bandwidth">Latency vs. Bandwidth</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../networking_201.html#vpns">VPNs</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../common_services.html">Common services</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../system_daemons_101.html">System daemons 101</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dns_101.html">DNS 101</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dns_201.html">DNS 201</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dhcp.html">DHCP</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../http_101.html">HTTP 101 (Core protocol)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../http_201.html">HTTP 201 (Application Servers &amp; Frameworks)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../smtp_101.html">SMTP 101</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../smtp_201.html">SMTP 201</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../identity_management.html">Identity Management 101</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../identity_management.html#ldap">LDAP</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../identity_management.html#nis">NIS</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../active_directory_101.html">Active Directory 101</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../active_directory_101.html#what-is-active-directory">What is Active Directory?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../active_directory_101.html#what-is-active-directory-used-for">What is Active Directory used for?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../active_directory_101.html#you-mention-separate-components-what-is-active-directory-composed-of">You mention &#8220;separate components&#8221;; what is Active Directory composed of?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../active_directory_101.html#what-specific-services-does-active-directory-provide">What specific services does Active Directory provide?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../active_directory_101.html#best-practices-for-managing-an-active-directory-installation">Best Practices for managing an Active Directory installation</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../active_directory_201.html">Active Directory 201</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../active_directory_201.html#detailed-breakdown-of-active-directory-components-services">Detailed Breakdown of Active Directory Components/Services</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../active_directory_201.html#advanced-active-directory-maintenance">Advanced Active Directory Maintenance</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../remote_filesystems_101.html">Remote Filesystems 101</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../remote_filesystems_101.html#nfsv3">NFSv3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../remote_filesystems_101.html#iscsi">iSCSI</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../remote_filesystems_101.html#samba-cifs">SAMBA/CIFS</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../remote_filesystems_201.html">Remote Filesystems 201</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../remote_filesystems_201.html#glusterfs">GlusterFS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../remote_filesystems_201.html#nfsv4">NFSv4</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../remote_filesystems_201.html#netatalk-afp">Netatalk / AFP</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../remote_filesystems_201.html#s3">S3</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../programming_101.html">Programming 101</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../programming_101.html#shell-scripting-basics">Shell scripting basics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../programming_101.html#regular-expressions">Regular Expressions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../programming_101.html#sed-awk">Sed &amp; awk</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../programming_101.html#gigo">GIGO</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../programming_201.html">Programming 201</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../programming_201.html#common-elements-in-scripting-and-what-they-do">Common elements in scripting, and what they do</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../programming_201.html#c-a-very-basic-overview">C (A very basic overview)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../programming_201.html#ruby">Ruby</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../programming_201.html#python">Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../programming_201.html#version-control">Version Control</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../programming_201.html#api-design-fundamentals">API design fundamentals</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../programming_201.html#continuous-integration">Continuous Integration</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../hardware_101.html">Hardware 101</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../hardware_101.html#hardware-types">Hardware Types</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../hardware_101.html#basic-server-architecture">Basic server architecture</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../hardware_101.html#disk-management">Disk management</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../hardware_101.html#performance-redundancy">Performance/Redundancy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../hardware_101.html#troubleshooting">Troubleshooting</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../datacenters/datacenters_101.html">Datacenters 101</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../datacenters/datacenters_101.html#power-budgets">Power budgets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../datacenters/datacenters_101.html#cooling-budgets">Cooling budgets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../datacenters/datacenters_101.html#you-will-be-judged-by-the-tidiness-of-your-rack">You will be judged by the tidiness of your rack</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../datacenters/datacenters_101.html#machine-and-cable-labeling">Machine and cable labeling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../datacenters/datacenters_101.html#traditional-naming-conventions">Traditional naming conventions</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../datacenters/datacenters_201.html">Datacenters 201</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../datacenters/datacenters_201.html#networking-many-racks">Networking many racks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../datacenters/datacenters_201.html#power">Power</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../datacenters/datacenters_201.html#cooling">Cooling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../datacenters/datacenters_201.html#physical-security-and-common-security-standards-compliance-requirements">Physical security and common security standards compliance requirements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../datacenters/datacenters_201.html#suggested-practices">Suggested practices</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../datacenters/datacenters_301.html">Datacenters 301</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../datacenters/datacenters_301.html#power">Power</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../datacenters/datacenters_301.html#increasing-cooling-efficiency">Increasing cooling efficiency</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../datacenters/datacenters_301.html#design-options">Design Options</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../virtualization_101.html">Virtualization 101</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../virtualization_101.html#intro-to-virtualization-technologies">Intro to virtualization technologies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../virtualization_101.html#the-cloud">The Cloud</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../virtualization_201.html">Virtualization 201</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../virtualization_201.html#managing-virtualized-infrastructures-private-clouds">Managing virtualized infrastructures (Private clouds)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../virtualization_201.html#leveraging-virtualization-for-development">Leveraging virtualization for development</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../virtualization_201.html#leveraging-virtualization-for-production">Leveraging virtualization for production</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../virtualization_201.html#security-implications-of-virtualization">Security implications of virtualization</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../logs_101.html">Logs 101</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../logs_101.html#common-system-logs-formats">Common system logs &amp; formats</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../logs_101.html#standard-error">Standard Error</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../logs_101.html#log-files">Log files</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../logs_101.html#syslog">Syslog</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../logs_101.html#log-rotation-append-truncate">Log rotation, append, truncate</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../logs_101.html#retention-and-archival">Retention and archival</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../logs_201.html">Logs 201</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../logs_201.html#centralized-logging">Centralized logging</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../logs_201.html#log-parsing">Log parsing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../logs_201.html#search-correlation">Search &amp; Correlation</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../databases_101.html">Databases 101 (Relational Databases)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../databases_101.html#what-is-a-database">What is a Database?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../databases_101.html#what-is-a-relational-database">What is a Relational Database?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../databases_101.html#why-we-use-databases">Why We Use Databases?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../databases_101.html#what-is-sql">What is SQL?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../databases_101.html#sql-shell">SQL shell</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../databases_101.html#creating-databases">Creating databases</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../databases_101.html#creating-users">Creating users</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../databases_101.html#granting-privileges">Granting privileges</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../databases_101.html#removing-privileges">Removing Privileges</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../databases_101.html#basic-normalized-schema-design">Basic normalized schema design</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../databases_101.html#select-insert-update-and-delete">Select, Insert, Update and Delete</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../databases_101.html#pro-tips">Pro Tips</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../databases_201.html">Databases 201</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../databases_201.html#database-theory">Database Theory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../databases_201.html#document-databases">Document Databases</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../databases_201.html#key-value-stores">Key-value Stores</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../databases_201.html#graph-databases">Graph Databases</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../application_components_201.html">Application Components 201</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../application_components_201.html#message-brokers">Message Brokers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../application_components_201.html#memory-caches">Memory Caches</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../application_components_201.html#specialized-caches">Specialized Caches</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../loadbalancing_101.html">Load Balancing</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../loadbalancing_101.html#why-do-we-use-load-balancers">Why do we use load balancers?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../loadbalancing_101.html#application-implications">Application implications</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../loadbalancing_101.html#non-http-use-cases">Non-HTTP use cases</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../loadbalancing_101.html#software">Software</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../loadbalancing_101.html#hardware">Hardware</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../loadbalancing_101.html#multi-dc">Multi-dc</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../monitoring_101.html">Monitoring, Notifications, and Metrics 101</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../monitoring_101.html#history-how-we-used-to-monitor-and-how-we-got-better-monitors-as-tests">History: How we used to monitor, and how we got better (monitors as tests)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../monitoring_101.html#perspective-end-to-end-vs-introspective-monitoring">Perspective (end-to-end) vs Introspective monitoring</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../monitoring_101.html#metrics-what-to-collect-what-to-do-with-them">Metrics: what to collect, what to do with them</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../monitoring_101.html#common-tools">Common tools</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../monitoring_201.html">Monitoring, Notifications, and Metrics 201</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../monitoring_201.html#dataviz-graphing">Dataviz &amp; Graphing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../monitoring_201.html#graphite-statsd">Graphite, StatsD</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../monitoring_201.html#dashboard-info-for-ops-and-info-for-the-business">Dashboard: Info for ops and info for the business</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../monitoring_201.html#third-party-tools">Third-party tools</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../bcp.html">Business Continuity Planning</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../backups.html">Backups</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../outages.html">Outages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../postmortems.html">Postmortems</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../disaster_recovery.html">Disaster Recovery</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../architecture_101.html">Architecture 101</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../architecture_101.html#how-to-make-good-architecture-decisions">How to make good architecture decisions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../architecture_101.html#patterns-and-anti-patterns">Patterns and anti-patterns</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../architecture_101.html#introduction-to-availability">Introduction to availability</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../architecture_101.html#introduction-to-scalability">Introduction to scalability</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../architecture_201.html">Architecture 201</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../architecture_201.html#service-oriented-architectures">Service Oriented Architectures</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../architecture_201.html#fault-tolerance-fault-protection-masking-dependability-fundamentals">Fault tolerance, fault protection, masking, dependability fundamentals</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../architecture_201.html#caching-concerns">Caching Concerns</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../architecture_201.html#crash-only">Crash only</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../architecture_201.html#synchronous-vs-asynchronous">Synchronous vs. Asynchronous</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../architecture_201.html#business-continuity-vs-disaster-recovery">Business continuity vs. Disaster Recovery</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../architecture_201.html#designing-for-scalability-horizontal-vertical">Designing for Scalability: Horizontal, Vertical</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../architecture_201.html#simplicity">Simplicity</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../architecture_201.html#performance">Performance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../architecture_201.html#tiered-architectures">Tiered architectures</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../architecture_201.html#mttr-mtbf">MTTR &gt; MTBF</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../config_management.html">Configuration Management 101</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../config_management.html#a-brief-history-of-configuration-management">A Brief History of Configuration Management</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../config_management.html#idempotence">Idempotence</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../config_management.html#convergent-and-congruent-systems">Convergent and Congruent systems</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../config_management.html#direct-and-indirect-systems-ansible-capistrano">Direct and Indirect systems: ansible, capistrano</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../config_management.html#chef">Chef</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../config_management.html#configuration-management-201">Configuration Management 201</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../config_management.html#ansible">Ansible</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../config_management.html#puppet">Puppet</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../config_management.html#cfengine-3">Cfengine 3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../config_management.html#saltstack">SaltStack</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../capacity_planning.html">Capacity Planning</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../capacity_planning.html#fundamentals-of-capacity-planning">Fundamentals of capacity planning</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../capacity_planning.html#forecasting">Forecasting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../capacity_planning.html#diagonal-scaling">Diagonal scaling</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../statistics.html">Statistics For Engineers</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../statistics.html#normal-distributions">Normal distributions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../statistics.html#percentiles-histograms-averages-mean-medians">Percentiles, histograms, averages, mean, medians</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../deployment_101.html">Software Deployment 101</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../deployment_101.html#software-deployment-vs-configuration-management">Software deployment vs configuration management</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../deployment_101.html#running-services">Running services</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../deployment_101.html#package-management">Package management</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../deployment_201.html">Software Deployment 201</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../deployment_201.html#running-services">Running services</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../soft_skills_101.html">Soft Skills 101</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../soft_skills_101.html#communication-basics">Communication basics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../soft_skills_101.html#communication-modes">Communication Modes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../soft_skills_101.html#special-cases-for-operations">Special cases for operations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../soft_skills_101.html#time-management">Time Management</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../soft_skills_101.html#project-management">Project Management</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../soft_skills_101.html#the-tao-of-devops">The Tao of DevOps</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../soft_skills_101.html#the-importance-of-documentation">The importance of Documentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../soft_skills_101.html#working-with-other-teams">Working with other teams</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../soft_skills_201.html">Soft Skills 201</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../soft_skills_201.html#business-acumen-in-operations">Business Acumen in Operations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../soft_skills_201.html#understanding-the-role-of-operations">Understanding the role of operations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../soft_skills_201.html#thinking-broadly">Thinking broadly</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../soft_skills_201.html#promoting-change">Promoting Change</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../soft_skills_201.html#building-basic-business-skills">Building basic business skills</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../soft_skills_201.html#specific-examples">Specific Examples</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../labs.html">Labs exercises</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../labs.html#bare-metal-provisioning-101">Bare-Metal Provisioning 101</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../labs.html#bare-metal-provisioning-201">Bare-Metal Provisioning 201</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../labs.html#cloud-provisioning-101">Cloud Provisioning 101</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../labs.html#cloud-provisioning-201">Cloud Provisioning 201</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../labs.html#database-101">Database 101</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../labs.html#database-201">Database 201</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../labs.html#database-301">Database 301</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../labs.html#automation-101">Automation 101</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../labs.html#automation-chef-201">Automation - Chef 201</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../labs.html#automation-chef-301">Automation - Chef 301</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../labs.html#automation-chef-302">Automation - Chef 302</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../labs.html#automation-puppet-201">Automation - Puppet 201</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../labs.html#automation-puppet-301">Automation - Puppet 301</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../labs.html#package-management-101">Package Management 101</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../labs.html#package-management-201">Package Management 201</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../labs.html#build-automation-fleets">Build automation fleets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../labs.html#version-control-with-git-101">Version Control with Git 101</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../labs.html#dns-101">DNS 101</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../labs.html#http-101">HTTP 101</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../learning.html">Learning and the Community</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../learning.html#learning-and-strategies-for-improvement">Learning and strategies for improvement</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../learning.html#things-to-keep-in-mind-as-you-learn-how-to-be-an-engineer">Things to keep in mind as you learn how to be an engineer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../learning.html#golden-rules-for-careers-in-ops">Golden rules for careers in ops</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../learning.html#where-to-look-for-help-in-the-community">Where to look for help in the community</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../seealso.html">See also</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="">Contributions</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#how-we-ll-organize-work">How we&#8217;ll organize work</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#how-to-contribute">How to contribute</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#rewards-for-contributions">Rewards for contributions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#ops-school-videos">Ops School Videos</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#how-to-write-sections">How to write sections</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#overwriting-existing-content">Overwriting existing content</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#credits">Credits</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="conventions.html">Conventions</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="conventions.html#style-guide">Style Guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="conventions.html#sample-network">Sample Network</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="style_guide.html">Style Guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="style_guide.html#editing">Editing</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../glossary.html">Glossary</a></li>
+</ul>
+
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../index.html">Ops School Curriculum</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../index.html">Docs</a> &raquo;</li>
+      
+    <li>Contributions</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          <a href="../_sources/meta/contributions.txt" rel="nofollow"> View page source</a>
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            
+  <div class="section" id="contributions">
+<h1>Contributions<a class="headerlink" href="#contributions" title="Permalink to this headline">¶</a></h1>
+<p>Ops School is a community driven effort, and we always need people to
+contribute.
+Currently we need people who are able to fill in areas in our documentation -
+whether it&#8217;s a little or a lot, everything helps.</p>
+<div class="section" id="how-we-ll-organize-work">
+<h2>How we&#8217;ll organize work<a class="headerlink" href="#how-we-ll-organize-work" title="Permalink to this headline">¶</a></h2>
+<p>This is a living document. We write headings and their breakdowns as bullet
+points. We turn each bullet point into the material we want people to read.
+That&#8217;s right. The syllabus IS the course. For now, at least, until we find
+a better way.</p>
+<p>You should start writing the actual material to be taught right into this
+syllabus. We&#8217;ll worry about formatting and things later.
+As you write, remember that &#8220;101&#8221; material is aimed at people who are working up
+to being junior sysadmins. They&#8217;re mostly blank slates.</p>
+</div>
+<div class="section" id="how-to-contribute">
+<h2>How to contribute<a class="headerlink" href="#how-to-contribute" title="Permalink to this headline">¶</a></h2>
+<p>You can find the documentation source on GitHub and send pull requests:</p>
+<blockquote>
+<div><a class="reference external" href="https://github.com/opsschool/curriculum">https://github.com/opsschool/curriculum</a></div></blockquote>
+<p>Please fork the repo to your own account, create a branch, make your changes
+there, and issue a pull request from your fork/branch to <tt class="docutils literal"><span class="pre">opsschool:master</span></tt>.
+Be descriptive in your commit message for anything non-obvious.</p>
+<p>If all of this git and GitHub stuff is a little overwhelming, take a
+look at <a class="reference external" href="https://help.github.com">GitHub&#8217;s documentation</a>. If you have still have questions
+after reading that, please feel free to join #opsschool on
+irc.freenode.net and ask your questions there. We&#8217;ll be glad to help you
+get your patches merged&#8211;but please remember that many of us are busy ops
+professionals, so we may not respond immediately.</p>
+<p>If you&#8217;d like to join the mailing list, email <a class="reference external" href="mailto:avleen&#37;&#52;&#48;gmail&#46;com">avleen<span>&#64;</span>gmail<span>&#46;</span>com</a>.</p>
+</div>
+<div class="section" id="rewards-for-contributions">
+<h2>Rewards for contributions<a class="headerlink" href="#rewards-for-contributions" title="Permalink to this headline">¶</a></h2>
+<p>We have a special reward for reaching either of the following goals with your
+contributions:</p>
+<ul class="simple">
+<li>10 pull requests totaling 50 or more lines changed</li>
+<li>1 recorded Ops School video</li>
+</ul>
+<p>For completing either of these, you will receive a dozen freshly baked cookies,
+made fresh for you by a professional baker, and a 3-inch die-cut sticker of the
+Ops School logo.</p>
+<p>Once you reach either of these, please fill in the <a class="reference external" href="https://docs.google.com/forms/d/1XCNPKgqtK2FyB2zTUBW_aYVHUnhao9-CPhL2pB6ZGyU/viewform">OpsSchool rewards form</a> and
+we will get your reward over to you!</p>
+</div>
+<div class="section" id="ops-school-videos">
+<h2>Ops School Videos<a class="headerlink" href="#ops-school-videos" title="Permalink to this headline">¶</a></h2>
+<p>In collaboration with O&#8217;Reilly Media, we are filming the Ops School curriculum
+to provide another method of learning for students. Filming happens
+approximately every 3 months in New York or Silicon Valley.</p>
+<p>O&#8217;Reilly is publishing the videos online, in individual form and in package
+form. Any profits which would be made by Ops School are donated to non-profit
+organisations which aid in learning for low-income persons.</p>
+<p>Video can be short (10-20 mins), or longer. Depending on the content in the
+video, some presenters choose to use slides, while others prefer screen-casting
+live demonstrations. Some videos may not need any supporting material at all!</p>
+<p>The next scheduled filming is at the Santa Clara Hyatt, from Monday June 17th
+2013 to Friday June 21st 2013. Filming slots are available all day.</p>
+<p>The topics which have already been filmed are:</p>
+<ul class="simple">
+<li>Boot Process 101</li>
+<li>DNS 101</li>
+<li>Filesystems 101</li>
+<li>MySQL 101</li>
+<li>Nagios 101</li>
+<li>Networking 101</li>
+<li>Outage Investigation 101</li>
+<li>Package Management 101</li>
+<li>Shells 101</li>
+<li>SSH 101</li>
+<li>Application Level Monitoring</li>
+<li>Careers In Operations</li>
+<li>Operable Service - What People Expect From an Operable Service</li>
+<li>Productivity Tools and Techniques</li>
+<li>The <tt class="docutils literal"><span class="pre">/proc</span></tt> Filesystem</li>
+<li>Web Flow - The Life of a Web Request</li>
+</ul>
+<p>If you are interested in filming, please contact Avleen Vig (avleen#gmail.com)
+or open an issue on the Github project.</p>
+</div>
+<div class="section" id="how-to-write-sections">
+<h2>How to write sections<a class="headerlink" href="#how-to-write-sections" title="Permalink to this headline">¶</a></h2>
+<p>In order to help students learn as much as possible, we are taking the following
+approach to the curriculum (this isn&#8217;t a hard-and-fast rule, but an encouraged
+guideline wherever possible):</p>
+<ul class="simple">
+<li>Approach your writing in three steps:<ol class="arabic">
+<li>Tell students what they&#8217;re going to learn</li>
+<li>Teach them what they need to know</li>
+<li>Tell them what they have learnt</li>
+</ol>
+</li>
+<li>As much as possible, treat this as an interactive exercise. For example if you
+are writing about virtual machines, don&#8217;t just write about virtual machines.
+Have the student create a virtual machine, and then explain what just
+happened.
+Don&#8217;t tell students that package managers install packages, have them install
+a few packages and then explain how the package manager did its thing.</li>
+</ul>
+<p>Please read the <a class="reference internal" href="conventions.html#conventions"><em>Conventions</em></a> topic for some style guideline and preferences.</p>
+</div>
+<div class="section" id="overwriting-existing-content">
+<h2>Overwriting existing content<a class="headerlink" href="#overwriting-existing-content" title="Permalink to this headline">¶</a></h2>
+<p>There are times when you will want to update or replace sections of text written
+by others. When doing so, follow these guidelines to ensure your changes are
+integrated smoothly:</p>
+<ul class="simple">
+<li>Submit your pull request</li>
+<li>Reference the original author in your commit</li>
+</ul>
+<p>We&#8217;ll wait a few days (up to one week) to let the original author comment, if we
+feel there may be anything contentious in the commit. For most simple and
+straightforward commits, we&#8217;ll simply accept the commit.</p>
+</div>
+<div class="section" id="credits">
+<h2>Credits<a class="headerlink" href="#credits" title="Permalink to this headline">¶</a></h2>
+<p>If you contribute to this document and would like your name in lights (or, at
+least, written down somewhere) please add it here along with an email address
+and any affiliation:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="58%" />
+<col width="42%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Name</th>
+<th class="head">Company</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Avleen Vig &lt;<a class="reference external" href="mailto:avleen&#37;&#52;&#48;etsy&#46;com">avleen<span>&#64;</span>etsy<span>&#46;</span>com</a>&gt;</td>
+<td>Etsy, Inc</td>
+</tr>
+<tr class="row-odd"><td>Michael Rembetsy &lt;<a class="reference external" href="mailto:mcr&#37;&#52;&#48;etsy&#46;com">mcr<span>&#64;</span>etsy<span>&#46;</span>com</a>&gt;</td>
+<td>Etsy, Inc</td>
+</tr>
+<tr class="row-even"><td>Magnus Hedemark &lt;<a class="reference external" href="mailto:magnus&#37;&#52;&#48;yonderway&#46;com">magnus<span>&#64;</span>yonderway<span>&#46;</span>com</a>&gt;</td>
+<td>Wireless Generation</td>
+</tr>
+<tr class="row-odd"><td>Ariel Jolo &lt;<a class="reference external" href="mailto:ajolo&#37;&#52;&#48;sysarmy&#46;com&#46;ar">ajolo<span>&#64;</span>sysarmy<span>&#46;</span>com<span>&#46;</span>ar</a>&gt;</td>
+<td>sysARmy</td>
+</tr>
+<tr class="row-even"><td>Ryan Frantz &lt;<a class="reference external" href="mailto:ryanleefrantz&#37;&#52;&#48;gmail&#46;com">ryanleefrantz<span>&#64;</span>gmail<span>&#46;</span>com</a>&gt;</td>
+<td>Crabby Admins (www.crabbyadmins.org)</td>
+</tr>
+<tr class="row-odd"><td>Mike Fiedler &lt;<a class="reference external" href="mailto:miketheman&#37;&#52;&#48;gmail&#46;com">miketheman<span>&#64;</span>gmail<span>&#46;</span>com</a>&gt;</td>
+<td>Datadog</td>
+</tr>
+<tr class="row-even"><td>Nathan Milford &lt;<a class="reference external" href="mailto:nathan&#37;&#52;&#48;milford&#46;io">nathan<span>&#64;</span>milford<span>&#46;</span>io</a>&gt;</td>
+<td>Outbrain, Inc.</td>
+</tr>
+<tr class="row-odd"><td>Patrick Cable &lt;<a class="reference external" href="mailto:pc&#37;&#52;&#48;pcable&#46;net">pc<span>&#64;</span>pcable<span>&#46;</span>net</a>&gt;</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-even"><td>Benjamin Krueger &lt;<a class="reference external" href="mailto:benjamin&#37;&#52;&#48;seattlefenix&#46;net">benjamin<span>&#64;</span>seattlefenix<span>&#46;</span>net</a>&gt;</td>
+<td>Sourcefire, Inc</td>
+</tr>
+<tr class="row-odd"><td>Mårten Gustafson &lt;<a class="reference external" href="mailto:marten&#46;gustafson&#37;&#52;&#48;gmail&#46;com">marten<span>&#46;</span>gustafson<span>&#64;</span>gmail<span>&#46;</span>com</a>&gt;</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-even"><td>Phil Hollenback &lt;<a class="reference external" href="mailto:philiph&#37;&#52;&#48;pobox&#46;com">philiph<span>&#64;</span>pobox<span>&#46;</span>com</a>&gt;</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-odd"><td>Adam Jacob &lt;<a class="reference external" href="mailto:adam&#37;&#52;&#48;opscode&#46;com">adam<span>&#64;</span>opscode<span>&#46;</span>com</a>&gt;</td>
+<td>Opscode, Inc.</td>
+</tr>
+<tr class="row-even"><td>Mark Imbriaco &lt;<a class="reference external" href="mailto:mark&#37;&#52;&#48;github&#46;com">mark<span>&#64;</span>github<span>&#46;</span>com</a>&gt;</td>
+<td>GitHub</td>
+</tr>
+<tr class="row-odd"><td>James Turnbull &lt;<a class="reference external" href="mailto:james&#37;&#52;&#48;lovedthanlost&#46;net">james<span>&#64;</span>lovedthanlost<span>&#46;</span>net</a>&gt;</td>
+<td>Puppet Labs</td>
+</tr>
+<tr class="row-even"><td>Scott Nyce &lt;<a class="reference external" href="mailto:snyce&#37;&#52;&#48;codetwit&#46;com">snyce<span>&#64;</span>codetwit<span>&#46;</span>com</a>&gt;</td>
+<td>TiVo, Inc.</td>
+</tr>
+<tr class="row-odd"><td>Christian Paredes &lt;<a class="reference external" href="mailto:cp&#37;&#52;&#48;redbluemagenta&#46;com">cp<span>&#64;</span>redbluemagenta<span>&#46;</span>com</a>&gt;</td>
+<td>Amazon</td>
+</tr>
+<tr class="row-even"><td>Jan Schaumann &lt;<a class="reference external" href="mailto:jschauma&#37;&#52;&#48;netmeister&#46;org">jschauma<span>&#64;</span>netmeister<span>&#46;</span>org</a>&gt;</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-odd"><td>Stephen Balukoff &lt;<a class="reference external" href="mailto:sbalukoff&#37;&#52;&#48;bluebox&#46;net">sbalukoff<span>&#64;</span>bluebox<span>&#46;</span>net</a>&gt;</td>
+<td>Blue Box Group</td>
+</tr>
+<tr class="row-even"><td>Evan Pettrey &lt;<a class="reference external" href="mailto:jepettrey&#37;&#52;&#48;gmail&#46;com">jepettrey<span>&#64;</span>gmail<span>&#46;</span>com</a>&gt;</td>
+<td>LOPSA</td>
+</tr>
+<tr class="row-odd"><td>Khalid Maqsudi &lt;<a class="reference external" href="mailto:khalid7621&#37;&#52;&#48;hotmail&#46;com">khalid7621<span>&#64;</span>hotmail<span>&#46;</span>com</a>&gt;</td>
+<td>Ashford.com</td>
+</tr>
+<tr class="row-even"><td>Paul Graydon &lt;<a class="reference external" href="mailto:paul&#37;&#52;&#48;paulgraydon&#46;co&#46;uk">paul<span>&#64;</span>paulgraydon<span>&#46;</span>co<span>&#46;</span>uk</a>&gt;</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-odd"><td>Harold &#8220;Waldo&#8221; Grunenwald</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-even"><td>Martin Gehrke &lt;<a class="reference external" href="mailto:martin&#37;&#52;&#48;teamgehrke&#46;com">martin<span>&#64;</span>teamgehrke<span>&#46;</span>com</a>&gt;</td>
+<td>LOPSA</td>
+</tr>
+<tr class="row-odd"><td>John Boris &lt;<a class="reference external" href="mailto:jborissr&#37;&#52;&#48;gmail&#46;com">jborissr<span>&#64;</span>gmail<span>&#46;</span>com</a>&gt;</td>
+<td>LOPSA</td>
+</tr>
+<tr class="row-even"><td>John Dewey &lt;<a class="reference external" href="mailto:john&#37;&#52;&#48;dewey&#46;ws">john<span>&#64;</span>dewey<span>&#46;</span>ws</a>&gt;</td>
+<td>AT&amp;T</td>
+</tr>
+<tr class="row-odd"><td>Carolyn Rowland &lt;<a class="reference external" href="mailto:unpixie&#37;&#52;&#48;gmail&#46;com">unpixie<span>&#64;</span>gmail<span>&#46;</span>com</a>&gt;</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-even"><td>Jordan Dea-Mattson &lt;<a class="reference external" href="mailto:jdm&#37;&#52;&#48;dea-mattson&#46;com">jdm<span>&#64;</span>dea-mattson<span>&#46;</span>com</a>&gt;</td>
+<td>Numenta, Inc.</td>
+</tr>
+<tr class="row-odd"><td>Sean Escriva &lt;<a class="reference external" href="mailto:sean&#46;escriva&#37;&#52;&#48;gmail&#46;com">sean<span>&#46;</span>escriva<span>&#64;</span>gmail<span>&#46;</span>com</a>&gt;</td>
+<td>Heavy Water Ops</td>
+</tr>
+<tr class="row-even"><td>Adam Compton &lt;<a class="reference external" href="mailto:comptona&#37;&#52;&#48;gmail&#46;com">comptona<span>&#64;</span>gmail<span>&#46;</span>com</a>&gt;</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-odd"><td>Franck Cuny &lt;<a class="reference external" href="mailto:franck&#37;&#52;&#48;lumberjaph&#46;net">franck<span>&#64;</span>lumberjaph<span>&#46;</span>net</a>&gt;</td>
+<td>SAY Media</td>
+</tr>
+<tr class="row-even"><td>Chris Nehren &lt;<a class="reference external" href="mailto:cnehren&#37;&#52;&#48;omniti&#46;com">cnehren<span>&#64;</span>omniti<span>&#46;</span>com</a>&gt;</td>
+<td>OmniTI</td>
+</tr>
+<tr class="row-odd"><td>Brian Rak &lt;<a class="reference external" href="mailto:dn&#37;&#52;&#48;devicenull&#46;org">dn<span>&#64;</span>devicenull<span>&#46;</span>org</a>&gt;</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-even"><td>Divij Rajkumar &lt;<a class="reference external" href="mailto:drajkuma1&#37;&#52;&#48;gmail&#46;com">drajkuma1<span>&#64;</span>gmail<span>&#46;</span>com</a>&gt;</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-odd"><td>Aslan Brooke &lt;<a class="reference external" href="mailto:aslandbrooke&#37;&#52;&#48;yahoo&#46;com">aslandbrooke<span>&#64;</span>yahoo<span>&#46;</span>com</a>&gt;</td>
+<td>ZynxHealth.com, InfoQ.com</td>
+</tr>
+<tr class="row-even"><td>Glen Kaukola &lt;<a class="reference external" href="mailto:gkaukola&#37;&#52;&#48;cs&#46;ucr&#46;edu">gkaukola<span>&#64;</span>cs<span>&#46;</span>ucr<span>&#46;</span>edu</a>&gt;</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-odd"><td>Spencer Krum &lt;<a class="reference external" href="mailto:krum&#46;spencer&#37;&#52;&#48;gmail&#46;com">krum<span>&#46;</span>spencer<span>&#64;</span>gmail<span>&#46;</span>com</a>&gt;</td>
+<td>UTi Worldwide Inc.</td>
+</tr>
+<tr class="row-even"><td>Jeremy Grosser &lt;<a class="reference external" href="mailto:jeremy&#37;&#52;&#48;synack&#46;me">jeremy<span>&#64;</span>synack<span>&#46;</span>me</a>&gt;</td>
+<td>Uber Technologies, Inc.</td>
+</tr>
+<tr class="row-odd"><td>Hugo Landau &lt;<a class="reference external" href="mailto:hlandau&#37;&#52;&#48;devever&#46;net">hlandau<span>&#64;</span>devever<span>&#46;</span>net</a>&gt;</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-even"><td>Konark Modi &lt;<a class="reference external" href="mailto:modi&#46;konark&#37;&#52;&#48;gmail&#46;com">modi<span>&#46;</span>konark<span>&#64;</span>gmail<span>&#46;</span>com</a>&gt;</td>
+<td>MakeMyTrip.com</td>
+</tr>
+<tr class="row-odd"><td>Josh Reichardt &lt;<a class="reference external" href="mailto:josh&#46;reichardt&#37;&#52;&#48;gmail&#46;com">josh<span>&#46;</span>reichardt<span>&#64;</span>gmail<span>&#46;</span>com</a>&gt;</td>
+<td>thepracticalsysadmin.com</td>
+</tr>
+<tr class="row-even"><td>Ben Reichert &lt;<a class="reference external" href="mailto:ben&#37;&#52;&#48;benreichert&#46;com">ben<span>&#64;</span>benreichert<span>&#46;</span>com</a>&gt;</td>
+<td>&nbsp;</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="conventions.html" class="btn btn-neutral float-right" title="Conventions"/>Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../seealso.html" class="btn btn-neutral" title="See also"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2012, Avleen Vig (under Creative Commons license: https://github.com/opsschool/curriculum/blob/master/LICENSE).
+    </p>
+  </div>
+
+  <a href="https://github.com/snide/sphinx_rtd_theme">Sphinx theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'0.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

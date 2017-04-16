@@ -1,0 +1,1137 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Monitoring, Notifications, and Metrics 201 &mdash; Ops School Curriculum 0.1 documentation</title>
+  
+
+  
+  
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="top" title="Ops School Curriculum 0.1 documentation" href="index.html"/>
+        <link rel="next" title="Business Continuity Planning" href="bcp.html"/>
+        <link rel="prev" title="Monitoring, Notifications, and Metrics 101" href="monitoring_101.html"/> 
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        <a href="index.html" class="fa fa-home"> Ops School Curriculum</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+        
+            <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="introduction.html#goals-and-focus">Goals and Focus</a></li>
+<li class="toctree-l2"><a class="reference internal" href="introduction.html#syllabus-layout">Syllabus layout</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="introduction.html#contributions">Contributions</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="introduction.html#how-we-ll-organize-work">How we&#8217;ll organize work</a></li>
+<li class="toctree-l2"><a class="reference internal" href="introduction.html#how-to-contribute">How to contribute</a></li>
+<li class="toctree-l2"><a class="reference internal" href="introduction.html#rewards-for-contributions">Rewards for contributions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="introduction.html#ops-school-videos">Ops School Videos</a></li>
+<li class="toctree-l2"><a class="reference internal" href="introduction.html#how-to-write-sections">How to write sections</a></li>
+<li class="toctree-l2"><a class="reference internal" href="introduction.html#overwriting-existing-content">Overwriting existing content</a></li>
+<li class="toctree-l2"><a class="reference internal" href="introduction.html#credits">Credits</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="meta/guidelines.html">Guidelines</a></li>
+<li class="toctree-l1"><a class="reference internal" href="careers.html">Careers in Operations</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="careers.html#deciding-a-career-path">Deciding a career path</a></li>
+<li class="toctree-l2"><a class="reference internal" href="careers.html#generalized-career-paths">Generalized career paths</a></li>
+<li class="toctree-l2"><a class="reference internal" href="careers.html#specialized-career-paths">Specialized career paths</a></li>
+<li class="toctree-l2"><a class="reference internal" href="careers.html#how-to-become-an-operations-engineer">How to become an operations engineer</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="sysadmin_101.html">Sysadmin 101</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="sysadmin_101.html#what-is-systems-administration">What is Systems Administration?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sysadmin_101.html#what-is-development">What is Development?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sysadmin_101.html#contrasting-development-and-operations">Contrasting Development and Operations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sysadmin_101.html#history-of-development-and-operations">History of Development and Operations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sysadmin_101.html#what-system-administration-isn-t">What System Administration Isn&#8217;t</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="unix_101.html">Unix fundamentals 101</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="filesystems_101.html">File systems</a></li>
+<li class="toctree-l2"><a class="reference internal" href="shells_101.html">Shells</a></li>
+<li class="toctree-l2"><a class="reference internal" href="package_management_101.html">Package management</a></li>
+<li class="toctree-l2"><a class="reference internal" href="boot_process_101.html">The Boot Process</a></li>
+<li class="toctree-l2"><a class="reference internal" href="shell_tools_101.html">Useful shell tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cron_101.html">Crontab</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="unix_201.html">Unix fundamentals 201</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="kernel_tuning.html">Kernel tuning</a></li>
+<li class="toctree-l2"><a class="reference internal" href="unix_signals.html">Signals</a></li>
+<li class="toctree-l2"><a class="reference internal" href="syscalls.html">Syscalls</a></li>
+<li class="toctree-l2"><a class="reference internal" href="netbooting.html">Booting over the network</a></li>
+<li class="toctree-l2"><a class="reference internal" href="inits.html"><tt class="docutils literal"><span class="pre">/bin/init</span></tt> and its descendants</a></li>
+<li class="toctree-l2"><a class="reference internal" href="stats_diagnosing.html">Looking at system metrics</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="windows_101.html">MS Windows fundamentals 101</a></li>
+<li class="toctree-l1"><a class="reference internal" href="text_editing_101.html">Text Editing 101</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="text_editing_101.html#a-little-history">A little history</a></li>
+<li class="toctree-l2"><a class="reference internal" href="text_editing_101.html#vi-basics"><tt class="docutils literal"><span class="pre">vi</span></tt> basics</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="text_editing_201.html">Text Editing 201</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="text_editing_201.html#vim">Vim</a></li>
+<li class="toctree-l2"><a class="reference internal" href="text_editing_201.html#emacs">Emacs</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="sysadmin_tools.html">Tools for productivity</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="sysadmin_tools.html#terminal-emulators">Terminal emulators</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sysadmin_tools.html#ssh">SSH</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sysadmin_tools.html#ssh-use-cases">SSH Use Cases</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sysadmin_tools.html#multiplexers">Multiplexers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sysadmin_tools.html#shell-customisations">Shell customisations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sysadmin_tools.html#mosh">Mosh</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sysadmin_tools.html#ticketing-systems">Ticketing systems</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sysadmin_tools.html#note-taking">Note-taking</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="security_101.html">Security 101</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="security_101.html#authentication-in-unix">Authentication in unix</a></li>
+<li class="toctree-l2"><a class="reference internal" href="security_101.html#adding-and-deleting-users-and-groups">Adding and deleting users and groups</a></li>
+<li class="toctree-l2"><a class="reference internal" href="security_101.html#standard-unix-filesystem-permissions">Standard unix filesystem permissions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="security_101.html#pam">PAM</a></li>
+<li class="toctree-l2"><a class="reference internal" href="security_101.html#chroot-jails-and-containers">Chroot, jails and containers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="security_101.html#sudo-or-why-you-should-not-log-in-as-root">Sudo (or, &#8220;Why you should not log in as root&#8221;)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="security_101.html#history-and-lore">History and Lore</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="security_201.html">Security 201</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="security_201.html#centralised-accounts">Centralised accounts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="security_201.html#firewalls-and-packet-filters">Firewalls and packet filters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="security_201.html#public-key-cryptography">Public Key Cryptography</a></li>
+<li class="toctree-l2"><a class="reference internal" href="security_201.html#two-factor-authentication">Two factor authentication</a></li>
+<li class="toctree-l2"><a class="reference internal" href="security_201.html#building-systems-to-be-auditable">Building systems to be auditable</a></li>
+<li class="toctree-l2"><a class="reference internal" href="security_201.html#network-intrusion-detection">Network Intrusion Detection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="security_201.html#host-intrusion-detection">Host Intrusion Detection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="security_201.html#defense-practices">Defense practices</a></li>
+<li class="toctree-l2"><a class="reference internal" href="security_201.html#risk-and-risk-management">Risk and risk management</a></li>
+<li class="toctree-l2"><a class="reference internal" href="security_201.html#compliance-the-bare-minimum">Compliance: The bare minimum</a></li>
+<li class="toctree-l2"><a class="reference internal" href="security_201.html#dealing-with-security-incidents">Dealing with security incidents</a></li>
+<li class="toctree-l2"><a class="reference internal" href="security_201.html#acls-and-extended-attributes-xattrs">ACLs and extended attributes (xattrs)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="security_201.html#selinux">SELinux</a></li>
+<li class="toctree-l2"><a class="reference internal" href="security_201.html#data-placement">Data placement</a></li>
+<li class="toctree-l2"><a class="reference internal" href="security_201.html#additional-reading">Additional reading</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="troubleshooting_101.html">Troubleshooting</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="troubleshooting_101.html#methodologies">Methodologies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="troubleshooting_101.html#working-effectively-during-a-crisis">Working effectively during a crisis</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="networking_101.html">Networking 101</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="networking_101.html#the-rfc-documents">The RFC Documents</a></li>
+<li class="toctree-l2"><a class="reference internal" href="networking_101.html#osi-7-layer-model-osi-reference-model">OSI 7-layer model (OSI Reference Model)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="networking_101.html#tcp-ip-arpa-4-layer-model">TCP/IP (ARPA) 4-layer model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="networking_101.html#ip-addressing">IP Addressing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="networking_101.html#tcp-vs-udp">TCP vs UDP</a></li>
+<li class="toctree-l2"><a class="reference internal" href="networking_101.html#subnetting-netmasks-and-cidr">Subnetting, netmasks and CIDR</a></li>
+<li class="toctree-l2"><a class="reference internal" href="networking_101.html#private-address-space-rfc-1918">Private address space (<strong>RFC 1918</strong>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="networking_101.html#static-routing">Static routing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="networking_101.html#nat">NAT</a></li>
+<li class="toctree-l2"><a class="reference internal" href="networking_101.html#networking-cable">Networking cable</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="networking_201.html">Networking 201</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="networking_201.html#vlans-802-1q-tagging">VLANs, 802.1q tagging</a></li>
+<li class="toctree-l2"><a class="reference internal" href="networking_201.html#spanning-tree">Spanning Tree</a></li>
+<li class="toctree-l2"><a class="reference internal" href="networking_201.html#static-routing">Static Routing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="networking_201.html#dynamic-routing-protocols-rip-ospf-bgp">Dynamic routing protocols (RIP, OSPF, BGP)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="networking_201.html#acls">ACLs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="networking_201.html#network-bonding-802-3ad-lacp-link-aggregation">Network Bonding (802.3ad / LACP link aggregation)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="networking_201.html#ios-switch-configuration">IOS switch configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="networking_201.html#gre-and-other-tunnels">GRE and other tunnels</a></li>
+<li class="toctree-l2"><a class="reference internal" href="networking_201.html#multi-homed-hosts">Multi-homed hosts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="networking_201.html#similarities-and-differences-between-ipv4-and-ipv6-networking">Similarities and differences between IPv4 and IPv6 networking</a></li>
+<li class="toctree-l2"><a class="reference internal" href="networking_201.html#implications-of-dual-stack-firewalls-especially-under-linux">Implications of dual-stack firewalls (especially under Linux)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="networking_201.html#multicast-uses-and-limitations">Multicast uses and limitations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="networking_201.html#latency-vs-bandwidth">Latency vs. Bandwidth</a></li>
+<li class="toctree-l2"><a class="reference internal" href="networking_201.html#vpns">VPNs</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="common_services.html">Common services</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="system_daemons_101.html">System daemons 101</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dns_101.html">DNS 101</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dns_201.html">DNS 201</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dhcp.html">DHCP</a></li>
+<li class="toctree-l2"><a class="reference internal" href="http_101.html">HTTP 101 (Core protocol)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="http_201.html">HTTP 201 (Application Servers &amp; Frameworks)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="smtp_101.html">SMTP 101</a></li>
+<li class="toctree-l2"><a class="reference internal" href="smtp_201.html">SMTP 201</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="identity_management.html">Identity Management 101</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="identity_management.html#ldap">LDAP</a></li>
+<li class="toctree-l2"><a class="reference internal" href="identity_management.html#nis">NIS</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="active_directory_101.html">Active Directory 101</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="active_directory_101.html#what-is-active-directory">What is Active Directory?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="active_directory_101.html#what-is-active-directory-used-for">What is Active Directory used for?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="active_directory_101.html#you-mention-separate-components-what-is-active-directory-composed-of">You mention &#8220;separate components&#8221;; what is Active Directory composed of?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="active_directory_101.html#what-specific-services-does-active-directory-provide">What specific services does Active Directory provide?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="active_directory_101.html#best-practices-for-managing-an-active-directory-installation">Best Practices for managing an Active Directory installation</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="active_directory_201.html">Active Directory 201</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="active_directory_201.html#detailed-breakdown-of-active-directory-components-services">Detailed Breakdown of Active Directory Components/Services</a></li>
+<li class="toctree-l2"><a class="reference internal" href="active_directory_201.html#advanced-active-directory-maintenance">Advanced Active Directory Maintenance</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="remote_filesystems_101.html">Remote Filesystems 101</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="remote_filesystems_101.html#nfsv3">NFSv3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="remote_filesystems_101.html#iscsi">iSCSI</a></li>
+<li class="toctree-l2"><a class="reference internal" href="remote_filesystems_101.html#samba-cifs">SAMBA/CIFS</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="remote_filesystems_201.html">Remote Filesystems 201</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="remote_filesystems_201.html#glusterfs">GlusterFS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="remote_filesystems_201.html#nfsv4">NFSv4</a></li>
+<li class="toctree-l2"><a class="reference internal" href="remote_filesystems_201.html#netatalk-afp">Netatalk / AFP</a></li>
+<li class="toctree-l2"><a class="reference internal" href="remote_filesystems_201.html#s3">S3</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="programming_101.html">Programming 101</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="programming_101.html#shell-scripting-basics">Shell scripting basics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="programming_101.html#regular-expressions">Regular Expressions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="programming_101.html#sed-awk">Sed &amp; awk</a></li>
+<li class="toctree-l2"><a class="reference internal" href="programming_101.html#gigo">GIGO</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="programming_201.html">Programming 201</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="programming_201.html#common-elements-in-scripting-and-what-they-do">Common elements in scripting, and what they do</a></li>
+<li class="toctree-l2"><a class="reference internal" href="programming_201.html#c-a-very-basic-overview">C (A very basic overview)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="programming_201.html#ruby">Ruby</a></li>
+<li class="toctree-l2"><a class="reference internal" href="programming_201.html#python">Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="programming_201.html#version-control">Version Control</a></li>
+<li class="toctree-l2"><a class="reference internal" href="programming_201.html#api-design-fundamentals">API design fundamentals</a></li>
+<li class="toctree-l2"><a class="reference internal" href="programming_201.html#continuous-integration">Continuous Integration</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="hardware_101.html">Hardware 101</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="hardware_101.html#hardware-types">Hardware Types</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hardware_101.html#basic-server-architecture">Basic server architecture</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hardware_101.html#disk-management">Disk management</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hardware_101.html#performance-redundancy">Performance/Redundancy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hardware_101.html#troubleshooting">Troubleshooting</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="datacenters/datacenters_101.html">Datacenters 101</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="datacenters/datacenters_101.html#power-budgets">Power budgets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="datacenters/datacenters_101.html#cooling-budgets">Cooling budgets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="datacenters/datacenters_101.html#you-will-be-judged-by-the-tidiness-of-your-rack">You will be judged by the tidiness of your rack</a></li>
+<li class="toctree-l2"><a class="reference internal" href="datacenters/datacenters_101.html#machine-and-cable-labeling">Machine and cable labeling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="datacenters/datacenters_101.html#traditional-naming-conventions">Traditional naming conventions</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="datacenters/datacenters_201.html">Datacenters 201</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="datacenters/datacenters_201.html#networking-many-racks">Networking many racks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="datacenters/datacenters_201.html#power">Power</a></li>
+<li class="toctree-l2"><a class="reference internal" href="datacenters/datacenters_201.html#cooling">Cooling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="datacenters/datacenters_201.html#physical-security-and-common-security-standards-compliance-requirements">Physical security and common security standards compliance requirements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="datacenters/datacenters_201.html#suggested-practices">Suggested practices</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="datacenters/datacenters_301.html">Datacenters 301</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="datacenters/datacenters_301.html#power">Power</a></li>
+<li class="toctree-l2"><a class="reference internal" href="datacenters/datacenters_301.html#increasing-cooling-efficiency">Increasing cooling efficiency</a></li>
+<li class="toctree-l2"><a class="reference internal" href="datacenters/datacenters_301.html#design-options">Design Options</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="virtualization_101.html">Virtualization 101</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="virtualization_101.html#intro-to-virtualization-technologies">Intro to virtualization technologies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="virtualization_101.html#the-cloud">The Cloud</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="virtualization_201.html">Virtualization 201</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="virtualization_201.html#managing-virtualized-infrastructures-private-clouds">Managing virtualized infrastructures (Private clouds)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="virtualization_201.html#leveraging-virtualization-for-development">Leveraging virtualization for development</a></li>
+<li class="toctree-l2"><a class="reference internal" href="virtualization_201.html#leveraging-virtualization-for-production">Leveraging virtualization for production</a></li>
+<li class="toctree-l2"><a class="reference internal" href="virtualization_201.html#security-implications-of-virtualization">Security implications of virtualization</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="logs_101.html">Logs 101</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="logs_101.html#common-system-logs-formats">Common system logs &amp; formats</a></li>
+<li class="toctree-l2"><a class="reference internal" href="logs_101.html#standard-error">Standard Error</a></li>
+<li class="toctree-l2"><a class="reference internal" href="logs_101.html#log-files">Log files</a></li>
+<li class="toctree-l2"><a class="reference internal" href="logs_101.html#syslog">Syslog</a></li>
+<li class="toctree-l2"><a class="reference internal" href="logs_101.html#log-rotation-append-truncate">Log rotation, append, truncate</a></li>
+<li class="toctree-l2"><a class="reference internal" href="logs_101.html#retention-and-archival">Retention and archival</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="logs_201.html">Logs 201</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="logs_201.html#centralized-logging">Centralized logging</a></li>
+<li class="toctree-l2"><a class="reference internal" href="logs_201.html#log-parsing">Log parsing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="logs_201.html#search-correlation">Search &amp; Correlation</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="databases_101.html">Databases 101 (Relational Databases)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="databases_101.html#what-is-a-database">What is a Database?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="databases_101.html#what-is-a-relational-database">What is a Relational Database?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="databases_101.html#why-we-use-databases">Why We Use Databases?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="databases_101.html#what-is-sql">What is SQL?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="databases_101.html#sql-shell">SQL shell</a></li>
+<li class="toctree-l2"><a class="reference internal" href="databases_101.html#creating-databases">Creating databases</a></li>
+<li class="toctree-l2"><a class="reference internal" href="databases_101.html#creating-users">Creating users</a></li>
+<li class="toctree-l2"><a class="reference internal" href="databases_101.html#granting-privileges">Granting privileges</a></li>
+<li class="toctree-l2"><a class="reference internal" href="databases_101.html#removing-privileges">Removing Privileges</a></li>
+<li class="toctree-l2"><a class="reference internal" href="databases_101.html#basic-normalized-schema-design">Basic normalized schema design</a></li>
+<li class="toctree-l2"><a class="reference internal" href="databases_101.html#select-insert-update-and-delete">Select, Insert, Update and Delete</a></li>
+<li class="toctree-l2"><a class="reference internal" href="databases_101.html#pro-tips">Pro Tips</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="databases_201.html">Databases 201</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="databases_201.html#database-theory">Database Theory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="databases_201.html#document-databases">Document Databases</a></li>
+<li class="toctree-l2"><a class="reference internal" href="databases_201.html#key-value-stores">Key-value Stores</a></li>
+<li class="toctree-l2"><a class="reference internal" href="databases_201.html#graph-databases">Graph Databases</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="application_components_201.html">Application Components 201</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="application_components_201.html#message-brokers">Message Brokers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="application_components_201.html#memory-caches">Memory Caches</a></li>
+<li class="toctree-l2"><a class="reference internal" href="application_components_201.html#specialized-caches">Specialized Caches</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="loadbalancing_101.html">Load Balancing</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="loadbalancing_101.html#why-do-we-use-load-balancers">Why do we use load balancers?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="loadbalancing_101.html#application-implications">Application implications</a></li>
+<li class="toctree-l2"><a class="reference internal" href="loadbalancing_101.html#non-http-use-cases">Non-HTTP use cases</a></li>
+<li class="toctree-l2"><a class="reference internal" href="loadbalancing_101.html#software">Software</a></li>
+<li class="toctree-l2"><a class="reference internal" href="loadbalancing_101.html#hardware">Hardware</a></li>
+<li class="toctree-l2"><a class="reference internal" href="loadbalancing_101.html#multi-dc">Multi-dc</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="monitoring_101.html">Monitoring, Notifications, and Metrics 101</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="monitoring_101.html#history-how-we-used-to-monitor-and-how-we-got-better-monitors-as-tests">History: How we used to monitor, and how we got better (monitors as tests)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="monitoring_101.html#perspective-end-to-end-vs-introspective-monitoring">Perspective (end-to-end) vs Introspective monitoring</a></li>
+<li class="toctree-l2"><a class="reference internal" href="monitoring_101.html#metrics-what-to-collect-what-to-do-with-them">Metrics: what to collect, what to do with them</a></li>
+<li class="toctree-l2"><a class="reference internal" href="monitoring_101.html#common-tools">Common tools</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="current reference internal" href="">Monitoring, Notifications, and Metrics 201</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#dataviz-graphing">Dataviz &amp; Graphing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#graphite-statsd">Graphite, StatsD</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#dashboard-info-for-ops-and-info-for-the-business">Dashboard: Info for ops and info for the business</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#third-party-tools">Third-party tools</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="bcp.html">Business Continuity Planning</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="backups.html">Backups</a></li>
+<li class="toctree-l2"><a class="reference internal" href="outages.html">Outages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="postmortems.html">Postmortems</a></li>
+<li class="toctree-l2"><a class="reference internal" href="disaster_recovery.html">Disaster Recovery</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="architecture_101.html">Architecture 101</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="architecture_101.html#how-to-make-good-architecture-decisions">How to make good architecture decisions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="architecture_101.html#patterns-and-anti-patterns">Patterns and anti-patterns</a></li>
+<li class="toctree-l2"><a class="reference internal" href="architecture_101.html#introduction-to-availability">Introduction to availability</a></li>
+<li class="toctree-l2"><a class="reference internal" href="architecture_101.html#introduction-to-scalability">Introduction to scalability</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="architecture_201.html">Architecture 201</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="architecture_201.html#service-oriented-architectures">Service Oriented Architectures</a></li>
+<li class="toctree-l2"><a class="reference internal" href="architecture_201.html#fault-tolerance-fault-protection-masking-dependability-fundamentals">Fault tolerance, fault protection, masking, dependability fundamentals</a></li>
+<li class="toctree-l2"><a class="reference internal" href="architecture_201.html#caching-concerns">Caching Concerns</a></li>
+<li class="toctree-l2"><a class="reference internal" href="architecture_201.html#crash-only">Crash only</a></li>
+<li class="toctree-l2"><a class="reference internal" href="architecture_201.html#synchronous-vs-asynchronous">Synchronous vs. Asynchronous</a></li>
+<li class="toctree-l2"><a class="reference internal" href="architecture_201.html#business-continuity-vs-disaster-recovery">Business continuity vs. Disaster Recovery</a></li>
+<li class="toctree-l2"><a class="reference internal" href="architecture_201.html#designing-for-scalability-horizontal-vertical">Designing for Scalability: Horizontal, Vertical</a></li>
+<li class="toctree-l2"><a class="reference internal" href="architecture_201.html#simplicity">Simplicity</a></li>
+<li class="toctree-l2"><a class="reference internal" href="architecture_201.html#performance">Performance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="architecture_201.html#tiered-architectures">Tiered architectures</a></li>
+<li class="toctree-l2"><a class="reference internal" href="architecture_201.html#mttr-mtbf">MTTR &gt; MTBF</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="config_management.html">Configuration Management 101</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="config_management.html#a-brief-history-of-configuration-management">A Brief History of Configuration Management</a></li>
+<li class="toctree-l2"><a class="reference internal" href="config_management.html#idempotence">Idempotence</a></li>
+<li class="toctree-l2"><a class="reference internal" href="config_management.html#convergent-and-congruent-systems">Convergent and Congruent systems</a></li>
+<li class="toctree-l2"><a class="reference internal" href="config_management.html#direct-and-indirect-systems-ansible-capistrano">Direct and Indirect systems: ansible, capistrano</a></li>
+<li class="toctree-l2"><a class="reference internal" href="config_management.html#chef">Chef</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="config_management.html#configuration-management-201">Configuration Management 201</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="config_management.html#ansible">Ansible</a></li>
+<li class="toctree-l2"><a class="reference internal" href="config_management.html#puppet">Puppet</a></li>
+<li class="toctree-l2"><a class="reference internal" href="config_management.html#cfengine-3">Cfengine 3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="config_management.html#saltstack">SaltStack</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="capacity_planning.html">Capacity Planning</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="capacity_planning.html#fundamentals-of-capacity-planning">Fundamentals of capacity planning</a></li>
+<li class="toctree-l2"><a class="reference internal" href="capacity_planning.html#forecasting">Forecasting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="capacity_planning.html#diagonal-scaling">Diagonal scaling</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="statistics.html">Statistics For Engineers</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="statistics.html#normal-distributions">Normal distributions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="statistics.html#percentiles-histograms-averages-mean-medians">Percentiles, histograms, averages, mean, medians</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="deployment_101.html">Software Deployment 101</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="deployment_101.html#software-deployment-vs-configuration-management">Software deployment vs configuration management</a></li>
+<li class="toctree-l2"><a class="reference internal" href="deployment_101.html#running-services">Running services</a></li>
+<li class="toctree-l2"><a class="reference internal" href="deployment_101.html#package-management">Package management</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="deployment_201.html">Software Deployment 201</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="deployment_201.html#running-services">Running services</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="soft_skills_101.html">Soft Skills 101</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="soft_skills_101.html#communication-basics">Communication basics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="soft_skills_101.html#communication-modes">Communication Modes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="soft_skills_101.html#special-cases-for-operations">Special cases for operations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="soft_skills_101.html#time-management">Time Management</a></li>
+<li class="toctree-l2"><a class="reference internal" href="soft_skills_101.html#project-management">Project Management</a></li>
+<li class="toctree-l2"><a class="reference internal" href="soft_skills_101.html#the-tao-of-devops">The Tao of DevOps</a></li>
+<li class="toctree-l2"><a class="reference internal" href="soft_skills_101.html#the-importance-of-documentation">The importance of Documentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="soft_skills_101.html#working-with-other-teams">Working with other teams</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="soft_skills_201.html">Soft Skills 201</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="soft_skills_201.html#business-acumen-in-operations">Business Acumen in Operations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="soft_skills_201.html#understanding-the-role-of-operations">Understanding the role of operations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="soft_skills_201.html#thinking-broadly">Thinking broadly</a></li>
+<li class="toctree-l2"><a class="reference internal" href="soft_skills_201.html#promoting-change">Promoting Change</a></li>
+<li class="toctree-l2"><a class="reference internal" href="soft_skills_201.html#building-basic-business-skills">Building basic business skills</a></li>
+<li class="toctree-l2"><a class="reference internal" href="soft_skills_201.html#specific-examples">Specific Examples</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="labs.html">Labs exercises</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="labs.html#bare-metal-provisioning-101">Bare-Metal Provisioning 101</a></li>
+<li class="toctree-l2"><a class="reference internal" href="labs.html#bare-metal-provisioning-201">Bare-Metal Provisioning 201</a></li>
+<li class="toctree-l2"><a class="reference internal" href="labs.html#cloud-provisioning-101">Cloud Provisioning 101</a></li>
+<li class="toctree-l2"><a class="reference internal" href="labs.html#cloud-provisioning-201">Cloud Provisioning 201</a></li>
+<li class="toctree-l2"><a class="reference internal" href="labs.html#database-101">Database 101</a></li>
+<li class="toctree-l2"><a class="reference internal" href="labs.html#database-201">Database 201</a></li>
+<li class="toctree-l2"><a class="reference internal" href="labs.html#database-301">Database 301</a></li>
+<li class="toctree-l2"><a class="reference internal" href="labs.html#automation-101">Automation 101</a></li>
+<li class="toctree-l2"><a class="reference internal" href="labs.html#automation-chef-201">Automation - Chef 201</a></li>
+<li class="toctree-l2"><a class="reference internal" href="labs.html#automation-chef-301">Automation - Chef 301</a></li>
+<li class="toctree-l2"><a class="reference internal" href="labs.html#automation-chef-302">Automation - Chef 302</a></li>
+<li class="toctree-l2"><a class="reference internal" href="labs.html#automation-puppet-201">Automation - Puppet 201</a></li>
+<li class="toctree-l2"><a class="reference internal" href="labs.html#automation-puppet-301">Automation - Puppet 301</a></li>
+<li class="toctree-l2"><a class="reference internal" href="labs.html#package-management-101">Package Management 101</a></li>
+<li class="toctree-l2"><a class="reference internal" href="labs.html#package-management-201">Package Management 201</a></li>
+<li class="toctree-l2"><a class="reference internal" href="labs.html#build-automation-fleets">Build automation fleets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="labs.html#version-control-with-git-101">Version Control with Git 101</a></li>
+<li class="toctree-l2"><a class="reference internal" href="labs.html#dns-101">DNS 101</a></li>
+<li class="toctree-l2"><a class="reference internal" href="labs.html#http-101">HTTP 101</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="learning.html">Learning and the Community</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="learning.html#learning-and-strategies-for-improvement">Learning and strategies for improvement</a></li>
+<li class="toctree-l2"><a class="reference internal" href="learning.html#things-to-keep-in-mind-as-you-learn-how-to-be-an-engineer">Things to keep in mind as you learn how to be an engineer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="learning.html#golden-rules-for-careers-in-ops">Golden rules for careers in ops</a></li>
+<li class="toctree-l2"><a class="reference internal" href="learning.html#where-to-look-for-help-in-the-community">Where to look for help in the community</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="seealso.html">See also</a></li>
+<li class="toctree-l1"><a class="reference internal" href="meta/contributions.html">Contributions</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="meta/contributions.html#how-we-ll-organize-work">How we&#8217;ll organize work</a></li>
+<li class="toctree-l2"><a class="reference internal" href="meta/contributions.html#how-to-contribute">How to contribute</a></li>
+<li class="toctree-l2"><a class="reference internal" href="meta/contributions.html#rewards-for-contributions">Rewards for contributions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="meta/contributions.html#ops-school-videos">Ops School Videos</a></li>
+<li class="toctree-l2"><a class="reference internal" href="meta/contributions.html#how-to-write-sections">How to write sections</a></li>
+<li class="toctree-l2"><a class="reference internal" href="meta/contributions.html#overwriting-existing-content">Overwriting existing content</a></li>
+<li class="toctree-l2"><a class="reference internal" href="meta/contributions.html#credits">Credits</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="meta/conventions.html">Conventions</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="meta/conventions.html#style-guide">Style Guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="meta/conventions.html#sample-network">Sample Network</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="meta/style_guide.html">Style Guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="meta/style_guide.html#editing">Editing</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="glossary.html">Glossary</a></li>
+</ul>
+
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="index.html">Ops School Curriculum</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="index.html">Docs</a> &raquo;</li>
+      
+    <li>Monitoring, Notifications, and Metrics 201</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          <a href="_sources/monitoring_201.txt" rel="nofollow"> View page source</a>
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            
+  <div class="section" id="monitoring-notifications-and-metrics-201">
+<h1>Monitoring, Notifications, and Metrics 201<a class="headerlink" href="#monitoring-notifications-and-metrics-201" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="dataviz-graphing">
+<h2>Dataviz &amp; Graphing<a class="headerlink" href="#dataviz-graphing" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="graphite-statsd">
+<h2>Graphite, StatsD<a class="headerlink" href="#graphite-statsd" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="what-are-graphite-and-statsd">
+<h3>What are Graphite and StatsD?<a class="headerlink" href="#what-are-graphite-and-statsd" title="Permalink to this headline">¶</a></h3>
+<p>In order to understand what your application is doing and to get a better
+overview over key functionality it is indispensable to gather metrics about
+those areas. A popular combination to achieve this is <a class="reference external" href="https://github.com/etsy/statsd/">StatsD</a> with the
+<a class="reference internal" href="#graphite">Graphite</a> storage and graphing backend. This chapter will introduce those
+tools, how to install and configure them and how they can be used to gather
+insight into your application&#8217;s metrics.</p>
+</div>
+<div class="section" id="graphite">
+<h3>Graphite<a class="headerlink" href="#graphite" title="Permalink to this headline">¶</a></h3>
+<p>The <a class="reference external" href="http://graphite.wikidot.com/">Graphite project</a> is a set of tools for
+collecting and visualizing data, all written in Python. It consists of a file
+based database format and tools to work with it called <em>whisper</em>, a set of
+network daemons to collect data - the <em>carbon</em> daemons - and a Django based
+web application to display data.</p>
+<div class="section" id="whisper-database-format">
+<h4>Whisper database format<a class="headerlink" href="#whisper-database-format" title="Permalink to this headline">¶</a></h4>
+<p>Graphite at its core uses a disk-based storage system called <em>whisper</em>. Every
+metric is stored in its corresponding <tt class="docutils literal"><span class="pre">.wsp</span></tt> file. These are fixed sized
+databases, meaning that the amount of data a file can hold is pre-determined
+upon creation. In order to achieve this, every database file contains so
+called <em>archives</em> which store <em>(timestamp, value)</em> pairs with varying
+granularity and length. For example a possible archive setup could be to store
+a data point every 10 seconds for 6 hours, after that store 1 minute data for a
+week and for long time archival use a data point every 10 minutes for 5 years.</p>
+<p>This means once your data is older than the time period stored in the archive,
+a decision has to be made how to fit the data into the coarser slots in the
+next archive. In our example setup when going from the highest precision (10
+seconds) to the next archive (1 minute) we have 6 values at our disposal to
+aggregate. The database can be configured to aggregate by average, sum, last,
+max or min functions, which uses the arithmetic mean, the sum of all values,
+the last one recorded or the biggest or smallest value respectively to fill the
+value in the next archive. This process is done every time a value is too old to
+be stored in an archive until it is older than the lowest resolution archive
+available and isn&#8217;t stored anymore at all.</p>
+<p>An important setting in this context is the <em>x-files-factor</em> you can set on
+every database. This describes how many of the archives slots have to have a
+value (as opposed to <tt class="docutils literal"><span class="pre">None</span></tt> which is Python&#8217;s <tt class="docutils literal"><span class="pre">NULL</span></tt> value and recorded
+when no value is received for a timestamp) to aggregate the next lower archive
+to a value and not also insert <tt class="docutils literal"><span class="pre">None</span></tt> instead. The value range for this
+setting is decimal from 0 to 1 and defaults to 0.5. This means when we use the
+default setting on our example archives, at least 3 of the 6 values for the
+first aggregation and 5 of the 10 values for the second one have to have
+actual values.</p>
+<p>The disk format to store all this data is rather simple. Every file has a
+short header with the basic information about the aggregation function used,
+the maximum retention period available, the <em>x-files-factor</em> and the number of
+archives it contains. These are stored as 2 <em>longs</em>, a <em>float</em> and another
+<em>long</em> thus requiring 16 bytes of storage. After that the archives are
+appended to the file with their <em>(timestamp, value)</em> pairs stored as a <em>long</em>
+and a <em>double</em> value consuming 12 bytes per pair.</p>
+<p>This design makes it possible to store a lot of datapoints relatively easy and
+without consuming a lot of disk space (1 year&#8217;s worth of 1 minute data for a
+metric can be stored in a little more than 6MB). But it also means that some
+considerations about usage have to be made upfront. Due to the database&#8217;s
+fixed size, the highest resolution archive should match the rate at which you
+send data. If data is sent at lower intervals the archive ends up with a lot
+of <tt class="docutils literal"><span class="pre">None</span></tt> values and if more than one metric are received for a timestamp,
+the last one will always overwrite previous ones. So if a low rate of events
+during some times is expected, it might make sense to tune down the
+<em>x-files-factor</em> to aggregate even if only one of ten values is available. And
+depending on the type of metrics (counters for example) it might also make
+more sense to aggregate with the <em>sum</em> function instead of the default
+aggregation by averaging the values. Thinking about this before sending
+metrics makes things a lot easier since it&#8217;s possible to change these settings
+afterwards, however to keep the existing data, the whisper file has to be
+resized which takes some time and makes the file unavailable for storage
+during that time.</p>
+<p>In order to understand whisper files a little bit better, we can use the set
+of scripts distributed with whisper to take a look at a database file. First
+install whisper from the PyPi distribution:</p>
+<div class="highlight-console"><div class="highlight"><pre><span class="gp">%</span> sudo pip install whisper
+</pre></div>
+</div>
+<p>And create a whisper database with a 10 second retention for 1 minute by using
+the <tt class="docutils literal"><span class="pre">whisper-create.py</span></tt> command:</p>
+<div class="highlight-console"><div class="highlight"><pre><span class="gp">%</span> whisper-create.py test.wsp 10s:1minute
+<span class="go">Created: test.wsp (100 bytes)</span>
+
+<span class="gp">%</span> whisper-info.py test.wsp
+<span class="go">maxRetention: 60</span>
+<span class="go">xFilesFactor: 0.5</span>
+<span class="go">aggregationMethod: average</span>
+<span class="go">fileSize: 100</span>
+
+<span class="go">Archive 0</span>
+<span class="go">retention: 60</span>
+<span class="go">secondsPerPoint: 10</span>
+<span class="go">points: 6</span>
+<span class="go">size: 72</span>
+<span class="go">offset: 28</span>
+
+<span class="gp">%</span> whisper-fetch.py test.wsp
+<span class="go">1354509290      None</span>
+<span class="go">1354509300      None</span>
+<span class="go">1354509310      None</span>
+<span class="go">1354509320      None</span>
+<span class="go">1354509330      None</span>
+<span class="go">1354509340      None</span>
+</pre></div>
+</div>
+<p>The resulting file has six ten second buckets corresponding to the retention
+period in the create command. As it is visible from the <tt class="file docutils literal"><span class="pre">whisper-info.py</span></tt>
+output, the database uses default values for <em>x-files-factor</em> and aggregation
+method, since we didn&#8217;t specify anything different. And we also only have one
+archive which stores data at 10 seconds per value for 60 seconds as we passed
+as a command argument. By default <tt class="file docutils literal"><span class="pre">whisper-fetch.py</span></tt> shows timestamps as
+epoch time. There is also <tt class="docutils literal"><span class="pre">--pretty</span></tt> option to show them in a more human
+readable format, but since the exact time is not important all examples show
+epoch time. For updating the database with value there is the handy
+<tt class="file docutils literal"><span class="pre">whisper-update.py</span></tt> command, which takes a timestamp and a value as
+arguments:</p>
+<div class="highlight-console"><div class="highlight"><pre><span class="gp">%</span> whisper-update.py test.wsp 1354509710:3
+<span class="gp">%</span> whisper-fetch.py test.wsp
+<span class="go">1354509690      None</span>
+<span class="go">1354509700      None</span>
+<span class="go">1354509710      3.000000</span>
+<span class="go">1354509720      None</span>
+<span class="go">1354509730      None</span>
+<span class="go">1354509740      None</span>
+</pre></div>
+</div>
+<p>Notice how the timestamps are not the same as in the example above, because
+more than a minute has past since then and if we had values stored at those
+points, they wouldn&#8217;t be show anymore. However taking a look at the
+database file with <tt class="file docutils literal"><span class="pre">whisper-dump.py</span></tt> reveals a little more information about
+the storage system:</p>
+<div class="highlight-console"><div class="highlight"><pre><span class="gp">%</span> whisper-dump.py test.wsp
+<span class="go">Meta data:</span>
+<span class="go">aggregation method: average</span>
+<span class="go">max retention: 60</span>
+<span class="go">xFilesFactor: 0.5</span>
+
+<span class="go">Archive 0 info:</span>
+<span class="go">offset: 28</span>
+<span class="go">seconds per point: 10</span>
+<span class="go">points: 6</span>
+<span class="go">retention: 60</span>
+<span class="go">size: 72</span>
+
+<span class="go">Archive 0 data:</span>
+<span class="go">0: 1354509710,          3</span>
+<span class="go">1: 0,          0</span>
+<span class="go">2: 0,          0</span>
+<span class="go">3: 0,          0</span>
+<span class="go">4: 0,          0</span>
+<span class="go">5: 0,          0</span>
+</pre></div>
+</div>
+<p>In addition to the metadata <tt class="file docutils literal"><span class="pre">whisper-info.py</span></tt> already showed, the dump
+command also tells us that only one slot actually has data. And in this case
+the time passed doesn&#8217;t matter. Since slots are only changed when new values
+need to be written to them, this old value will remain there until then. The
+reason why <tt class="file docutils literal"><span class="pre">whisper-fetch.py</span></tt> doesn&#8217;t show these past values is because it
+will only show valid data within a given time (default 24h) until <em>max
+retention</em> from the invoked point in time. And it will also fetch the points
+from the retention archive that can cover most of the requested time. This
+becomes a bit more clear when adding a new archive:</p>
+<div class="highlight-console"><div class="highlight"><pre><span class="gp">%</span> whisper-resize.py test.wsp 10s:1min 20s:2min
+<span class="go">Retrieving all data from the archives</span>
+<span class="go">Creating new whisper database: test.wsp.tmp</span>
+<span class="go">Created: test.wsp.tmp (184 bytes)</span>
+<span class="go">Migrating data...</span>
+<span class="go">Renaming old database to: test.wsp.bak</span>
+<span class="go">Renaming new database to: test.wsp</span>
+
+<span class="gp">%</span> whisper-info.py test.wsp
+<span class="go">maxRetention: 120</span>
+<span class="go">xFilesFactor: 0.5</span>
+<span class="go">aggregationMethod: average</span>
+<span class="go">fileSize: 184</span>
+
+<span class="go">Archive 0</span>
+<span class="go">retention: 60</span>
+<span class="go">secondsPerPoint: 10</span>
+<span class="go">points: 6</span>
+<span class="go">size: 72</span>
+<span class="go">offset: 40</span>
+
+<span class="go">Archive 1</span>
+<span class="go">retention: 120</span>
+<span class="go">secondsPerPoint: 20</span>
+<span class="go">points: 6</span>
+<span class="go">size: 72</span>
+<span class="go">offset: 112</span>
+
+<span class="gp">%</span> whisper-fetch.py test.wsp
+<span class="go">1354514740      None</span>
+<span class="go">1354514760      None</span>
+<span class="go">1354514780      None</span>
+<span class="go">1354514800      None</span>
+<span class="go">1354514820      None</span>
+<span class="go">1354514840      None</span>
+</pre></div>
+</div>
+<p>Now the database has a second archive which stores 20 second data for 2
+minutes and <tt class="file docutils literal"><span class="pre">whisper-fetch.py</span></tt> returns 20 second slots. That&#8217;s because it
+tries to retrieve as close to 24h (the default time) as possible and the 20
+second slot archive is closer to that. For getting data in 10 second slots,
+the command has to be invoked with the <tt class="docutils literal"><span class="pre">--from=</span></tt> parameter and an epoch
+timestamp less than 1 minute in the past.</p>
+<p>These commands are a good way to inspect whisper files and to get a basic
+understanding how data is stored. So it makes sense to experiment with them a
+bit before going into the rest of the Graphite eco-system.</p>
+</div>
+<div class="section" id="the-carbon-daemons">
+<h4>The carbon daemons<a class="headerlink" href="#the-carbon-daemons" title="Permalink to this headline">¶</a></h4>
+<p>In order to make whisper files accessible to be written to from other network
+services, the Graphite project includes the <em>carbon</em> daemon suite. The suite
+consists of a <em>carbon-cache</em>, <em>carbon-relay</em> and <em>carbon-aggregator</em> daemon,
+which are all based on the Twisted framework for event-driven IO in Python.</p>
+<p>The <em>carbon-cache</em> daemon is the most crucial of them as it provides the basic
+interface to the whisper backend and a scalable and efficient way for a large
+number of clients to store metrics. In order to minimize write delay for a big
+number of metrics depending on the disk seek time (each metric has its own
+file) the daemon employs queuing. Every metric has its own queue and an
+incoming value for a metric gets appended to it. A background thread then
+checks the queues for data points and writes them consecutively to the
+storage file. This way cost of an expensive disk seek gets amortized over
+several metric values that are written with one seek.</p>
+<p>The daemon relies on two config files, <tt class="file docutils literal"><span class="pre">carbon.conf</span></tt> for general
+configuration and <tt class="file docutils literal"><span class="pre">storage-schemas.conf</span></tt> for whisper storage configuration.
+The general configuration file contains settings like network configuration
+(<em>carbon-cache</em> can listen on different sockets like plain TCP and UDP or even
+AMQP), cache sizes and maximum updates per second in its <tt class="docutils literal"><span class="pre">[cache]</span></tt> section.
+These settings are very useful when tuning the carbon daemon for the hardware
+it&#8217;s running on, but to get started the default settings from the example
+config files will suffice. The storage schemas configuration file contains
+information about which metrics paths are using which retention archives and
+aggregation methods. A basic entry looks like this:</p>
+<div class="highlight-ini"><div class="highlight"><pre><span class="k">[default_1min_for_1day]</span>
+<span class="na">pattern</span> <span class="o">=</span> <span class="s">.*</span>
+<span class="na">retentions</span> <span class="o">=</span> <span class="s">60s:1d</span>
+</pre></div>
+</div>
+<p>Each section has a name and a regex pattern which will be matched on the
+metrics path sent. The pattern shown above will match any pattern and can be
+used as a catch-all rule at the end of the configuration to match uncaught
+metrics. The <tt class="docutils literal"><span class="pre">retentions</span></tt> section is a comma separated list of retention
+archives to use for the metrics path in the same format that
+<tt class="file docutils literal"><span class="pre">whisper-create.py</span></tt> expects them.</p>
+<p>In order to get a basic carbon cache instance running (default listener is TCP
+on port 2003), install it from PyPi and copy the example config files:</p>
+<div class="highlight-console"><div class="highlight"><pre><span class="gp">%</span> <span class="nb">cd</span> /opt/graphite/conf
+<span class="gp">%</span> cp carbon.conf.example carbon.conf
+<span class="gp">%</span> cp storage-schemas.conf.example storage-schemas.conf
+<span class="gp">%</span> /opt/graphite/bin/carbon-cache.py start
+<span class="go">Starting carbon-cache (instance a)</span>
+
+<span class="gp">%</span> netstat -an | grep 2003
+<span class="go">tcp4       0      0  *.2003                 *.*                    LISTEN</span>
+</pre></div>
+</div>
+<p>The default installation creates its directories in <tt class="docutils literal"><span class="pre">/opt/graphite</span></tt> but this
+can also be changed within the configuration. After the carbon daemon has been
+started, metrics can just be recorded by sending one or more values in the
+format <tt class="docutils literal"><span class="pre">metric_path</span> <span class="pre">value</span> <span class="pre">timestamp\n</span></tt>:</p>
+<div class="highlight-console"><div class="highlight"><pre><span class="gp">%</span> <span class="nb">echo</span> <span class="s2">&quot;test 10 1354519378&quot;</span> | nc -w1 localhost 2003
+<span class="gp">%</span> whisper-fetch.py /opt/graphite/storage/whisper/test.wsp |
+<span class="go">tail -n 3</span>
+<span class="go">1354519260      None</span>
+<span class="go">1354519320      10.000000</span>
+<span class="go">1354519380      None</span>
+</pre></div>
+</div>
+<p>All metrics paths that are sent are relative to the
+<tt class="docutils literal"><span class="pre">/opt/graphite/storage/whisper</span></tt> directory and will be stored there. The
+interface also supports sub folders, which can be created by separate the
+metrics path with dots:</p>
+<div class="highlight-console"><div class="highlight"><pre><span class="gp">%</span> <span class="nb">echo</span> <span class="s2">&quot;this.is.a.test 10 1354519680&quot;</span> | nc -w1 localhost 2003
+<span class="gp">%</span> whisper-fetch.py /opt/graphite/storage/whisper/this/is/a/test.wsp| tail -n 3
+<span class="go">1354519560      None</span>
+<span class="go">1354519620      None</span>
+<span class="go">1354519680      10.000000</span>
+</pre></div>
+</div>
+<p>This is all that&#8217;s needed to collect metrics over the network. As mentioned
+before, the carbon suite contains two more daemons <tt class="docutils literal"><span class="pre">carbon-relay</span></tt> and
+<tt class="docutils literal"><span class="pre">carbon-aggregator</span></tt>. These can be used to improve the performance of the
+system under higher load.</p>
+<p><tt class="docutils literal"><span class="pre">carbon-relay</span></tt> acts as a router between different <tt class="docutils literal"><span class="pre">carbon-cache</span></tt> or
+<tt class="docutils literal"><span class="pre">carbon-aggregator</span></tt> instances. The daemon reads the <tt class="docutils literal"><span class="pre">[relay]</span></tt> section of
+the <tt class="file docutils literal"><span class="pre">carbon.conf</span></tt> configuration file where the most important sections
+are the interface and TCP port to listen to via the <tt class="docutils literal"><span class="pre">LINE_RECEIVER_*</span></tt>
+settings, the <tt class="docutils literal"><span class="pre">DESTINATIONS</span></tt> property, a comma separated list of
+<tt class="docutils literal"><span class="pre">ipaddress:port</span></tt> pairs of available carbon daemons and the type of relaying
+to use. The <tt class="docutils literal"><span class="pre">carbon-relay</span></tt> can be operated in rule based or consistent
+hashing based relaying mode. In the second case, consistent hashing is
+employed to balance the metrics between available destinations. When using the
+relay based approach, the relay daemon needs a <tt class="file docutils literal"><span class="pre">relay-rules.conf</span></tt>
+configuration file of the form:</p>
+<div class="highlight-ini"><div class="highlight"><pre><span class="k">[name]</span>
+<span class="na">pattern</span> <span class="o">=</span> <span class="s">&lt;regex&gt;</span>
+<span class="na">destinations</span> <span class="o">=</span> <span class="s">&lt;list of destination addresses&gt;</span>
+</pre></div>
+</div>
+<p>This follows the storage schema configuration file format and will route any
+metric matching the pattern to the given destinations. There also has to be
+exactly one section which additionally has the property <tt class="docutils literal"><span class="pre">default</span> <span class="pre">=</span> <span class="pre">true</span></tt>
+which is used as the catch all rule if no other rule has matched a metric
+path.</p>
+</div>
+<div class="section" id="the-graphite-web-application">
+<h4>The Graphite web application<a class="headerlink" href="#the-graphite-web-application" title="Permalink to this headline">¶</a></h4>
+</div>
+<div class="section" id="normalizing-the-metrics">
+<h4>Normalizing the Metrics<a class="headerlink" href="#normalizing-the-metrics" title="Permalink to this headline">¶</a></h4>
+<p>To easily navigate within hundreds of metrics, it&#8217;s important to normalize the name.  Here are a few naming schemes:</p>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">&lt;ENV&gt;.&lt;CLUSTER&gt;.&lt;SERVER&gt;.metric</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">&lt;ENV&gt;.&lt;APPLICATION-TYPE&gt;.&lt;APPLICATION&gt;.metric</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">&lt;ENV&gt;.APPLICATIONS.EVENTS.&lt;APP-NAME&gt;.deploy</span></tt></li>
+</ul>
+<p>Here a couple rules to choose an appropriate scheme:</p>
+<ul class="simple">
+<li>always put the most common part on the left of the name</li>
+<li>differentiate them by type (e.g.: hosts / applications)</li>
+</ul>
+<p>Of course, you&#8217;re free to adopt different schemes.  The most important
+rule is to be consistent when naming your metrics.</p>
+<p>To achieve this, a common solution is to have a small proxy between
+the tool reporting metrics and Graphite.  This could be an HTTP proxy
+(like <a class="reference external" href="http://obfuscurity.com/2012/05/Organizing-Your-Graphite-Metrics">documented by Jason Dixon</a>,
+or a simple script that listens on a port, and rewrites the metric.</p>
+<p>Using this pattern, you&#8217;ll get more control over the format and paths
+chosen by developers or operations.</p>
+</div>
+</div>
+<div class="section" id="statsd">
+<h3>StatsD<a class="headerlink" href="#statsd" title="Permalink to this headline">¶</a></h3>
+<p><a class="reference external" href="https://github.com/etsy/statsd/">StatsD</a> is a network daemon
+listening for statistics and sends the aggregation to a backend.  In
+our case we will see how it works with Graphite.</p>
+</div>
+<div class="section" id="setting-it-up-and-make-it-show-pretty-graphs">
+<h3>Setting it up and make it show pretty graphs<a class="headerlink" href="#setting-it-up-and-make-it-show-pretty-graphs" title="Permalink to this headline">¶</a></h3>
+<p>StatsD is a simple daemon listening for metrics.  The first
+implemtation was done by Etsy, and is written for <a class="reference external" href="http://nodejs.org">node.js</a>. but other implementation exists (<a class="reference external" href="https://github.com/sivy/py-statsd">Python</a>, <a class="reference external" href="https://github.com/fetep/ruby-statsdserver">Ruby</a>, <a class="reference external" href="https://github.com/armon/statsite">C</a>, etc).</p>
+<p>To install the one by Etsy, you will need to install node.js (if it&#8217;s
+not packaged for your OS, you can <a class="reference external" href="https://github.com/joyent/node/wiki/Installation">follow the instructions</a>).  Then, to
+actually run StatsD:</p>
+<div class="highlight-console"><div class="highlight"><pre><span class="gp">%</span> git clone git://github.com/etsy/statsd.git
+<span class="gp">%</span> <span class="nb">cd </span>statsd
+<span class="gp">%</span> <span class="nv">$EDITOR</span> /etc/statsd/config.js
+<span class="gp">%</span> node stats.js /etc/statsd/config.js
+</pre></div>
+</div>
+<p>A basic configuration file will be similar to this:</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="p">{</span>
+  <span class="nx">graphitePort</span><span class="o">:</span> <span class="mi">2303</span><span class="p">,</span>
+  <span class="nx">graphiteHost</span><span class="o">:</span> <span class="s2">&quot;localhost&quot;</span><span class="p">,</span>
+  <span class="nx">port</span><span class="o">:</span> <span class="mi">8125</span><span class="p">,</span>
+  <span class="nx">graphite</span><span class="o">:</span> <span class="p">{</span>
+    <span class="nx">legacyNamespace</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
+    <span class="nx">prefixTimer</span><span class="o">:</span> <span class="s2">&quot;aggregate&quot;</span><span class="p">,</span>
+    <span class="nx">globalPrefix</span><span class="o">:</span> <span class="s2">&quot;&quot;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="concepts">
+<h3>Concepts<a class="headerlink" href="#concepts" title="Permalink to this headline">¶</a></h3>
+<p>StatsD listens on the UDP port 8125 for incoming statistics.  As for
+Graphite, the protocol is line based.  You send a string similar to
+<tt class="docutils literal"><span class="pre">name:1|c</span></tt>.  The first element (name) is the name of the statistic,
+the colon acts as a separator with the value (1), and the pipe
+separates the value with the type (c, for <em>counter</em>).</p>
+<p>StatsD stores statistics in buckets.  A value is attached to the
+statistic, and periodically (by default it&#8217;s every 10 seconds), the
+statistics are aggregated and send to the backend.</p>
+<p>A few types are supported, and we will now see them in detail.</p>
+<div class="section" id="counter">
+<h4>Counter<a class="headerlink" href="#counter" title="Permalink to this headline">¶</a></h4>
+<p>The <em>counter</em> is the most basic type.</p>
+<div class="highlight-console"><div class="highlight"><pre><span class="gp">%</span> <span class="nb">echo</span> <span class="s2">&quot;my.statistic:1|c&quot;</span> | nc -w 1 -u localhost 8125
+</pre></div>
+</div>
+<p>This will add 1 to the statistic named &#8220;my.statistic&#8221;.  After the
+flush the value for this statistic will be 0.  It&#8217;s also possible to
+specify to statsd that we are sampling:</p>
+<div class="highlight-console"><div class="highlight"><pre><span class="gp">%</span> <span class="nb">echo</span> <span class="s2">&quot;my.statistic:1|c|@0.1&quot;</span> | nc -w 1 -u localhost 8125
+</pre></div>
+</div>
+</div>
+<div class="section" id="timing">
+<h4>Timing<a class="headerlink" href="#timing" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-console"><div class="highlight"><pre><span class="gp">%</span> <span class="nb">echo</span> <span class="s2">&quot;my.timer:43|ms&quot;</span> | nc -w 1 -u localhost 8125
+</pre></div>
+</div>
+<p>This type is somewhat mis-named, since you can report more than time
+based metrics.  You give it times in milliseconds, and it will compute
+the percentiles, average, standard deviation, sum, lower and upper
+bounds for the flush interval.</p>
+</div>
+<div class="section" id="gauges">
+<h4>Gauges<a class="headerlink" href="#gauges" title="Permalink to this headline">¶</a></h4>
+<p>Gauges are arbitrary values.</p>
+<div class="highlight-console"><div class="highlight"><pre><span class="gp">%</span> <span class="nb">echo</span> <span class="s2">&quot;my.statistic:23|g&quot;</span> | nc -w 1 -u localhost 8125
+</pre></div>
+</div>
+<p>Gauges can be useful when you have a script that runs periodically and
+you want to report a value (e.g: count the number of rows in a
+database).  The number is final, there&#8217;s no additional processing.</p>
+<p>However, there&#8217;s a few things to know about gauges:</p>
+<blockquote>
+<div><ul class="simple">
+<li>if you send multiple values for the same gauge between 2 flushes,
+only the most recent one will be kept</li>
+<li>if you&#8217;re sending a gauge for the same metric from two different
+places, only one of them will be kept</li>
+<li>if there&#8217;s no new value during the time period, it will send the
+one from the previous period to Graphite</li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="sets">
+<h4>Sets<a class="headerlink" href="#sets" title="Permalink to this headline">¶</a></h4>
+</div>
+</div>
+<div class="section" id="schema">
+<h3>Schema<a class="headerlink" href="#schema" title="Permalink to this headline">¶</a></h3>
+<p>When using graphite, you have to be sure that the smallest time
+retention in Graphite is the same as the interval between two flushes
+in StatsD.  If you&#8217;re sending to Graphite two data points in the same
+time period, it will overwrite the first one.</p>
+</div>
+<div class="section" id="management-interface">
+<h3>Management interface<a class="headerlink" href="#management-interface" title="Permalink to this headline">¶</a></h3>
+<p>A management interface is listening (by default) on the TCP port 8126.
+A few commands are supported:</p>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">stats</span></tt> will output statistics about the current process</li>
+<li><tt class="docutils literal"><span class="pre">counters</span></tt> will dump all the current counters</li>
+<li><tt class="docutils literal"><span class="pre">timers</span></tt> will dump all the current times</li>
+</ul>
+<p>The <tt class="docutils literal"><span class="pre">stats</span></tt> output looks like this:</p>
+<div class="highlight-console"><div class="highlight"><pre><span class="gp">%</span> telnet localhost 8125
+<span class="go">stats</span>
+<span class="go">uptime: 334780</span>
+<span class="go">messages.last_msg_seen: 0</span>
+<span class="go">messages.bad_lines_seen: 1590</span>
+<span class="go">graphite.last_flush: 9</span>
+<span class="go">graphite.last_exception: 334780</span>
+<span class="go">END</span>
+</pre></div>
+</div>
+<p>Where:</p>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">uptime</span></tt> is the number of seconds elapsed since the process
+started</li>
+<li><tt class="docutils literal"><span class="pre">messages.last_msg_seen</span></tt> is the number of seconds since the last
+message received</li>
+<li><tt class="docutils literal"><span class="pre">messages.bad_lines_seen</span></tt> is the number of badly formatted line
+received</li>
+<li><tt class="docutils literal"><span class="pre">graphite.last_flush</span></tt> is the number of seconds elapsed since the
+last flush to Graphite</li>
+<li><tt class="docutils literal"><span class="pre">graphite.last_exception</span></tt> is the number of seconds elapsed since
+the last exception thrown by Graphite while flushing</li>
+</ul>
+</div>
+<div class="section" id="what-have-we-done-and-where-to-go-from-here">
+<h3>What have we done and where to go from here<a class="headerlink" href="#what-have-we-done-and-where-to-go-from-here" title="Permalink to this headline">¶</a></h3>
+<p>This list is a suggestion of things you can collect and measure.</p>
+<div class="section" id="events">
+<h4>Events<a class="headerlink" href="#events" title="Permalink to this headline">¶</a></h4>
+<p>Every time you push an application or use your configuration manager
+to push changes, you could send an event to statsd.  Something as
+simple as</p>
+<div class="highlight-console"><div class="highlight"><pre><span class="gp">%</span> <span class="nb">echo</span> <span class="s2">&quot;&lt;ENV&gt;.APPLICATIONS.EVENTS.&lt;APP-NAME&gt;.deploy:1|c&quot;</span> | nc -w 1 -u localhost 8125
+</pre></div>
+</div>
+<p>Now, in graphite, you can use the formula <tt class="docutils literal"><span class="pre">drawAsInfinite</span></tt> to
+represent this event as a vertical line.</p>
+</div>
+</div>
+<div class="section" id="caveats">
+<h3>Caveats<a class="headerlink" href="#caveats" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="size-of-the-payload">
+<h4>Size of the payload<a class="headerlink" href="#size-of-the-payload" title="Permalink to this headline">¶</a></h4>
+<p>When you&#8217;re sending statistics to StatsD, you have to be careful about
+the size of the payload.  If the size is greater than your network&#8217;s
+MTU, the frame will be dropped.  You can refer to <a class="reference external" href="https://github.com/etsy/statsd/#multi-metric-packets">this
+documentation</a>
+to find the size that might work best for your network.</p>
+</div>
+</div>
+</div>
+<div class="section" id="dashboard-info-for-ops-and-info-for-the-business">
+<h2>Dashboard: Info for ops and info for the business<a class="headerlink" href="#dashboard-info-for-ops-and-info-for-the-business" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="tasseo">
+<h3>Tasseo<a class="headerlink" href="#tasseo" title="Permalink to this headline">¶</a></h3>
+<p><a class="reference external" href="https://github.com/obfuscurity/tasseo">Tasseo</a> is a Graphite
+specific live dashboard. It is lightweight, easily configurable and
+provides a near-realtime view of Graphite metric data. It is a ruby
+based <a class="reference external" href="http://www.sinatrarb.com/">Sinatra</a> and javascript application.</p>
+</div>
+<div class="section" id="dashing">
+<h3>Dashing<a class="headerlink" href="#dashing" title="Permalink to this headline">¶</a></h3>
+<p><a class="reference external" href="http://shopify.github.com/dashing/">Dashing</a> is a dashboard
+framework allowing you to build your own custom dashboards. Dashboards
+can be created with premade widgets, or custom widgets can be written
+using scss, html and coffeescript. Data bindings allow reuse and
+manipulation of data from a variety of sources.</p>
+</div>
+<div class="section" id="gdash">
+<h3>GDash<a class="headerlink" href="#gdash" title="Permalink to this headline">¶</a></h3>
+<p><a class="reference external" href="https://github.com/ripienaar/gdash">GDash</a> is another dashboard for
+Graphite.  Dashboards are created using a simple <a class="reference external" href="https://github.com/ripienaar/graphite-graph-dsl/wiki">DSL</a>.</p>
+</div>
+</div>
+<div class="section" id="third-party-tools">
+<h2>Third-party tools<a class="headerlink" href="#third-party-tools" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="datadog">
+<h3>Datadog<a class="headerlink" href="#datadog" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="boundry">
+<h3>Boundry<a class="headerlink" href="#boundry" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="newrelic">
+<h3>NewRelic<a class="headerlink" href="#newrelic" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="librato-metrics">
+<h3>Librato Metrics<a class="headerlink" href="#librato-metrics" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="circonus">
+<h3>Circonus<a class="headerlink" href="#circonus" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="geckoboard">
+<h3>Geckoboard<a class="headerlink" href="#geckoboard" title="Permalink to this headline">¶</a></h3>
+</div>
+</div>
+</div>
+
+
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="bcp.html" class="btn btn-neutral float-right" title="Business Continuity Planning"/>Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="monitoring_101.html" class="btn btn-neutral" title="Monitoring, Notifications, and Metrics 101"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2012, Avleen Vig (under Creative Commons license: https://github.com/opsschool/curriculum/blob/master/LICENSE).
+    </p>
+  </div>
+
+  <a href="https://github.com/snide/sphinx_rtd_theme">Sphinx theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'0.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

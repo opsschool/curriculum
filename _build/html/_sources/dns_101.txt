@@ -1,0 +1,25 @@
+DNS 101
+*******
+
+What is DNS? Provide a brief description
+
+* How DNS works
+* The DNS tree
+
+Forward vs reverse
+==================
+
+Resource types
+==============
+
+UDP vs TCP
+==========
+
+``/etc/hosts``, ``/etc/resolv.conf``, ``/etc/nsswitch.conf``
+============================================================
+
+Dynamic DNS
+===========
+
+
+

@@ -1,0 +1,1032 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>File systems &mdash; Ops School Curriculum 0.1 documentation</title>
+  
+
+  
+  
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="top" title="Ops School Curriculum 0.1 documentation" href="index.html"/>
+        <link rel="up" title="Unix fundamentals 101" href="unix_101.html"/>
+        <link rel="next" title="Shells" href="shells_101.html"/>
+        <link rel="prev" title="Unix fundamentals 101" href="unix_101.html"/> 
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        <a href="index.html" class="fa fa-home"> Ops School Curriculum</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+        
+            <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="introduction.html#goals-and-focus">Goals and Focus</a></li>
+<li class="toctree-l2"><a class="reference internal" href="introduction.html#syllabus-layout">Syllabus layout</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="introduction.html#contributions">Contributions</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="introduction.html#how-we-ll-organize-work">How we&#8217;ll organize work</a></li>
+<li class="toctree-l2"><a class="reference internal" href="introduction.html#how-to-contribute">How to contribute</a></li>
+<li class="toctree-l2"><a class="reference internal" href="introduction.html#rewards-for-contributions">Rewards for contributions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="introduction.html#ops-school-videos">Ops School Videos</a></li>
+<li class="toctree-l2"><a class="reference internal" href="introduction.html#how-to-write-sections">How to write sections</a></li>
+<li class="toctree-l2"><a class="reference internal" href="introduction.html#overwriting-existing-content">Overwriting existing content</a></li>
+<li class="toctree-l2"><a class="reference internal" href="introduction.html#credits">Credits</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="meta/guidelines.html">Guidelines</a></li>
+<li class="toctree-l1"><a class="reference internal" href="careers.html">Careers in Operations</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="careers.html#deciding-a-career-path">Deciding a career path</a></li>
+<li class="toctree-l2"><a class="reference internal" href="careers.html#generalized-career-paths">Generalized career paths</a></li>
+<li class="toctree-l2"><a class="reference internal" href="careers.html#specialized-career-paths">Specialized career paths</a></li>
+<li class="toctree-l2"><a class="reference internal" href="careers.html#how-to-become-an-operations-engineer">How to become an operations engineer</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="sysadmin_101.html">Sysadmin 101</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="sysadmin_101.html#what-is-systems-administration">What is Systems Administration?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sysadmin_101.html#what-is-development">What is Development?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sysadmin_101.html#contrasting-development-and-operations">Contrasting Development and Operations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sysadmin_101.html#history-of-development-and-operations">History of Development and Operations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sysadmin_101.html#what-system-administration-isn-t">What System Administration Isn&#8217;t</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="reference internal" href="unix_101.html">Unix fundamentals 101</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="">File systems</a></li>
+<li class="toctree-l2"><a class="reference internal" href="shells_101.html">Shells</a></li>
+<li class="toctree-l2"><a class="reference internal" href="package_management_101.html">Package management</a></li>
+<li class="toctree-l2"><a class="reference internal" href="boot_process_101.html">The Boot Process</a></li>
+<li class="toctree-l2"><a class="reference internal" href="shell_tools_101.html">Useful shell tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cron_101.html">Crontab</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="unix_201.html">Unix fundamentals 201</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="kernel_tuning.html">Kernel tuning</a></li>
+<li class="toctree-l2"><a class="reference internal" href="unix_signals.html">Signals</a></li>
+<li class="toctree-l2"><a class="reference internal" href="syscalls.html">Syscalls</a></li>
+<li class="toctree-l2"><a class="reference internal" href="netbooting.html">Booting over the network</a></li>
+<li class="toctree-l2"><a class="reference internal" href="inits.html"><tt class="docutils literal"><span class="pre">/bin/init</span></tt> and its descendants</a></li>
+<li class="toctree-l2"><a class="reference internal" href="stats_diagnosing.html">Looking at system metrics</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="windows_101.html">MS Windows fundamentals 101</a></li>
+<li class="toctree-l1"><a class="reference internal" href="text_editing_101.html">Text Editing 101</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="text_editing_101.html#a-little-history">A little history</a></li>
+<li class="toctree-l2"><a class="reference internal" href="text_editing_101.html#vi-basics"><tt class="docutils literal"><span class="pre">vi</span></tt> basics</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="text_editing_201.html">Text Editing 201</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="text_editing_201.html#vim">Vim</a></li>
+<li class="toctree-l2"><a class="reference internal" href="text_editing_201.html#emacs">Emacs</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="sysadmin_tools.html">Tools for productivity</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="sysadmin_tools.html#terminal-emulators">Terminal emulators</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sysadmin_tools.html#ssh">SSH</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sysadmin_tools.html#ssh-use-cases">SSH Use Cases</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sysadmin_tools.html#multiplexers">Multiplexers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sysadmin_tools.html#shell-customisations">Shell customisations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sysadmin_tools.html#mosh">Mosh</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sysadmin_tools.html#ticketing-systems">Ticketing systems</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sysadmin_tools.html#note-taking">Note-taking</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="security_101.html">Security 101</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="security_101.html#authentication-in-unix">Authentication in unix</a></li>
+<li class="toctree-l2"><a class="reference internal" href="security_101.html#adding-and-deleting-users-and-groups">Adding and deleting users and groups</a></li>
+<li class="toctree-l2"><a class="reference internal" href="security_101.html#standard-unix-filesystem-permissions">Standard unix filesystem permissions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="security_101.html#pam">PAM</a></li>
+<li class="toctree-l2"><a class="reference internal" href="security_101.html#chroot-jails-and-containers">Chroot, jails and containers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="security_101.html#sudo-or-why-you-should-not-log-in-as-root">Sudo (or, &#8220;Why you should not log in as root&#8221;)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="security_101.html#history-and-lore">History and Lore</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="security_201.html">Security 201</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="security_201.html#centralised-accounts">Centralised accounts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="security_201.html#firewalls-and-packet-filters">Firewalls and packet filters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="security_201.html#public-key-cryptography">Public Key Cryptography</a></li>
+<li class="toctree-l2"><a class="reference internal" href="security_201.html#two-factor-authentication">Two factor authentication</a></li>
+<li class="toctree-l2"><a class="reference internal" href="security_201.html#building-systems-to-be-auditable">Building systems to be auditable</a></li>
+<li class="toctree-l2"><a class="reference internal" href="security_201.html#network-intrusion-detection">Network Intrusion Detection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="security_201.html#host-intrusion-detection">Host Intrusion Detection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="security_201.html#defense-practices">Defense practices</a></li>
+<li class="toctree-l2"><a class="reference internal" href="security_201.html#risk-and-risk-management">Risk and risk management</a></li>
+<li class="toctree-l2"><a class="reference internal" href="security_201.html#compliance-the-bare-minimum">Compliance: The bare minimum</a></li>
+<li class="toctree-l2"><a class="reference internal" href="security_201.html#dealing-with-security-incidents">Dealing with security incidents</a></li>
+<li class="toctree-l2"><a class="reference internal" href="security_201.html#acls-and-extended-attributes-xattrs">ACLs and extended attributes (xattrs)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="security_201.html#selinux">SELinux</a></li>
+<li class="toctree-l2"><a class="reference internal" href="security_201.html#data-placement">Data placement</a></li>
+<li class="toctree-l2"><a class="reference internal" href="security_201.html#additional-reading">Additional reading</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="troubleshooting_101.html">Troubleshooting</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="troubleshooting_101.html#methodologies">Methodologies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="troubleshooting_101.html#working-effectively-during-a-crisis">Working effectively during a crisis</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="networking_101.html">Networking 101</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="networking_101.html#the-rfc-documents">The RFC Documents</a></li>
+<li class="toctree-l2"><a class="reference internal" href="networking_101.html#osi-7-layer-model-osi-reference-model">OSI 7-layer model (OSI Reference Model)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="networking_101.html#tcp-ip-arpa-4-layer-model">TCP/IP (ARPA) 4-layer model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="networking_101.html#ip-addressing">IP Addressing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="networking_101.html#tcp-vs-udp">TCP vs UDP</a></li>
+<li class="toctree-l2"><a class="reference internal" href="networking_101.html#subnetting-netmasks-and-cidr">Subnetting, netmasks and CIDR</a></li>
+<li class="toctree-l2"><a class="reference internal" href="networking_101.html#private-address-space-rfc-1918">Private address space (<strong>RFC 1918</strong>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="networking_101.html#static-routing">Static routing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="networking_101.html#nat">NAT</a></li>
+<li class="toctree-l2"><a class="reference internal" href="networking_101.html#networking-cable">Networking cable</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="networking_201.html">Networking 201</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="networking_201.html#vlans-802-1q-tagging">VLANs, 802.1q tagging</a></li>
+<li class="toctree-l2"><a class="reference internal" href="networking_201.html#spanning-tree">Spanning Tree</a></li>
+<li class="toctree-l2"><a class="reference internal" href="networking_201.html#static-routing">Static Routing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="networking_201.html#dynamic-routing-protocols-rip-ospf-bgp">Dynamic routing protocols (RIP, OSPF, BGP)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="networking_201.html#acls">ACLs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="networking_201.html#network-bonding-802-3ad-lacp-link-aggregation">Network Bonding (802.3ad / LACP link aggregation)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="networking_201.html#ios-switch-configuration">IOS switch configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="networking_201.html#gre-and-other-tunnels">GRE and other tunnels</a></li>
+<li class="toctree-l2"><a class="reference internal" href="networking_201.html#multi-homed-hosts">Multi-homed hosts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="networking_201.html#similarities-and-differences-between-ipv4-and-ipv6-networking">Similarities and differences between IPv4 and IPv6 networking</a></li>
+<li class="toctree-l2"><a class="reference internal" href="networking_201.html#implications-of-dual-stack-firewalls-especially-under-linux">Implications of dual-stack firewalls (especially under Linux)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="networking_201.html#multicast-uses-and-limitations">Multicast uses and limitations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="networking_201.html#latency-vs-bandwidth">Latency vs. Bandwidth</a></li>
+<li class="toctree-l2"><a class="reference internal" href="networking_201.html#vpns">VPNs</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="common_services.html">Common services</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="system_daemons_101.html">System daemons 101</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dns_101.html">DNS 101</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dns_201.html">DNS 201</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dhcp.html">DHCP</a></li>
+<li class="toctree-l2"><a class="reference internal" href="http_101.html">HTTP 101 (Core protocol)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="http_201.html">HTTP 201 (Application Servers &amp; Frameworks)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="smtp_101.html">SMTP 101</a></li>
+<li class="toctree-l2"><a class="reference internal" href="smtp_201.html">SMTP 201</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="identity_management.html">Identity Management 101</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="identity_management.html#ldap">LDAP</a></li>
+<li class="toctree-l2"><a class="reference internal" href="identity_management.html#nis">NIS</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="active_directory_101.html">Active Directory 101</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="active_directory_101.html#what-is-active-directory">What is Active Directory?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="active_directory_101.html#what-is-active-directory-used-for">What is Active Directory used for?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="active_directory_101.html#you-mention-separate-components-what-is-active-directory-composed-of">You mention &#8220;separate components&#8221;; what is Active Directory composed of?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="active_directory_101.html#what-specific-services-does-active-directory-provide">What specific services does Active Directory provide?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="active_directory_101.html#best-practices-for-managing-an-active-directory-installation">Best Practices for managing an Active Directory installation</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="active_directory_201.html">Active Directory 201</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="active_directory_201.html#detailed-breakdown-of-active-directory-components-services">Detailed Breakdown of Active Directory Components/Services</a></li>
+<li class="toctree-l2"><a class="reference internal" href="active_directory_201.html#advanced-active-directory-maintenance">Advanced Active Directory Maintenance</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="remote_filesystems_101.html">Remote Filesystems 101</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="remote_filesystems_101.html#nfsv3">NFSv3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="remote_filesystems_101.html#iscsi">iSCSI</a></li>
+<li class="toctree-l2"><a class="reference internal" href="remote_filesystems_101.html#samba-cifs">SAMBA/CIFS</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="remote_filesystems_201.html">Remote Filesystems 201</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="remote_filesystems_201.html#glusterfs">GlusterFS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="remote_filesystems_201.html#nfsv4">NFSv4</a></li>
+<li class="toctree-l2"><a class="reference internal" href="remote_filesystems_201.html#netatalk-afp">Netatalk / AFP</a></li>
+<li class="toctree-l2"><a class="reference internal" href="remote_filesystems_201.html#s3">S3</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="programming_101.html">Programming 101</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="programming_101.html#shell-scripting-basics">Shell scripting basics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="programming_101.html#regular-expressions">Regular Expressions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="programming_101.html#sed-awk">Sed &amp; awk</a></li>
+<li class="toctree-l2"><a class="reference internal" href="programming_101.html#gigo">GIGO</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="programming_201.html">Programming 201</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="programming_201.html#common-elements-in-scripting-and-what-they-do">Common elements in scripting, and what they do</a></li>
+<li class="toctree-l2"><a class="reference internal" href="programming_201.html#c-a-very-basic-overview">C (A very basic overview)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="programming_201.html#ruby">Ruby</a></li>
+<li class="toctree-l2"><a class="reference internal" href="programming_201.html#python">Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="programming_201.html#version-control">Version Control</a></li>
+<li class="toctree-l2"><a class="reference internal" href="programming_201.html#api-design-fundamentals">API design fundamentals</a></li>
+<li class="toctree-l2"><a class="reference internal" href="programming_201.html#continuous-integration">Continuous Integration</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="hardware_101.html">Hardware 101</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="hardware_101.html#hardware-types">Hardware Types</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hardware_101.html#basic-server-architecture">Basic server architecture</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hardware_101.html#disk-management">Disk management</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hardware_101.html#performance-redundancy">Performance/Redundancy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hardware_101.html#troubleshooting">Troubleshooting</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="datacenters/datacenters_101.html">Datacenters 101</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="datacenters/datacenters_101.html#power-budgets">Power budgets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="datacenters/datacenters_101.html#cooling-budgets">Cooling budgets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="datacenters/datacenters_101.html#you-will-be-judged-by-the-tidiness-of-your-rack">You will be judged by the tidiness of your rack</a></li>
+<li class="toctree-l2"><a class="reference internal" href="datacenters/datacenters_101.html#machine-and-cable-labeling">Machine and cable labeling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="datacenters/datacenters_101.html#traditional-naming-conventions">Traditional naming conventions</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="datacenters/datacenters_201.html">Datacenters 201</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="datacenters/datacenters_201.html#networking-many-racks">Networking many racks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="datacenters/datacenters_201.html#power">Power</a></li>
+<li class="toctree-l2"><a class="reference internal" href="datacenters/datacenters_201.html#cooling">Cooling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="datacenters/datacenters_201.html#physical-security-and-common-security-standards-compliance-requirements">Physical security and common security standards compliance requirements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="datacenters/datacenters_201.html#suggested-practices">Suggested practices</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="datacenters/datacenters_301.html">Datacenters 301</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="datacenters/datacenters_301.html#power">Power</a></li>
+<li class="toctree-l2"><a class="reference internal" href="datacenters/datacenters_301.html#increasing-cooling-efficiency">Increasing cooling efficiency</a></li>
+<li class="toctree-l2"><a class="reference internal" href="datacenters/datacenters_301.html#design-options">Design Options</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="virtualization_101.html">Virtualization 101</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="virtualization_101.html#intro-to-virtualization-technologies">Intro to virtualization technologies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="virtualization_101.html#the-cloud">The Cloud</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="virtualization_201.html">Virtualization 201</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="virtualization_201.html#managing-virtualized-infrastructures-private-clouds">Managing virtualized infrastructures (Private clouds)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="virtualization_201.html#leveraging-virtualization-for-development">Leveraging virtualization for development</a></li>
+<li class="toctree-l2"><a class="reference internal" href="virtualization_201.html#leveraging-virtualization-for-production">Leveraging virtualization for production</a></li>
+<li class="toctree-l2"><a class="reference internal" href="virtualization_201.html#security-implications-of-virtualization">Security implications of virtualization</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="logs_101.html">Logs 101</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="logs_101.html#common-system-logs-formats">Common system logs &amp; formats</a></li>
+<li class="toctree-l2"><a class="reference internal" href="logs_101.html#standard-error">Standard Error</a></li>
+<li class="toctree-l2"><a class="reference internal" href="logs_101.html#log-files">Log files</a></li>
+<li class="toctree-l2"><a class="reference internal" href="logs_101.html#syslog">Syslog</a></li>
+<li class="toctree-l2"><a class="reference internal" href="logs_101.html#log-rotation-append-truncate">Log rotation, append, truncate</a></li>
+<li class="toctree-l2"><a class="reference internal" href="logs_101.html#retention-and-archival">Retention and archival</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="logs_201.html">Logs 201</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="logs_201.html#centralized-logging">Centralized logging</a></li>
+<li class="toctree-l2"><a class="reference internal" href="logs_201.html#log-parsing">Log parsing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="logs_201.html#search-correlation">Search &amp; Correlation</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="databases_101.html">Databases 101 (Relational Databases)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="databases_101.html#what-is-a-database">What is a Database?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="databases_101.html#what-is-a-relational-database">What is a Relational Database?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="databases_101.html#why-we-use-databases">Why We Use Databases?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="databases_101.html#what-is-sql">What is SQL?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="databases_101.html#sql-shell">SQL shell</a></li>
+<li class="toctree-l2"><a class="reference internal" href="databases_101.html#creating-databases">Creating databases</a></li>
+<li class="toctree-l2"><a class="reference internal" href="databases_101.html#creating-users">Creating users</a></li>
+<li class="toctree-l2"><a class="reference internal" href="databases_101.html#granting-privileges">Granting privileges</a></li>
+<li class="toctree-l2"><a class="reference internal" href="databases_101.html#removing-privileges">Removing Privileges</a></li>
+<li class="toctree-l2"><a class="reference internal" href="databases_101.html#basic-normalized-schema-design">Basic normalized schema design</a></li>
+<li class="toctree-l2"><a class="reference internal" href="databases_101.html#select-insert-update-and-delete">Select, Insert, Update and Delete</a></li>
+<li class="toctree-l2"><a class="reference internal" href="databases_101.html#pro-tips">Pro Tips</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="databases_201.html">Databases 201</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="databases_201.html#database-theory">Database Theory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="databases_201.html#document-databases">Document Databases</a></li>
+<li class="toctree-l2"><a class="reference internal" href="databases_201.html#key-value-stores">Key-value Stores</a></li>
+<li class="toctree-l2"><a class="reference internal" href="databases_201.html#graph-databases">Graph Databases</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="application_components_201.html">Application Components 201</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="application_components_201.html#message-brokers">Message Brokers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="application_components_201.html#memory-caches">Memory Caches</a></li>
+<li class="toctree-l2"><a class="reference internal" href="application_components_201.html#specialized-caches">Specialized Caches</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="loadbalancing_101.html">Load Balancing</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="loadbalancing_101.html#why-do-we-use-load-balancers">Why do we use load balancers?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="loadbalancing_101.html#application-implications">Application implications</a></li>
+<li class="toctree-l2"><a class="reference internal" href="loadbalancing_101.html#non-http-use-cases">Non-HTTP use cases</a></li>
+<li class="toctree-l2"><a class="reference internal" href="loadbalancing_101.html#software">Software</a></li>
+<li class="toctree-l2"><a class="reference internal" href="loadbalancing_101.html#hardware">Hardware</a></li>
+<li class="toctree-l2"><a class="reference internal" href="loadbalancing_101.html#multi-dc">Multi-dc</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="monitoring_101.html">Monitoring, Notifications, and Metrics 101</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="monitoring_101.html#history-how-we-used-to-monitor-and-how-we-got-better-monitors-as-tests">History: How we used to monitor, and how we got better (monitors as tests)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="monitoring_101.html#perspective-end-to-end-vs-introspective-monitoring">Perspective (end-to-end) vs Introspective monitoring</a></li>
+<li class="toctree-l2"><a class="reference internal" href="monitoring_101.html#metrics-what-to-collect-what-to-do-with-them">Metrics: what to collect, what to do with them</a></li>
+<li class="toctree-l2"><a class="reference internal" href="monitoring_101.html#common-tools">Common tools</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="monitoring_201.html">Monitoring, Notifications, and Metrics 201</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="monitoring_201.html#dataviz-graphing">Dataviz &amp; Graphing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="monitoring_201.html#graphite-statsd">Graphite, StatsD</a></li>
+<li class="toctree-l2"><a class="reference internal" href="monitoring_201.html#dashboard-info-for-ops-and-info-for-the-business">Dashboard: Info for ops and info for the business</a></li>
+<li class="toctree-l2"><a class="reference internal" href="monitoring_201.html#third-party-tools">Third-party tools</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="bcp.html">Business Continuity Planning</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="backups.html">Backups</a></li>
+<li class="toctree-l2"><a class="reference internal" href="outages.html">Outages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="postmortems.html">Postmortems</a></li>
+<li class="toctree-l2"><a class="reference internal" href="disaster_recovery.html">Disaster Recovery</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="architecture_101.html">Architecture 101</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="architecture_101.html#how-to-make-good-architecture-decisions">How to make good architecture decisions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="architecture_101.html#patterns-and-anti-patterns">Patterns and anti-patterns</a></li>
+<li class="toctree-l2"><a class="reference internal" href="architecture_101.html#introduction-to-availability">Introduction to availability</a></li>
+<li class="toctree-l2"><a class="reference internal" href="architecture_101.html#introduction-to-scalability">Introduction to scalability</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="architecture_201.html">Architecture 201</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="architecture_201.html#service-oriented-architectures">Service Oriented Architectures</a></li>
+<li class="toctree-l2"><a class="reference internal" href="architecture_201.html#fault-tolerance-fault-protection-masking-dependability-fundamentals">Fault tolerance, fault protection, masking, dependability fundamentals</a></li>
+<li class="toctree-l2"><a class="reference internal" href="architecture_201.html#caching-concerns">Caching Concerns</a></li>
+<li class="toctree-l2"><a class="reference internal" href="architecture_201.html#crash-only">Crash only</a></li>
+<li class="toctree-l2"><a class="reference internal" href="architecture_201.html#synchronous-vs-asynchronous">Synchronous vs. Asynchronous</a></li>
+<li class="toctree-l2"><a class="reference internal" href="architecture_201.html#business-continuity-vs-disaster-recovery">Business continuity vs. Disaster Recovery</a></li>
+<li class="toctree-l2"><a class="reference internal" href="architecture_201.html#designing-for-scalability-horizontal-vertical">Designing for Scalability: Horizontal, Vertical</a></li>
+<li class="toctree-l2"><a class="reference internal" href="architecture_201.html#simplicity">Simplicity</a></li>
+<li class="toctree-l2"><a class="reference internal" href="architecture_201.html#performance">Performance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="architecture_201.html#tiered-architectures">Tiered architectures</a></li>
+<li class="toctree-l2"><a class="reference internal" href="architecture_201.html#mttr-mtbf">MTTR &gt; MTBF</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="config_management.html">Configuration Management 101</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="config_management.html#a-brief-history-of-configuration-management">A Brief History of Configuration Management</a></li>
+<li class="toctree-l2"><a class="reference internal" href="config_management.html#idempotence">Idempotence</a></li>
+<li class="toctree-l2"><a class="reference internal" href="config_management.html#convergent-and-congruent-systems">Convergent and Congruent systems</a></li>
+<li class="toctree-l2"><a class="reference internal" href="config_management.html#direct-and-indirect-systems-ansible-capistrano">Direct and Indirect systems: ansible, capistrano</a></li>
+<li class="toctree-l2"><a class="reference internal" href="config_management.html#chef">Chef</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="config_management.html#configuration-management-201">Configuration Management 201</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="config_management.html#ansible">Ansible</a></li>
+<li class="toctree-l2"><a class="reference internal" href="config_management.html#puppet">Puppet</a></li>
+<li class="toctree-l2"><a class="reference internal" href="config_management.html#cfengine-3">Cfengine 3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="config_management.html#saltstack">SaltStack</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="capacity_planning.html">Capacity Planning</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="capacity_planning.html#fundamentals-of-capacity-planning">Fundamentals of capacity planning</a></li>
+<li class="toctree-l2"><a class="reference internal" href="capacity_planning.html#forecasting">Forecasting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="capacity_planning.html#diagonal-scaling">Diagonal scaling</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="statistics.html">Statistics For Engineers</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="statistics.html#normal-distributions">Normal distributions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="statistics.html#percentiles-histograms-averages-mean-medians">Percentiles, histograms, averages, mean, medians</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="deployment_101.html">Software Deployment 101</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="deployment_101.html#software-deployment-vs-configuration-management">Software deployment vs configuration management</a></li>
+<li class="toctree-l2"><a class="reference internal" href="deployment_101.html#running-services">Running services</a></li>
+<li class="toctree-l2"><a class="reference internal" href="deployment_101.html#package-management">Package management</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="deployment_201.html">Software Deployment 201</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="deployment_201.html#running-services">Running services</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="soft_skills_101.html">Soft Skills 101</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="soft_skills_101.html#communication-basics">Communication basics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="soft_skills_101.html#communication-modes">Communication Modes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="soft_skills_101.html#special-cases-for-operations">Special cases for operations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="soft_skills_101.html#time-management">Time Management</a></li>
+<li class="toctree-l2"><a class="reference internal" href="soft_skills_101.html#project-management">Project Management</a></li>
+<li class="toctree-l2"><a class="reference internal" href="soft_skills_101.html#the-tao-of-devops">The Tao of DevOps</a></li>
+<li class="toctree-l2"><a class="reference internal" href="soft_skills_101.html#the-importance-of-documentation">The importance of Documentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="soft_skills_101.html#working-with-other-teams">Working with other teams</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="soft_skills_201.html">Soft Skills 201</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="soft_skills_201.html#business-acumen-in-operations">Business Acumen in Operations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="soft_skills_201.html#understanding-the-role-of-operations">Understanding the role of operations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="soft_skills_201.html#thinking-broadly">Thinking broadly</a></li>
+<li class="toctree-l2"><a class="reference internal" href="soft_skills_201.html#promoting-change">Promoting Change</a></li>
+<li class="toctree-l2"><a class="reference internal" href="soft_skills_201.html#building-basic-business-skills">Building basic business skills</a></li>
+<li class="toctree-l2"><a class="reference internal" href="soft_skills_201.html#specific-examples">Specific Examples</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="labs.html">Labs exercises</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="labs.html#bare-metal-provisioning-101">Bare-Metal Provisioning 101</a></li>
+<li class="toctree-l2"><a class="reference internal" href="labs.html#bare-metal-provisioning-201">Bare-Metal Provisioning 201</a></li>
+<li class="toctree-l2"><a class="reference internal" href="labs.html#cloud-provisioning-101">Cloud Provisioning 101</a></li>
+<li class="toctree-l2"><a class="reference internal" href="labs.html#cloud-provisioning-201">Cloud Provisioning 201</a></li>
+<li class="toctree-l2"><a class="reference internal" href="labs.html#database-101">Database 101</a></li>
+<li class="toctree-l2"><a class="reference internal" href="labs.html#database-201">Database 201</a></li>
+<li class="toctree-l2"><a class="reference internal" href="labs.html#database-301">Database 301</a></li>
+<li class="toctree-l2"><a class="reference internal" href="labs.html#automation-101">Automation 101</a></li>
+<li class="toctree-l2"><a class="reference internal" href="labs.html#automation-chef-201">Automation - Chef 201</a></li>
+<li class="toctree-l2"><a class="reference internal" href="labs.html#automation-chef-301">Automation - Chef 301</a></li>
+<li class="toctree-l2"><a class="reference internal" href="labs.html#automation-chef-302">Automation - Chef 302</a></li>
+<li class="toctree-l2"><a class="reference internal" href="labs.html#automation-puppet-201">Automation - Puppet 201</a></li>
+<li class="toctree-l2"><a class="reference internal" href="labs.html#automation-puppet-301">Automation - Puppet 301</a></li>
+<li class="toctree-l2"><a class="reference internal" href="labs.html#package-management-101">Package Management 101</a></li>
+<li class="toctree-l2"><a class="reference internal" href="labs.html#package-management-201">Package Management 201</a></li>
+<li class="toctree-l2"><a class="reference internal" href="labs.html#build-automation-fleets">Build automation fleets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="labs.html#version-control-with-git-101">Version Control with Git 101</a></li>
+<li class="toctree-l2"><a class="reference internal" href="labs.html#dns-101">DNS 101</a></li>
+<li class="toctree-l2"><a class="reference internal" href="labs.html#http-101">HTTP 101</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="learning.html">Learning and the Community</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="learning.html#learning-and-strategies-for-improvement">Learning and strategies for improvement</a></li>
+<li class="toctree-l2"><a class="reference internal" href="learning.html#things-to-keep-in-mind-as-you-learn-how-to-be-an-engineer">Things to keep in mind as you learn how to be an engineer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="learning.html#golden-rules-for-careers-in-ops">Golden rules for careers in ops</a></li>
+<li class="toctree-l2"><a class="reference internal" href="learning.html#where-to-look-for-help-in-the-community">Where to look for help in the community</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="seealso.html">See also</a></li>
+<li class="toctree-l1"><a class="reference internal" href="meta/contributions.html">Contributions</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="meta/contributions.html#how-we-ll-organize-work">How we&#8217;ll organize work</a></li>
+<li class="toctree-l2"><a class="reference internal" href="meta/contributions.html#how-to-contribute">How to contribute</a></li>
+<li class="toctree-l2"><a class="reference internal" href="meta/contributions.html#rewards-for-contributions">Rewards for contributions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="meta/contributions.html#ops-school-videos">Ops School Videos</a></li>
+<li class="toctree-l2"><a class="reference internal" href="meta/contributions.html#how-to-write-sections">How to write sections</a></li>
+<li class="toctree-l2"><a class="reference internal" href="meta/contributions.html#overwriting-existing-content">Overwriting existing content</a></li>
+<li class="toctree-l2"><a class="reference internal" href="meta/contributions.html#credits">Credits</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="meta/conventions.html">Conventions</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="meta/conventions.html#style-guide">Style Guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="meta/conventions.html#sample-network">Sample Network</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="meta/style_guide.html">Style Guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="meta/style_guide.html#editing">Editing</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="glossary.html">Glossary</a></li>
+</ul>
+
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="index.html">Ops School Curriculum</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="unix_101.html">Unix fundamentals 101</a> &raquo;</li>
+      
+    <li>File systems</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          <a href="_sources/filesystems_101.txt" rel="nofollow"> View page source</a>
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            
+  <div class="section" id="file-systems">
+<h1>File systems<a class="headerlink" href="#file-systems" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="background">
+<h2>Background<a class="headerlink" href="#background" title="Permalink to this headline">¶</a></h2>
+<p>A filesystem is the street grid of your hard drive. It&#8217;s a map of addresses to
+where data is located on your drive. Your operating system uses the filesystem
+to store data on the drive.</p>
+<p>There are a number of different types of filesystems. Some are better at
+handling many small files (ReiserFS), some are much better at large files and
+deleting files quickly (XFS, EXT4).</p>
+<p>The version of Unix you use will have picked a filesystem which is used by
+default, on Linux this is often EXT3.</p>
+<p>Understanding the way filesystems work is important when you have to fix issues
+related to disk space, performance issues with reading and writing to disk, and
+a host of other issues.</p>
+<p>In this section we will discuss creating partitions, file systems on those
+partitions, and then mounting those file systems so your operating system can
+use them.</p>
+</div>
+<div class="section" id="navigating-the-filesystem">
+<h2>Navigating the filesystem<a class="headerlink" href="#navigating-the-filesystem" title="Permalink to this headline">¶</a></h2>
+<p>When you log into a Unix system, you will be given a command line by the
+<a class="reference internal" href="shells_101.html"><em>shell</em></a> which may look something like this:</p>
+<div class="highlight-console"><div class="highlight"><pre><span class="gp">user@opsschool ~$</span>
+</pre></div>
+</div>
+<p>By default you will be in the &#8220;current working directory&#8221; of the process that
+spawned the shell. Normally this is the home directory of your user.
+It can be different in some edge cases, such as if you manually change the
+current working directory, but these cases are rare until you start doing more
+advanced things.</p>
+<p>You can find the name of the current directory with the <tt class="docutils literal"><span class="pre">pwd</span></tt> command:</p>
+<div class="highlight-console"><div class="highlight"><pre><span class="gp">user@opsschool ~$</span> <span class="nb">pwd</span>
+<span class="go">/home/opsschool</span>
+</pre></div>
+</div>
+<p>You can see the list of files and directories in this directory with the <tt class="docutils literal"><span class="pre">ls</span></tt>
+command:</p>
+<div class="highlight-console"><div class="highlight"><pre><span class="gp">user@opsschool ~$</span> ls
+<span class="go">file1.txt file2.txt tmpdir</span>
+</pre></div>
+</div>
+<p>The <tt class="docutils literal"><span class="pre">ls</span></tt> command also accepts the <tt class="docutils literal"><span class="pre">-l</span></tt> argument to provide a long-listing,
+which will show you permissions, dates, ownership and other information:</p>
+<div class="highlight-console"><div class="highlight"><pre><span class="gp">user@opsschool ~$</span> ls -l
+<span class="go">-rw-r--r--  1 opsschool opsgroup   2444 Mar 29  2012 file1.txt</span>
+<span class="go">-rw-r--r--  1 opsschool opsgroup  32423 Jun 03  2011 file2.txt</span>
+<span class="go">drwxr-xr-x 15 opsschool opsgroup   4096 Apr 22  2012 tmpdir</span>
+</pre></div>
+</div>
+<p>You can see the contents of other directories, by giving the name of the
+directory:</p>
+<div class="highlight-console"><div class="highlight"><pre><span class="gp">user@opsschool ~$</span> ls -l /
+<span class="go">dr-xr-xr-x    2 root root  4096 Apr 26  2012 bin</span>
+<span class="go">dr-xr-xr-x    6 root root  1024 Sep 18 14:09 boot</span>
+<span class="go">drwxr-xr-x   19 root root  8660 Jan  8 16:57 dev</span>
+<span class="go">drwxr-xr-x  112 root root 12288 Feb  8 06:56 etc</span>
+<span class="go">drwxr-xr-x   67 root root  4096 Feb  7 19:43 home</span>
+<span class="go">dr-xr-xr-x   13 root root  4096 Mar  6  2012 lib</span>
+<span class="go">drwx------    2 root root 16384 Sep 18  2011 lost+found</span>
+<span class="go">drwxr-xr-x    5 root root  4096 Nov 19 18:53 mnt</span>
+<span class="go">drwxr-xr-x    4 root root  4096 Sep  4 15:15 opt</span>
+<span class="go">dr-xr-xr-x 1011 root root     0 Sep 23  2011 proc</span>
+<span class="go">dr-xr-x---   10 root root  4096 Jan 23 23:14 root</span>
+<span class="go">dr-xr-xr-x    2 root root 12288 Oct 16 22:23 sbin</span>
+<span class="go">drwxr-xr-x   13 root root     0 Sep 23  2011 sys</span>
+<span class="go">drwxrwxrwt   65 root root 16384 Feb 11 04:37 tmp</span>
+<span class="go">drwxr-xr-x   16 root root  4096 Feb  8  2012 usr</span>
+<span class="go">drwxr-xr-x   27 root root  4096 Nov  4 03:47 var</span>
+</pre></div>
+</div>
+<p>You may have noticed that the names of directories follow a pattern. <tt class="docutils literal"><span class="pre">/</span></tt> is
+also called the root directory. All directories and files are contained under
+it. From the first example, the <tt class="docutils literal"><span class="pre">/</span></tt> directory contains the <tt class="docutils literal"><span class="pre">/home</span></tt>
+directory, which in turn contains the <tt class="docutils literal"><span class="pre">/home/opsschool</span></tt> directory.</p>
+<p>To change directories, use the <tt class="docutils literal"><span class="pre">cd</span></tt> command:</p>
+<div class="highlight-console"><div class="highlight"><pre><span class="gp">user@opsschool ~$</span> <span class="nb">cd</span> /tmp
+<span class="gp">user@opsschool ~$</span> <span class="nb">pwd</span>
+<span class="go">/tmp</span>
+</pre></div>
+</div>
+<p>There may be times you need to find a file on your filesystem, based on its
+name, date, size, or other particulars. For this you can use the <tt class="docutils literal"><span class="pre">find</span></tt>
+command:</p>
+<div class="highlight-console"><div class="highlight"><pre><span class="gp">user@opsschool ~$</span> find /home/opsschool -type f -name file3.txt
+<span class="go">/home/opsschool/tmpdir/file3.txt</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="working-with-disks-in-linux">
+<h2>Working with disks in Linux<a class="headerlink" href="#working-with-disks-in-linux" title="Permalink to this headline">¶</a></h2>
+<p>Disks in Linux are normally named <tt class="docutils literal"><span class="pre">/dev/sda</span></tt>, <tt class="docutils literal"><span class="pre">/dev/sdb</span></tt>, etc.
+If you are in a VM, they may be named <tt class="docutils literal"><span class="pre">/dev/xvda</span></tt>, <tt class="docutils literal"><span class="pre">/dev/xvdb</span></tt>, etc.
+The last letter (&#8220;a&#8221;, &#8220;b&#8221;, &#8220;c&#8221;..) relates to the physical hard drive in your
+computer. &#8220;a&#8221; is the first drive, &#8220;b&#8221; is the second.</p>
+<p>If you have an already configured system, you will likely see entries like
+this:</p>
+<div class="highlight-console"><div class="highlight"><pre><span class="go">-bash-4.1$ ls -la /dev/sd*</span>
+<span class="go">brw-rw---- 1 root disk 8, 0 Jul  6 16:51 /dev/sda</span>
+<span class="go">brw-rw---- 1 root disk 8, 1 Sep 18  2011 /dev/sda1</span>
+<span class="go">brw-rw---- 1 root disk 8, 2 Sep 18  2011 /dev/sda2</span>
+<span class="go">brw-rw---- 1 root disk 8, 3 Sep 18  2011 /dev/sda3</span>
+</pre></div>
+</div>
+<p>The number at the end of each drive maps to the partition on the drive.
+A partition refers to a fixed amount of space on the physical drive. Drives must
+have at least one partition. Depending on your specific needs, you might want
+more than one partition, but to start with, we&#8217;ll assume you just need one big
+partition.</p>
+</div>
+<div class="section" id="configuring-your-drive-with-partitions">
+<h2>Configuring your drive with partitions<a class="headerlink" href="#configuring-your-drive-with-partitions" title="Permalink to this headline">¶</a></h2>
+<p>The <tt class="docutils literal"><span class="pre">parted</span></tt> tool is for modifying and creating disk partitions and disk
+labels. Disk labels describe the partitioning scheme. Legacy Linux
+systems will have the msdos partitioning table, although newer systems with EFI
+use the gpt partitioning table. Drives with <tt class="docutils literal"><span class="pre">msdos</span></tt> disk labels will have a
+Master Boot Record, or MBR, at the beginning of the drive. This is where the
+bootloader is installed. GPT-labeled drives will usually have a FAT-formatted
+partition at the beginning of the disk for EFI programs and the bootloader.</p>
+<p><tt class="docutils literal"><span class="pre">parted</span></tt> has a subshell interface. It takes as an argument a device name.</p>
+<div class="highlight-console"><div class="highlight"><pre><span class="gp">root@opsschool ~#</span> parted /dev/sda
+<span class="go">GNU Parted 2.3</span>
+<span class="go">Using /dev/sda</span>
+<span class="go">Welcome to GNU Parted! Type &#39;help&#39; to view a list of commands.</span>
+<span class="go">(parted) print</span>
+<span class="go">Model: ATA VBOX HARDDISK (scsi)</span>
+<span class="go">Disk /dev/sda: 42.9GB</span>
+<span class="go">Sector size (logical/physical): 512B/512B</span>
+<span class="go">Partition Table: msdos</span>
+
+<span class="go">Number  Start   End     Size    Type     File system  Flags</span>
+<span class="go"> 1      8225kB  42.9GB  42.9GB  primary  ext4         boot</span>
+
+<span class="go"> (parted)</span>
+</pre></div>
+</div>
+<p>In this example <tt class="docutils literal"><span class="pre">parted</span></tt> ran against <tt class="docutils literal"><span class="pre">/dev/sda</span></tt>. The user then used the
+<tt class="docutils literal"><span class="pre">print</span></tt> command to print out information about the disk and the current
+partitioning scheme. The user found a 43 GB disk using the <tt class="docutils literal"><span class="pre">msdos</span></tt> partition
+table format. The disk had one partition which was flagged as bootable.
+Looking at a second example:</p>
+<div class="highlight-console"><div class="highlight"><pre><span class="gp">root@opsschool ~#</span> parted /dev/sdb
+<span class="go">GNU Parted 2.3</span>
+<span class="go">Using /dev/sdb</span>
+<span class="go">Welcome to GNU Parted! Type &#39;help&#39; to view a list of commands.</span>
+<span class="go">(parted) print</span>
+<span class="go">Error: /dev/sdb: unrecognised disk label</span>
+<span class="go">(parted) mklabel msdos</span>
+<span class="go">(parted) print</span>
+<span class="go">Model: ATA VBOX HARDDISK (scsi)</span>
+<span class="go">Disk /dev/sdb: 8590MB</span>
+<span class="go">Sector size (logical/physical): 512B/512B</span>
+<span class="go">Partition Table: msdos</span>
+
+<span class="go">Number  Start  End  Size  Type  File system  Flags</span>
+
+<span class="go">(parted) mkpart primary 1 1G</span>
+<span class="go">(parted) set 1 boot on</span>
+<span class="go">(parted) mkpart primary 1G 5G</span>
+<span class="go">(parted) mkpart primary 5G 7G</span>
+<span class="go">(parted) mkpart primary 7G 8G</span>
+<span class="go">(parted) p</span>
+<span class="go">Model: ATA VBOX HARDDISK (scsi)</span>
+<span class="go">Disk /dev/sdb: 8590MB</span>
+<span class="go">Sector size (logical/physical): 512B/512B</span>
+<span class="go">Partition Table: msdos</span>
+
+<span class="go">Number  Start   End     Size    Type     File system  Flags</span>
+<span class="go"> 1      1049kB  1000MB  999MB   primary               boot</span>
+<span class="go"> 2      1000MB  5000MB  3999MB  primary</span>
+<span class="go"> 3      5000MB  7000MB  2001MB  primary</span>
+<span class="go"> 4      7000MB  8590MB  1590MB  primary</span>
+
+<span class="go">(parted)</span>
+</pre></div>
+</div>
+<p><tt class="docutils literal"><span class="pre">parted</span></tt> failed to read the label, so the user created a new <tt class="docutils literal"><span class="pre">msdos</span></tt>
+disk label on the disk. After that <tt class="docutils literal"><span class="pre">parted</span></tt> was able to see that the disk was
+8GB. We created a primary 1GB partition at the beginning of the disk for
+<tt class="docutils literal"><span class="pre">/boot</span></tt> and set the bootable flag on that partition. We created 4GB, 2GB,
+and 1GB partitions for root, var, and swap, respectively.</p>
+</div>
+<div class="section" id="formatting-partitions-with-new-file-systems">
+<h2>Formatting partitions with new file systems<a class="headerlink" href="#formatting-partitions-with-new-file-systems" title="Permalink to this headline">¶</a></h2>
+<p>New filesystems are created with the <tt class="docutils literal"><span class="pre">mkfs</span></tt> family of commands. There are a
+variety of file systems to choose from, <tt class="docutils literal"><span class="pre">man</span> <span class="pre">fs</span></tt> has a list of filesystems
+with short descriptions of each. Choosing a filesystem involves characterizing
+the workload of the filesystema and weighing engineering tradeoffs. On Linux
+systems, ext4 is a good general purpose choice. Following from the example
+above, we will create filesystems on each of the four partitions we created.</p>
+<p><tt class="docutils literal"><span class="pre">fdisk</span></tt> is another, older, tool to view and modify partitions on disk. It is
+limited to the msdos disk label.</p>
+<div class="highlight-console"><div class="highlight"><pre><span class="gp">root@opsschool ~#</span> fdisk -l  /dev/sdb
+
+<span class="go">Disk /dev/sdb: 8589 MB, 8589934592 bytes</span>
+<span class="go">255 heads, 63 sectors/track, 1044 cylinders, total 16777216 sectors</span>
+<span class="go">Units = sectors of 1 * 512 = 512 bytes</span>
+<span class="go">Sector size (logical/physical): 512 bytes / 512 bytes</span>
+<span class="go">I/O size (minimum/optimal): 512 bytes / 512 bytes</span>
+<span class="go">Disk identifier: 0x0004815e</span>
+
+<span class="go">   Device Boot      Start         End      Blocks   Id  System</span>
+<span class="go">   /dev/sdb1   *        2048     1953791      975872   83  Linux</span>
+<span class="go">   /dev/sdb2         1953792     9764863     3905536   83  Linux</span>
+<span class="go">   /dev/sdb3         9764864    13672447     1953792   83  Linux</span>
+<span class="go">   /dev/sdb4        13672448    16777215     1552384   83  Linux</span>
+</pre></div>
+</div>
+<p>The first partition, to contain <tt class="docutils literal"><span class="pre">/boot</span></tt>, will be ext2. Create this by running:</p>
+<div class="highlight-console"><div class="highlight"><pre><span class="gp">root@opsschool ~#</span> mkfs.ext2 /dev/sdb1
+<span class="go">mke2fs 1.42 (29-Nov-2011)</span>
+<span class="go">Filesystem label=</span>
+<span class="go">OS type: Linux</span>
+<span class="go">Block size=4096 (log=2)</span>
+<span class="go">Fragment size=4096 (log=2)</span>
+<span class="go">Stride=0 blocks, Stripe width=0 blocks</span>
+<span class="go">61056 inodes, 243968 blocks</span>
+<span class="go">12198 blocks (5.00%) reserved for the super user</span>
+<span class="go">First data block=0</span>
+<span class="go">Maximum filesystem blocks=251658240</span>
+<span class="go">8 block groups</span>
+<span class="go">32768 blocks per group, 32768 fragments per group</span>
+<span class="go">7632 inodes per group</span>
+<span class="go">Superblock backups stored on blocks:</span>
+<span class="go">  32768, 98304, 163840, 229376</span>
+
+<span class="go">Allocating group tables: done</span>
+<span class="go">Writing inode tables: done</span>
+<span class="go">Writing superblocks and filesystem accounting information: done</span>
+</pre></div>
+</div>
+<p>The second and third partitions, to contain <tt class="docutils literal"><span class="pre">/</span></tt> and <tt class="docutils literal"><span class="pre">/var</span></tt>, will be ext4.
+Create these by running:</p>
+<div class="highlight-console"><div class="highlight"><pre><span class="gp">root@opsschool:~#</span> mkfs.ext4 /dev/sdb2
+<span class="gp">root@opsschool:~#</span> mkfs.ext4 /dev/sdb3
+</pre></div>
+</div>
+<p>The output of <tt class="docutils literal"><span class="pre">mkfs.ext4</span></tt> is very close to the output of <tt class="docutils literal"><span class="pre">mkfs.ext2</span></tt> and so
+it is omitted.</p>
+<p>Finally, <tt class="docutils literal"><span class="pre">/dev/sdb4</span></tt> is set aside for swap space with the command:</p>
+<div class="highlight-console"><div class="highlight"><pre><span class="gp">root@opsschool:~#</span> mkswap /dev/sdb4
+<span class="go">Setting up swapspace version 1, size = 1552380 KiB</span>
+<span class="go">no label, UUID=cc9ba6e5-372f-48f6-a4bf-83296e5c7ebe</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="mounting-a-filesystem">
+<h2>Mounting a filesystem<a class="headerlink" href="#mounting-a-filesystem" title="Permalink to this headline">¶</a></h2>
+<p>Mounting a filesystem is the act of placing the root of one filesystem on
+a directory, or mount point, of a currently mounted filesystem. The mount
+command allows the user to do this manually. Typically, only the superuser
+can perform mounts. The root filesystem, mounted on <tt class="docutils literal"><span class="pre">/</span></tt>, is unique and
+it is mounted at boot. See <a class="reference internal" href="boot_process_101.html"><em>The Boot Process</em></a>.</p>
+<div class="highlight-console"><div class="highlight"><pre><span class="go">root@opsschool # mount -t ext4 -o noatime /dev/sdb1 /mnt</span>
+</pre></div>
+</div>
+<p>It is common to specify which filesystem type is present on <tt class="docutils literal"><span class="pre">/dev/sdb1</span></tt> and
+which mounting options you would like to use, but if that information is not
+specified then the Linux <tt class="docutils literal"><span class="pre">mount</span></tt> command is pretty good at picking sane
+defaults. Most administrators would have typed the following instead of the
+above:</p>
+<div class="highlight-console"><div class="highlight"><pre><span class="go">root@opsschool # mount /dev/sdb1 /mnt</span>
+</pre></div>
+</div>
+<p>The filesystem type refers to the format of the data structure that is used as
+the filesystem on disk. Files (generally) do not care what kind of filesystem
+they are on, it is only in initial filesystem creation, automatic
+mounting, and performance tuning that you have to concern yourself with the
+filesystem type. Example filesystem types are <tt class="docutils literal"><span class="pre">ext2,</span> <span class="pre">ext3,</span> <span class="pre">ext4,</span> <span class="pre">FAT,</span> <span class="pre">NTFS</span>
+<span class="pre">HFS,</span> <span class="pre">JFS,</span> <span class="pre">XFS,</span> <span class="pre">ZFS,</span> <span class="pre">BtrFS</span></tt>. On Linux hosts, ext4 is a good default.  For
+maximum compatibility with Windows and Macintosh, use FAT.</p>
+<p><a class="reference external" href="http://en.wikipedia.org/wiki/Comparison_of_file_systems">http://en.wikipedia.org/wiki/Comparison_of_file_systems</a></p>
+<p>The fstab, or file system table, is the file that configures automatic mounting
+at boot. It tabulates block devices, mount points, type and options for each
+mount.  The dump and pass fields control booting behavior. Dumping is the act
+of creating a backup of the filesystem (often to tape), and is not in common use.
+Pass is much more important. When the pass value is nonzero, the filesystem is
+analyzed early in the boot process by fsck, the file system checker, for errors.
+The number, fs_passno, indicated priority. The root filesystem should always be
+1, other filesystems should be 2 or more. A zero value causes skips to be
+checked, an option often used to accelerate the boot process. In <tt class="docutils literal"><span class="pre">/etc/fstab</span></tt>,
+there are a number of ways to specify the block device containing the filesystem
+. <tt class="docutils literal"><span class="pre">UUID</span></tt>, or universally unique identifier, is one common way in modern Linux
+based systems to specify a filesystem.</p>
+<div class="highlight-console"><div class="highlight"><pre><span class="go">root@opsschool # cat /etc/fstab</span>
+
+<span class="gp">#</span> &lt;file system&gt; &lt;mount point&gt;  &lt;<span class="nb">type</span>&gt;  &lt;options&gt;         &lt;dump&gt;  &lt;pass&gt;
+<span class="go">/dev/sda5         /            ext4    errors=remount-ro 0       1</span>
+<span class="go">/dev/sda6         none         swap    sw                0       0</span>
+<span class="go">/dev/sda1         /boot/efi    auto    auto              0       0</span>
+</pre></div>
+</div>
+<p>This <tt class="docutils literal"><span class="pre">/etc/fstab</span></tt> file mounts <tt class="docutils literal"><span class="pre">/dev/sda5</span></tt> on <tt class="docutils literal"><span class="pre">/</span></tt> using the ext4 filesystem
+. If it encounters a filesystem corruption it will use the <tt class="docutils literal"><span class="pre">fsck</span></tt> utility
+early in the boot process to try to clear the problem. If the physical disk
+reports errors in writing while the filesystem is mounted, the os will remount
+<tt class="docutils literal"><span class="pre">/</span></tt> readonly. The <tt class="docutils literal"><span class="pre">/dev/sda6</span></tt> partition will be used as swap. The
+<tt class="docutils literal"><span class="pre">/dev/sda1</span></tt> partition will be mounted on <tt class="docutils literal"><span class="pre">/boot/efi</span></tt> using autodetection, the
+partition will not be scanned for filesystem errors.</p>
+<div class="highlight-console"><div class="highlight"><pre><span class="go">root@opsschool # cat /etc/auto.master</span>
+
+<span class="go">/home -rw,hard,intr,nosuid,nobrowse bigserver:/exports/home/&amp;</span>
+<span class="go">/stash ldap:ou=auto_stash,ou=Autofs,dc=example,dc=com -rw,hard,intr,nobrowse</span>
+</pre></div>
+</div>
+<p>The <tt class="docutils literal"><span class="pre">auto.master</span></tt> file controls the <tt class="docutils literal"><span class="pre">autofs</span></tt> service. It is another way to
+tabulate filesystems for mounting. It is different from the <tt class="docutils literal"><span class="pre">/etc/fstab</span></tt>
+because the filesystems listed in <tt class="docutils literal"><span class="pre">auto.master</span></tt> are not mounted at boot. The
+automounter allows the system to mount filesystems on demand, then clean up those
+filesystems when they are no longer being used. In this case, the system mounts
+home directories for each user from a remote NFS server. The filesystem remains
+unmounted until the user logs in, and is unmounted a short time after the user
+logs out. The automounter is triggered by an attempt to cd into <tt class="docutils literal"><span class="pre">/home/&lt;key&gt;</span></tt>,
+it will then attempt to find an nfs share on <tt class="docutils literal"><span class="pre">/exports/home/&lt;key&gt;</span></tt> and mount it
+on <tt class="docutils literal"><span class="pre">/home/key</span></tt>, then allow the <tt class="docutils literal"><span class="pre">cd</span></tt> command to return successfully. The
+<tt class="docutils literal"><span class="pre">/home</span></tt> example above is using the <tt class="docutils literal"><span class="pre">&amp;</span></tt> expansion syntax, the second line is
+using the LDAP syntax to look up a key under <tt class="docutils literal"><span class="pre">/stash/&lt;key&gt;</span></tt> in LDAP. LDAP will
+be covered later in the curriculum. The <tt class="docutils literal"><span class="pre">auto.master</span></tt> file is known as
+<tt class="docutils literal"><span class="pre">auto_master</span></tt> on FreeBSD, Solaris, and Mac OS X.</p>
+</div>
+<div class="section" id="filesystem-options">
+<h2>Filesystem options<a class="headerlink" href="#filesystem-options" title="Permalink to this headline">¶</a></h2>
+<p>Passing options to the <tt class="docutils literal"><span class="pre">mount</span></tt> command, or inserting them into the <tt class="docutils literal"><span class="pre">/etc/fstab</span></tt> file, control how the filesystem behaves.
+Different filesystems at different versions support different options, but some options are ubiquitous.</p>
+<div class="section" id="async">
+<h3>async<a class="headerlink" href="#async" title="Permalink to this headline">¶</a></h3>
+<p>The <tt class="docutils literal"><span class="pre">async</span></tt> option sets writing operations to the filesystem to be asynchronous.
+This means that the <tt class="docutils literal"><span class="pre">cp</span></tt> command will exit normally before the entire copy is done, and that the system will persist the files to the disk at some point later on.
+You don&#8217;t have a lot of guarantees here about when that will happen, though for a generally unloaded system you won&#8217;t have to wait long.
+It is also hard to tell when the filesystem is actually done with the copy.
+The <tt class="docutils literal"><span class="pre">sync</span></tt> utility can be used to force a filesystem sync to immediately persist to disk.
+The opposite of this option, the <tt class="docutils literal"><span class="pre">sync</span></tt> option is the default on most filesystems.</p>
+</div>
+<div class="section" id="noatime">
+<h3>noatime<a class="headerlink" href="#noatime" title="Permalink to this headline">¶</a></h3>
+<p>The <tt class="docutils literal"><span class="pre">noatime</span></tt> option tells the filesystem not to keep track of <tt class="docutils literal"><span class="pre">atime</span></tt> or access time.
+If you recall your <tt class="docutils literal"><span class="pre">inode</span></tt> lessons, you&#8217;ll remember that the <tt class="docutils literal"><span class="pre">inode</span></tt> keeps track of three dates: <tt class="docutils literal"><span class="pre">ctime</span></tt> (creation time), <tt class="docutils literal"><span class="pre">mtime</span></tt> (modification time), and <tt class="docutils literal"><span class="pre">atime</span></tt> (access time).
+Under normal circumstances, whenever a user reads from a file, the operating system will write a new <tt class="docutils literal"><span class="pre">atime</span></tt> to the <tt class="docutils literal"><span class="pre">inode</span></tt>.
+For large groups of small files, read by a number of people, or by automated processes, this final write operation can hurt disk performance.
+As a result, many admins will turn off <tt class="docutils literal"><span class="pre">atime</span></tt> on filesystems to increase performance.</p>
+<p>Note that <tt class="docutils literal"><span class="pre">atime</span></tt> is not really a security/auditing feature. Any regular user can use the <tt class="docutils literal"><span class="pre">touch</span></tt> utility on a file to set the <tt class="docutils literal"><span class="pre">atime</span></tt> to some point in the past, if they have the appropriate permissions for that file.</p>
+</div>
+<div class="section" id="ro">
+<h3>ro<a class="headerlink" href="#ro" title="Permalink to this headline">¶</a></h3>
+<p>The <tt class="docutils literal"><span class="pre">ro</span></tt> option, called &#8216;read-only&#8217;, tells the filesystem to not allow writes to any of the files on the filesystem.
+This is useful for a legitimately read-only backing store such as a CD-ROM.
+It is also useful for protecting the filesystem from yourself or others, such as when you are mounting a drive you pulled from a different machine.
+If the filesystem is mounted read-only, you can&#8217;t accidentally delete any data off of it.
+It is common for network shares to be mounted read-only, this way client machines can copy files from the network share, but can&#8217;t corrupt the share with write locks or deletes.
+Sometimes, when the operating system detects that the block device (such as a hard drive) beneath the filesystem is beginning to fail, the operating system will remount the filesystem read-only.
+This will cause lots of problems for your running system, but it is intended to give you the maximum amount of time to copy your important data off of the filesystem before the disks beneath it fail completely.
+If this happens you can usually see it by checking <tt class="docutils literal"><span class="pre">mount</span></tt> for filesystems that should be read-write mounted as read-only.
+You can also check <tt class="docutils literal"><span class="pre">dmesg</span></tt> for messages like:</p>
+<div class="highlight-console"><div class="highlight"><pre><span class="go">root@opsschool # dmesg</span>
+
+<span class="go">[26729.124569] Write(10): 2a 00 03 96 5a b0 00 00 08 00</span>
+<span class="go">[26729.124576] end_request: I/O error, dev sda, sector 60185264</span>
+<span class="go">[26729.125298] Buffer I/O error on device sda2, logical block 4593494</span>
+<span class="go">[26729.125986] lost page write due to I/O error on sda2</span>
+</pre></div>
+</div>
+<p>These messages strongly indicate that the disk <tt class="docutils literal"><span class="pre">/dev/sda</span></tt> is dying.
+In some cases you can recover the filesystem with the file system checker <tt class="docutils literal"><span class="pre">fsck</span></tt>.
+You may also be able to force remount the filesystem read-write, as shown in the <tt class="docutils literal"><span class="pre">remount</span></tt> section below.</p>
+</div>
+<div class="section" id="rw">
+<h3>rw<a class="headerlink" href="#rw" title="Permalink to this headline">¶</a></h3>
+<p>The <tt class="docutils literal"><span class="pre">rw</span></tt> option, called &#8216;read-write&#8217;, tells the filesystem to allow reads and writes to all files on the filesystem.</p>
+<p>Mounting a filesystem read-write is usually the default.
+There are times where you will not be able to make a read-write mount, such as when the backing physical media is fundamentally read-only, like a CD-ROM.</p>
+</div>
+<div class="section" id="remount">
+<h3>remount<a class="headerlink" href="#remount" title="Permalink to this headline">¶</a></h3>
+<p>Sometimes a filesystem will be mounted read-only, either by default, or because the operating system has remounted it <tt class="docutils literal"><span class="pre">ro</span></tt> because of disk failures.
+It is possible to remount the filesystem read-write with the following command:</p>
+<div class="highlight-console"><div class="highlight"><pre><span class="gp">root@opsschool ~#</span> mount | grep boot
+<span class="go">/dev/sda1 on /boot type ext3 (ro)</span>
+<span class="gp">root@opsschool ~#</span> mount -o remount,rw /boot
+<span class="gp">root@opsschool ~#</span> mount | grep boot
+<span class="go">/dev/sda1 on /boot type ext3 (rw)</span>
+</pre></div>
+</div>
+<p>The syntax of the remount option is <tt class="docutils literal"><span class="pre">-o</span> <span class="pre">remount,&lt;option&gt;</span></tt>.</p>
+</div>
+<div class="section" id="noexec">
+<h3>noexec<a class="headerlink" href="#noexec" title="Permalink to this headline">¶</a></h3>
+<p>The <tt class="docutils literal"><span class="pre">noexec</span></tt> option tells the filesystem to ignore the execute bit on a filesystem.
+This would never work for the root filesystem, but it is often used as a security measure on world-writeable filesystems such as <tt class="file docutils literal"><span class="pre">/tmp</span></tt> . Note that there are many ways to get around this restriction.</p>
+</div>
+<div class="section" id="nosuid">
+<h3>nosuid<a class="headerlink" href="#nosuid" title="Permalink to this headline">¶</a></h3>
+<p>Like the <tt class="docutils literal"><span class="pre">noexec</span></tt> option, the <tt class="docutils literal"><span class="pre">nosuid</span></tt> option ignores any setuserid bits set on files in the filesystem.
+This is also used for security purposes.
+It is generally recommended for removable devices such as CD-ROMs, USB sticks, and network filesystems.</p>
+<p>nobarriers
+rbind</p>
+</div>
+</div>
+<div class="section" id="how-filesystems-work">
+<h2>How filesystems work<a class="headerlink" href="#how-filesystems-work" title="Permalink to this headline">¶</a></h2>
+<p>Files, directories, inodes</p>
+</div>
+<div class="section" id="inodes">
+<h2>Inodes<a class="headerlink" href="#inodes" title="Permalink to this headline">¶</a></h2>
+<p>What they contain, how they work</p>
+<p>The POSIX standard dictates files must have the following attributes:</p>
+<ul class="simple">
+<li>File size in bytes.</li>
+<li>A device id.</li>
+<li>User ID of file&#8217;s owner.</li>
+<li>Group ID of file.</li>
+<li>The file&#8217;s mode (permissions).</li>
+<li>Additional system and user flags (e.g. append only or ACLs).</li>
+<li>Timestamps when the inode was last modified (ctime), file content last modified/accessed (mtime/atime).</li>
+<li>Link count of how many hard links point to the inode.</li>
+<li>Pointers to the file&#8217;s contents.</li>
+</ul>
+<p><a class="reference external" href="http://en.wikipedia.org/wiki/Inode">http://en.wikipedia.org/wiki/Inode</a></p>
+</div>
+<div class="section" id="file-system-layout">
+<h2>File system layout<a class="headerlink" href="#file-system-layout" title="Permalink to this headline">¶</a></h2>
+<p>File system hierarchy standard is a reference on managing a Unix filesystem or directory structure.</p>
+<p><a class="reference external" href="http://www.pathname.com/fhs/">http://www.pathname.com/fhs/</a></p>
+</div>
+<div class="section" id="fragmentation-in-unix-filesystems">
+<h2>Fragmentation in unix filesystems<a class="headerlink" href="#fragmentation-in-unix-filesystems" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="filesystem-objects">
+<h2>Filesystem objects<a class="headerlink" href="#filesystem-objects" title="Permalink to this headline">¶</a></h2>
+<p>Filesystem contain more than just files and directories.
+Talk about devices (mknod), pipes (mkfifo), sockets, etc.</p>
+</div>
+</div>
+
+
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="shells_101.html" class="btn btn-neutral float-right" title="Shells"/>Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="unix_101.html" class="btn btn-neutral" title="Unix fundamentals 101"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2012, Avleen Vig (under Creative Commons license: https://github.com/opsschool/curriculum/blob/master/LICENSE).
+    </p>
+  </div>
+
+  <a href="https://github.com/snide/sphinx_rtd_theme">Sphinx theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'0.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>
