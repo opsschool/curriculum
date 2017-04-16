@@ -43,6 +43,10 @@ It can use many files for configuration, and a single syntax error will prevent 
 Additionally, the open-source version does not natively support adding and removing hosts dynamically; the configuration needs to be modified, and the server reloaded to add or remove a host.
 
 
+OMD
+---
+Best monitoring solution so far. Check out why here `Why OMD is the best monitoring solution <http://blog.unicsolution.com/2013/11/best-monitoring-solution-omd-nagios.html>`
+
 Graphite
 --------
 `Graphite <http://graphite.wikidot.com/>`_ is an open-source monitoring tool that let's you store time-series based data and graph them. 
