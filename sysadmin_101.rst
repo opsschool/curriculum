@@ -293,7 +293,7 @@ decided on by others.
 We challenge that mindset. System administration is not about saying "no" to 
 requests but about finding ways to intelligently fulfill the needs of a business
 in a way that increases maintainability, usability, and security for a group of
-people and enhances their ability to useful work.
+people and enhances their ability to do useful work.
 
 Another perception issue is that of the `BOFH
 <http://www.theregister.co.uk/data_centre/bofh/>`_. While there's something of
