@@ -48,7 +48,7 @@ After the empty line, an optional message body in the request contains the paylo
 Response
 ========
 
-The server parses the response, and, depending on the validity of the request, sends one or more responses.
+The server parses the request, and, depending on the validity of the request, sends one or more responses.
 An HTTP response starts with the status line, which contains the protocol version, success or error code, and a reason message.
 
 The status line is mostly followed by a header section containing server information and other metadata.
