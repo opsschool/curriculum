@@ -283,11 +283,11 @@ Prerequisites:
 Installation
 ------------
 
-Salt has a `dedicated page <https://salt.readthedocs.org/en/latest/topics/installation/index.html>`_
+Salt has a `dedicated page <https://repo.saltstack.com/>`_
 on how to get it installed and ready to use, please refer to it after deciding
 what OS you will be using. These examples are shown on an Ubuntu installation
 with Salt installed from a `project personal package archive
-<https://salt.readthedocs.org/en/latest/topics/installation/ubuntu.html>`_.
+<https://repo.saltstack.com/#ubuntu>`_.
 
 To set-up the environment you can use virtual machines or real boxes, in the
 examples we will be using hostnames **master** and **slave** to refer to each
