@@ -56,6 +56,7 @@ Edit/Open/Close Files
 * ``C-x C-f`` ``find-file``   open a file in a buffer to edit
 * ``C-x C-r`` ``find-file-read-only``
 * ``C-x k``   ``kill-buffer`` close a buffer
+* ``C-x C-f /sudo:localhost:/etc/hosts`` use Tramp-mode to edit a privileged file (of course, you must be privileged)
 
 Edit/Open/Close Buffers
 -----------------------
@@ -100,3 +101,11 @@ Buffers
 -------
 
 ``M-x ibuffer``
+
+References
+----------
+
+* https://www.gnu.org/software/emacs/manual/ (the web version of ``C-h i``)
+* https://www.emacswiki.org
+* https://duckduckgo.com/q=emacs+blogs
+* http://hyperpolyglot.org/text-mode-editors
