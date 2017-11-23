@@ -23,7 +23,7 @@ Emacs was first developed on computers where the keyboards looked like this:
 
 https://en.wikipedia.org/wiki/Symbolics#/media/File:Symbolics-keyboard.jpg
 
-The important thing to note in the symbolic keyboard layout is the bottom row keys:
+The important thing to note in the Symbolics keyboard above is the keys on the bottom row:
 
 ``HYPER`` ``SUPER`` ``META`` ``CTRL`` ``SPACE`` ``CTRL`` ``META`` ``SUPER`` ``HYPER``
 
