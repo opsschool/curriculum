@@ -15,7 +15,7 @@ Emacs
 =====
 [Intro to emacs, what it is, how it's different to Vi]
 
-Where Vi was first developed on computers where the keyboards looked like this:
+Vi was first developed on computers where the keyboards looked like this:
 
 https://en.wikipedia.org/wiki/Vi#/media/File:KB_Terminal_ADM3A.svg
 
@@ -23,19 +23,30 @@ Emacs was first developed on computers where the keyboards looked like this:
 
 https://en.wikipedia.org/wiki/Symbolics#/media/File:Symbolics-keyboard.jpg
 
-The important thing to note in this keyboard layout is the bottom row keys:
+The important thing to note in the symbolic keyboard layout is the bottom row keys:
 
-HYPER SUPER META CTRL SPACE CTRL META SUPER HYPER
+``HYPER SUPER META CTRL SPACE CTRL META SUPER HYPER``
 
-Where Vi has modes for different editing tasks with composable commands, Emacs relies on key combinations or "chords", particularly the CTRL and META keys, abbreviated `C` and `M`. The convention for canonically specifying a keyboard combination in Emacs is based on those abbreviations using a connecting dash for keys pressed simultanously and a space for follow-up key "arguments". For example, the most important key combination in Emacs is this one: ``C-h ?`` meaning, press and hold ``Ctrl``` then press ``h``, release and press ``?``. This takes you to Emacs' "help" options.
+Where Vi has modes for different editing tasks with composable commands, Emacs relies on key combinations or "chords", particularly the ``CTRL`` and ``META`` keys, abbreviated ``C`` and ``M``. 
+The convention for canonically specifying a keyboard combination in Emacs is based on those abbreviations using a connecting dash for keys pressed simultanously and a space for follow-up key "arguments".
+For example, the most important key combination in Emacs is this one: ``C-h ?`` meaning, press and hold ``Ctrl`` then press ``h``, release and press ``?``. This takes you to Emacs' "help" options.
 
-Modern keyboards lack a META key, but Emacs has long recognized ``Alt`` as META. For example, the second most important key combination in Emacs is ``M-x``, meaning press and hold ``Alt`` and then press ``x``. This brings up what amounts to Emacs' "command line" where you can enter any Emacs command to run.
+Modern keyboards lack a ``META`` key, but Emacs has long recognized ``Alt`` as ``META``. 
+For example, the second most important key combination in Emacs is ``M-x``, meaning press and hold ``Alt`` and then press ``x``. 
+This brings up what amounts to Emacs' "command line" where you can enter any Emacs command to run.
 
-It bears mentioning the "zeroth" most important key command: ``C-g`` meaning press and hold ``Ctrl`` and press ``g``. This tells Emacs to cancel whatever it's doing. It almost always works, although sometimes after a short wait. ``C-g`` combines with every partial keyboard combination to cancel it.
+It bears mentioning the "zeroth" most important key command: ``C-g`` meaning press and hold ``Ctrl`` and press ``g``. 
+This tells Emacs to cancel whatever it's doing. 
+It almost always works, although sometimes after a short wait. 
+``C-g`` combines with every partial keyboard combination to cancel it.
 
-What Emacs lacks in command composability, it makes up for in programmability. Nearly every aspect of the editing experience is modifiable using Emacs' native language, Emacs Lisp. You can use ``M-:`` to open another Emacs' command-line, this one takes any Emacs Lisp expression and evaluates it. You can also go to the "scratch" buffer, enter an Emacs lisp expression and press ``C-x C-e`` to evaluate it.
+What Emacs lacks in command composability, it makes up for in programmability. 
+Nearly every aspect of the editing experience is modifiable using Emacs' native language, Emacs Lisp. 
+You can use ``M-:`` to open another Emacs' command-line, this one takes any Emacs Lisp expression and evaluates it. 
+You can also go to the "scratch" buffer, enter an Emacs lisp expression and press ``C-x C-e`` to evaluate it.
 
-You can read Emacs' online manuals at ``C-h i``. Going through the Emacs tutorial---``C-h t``---is highly recommended.
+You can read Emacs' online manuals at ``C-h i``. 
+Going through the Emacs tutorial---``C-h t``---is highly recommended.
 
 To close Emacs ``C-x C-c``.
 
@@ -61,12 +72,17 @@ Directory Navigation
 Syntax Highlighting
 -------------------
 
-Emacs autodetects the kind of file one is operating on and applies syntax highlighting as part of the "mode" used for that buffer. Emacs comes with built-in modes for almost everything. You can explicitly run any mode with ``M-x``.
+Emacs autodetects the kind of file one is operating on and applies syntax highlighting as part of the "mode" used for that buffer. 
+Emacs comes with built-in modes for almost everything. 
+You can explicitly run any mode with ``M-x``.
 
 Line numbers
 ------------
 
-Emacs typically shows the cursor's position in a buffer on the "mode-line" near the bottom of the screen. You can configure it to show the position in a "row and column" format running ``M-x line-number-mode`` (usually on by default) and ``M-x column-number-mode``. To see line numbers in buffer use ``linum-mode``. To highlight the current line use ``hl-line-mode``.
+Emacs typically shows the cursor's position in a buffer on the "mode-line" near the bottom of the screen.
+You can configure it to show the position in a "row and column" format running ``M-x line-number-mode`` (usually on by default) and ``M-x column-number-mode``.
+To see line numbers in buffer use ``linum-mode``.
+To highlight the current line use ``hl-line-mode``.
 
 Window Splitting
 ----------------
