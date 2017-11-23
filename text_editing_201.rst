@@ -25,7 +25,7 @@ https://en.wikipedia.org/wiki/Symbolics#/media/File:Symbolics-keyboard.jpg
 
 The important thing to note in the symbolic keyboard layout is the bottom row keys:
 
-``HYPER SUPER META CTRL SPACE CTRL META SUPER HYPER``
+``HYPER`` ``SUPER`` ``META`` ``CTRL`` ``SPACE`` ``CTRL`` ``META`` ``SUPER`` ``HYPER``
 
 Where Vi has modes for different editing tasks with composable commands, Emacs relies on key combinations or "chords", particularly the ``CTRL`` and ``META`` keys, abbreviated ``C`` and ``M``. 
 The convention for canonically specifying a keyboard combination in Emacs is based on those abbreviations using a connecting dash for keys pressed simultanously and a space for follow-up key "arguments".
