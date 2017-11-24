@@ -107,5 +107,5 @@ References
 
 * https://www.gnu.org/software/emacs/manual/ (the web version of ``C-h i``)
 * https://www.emacswiki.org
-* https://duckduckgo.com/q=emacs+blogs
+* http://planet.emacsen.org
 * http://hyperpolyglot.org/text-mode-editors
