@@ -211,7 +211,7 @@ High Performance Computing Engineer
 
 High Performance Computing (HPC) involves large scale infrastructure,
 which is at the cutting edge of presently available technology.
-Typically, HPC platforms are used for Scientific Computing, Big Data, Complex Models
+Typically, HPC platforms are used for scientific computing, big data, complex models
 and may have applications in fields as diverse as physics, finance, medicine etc.
 for instance: Meteorology and Climate prediction are just a tiny slice of the bigger picture.
 
@@ -222,7 +222,7 @@ be able to give advice on a number of software components (gnu/intel/pgi compile
 debuggers, mpi stacks, linear algebra and other optimized math libraries etc etc).
 
 Most importantly, HPC engineers should be able to interface with other operations engineers,
-each specialist in her field, in order to let all systems run at top performance.
+each a specialist in their own field, in order to let all systems run at top performance.
 
 
 .. _how-to-become-an-operations-engineer:
