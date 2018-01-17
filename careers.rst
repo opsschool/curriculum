@@ -209,21 +209,23 @@ skills in capacity planning and performance management of infrastructure.
 High Performance Computing Engineer
 ===================================
 
-High Performance Computing (HPC) involves large scale infrastructure,
-which is at the cutting edge of presently available technology.
-Typically, HPC platforms are used for scientific computing, big data, complex models
-and may have applications in fields as diverse as physics, finance, medicine etc.
-for instance: Meteorology and Climate prediction are just a tiny slice of the bigger picture.
+High Performance Computing (HPC) involves large scale computing infrastructure,
+which is at the cutting edge of presently available technology, oftentimes making it at TOP500.ORG
 
-HPC engineers are expected to master an array of technologies in fields such as
+Typically, HPC platforms are used for scientific computing, big data, complex models
+and may have applications in fields as diverse as physics, finance, medicine, defence, economics etc.
+for instance: Meteorology and Climate prediction may appear first as a tiny slice of the bigger picture
+yet they tend to be applicable to several aspects of human life and scientific efforts to improve it.
+
+HPC engineers are expected to master an array of high-end technologies in fields such as
 networking (InfiniBand, multi-Gigabit Ethernet), computing (several computer architectures),
 parallel storage/filesystems/filers (Lustre, GPFS, Isilon, NetApp, PanaSAS), as well as
 be able to give advice on a number of software components (gnu/intel/pgi compilers,
-debuggers, mpi stacks, linear algebra and other optimized math libraries etc etc).
+debuggers, mpi stacks, FFTW, linear algebra and other optimized math libraries etc etc).
 
 Most importantly, HPC engineers should be able to interface with other operations engineers,
-each a specialist in their own field, in order to let all systems run at top performance.
-
+each a specialist in their own field, in order to let all systems run both at top performance
+and within the maximum range of their reliability envelope, since HPC downtimes come at a high cost.
 
 .. _how-to-become-an-operations-engineer:
 
