@@ -62,13 +62,15 @@ Reading and writing Ruby code is amazingly easy and fun.
 Once you learn the basics, it is amazing how much can be achieved in so little and concise code.
 A very simple example would be how iterations or loops are done in Ruby:
 
+Here is a **C++**-style ``for`` loop which you may already be familiar with:
+
 .. code-block:: cpp
 
   for(int i = 0; i < 3; ++i) {
       std::cout << "Hello"
   }
 
-You will see this for Ruby:
+And here is the same thing in Ruby:
 
 .. code-block:: ruby
 
@@ -86,10 +88,33 @@ You will see this for Ruby:
   Hello again
   => 1..3
 
-Ruby is a very good tool to write scripts.
+And using loop variables inside the loop, again in **C++** first:
 
-Although this will be not covered here in detail, a very important thing to keep in mind is that in Ruby, **everything is an object**.
-This means that you can treat everything i.e. numbers, strings, classes, objects themselves, etc. as objects.
+.. code-block:: cpp
+
+  for(int i = 0; i < 3; i++) {
+      if( i == 2 ){
+          std::cout << "This is loop " << i.str() << "!"
+      }
+  }
+  
+Which is much simpler in Ruby:
+.. code-block:: ruby
+
+  > (1..3).each { |num| puts 'This is loop #{num}!' if num.eql? 3 }
+  This is loop 3!
+  => 1..3
+  > # Or use the ternary operator:
+  > (1..3).each{ |num| puts num.eql?(3) ? "#{num} is awesome!" : "#{num} sucks!" }
+  1 sucks!
+  2 sucks!
+  3 is awesome!
+  => 1..3
+
+  
+This natural language makes Ruby a very good tool to write quick scripts, once you are familiar with its quirks and shortcuts. Be careful, though; it is very easy to write code which quickly becomes unreadable (and therefore unmaintainable, by yourself and others). Comment where necessary, and don't sacrifice clarity for the sake of being "clever". "How does this even work!?" is often one of the first things I ask myself on Monday morning, when I'm reading my own code from Friday!
+
+Although this will be not covered here in detail, a very important thing to keep in mind is that in Ruby, **everything is an object**. This means that you can treat everything (e.g. numbers, strings, classes, etc.) as objects.
 Even the simplest of Ruby code will use this principle:
 
 .. code-block:: ruby
@@ -122,6 +147,8 @@ You can run ad-hoc Ruby code in an interactive session called the Interactive Ru
 
   $ irb
   1.9.3-p448 :001>
+  
+Another useful tool for working in Ruby is `pry <http://www.pryrepl.org/>`_. Similar to Python's `IPython <https://ipython.org/>`_, ``pry`` is an interactive shell for Ruby with advanced features. Some of the more useful features are command shell and editor integration, syntax highlighting, history scroll-back, and tab-completion.
 
 All Ruby examples in this topic will start with ``>``, short for 1.9.3-p448 :XXX>.
 It means that it is running inside an irb session. *1.9.3-p448* is the Ruby version the author was running while writing this topic.
