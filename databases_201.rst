@@ -25,32 +25,8 @@ CouchDB
 Hadoop
 ------
 
-Key-value Stores
-================
-
-Riak
-----
-
-Cassandra
----------
-
-Dynamo
-------
-
-BigTable
---------
-
-Graph Databases
-===============
-
-FlockDB
--------
-
-Neo4j
------
-
 ElasticSearch
------
+-------------
 
 **Intro**
 
@@ -126,3 +102,27 @@ Aliases, caches, warmers, filters, custom routing, pagination, bulk requests, to
 - Lucene index can’t have more than 2.1 billion documents or more than 274 billion distinct terms
 - JVM => Gold rule is to allocate half of the node’s RAM to Elasticsearch, but no more than 32 GB
 - Refresh, flush and merge operations are expensive in terms of performance (CPU, I/O), need to be aware of this
+
+Key-value Stores
+================
+
+Riak
+----
+
+Cassandra
+---------
+
+Dynamo
+------
+
+BigTable
+--------
+
+Graph Databases
+===============
+
+FlockDB
+-------
+
+Neo4j
+-----
