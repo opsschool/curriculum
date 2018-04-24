@@ -63,6 +63,19 @@ Windows: PuTTY
 If you use Windows as your primary work space, PuTTY is possibly one of the best
 SSH clients available.
 
+Windows: mRemoteNG
+
+mRemoteNG is a fork of mRemote: an open source, tabbed, multi-protocol, remote connections manager. It allows you to view all of your remote connections in a simple yet powerful tabbed interface.
+
+.. [#] https://mremoteng.org/
+
+Windows: WinSCP
+
+WinSCP (Windows Secure Copy) is a free and open-source SFTP, FTP, WebDAV, Amazon S3 and SCP client for Microsoft Windows. Its main function is secure file transfer between a local and a remote computer. Beyond this, WinSCP offers basic file manager and file synchronization functionality. For secure transfers, it uses Secure Shell (SSH) and supports the SCP protocol in addition to SFTP.
+
+.. [#] https://winscp.net/eng/index.php
+.. [#] https://en.wikipedia.org/wiki/WinSCP
+
 Android: Connectbot
 -------------------
 Connectbot is a free app available in the Google Play store, and offers most of
@@ -167,6 +180,18 @@ Before doing DNS resolution, OpenSSH will look in its ``ssh_config``
 file for Host entries. Therefore, internal DNS on the foreign end is
 sufficient.
 
+ssh Debug
+---------
+
+Sometimes, it is useful to run ssh connection with verbose debug options, to understand root cause of problem (i.e. incorrect certificates or config settings)
+
+Example:
+
+``$ ssh -v user@192.168.1.1``
+
+Verbosity levels can be increased, by adding additional `v`. Maximum verbosity level is 3.
+
+``$ ssh -vvv user@192.168.1.1``
 
 Multiplexers
 ============
@@ -473,7 +498,15 @@ the ``-f`` command line switch like so:
 There is a nifty cheat sheet [#]_ for the most important
 ``screen`` and ``tmux`` keybindings or even a whole book about tmux [#]_.
 
+References
+----------
 
+.. [#] https://github.com/tmux/tmux/wiki
+.. [#] https://en.wikipedia.org/wiki/Tmux
+.. [#] https://robots.thoughtbot.com/a-tmux-crash-course
+.. [#] https://www.hamvocke.com/blog/a-quick-and-easy-guide-to-tmux/
+.. [#] https://leanpub.com/the-tao-of-tmux/read
+.. [#] https://medium.com/actualize-network/a-minimalist-guide-to-tmux-13675fb160fa
 
 byobu
 -----
@@ -620,6 +653,8 @@ References
 Ticketing systems
 =================
 
+Atlassian Jira
+.. https://www.atlassian.com/software/jira
 
 Note-taking
 ===========
@@ -627,8 +662,21 @@ Note-taking
 Wiki
 ----
 
+Atlassian Confluence
+.. https://www.atlassian.com/software/confluence
+
 EverNote
 --------
 
 OneNote
 -------
+
+Google Keep
+-----------
+
+.. https://keep.google.com/
+
+Zoho Notebook
+-------------
+
+.. https://www.zoho.com/notebook/
