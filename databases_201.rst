@@ -30,35 +30,45 @@ ElasticSearch
 
 **Intro**
 
-*ElasticSearch* main logo - "you know, for search". It's near real-time search engine and document-oriented datastore. It's written in Java, so lots of processes depends on JVM (Java Virtual Machine). System has awesome REST API, its documents and queries - all is represented via JSON (https://en.wikipedia.org/wiki/JSON). All configuration can be set up in elasticsearch.yml file. Analogues: Apache Solr, Sphinx.
+*ElasticSearch* - it's near real-time search engine and document-oriented datastore. 
+
+It's written in Java, so lots of processes depends on JVM (Java Virtual Machine). System has awesome REST API, its documents and queries - all is represented via JSON. All configuration can be set up in elasticsearch.yml file. 
+
+Analogues: Apache Solr, Sphinx.
 
 **Under the microscope**
 
-Elasticsearch is great for scaling. And this is probably one of the most noticable features. You can literally scale elasticsearch cluster for any load. So to begin with, what cluster is?
+Elasticsearch is great for scaling. And this is probably one of the most noticable features. You can scale elasticsearch cluster for any load. So to begin with, what is a cluster?
 
-Cluster is simply a set of nodes, physical, virtual or containerised.. whatever. Nodes consist of indexes, indexes consist of shards. Index may have several types. Types are only logical, not physical. Type can be considered as a table when comparing Relational DB.
+Cluster is simply a set of nodes, physical, virtual or containerised... whatever. Nodes consist of indexes, indexes consist of shards. Index may have several types. Types are only logical, not physical. Type can be considered as a table when comparing Relational DB.
 
 Shards consist of Lucene segments (segment is a chunk of Lucene index). And this is the firsts rule for Elasticsearch - all spins around Apache Lucene (Java library for full-text search).
 
-Segments are created as you index new documents. Data is never removed from them because deleting only marks documents as deleted. Finally, data never changes because updating documents implies re-indexing. And here is the second rule - Elasticsearch is awesome for reading, but not so cool for updating/deleting. The more segments you have to go through, the slower the search. To avoid having an extremely large number of segments in an index, Lucene merges them from time to time => excluding the deleted documents, and creating new and bigger segments.
+Segments are created as you index new documents. Data is never removed from them because deleting only marks documents as deleted. Finally, data never changes because updating documents implies re-indexing. 
+
+And here is the second rule - Elasticsearch is awesome for reading, but not so cool for updating/deleting. The more segments you have to go through, the slower the search. To avoid having an extremely large number of segments in an index, Lucene merges them from time to time => excluding the deleted documents, and creating new and bigger segments.
 
 Shard can be primary or replica. Replica is a copy of primary. Primary shards are created only at the beginning and cannot be changed (deleted/added) while replica can. When primary is down, replica is promoted to primary, new replica created. Shards are special unit that can be balanced between nodes to maintain equal distribution/load/fault tolerance.
 
 **Cluster states and roles**
 
 Cluster has 3 health states:
+
 - *Green* - all primary and replica shards available
 - *Yellow* - one or more replicas are down
 - *Red* - one or more primaries are down 
 
 As for roles:
+
 - *Master* - responsible for checking alive, healthy state, fault detection
 - *Data* - stores data
 - *Client* - accepts requests, use to remove load from master/data nodess
 
 **Documents**
 
-Document is uniquely identified by index-type-id combination. Elastic is generally schema-free, but can be defined via mappings. Mapping is the process of defining how a document, and the fields it contains, are stored and indexed. Field types can be several types: string, numeric, date, boolean, arrays, multi-fields. Plus predefined fields (used internally by Elastic): _all, _ttl, _timestamp, _source, _id, _type, _index.
+Document is uniquely identified by index-type-id combination. Elastic is generally schema-free, but can be defined via mappings. Mapping is the process of defining how a document, and the fields it contains, are stored and indexed. 
+
+Field can be several types: string, numeric, date, boolean, arrays, multi-fields. Plus predefined fields (used internally by Elastic): _all, _ttl, _timestamp, _source, _id, _type, _index.
 
 **How Elastic indexes?**
 
@@ -77,7 +87,7 @@ Document is uniquely identified by index-type-id combination. Elastic is general
 - Request forwards to shard containing data
 - Using round-robin Elastic choose either primary or replica shard
 - Gather all the results (aggregation from different segments/shards) and gives it back
-- Ranking algorithm is TF-IDF (https://en.wikipedia.org/wiki/Tf%E2%80%93idf)
+- Ranking algorithm is `TF-IDF <https://en.wikipedia.org/wiki/Tf%E2%80%93idf>`_
 
 **How document is updated?**
 
@@ -95,7 +105,7 @@ Document is uniquely identified by index-type-id combination. Elastic is general
 
 **Interesting features**
 
-Aliases, caches, warmers, filters, custom routing, pagination, bulk requests, tokenizers... and much more!
+Aliases, caches, warmers, filters, custom routing, pagination, bulk requests, tokenizers, SQL support from 6.3 version... and much more!
 
 **Limitations**
 
