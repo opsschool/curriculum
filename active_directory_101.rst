@@ -6,7 +6,8 @@ What is Active Directory?
 =========================
 
 **Active Directory** is a Directory Service created by Microsoft. It
-is included with most Windows Server operating systems.
+is included in Windows Server operating systems since Windows 2000
+Server, which was launched in 2000.
 
 Almost all Active Directory installations actually include several
 separate but related components; although the term "Active Directory"
