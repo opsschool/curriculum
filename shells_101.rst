@@ -47,6 +47,7 @@ The following commands are very common while using the ``vi`` mode.
 
 - ``h``: Move backward by one character
 - ``l``: Move forward by one character
+- ``w``: Move forward by one word
 - ``0``: Move to the beginning of the line
 - ``$``: Move to the end of the line
 - ``d$``: Delete from the cursor to the end of the line
