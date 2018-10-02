@@ -85,6 +85,3 @@ After modifications to links, please run `make linkcheck` to see the status of
 all the links in the docs.
 
 More on cross-referencing can be read in the [Sphinx Docs](http://sphinx-doc.org/markup/inline.html#cross-referencing-arbitrary-locations).
-
-
-[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/opsschool/curriculum/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
