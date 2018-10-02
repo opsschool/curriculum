@@ -25,7 +25,7 @@ The simplest way of displaying filesystem permissions is by typing:
 
 The left column is a 10-character string that indicates the permissions for a file. It consists of the symbols d, r, w, x, -.
 
-- **Directory(d)** - This is the first character in the permissions string. 
+- **Directory (d)** - This is the first character in the permissions string. 
   This indicates a *directory*. 
   Otherwise, the first character is a - to indicate that it is not a directory.
 - **Read (r)** - The *read* permission allows the user to read the contents of the file or list the files in the directory.
