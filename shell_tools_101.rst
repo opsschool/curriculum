@@ -6,8 +6,8 @@ When you work in a unix environment, you will need to make frequent use of the c
 The Unix Philosophy
 ===================
 
-Unix is characterized by its modular design philosophy. 
-Unix programs are small, single purpose tools that can easily be chained together with other Unix programs. 
+Unix is characterized by its modular design philosophy.
+Unix programs are small, single purpose tools that can easily be chained together with other Unix programs.
 This modular approach allows for a much simpler, more flexible system, since you can combine multiple command line programs to solve a unique problem, without having to write a whole new program to get the job done.
 
 Working with your system
@@ -253,8 +253,34 @@ vmstat
 
 strace
 ------
+The ``strace`` command is used to trace `system calls`_ and `signals`_.
 
-.. todo:: strace command
+By attaching `ptrace`_ functionality to a command, it in a way wraps the memory and signal handlers by stepping through each instruction by pausing or ``STOP``ing between steps.
+
+Similar to pressing :kbd:`Control-z` on a long running process, then foregrounding it again.
+
+.. code-block:: console
+
+  $ for x in `seq 0 100`;do echo $x;sleep 1;done
+  0
+  1
+  2
+  3
+  ^Z[1]  + 58026 suspended  for x in `seq 0 100`; do; echo $x; sleep 1; done
+  $ cat /proc/58026/status
+  #
+  # lots of info about the process
+  #
+  $ fg %1
+  [1]  + 58026 continued  for x in `seq 0 100`; do; echo $x; sleep 1; done
+  4
+  5
+  6
+  ^C
+
+.. _system calls: http://www.opsschool.org/en/latest/syscalls.html?highlight=syscalls#syscalls
+.. _signals: http://www.opsschool.org/en/latest/unix_signals.html?highlight=Signals#what-are-signals
+.. _ptrace: https://github.com/torvalds/linux/blob/6f0d349d922ba44e4348a17a78ea51b7135965b1/kernel/ptrace.c#L343
 
 ulimit
 ------
@@ -385,17 +411,17 @@ You might have to change some of the character positions to make it work on your
 grep
 ----
 
-``grep`` matches patterns in files. 
+``grep`` matches patterns in files.
 Its name comes from the ``ed`` command g/re/p (globally search a regular expression and print the results).
-``grep`` looks for the given pattern in the specified file or files and prints all lines which match. 
+``grep`` looks for the given pattern in the specified file or files and prints all lines which match.
 
-Grep is an excellent tool for when you know the approximate location of the information you want and can describe its structure using a regular expression.  
+Grep is an excellent tool for when you know the approximate location of the information you want and can describe its structure using a regular expression.
 
-As you can learn from grep's man page, it takes some options, a pattern, and a file or list of files. 
-The files can be specified by ordinary shell globbing_, such as using ``*.log`` to refer to all files in the current directory whose names end in .log. 
+As you can learn from grep's man page, it takes some options, a pattern, and a file or list of files.
+The files can be specified by ordinary shell globbing_, such as using ``*.log`` to refer to all files in the current directory whose names end in .log.
 
 Grep's options allow you to customize what type of regular expressions you're using, modify which matches are printed (such as ignoring capitalization or printing only the lines which don't match), and control what's printed as output.
-`This post`_ explains some of the optimizations which allow GNU grep to search through large files so quickly, if you're interested in implementation details. 
+`This post`_ explains some of the optimizations which allow GNU grep to search through large files so quickly, if you're interested in implementation details.
 
 .. _globbing: http://tldp.org/LDP/abs/html/globbingref.html
 .. _`This post`: http://lists.freebsd.org/pipermail/freebsd-current/2010-August/019310.html
@@ -408,26 +434,26 @@ I think that it was mentioned in a channel called #cschat:
 
 .. code-block:: console
 
-    user@opsschool ~$ grep opsschool \#cschat.log 
+    user@opsschool ~$ grep opsschool \#cschat.log
      23:02 < nibalizer> http://www.opsschool.org/en/latest/
 
 That's the only place that 'opsschool' was mentioned.
 Since grep is case-sensitive by default, 'OpsSchool' would not have shown up in that search.
-To ignore case, use the -i flag: 
+To ignore case, use the -i flag:
 
 .. code-block:: console
 
-    user@opsschool ~$ grep -i opsschool \#cschat.log 
+    user@opsschool ~$ grep -i opsschool \#cschat.log
      23:02 < nibalizer> http://www.opsschool.org/en/latest/
      15:33 < edunham> hmm, I wonder what I should use as an example in the OpsSchool writeup on grep...
 
 That's better.
-But what if I can't remember whether there was a space in 'ops school'? 
+But what if I can't remember whether there was a space in 'ops school'?
 I could grep twice, once with the space and once without, but that starts to get ugly very fast.
-The correct solution is to describe the pattern I'm trying to match using a regular expression. 
+The correct solution is to describe the pattern I'm trying to match using a regular expression.
 
 There are a variety of regex tutorials available.
-The most important thing to remember about regular expressions is that some characters are special, and not taken literally. 
+The most important thing to remember about regular expressions is that some characters are special, and not taken literally.
 The special characters are:
 
 ==========      =======
@@ -445,13 +471,13 @@ Characters      Meaning
 ``\``           Escape (take the following character literally)
 ==========      =======
 
-Note that there's almost always more than one way to express a particular pattern. 
+Note that there's almost always more than one way to express a particular pattern.
 When you're developing a regular expression, it can be helpful to test it on simplified input to see what it catches.
 To test a regex for various spellings of opsschool, you might put a variety of spellings in a file and then grep it to see which regex catches which spellings.
 
 .. code-block:: console
 
-    user@opsschool ~$ cat ops.txt 
+    user@opsschool ~$ cat ops.txt
      OpsSchool
      Ops School
      opsschool
@@ -480,7 +506,7 @@ For more information about regular expressions, try ``man 7 regex``, `regularexp
 
 **Single vs. Double quotes in the shell**
 
-When grepping for bash variables in scripts, you'll probably want the name of the variable. 
+When grepping for bash variables in scripts, you'll probably want the name of the variable.
 However, there might be times when you want its value.
 Below is a quick exercise to explore the difference:
 
@@ -498,7 +524,7 @@ Below is a quick exercise to explore the difference:
     user@opsschool ~$ grep '$HOME' home.txt
      $HOME has a dollar sign in it
     user@opsschool ~$ grep \$HOME home.txt
-     $HOME has a dollar sign in it                                      
+     $HOME has a dollar sign in it
 
 awk
 ---
