@@ -22,8 +22,8 @@ Partition Tolerance
 Partition tolerance refers to a system's ability to function, given the presence of a network outage or “partition” between your system components.
 Imagine you work at a remote office of a large company and the network link between your site and headquarters goes down.
 This creates network partitions; the two networks are now split and systems within each cannot communicate across the rift.
-It is also often desirable for our systems’ behaviors to change when it detects it is in a network partition situation.
-We’ll call these partition mode behaviors, and cover examples below.
+It is often desirable for our systems’ behaviors to change when they detect a network partition situation.
+We’ll call these changes partition mode behaviors, and walkthrough examples below.
 
 It is widely accepted that partitions are unavoidable and thus partition tolerance is essential.
 In fact, even latency can be thought of as a type of network partition.
