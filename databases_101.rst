@@ -426,7 +426,7 @@ UPDATE
 It should almost always be used with a conditional statement.
 The standard syntax is:
 
-.. code-block:: sql
+.. code-block:: none
 
   UPDATE [TABLE] SET [COLUMN] = {expression}, {COLUMN2={expression}, ...}
   [WHERE condition]

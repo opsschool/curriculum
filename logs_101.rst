@@ -17,7 +17,7 @@ In the shell, stderr may be redirected in order to differentiate it from stdout 
 The `find` command often writes messages to stderr upon encountering permissions issues.
 We'll use it as an example.
 
-.. code-block:: bash
+.. code-block:: console
 
     $ mkdir noperms
     $ chmod 000 noperms/
@@ -29,7 +29,7 @@ The name of the directory `noperms/` is first written to stdout, then a permissi
 Suppose we expected a large number of these errors to occur and wanted to append them in a log file, separate from the info written to stdout.
 Remember: stderr is always file descriptor 2.
 
-.. code-block:: bash
+.. code-block:: console
 
     $ find noperms/ 2>>find.log
     noperms/
