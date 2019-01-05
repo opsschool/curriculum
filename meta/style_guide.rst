@@ -85,7 +85,7 @@ Please use the language being displayed for the correct syntax.
 For examples of console output, use ``console``.
 When showing pseudo-code or items that do not fit a language or console, use ``none``.
 
-When showing shell commands, plese use the following standard prompts for user and root:
+When showing shell commands, please use the following standard prompts for user and root:
 
 .. code-block:: console
 
