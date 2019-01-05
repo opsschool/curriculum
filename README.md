@@ -6,7 +6,7 @@ Ops School Curriculum
 [![Support via Gratipay](https://cdn.rawgit.com/gratipay/gratipay-badge/2.3.0/dist/gratipay.svg)](https://gratipay.com/Ops-School/)
 
 The current documentation based on these sources can be seen at:
-http://www.opsschool.org/
+<http://www.opsschool.org/>
 
 Welcome!
 
@@ -15,9 +15,9 @@ So thank you for your time.
 
 Things you should know:
 
-* This project is written in [reStructuredText](http://docutils.sourceforge.net/docs/user/rst/quickstart.html)
-* Hosted by [Read the Docs](http://readthedocs.org/)
-* Tested by rendering in [Sphinx](http://sphinx-doc.org/) on [Travis CI](https://travis-ci.org)
+*   This project is written in [reStructuredText](http://docutils.sourceforge.net/docs/user/rst/quickstart.html)
+*   Hosted by [Read the Docs](http://readthedocs.org/)
+*   Tested by rendering in [Sphinx](http://sphinx-doc.org/) on [Travis CI](https://travis-ci.org)
 
 This is the only Markdown file in the repository, as it's not meant to be
 included in the documentation itself.
@@ -25,27 +25,25 @@ included in the documentation itself.
 If you are looking to add content, fix formatting, syntax, typos or other
 wonderful things, please follow this process:
 
-* Read the [Style Guide](http://www.opsschool.org/en/latest/meta/style_guide.html)
-* Install Sphinx: `easy_install Sphinx sphinx_rtd_theme` or `pip install -r requirements.txt`
-* Fork the `opsschool/curriculum` repository to your own account
-* Check out a branch to make your changes on: `git checkout --branch <my_topic>`
-* Execute `make html` to build the docs in to `_build/`
-* Make your changes
-* Execute `make html` again and verify your changes don't cause any
-  warnings/errors
-* Commit with a descriptive message, and submit a pull request from your branch
-  to `master`
-* One of the editors will review the change, and either merge it or provide some
-  feedback. Community review is also encouraged.
+*   Read the [Style Guide](http://www.opsschool.org/en/latest/meta/style_guide.html)
+*   Install Sphinx: `pip install -r requirements.txt` (This is best done in a virtual environment.)
+*   Fork the `opsschool/curriculum` repository to your own account
+*   Check out a branch to make your changes on: `git checkout --branch <my_topic>`
+*   Execute `make html` to build the docs in to `_build/`
+*   Make your changes
+*   Execute `make html` again and verify your changes don't cause any warnings/errors
+*   Commit with a descriptive message, and submit a pull request from your branch to `master`
+*   One of the editors will review the change, and either merge it or provide some
+    feedback. Community review is also encouraged.
 
 If you submit a pull request and would like to have your name associated with
 the project, add it to the `meta/contributions.rst` file!
 
 Some cool things:
 
-* `vim-common` contains a reStructuredText syntax highlighter
-* The [Emacs support][emacs] via rst-mode comes as part of the docutils package
-  under `/docutils/tools/editors/emacs/rst.el`
+*   `vim-common` contains a reStructuredText syntax highlighter
+*   The [Emacs support][emacs] via rst-mode comes as part of the docutils package
+    under `/docutils/tools/editors/emacs/rst.el`
 
 [emacs]: http://docutils.sourceforge.net/docs/user/emacs.html
 
@@ -57,8 +55,8 @@ built-in cross-reference mechanisms to achieve this.
 
 Examples:
 
-* linking to a top-level document such as "Text Editing 101" should be done
-  inline, like so:
+*   linking to a top-level document such as "Text Editing 101" should be done
+    inline, like so:
 
         See :doc:`text_editing_101` for details...
 
@@ -67,8 +65,8 @@ Examples:
 
         See <em>Text Editing 101</em> for details...
 
-* linking to a reference point, such as a sub-topic on a page should be done by
-  creating a globally unique reference point, such as:
+*   linking to a reference point, such as a sub-topic on a page should be done by
+    creating a globally unique reference point, such as:
 
         .. _gnu-screen:
 
