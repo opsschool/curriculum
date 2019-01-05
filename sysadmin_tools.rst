@@ -477,7 +477,7 @@ There is a nifty cheat sheet [#]_ for the most important
 
 byobu
 -----
-Byobu_ is a wrapper around one of screen or tmux. It
+[Byobu]_ is a wrapper around one of screen or tmux. It
 provides profile support, F-keybindings, configuration utilities and a
 system status notification bar for most Linux, BSD or Mac operating systems.
 
