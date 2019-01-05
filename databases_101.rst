@@ -132,8 +132,8 @@ Postgresql
 
 Create Tables
 =============
-Tables are organized into rows and columns. 
-Data is stored inside these tables. 
+Tables are organized into rows and columns.
+Data is stored inside these tables.
 In order to host this information we need to create a table.
 We do this with the ``CREATE TABLE`` statement.
 
@@ -166,11 +166,11 @@ For example, if you have a table called "Users" which contains Names and Address
 .. code-block:: sql
 
   ALTER TABLE Users ADD age int;
-  
+
 Standard Syntax is:
-  
+
 .. code-block:: sql
- 
+
   ALTER TABLE table_name ADD column_name datatype
 
 If we need to modify a current table, we can also do so with the ``ALTER`` statement.
@@ -467,13 +467,13 @@ Here is a simple example of a DELETE statement:
 Pro Tips
 ========
 
-- Before doing a write query, run it as a read query first to make sure you are retrieveing exactly what you want. 
+- Before doing a write query, run it as a read query first to make sure you are retrieveing exactly what you want.
   If your query is:
-  
+
     ``UPDATE users SET disabled=1 WHERE id=1;``
-  
+
   Run this first to validate you will be affecting the proper record:
-  
+
     ``SELECT disabled FROM users WHERE id=1;``
 
 - use a ``LIMIT`` on ``UPDATE`` and ``DELETE FROM`` queries to limit damage imposed by an erroneous query
