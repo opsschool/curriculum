@@ -487,7 +487,11 @@ Files, directories, inodes
 
 Inodes
 ======
-What they contain, how they work
+Inode, short for index node, is a data structure associated with each file on the Linux EXT filesystem. While we tend to think of files and directories as separate things, this isn't quite true. Directories are actually special files that essentially contain a table with two columns: file names and associated inode numbers.
+
+Each EXT partition has an inode table, kind of like the table of contents in a book. In this table, the operating system can look up each file by its inode in order to access the data contents of the file. In fact, this table contains all of the metadata associated with a file.
+
+The term inode is often used interchangeably to refer to both the large numeric value associated with a file and an entry in the inode table, which contains multiple pieces of metadata about a given file.
 
 The POSIX standard dictates files must have the following attributes:
 
@@ -502,6 +506,49 @@ The POSIX standard dictates files must have the following attributes:
 * Pointers to the file's contents.
 
 http://en.wikipedia.org/wiki/Inode
+
+To view a file's inode, use the ``-i`` option with ``ls``:
+
+.. code-block:: console
+
+  root@opsschool ~# ls -i file.txt
+  8609025021 file.txt
+
+This lengthy number is the inode of file.txt. When accessing this file, a program asks for the file by name. The kernel looks the file up by inode in the inode table, and then reads the data from the table to determine what data blocks on the hard drive actually contain the file contents.
+
+One way that hardlinks and symlinks differ is that hardlinks do not require provisioning of a new inode; they are merely a second pointer to an existing file. This additional pointer is appended to the metadata in the inode table. Symlinks, however, require a new inode entry. This can be demonstrated as follows:
+
+.. code-block:: console
+
+  root@opsschool ~# ls -i file.txt
+  8609025021 file.txt
+  root@opsschool ~# ln file.txt file2.txt
+  root@opsschool ~# ls -i file2.txt
+  8609025021 file2.txt
+  root@opsschool ~# ln -s file.txt file3.txt
+  root@opsschool ~# ls -i file3.txt
+  8609025698 file3.txt
+
+Here you can see that file1 and file2 have the same inode value because file2 is a hardlink to file1. However, file3, which is a symlink, does not share the inode value of the other two files.
+
+It is possible to run out of inodes on a system. Somewhat confusingly for users, Linux will report "No space left on device" while running common disk utils such as ``df`` will show plenty of free space. By adding the ``-i`` argument we can see the % of free inodes available on a device.
+
+Below is the output for a disk with ample free storage and inodes:
+
+.. code-block:: console
+
+  root@opsschool ~# df
+  Filesystem     1K-blocks      Used Available Use% Mounted on
+  udev             1990012         0   1990012   0% /dev
+  tmpfs             403956      6160    397796   2% /run
+  /dev/sda1      198719624   7191352 181410796   4% /
+  root@opsschool ~# df -i
+  Filesystem       Inodes  IUsed    IFree IUse% Mounted on
+  udev             497503    447   497056    1% /dev
+  tmpfs            504941    614   504327    1% /run
+  /dev/sda1      12632064 400626 12231438    4% /
+
+`This video <https://www.youtube.com/watch?v=tMVj22EWg6A>`_ provides more advanced details about the inode data structure and how it is optimized to handle both small and large file sizes.
 
 File system layout
 ==================
