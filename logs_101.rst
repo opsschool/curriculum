@@ -17,7 +17,7 @@ In the shell, stderr may be redirected in order to differentiate it from stdout 
 The `find` command often writes messages to stderr upon encountering permissions issues.
 We'll use it as an example.
 
-.. code-block:: bash
+.. code-block:: console
 
     $ mkdir noperms
     $ chmod 000 noperms/
@@ -29,7 +29,7 @@ The name of the directory `noperms/` is first written to stdout, then a permissi
 Suppose we expected a large number of these errors to occur and wanted to append them in a log file, separate from the info written to stdout.
 Remember: stderr is always file descriptor 2.
 
-.. code-block:: bash
+.. code-block:: console
 
     $ find noperms/ 2>>find.log
     noperms/
@@ -50,7 +50,7 @@ The `tail` command's `--follow` or `-f` flag is an extremely useful tool for vie
 For example, if you were running a web server like nginx or Apache that was configured to send it's access log to a file, you could use tail to see new requests.
 
 .. code-block:: bash
-    
+
     $ tail -f /var/log/nginx/access.log
     127.0.0.1 - - [17/Aug/2013:02:53:42 -0700] "GET / HTTP/1.1" 200 151 "-" "curl/7.22.0 (x86_64-pc-linux-gnu) libcurl/7.22.0 OpenSSL/1.0.1"
     127.0.0.1 - - [17/Aug/2013:02:53:43 -0700] "GET / HTTP/1.1" 200 151 "-" "curl/7.22.0 (x86_64-pc-linux-gnu) libcurl/7.22.0 OpenSSL/1.0.1"
