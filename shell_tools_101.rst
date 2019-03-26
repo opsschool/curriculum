@@ -244,17 +244,102 @@ Further documentation on either can be found in the ``man`` pages.
 stat
 ----
 
-.. todo:: stat command
+``stat`` gives you information about a file, including the file size, what permissions the file has, and when the file was created, last modified, and last accessed.
+
+.. code-block:: console
+
+  $ stat /etc/passwd
+    File: /etc/passwd
+    Size: 3988            Blocks: 8          IO Block: 4096   regular file
+  Device: 1bh/27d Inode: 2370069     Links: 1
+  Access: (0644/-rw-r--r--)  Uid: (    0/    root)   Gid: (    0/    root)
+  Access: 2019-03-25 18:53:16.313335636 -0400
+  Modify: 2019-03-16 13:25:39.173332827 -0400
+  Change: 2019-03-16 13:25:39.179999493 -0400
+   Birth: -
+
+To use ``stat`` in a shell script, you can pass the ``--format=`` argument, which accepts ``%``-based escape sequences.
+For example, ``stat --format="%s %u"`` will print the file size in bytes and the UID of the owner of the file.
+A full list of supported escape sequences is in the man page, ``man stat``.
+
 
 vmstat
 ------
 
-.. todo:: vmstat command
+The ``vmstat`` command gives general statistics about the system.
+Running ``vmstat`` with no arguments will report statistics accumulated since system boot.
+You can run ``vmstat 1`` instead to report statistics each second.
+The first line of output will still be statistics since boot, but then it will print a new line each second, containing the average statistics since the last line of output.
+An example run on a mostly idle system might look like this (headers have been manually realigned):
+
+.. code-block:: console
+  $ vmstat 1
+  procs ------------memory----------- ---swap-- -----io---- -system-- ------cpu-----
+   r  b   swpd    free   buff   cache   si   so    bi    bo   in   cs us sy id wa st
+   1  0 435112 1694040  84688 1802748    2    6   171   232  191  142 22 10 67  0  0
+   0  0 435112 1693340  84688 1806028    0    0     0    12 2977 3579  3  3 95  0  0
+   0  0 435112 1694584  84688 1803984    0    0     0     0 2826 3052  2  2 96  0  0
+   1  0 435112 1693836  84688 1803984    0    0     0    44 2062 2645  2  2 97  0  0
+
+For the processes section, the first number, under ``r`` is the number of runnable processes.
+
+For the memory section section, the ``swpd`` column refers to how much total virtual memory is in use by the system.
+``free`` refers to the amount of free memory, and ``cache`` refers to the amount of memory being used for filesystem caching, which can be reclaimed if free memory gets too low.
+
+Under the swap section, ``si`` and ``so`` display the number of pages swapped in from the disk and swapped out to the disk, per second.
+Lots of swapping will seriously decrease performance, and indicates that there is not enough physical memory available on the system.
+
+Under ``io``, the ``bi`` and ``bo`` columns list the average number of blocks read and written to the filesystem per second.
+
+Under ``system``, the ``in`` and ``cs`` columns list the average number of interrupts per second and context switches per second.
+
+Under ``cpu``, all values are percentages of CPU time.
+The ``us`` section is the percentage of time spent running userspace code.
+The ``sy`` section is the percentage of time spent running kernel code.
+``id`` lists time spent idle, and ``wa`` lists time spent waiting for IO to complete.
+
 
 strace
 ------
 
-.. todo:: strace command
+``strace`` is a command that can be used to monitor which syscalls a process is executing.
+You can run a program under strace by passing the program name and all of its arguments to strace, like ``strace ping google.com``.
+You can also attach strace to a running program by calling ``strace -p`` with a process ID.
+WARNING: This will seriously degrade performance, by as much as a 20x slowdown.
+
+``strace`` generates a lot of output, even for simple programs.
+You can log strace's output to a file instead of the terminal by running ``-o`` followed by the name of file to create.
+You can also limit the syscalls that ``strace`` will look for by passing a comma seperated list to ``-e``, for example, ``strace -e openat,write,read,close ls``
+
+``strace`` also truncates strings that it feels are too long to print to the console.
+If you need the full contents of what your program is reading or writing, pass ``-s`` and a length, such as ``-s 9000``
+
+An example ``strace`` output of a simple statically linked hello world program in C is included below:
+
+.. code-block:: console
+  execve("./hello_world", ["./hello_world"], 0x7ffcadb2ed00 /* 90 vars */) = 0
+  arch_prctl(0x3001 /* ARCH_??? */, 0x7ffcea3e3080) = -1 EINVAL (Invalid argument)
+  brk(NULL)                               = 0x1079000
+  brk(0x107a1c0)                          = 0x107a1c0
+  arch_prctl(ARCH_SET_FS, 0x1079880)      = 0
+  uname({sysname="Linux", nodename="Cyprus", ...}) = 0
+  readlink("/proc/self/exe", "/home/niles/hello_world", 4096) = 23
+  brk(0x109b1c0)                          = 0x109b1c0
+  brk(0x109c000)                          = 0x109c000
+  fstat(1, {st_mode=S_IFCHR|0600, st_rdev=makedev(0x88, 0x4), ...}) = 0
+  write(1, "Hello, world\n", 13)          = 13
+  exit_group(0)                           = ?
+  +++ exited with 0 +++
+
+
+Syscalls and their arguments appear on the left, and the return value of the syscall apears on the right after the equals sign.
+If the syscall doesn't return, like ``execve`` or ``exit_group``, it is printed as a question mark.
+Common syscalls to recognize and look for when troubleshooting a program are ``open``, ``close``, ``read``, and ``write`` for files and sockets; ``fork`` and ``execve`` for creating subprocesses; and ``connect``, ``sendto``, and ``recvfrom`` for network traffic.
+If you see a syscall you don't recognize, it has a ``man`` page in section ``2``.
+So for example, to see more information about ``fstat``, including what arguments it takes and what it returns, you can do ``man 2 fstat``.
+
+As mentioned above, ``strace`` incurs a significant performance overhead.
+``perf trace`` uses a newer tracing system that may be much faster, but can miss some events. 
 
 ulimit
 ------
