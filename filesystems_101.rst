@@ -13,7 +13,7 @@ handling many small files (ReiserFS), some are much better at large files and
 deleting files quickly (XFS, EXT4).
 
 The version of Unix you use will have picked a filesystem which is used by
-default, on Linux this is often EXT3.
+default, on Linux this is often EXT4.
 
 Understanding the way filesystems work is important when you have to fix issues
 related to disk space, performance issues with reading and writing to disk, and
