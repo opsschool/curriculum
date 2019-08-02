@@ -75,7 +75,7 @@ hardware exists:
 
 Once the existence of the hardware has been confirmed, it must be configured.
 
-The BIOS has its own memory storage known as the CMOS (Complimentary
+The BIOS has its own memory storage known as the CMOS (Complementary
 Metal Oxide Semiconductor). The CMOS contains all of the settings the
 BIOS needs to save, such as the memory speed, CPU frequency
 multiplier, and the location and configuration of the hard drives and
