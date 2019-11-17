@@ -365,7 +365,7 @@ person prioritize and accomplished?
 Recommended reading:
 
 * Tom Limoncelli's book `Time Management for System Administrators <http://amzn.com/0596007833>`_
-* Tom Limoncelli's `Time Management Wiki <http://code.google.com/p/tomontime/wiki/Main>`_
+* Tom Limoncelli's `Time Management Wiki <https://github.com/TomOnTime/tomontime/wiki>`_
 
 Tom Limoncelli also teaches a Time Management tutorial at the `USENIX
 LISA conference <https://www.usenix.org/conferences>`_ and sometimes the
