@@ -111,7 +111,11 @@ The point of all this sharing is for each router to have identical LSDBs.
 Once this is achieved, each OSPF router calculates routes to all subnets from its own point of view using a shortest path algorithm.
 These routes are added then added to the router's routing table.
 
-3. Border Gateway Protocol (BGP) -
+3. Border Gateway Protocol (BGP) - BGP is an external routing protocol that runs on top of TCP and utilises port 179, it is used to communicate and exchange routing information between different autonomous systems (AS), which is a number of networks under the control of a single entity, such as an Internet Service Provider (ISP).
+It is known as a path vector protocol because it will display the AS Path in order to reach a particular destination network, even though many internal networks make up an AS, BGP, for the most part, does not care about them.
+There are two flavours of BGP, external BGP (eBGP) and internal BGP (iBGP). The distinguishing factor between them is the way in which they run in respect to an AS. iBGP will be used to communicate within an AS, whereas eBGP is used to communicate between them.
+Unlike the internal routing protocols BGP does use a specific metric, such as hop count or cost, that it uses to decide the best routing path; instead, it uses path attributes which comprise of a list of various information about the destination network.
+Routers that are configured with BGP, known as BGP Speakers, require a peering process before routing information can be exchanged.
 
 ACLs
 ====
