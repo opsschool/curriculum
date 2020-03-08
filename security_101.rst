@@ -32,7 +32,7 @@ The left column is a 10-character string that indicates the permissions for a fi
 - **Write (w)**- The *write* permission allows the user to write or modify a file. 
   In the case of directories, the use may delete files from the directory or move files into the directory.
 - **Execute (x)** -The *execute* permission allows the user to execute a file or access the contents of a directory. 
-  In the case of directories, this indicated that the use may read files in the directory, provided that the user has read permission on an individual file.
+  In the case of directories, this indicated that the user may read files in the directory, provided that the user has read permission on an individual file.
 
 The 9 remaining characters are split into 3 sets to represent the access rights based on 3 groups of users. 
 Take the "files" directory above as an example, we can split the characters like this: ``[d][rwx][r-x][r-x]``
