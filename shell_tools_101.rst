@@ -448,7 +448,9 @@ Characters      Meaning
 Note that there's almost always more than one way to express a particular pattern. 
 When you're developing a regular expression, it can be helpful to test it on simplified input to see what it catches.
 To test a regex for various spellings of opsschool, you might put a variety of spellings in a file and then grep it to see which regex catches which spellings.
-
+Lastly, there is a big difference between a plain ``grep`` call and a ``grep -E`` call (Basic RE vs. Extended RE). In BRE, any of these characters need a preceding backslash in order for them to take effect: {}, +, ?, |
+If not preceded by a backslash they are treated as normal characters.
+E.g. ``grep "ops \?school"`` is equivalent to ``grep -E "ops ?school"``
 .. code-block:: console
 
     user@opsschool ~$ cat ops.txt 
