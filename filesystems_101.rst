@@ -302,6 +302,11 @@ command allows the user to do this manually. Typically, only the superuser
 can perform mounts. The root filesystem, mounted on ``/``, is unique and
 it is mounted at boot. See :doc:`boot_process_101`.
 
+In the following example, the filesystem of ``/dev/sdb1`` will be mounted to
+the folder ``/mnt``. That means anything inside ``/dev/sdb1`` will become
+accessible under ``/mnt/...``. (Don't worry about the options ``-t`` and
+``-o`` just yet; those will be described in more detail below).
+
 .. code-block:: console
 
     root@opsschool # mount -t ext4 -o noatime /dev/sdb1 /mnt
@@ -318,21 +323,25 @@ above:
 
 The filesystem type refers to the format of the data structure that is used as
 the filesystem on disk. Files (generally) do not care what kind of filesystem
-they are on, it is only in initial filesystem creation, automatic
-mounting, and performance tuning that you have to concern yourself with the
-filesystem type. Example filesystem types are ``ext2, ext3, ext4, FAT, NTFS
-HFS, JFS, XFS, ZFS, BtrFS``. On Linux hosts, ext4 is a good default.  For
-maximum compatibility with Windows and Macintosh, use FAT.
+they are on. You have to concern yourself with the filesystem type only in
+the initial filesystem creation, automatic mounting, and performance tuning.
 
-http://en.wikipedia.org/wiki/Comparison_of_file_systems
+Example filesystem types are ``ext2``, ``ext3``, ``ext4``, ``FAT``, ``NTFS``,
+``HFS``, ``JFS``, ``XFS``, ``ZFS``, ``Btrfs``. On Linux hosts, ``ext4`` is a
+good default.  For maximum compatibility with Windows and Macintosh, use ``FAT``.
+See the following Wikipedia page for a more thorough `comparison of file systems.
+<http://en.wikipedia.org/wiki/Comparison_of_file_systems>`_
+
+Automatic mounting using ``fstab``
+----------------------------------
 
 The fstab, or file system table, is the file that configures automatic mounting
 at boot. It tabulates block devices, mount points, type and options for each
 mount.  The dump and pass fields control booting behavior. Dumping is the act
 of creating a backup of the filesystem (often to tape), and is not in common use.
 Pass is much more important. When the pass value is nonzero, the filesystem is
-analyzed early in the boot process by fsck, the file system checker, for errors.
-The number, fs_passno, indicates priority. The root filesystem should always be
+analyzed early in the boot process by ``fsck``, the file system checker, for errors.
+The number, ``fs_passno``, indicates priority. The root filesystem should always be
 1, other filesystems should be 2 or more. A zero value causes checks to be
 skipped, an option often used to accelerate the boot process. In ``/etc/fstab``,
 there are a number of ways to specify the block device containing the filesystem
@@ -351,10 +360,20 @@ based systems to specify a filesystem.
 This ``/etc/fstab`` file mounts ``/dev/sda5`` on ``/`` using the ext4 filesystem
 . If it encounters a filesystem corruption it will use the ``fsck`` utility
 early in the boot process to try to clear the problem. If the physical disk
-reports errors in writing while the filesystem is mounted, the os will remount
+reports errors in writing while the filesystem is mounted, the OS will remount
 ``/`` readonly. The ``/dev/sda6`` partition will be used as swap. The
 ``/dev/sda1`` partition will be mounted on ``/boot/efi`` using autodetection, the
 partition will not be scanned for filesystem errors.
+
+Automatic mounting using ``autofs``
+-----------------------------------
+
+``autofs`` is another way to tabulate filesystems for mounting. It is different from
+the ``/etc/fstab`` because the filesystems listed in ``auto.master`` are not mounted
+at boot. The automounter allows the system to mount filesystems on demand, then clean
+up those filesystems when they are no longer being used.
+
+The ``auto.master`` file controls the ``autofs`` service:
 
 .. code-block:: console
 
@@ -363,22 +382,17 @@ partition will not be scanned for filesystem errors.
     /home -rw,hard,intr,nosuid,nobrowse bigserver:/exports/home/&
     /stash ldap:ou=auto_stash,ou=Autofs,dc=example,dc=com -rw,hard,intr,nobrowse
 
-The ``auto.master`` file controls the ``autofs`` service. It is another way to
-tabulate filesystems for mounting. It is different from the ``/etc/fstab``
-because the filesystems listed in ``auto.master`` are not mounted at boot. The
-automounter allows the system to mount filesystems on demand, then clean up those
-filesystems when they are no longer being used. In this case, the system mounts
-home directories for each user from a remote NFS server. The filesystem remains
-unmounted until the user logs in, and is unmounted a short time after the user
-logs out. The automounter is triggered by an attempt to cd into ``/home/<key>``,
-it will then attempt to find an nfs share on ``/exports/home/<key>`` and mount it
-on ``/home/key``, then allow the ``cd`` command to return successfully. The
-``/home`` example above is using the ``&`` expansion syntax, the second line is
-using the LDAP syntax to look up a key under ``/stash/<key>`` in LDAP. LDAP will
-be covered later in the curriculum. The ``auto.master`` file is known as
-``auto_master`` on FreeBSD, Solaris, and Mac OS X.
+In the above example, the system mounts home directories for each user from a remote NFS
+server. The filesystem remains unmounted until the user logs in, and is unmounted
+a short time after the user logs out. The automounter is triggered by an attempt to
+``cd`` into ``/home/<key>``.  It will then attempt to find an NFS share on
+``/exports/home/<key>`` and mount it on ``/home/key``, then allow the ``cd`` command
+to return successfully. The ``/home`` example above is using the ``&`` expansion syntax.
 
+The second line is using the LDAP syntax to look up a key under ``/stash/<key>`` in
+LDAP. LDAP will be covered later in the curriculum.
 
+The ``auto.master`` file is known as ``auto_master`` on FreeBSD, Solaris, and Mac OS X.
 
 Filesystem options
 ==================
@@ -476,9 +490,12 @@ This is also used for security purposes.
 It is generally recommended for removable devices such as CD-ROMs, USB sticks, and network filesystems.
 
 
+nobarrier
+---------
 
-nobarriers
+
 rbind
+-----
 
 
 How filesystems work
