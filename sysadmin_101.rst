@@ -210,14 +210,18 @@ These backends can be big, and have many considerations behind their design.
 
 .. _whats-developer-dennis:
 
-* **Dennis works at a small mobile games studio.** The game apps communicate with a
-  server backend which stores the user's progress and inventory, as well as facilitates
-  social interactions between players. For new game features, Dennis develops backend
-  APIs using the Django framework in Python and MySQL, which the game app calls
-  through a RESTful interface. In case there are any issues with the game, Dennis and
-  his colleagues working on the game teams respond to any application-level problems
-  including bugs and API performance; a separate team of system administrators help
-  with any operating system, hardware, network or infrastructure issues.
+* **Dennis is a developer at a small mobile games studio.** The game apps communicate
+  with a server backend which stores the user's progress and inventory, as well as
+  facilitates social interactions between players. For new game features, Dennis
+  develops backend APIs using the Django framework in Python and MySQL, which the game
+  app calls through a RESTful interface. In case there are any issues with the game, 
+  Dennis and his colleagues working on the game teams respond to any application-level
+  problems including bugs and API performance; from time to time he will remotely
+  access the servers to diagnose issues and some basic administration such as install
+  newly required applications and libraries, or reconfiguring and managing services.
+  However, for more serious problems or maintenance and configuration of the operating
+  system, hardware, network or other shared services, a separate team of system
+  administrators help out.
 
 .. todo:: "What is Development" Section needs more developer perspective.
 
