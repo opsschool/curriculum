@@ -208,6 +208,17 @@ These backends can be big, and have many considerations behind their design.
   reliability engineer on their team who makes sure that the features they
   create are scalable and maintainable.
 
+.. _whats-developer-dennis:
+
+* **Dennis works at a small mobile games studio.** The game apps communicate with a
+  server backend which stores the user's progress and inventory, as well as facilitates
+  social interactions between players. For new game features, Dennis develops backend
+  APIs using the Django framework in Python and MySQL, which the game app calls
+  through a RESTful interface. In case there are any issues with the game, Dennis and
+  his colleagues working on the game teams respond to any application-level problems
+  including bugs and API performance; a separate team of system administrators help
+  with any operating system, hardware, network or infrastructure issues.
+
 .. todo:: "What is Development" Section needs more developer perspective.
 
 
