@@ -26,8 +26,8 @@ same functionality:
 RPM and yum (RedHat, CentOS, Fedora, Scientific Linux)
 ======================================================
 
-In the following examples, we will be using the package ``dstat``. The
-process however applies to any software you may want to install.
+In the following examples, we will be using ``dstat`` as the package we will be
+manipulating. The process however applies to any software you may want to install.
 
 Yum provides a wrapper around RPM, which can be used to search for, and install
 packages from multiple package repositories. It also resolves dependencies, so
@@ -170,19 +170,27 @@ There are two todos here.
 dpkg and APT (Debian, Ubuntu)
 =============================
 
-In the following examples, we will be using the package ``dstat`` in our examples. The
-process however applies to any software you may want to install.
+In the following examples, we will be using ``dstat`` as the package we will be
+manipulating. The process however applies to any software you may want to install.
 
-apt provides a wrapper around dpkg, which can be used to search for, and install
-packages from multiple package repositories.
+APT provides a wrapper around ``dpkg``, which can be used to search for,
+and install packages from multiple package repositories.
 
-If your Linux distribution uses dpkg and apt, you can search for packages
+If your Linux distribution uses ``dpkg`` and APT, you can search for packages
 by running:
 
 .. code-block:: console
 
    bash-4.0$ apt-cache search dstat
    dstat - versatile resource statistics tool
+
+.. note::
+   In the following sections, we will be describing use of APT through the
+   traditional commands of ``apt-get`` and ``apt-cache``.  However, modern systems
+   may ship with an additional command ``apt`` which (generally) combines the
+   functionality of both of the above commands.  If your system supports ``apt``
+   by itself, it is recommended to use that, as it is a bit more user friendly.
+
 
 Installing packages
 -------------------
@@ -218,18 +226,31 @@ dpkg and APT both make it easy to upgrade existing packages, too.
 Over time, new packages may be added to the apt repositories that are configured
 on your system, or you may have a newer deb for an already installed package.
 
-To upgrade using apt, when a newer package is available, simply ask apt to
-install it again:
+In order to retrieve the updated package lists, first run:
+
+.. code-block:: console
+
+   bash-4.0# apt-get update
+
+To upgrade a single package using apt, when a newer package is available, simply
+ask apt to install it again:
 
 .. code-block:: console
 
    bash-4.0# apt-get install dstat
+
+To upgrade all packages at once, run:
+
+.. code-block:: console
+
+   bash-4.0# apt-get upgrade
 
 To upgrade a package with an deb file, run:
 
 .. code-block:: console
 
    bash-4.0# dpkg -i dstat_0.7.2-3_all.deb
+
 
 Uninstalling packages
 ---------------------
