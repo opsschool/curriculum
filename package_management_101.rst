@@ -38,7 +38,7 @@ by running:
 
 .. code-block:: console
 
-   bash-4.0$ yum search dstat
+   user@opsschool ~$ yum search dstat
    ======================== N/S Matched: dstat =========================
    dstat.noarch : Versatile resource statistics tool
 
@@ -49,7 +49,7 @@ You can install a package using yum, by running:
 
 .. code-block:: console
 
-   bash-4.0$ yum install dstat
+   root@opsschool ~# yum install dstat
 
    =============================================================================
     Package        Arch            Version              Repository         Size
@@ -70,7 +70,7 @@ with the ``rpm`` command:
 
 .. code-block:: console
 
-  bash-4.0$ rpm -i dstat-0.7.0-1.el6.noarch.rpm
+  root@opsschool ~# rpm -i dstat-0.7.0-1.el6.noarch.rpm
 
 Upgrading packages
 ------------------
@@ -84,19 +84,19 @@ to install it again:
 
 .. code-block:: console
 
-   bash-4.0$ yum install dstat
+   root@opsschool ~# yum install dstat
 
 To upgrade all packages that have newer versions available, run:
 
 .. code-block:: console
 
-   bash-4.0$ yum upgrade
+   root@opsschool ~# yum upgrade
 
 To upgrade a package with an RPM file, run:
 
 .. code-block:: console
 
-   bash-4.0$ rpm -Uvh dstat-0.7.1-1.el6.noarch.rpm
+   root@opsschool ~# rpm -Uvh dstat-0.7.1-1.el6.noarch.rpm
 
 Uninstalling packages
 ---------------------
@@ -105,13 +105,13 @@ To uninstall a package using yum, run:
 
 .. code-block:: console
 
-   bash-4.0$ yum remove dstat
+   root@opsschool ~# yum remove dstat
 
 Similarly, you can uninstall a package with rpm:
 
 .. code-block:: console
 
-   bash-4.0$ rpm -e dstat
+   root@opsschool ~# rpm -e dstat
 
 Cleaning the RPM database
 -------------------------
@@ -121,7 +121,7 @@ sources on next install or upgrade operation.
 
 .. code-block:: console
 
-   bash-4.0$ yum clean all
+   root@opsschool ~# yum clean all
 
 Querying the RPM database
 -------------------------
@@ -136,7 +136,7 @@ packages if they are installed:
 
 .. code-block:: console
 
-   bash-4.0$ rpm -qa dstat
+   user@opsschool ~$ rpm -qa dstat
    dstat-0.7.0-1.el6.noarch
 
 Now let's say we want to list all of the files installed by a package. The
@@ -144,7 +144,7 @@ Now let's say we want to list all of the files installed by a package. The
 
 .. code-block:: console
 
-   bash-4.0$ rpm -ql dstat
+   user@opsschool ~$ rpm -ql dstat
    /usr/bin/dstat
    /usr/share/doc/dstat-0.7.0
    /usr/share/doc/dstat-0.7.0/AUTHORS
@@ -157,7 +157,7 @@ want to known which package it belongs to:
 
 .. code-block:: console
 
-   bash-4.0$ rpm -qf /usr/bin/dstat
+   user@opsschool ~$ rpm -qf /usr/bin/dstat
    dstat-0.7.0-1.el6.noarch
 
 Creating packages
@@ -181,7 +181,7 @@ by running:
 
 .. code-block:: console
 
-   bash-4.0$ apt-cache search dstat
+   user@opsschool ~$ apt-cache search dstat
    dstat - versatile resource statistics tool
 
 .. note::
@@ -199,7 +199,7 @@ You can install a package through apt, by running:
 
 .. code-block:: console
 
-   bash-4.0# apt-get install dstat
+   root@opsschool ~# apt-get install dstat
 
    The following NEW packages will be installed:
      dstat
@@ -217,7 +217,7 @@ with the ``dpkg`` command:
 
 .. code-block:: console
 
-  bash-4.0# dpkg -i dstat_0.7.2-3_all.deb
+  root@opsschool ~# dpkg -i dstat_0.7.2-3_all.deb
 
 Upgrading packages
 ------------------
@@ -230,26 +230,26 @@ In order to retrieve the updated package lists, first run:
 
 .. code-block:: console
 
-   bash-4.0# apt-get update
+   root@opsschool ~# apt-get update
 
 To upgrade a single package using apt, when a newer package is available, simply
 ask apt to install it again:
 
 .. code-block:: console
 
-   bash-4.0# apt-get install dstat
+   root@opsschool ~# apt-get install dstat
 
 To upgrade all packages at once, run:
 
 .. code-block:: console
 
-   bash-4.0# apt-get upgrade
+   root@opsschool ~# apt-get upgrade
 
 To upgrade a package with an deb file, run:
 
 .. code-block:: console
 
-   bash-4.0# dpkg -i dstat_0.7.2-3_all.deb
+   root@opsschool ~# dpkg -i dstat_0.7.2-3_all.deb
 
 
 Uninstalling packages
@@ -259,13 +259,13 @@ To uninstall a package using apt, run:
 
 .. code-block:: console
 
-   bash-4.0# apt-get remove dstat
+   root@opsschool ~# apt-get remove dstat
 
 Similarly, you can uninstall a package with dpkg:
 
 .. code-block:: console
 
-   bash-4.0# dpkg -r dstat
+   root@opsschool ~# dpkg -r dstat
 
 With APT and dpkg, removing a package still leaves behind any configuration
 files, in case you wish to reinstall the package again later. To fully delete
@@ -273,19 +273,19 @@ packages and their configuration files, you need to ``purge``:
 
 .. code-block:: console
 
-   bash-4.0# apt-get purge dstat
+   root@opsschool ~# apt-get purge dstat
 
 or:
 
 .. code-block:: console
 
-   bash-4.0# apt-get --purge remove dstat
+   root@opsschool ~# apt-get --purge remove dstat
 
 or:
 
 .. code-block:: console
 
-   bash-4.0# dpkg -P dstat
+   root@opsschool ~# dpkg -P dstat
 
 
 Querying the dpkg database
@@ -301,7 +301,7 @@ packages if they are installed:
 
 .. code-block:: console
 
-   bash-4.0$ dpkg-query -l dstat
+   user@opsschool ~$ dpkg-query -l dstat
    Desired=Unknown/Install/Remove/Purge/Hold
    | Status=Not/Inst/Conf-files/Unpacked/halF-conf/Half-inst/trig-aWait/Trig-pend
    |/ Err?=(none)/Reinst-required (Status,Err: uppercase=bad)
@@ -314,7 +314,7 @@ Now let's say we want to list all of the files installed by a package. The
 
 .. code-block:: console
 
-   bash-4.0$ dpkg-query -L dstat
+   user@opsschool ~$ dpkg-query -L dstat
    /.
    /usr
    /usr/bin
@@ -327,6 +327,6 @@ want to know to which package it belongs:
 
 .. code-block:: console
 
-   bash-4.0$ dpkg-query -S /usr/bin/dstat
+   user@opsschool ~$ dpkg-query -S /usr/bin/dstat
    dstat: /usr/bin/dstat
 
