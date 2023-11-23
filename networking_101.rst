@@ -207,7 +207,200 @@ The elements of this stack from the lowest to highest are as follows:
 
    This layer maps to the ISO's Layer 5 through Layer 7, and covers the application
    processes that use the network to communicate.
-   
+
+
+Networking cable
+================
+There are two main types of network cable in use today, namely copper and fiber-optic.
+
+Copper
+------
+The most common type of network cables are what is known as "unshielded twisted
+pair" cables. They use 4 sets of twisted pairs of copper, relying on the twist
+with differential signaling to prevent noise and signal propagation between the
+pairs. The four pairs of twisted copper wires are encased in a plastic sheath.
+
+There are different standards for copper network cables set by the
+Telecommunications Industry Association (TIA) and the International Organization
+for Standardization (ISO). Both organizations use the same naming convention
+("Category __") for the components, but unfortunately differ on the naming for
+the cable standards. The most common reference is the TIA's, and the category
+designation is usually shortened to "Cat", so you'll hear references to "Cat5"
+or "Cat6" cable.
+
+Copper Cable Standards
+^^^^^^^^^^^^^^^^^^^^^^
+
+- Category 5e ("Cat5", ISO class D)
+
+- Category 6 ("Cat6", ISO class E)
+
+- Category 6A ("Cat6A", ISO class Ea)
+
+Fiber
+-----
+Fiber is a generic term that refers to optical transport mediums. It comes in
+several types, all of which look identical but are generally incompatible.
+
+Multimode vs Single Mode
+^^^^^^^^^^^^^^^^^^^^^^^^
+Single-mode fiber has a small core diameter, which only allows one (a single)
+mode of light to be transmitted through the fiber. Using a single mode of light
+completely eliminates the possibility of light dispersion and associated signal
+loss, and so is used mainly for long-haul runs, such as the cables that run
+between buildings and cities. However, since single-mode fiber can only transmit
+one wavelength of light at a time, it typically involves much more expensive
+light generation sources (i.e., laser diode transmitters) and is very expensive
+to produce.
+
+Multimode fiber has a larger core diameter (either 50u or 62.5u) and can
+therefore carry multiple modes ("multimode") of light, which can be used to
+transmit much more information during a given timeslice. The drawback is that
+carrying multimode lightwaves causes light dispersion and associated signal
+loss, which limits its effective distance. Multimode is a less expensive fiber
+optic cable, that is typically useable with lower cost optical components. It is
+very common to see it used for building intra-building backbones, and
+system/switch to switch applications.
+
+Multimode Fiber Standards
+^^^^^^^^^^^^^^^^^^^^^^^^^
+Multimode cables have classifications much like the copper cables discussed above; these
+are known as "Optical Multimode" (OM) classes. The four designations are:
+
+- OM1 - a "legacy" fiber class, the core being 62.5u, and cladding being 125u.
+  The bandwidth that can be carried ranges from 160 to 500 MHz.
+  
+- OM2 - a "legacy" fiber class, the core being 50u, and cladding being 125u.
+  The bandwidth that can be carried is 500 MHz.
+  
+- OM3 - a "modern" fiber class, the core being 50u, and cladding being 125u.
+  The bandwidth that can be carried ranges from 1500 to 2000 MHz.
+  
+- OM4 - a "modern" fiber class, the core being 50u, and cladding being 125u.
+  The bandwidth that can be carried ranges from 3500 to 4700 MHz.
+
+Optical Connector Types
+^^^^^^^^^^^^^^^^^^^^^^^
+
+LC and SC connectors are the two most common type of fiber connectors you will
+use. Less common connectors include ST and MPO.
+
+LC stands for "Lucent Connector", but is also referred to as "Little Connector".
+They are typically used for high-density applications, and are the type of
+connector used on SFPs or XFPs. Typically the connector is packaged in a duplex
+configuration with each cable side by side, and have a latch mechanism for
+locking.
+
+SC stands for "Subscriber Connector", but are also known as "Square Connector",
+or "Standard Connector". This is the type of connector typically used in the
+telecom industry. They have a larger form factor than the LC connectors, and can
+be found in single and duplex configurations. SC connectors have a push/pull
+locking mechanism, and because of this, are also colloquially known as
+"Stab-and-Click" connectors.
+
+ST stands for "Straight Tip". This connector style is secured like a BNC connector,
+giving it the nickname "Stick-Twist". It is sometimes also called BFOC, which
+stands for "Bayonet Fiber Optic Connector". It is fairly common for single-mode
+fiber, especially in older installations.
+
+MPO stands for "Multi-fiber Push-On". It is a connector used to carry up to 12
+pairs of fiber (24 strands), most commonly used for bulk links inside datacenters.
+Several companies make boxes which take an MPO connector on one side and convert
+it to 12 LC connectors on the other side. This way, a large number of fibers can
+be run from one area of a datacenter to another quickly and compactly.
+
+Transceivers
+^^^^^^^^^^^^
+
+The variety in optical fiber makes for a correspondingly large variety in
+optical fiber interface standards. Different interface types will impose
+different requirements on the fiber used and the length of the connection.
+
+If optical fiber interfaces were incorporated directly into network equipment,
+the number of models made by the manufacturer would have to be multiplied by
+the number of interface standards in existence. For this reason, modern network
+hardware rarely incorporates such interfaces directly. Instead, pluggable
+transceiver modules are used as a layer of indirection between medium-dependent
+and medium-independent interfaces. This allows a transceiver slot to be
+provided supporting any desired interface standard, whether copper or fiber.
+There are some limitations to this, detailed below.
+
+Various module types have been introduced over the years:
+
+============ ============ =========== =======
+  Name        Introduced   Speed       Size
+============ ============ =========== =======
+  GBIC        1995         1 Gb/s      Large
+  SFP         2001         1 Gb/s      Small
+  XENPAK      2001         10 Gb/s     Large
+  XFP         2002         10 Gb/s     Small
+  SFP+        2006         10 Gb/s     Small
+  QSFP        2006         40 Gb/s     Small
+  CFP         2009         100 Gb/s    Large
+============ ============ =========== =======
+
+There are a large number of compatibility issues with such modules. Some
+compatibility issues cause problems between two ends of a link; others cause
+problems between a module and its host device.
+
+- Transceivers are not generally compatible with lower speed versions of the
+  same standard. A 1000BASE-T Ethernet card can interface with a 10BASE-T card,
+  but a 1 Gb/s fiber transceiver cannot interface with a 10 or 100 Mb/s
+  transceiver. In the case of fiber, this is generally due to the different
+  wavelengths used; but even many copper transceivers do not support lower
+  speeds, although some do. You should assume that any transceiver will only
+  support the exact interface for which it is designed unless specified
+  otherwise.
+
+- Modules are only made for the speed targeted by a format. For example, SFP+
+  modules are only made for 10 Gb/s standards, and not for lower speeds.
+
+- Some equipment may accept SFP modules in SFP+ slots, but this is not
+  universal.
+
+- Vendor lock-in is widely practiced. Equipment may refuse to operate with the
+  modules made by a different manufacturer. Workarounds are generally
+  available, but this may complicate support or warranty arrangements.
+
+These issues can create pathological cases. Suppose you have two switches which
+should be connected to one another. One is connected via a 1 Gb/s transceiver
+to fiber. The other only has SFP+ slots. If these slots also support SFP
+modules, then a 1 Gb/s SFP transceiver can be used, but if they do not,
+interconnection is impossible: all SFP+ modules target 10 Gb/s, and fiber
+transceivers do not support lower speeds.
+
+Twinax
+^^^^^^
+These cables have integrated transceivers. The cable itself is typically copper
+but can be fiber.
+
+
+MAC Addresses
+=============
+Each network interface has what is known as a MAC (Media Access Control) address.
+This is a 48-bit address which identifies the card on the local network. The
+addresses have several common representations, but all are composed of 12
+hexadecimal digits. BSD and Linux systems typically represent addresses like this:
+
+    12:34:56:78:9A:BC
+
+Windows uses hyphens instead of colons like this:
+
+    12-34-56-78-9A-BC
+
+Cisco network equipment uses lowercase letters and groups of four digits separated
+by dots:
+
+    1234.5678.9abc
+
+All three of those forms represent the same address.
+
+The first six digits (24 bits, three bytes) are what is called the OUI
+(Organizationally Unique Identifier). It is a value assigned and tracked by the
+IEEE which is unique per network card manufacturer. As an example, 80:86:F2 belongs
+to Intel. Any MAC starting with those digits belongs to an interface manufactured by
+Intel. An organization may have many OUIs, but each OUI covers only one organization.
+
 
 IP Addressing
 =============
@@ -229,7 +422,6 @@ An example address is below:
 There are several other representations, like dotted hexadecimal, dotted octal,
 hexadecimal, decimal, and octal. These are infrequently used, and will be
 covered in later sections.
-
 
 
 IPv6
@@ -259,6 +451,7 @@ of these ways:
 
     2001:DB8::CBAD:4321:0000:0000:1234
     2001:DB8:0000:CBAD:4321::1234
+
 
 TCP vs UDP
 ==========
@@ -417,156 +610,4 @@ value which refers to the amount of time for which that entry can remain
 inactive and still keep its place in the table. An entry that has remained
 inactive for a period of time longer than the timeout will automatically be
 removed, freeing up space for a new one.
-
-Networking cable
-================
-There are two main types of network cable in use today, namely copper and fiber-optic.
-
-Copper
-------
-The most common type of network cables are what is known as "unshielded twisted
-pair" cables. They use 4 sets of twisted pairs of copper, relying on the twist
-with differential signaling to prevent noise and signal propagation between the
-pairs. The four pairs of twisted copper wires are encased in a plastic sheath.
-
-There are different standards for copper network cables set by the
-Telecommunications Industry Association (TIA) and the International Organization
-for Standardization (ISO). Both organizations use the same naming convention
-("Category __") for the components, but unfortunately differ on the naming for
-the cable standards. The most common reference is the TIA's, and the category
-designation is usually shortened to "Cat", so you'll hear references to "Cat5"
-or "Cat6" cable.
-
-Copper Cable Standards
-^^^^^^^^^^^^^^^^^^^^^^
-
-- Category 5e ("Cat5", ISO class D)
-
-- Category 6 ("Cat6", ISO class E)
-
-- Category 6A ("Cat6A", ISO class Ea)
-
-Fiber
------
-Fiber is a generic term that refers to optical transport mediums. It comes in
-several types, all of which look identical but are generally incompatible.
-
-Multimode vs Single Mode
-^^^^^^^^^^^^^^^^^^^^^^^^
-Single-mode fiber has a small core diameter, which only allows one (a single)
-mode of light to be transmitted through the fiber. Using a single mode of light
-completely eliminates the possibility of light dispersion and associated signal
-loss, and so is used mainly for long-haul runs, such as the cables that run
-between buildings and cities. However, since single-mode fiber can only transmit
-one wavelength of light at a time, it typically involves much more expensive
-light generation sources (i.e., laser diode transmitters) and is very expensive
-to produce.
-
-Multimode fiber has a larger core diameter (either 50u or 62.5u) and can
-therefore carry multiple modes ("multimode") of light, which can be used to
-transmit much more information during a given timeslice. The drawback is that
-carrying multimode lightwaves causes light dispersion and associated signal
-loss, which limits its effective distance. Multimode is a less expensive fiber
-optic cable, that is typically useable with lower cost optical components. It is
-very common to see it used for building intra-building backbones, and
-system/switch to switch applications.
-
-Multimode Fiber Standards
-^^^^^^^^^^^^^^^^^^^^^^^^^
-Multimode cables have classifications much like the copper cables discussed above; these
-are known as "Optical Multimode" (OM) classes. The four designations are:
-
-- OM1 - a "legacy" fiber class, the core being 62.5u, and cladding being 125u.
-  The bandwidth that can be carried ranges from 160 to 500 MHz.
-  
-- OM2 - a "legacy" fiber class, the core being 50u, and cladding being 125u.
-  The bandwidth that can be carried is 500 MHz.
-  
-- OM3 - a "modern" fiber class, the core being 50u, and cladding being 125u.
-  The bandwidth that can be carried ranges from 1500 to 2000 MHz.
-  
-- OM4 - a "modern" fiber class, the core being 50u, and cladding being 125u.
-  The bandwidth that can be carried ranges from 3500 to 4700 MHz.
-
-Optical Connector Types
-^^^^^^^^^^^^^^^^^^^^^^^
-
-LC and SC connectors are the two most common type of fiber connectors you will
-use.
-
-LC stands for "Lucent Connector", but is also referred to as "Little Connector".
-They are typically used for high-density applications, and are the type of
-connector used on SFPs or XFPs. Typically the connector is packaged in a duplex
-configuration with each cable side by side, and have a latch mechanism for
-locking.
-
-SC stands for "Subscriber Connector", but are also known as "Square Connector",
-or "Standard Connector". This is the type of connector typically used in the
-telecom industry. They have a larger form factor than the LC connectors, and can
-be found in single and duplex configurations. SC connectors have a push/pull
-locking mechanism, and because of this, are also colloquially known as
-"Stab-and-Click" connectors.
-
-Transceivers
-^^^^^^^^^^^^
-
-The variety in optical fiber makes for a correspondingly large variety in
-optical fiber interface standards. Different interface types will impose
-different requirements on the fiber used and the length of the connection.
-
-If optical fiber interfaces were incorporated directly into network equipment,
-the number of models made by the manufacturer would have to be multiplied by
-the number of interface standards in existence. For this reason, modern network
-hardware rarely incorporates such interfaces directly. Instead, pluggable
-transceiver modules are used as a layer of indirection between medium-dependent
-and medium-independent interfaces. This allows a transceiver slot to be
-provided supporting any desired interface standard, whether copper or fiber.
-There are some limitations to this, detailed below.
-
-Various module types have been introduced over the years:
-
-============ ============ =========== =======
-  Name        Introduced   Speed       Size
-============ ============ =========== =======
-  GBIC        1995         1 Gb/s      Large
-  SFP         2001         1 Gb/s      Small
-  XENPAK      2001         10 Gb/s     Large
-  XFP         2002         10 Gb/s     Small
-  SFP+        2006         10 Gb/s     Small
-  QSFP        2006         40 Gb/s     Small
-  CFP         2009         100 Gb/s    Large
-============ ============ =========== =======
-
-There are a large number of compatibility issues with such modules. Some
-compatibility issues cause problems between two ends of a link; others cause
-problems between a module and its host device.
-
-- Transceivers are not generally compatible with lower speed versions of the
-  same standard. A 1000BASE-T Ethernet card can interface with a 10BASE-T card,
-  but a 1 Gb/s fiber transceiver cannot interface with a 10 or 100 Mb/s
-  transceiver. In the case of fiber, this is generally due to the different
-  wavelengths used; but even many copper transceivers do not support lower
-  speeds, although some do. You should assume that any transceiver will only
-  support the exact interface for which it is designed unless specified
-  otherwise.
-
-- Modules are only made for the speed targeted by a format. For example, SFP+
-  modules are only made for 10 Gb/s standards, and not for lower speeds.
-
-- Some equipment may accept SFP modules in SFP+ slots, but this is not
-  universal.
-
-- Vendor lock-in is widely practiced. Equipment may refuse to operate with the
-  modules made by a different manufacturer. Workarounds are generally
-  available, but this may complicate support or warranty arrangements.
-
-These issues can create pathological cases. Suppose you have two switches which
-should be connected to one another. One is connected via a 1 Gb/s transceiver
-to fiber. The other only has SFP+ slots. If these slots also support SFP
-modules, then a 1 Gb/s SFP transceiver can be used, but if they do not,
-interconnection is impossible: all SFP+ modules target 10 Gb/s, and fiber
-transceivers do not support lower speeds.
-
-Twinax
-^^^^^^
 
