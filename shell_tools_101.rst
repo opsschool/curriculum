@@ -616,7 +616,79 @@ For example:
 
 sed
 ---
-.. todo:: Only talk about replacing text for now? It's the most common / needed piece of sed at this level.
+
+Sed is a stream editor. A stream editor is used to perform basic text transformations on an input stream (a file or input from a pipeline). While in some ways similar to an editor which permits scripted edits (such as ed), sed works by making only one pass over the input(s), and is consequently more efficient. But it is sed's ability to filter text in a pipeline which particularly distinguishes it from other types of editors
+
+Synopsis
+
+.. code-block:: console
+
+  $ sed [OPTION]... {script-only-if-no-other-script} [input-file]... 
+
+ Sed has several commands, but most people only learn the substitute command: s. The substitute command changes all occurrences of the regular expression into a new value. A simple example is changing "day" in the "old" file to "night" in the "new" file:
+
+.. code-block:: console
+
+  $ sed s/day/night/ <old >new
+
+Or another way (for UNIX beginners),
+
+.. code-block:: console
+
+  $ sed s/day/night/ old >new
+
+and for those who want to test this:
+
+.. code-block:: console
+
+  $ echo day | sed s/day/night/ 
+
+This will output "night".
+
+I didn't put quotes around the argument because this example didn't need them. If you read my earlier tutorial on quotes, you would understand why it doesn't need quotes. However, I recommend you do use quotes. If you have meta-characters in the command, quotes are necessary. And if you aren't sure, it's a good habit, and I will henceforth quote future examples to emphasize the "best practice." Using the strong (single quote) character, that would be:
+
+.. code-block:: console
+
+  $ sed 's/day/night/' <old >new
+
+I must emphasize that the sed editor changes exactly what you tell it to. So if you executed
+
+.. code-block:: console
+
+  $ echo Sunday | sed 's/day/night/'
+
+This would output the word "Sunnight" because sed found the string "day" in the input.
+
+Another important concept is that sed is line oriented. Suppose you have the input file:
+
+one two three, one two three
+four three two one
+one hundred
+
+and you used the command
+
+.. code-block:: console
+
+  $ sed 's/one/ONE/' <file
+
+The output would be
+
+ONE two three, one two three
+four three two ONE
+ONE hundred
+
+Note that this changed "one" to "ONE" once on each line. The first line had "one" twice, but only the first occurrence was changed. That is the default behavior. If you want something different, you will have to use some of the options that are available. I'll explain them later.
+
+So let's continue.
+
+There are four parts to this substitute command:
+
+s	  Substitute command
+/../../	  Delimiter
+one	  Regular Expression Pattern Search Pattern
+ONE	  Replacement string
+
+The search pattern is on the left hand side and the replacement string is on the right hand side. 
 
 sort
 ----
