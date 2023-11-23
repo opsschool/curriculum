@@ -87,11 +87,10 @@ otherwise be one.
 Single port on foreign machine firewalled
 -----------------------------------------
 For this usecase, consider a loadbalancer--``lb-foo-1``--with a Web management
-interface listening on port 9090. This interface is only routable to a LAN
-private to the datacenter--10.10.10.0/24. Its IP address is 10.10.10.20. There
-is a machine on the 10.10.10.0/24 network with ssh access--``jumphost-foo-1``,
-accessible via DNS with the LAN IP 10.10.10.19. Therefore, one way to
-access ``lb-foo-1`` is via bouncing through ``jumphost-foo-1``. OpenSSH
+interface listening on port 9090, it's IP address is 10.10.10.20. This interface is only 
+routable to a LAN private to the datacenter--10.10.10.0/24. Suppose there is a machine 
+on the 10.10.10.0/24 network with ssh access--``jumphost-foo-1``, accessible via DNS with the LAN IP 10.10.10.19. 
+Therefore, one way to access ``lb-foo-1`` is via bouncing through ``jumphost-foo-1``. OpenSSH
 supplies the ``-L`` option to bind a local port to a port opened on the
 other side of the tunnel. On the remote end, ssh opens a connection to
 the host and port specified to the ``-L`` option. An example for this
@@ -180,7 +179,7 @@ There are however two limitations to working this way:
 #. You'll often need to be connected to more than one remote system at a time.
    Opening a whole new terminal each time can result in a lot of windows cluttering
    up precious screen space.
-#. What happens if your internet connection stops working? All of your
+#. When happens if your internet connection stops working? All of your
    connections are reset. Any work you might have been doing on the remote servers
    can be lost.
 
