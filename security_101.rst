@@ -60,6 +60,21 @@ Chroot, jails and containers
 
 Sudo (or, "Why you should not log in as root")
 ==============================================
+Sudo allows users to run a command or program using the security privileges of another user, this will be the superuser or root by default. As the name implies the superuser is an user at the most powerful level granting the command or programs run without restrictions. A security policy can be used to determine what priviliges a user has to run sudo. Usually a policy will require users to authenticate themselves such as entering a password.
+
+Sudo can be used by simply placing it infront of the command you want to run. Alternatively the command 'su' can be used, this allows you to log in as another user or the root. Whereas sudo will only run one command as another user, su will run all following commands as the specified user.
+
+So why not just make my life easy, run su at the start of my session and get rid of those peksy security restrictions?
+Well there are several reasons why you shouldn't log in as root:
+
+- **Security** - It destroys the built-in security model that has been put there to protect the underlying system from being messed with.
+- **Programs** - Running an program as root gives a program freedom. Total freedom. Running a program on a standard user account will give it write access to your homefolder only. Running it as root removes these restrictions, even giving the program write access to the system files. A malicious or buggy program could decide to delete all the files it can access, and since you elevated its rights to the root it can.
+- **Yourself** - Su is trap for the inexperienced linux user. You are no longer a 'mere mortal' one click, a tap on the enter button and its done. The system won't interrupt you or ask if you are sure you want to run a heavy impact command. You might be exploring some new commands and before you know it you're formatting your disks.
+
+It's good practice to be wary of what permissions you give your commands or programs. Educate yourself before you go and give away root powers.
+
+For more information on how to use the 'sudo' command please refer to the man page:
+https://www.sudo.ws/man/1.8.15/sudo.man.html
 
 History and Lore
 ================
