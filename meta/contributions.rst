@@ -203,4 +203,5 @@ Andrew Langhorn <andrew@ajlanghorn.com>
 Abubakr-Sadik Nii Nai Davis <dwa2pac@gmail.com>
 Mike Julian
 Bram Verschueren
+Jack Dockerty
 ==================================================  ====================================
