@@ -71,7 +71,42 @@ that will influence this decision.
 When not to backup
 ^^^^^^^^^^^^^^^^^^
 
-.. TODO:: restoring? what not to backup, regulations on same, how to store them (PCI)
+When should you backup?
+=======================
+
+The best bet is to backup your files on a fairly regular basis–daily if possible. If you’re using an online backup solution, they are often configured to immediately start syncing any changed files when your PC is idle for a little while. This can be a great way to keep your files safe without having to wait for the next backup.
+
+What Files Should You Backup?
+=============================
+
+The most important files to backup are probably your documents, pictures, music, and other user files, but they are not the only files that you need to backup. Let’s walk through some of them.	
+-	Documents: You should backup your entire documents folder all the time. This should be a no-brainer.
+-	Music: If you’ve paid lots of money for MP3 downloads, you’ll probably be sad to lose them. Make sure to include this folder. Note: if you’re an iTunes user, you should make sure to backup your iTunes folder, which is thankfully usually inside this directory.
+-	Pictures & Videos:  The photos might not have actually costed you anything, but you’ll probably be more sad about losing memories than paying for music downloads again.
+-	Desktop Email: If you’re using Outlook or Windows Live Mail, make absolutely certain that you’ve backed up the files from these applications. Outlook stores all your email in a .PST file.
+-	Application Settings: If you look within the AppData folders, you’ll see directories for each and every application you’re running. These settings can often be restored from a backup so you don’t have to tweak everything again. Just head into C:\Users\Username\AppData\ to see the Local, Roaming, and LocalLow folders that contain many settings for your applications.
+-	Virtual Machines: If you use virtual machines for real work, you should probably create a backup of your virtual machines at some point. We wouldn’t necessarily recommend backing these up every single night, but you should at least consider some type of backup plan.
+-	Bookmarks: Most browsers other than Internet Explorer actually make it difficult to backup your bookmarks using Windows Backup, but the much better option is to sync your bookmarks to the cloud. Naturally, we’ve got a full list of all the bookmark syncing services that you can use. If you’d rather use local backup, you can simply backup the application settings folder and restore that—this works especially well for Firefox.
+ 
+
+Backup These Files More Easily
+==============================
+
+Instead of trying to find all those locations, backup your entire Users folder, which is at C:\Users\Username in Windows 7 or Vista, and C:\Documents and Settings\Username for Windows XP. This will include all of those files, unless you’ve stored them somewhere else.
+
+Files You Should Not Bother Backing Up
+======================================
+
+There’s simply no reason to backup these directories:
+-	Windows: There’s almost never a reason to backup your Windows directory, as you’re going to have to reinstall the whole thing anyway, so this backup will likely do you no good.
+-	Program Files: You’re going to have to reinstall your applications if your computer dies and you have to reinstall.
+
+
+
+
+
+
+
 
 Retention periods
 -----------------
