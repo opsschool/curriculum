@@ -136,7 +136,7 @@ Knowing this, we can see that this "crontab" means:
 
 Let's take another example and create a cron job that checks disk space
 available every minute, every hour, every day of the month, every month, for
-every day of the week, and outputs it to a file named :file:``disk_space.txt``.
+every day of the week, and outputs it to a file named: ``disk_space.txt``.
 
 .. code-block:: console
 
