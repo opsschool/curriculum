@@ -154,6 +154,59 @@ Size it for your busiest time, with room to spare.
 IPTables: Adding and deleting rules
 -----------------------------------
 
+iptables manages the packet filter in the Linux kernel.
+Rules are grouped into chains, and chains are grouped into tables.
+The ``filter`` table is the default, and its ``INPUT`` chain handles packets addressed to the host itself, including packets between processes on the same host.
+The kernel checks the rules in a chain in order, and the first rule that matches decides what happens to the packet.
+If no rule matches, the chain's policy applies.
+
+To list the rules in a chain with their packet counters and line numbers:
+
+.. code-block:: console
+
+    root@opsschool # iptables -L INPUT -n -v --line-numbers
+    Chain INPUT (policy ACCEPT 0 packets, 0 bytes)
+    num   pkts bytes target     prot opt in     out     source               destination
+    1     8123  612K ACCEPT     all  --  lo     *       0.0.0.0/0            0.0.0.0/0
+    2       14   840 DROP       all  --  *      *       203.0.113.0/24       0.0.0.0/0
+    3     2210  198K ACCEPT     tcp  --  *      *       0.0.0.0/0            0.0.0.0/0            tcp dpt:22
+
+``-n`` shows addresses and ports as numbers instead of looking up names.
+The ``pkts`` column counts the packets each rule has matched.
+If a count goes up while a connection fails, that rule is a likely cause.
+``iptables -S INPUT`` prints the same rules in the form used to create them.
+
+To add a rule at the end of a chain, use ``-A``.
+To insert a rule at a position, use ``-I`` with a line number; without a number, ``-I`` inserts the rule first.
+
+.. code-block:: console
+
+    root@opsschool # iptables -A INPUT -p tcp --dport 443 -j ACCEPT
+    root@opsschool # iptables -I INPUT 2 -p tcp -s 10.0.0.0/24 --dport 5432 -j ACCEPT
+
+To delete a rule, give its line number, or repeat the rule exactly as it was added:
+
+.. code-block:: console
+
+    root@opsschool # iptables -D INPUT 2
+    root@opsschool # iptables -D INPUT -p tcp --dport 443 -j ACCEPT
+
+Saving rules
+^^^^^^^^^^^^
+
+Changes made with the ``iptables`` command are lost when the host restarts.
+``iptables-save`` prints the current rules, and ``iptables-restore`` loads rules from a file.
+On Debian and Ubuntu, the ``iptables-persistent`` package loads ``/etc/iptables/rules.v4`` (and ``rules.v6`` for IPv6) at boot.
+Red Hat and similar systems use ``/etc/sysconfig/iptables``.
+
+.. code-block:: console
+
+    root@opsschool # iptables-save > /etc/iptables/rules.v4
+
+Before you save, check that the running rules are the ones you want to keep.
+If you only change the file, the running rules don't change until you load it with ``iptables-restore``.
+On many systems, a configuration management tool or a firewall service such as ``firewalld`` or ``ufw`` writes these rules, so a change made by hand can be replaced.
+
 pf: Adding and deleting rules
 -----------------------------
 
