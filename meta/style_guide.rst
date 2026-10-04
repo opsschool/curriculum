@@ -119,10 +119,10 @@ Language
   Explain a term the first time you use it.
 
 - Use precise terms.
-  For example, write "IP packets are carried inside frames addressed to MAC addresses", not "packets go to a MAC address".
+  For example, write "On an Ethernet network, IP packets are carried inside frames addressed to MAC addresses", not "packets go to a MAC address".
 
 - Say which part of the system does what.
-  For example: "connection tracking records the state of each connection; firewall rules decide whether to accept packets."
+  For example: "connection tracking records connection state; firewall rules decide whether to accept packets."
 
 Accuracy
 ========
