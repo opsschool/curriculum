@@ -229,6 +229,66 @@ SELinux
 AppArmor
 ========
 
+AppArmor limits what a program can do, even when it runs as root.
+Each confined program has a profile: a list of the files it may read and write, and what else it may do, such as use the network.
+Anything that is not in the profile is denied.
+These rules apply as well as the normal file permissions.
+So a file can have the right owner and mode, and the program still can't open it.
+This is called mandatory access control.
+
+Ubuntu and Debian use AppArmor.
+Red Hat and similar systems use SELinux, which does the same job in a different way.
+
+To see which programs are confined:
+
+.. code-block:: console
+
+    root@opsschool ~# aa-status
+    apparmor module is loaded.
+    31 profiles are loaded.
+    29 profiles are in enforce mode.
+       /usr/sbin/rsyslogd
+       tcpdump
+    ...
+
+Profiles are in ``/etc/apparmor.d``.
+Most are named after the program's path, with ``.`` in place of ``/``: the profile for ``/usr/bin/tcpdump`` is ``/etc/apparmor.d/usr.bin.tcpdump``.
+A profile is in one of two modes.
+In ``enforce`` mode, AppArmor denies anything the profile doesn't allow, and logs it.
+In ``complain`` mode, it only logs it.
+
+When AppArmor denies something
+------------------------------
+
+The program usually gets "Permission denied", the same error as for a normal permission problem.
+The kernel log shows the real reason.
+For example, Ubuntu's profile for ``tcpdump`` lets it write capture files whose names end in ``.pcap``, but not other names:
+
+.. code-block:: console
+
+    root@opsschool # tcpdump -i eth0 -w /srv/captures/web-01
+    tcpdump: /srv/captures/web-01: Permission denied
+    root@opsschool # journalctl -k | grep DENIED
+    audit: type=1400 audit(1759581234.123:42): apparmor="DENIED" operation="mknod" profile="tcpdump" name="/srv/captures/web-01" pid=2817 comm="tcpdump" requested_mask="c" denied_mask="c" fsuid=0 ouid=0
+
+The line names the profile, the file, and what the program asked for: ``c`` is create, ``r`` is read, ``w`` is write.
+
+Changing a profile
+------------------
+
+Don't edit the main profile file, because a package upgrade will replace it.
+Most profiles include a file for local additions, with the same name, in ``/etc/apparmor.d/local/``.
+Add your rules there, then reload the profile:
+
+.. code-block:: console
+
+    root@opsschool # echo '/srv/captures/** rw,' >> /etc/apparmor.d/local/usr.bin.tcpdump
+    root@opsschool # apparmor_parser -r /etc/apparmor.d/usr.bin.tcpdump
+
+``aa-complain`` puts a profile in complain mode, where violations of allow rules are logged instead of blocked, although explicit ``deny`` rules remain enforced.
+``apparmor_parser -R`` removes the profile and turns off its protection.
+They are useful to check whether AppArmor causes a problem, but they are not a fix.
+
 
 Data placement
 ==============
