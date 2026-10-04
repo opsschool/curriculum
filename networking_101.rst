@@ -371,9 +371,9 @@ First Address  Last Address          Netmask         CIDR
 ARP
 ===
 
-On an Ethernet network, packets go to a MAC address, not an IP address.
-To send to an IP address on its own subnet, a host first needs that host's MAC address.
-The Address Resolution Protocol (ARP, :rfc:`826`) finds it.
+On an Ethernet network, IP packets are carried inside frames addressed to MAC addresses.
+To send an IPv4 packet to an address on its own subnet, a host first needs the destination host's MAC address.
+The Address Resolution Protocol (ARP, :rfc:`826`) resolves that IPv4 address to a MAC address.
 
 The host sends a broadcast to the whole segment: "Who has 10.0.0.20? Tell 10.0.0.1."
 The host with that address replies with its MAC address.
@@ -414,9 +414,9 @@ Common causes:
 * A static entry with a mistake in it, or with an old MAC address from before the hardware was replaced.
 * Two hosts with the same IP address.
   Both reply to ARP requests, and the neighbor table keeps whichever reply came last.
-* Gratuitous ARP: a reply that nobody asked for, which announces an address.
+* Gratuitous ARP: an unsolicited ARP request or reply that announces an address.
   Hosts send these when they start, or when an address moves to them, for example after a failover.
-  A host that announces an address it should not have changes the neighbor tables of every host that hears it.
+  Depending on its ARP policy and existing cache state, a host that hears an incorrect announcement may update its neighbor table.
 
 To see who replies for an address, use ``arping``, or watch ARP traffic with ``tcpdump``:
 
