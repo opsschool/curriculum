@@ -368,6 +368,70 @@ First Address  Last Address          Netmask         CIDR
 ============== ===================== =============== ==============
 
 
+ARP
+===
+
+On an Ethernet network, packets go to a MAC address, not an IP address.
+To send to an IP address on its own subnet, a host first needs that host's MAC address.
+The Address Resolution Protocol (ARP, :rfc:`826`) finds it.
+
+The host sends a broadcast to the whole segment: "Who has 10.0.0.20? Tell 10.0.0.1."
+The host with that address replies with its MAC address.
+The asking host keeps the answer in its neighbor table, also called the ARP cache, so it doesn't have to ask every time.
+To reach a host on another subnet, a host sends the packets to its gateway's MAC address instead.
+
+To see the neighbor table:
+
+.. code-block:: console
+
+    root@opsschool # ip neigh show
+    10.0.0.1 dev eth0 lladdr 52:54:00:12:34:01 REACHABLE
+    10.0.0.20 dev eth0 lladdr 52:54:00:12:34:20 STALE
+
+The last word is the state of the entry:
+
+* ``REACHABLE``: the neighbor answered recently.
+* ``STALE``: the entry is old. The host checks it again the next time it uses it.
+* ``FAILED``: nobody answered.
+* ``PERMANENT``: someone added the entry by hand. The kernel never checks or changes it.
+
+You can add, change and delete entries with ``ip neigh``:
+
+.. code-block:: console
+
+    root@opsschool # ip neigh replace 10.0.0.20 lladdr 52:54:00:12:34:20 dev eth0 nud permanent
+    root@opsschool # ip neigh del 10.0.0.20 dev eth0
+
+Problems with ARP
+-----------------
+
+If a host has the wrong MAC address for a neighbor, its packets to that neighbor go to the wrong place, or nowhere.
+Often only one host is affected, because the other hosts have the right entry.
+``ping`` to the IP address fails, but DNS and routing look fine.
+
+Common causes:
+
+* A static entry with a mistake in it, or with an old MAC address from before the hardware was replaced.
+* Two hosts with the same IP address.
+  Both reply to ARP requests, and the neighbor table keeps whichever reply came last.
+* Gratuitous ARP: a reply that nobody asked for, which announces an address.
+  Hosts send these when they start, or when an address moves to them, for example after a failover.
+  A host that announces an address it should not have changes the neighbor tables of every host that hears it.
+
+To see who replies for an address, use ``arping``, or watch ARP traffic with ``tcpdump``:
+
+.. code-block:: console
+
+    root@opsschool # arping -I eth0 -c 2 10.0.0.20
+    ARPING 10.0.0.20 from 10.0.0.1 eth0
+    Unicast reply from 10.0.0.20 [52:54:00:12:34:20]  0.612ms
+    Unicast reply from 10.0.0.20 [52:54:00:12:34:99]  0.701ms
+    root@opsschool # tcpdump -eni eth0 arp
+
+Replies from two MAC addresses mean two hosts claim the same IP address.
+Compare the entry in the table with the MAC address on the other host (``ip link show`` on that host).
+Deleting a wrong entry helps only until the wrong answer comes back, so find where it comes from: a static entry in the network configuration, or another host that replies.
+
 Static routing
 ==============
 
