@@ -157,8 +157,9 @@ IPTables: Adding and deleting rules
 iptables manages the packet filter in the Linux kernel.
 Rules are grouped into chains, and chains are grouped into tables.
 The ``filter`` table is the default, and its ``INPUT`` chain handles packets addressed to the host itself, including packets between processes on the same host.
-The kernel checks the rules in a chain in order, and the first rule that matches decides what happens to the packet.
-If no rule matches, the chain's policy applies.
+The kernel checks the rules in a chain in order; targets such as ``ACCEPT`` and ``DROP`` terminate traversal, while ``LOG`` allows it to continue.
+Rules can also jump to user-defined chains, which return to the calling chain if they reach their end without a terminating verdict.
+If processing reaches the end of a built-in chain without a terminating verdict, its policy applies; user-defined chains have no policy.
 
 To list the rules in a chain with their packet counters and line numbers:
 
