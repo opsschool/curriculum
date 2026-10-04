@@ -198,7 +198,7 @@ Saving rules
 Changes made with the ``iptables`` command are lost when the host restarts.
 ``iptables-save`` prints the current rules, and ``iptables-restore`` loads rules from a file.
 On Debian and Ubuntu, the ``iptables-persistent`` package loads ``/etc/iptables/rules.v4`` (and ``rules.v6`` for IPv6) at boot.
-Red Hat and similar systems use ``/etc/sysconfig/iptables``.
+On Red Hat and similar systems using ``iptables-services``, the ``iptables`` service must be enabled to load ``/etc/sysconfig/iptables`` at boot; ``firewalld`` does not load this file.
 
 .. code-block:: console
 
