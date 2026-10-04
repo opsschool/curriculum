@@ -98,8 +98,8 @@ It decides by what is in the packet: addresses, ports and flags.
 To allow the replies to your outgoing connections, you need rules for the replies too.
 
 A stateful filter remembers connections.
-Once it allows the first packet of a connection, it allows the rest of that connection.
-On Linux, the kernel's connection tracking (``nf_conntrack``) does this.
+It can use connection state to allow subsequent packets through explicit firewall rules.
+On Linux, the kernel's connection tracking (``nf_conntrack``) records this state; firewall rules decide whether to accept packets.
 iptables uses it through the ``conntrack`` match:
 
 .. code-block:: console
@@ -114,7 +114,8 @@ The connection tracking table
 
 Each tracked connection is an entry in a table of fixed size.
 Every TCP connection takes an entry, and so does every UDP flow, such as a DNS lookup.
-Entries stay for a while after a connection closes: a closed TCP connection stays for two minutes in ``TIME_WAIT``.
+Entries can remain after a connection closes.
+For example, conntrack's ``TIME_WAIT`` timeout defaults to 120 seconds; other closing states have different timeouts, and these values are configurable.
 
 To see how full the table is:
 
@@ -140,11 +141,11 @@ Clients send again, wait, and time out, so it looks like a slow or unreliable ne
 The service sees nothing, because the dropped packets never reach it.
 It often happens only at busy times, when there are the most connections.
 
-To raise the limit at once:
+To raise the limit at once, choose a value above the current limit; for example:
 
 .. code-block:: console
 
-    root@opsschool # sysctl -w net.netfilter.nf_conntrack_max=262144
+    root@opsschool # sysctl -w net.netfilter.nf_conntrack_max=524288
 
 To keep the new limit after a reboot, set it in a file in ``/etc/sysctl.d/``.
 Each entry uses a few hundred bytes of kernel memory, so a large table is cheap.
