@@ -185,7 +185,7 @@ To see which programs are confined:
 
 .. code-block:: console
 
-    root@opsschool # aa-status
+    root@opsschool ~# aa-status
     apparmor module is loaded.
     31 profiles are loaded.
     29 profiles are in enforce mode.
@@ -227,8 +227,8 @@ Add your rules there, then reload the profile:
     root@opsschool # echo '/srv/captures/** rw,' >> /etc/apparmor.d/local/usr.bin.tcpdump
     root@opsschool # apparmor_parser -r /etc/apparmor.d/usr.bin.tcpdump
 
-``aa-complain`` puts a profile in complain mode, and ``apparmor_parser -R`` removes it.
-Both turn off the protection.
+``aa-complain`` puts a profile in complain mode, where violations of allow rules are logged instead of blocked, although explicit ``deny`` rules remain enforced.
+``apparmor_parser -R`` removes the profile and turns off its protection.
 They are useful to check whether AppArmor causes a problem, but they are not a fix.
 
 
