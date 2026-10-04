@@ -93,6 +93,63 @@ experienced in this instance.
 Stateful vs stateless
 ---------------------
 
+A stateless filter looks at each packet on its own.
+It decides by what is in the packet: addresses, ports and flags.
+To allow the replies to your outgoing connections, you need rules for the replies too.
+
+A stateful filter remembers connections.
+Once it allows the first packet of a connection, it allows the rest of that connection.
+On Linux, the kernel's connection tracking (``nf_conntrack``) does this.
+iptables uses it through the ``conntrack`` match:
+
+.. code-block:: console
+
+    root@opsschool # iptables -A INPUT -m conntrack --ctstate ESTABLISHED,RELATED -j ACCEPT
+    root@opsschool # iptables -A INPUT -m conntrack --ctstate INVALID -j DROP
+
+Any rule that uses the ``conntrack`` match turns on connection tracking for all traffic.
+
+The connection tracking table
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Each tracked connection is an entry in a table of fixed size.
+Every TCP connection takes an entry, and so does every UDP flow, such as a DNS lookup.
+Entries stay for a while after a connection closes: a closed TCP connection stays for two minutes in ``TIME_WAIT``.
+
+To see how full the table is:
+
+.. code-block:: console
+
+    root@opsschool # cat /proc/sys/net/netfilter/nf_conntrack_count
+    1342
+    root@opsschool # cat /proc/sys/net/netfilter/nf_conntrack_max
+    262144
+
+``conntrack -L`` lists the entries.
+``conntrack -S`` shows counters for each CPU, including ``drop`` and ``insert_failed``.
+
+When the table is full, the kernel drops packets that need a new entry, and logs this:
+
+.. code-block:: none
+
+    nf_conntrack: table full, dropping packet
+
+Existing connections keep working.
+New connections fail, but only some of them, and only while the table is full.
+Clients send again, wait, and time out, so it looks like a slow or unreliable network.
+The service sees nothing, because the dropped packets never reach it.
+It often happens only at busy times, when there are the most connections.
+
+To raise the limit at once:
+
+.. code-block:: console
+
+    root@opsschool # sysctl -w net.netfilter.nf_conntrack_max=262144
+
+To keep the new limit after a reboot, set it in a file in ``/etc/sysctl.d/``.
+Each entry uses a few hundred bytes of kernel memory, so a large table is cheap.
+Size it for your busiest time, with room to spare.
+
 IPTables: Adding and deleting rules
 -----------------------------------
 
