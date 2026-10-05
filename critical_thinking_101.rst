@@ -111,7 +111,7 @@ Averages hide detail
 
 Suppose the load balancers send requests to web-1 through web-4 in equal numbers, and web-3 has started to respond slowly.
 Three quarters of requests are fast and one quarter are slow.
-The average response time rises a little, and may still look acceptable, but one in four users has a bad experience.
+The average response time rises a little, and may still look acceptable, but one in four requests is slow.
 
 Percentiles describe the distribution better.
 The 99th percentile (p99) is the value that 99% of measurements are at or below.
@@ -120,7 +120,7 @@ When you look at a summary such as an average, also look at the distribution, an
 Correlation and causation
 -------------------------
 
-Two things that happen at the same time are correlated.
+Two measurements are correlated when changes in one are associated with changes in the other.
 That does not prove that one caused the other.
 Both may have the same cause, or the timing may be a coincidence.
 

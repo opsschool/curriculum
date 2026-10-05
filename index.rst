@@ -10,7 +10,7 @@ In addition to corporate systems, SRE and operations engineers also maintain the
 The field of SRE and operations engineering covers a wide variety of topics, from systems administration, to security, networking and beyond.
 Ops School will guide you through all of these skill sets from beginner to expert.
 
-Since the early 90's, operations engineers have been in high demand, and the more recent SRE role is just as sought after.
+Since the early 1990s, operations engineers have been in high demand, and the more recent SRE role is just as sought after.
 The work suits people who enjoy diving into the inner workings of computer systems.
 
 If you already know about the profession and want to know how to start, read :ref:`how-to-become-an-operations-engineer`.
