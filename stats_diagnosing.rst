@@ -10,7 +10,7 @@ The first line shows averages since the system started; the following lines each
 
 .. code-block:: console
 
-  root@opsschool # vmstat 1 3
+  root@opsschool ~# vmstat 1 3
   procs -----------memory---------- ---swap-- -----io---- -system-- -------cpu-------
    r  b   swpd   free   buff  cache   si   so    bi    bo   in   cs us sy id wa st gu
    1  0 884788 136088 414824 9036592    7   14  4785  8536 5715    3  0  1 98  0  0  1
@@ -31,8 +31,8 @@ The columns that are most often useful:
   ``st`` is time stolen by the hypervisor, on a virtual machine.
 
 Swap in use (``swpd``) is not a problem on its own: the kernel can move memory that hasn't been used for a while to swap, and leave it there.
-Sustained non-zero ``si`` and ``so`` mean that programs need more memory than the system has, and the kernel is moving pages between memory and disk while they run.
-Every access to a page that is on disk waits for a disk read, so everything on the system can become slow, while the CPU looks mostly idle or waiting (``wa``).
+Sustained non-zero ``si`` and ``so`` usually indicate memory pressure: the kernel is repeatedly moving pages between memory and swap while programs run.
+Accessing a page that is only in swap requires a disk read, so repeated swap faults can make everything on the system slow while the CPU looks mostly idle or waiting (``wa``).
 To find which processes use the memory, sort ``top`` by resident memory (press ``M``) or run ``ps aux --sort=-rss | head``.
 
 ``free -m`` shows memory and swap use in MiB.
