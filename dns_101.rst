@@ -273,6 +273,31 @@ Setting the ``domain`` directive - as in the above example, where we specified i
 For instance, a user could reference ``sql01``, and a query would be sent to nameservers specified asking for records for both ``sql01`` and ``sql01.home``.
 In most cases, the responses should match - just be careful if they don't, as you'll end up with some very confused machines when DNS has split-brained like this!
 
+Local resolvers and ``systemd-resolved``
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+On many Linux systems, including recent Ubuntu releases, ``/etc/resolv.conf`` does not list your real nameservers.
+Instead it lists a resolver running on the machine itself, and that resolver forwards queries to the real nameservers.
+With ``systemd-resolved``, the file is usually a symbolic link to ``/run/systemd/resolve/stub-resolv.conf`` and contains:
+
+.. code-block:: console
+
+   nameserver 127.0.0.53
+
+To see the servers that ``systemd-resolved`` really uses, run ``resolvectl status``.
+They come from ``/etc/systemd/resolved.conf``, from files in ``/etc/systemd/resolved.conf.d/``, and from the network configuration, for example DHCP.
+``resolvectl query <name>`` looks a name up through ``systemd-resolved`` and shows which interface answered.
+
+``/etc/nsswitch.conf`` decides where most programs look names up, and in what order.
+The line ``hosts: files dns`` means "check ``/etc/hosts`` first, then ask DNS".
+This matters when you test name resolution:
+
+- ``getent hosts <name>`` looks the name up the same way most programs do, so it uses ``/etc/hosts`` and ``nsswitch.conf``.
+- ``dig`` and ``host`` send DNS queries directly, to the servers in ``/etc/resolv.conf`` or to the server you give them, such as ``dig @192.168.1.1 <name>``.
+  They ignore ``/etc/hosts``.
+
+If a program cannot resolve a name but ``dig`` against a nameserver can, compare the two paths: what is in ``/etc/hosts``, what ``resolv.conf`` points at, and which servers the local resolver forwards to.
+
 Caching
 ^^^^^^^
 
@@ -282,7 +307,8 @@ In order to cut the cost of hardware somewhat, to reduce pressure on networks, a
 The SOA record at the start of each zonefile on the nameservers specifies an ``expiry`` value, which tells clients for how long they can keep the zonefile in its current state before they must re-request it.
 This rather crude but effective updating method works well in the case of DNS.
 
-Generally speaking, caching of DNS records (at least on Unix-based machines) is managed by individual applications.
+On Unix-based machines, individual applications may cache DNS records.
+Local caching services such as ``systemd-resolved``, ``nscd`` or ``dnsmasq`` may also cache them.
 In a Windows environment, however, it is more centralised.
 To that end, whilst you cannot easily view the cache as it exists on an individual machine all in one place in Unix, you can using Windows - the ``ipconfig /displaydns`` command will print the cache as it stands.
 In Windows, you'll be presented with the record name as a number - this is a binary representation of the record type itself.

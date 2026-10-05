@@ -293,6 +293,74 @@ It follows a similar command format like grant:
   REVOKE [PRIVILEGE] on [OBJECT] FROM [USER];
 
 
+Connections
+===========
+
+A program talks to a database server over a connection.
+Opening a connection takes time, so most applications keep a pool of open connections and reuse them.
+The application's configuration usually sets the size of the pool.
+
+Each connection uses memory on the server, so the server limits how many it accepts.
+In MySQL the limit is ``max_connections``, which defaults to 151.
+When it is reached, new connections fail with this error:
+
+.. code-block:: console
+
+  ERROR 1040 (HY000): Too many connections
+
+MySQL allows one connection more than ``max_connections``, for an account with the ``CONNECTION_ADMIN`` (or the older ``SUPER``) privilege, so that an administrator can usually still connect.
+The limit can also be set per account, with ``max_user_connections``.
+
+PostgreSQL's limit is also called ``max_connections``, and defaults to 100.
+It reserves 3 of these for superusers by default (``superuser_reserved_connections``).
+With the defaults, when the ordinary slots are exhausted, other clients get ``FATAL: remaining connection slots are reserved for superusers``.
+
+Seeing who is connected
+-----------------------
+
+In MySQL, ``SHOW GLOBAL STATUS`` shows how many connections are open now, the most there have been since the server started, and how many were refused because of ``max_connections``:
+
+.. code-block:: console
+
+  mysql> SHOW GLOBAL STATUS WHERE Variable_name IN ('Threads_connected', 'Max_used_connections', 'Connection_errors_max_connections');
+  +-----------------------------------+-------+
+  | Variable_name                     | Value |
+  +-----------------------------------+-------+
+  | Connection_errors_max_connections | 169   |
+  | Max_used_connections              | 152   |
+  | Threads_connected                 | 8     |
+  +-----------------------------------+-------+
+
+To see which accounts and hosts the connections come from, and what they are doing, group the process list:
+
+.. code-block:: console
+
+  mysql> SELECT user, host, command, COUNT(*) AS connections
+      -> FROM information_schema.processlist GROUP BY user, host, command;
+  +-----------------+-----------+---------+-------------+
+  | user            | host      | command | connections |
+  +-----------------+-----------+---------+-------------+
+  | app             | localhost | Sleep   | 7           |
+  | root            | localhost | Query   | 1           |
+  | event_scheduler | localhost | Daemon  | 1           |
+  +-----------------+-----------+---------+-------------+
+
+``Sleep`` means the connection is open but idle.
+Some idle connections are normal, because pools keep connections open for reuse.
+Many idle connections from one program, each with a large ``Time`` in ``SHOW PROCESSLIST``, can mean that the program takes connections from its pool and never returns them.
+This is called a connection leak.
+
+Keeping within the limit
+------------------------
+
+Add up the largest pool of every program that connects to the database, on every server it runs on, and keep the total below ``max_connections``, with room for administrators and tools.
+
+MySQL closes a non-interactive connection after it has been idle for ``wait_timeout`` seconds, 28800 (8 hours) by default.
+Lowering it closes idle connections sooner, but a connection that a program has leaked inside an open transaction still holds that transaction's locks until it closes.
+
+Raising ``max_connections`` can give you time, but it doesn't fix a leak, and each connection needs memory on the server.
+
+
 Basic normalized schema design
 ==============================
 
@@ -463,6 +531,93 @@ Here is a simple example of a DELETE statement:
 
   DELETE FROM users WHERE user_name = 'James Smith';
 
+
+Indexes and slow queries
+========================
+
+To find the rows that match a ``WHERE`` condition, a database can read every row in the table and check each one.
+This is called a full table scan.
+It is fast on a small table, but its cost grows with the size of the table, so a query that was fast when a table was new can become slow as the table grows.
+
+An index is a separate structure, usually a B-tree, that keeps the values of one or more columns in sorted order, with a pointer to each row.
+With an index on the column in the ``WHERE`` condition, the database can go straight to the matching rows.
+The primary key is always indexed.
+Other columns can be indexed explicitly, or implicitly when constraints such as ``UNIQUE`` and, in MySQL, foreign keys are defined:
+
+.. code-block:: sql
+
+  CREATE INDEX idx_users_email ON users (user_email);
+
+Indexes are not free.
+Each index uses disk space and memory; every ``INSERT`` and ``DELETE`` updates it, and an ``UPDATE`` does so when it changes an indexed column.
+So tables usually have indexes for the queries that the application runs often, not for every column.
+
+An index can cover more than one column, for example an index on ``posts (author_id, published_at)``.
+The order of the columns matters.
+This index helps a query that filters on ``author_id``, or on ``author_id`` and ``published_at``, but usually not a query that filters only on ``published_at``.
+Because each author's entries in the index are in ``published_at`` order, it also lets a query such as ``WHERE author_id = 7 ORDER BY published_at DESC LIMIT 10`` read the newest 10 posts directly, without sorting.
+
+Seeing how a query runs
+-----------------------
+
+``EXPLAIN`` shows how the database plans to run a query, without running it.
+In MySQL, ``type: ALL`` means a full table scan, ``key`` is the index used, if any, and ``rows`` is an estimate of how many rows MySQL will examine:
+
+.. code-block:: console
+
+  mysql> EXPLAIN SELECT user_id, user_name FROM users WHERE user_email = 'user4242@example.com'\G
+  *************************** 1. row ***************************
+             id: 1
+    select_type: SIMPLE
+          table: users
+     partitions: NULL
+           type: ALL
+  possible_keys: NULL
+            key: NULL
+        key_len: NULL
+            ref: NULL
+           rows: 199378
+       filtered: 10.00
+          Extra: Using where
+
+After ``CREATE INDEX idx_users_email ON users (user_email)``, the same query uses the index and is estimated to examine one row:
+
+.. code-block:: console
+
+           type: ref
+  possible_keys: idx_users_email
+            key: idx_users_email
+           rows: 1
+
+``Using filesort`` in the ``Extra`` column means that MySQL sorts the matching rows itself, because no index gives them in the order the query asks for.
+That is fine for a few rows, but slow for many.
+
+PostgreSQL also has ``EXPLAIN``, with a different output format: ``Seq Scan`` is a full table scan and ``Index Scan`` uses an index.
+
+Finding slow queries
+--------------------
+
+MySQL can log every query that takes longer than ``long_query_time`` seconds to the slow query log.
+The log is off by default, and ``long_query_time`` defaults to 10 seconds, so many servers set it lower.
+To see the current settings:
+
+.. code-block:: console
+
+  mysql> SHOW VARIABLES WHERE Variable_name IN ('slow_query_log', 'long_query_time', 'slow_query_log_file');
+  +---------------------+-------------------------+
+  | Variable_name       | Value                   |
+  +---------------------+-------------------------+
+  | long_query_time     | 0.500000                |
+  | slow_query_log      | ON                      |
+  | slow_query_log_file | /var/log/mysql/slow.log |
+  +---------------------+-------------------------+
+
+Each entry shows the query, how long it took, and ``Rows_examined``.
+A query that examines many more rows than it returns is often missing an index.
+``mysqldumpslow``, which comes with MySQL, groups similar queries in the log and sums their times.
+
+MySQL's ``sys.schema_unused_indexes`` view lists indexes with no recorded usage since their Performance Schema counters were last reset, normally at server startup.
+Because this evidence is local and time-bounded, check every database instance over a representative period that includes periodic workloads before dropping an index.
 
 Pro Tips
 ========
