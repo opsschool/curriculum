@@ -99,7 +99,8 @@ This can undo an emergency fix minutes after you made it.
 
 So before you change a file on a host, find out whether something manages it:
 
-- Teams often put a comment at the top of the files they manage, such as "This file is managed by Puppet". Not every managed file has one.
+- Teams often put a comment at the top of the files they manage, such as "This file is managed by Puppet".
+  Not every managed file has one.
 - Look for an agent or a scheduled run: ``systemctl list-timers``, ``systemctl list-units --type=service``, and the crontabs in ``/etc/crontab`` and ``/etc/cron.d``.
 - The tool's own log, or the journal, records each run and what it changed.
 
