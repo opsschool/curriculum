@@ -30,9 +30,69 @@
   --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
   --radius: 8px;
   --radius-lg: 12px;
+  --on-accent: #FFFFFF;
+  --on-ink: #FFFFFF;
+  --warn-line: #E3B58A;
+  --warn-bg: #FCF4EC;
+  --code-line: transparent;
   --content-max: 1200px;
   --page-max: 1360px;
   --gutter: 24px;
+  color-scheme: light;
+}
+
+/* Dark theme: follows the system setting unless the reader picks a theme
+ * with the toggle in the header, which sets data-theme on <html>. */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    color-scheme: dark;
+    --ground: #0F1216;
+    --surface: #171B21;
+    --ink: #E6E9E4;
+    --text-2: #B9C0B8;
+    --text-3: #959DA6;
+    --line: #2A3038;
+    --line-strong: #3B434D;
+    --accent: #5FD3A3;
+    --accent-hover: #8BE3BE;
+    --accent-tint: #12352A;
+    --accent-tint-line: #1E5541;
+    --accent-tint-ink: #BFEBD8;
+    --on-accent: #0F1216;
+    --on-ink: #0F1216;
+    --dark: #1A1F25;
+    --dark-line: #2E353E;
+    --code-bg: #0A0D11;
+    --code-line: #2A3038;
+    --inline-code-bg: #232931;
+    --warn-line: #7A5530;
+    --warn-bg: #2A2016;
+  }
+}
+
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --ground: #0F1216;
+  --surface: #171B21;
+  --ink: #E6E9E4;
+  --text-2: #B9C0B8;
+  --text-3: #959DA6;
+  --line: #2A3038;
+  --line-strong: #3B434D;
+  --accent: #5FD3A3;
+  --accent-hover: #8BE3BE;
+  --accent-tint: #12352A;
+  --accent-tint-line: #1E5541;
+  --accent-tint-ink: #BFEBD8;
+  --on-accent: #0F1216;
+  --on-ink: #0F1216;
+  --dark: #1A1F25;
+  --dark-line: #2E353E;
+  --code-bg: #0A0D11;
+  --code-line: #2A3038;
+  --inline-code-bg: #232931;
+  --warn-line: #7A5530;
+  --warn-bg: #2A2016;
 }
 
 /* -- Base ------------------------------------------------------------------ */
@@ -81,12 +141,12 @@ a:hover {
   padding: 10px 16px;
   border-radius: var(--radius);
   background: var(--ink);
-  color: #FFFFFF;
+  color: var(--on-ink);
 }
 
 .skip-link:focus {
   top: 12px;
-  color: #FFFFFF;
+  color: var(--on-ink);
 }
 
 /* -- Header ---------------------------------------------------------------- */
@@ -182,6 +242,62 @@ body.home .site-header-inner {
   font-size: 15px;
 }
 
+/* -- Theme toggle ------------------------------------------------------------ */
+
+.theme-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  flex: none;
+  padding: 0;
+  border: 1px solid var(--line-strong);
+  border-radius: var(--radius);
+  background: var(--surface);
+  color: var(--ink);
+  cursor: pointer;
+}
+
+.theme-toggle[hidden] {
+  display: none;
+}
+
+.theme-toggle:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.theme-toggle .icon-sun {
+  display: none;
+}
+
+:root[data-theme="dark"] .theme-toggle .icon-sun {
+  display: block;
+}
+
+:root[data-theme="dark"] .theme-toggle .icon-moon {
+  display: none;
+}
+
+/* On narrow screens, the toggle sits next to the logo. */
+@media (max-width: 760px) {
+  .theme-toggle {
+    order: 1;
+    margin-left: auto;
+  }
+
+  .site-nav {
+    order: 2;
+    flex-basis: 100%;
+  }
+
+  .site-search {
+    order: 3;
+    flex: 1 1 100%;
+  }
+}
+
 /* -- Shared pieces ----------------------------------------------------------- */
 
 a.headerlink {
@@ -230,7 +346,7 @@ ul.actions a {
 ul.actions li:first-child a {
   border-color: var(--accent);
   background: var(--accent);
-  color: #FFFFFF;
+  color: var(--on-accent);
 }
 
 ul.actions li:first-child a:hover {
@@ -240,12 +356,13 @@ ul.actions li:first-child a:hover {
 
 ul.actions a:hover {
   background: var(--ink);
-  color: #FFFFFF;
+  color: var(--on-ink);
 }
 
 /* -- Code -------------------------------------------------------------------- */
 
 div.highlight {
+  border: 1px solid var(--code-line);
   background: var(--code-bg);
   border-radius: 10px;
 }
@@ -353,6 +470,14 @@ a code.xref {
 
 .home-body > section > .terminal div[class^="highlight-"] {
   margin: 0;
+}
+
+.home-body > section > .terminal {
+  border: 1px solid var(--code-line);
+}
+
+.home-body > section > .terminal div.highlight {
+  border: 0;
 }
 
 .home-body > section > .terminal pre {
@@ -558,13 +683,13 @@ ul.legend li:nth-child(3)::before {
 .tracks .toctree-wrapper a[href$="_201.html"] {
   border-color: var(--accent);
   background: var(--accent);
-  color: #FFFFFF;
+  color: var(--on-accent);
 }
 
 .tracks .toctree-wrapper a[href$="_301.html"] {
   border-color: var(--ink);
   background: var(--ink);
-  color: #FFFFFF;
+  color: var(--on-ink);
 }
 
 .tracks .toctree-wrapper a:hover {
@@ -740,12 +865,12 @@ ul.legend li:nth-child(3)::before {
 
 .level-201 {
   background: var(--accent);
-  color: #FFFFFF;
+  color: var(--on-accent);
 }
 
 .level-301 {
   background: var(--ink);
-  color: #FFFFFF;
+  color: var(--on-ink);
 }
 
 .article .body {
@@ -843,6 +968,14 @@ ul.legend li:nth-child(3)::before {
   height: auto;
 }
 
+/* Graphviz diagrams are drawn for a white background. */
+.body img.graphviz,
+.body object.graphviz {
+  padding: 12px;
+  border-radius: var(--radius);
+  background: #FFFFFF;
+}
+
 .body hr {
   margin: 40px 0;
   border: 0;
@@ -906,8 +1039,8 @@ ul.legend li:nth-child(3)::before {
 .body div.admonition.caution,
 .body div.admonition.danger,
 .body div.admonition.important {
-  border-color: #E3B58A;
-  background: #FCF4EC;
+  border-color: var(--warn-line);
+  background: var(--warn-bg);
 }
 
 .body div.admonition-todo {
@@ -1175,7 +1308,7 @@ div.body blockquote {
   padding: 0 18px;
   border: 1px solid var(--accent);
   background: var(--accent);
-  color: #FFFFFF;
+  color: var(--on-accent);
   font-weight: 600;
   cursor: pointer;
 }
