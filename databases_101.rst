@@ -464,6 +464,93 @@ Here is a simple example of a DELETE statement:
   DELETE FROM users WHERE user_name = 'James Smith';
 
 
+Indexes and slow queries
+========================
+
+To find the rows that match a ``WHERE`` condition, a database can read every row in the table and check each one.
+This is called a full table scan.
+It is fast on a small table, but its cost grows with the size of the table, so a query that was fast when a table was new can become slow as the table grows.
+
+An index is a separate structure, usually a B-tree, that keeps the values of one or more columns in sorted order, with a pointer to each row.
+With an index on the column in the ``WHERE`` condition, the database can go straight to the matching rows.
+The primary key is always indexed.
+Other columns are indexed only if someone creates an index on them:
+
+.. code-block:: sql
+
+  CREATE INDEX idx_users_email ON users (user_email);
+
+Indexes are not free.
+Each index uses disk space and memory, and every ``INSERT``, ``UPDATE`` and ``DELETE`` has to update it too.
+So tables usually have indexes for the queries that the application runs often, not for every column.
+
+An index can cover more than one column, for example an index on ``posts (author_id, published_at)``.
+The order of the columns matters.
+This index helps a query that filters on ``author_id``, or on ``author_id`` and ``published_at``, but usually not a query that filters only on ``published_at``.
+Because each author's entries in the index are in ``published_at`` order, it also lets a query such as ``WHERE author_id = 7 ORDER BY published_at DESC LIMIT 10`` read the newest 10 posts directly, without sorting.
+
+Seeing how a query runs
+-----------------------
+
+``EXPLAIN`` shows how the database plans to run a query, without running it.
+In MySQL, ``type: ALL`` means a full table scan, ``key`` is the index used, if any, and ``rows`` is an estimate of how many rows MySQL will examine:
+
+.. code-block:: console
+
+  mysql> EXPLAIN SELECT user_id, user_name FROM users WHERE user_email = 'user4242@example.com'\G
+  *************************** 1. row ***************************
+             id: 1
+    select_type: SIMPLE
+          table: users
+     partitions: NULL
+           type: ALL
+  possible_keys: NULL
+            key: NULL
+        key_len: NULL
+            ref: NULL
+           rows: 199378
+       filtered: 10.00
+          Extra: Using where
+
+After ``CREATE INDEX idx_users_email ON users (user_email)``, the same query uses the index and examines one row:
+
+.. code-block:: console
+
+           type: ref
+  possible_keys: idx_users_email
+            key: idx_users_email
+           rows: 1
+
+``Using filesort`` in the ``Extra`` column means that MySQL sorts the matching rows itself, because no index gives them in the order the query asks for.
+That is fine for a few rows, but slow for many.
+
+PostgreSQL also has ``EXPLAIN``, with a different output format: ``Seq Scan`` is a full table scan and ``Index Scan`` uses an index.
+
+Finding slow queries
+--------------------
+
+MySQL can log every query that takes longer than ``long_query_time`` seconds to the slow query log.
+The log is off by default, and ``long_query_time`` defaults to 10 seconds, so many servers set it lower.
+To see the current settings:
+
+.. code-block:: console
+
+  mysql> SHOW VARIABLES WHERE Variable_name IN ('slow_query_log', 'long_query_time', 'slow_query_log_file');
+  +---------------------+-------------------------+
+  | Variable_name       | Value                   |
+  +---------------------+-------------------------+
+  | long_query_time     | 0.500000                |
+  | slow_query_log      | ON                      |
+  | slow_query_log_file | /var/log/mysql/slow.log |
+  +---------------------+-------------------------+
+
+Each entry shows the query, how long it took, and ``Rows_examined``.
+A query that examines many more rows than it returns is often missing an index.
+``mysqldumpslow``, which comes with MySQL, groups similar queries in the log and sums their times.
+
+MySQL's ``sys.schema_unused_indexes`` view lists indexes that have not been used since the server last started.
+It covers only the server you run it on, so check every server that runs queries against the table before you drop an index.
+
 Pro Tips
 ========
 
