@@ -250,7 +250,7 @@ In this example, the server sends only its own certificate:
 
 .. code-block:: console
 
-  root@opsschool # openssl s_client -connect www.example.test:443 -servername www.example.test -showcerts </dev/null
+  root@opsschool ~# openssl s_client -connect www.example.test:443 -servername www.example.test -verify_hostname www.example.test -showcerts </dev/null
   depth=0 CN = www.example.test
   verify error:num=20:unable to get local issuer certificate
   ...
@@ -279,7 +279,7 @@ To look at a certificate file, including the names it is valid for and when it e
 
 .. code-block:: console
 
-  root@opsschool # openssl x509 -in www.crt -noout -subject -issuer -dates -ext subjectAltName
+  root@opsschool ~# openssl x509 -in www.crt -noout -subject -issuer -dates -ext subjectAltName
   subject=CN = www.example.test
   issuer=CN = Example Issuing CA 1
   notBefore=Oct  5 02:13:12 2026 GMT
