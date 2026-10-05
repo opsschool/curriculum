@@ -371,13 +371,15 @@ Before you restart anything, check what is listening on port 5432 on db-1:
 
 .. code-block:: console
 
-    user@opsschool ~$ ss -tln '( sport = :5432 )'
+    root@opsschool ~# ss -tlnp '( sport = :5432 )'
     State  Recv-Q Send-Q Local Address:Port  Peer Address:Port Process
-    LISTEN 0      244        127.0.0.1:5432       0.0.0.0:*
+    LISTEN 0      244        127.0.0.1:5432       0.0.0.0:*     users:(("postgres",pid=1234,fd=5))
 
 PostgreSQL is running, but it accepts connections only on the loopback address, 127.0.0.1, so connections from app-1 are refused.
 This can happen when the ``listen_addresses`` setting has been changed, or has been left at its default of ``localhost``.
-A restart would not have fixed the problem, and it would have disconnected every client that was connected locally.
+A restart would not fix the problem if PostgreSQL is still configured to listen only on loopback.
+However, ``listen_addresses`` takes effect only at server start, so check the configuration files: a restart could apply a pending change that enables remote connections.
+Restarting would also disconnect any clients connected locally.
 
 Keep your own skills
 --------------------
