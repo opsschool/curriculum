@@ -39,7 +39,9 @@ By default MySQL gives a waiting exclusive lock request priority over later shar
 So queries that start after the ``ALTER TABLE`` wait behind it, even simple reads, and the table looks frozen to the application.
 How long the ``ALTER TABLE`` waits is set by ``lock_wait_timeout``, which defaults to 31536000 seconds, one year.
 
-The most common cause is a transaction that was started and never finished: for example, a program that runs a ``SELECT`` inside a transaction and then waits for something else, or a person who ran ``BEGIN`` and a query in a ``mysql`` shell and left it open.
+An unfinished transaction is a common reason an ``ALTER TABLE`` waits for its metadata lock.
+A program may run a ``SELECT`` inside a transaction and then wait for something else.
+Someone may also run ``BEGIN`` and a query in a ``mysql`` shell and leave it open.
 Such a session shows as ``Sleep`` in the process list, which makes it easy to miss.
 
 Finding the blocker
