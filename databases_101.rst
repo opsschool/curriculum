@@ -474,14 +474,14 @@ It is fast on a small table, but its cost grows with the size of the table, so a
 An index is a separate structure, usually a B-tree, that keeps the values of one or more columns in sorted order, with a pointer to each row.
 With an index on the column in the ``WHERE`` condition, the database can go straight to the matching rows.
 The primary key is always indexed.
-Other columns are indexed only if someone creates an index on them:
+Other columns can be indexed explicitly, or implicitly when constraints such as ``UNIQUE`` and, in MySQL, foreign keys are defined:
 
 .. code-block:: sql
 
   CREATE INDEX idx_users_email ON users (user_email);
 
 Indexes are not free.
-Each index uses disk space and memory, and every ``INSERT``, ``UPDATE`` and ``DELETE`` has to update it too.
+Each index uses disk space and memory; every ``INSERT`` and ``DELETE`` updates it, and an ``UPDATE`` does so when it changes an indexed column.
 So tables usually have indexes for the queries that the application runs often, not for every column.
 
 An index can cover more than one column, for example an index on ``posts (author_id, published_at)``.
@@ -512,7 +512,7 @@ In MySQL, ``type: ALL`` means a full table scan, ``key`` is the index used, if a
        filtered: 10.00
           Extra: Using where
 
-After ``CREATE INDEX idx_users_email ON users (user_email)``, the same query uses the index and examines one row:
+After ``CREATE INDEX idx_users_email ON users (user_email)``, the same query uses the index and is estimated to examine one row:
 
 .. code-block:: console
 
@@ -548,8 +548,8 @@ Each entry shows the query, how long it took, and ``Rows_examined``.
 A query that examines many more rows than it returns is often missing an index.
 ``mysqldumpslow``, which comes with MySQL, groups similar queries in the log and sums their times.
 
-MySQL's ``sys.schema_unused_indexes`` view lists indexes that have not been used since the server last started.
-It covers only the server you run it on, so check every server that runs queries against the table before you drop an index.
+MySQL's ``sys.schema_unused_indexes`` view lists indexes with no recorded usage since their Performance Schema counters were last reset, normally at server startup.
+Because this evidence is local and time-bounded, check every database instance over a representative period that includes periodic workloads before dropping an index.
 
 Pro Tips
 ========
