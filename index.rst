@@ -26,6 +26,7 @@ Table of Contents
    :maxdepth: 2
 
    introduction
+   critical_thinking_101
    meta/guidelines
    careers
    sysadmin_101
