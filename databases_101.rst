@@ -293,6 +293,72 @@ It follows a similar command format like grant:
   REVOKE [PRIVILEGE] on [OBJECT] FROM [USER];
 
 
+Connections
+===========
+
+A program talks to a database server over a connection.
+Opening a connection takes time, so most applications keep a pool of open connections and reuse them.
+The application's configuration usually sets the size of the pool.
+
+Each connection uses memory on the server, so the server limits how many it accepts.
+In MySQL the limit is ``max_connections``, which defaults to 151.
+When it is reached, new connections fail with this error:
+
+.. code-block:: console
+
+  ERROR 1040 (HY000): Too many connections
+
+MySQL allows one connection more than ``max_connections``, for an account with the ``CONNECTION_ADMIN`` (or the older ``SUPER``) privilege, so that an administrator can usually still connect.
+The limit can also be set per account, with ``max_user_connections``.
+
+PostgreSQL's limit is also called ``max_connections``, and defaults to 100.
+It keeps a few of these for superusers (``superuser_reserved_connections``, 3 by default), and other clients get the error ``sorry, too many clients already``.
+
+Seeing who is connected
+-----------------------
+
+In MySQL, ``SHOW GLOBAL STATUS`` shows how many connections are open now, the most there have been since the server started, and how many were refused because of ``max_connections``:
+
+.. code-block:: console
+
+  mysql> SHOW GLOBAL STATUS WHERE Variable_name IN ('Threads_connected', 'Max_used_connections', 'Connection_errors_max_connections');
+  +-----------------------------------+-------+
+  | Variable_name                     | Value |
+  +-----------------------------------+-------+
+  | Connection_errors_max_connections | 169   |
+  | Max_used_connections              | 152   |
+  | Threads_connected                 | 8     |
+  +-----------------------------------+-------+
+
+To see which accounts and hosts the connections come from, and what they are doing, group the process list:
+
+.. code-block:: console
+
+  mysql> SELECT user, host, command, COUNT(*) AS connections
+      -> FROM information_schema.processlist GROUP BY user, host, command;
+  +-----------------+-----------+---------+-------------+
+  | user            | host      | command | connections |
+  +-----------------+-----------+---------+-------------+
+  | app             | localhost | Sleep   | 7           |
+  | root            | localhost | Query   | 1           |
+  | event_scheduler | localhost | Daemon  | 1           |
+  +-----------------+-----------+---------+-------------+
+
+``Sleep`` means the connection is open but idle.
+Some idle connections are normal, because pools keep connections open for reuse.
+Many idle connections from one program, each with a large ``Time`` in ``SHOW PROCESSLIST``, can mean that the program takes connections from its pool and never returns them.
+This is called a connection leak.
+
+Keeping within the limit
+------------------------
+
+Add up the largest pool of every program that connects to the database, on every server it runs on, and keep the total below ``max_connections``, with room for administrators and tools.
+
+MySQL closes a non-interactive connection after it has been idle for ``wait_timeout`` seconds, 28800 (8 hours) by default.
+Lowering it closes idle connections sooner, but a connection that a program has leaked inside an open transaction still holds that transaction's locks until it closes.
+
+Raising ``max_connections`` can give you time, but it doesn't fix a leak, and each connection needs memory on the server.
+
 Basic normalized schema design
 ==============================
 
