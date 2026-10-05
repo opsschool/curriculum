@@ -4,16 +4,14 @@ Ops School Curriculum
 
 Welcome to the Ops School curriculum documentation site.
 
-Ops School is a comprehensive program that will help you learn to be an operations engineer.
-Operations engineers are highly skilled people who manage the computer systems of businesses big and small.
-In addition to corporate systems, operations engineers also maintain the systems that allow websites, networks, payments systems and other Internet services to function.
-The field of operations engineering covers a wide variety of topics, from systems administration, to security, networking and beyond.
+Ops School is a comprehensive program that will help you learn to be an SRE or operations engineer.
+SRE and operations engineers are highly skilled people who manage the computer systems of businesses big and small.
+In addition to corporate systems, SRE and operations engineers also maintain the systems that allow websites, networks, payments systems and other Internet services to function.
+The field of SRE and operations engineering covers a wide variety of topics, from systems administration, to security, networking and beyond.
 Ops School will guide you through all of these skill sets from beginner to expert.
 
-Since the early 90's, operations engineers have been in high demand.
-As a result, these positions often offer high salaries and long term job security.
-The `SAGE/LISA Salary Survey <https://www.usenix.org/lisa/salary-surveys>`_ has charted the average salaries for systems administrators and operations engineers
-since 1999 and has consistently shown the field to be prosperous for those people who enjoy diving into the inner workings of computer systems.
+Since the early 1990s, operations engineers have been in high demand, and the more recent SRE role is just as sought after.
+The work suits people who enjoy diving into the inner workings of computer systems.
 
 If you already know about the profession and want to know how to start, read :ref:`how-to-become-an-operations-engineer`.
 
@@ -28,6 +26,7 @@ Table of Contents
    :maxdepth: 2
 
    introduction
+   critical_thinking_101
    meta/guidelines
    careers
    sysadmin_101
