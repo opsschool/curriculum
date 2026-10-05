@@ -102,3 +102,58 @@ SMF
 
 daemontools
 ===========
+
+Control groups
+==============
+
+Control groups (cgroups) are a Linux kernel feature that groups processes, measures the resources each group uses, and can limit them.
+Current distributions use cgroup version 2, which has a single tree of groups mounted at ``/sys/fs/cgroup``.
+
+systemd puts each service in its own cgroup, so every process that a service starts, including its children, is counted and limited together.
+Services are grouped further into slices, such as ``system.slice`` for system services and ``user.slice`` for logged-in users.
+A limit on a slice applies to all the services in it together.
+``systemd-cgls`` shows the tree, and ``systemd-cgtop`` shows how much CPU, memory and I/O each group uses.
+``systemctl status`` shows a service's cgroup on the ``CGroup:`` line.
+
+Limiting CPU
+------------
+
+In a unit file, ``CPUQuota=`` limits how much CPU time a service or slice can use, as a percentage of one CPU.
+For example, ``CPUQuota=20%`` lets it use 20 milliseconds of CPU time in every 100 millisecond period.
+200% would allow two full CPUs.
+systemd writes the limit to the group's ``cpu.max`` file, as the quota and the period in microseconds:
+
+.. code-block:: console
+
+  root@opsschool # cat /sys/fs/cgroup/system.slice/quotademo.service/cpu.max
+  20000 100000
+
+When the processes in the group have used their quota, the kernel doesn't run them again until the next period begins, even if CPUs are idle.
+This is called throttling.
+A throttled service is slow, but CPU graphs for the host can look healthy: here a busy loop uses only 18% of a CPU, and the rest of the CPU is idle.
+
+The group's ``cpu.stat`` file shows how often it was throttled:
+
+.. code-block:: console
+
+  root@opsschool # cat /sys/fs/cgroup/system.slice/quotademo.service/cpu.stat
+  usage_usec 1023799
+  user_usec 1023799
+  system_usec 0
+  nice_usec 0
+  nr_periods 50
+  nr_throttled 50
+  throttled_usec 3938134
+  nr_bursts 0
+  burst_usec 0
+
+``nr_periods`` is the number of enforcement periods that have elapsed, and ``nr_throttled`` is the number of times the group has been throttled.
+``throttled_usec`` is the total time it spent throttled, in microseconds.
+If ``nr_throttled`` grows steadily, the quota is limiting the group.
+
+``CPUWeight=`` is a different kind of control.
+It sets a group's share of CPU time relative to other groups, and the default is 100.
+It only matters when the CPUs are busy: a group with a low weight can still use an idle CPU.
+
+``systemctl show -p CPUQuotaPerSecUSec <unit>`` shows the quota systemd has set, and ``systemctl cat`` shows which unit file or drop-in set it.
+Memory has similar controls, such as ``MemoryMax=``; see the ``systemd.resource-control(5)`` manual page.
