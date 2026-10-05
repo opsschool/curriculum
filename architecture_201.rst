@@ -40,7 +40,7 @@ Retries at several layers multiply: if three layers of services each make up to 
 This can keep a system overloaded after the cause has gone.
 For example, a traffic peak slows a service down, so calls time out and are retried.
 The retries add more load than the peak did, so calls keep timing out after traffic returns to normal.
-This kind of failure is sometimes called a metastable failure, or a retry storm.
+This self-sustaining state is a metastable failure; here, the retry storm is the feedback loop that keeps it going.
 Restarting the overloaded service can clear its backlog, but if nothing else changes, the next peak can start the overload again.
 
 Limiting retries
