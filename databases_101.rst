@@ -312,7 +312,8 @@ MySQL allows one connection more than ``max_connections``, for an account with t
 The limit can also be set per account, with ``max_user_connections``.
 
 PostgreSQL's limit is also called ``max_connections``, and defaults to 100.
-It keeps a few of these for superusers (``superuser_reserved_connections``, 3 by default), and other clients get the error ``sorry, too many clients already``.
+It reserves 3 of these for superusers by default (``superuser_reserved_connections``).
+With the defaults, when the ordinary slots are exhausted, other clients get ``FATAL: remaining connection slots are reserved for superusers``.
 
 Seeing who is connected
 -----------------------
@@ -358,6 +359,7 @@ MySQL closes a non-interactive connection after it has been idle for ``wait_time
 Lowering it closes idle connections sooner, but a connection that a program has leaked inside an open transaction still holds that transaction's locks until it closes.
 
 Raising ``max_connections`` can give you time, but it doesn't fix a leak, and each connection needs memory on the server.
+
 
 Basic normalized schema design
 ==============================
