@@ -64,9 +64,12 @@ In this example, two busy processes share one CPU, and the one with a nice value
   19841 (process ID) old priority -10, new priority 5
 
 Any user can raise the nice value of their own processes, which lowers their priority.
-Only root, or a process with the ``CAP_SYS_NICE`` capability, can lower it.
-Nice values only matter when processes compete for a CPU: on an idle CPU, a process with a nice value of 19 runs as fast as any other.
-They affect CPU time, not memory or disk I/O; ``ionice`` sets a separate I/O priority, which only some I/O schedulers use.
+Lowering it normally requires the ``CAP_SYS_NICE`` capability, typically available to root.
+An unprivileged process can also lower the nice value of its own processes within the target process's ``RLIMIT_NICE`` soft limit.
+For CPU scheduling, nice values matter when processes compete for a CPU: on an otherwise idle CPU, a process with a nice value of 19 can run as fast as one with 0.
+Nice values control CPU scheduling, not memory allocation.
+``ionice`` sets a separate I/O priority, which only some I/O schedulers use.
+Some I/O schedulers derive the default I/O priority from the CPU nice value when no explicit I/O priority is set.
 
 df
 --
