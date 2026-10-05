@@ -82,6 +82,31 @@ Idempotence
 Convergent and Congruent systems
 ================================
 
+Steve Traugott and Lance Brown described three ways that hosts can be managed, in their 2002 paper `Why Order Matters: Turing Equivalence in Automated Systems Administration <https://www.usenix.org/legacy/publications/library/proceedings/lisa02/tech/traugott.html>`_:
+
+- **Divergent**: people change hosts by hand, and the hosts drift apart from each other and from any written description.
+- **Convergent**: a tool compares each host with a description of how it should be, and changes whatever differs.
+  It runs again and again, so hosts move closer to the description over time.
+  CFEngine, Puppet and Chef are often set up this way: an agent on each host runs every half hour or so.
+- **Congruent**: hosts are kept exactly the same as the description, for example by building them only from it and replacing them instead of changing them.
+
+Changes by hand on a managed host
+---------------------------------
+
+On a convergent system, the description is the source of truth, not the host.
+If you change a managed file by hand, the next run of the tool sees that the file differs from the description and changes it back, often restarting the service that uses it.
+This can undo an emergency fix minutes after you made it.
+
+So before you change a file on a host, find out whether something manages it:
+
+- Teams often put a comment at the top of the files they manage, such as "This file is managed by Puppet". Not every managed file has one.
+- Look for an agent or a scheduled run: ``systemctl list-timers``, ``systemctl list-units --type=service``, and the crontabs in ``/etc/crontab`` and ``/etc/cron.d``.
+- The tool's own log, or the journal, records each run and what it changed.
+
+To make a change that lasts, change the description, usually in a version control repository, and let the tool apply it.
+If you need to stop the tool while you work on an incident, use its own way of doing that, for example ``puppet agent --disable "<reason>"``, and tell the people who own it.
+Remember to turn it back on, and to put your fix in the description: otherwise the next run undoes it, or it is lost when the host is rebuilt.
+
 Direct and Indirect systems: ansible, capistrano
 ================================================
 
