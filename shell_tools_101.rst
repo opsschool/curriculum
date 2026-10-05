@@ -34,8 +34,39 @@ top
 ---
 
 ``top`` shows the top most cpu intensive processes in a table form with system stats summarized at the top.
-It refreshes every 1 second.
-By pressing ``m`` while running, ``top`` will sort not by processor use but by memory use.
+By default it refreshes every 3 seconds; ``top -d 1`` refreshes every second.
+By pressing ``M`` while running, ``top`` will sort not by processor use but by memory use, and ``P`` sorts by processor use again.
+
+nice and renice
+---------------
+
+When more processes want to run than there are CPUs, the kernel's scheduler decides which ones run.
+Each process has a nice value, from -20 to 19, which affects its share of CPU time.
+The default is 0.
+A lower nice value means a higher priority: a process with a nice value of -10 gets a much larger share of a busy CPU than a process with 0.
+The ``NI`` column of ``top`` and ``ps -o ni`` show the nice value.
+
+In this example, two busy processes share one CPU, and the one with a nice value of -10 gets about 90% of it:
+
+.. code-block:: console
+
+  root@opsschool # top -b -n 1 -p 19841,19842
+      PID USER      PR  NI    VIRT    RES    SHR S  %CPU  %MEM     TIME+ COMMAND
+    19841 root      10 -10    4336   3344   3092 R  90.0   0.0   0:04.68 bash
+    19842 root      20   0    4336   3388   3132 R  10.0   0.0   0:00.50 bash
+
+``nice`` starts a command with a different nice value, and ``renice`` changes the nice value of a running process:
+
+.. code-block:: console
+
+  root@opsschool # nice -n 10 ./build-report.sh
+  root@opsschool # renice -n 5 -p 19841
+  19841 (process ID) old priority -10, new priority 5
+
+Any user can raise the nice value of their own processes, which lowers their priority.
+Only root, or a process with the ``CAP_SYS_NICE`` capability, can lower it.
+Nice values only matter when processes compete for a CPU: on an idle CPU, a process with a nice value of 19 runs as fast as any other.
+They affect CPU time, not memory or disk I/O; ``ionice`` sets a separate I/O priority, which only some I/O schedulers use.
 
 df
 --
