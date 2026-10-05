@@ -218,6 +218,102 @@ Public Key Cryptography
 .. todo::
    What is PKI? What uses it? Why is it important?
 
+TLS certificates and chains
+---------------------------
+
+TLS is the protocol that encrypts HTTPS and many other connections.
+When a client connects, the server sends a certificate.
+The certificate contains the server's public key and the names it is valid for, and it is signed by a certificate authority (CA).
+The client checks the signature, the names and the dates, and only then trusts the key.
+
+Clients don't trust every CA.
+Each client has a trust store: a list of root CA certificates, which comes with the operating system, the browser or the programming language.
+On Debian and Ubuntu the system trust store is ``/etc/ssl/certs/ca-certificates.crt``, built by ``update-ca-certificates``.
+
+Root CAs usually don't sign server certificates directly.
+A root signs one or more intermediate CA certificates, and an intermediate signs the server's certificate.
+To trust the server's certificate, the client needs the chain from it to a root it trusts: the server's certificate, each intermediate, and the root.
+The client has the root already.
+The server must send its own certificate and the intermediates; it doesn't need to send the root.
+
+If the server sends only its own certificate, the result depends on the client.
+Many browsers can fill in a missing intermediate, for example from a cache of intermediates they have seen before, or by downloading it from an address in the certificate's Authority Information Access extension.
+Many other clients, such as ``curl``, programs that use OpenSSL, and many mobile apps, can't, and fail.
+So a site can work in a browser and fail for API clients at the same time.
+
+Inspecting what a server sends
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+``openssl s_client`` connects like a client and shows the chain the server sent.
+``-servername`` sends the name you want, because a server can have different certificates for different names.
+In this example, the server sends only its own certificate:
+
+.. code-block:: console
+
+  root@opsschool ~# openssl s_client -connect www.example.test:443 -servername www.example.test -verify_hostname www.example.test -showcerts </dev/null
+  depth=0 CN = www.example.test
+  verify error:num=20:unable to get local issuer certificate
+  ...
+  Certificate chain
+   0 s:CN = www.example.test
+     i:CN = Example Issuing CA 1
+  ...
+  Verify return code: 21 (unable to verify the first certificate)
+
+``s:`` is a certificate's subject, and ``i:`` is its issuer, the CA that signed it.
+The certificate was issued by ``Example Issuing CA 1``, but the server didn't send that certificate, so the client can't reach a root.
+``curl`` reports the same problem as ``SSL certificate problem: unable to get local issuer certificate``.
+With the intermediate included, the chain has two certificates, and the check succeeds:
+
+.. code-block:: console
+
+  Certificate chain
+   0 s:CN = www.example.test
+     i:CN = Example Issuing CA 1
+   1 s:CN = Example Issuing CA 1
+     i:CN = Example Root CA
+  ...
+  Verify return code: 0 (ok)
+
+To look at a certificate file, including the names it is valid for and when it expires:
+
+.. code-block:: console
+
+  root@opsschool ~# openssl x509 -in www.crt -noout -subject -issuer -dates -ext subjectAltName
+  subject=CN = www.example.test
+  issuer=CN = Example Issuing CA 1
+  notBefore=Oct  5 02:13:12 2026 GMT
+  notAfter=Jan  3 02:13:12 2027 GMT
+  X509v3 Subject Alternative Name:
+      DNS:www.example.test
+
+When a certificate has a Subject Alternative Name extension, clients check the names in it and ignore the subject's ``CN``.
+Some clients, including current browsers, don't use the ``CN`` at all.
+``openssl verify -untrusted intermediate.crt www.crt`` checks that a certificate and an intermediate lead to a root in the system trust store.
+
+Installing a certificate
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+Most servers read the chain from one file, with the server's certificate first, followed by the intermediates in order.
+For example, nginx reads it from the file named by ``ssl_certificate``:
+
+.. code-block:: console
+
+  root@opsschool # cat www.crt intermediate.crt > /etc/nginx/tls/www.example.test.crt
+
+Apache 2.4.8 and later also read intermediates from the ``SSLCertificateFile`` file.
+The private key must match the server's certificate.
+To check, compare their public keys:
+
+.. code-block:: console
+
+  root@opsschool # openssl x509 -in www.crt -noout -pubkey | sha256sum
+  230f0b211c7648e1424a228ea0561896f21edcbafa92b71246dbf271bcaede1a  -
+  root@opsschool # openssl pkey -in www.key -pubout | sha256sum
+  230f0b211c7648e1424a228ea0561896f21edcbafa92b71246dbf271bcaede1a  -
+
+After you renew a certificate, test it with ``openssl s_client`` or ``curl`` as well as a browser, and check every name and port the server answers on.
+
 Using public and private keys for SSH authentication
 ----------------------------------------------------
 
