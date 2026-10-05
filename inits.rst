@@ -23,7 +23,9 @@ Packages install unit files in ``/usr/lib/systemd/system`` (``/lib/systemd/syste
 Files in ``/etc/systemd/system`` are local changes, and a file there replaces a package's file of the same name.
 To change only some settings, add a drop-in file: a file ending in ``.conf`` in a directory named after the unit, such as ``/etc/systemd/system/nginx.service.d/``.
 ``systemctl edit nginx`` creates one for you.
-``systemctl cat nginx`` shows the unit file and all its drop-ins, each with its path, so it is the quickest way to see the configuration systemd is actually using.
+``systemctl cat nginx`` shows the unit file and its drop-ins on disk, each with its path.
+These contents may differ from systemd's loaded configuration until you run ``systemctl daemon-reload``.
+Use ``systemctl show nginx`` to inspect loaded properties.
 
 After you change a unit file or a drop-in yourself, run ``systemctl daemon-reload`` so that systemd reads it again.
 
@@ -38,7 +40,9 @@ A service unit's ``[Service]`` section says how to run the program, for example:
   RestartSec=2
 
 ``EnvironmentFile=`` reads environment variables from a file, which many services use for their settings.
-``Restart=always`` restarts the program whenever it exits, and ``RestartSec=`` sets how long systemd waits first; the default is 100 milliseconds.
+``Restart=always`` restarts the program after both successful and failed exits.
+It does not restart the program when systemd stops it, for example through ``systemctl stop``.
+``RestartSec=`` sets how long systemd waits before restarting; the default is 100 milliseconds.
 ``Restart=on-failure`` restarts it only when it fails, for example when it exits with a non-zero status.
 
 Managing services
@@ -58,7 +62,7 @@ Managing services
 A service that keeps exiting
 ----------------------------
 
-A service with ``Restart=`` set that exits soon after it starts is restarted again and again.
+With ``Restart=always``, a service that repeatedly exits on its own soon after starting enters a restart loop.
 ``systemctl status`` then shows it as ``activating (auto-restart)``, and the exit status of the last attempt:
 
 .. code-block:: console
