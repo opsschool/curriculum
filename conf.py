@@ -81,7 +81,8 @@ exclude_patterns = ['_build', '.direnv', 'README.md']
 #show_authors = False
 
 # The name of the Pygments (syntax highlighting) style to use.
-pygments_style = 'sphinx'
+# The opsschool theme sets its own style, so this is left unset.
+#pygments_style = None
 
 # A list of ignored prefixes for module index sorting.
 #modindex_common_prefix = []
@@ -89,16 +90,9 @@ pygments_style = 'sphinx'
 
 # -- Options for HTML output ---------------------------------------------------
 
-# on_rtd is whether we are on readthedocs.org
-import os
-on_rtd = os.environ.get('READTHEDOCS', None) == 'True'
-
-if not on_rtd:  # only import and set the theme if we're building docs locally
-    import sphinx_rtd_theme
-    html_theme = 'sphinx_rtd_theme'
-    html_theme_path = [sphinx_rtd_theme.get_html_theme_path()]
-
-# otherwise, readthedocs.org uses their theme by default, so no need to specify it
+# The site uses its own theme, in _themes/opsschool.
+html_theme = 'opsschool'
+html_theme_path = ['_themes']
 
 # Theme options are theme-specific and customize the look and feel of a theme
 # further.  For a list of options available for each theme, see the
@@ -107,7 +101,7 @@ if not on_rtd:  # only import and set the theme if we're building docs locally
 
 # The name for this set of Sphinx documents.  If None, it defaults to
 # "<project> v<release> documentation".
-#html_title = None
+html_title = 'Ops School'
 
 # A shorter title for the navigation bar.  Default is the same as html_title.
 #html_short_title = None
@@ -246,3 +240,38 @@ texinfo_documents = [
 #texinfo_show_urls = 'footnote'
 
 todo_include_todos = True
+
+
+# -- Curriculum tracks ----------------------------------------------------------
+
+# The index page groups chapters into tracks, using one toctree per track with
+# a :caption:. This passes each page's track name to the templates, so a
+# chapter can show which track it belongs to. Pages listed in a chapter's own
+# toctree, such as filesystems_101 under unix_101, get the chapter's track.
+
+def _track_names(app):
+    from sphinx import addnodes
+    if not hasattr(app, 'opsschool_tracks'):
+        tracks = {}
+        doctree = app.env.get_doctree(app.config.root_doc)
+        for toctree in doctree.findall(addnodes.toctree):
+            caption = toctree.get('caption')
+            if not caption:
+                continue
+            pending = [docname for _title, docname in toctree['entries']]
+            while pending:
+                docname = pending.pop()
+                if docname in tracks:
+                    continue
+                tracks[docname] = caption
+                pending.extend(app.env.toctree_includes.get(docname, []))
+        app.opsschool_tracks = tracks
+    return app.opsschool_tracks
+
+
+def _add_track(app, pagename, templatename, context, doctree):
+    context['track'] = _track_names(app).get(pagename)
+
+
+def setup(app):
+    app.connect('html-page-context', _add_track)

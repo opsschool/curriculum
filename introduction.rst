@@ -57,4 +57,4 @@ into an intermediate systems administrator.
 * Senior topics are labelled "301".
 
 
-.. include:: meta/contributions.rst
+To help write the curriculum, see :doc:`meta/contributions`.
