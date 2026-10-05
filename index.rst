@@ -6,8 +6,9 @@ Welcome to the Ops School curriculum documentation site.
 
 Ops School is a free, openly licensed curriculum for learning reliability-minded engineering.
 It is for SREs, software engineers, operations engineers, and anyone who builds or runs systems that people depend on.
-These include the computer systems of businesses big and small, and the systems that allow websites, networks, payment systems and other Internet services to function.
-The curriculum covers a wide variety of topics, from systems administration, to security, networking and beyond.
+These include the computer systems of businesses big and small.
+They also include the systems that allow websites, networks, payment systems and other Internet services to function.
+The curriculum covers a wide variety of topics, including systems administration, security, networking and beyond.
 Ops School will guide you through all of these skill sets from beginner to expert.
 
 Since the early 1990s, operations engineers have been in high demand, and the more recent SRE role is just as sought after.
