@@ -5,6 +5,10 @@ Critical thinking is the habit of checking what you believe, and why, before you
 Curiosity is the habit of asking how things work, including things that are not broken.
 SRE and operations engineers use both in nearly all of their work: to find the cause of a problem, to design a system, to decide whether a change is safe, and to judge advice from colleagues, vendors and the Internet.
 
+Colleagues, tools and AI assistants can help you collect and interpret information, but they do not take responsibility for the result.
+You are responsible for your diagnosis, your plan and the actions you take.
+Before you act, you should be able to explain, in your own words, why you believe each of them is correct, and what evidence you checked.
+
 This chapter describes ways to practice these habits.
 The examples use the hosts from the :ref:`sample-network`.
 
@@ -316,6 +320,73 @@ Ask in a way that helps the person who made the request.
 The aim is to solve their problem, not to refuse their request.
 
 
+Working with AI assistants
+==========================
+
+AI assistants based on large language models (LLMs) can explain error messages, suggest commands, summarize logs and draft plans.
+Some can also run commands for you.
+They can save a lot of time, and they are also a source of claims, like a blog post or a colleague.
+Check their answers in the same way.
+
+What an assistant does
+----------------------
+
+An LLM generates text that is likely to follow from its input, based on patterns in the text it was trained on.
+Its answers are usually fluent and confident, whether or not they are correct.
+Common problems include:
+
+* Command options, configuration settings or functions that do not exist, or that exist only in a different version.
+* An explanation that fits the symptoms you described, but is not the cause.
+* Missing context.
+  An assistant knows only what you told it and what it can see, and it may not ask about what it does not know.
+* Agreement with the question.
+  If you ask "Why is the network causing this?", you will usually get an answer about the network.
+
+It is your decision
+-------------------
+
+When you act on an assistant's suggestion, the diagnosis, the plan and the action are yours.
+"The assistant suggested it" does not explain a decision in a change review or a postmortem, in the same way that "I found it on a forum" does not.
+
+The rest of this chapter applies to its answers:
+
+* Treat an answer as a hypothesis, and test it as described in `Forming and testing hypotheses`_.
+* Separate observations from inferences.
+  If you gave the assistant a log, check which parts of its answer come from the log, and which come from its general knowledge.
+* Before you run a command, find out what each part of it does, for example from its manual page.
+  For a command that changes or deletes something, know exactly what it will change and how you would undo it, and try it on a test host first if you can.
+* When an answer refers to documentation, an RFC or a manual page, check that the source exists and says what the answer claims.
+* Ask open questions, such as "What could cause this?", and ask what evidence would rule each explanation in or out.
+* Follow your organization's rules about what you can share with an assistant.
+  Do not paste passwords, private keys, customer data or other secrets into a tool that is not approved for them.
+
+An example
+----------
+
+You paste the error from app-1, described in `Observations and inferences`_, into an assistant.
+It replies that PostgreSQL is not running on db-1, and that you should restart it with ``systemctl restart postgresql``.
+
+This is one of the possible explanations, but nothing in the error shows that it is the right one.
+Before you restart anything, check what is listening on port 5432 on db-1:
+
+.. code-block:: console
+
+    user@opsschool ~$ ss -tln '( sport = :5432 )'
+    State  Recv-Q Send-Q Local Address:Port  Peer Address:Port Process
+    LISTEN 0      244        127.0.0.1:5432       0.0.0.0:*
+
+PostgreSQL is running, but it accepts connections only on the loopback address, 127.0.0.1, so connections from app-1 are refused.
+This can happen when the ``listen_addresses`` setting has been changed, or has been left at its default of ``localhost``.
+A restart would not have fixed the problem, and it would have disconnected every client that was connected locally.
+
+Keep your own skills
+--------------------
+
+You can judge an answer only if you understand the subject well enough to check it.
+If you always ask an assistant first, you get less practice at the skills you need to check it.
+Work through some problems yourself before you ask, and then compare your reasoning with the assistant's.
+
+
 Being wrong
 ===========
 
@@ -340,3 +411,5 @@ Practice
   Write down how its test environment and workload differ from yours.
 * Read a public postmortem from another company.
   Separate the observations from the inferences, and look for places where hindsight bias may have shaped the writing.
+* Give an AI assistant the symptoms of a problem that you have already solved, without the cause.
+  Compare its answer with what you found, and list which parts were correct, which were wrong, and which you could not check.
