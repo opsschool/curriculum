@@ -125,7 +125,7 @@ systemd writes the limit to the group's ``cpu.max`` file, as the quota and the p
 
 .. code-block:: console
 
-  root@opsschool # cat /sys/fs/cgroup/system.slice/quotademo.service/cpu.max
+  root@opsschool ~# cat /sys/fs/cgroup/system.slice/quotademo.service/cpu.max
   20000 100000
 
 When the processes in the group have used their quota, the kernel doesn't run them again until the next period begins, even if CPUs are idle.
