@@ -498,6 +498,103 @@ rbind
 -----
 
 
+When a filesystem is full
+=========================
+
+When a filesystem has no free space, programs get the error "No space left on device" (``ENOSPC``) when they try to write to it.
+Programs handle this in different ways: some log an error and carry on, some stop, and some lose the data they were trying to write.
+
+Finding what uses the space
+---------------------------
+
+``df -h`` shows how full each mounted filesystem is:
+
+.. code-block:: console
+
+  root@opsschool # df -h /srv/data
+  Filesystem      Size  Used Avail Use% Mounted on
+  /dev/loop5      488M  471M     0 100% /srv/data
+
+``Avail`` is 0 although ``Used`` is less than ``Size``.
+By default, ext4 reserves 5% of its blocks for the root user, so that system services can keep working when other users have filled the filesystem.
+``tune2fs -m`` changes this percentage.
+
+``du`` adds up the sizes of files under a directory.
+``-x`` keeps it on one filesystem, and ``sort -h`` puts the largest directories last:
+
+.. code-block:: console
+
+  root@opsschool # du -xh --max-depth=2 /srv/data | sort -h | tail -n 3
+  16K     /srv/data/lost+found
+  471M    /srv/data/log
+  471M    /srv/data
+
+Normally ``df`` and ``du`` agree, roughly.
+When they don't, one of the cases below is often the reason.
+
+Deleted files that are still open
+---------------------------------
+
+Deleting a file with ``rm`` removes its name from the directory.
+The kernel frees the file's blocks only when no name points to it and no process has it open.
+So if a program still has a file open, deleting the file doesn't free any space: ``du`` no longer counts it, but ``df`` still does.
+This often happens when someone deletes a large log file that a service is still writing to.
+
+``lsof +L1`` lists open files that have no names left; ``-a`` with a directory limits the list to that filesystem:
+
+.. code-block:: console
+
+  root@opsschool # lsof -a +L1 /srv/data
+  COMMAND   PID USER   FD   TYPE DEVICE  SIZE/OFF NLINK NODE NAME
+  sleep   14742 root    1w   REG    7,5 492830720     0   13 /srv/data/log/app.log (deleted)
+
+To free the space, restart the program so that it closes the file, or empty the file through the program's file descriptor, here number 1 of process 14742:
+
+.. code-block:: console
+
+  root@opsschool # : > /proc/14742/fd/1
+
+To empty a log file that is still in use, truncate it instead of deleting it: ``truncate -s 0 app.log``, or ``: > app.log``.
+If the program opened the file without ``O_APPEND``, it keeps writing at its old position.
+The file then looks as large as before in ``ls -l``, but the part before that position is a hole that uses no disk space.
+
+Running out of inodes
+---------------------
+
+Each file uses an inode, and many filesystems, including ext4, have a fixed number of inodes, set when the filesystem is created.
+A filesystem with millions of small files can run out of inodes while it still has free space.
+New files then fail with "No space left on device", although ``df -h`` shows space available.
+``df -i`` shows inode use:
+
+.. code-block:: console
+
+  root@opsschool # df -i /srv/data
+  Filesystem     Inodes IUsed IFree IUse% Mounted on
+  /dev/loop5      32768 32768     0  100% /srv/data
+
+To find where the files are, count them per directory, for example with ``du --inodes -x /srv/data | sort -n | tail``.
+
+Files hidden under a mount point
+--------------------------------
+
+Mounting a filesystem on a directory hides whatever that directory contained before.
+The files are still on the parent filesystem and still use its space, but no path reaches them while the other filesystem is mounted there.
+This can happen when a program writes to a directory such as ``/srv/data`` while the filesystem that belongs there is not mounted.
+
+``du`` can't see these files, but ``df`` counts them as used space on the parent filesystem.
+To look under the mount point without unmounting anything, bind mount the parent filesystem somewhere else.
+A bind mount shows the filesystem without the mounts on top of it:
+
+.. code-block:: console
+
+  root@opsschool # mount --bind / /mnt/rootfs
+  root@opsschool # du -sh /mnt/rootfs/srv/data
+  301M    /mnt/rootfs/srv/data
+  root@opsschool # umount /mnt/rootfs
+
+To stop it happening again, make the services that write there depend on the mount.
+With systemd, ``RequiresMountsFor=/srv/data`` in a service's ``[Unit]`` section makes the service start only after that filesystem is mounted, and not start if the mount fails.
+
 How filesystems work
 ====================
 Files, directories, inodes
