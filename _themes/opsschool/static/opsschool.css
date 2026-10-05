@@ -300,8 +300,11 @@ body.home .site-header-inner {
 
 /* -- Shared pieces ----------------------------------------------------------- */
 
+/* Hidden with opacity, not visibility, so the links can still be reached
+ * with the keyboard. basic.css hides them with visibility. */
 a.headerlink {
-  visibility: hidden;
+  visibility: visible;
+  opacity: 0;
   margin-left: 8px;
   color: var(--text-3);
   font-size: 0.7em;
@@ -313,7 +316,7 @@ h2:hover > a.headerlink,
 h3:hover > a.headerlink,
 h4:hover > a.headerlink,
 a.headerlink:focus {
-  visibility: visible;
+  opacity: 1;
 }
 
 ul.actions {
@@ -1154,9 +1157,32 @@ ul.legend li:nth-child(3)::before {
   }
 }
 
+/* Between 901px and 1140px, the curriculum stays beside the article and the
+ * page's sections move below it. The chapter's own contents list, if it has
+ * one, is shown at the top of the article instead. */
+@media (max-width: 1140px) {
+  .page-toc {
+    order: 2;
+    flex-basis: 100%;
+    max-width: none;
+  }
+
+  .page:has(.body .contents.local) .page-toc > .nav-heading,
+  .page:has(.body .contents.local) .page-toc > ul {
+    display: none;
+  }
+}
+
 @media (max-width: 900px) {
   .page {
     padding-top: 24px;
+  }
+
+  .article,
+  .page-toc,
+  .curriculum-nav {
+    flex-basis: 100%;
+    max-width: none;
   }
 
   .article {
@@ -1165,12 +1191,10 @@ ul.legend li:nth-child(3)::before {
 
   .page-toc {
     order: 2;
-    max-width: none;
   }
 
   .curriculum-nav {
     order: 3;
-    max-width: none;
     padding-top: 24px;
     border-top: 1px solid var(--line);
   }
@@ -1250,8 +1274,9 @@ body.home .site-footer-inner {
   }
 }
 
-/* Chapters that use ``.. contents::`` would repeat the "On this page" list. */
-@media (min-width: 901px) {
+/* Chapters that use ``.. contents::`` would repeat the "On this page" list
+ * while it is shown beside the article. */
+@media (min-width: 1141px) {
   .body .contents.local {
     display: none;
   }
@@ -1268,12 +1293,6 @@ body.home .site-footer-inner {
 
 .body .contents.local ul {
   margin: 0;
-}
-
-/* With ``.. contents::``, headings link back to the contents list. */
-.body a.toc-backref {
-  color: inherit;
-  text-decoration: none;
 }
 
 div.body p,

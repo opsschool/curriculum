@@ -246,7 +246,8 @@ todo_include_todos = True
 
 # The index page groups chapters into tracks, using one toctree per track with
 # a :caption:. This passes each page's track name to the templates, so a
-# chapter can show which track it belongs to.
+# chapter can show which track it belongs to. Pages listed in a chapter's own
+# toctree, such as filesystems_101 under unix_101, get the chapter's track.
 
 def _track_names(app):
     from sphinx import addnodes
@@ -255,9 +256,15 @@ def _track_names(app):
         doctree = app.env.get_doctree(app.config.root_doc)
         for toctree in doctree.findall(addnodes.toctree):
             caption = toctree.get('caption')
-            if caption:
-                for _title, docname in toctree['entries']:
-                    tracks[docname] = caption
+            if not caption:
+                continue
+            pending = [docname for _title, docname in toctree['entries']]
+            while pending:
+                docname = pending.pop()
+                if docname in tracks:
+                    continue
+                tracks[docname] = caption
+                pending.extend(app.env.toctree_includes.get(docname, []))
         app.opsschool_tracks = tracks
     return app.opsschool_tracks
 
