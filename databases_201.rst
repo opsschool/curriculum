@@ -50,7 +50,7 @@ Here, an ``ALTER TABLE`` waits for a metadata lock, a ``SELECT`` waits behind it
 
 .. code-block:: console
 
-    root@opsschool # mysql -e "SHOW PROCESSLIST"
+    root@opsschool ~# mysql -e "SHOW PROCESSLIST"
     Id   User  Host       db    Command  Time  State                            Info
     488  root  localhost  NULL  Sleep    6                                      NULL
     489  root  localhost  NULL  Query    4     Waiting for table metadata lock  ALTER TABLE demo.products ADD COLUMN size INT
@@ -82,7 +82,8 @@ Before you kill a connection, check what owns it: the program may reconnect and 
 To make schema changes safer:
 
 - Before an ``ALTER TABLE``, check ``innodb_trx`` for old transactions.
-- Set a short ``lock_wait_timeout`` for the session that runs the change, for example ``SET SESSION lock_wait_timeout = 5``, so that the change gives up instead of blocking the table, and retry it later.
+- Set a short ``lock_wait_timeout`` for the session that runs the change, for example ``SET SESSION lock_wait_timeout = 5``.
+  The change then gives up quickly instead of blocking the table for a long time, and you can retry it later.
 - Fix programs that leave transactions open.
 
 Document Databases
