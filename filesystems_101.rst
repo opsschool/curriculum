@@ -583,17 +583,22 @@ This can happen when a program writes to a directory such as ``/srv/data`` while
 
 ``du`` can't see these files, but ``df`` counts them as used space on the parent filesystem.
 To look under the mount point without unmounting anything, bind mount the parent filesystem somewhere else.
-A bind mount shows the filesystem without the mounts on top of it:
+A bind mount shows the filesystem without the mounts on top of it.
+The example below assumes that ``/srv`` is on the root filesystem.
+If ``/srv`` is mounted separately, bind mount ``/srv`` instead of ``/`` and inspect ``/mnt/rootfs/data`` instead of ``/mnt/rootfs/srv/data``:
 
 .. code-block:: console
 
+  root@opsschool # mkdir -p /mnt/rootfs
   root@opsschool # mount --bind / /mnt/rootfs
   root@opsschool # du -sh /mnt/rootfs/srv/data
   301M    /mnt/rootfs/srv/data
   root@opsschool # umount /mnt/rootfs
 
 To stop it happening again, make the services that write there depend on the mount.
-With systemd, ``RequiresMountsFor=/srv/data`` in a service's ``[Unit]`` section makes the service start only after that filesystem is mounted, and not start if the mount fails.
+With systemd, first configure the intended filesystem at ``/srv/data`` in ``/etc/fstab`` or a mount unit.
+Then add ``RequiresMountsFor=/srv/data`` to the service's ``[Unit]`` section so that it starts only after the required mounts succeed.
+This directive adds mount dependencies; it does not define which filesystem should be mounted there.
 
 How filesystems work
 ====================
