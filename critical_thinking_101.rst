@@ -176,6 +176,87 @@ Some guidelines for testing hypotheses:
 * Keep more than one hypothesis in mind until the evidence rules them out.
 
 
+Thinking in systems
+===================
+
+A system is a set of parts that affect each other.
+Systems thinking means looking at how the parts interact, as well as at each part on its own.
+When you form hypotheses, include explanations that involve interactions between parts, not only a single part that is broken.
+
+Feedback loops
+--------------
+
+A feedback loop exists when the result of a process changes the input to the same process.
+
+For example, db-1 becomes slow, and requests from app-1 and app-2 start to time out.
+The applications retry the failed requests, which adds more load to db-1, which makes it slower, which causes more timeouts and more retries.
+A loop like this can keep a system in a failed state after the original cause has gone.
+Recovery may need the load to be reduced, for example by stopping the retries, before db-1 can catch up.
+Limits on retries, exponential backoff with random jitter, and circuit breakers are common ways to prevent this kind of loop.
+
+Other loops counteract a change.
+When web-3 fails its health checks, the load balancers stop sending it requests, and web-1, web-2 and web-4 take its share.
+This keeps the site working, but if the remaining servers do not have enough capacity, they can become slow and fail their health checks too.
+
+Delays
+------
+
+An effect can appear some time after its cause.
+
+For example, an autoscaling policy that uses average CPU usage over five minutes, with new servers that take several minutes to start, reacts to load from several minutes ago.
+By the time the new servers are ready, the load may have fallen, and the policy removes them just before the load rises again.
+The number of servers then keeps rising and falling without settling.
+
+Delays also matter when you look for the cause of a problem.
+A change deployed at 14:00 may cause a problem at 16:00, when a cache entry expires, a scheduled job runs, or a disk finally fills.
+When you look for recent changes, use a time window long enough to include effects like these.
+
+Shared dependencies
+-------------------
+
+Parts that look independent often depend on the same thing.
+In the sample network, every host uses dns-1 and dns-2, and the web servers sit behind the same pair of load balancers.
+If web-1 through web-4 all have problems at the same time, look at what they share before you look at each host separately.
+
+Multiple contributing causes
+----------------------------
+
+Many failures happen only when several conditions are true at the same time.
+For example, the disk on db-2 fills up during the nightly backup.
+The data has grown, the job that deletes old backups has been failing for a week, and the disk space alert goes to a channel that nobody watches.
+Any one of these on its own would probably not have caused an outage.
+
+If you look for a single root cause, you will usually stop at the first condition you find.
+Instead, ask what else had to be true for the failure to happen.
+Each condition is a place where the failure could have been prevented or detected, and each one may cause a different failure in future.
+
+Your model of the system
+------------------------
+
+Everyone works from a mental model of how a system works.
+Diagrams and documentation are models too, and they are often out of date.
+Treat a model as a set of assumptions, and check the parts that matter against the running system.
+
+For example, a diagram may show that app-1 only connects to db-1.
+``ss`` lists the TCP connections that app-1 has open to port 5432:
+
+.. code-block:: console
+
+    user@opsschool ~$ ss -tn state established '( dport = :5432 )'
+    Recv-Q Send-Q   Local Address:Port      Peer Address:Port Process
+    0      0          10.10.10.14:51234      10.10.10.16:5432
+    0      0          10.10.10.14:51240      10.10.10.17:5432
+
+app-1 also connects to db-2 (10.10.10.17), which the diagram does not show.
+If you were planning maintenance on db-2, this changes which applications it affects.
+
+Further reading
+---------------
+
+* Richard Cook, `How Complex Systems Fail <https://how.complexsystems.fail/>`_: a short paper on why failures in complex systems usually have several causes.
+* Donella Meadows, *Thinking in Systems: A Primer*: an introduction to feedback loops, delays and other ideas from systems thinking.
+
+
 Common reasoning errors
 =======================
 
