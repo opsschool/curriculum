@@ -20,7 +20,7 @@ This section uses MySQL, but other relational databases have similar locks.
 
 A transaction groups statements so that they succeed or fail together.
 It starts with ``BEGIN`` (or the first statement, when autocommit is off) and ends with ``COMMIT`` or ``ROLLBACK``.
-With autocommit on, which is MySQL's default, each statement on its own is a transaction.
+With autocommit on, which is MySQL's default, each statement outside an explicit transaction is a transaction on its own.
 
 Metadata locks
 --------------
