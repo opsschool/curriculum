@@ -1,0 +1,17 @@
+[Unit]
+Description=blackbox flight recorder
+After=local-fs.target
+
+[Service]
+ExecStart=/data/blackbox/blackbox record -delayacct -mlock
+Restart=always
+RestartSec=5
+# Slightly above normal priority so sampling continues when the CPU is saturated;
+# the quota keeps a bug from ever costing more than a fifth of one core.
+Nice=-5
+CPUQuota=20%
+MemoryMax=48M
+OOMScoreAdjust=-900
+
+[Install]
+WantedBy=multi-user.target

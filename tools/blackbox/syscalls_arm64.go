@@ -1,0 +1,32 @@
+package main
+
+// arm64 uses the asm-generic syscall numbers (include/uapi/asm-generic/unistd.h).
+var syscallTable = map[int64]syscallInfo{
+	2: {"io_submit", false}, 4: {"io_getevents", false},
+	22: {"epoll_pwait", false}, 25: {"fcntl", true}, 29: {"ioctl", true},
+	32: {"flock", true}, 34: {"mkdirat", false}, 35: {"unlinkat", false},
+	38: {"renameat", false}, 40: {"mount", false}, 44: {"fstatfs", true},
+	45: {"truncate", false}, 46: {"ftruncate", true}, 47: {"fallocate", true},
+	56: {"openat", false}, 57: {"close", true}, 61: {"getdents64", true},
+	62: {"lseek", true}, 63: {"read", true}, 64: {"write", true},
+	65: {"readv", true}, 66: {"writev", true}, 67: {"pread64", true},
+	68: {"pwrite64", true}, 69: {"preadv", true}, 70: {"pwritev", true},
+	71: {"sendfile", true}, 72: {"pselect6", false}, 73: {"ppoll", false},
+	76: {"splice", true}, 78: {"readlinkat", false}, 79: {"newfstatat", false},
+	80: {"fstat", true}, 81: {"sync", false}, 82: {"fsync", true},
+	83: {"fdatasync", true}, 84: {"sync_file_range", true},
+	93: {"exit", false}, 94: {"exit_group", false}, 98: {"futex", false},
+	101: {"nanosleep", false}, 115: {"clock_nanosleep", false},
+	124: {"sched_yield", false}, 129: {"kill", false},
+	198: {"socket", false}, 202: {"accept", true}, 203: {"connect", true},
+	206: {"sendto", true}, 207: {"recvfrom", true}, 211: {"sendmsg", true},
+	212: {"recvmsg", true}, 214: {"brk", false}, 215: {"munmap", false},
+	216: {"mremap", false}, 220: {"clone", false}, 221: {"execve", false},
+	222: {"mmap", false}, 223: {"fadvise64", true}, 224: {"swapon", false},
+	225: {"swapoff", false}, 226: {"mprotect", false}, 227: {"msync", false},
+	228: {"mlock", false}, 230: {"mlockall", false}, 232: {"mincore", false},
+	233: {"madvise", false}, 242: {"accept4", true}, 260: {"wait4", false},
+	267: {"syncfs", true}, 276: {"renameat2", false},
+	285: {"copy_file_range", true}, 286: {"preadv2", true},
+	287: {"pwritev2", true}, 291: {"statx", false}, 426: {"io_uring_enter", false},
+}
